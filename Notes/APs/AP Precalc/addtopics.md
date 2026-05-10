@@ -25,13 +25,77 @@ Factor $$D(x)$$ into linear and irreducible quadratic factors over $$\mathbb{R}$
 | Irreducible $$(ax^2+bx+c)$$ | $$\dfrac{Bx+C}{ax^2+bx+c}$$ |
 | Repeated quadratic $$(ax^2+bx+c)^m$$ | Similar chain with numerators $$B_k x + C_k$$ |
 
-**Solve for coefficients**: multiply through by the LCD and equate coefficients, or substitute convenient $$x$$ values plus compare powers of $$x$$. **ADD EXAMPLES**
+**Solve for coefficients**: multiply through by the LCD and equate coefficients, or substitute convenient $$x$$ values plus compare powers of $$x$$.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Decompose
+
+$$
+\frac{x^6 + x^5 + 7x^4 + 6x^3 + 2x^2 + 16x - 24}{x^5 + 8x^2}.
+$$
+
+Factor the denominator:
+
+$$
+x^5 + 8x^2 = x^2(x^3 + 8) = x^2(x + 2)(x^2 - 2x + 4).
+$$
+
+The numerator has degree $$6$$ and the denominator degree $$5$$, so the fraction is improper. Do polynomial long division first:
+
+$$
+(x^6 + x^5 + 7x^4 + 6x^3 + 2x^2 + 16x - 24) \div (x^5 + 8x^2).
+$$
+
+You obtain
+
+$$
+\frac{x^6 + x^5 + 7x^4 + 6x^3 + 2x^2 + 16x - 24}{x^5 + 8x^2}
+= x + 1 + \frac{7x^4 - 2x^3 - 6x^2 + 8x - 24}{x^2(x + 2)(x^2 - 2x + 4)}.
+$$
+
+Doing partial fractions on the remainder:
+
+$$
+\frac{7x^4 - 2x^3 - 6x^2 + 8x - 24}{x^2(x + 2)(x^2 - 2x + 4)}
+= \frac{A}{x} + \frac{B}{x^2} + \frac{C}{x + 2} + \frac{Dx + E}{x^2 - 2x + 4}.
+$$
+
+Multiply through by $$x^2(x + 2)(x^2 - 2x + 4)$$:
+
+$$
+\begin{aligned}
+7x^4 - 2x^3 - 6x^2 + 8x - 24 &= Ax(x + 2)(x^2 - 2x + 4) + B(x + 2)(x^2 - 2x + 4) \\
+&\quad {}+ Cx^2(x^2 - 2x + 4) + (Dx + E)x^2(x + 2).
+\end{aligned}
+$$
+
+Expand and **match coefficients** (or combine with strategic substitutions). One finds
+
+$$
+A = \frac{2}{5},\quad B = -3,\quad C = 1,\quad D = \frac{7}{2},\quad E = -2.
+$$
+
+So the full decomposition is
+
+$$
+\frac{x^6 + x^5 + 7x^4 + 6x^3 + 2x^2 + 16x - 24}{x^5 + 8x^2}
+= x + 1 + \frac{2}{5x} - \frac{3}{x^2} + \frac{1}{x + 2} + \frac{\frac{7}{2}x - 2}{x^2 - 2x + 4},
+$$
+
+or equivalently,
+
+$$
+x + 1 + \frac{2}{5x} - \frac{3}{x^2} + \frac{1}{x + 2} + \frac{7x - 4}{2(x^2 - 2x + 4)}.
+$$
+
+</div>
 
 ---
 
 ## Mathematical Induction
 
-Mathematical induction is agreat way to prove statements $$P(n)$$ for all integers $$n \ge n_0$$ when you don't know how to derive it.
+Mathematical induction is a great way to prove statements $$P(n)$$ for all integers $$n \ge n_0$$ when you don't know how to derive it.
 
 1. **Base case**: Verify $$P(n_0)$$ is true.
 2. **Inductive hypothesis**: Assume $$P(k)$$ holds for some $$k \ge n_0$$.
@@ -53,9 +117,23 @@ $$
 
 where $$\displaystyle \binom{n}{k} = \frac{n!}{k!(n-k)!}$$ (also $$_nC_k$$). For $$(a-b)^n$$, just replace $$b$$ in the original equation with $$-b$$
 
-- Pascal’s triangle: rows give coefficients for $$(a+b)^n$$.
-- Symmetry: $$\binom{n}{k}=\binom{n}{n-k}$$.
-- Specific term: the term containing $$a^r b^{n-r}$$ has coefficient $$\binom{n}{r}$$ (fix exponents so they sum to $$n$$).
+- Pascal’s triangle: rows give coefficients for $$(a+b)^n$$ (Pascal's Triangle starts at Row 0 by convention)
+- Symmetry: $$\binom{n}{k}=\binom{n}{n-k}$$
+- Specific term: the term containing $$a^r b^{n-r}$$ has coefficient $$\binom{n}{r}$$ (fix exponents so they sum to $$n$$)
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Sum of Pascal's Triangle and Binomial Theorem).** We will prove that the sum of the $$n$$th row of Pascal's Triangle is equal to $$2^n$$. Suppose we have the polynomial $$(1+x)^n$$. By Binomial Theorem,
+
+$$(1+x)^n = \binom{n}{0} x^n + \binom{n}{1} x^(n-1) + ... + \binom{n}{n-1} x + \binom{n}{n}$$.
+
+Setting $$x = 1$$, we get that
+
+$$(1+1)^n = \binom{n}{0} + \binom{n}{1} + ... + \binom{n}{n}$$.
+
+The RHS is the sum of the values of the $$n$$th row of Pascal's Triangle, and the LHS can be simplified to $$2^n$$. Thus, the sum of the values in the $$n$$th row of Pascal's Triangle is equal to $$2^n$$.
+
+</div>
 
 ---
 
@@ -161,7 +239,7 @@ $$
 \sum_{i=0}^{\infty} a r^i = \frac{a}{1-r}
 $$
 
-If $$\lvert r\rvert \ge 1$$, the series does **not** converge (unless $$a=0$$).
+If $$\lvert r\rvert \ge 1$$, the series does **not** converge (unless $$a=0$$). This formula can be proven by seeing that as $$n$$ approaches infinity, $$r^n$$ approaches $$0$$ if $$\lvert r \rvert < 1$$ and diverges otherwise.
 
 ---
 
