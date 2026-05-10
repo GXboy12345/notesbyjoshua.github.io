@@ -14,6 +14,12 @@ For AP free-response problems, the calculation is usually only part of the answe
 
 ---
 
+## Quick Reference
+
+- [AP Statistics Cheat Sheet]({{ '/notes/ap/stats/cheatsheet/' | relative_url }})
+
+---
+
 ## Units
 
 - [Unit 1: Exploring Univariate Data]({{ '/notes/ap/stats/univardata/' | relative_url }})

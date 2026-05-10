@@ -8,17 +8,17 @@ permalink: /notes/ap/chem/cheatsheet/
 
 # AP Chemistry Cheat Sheet
 
-This page is a high-yield AP Chemistry reference sheet. It collects the most important concepts, formulas, trends, and problem-solving checks from Units 1-9 in one place. It is best used as a last-minute review tool or a quick lookup page while studying a full unit.
+This page is a high-yield AP Chemistry reference sheet. It collects the most important concepts, formulas, trends, and problem-solving checks from Units 1-9 in one place. It is best used as a last-minute review tool or a quick lookup page while studying a full unit. Always remember that you have a [formula sheet](https://apcentral.collegeboard.org/media/pdf/ap-chemistry-equations-sheet.pdf) for the AP test!
 
 ---
 
 ## Constants and Common Values
 
-- $$N_A = 6.022 \times 10^{23}\ \text{mol}^{-1}$$
-- $$R = 0.08206\ \text{L·atm/(mol·K)} = 8.314\ \text{J/(mol·K)}$$
-- $$F = 96485\ \text{C/mol e}^-$$
-- $$c_{\text{water}} \approx 4.18\ \text{J/(g·^\circ C)}$$
-- $$1\ \text{atm} = 760\ \text{mmHg} = 760\ \text{torr} = 101.325\ \text{kPa}$$
+- Avogadro's Number: $$N_A = 6.022 \times 10^{23}\ \text{mol}^{-1}$$
+- Ideal Gas Constant: $$R = 0.08206\ \text{L·atm/(mol·K)} = 8.314\ \text{J/(mol·K)}$$
+- Faraday's Constant: $$F = 96485\ \text{C/mol e}^-$$
+- Specific heat of water: $$c_{\text{water}} \approx 4.18\ \text{J/(g·^\circ C)}$$
+- Pressure conversions: $$1\ \text{atm} = 760\ \text{mmHg} = 760\ \text{torr} = 101.325\ \text{kPa}$$
 - STP for AP Chem: $$273.15\ \text{K}$$ and $$1\ \text{atm}$$
 - Molar volume of an ideal gas at STP: about $$22.4\ \text{L/mol}$$
 - $$K_w = 1.0 \times 10^{-14}$$ at $$25^\circ\text{C}$$
@@ -59,15 +59,15 @@ $$
 - **Electronegativity**: decreases down, increases across
 - More positive effective nuclear charge usually means electrons are held more tightly
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/cheatsheet/periodic-trends-summary.png' | relative_url }}" alt="Periodic trends summary placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/periodictrends.png' | relative_url }}" alt="Periodic trends summary placeholder" loading="lazy" decoding="async" />
 
 ### Photoelectron spectroscopy
 
-- Lower binding energy means easier to remove electron
+- Lower binding energy means easier to remove electron (so elements with higher nuclear charge have charts that are shifted left)
 - Higher peaks can mean more electrons in a subshell
 - Peak position tells energy level; peak height/area tracks electron count
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/cheatsheet/pes-summary.png' | relative_url }}" alt="Photoelectron spectroscopy summary placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/PES.png' | relative_url }}" alt="Photoelectron spectroscopy summary placeholder" loading="lazy" decoding="async" />
 
 ---
 
@@ -105,7 +105,7 @@ $$
 
 Molecular shape depends on lone pairs.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/cheatsheet/vsepr-summary.png' | relative_url }}" alt="VSEPR summary placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/compounds/VSEPR.png' | relative_url }}" alt="VSEPR summary placeholder" loading="lazy" decoding="async" />
 
 ### Hybridization
 
@@ -209,7 +209,7 @@ $$
 - Usually soluble: sulfates except with $$\text{Ba}^{2+}$$, $$\text{Sr}^{2+}$$, $$\text{Pb}^{2+}$$, often $$\text{Ca}^{2+}$$
 - Usually insoluble: carbonates, phosphates, chromates, sulfides, hydroxides except with Group 1 and $$\text{NH}_4^+$$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/cheatsheet/solubility-rules-summary.png' | relative_url }}" alt="Solubility rules summary placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/chemrxns/solubility.jpg' | relative_url }}" alt="Solubility rules summary placeholder" loading="lazy" decoding="async" />
 
 ### Oxidation number reminders
 
@@ -465,7 +465,7 @@ $$
 - weak base / strong acid equivalence point below 7
 - half-equivalence point for weak acid/base gives $$\text{pH} = \text{p}K_a$$ or $$\text{pOH} = \text{p}K_b$$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/cheatsheet/titration-curves-summary.png' | relative_url }}" alt="Titration curves summary placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/acidbase/titrationcurve.gif' | relative_url }}" alt="Titration curves summary placeholder" loading="lazy" decoding="async" />
 
 ---
 
@@ -543,13 +543,11 @@ $$
 1. Forgetting units or using Celsius instead of Kelvin in gas/equilibrium/thermo work
 2. Including solids or liquids in equilibrium expressions
 3. Pulling rate-law exponents from the balanced equation without justification
-4. Assuming static friction always equals $$\mu_sN$$
-5. Using $$\hat{p}$$-style approximations without checking assumptions
-6. Forgetting stoichiometric coefficients in equilibrium, entropy, or formation-energy sums
-7. Mixing up anode/cathode with sign in galvanic vs electrolytic cells
-8. Forgetting to do stoichiometry first in titration and buffer problems
-9. Treating a catalyst as something that changes $$K$$ or $$\Delta G^\circ$$
-10. Confusing molecular polarity with bond polarity
+4. Forgetting stoichiometric coefficients in equilibrium, entropy, or formation-energy sums
+5. Mixing up anode/cathode with sign in galvanic vs electrolytic cells
+6. Forgetting to do stoichiometry first in titration and buffer problems
+7. Treating a catalyst as something that changes $$K$$ or $$\Delta G^\circ$$
+8. Confusing molecular polarity with bond polarity
 
 ---
 
