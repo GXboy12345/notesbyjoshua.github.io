@@ -12,15 +12,15 @@ permalink: /notes/ap/precalc/fundeqineq/
 
 In Precalculus and beyond, we often use symbols to denote certain sets of numbers
 
-- $$\cup = Union$$
-- $$\cap = Intersection$$
-- $$A \setminus B = Set A without B$$
-- $$x \in A = x in Set A$$
-- $$\mathbb{N} = Natural numbers = {1, 2, 3, \ldots}$$ (including $$0$$ creates the whole numbers)
-- $$\mathbb{Z} = Integers = {x | x \in \mathbb{N}, -x \in \mathbb{N}, x=0}$$
-- $$\mathbb{Q} = Rationals = {x = \frac{a}{b} | a, b \in \mathbb{Z}, b \ne 0}$$
-- $$\mathbb{R} = Real numbers = Any number on the number line$$
-- $$\mathbb{C} = Complex numbers = {a + bi | a, b \in R, i = \sqrt{-1}}$$
+- Union: $$\cup$$
+- Intersection: $$\cap$$
+- Set A excluding B: $$A \setminus B $$
+- x in Set A: $$x \in A$$
+- Natural numbers: $$\mathbb{N} = {1, 2, 3, \ldots}$$ (including $$0$$ creates the whole numbers)
+- Integers: $$\mathbb{Z} = {x \mid x \in \mathbb{N}, -x \in \mathbb{N}, x=0}$$
+- Rationals: $$\mathbb{Q} = {x = \frac{a}{b} \mid a, b \in \mathbb{Z}, b \ne 0}$$
+- Real numbers: $$\mathbb{R}$$ = Any number on the number line
+- Complex numbers: $$\mathbb{C} = {a + bi \mid a, b \in R, i = \sqrt{-1}}$$
 
 ## Solving Equations
 
