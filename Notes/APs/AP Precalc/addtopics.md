@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Unit 13 & 14: Roots of Polynomial Equations & Additional Topics in Algebra"
+title: "Unit 13 & 14: Additional Topics in Algebra"
 parent: AP Precalculus
 nav_order: 9
 permalink: /notes/ap/precalc/addtopics/
 ---
 
-# Unit 13 & 14: Roots of Polynomial Equations & Additional Topics in Algebra
+# Unit 13 & 14: Additional Topics in Algebra
 
 ## Introduction to Partial Fractions
 
@@ -103,7 +103,77 @@ Mathematical induction is a great way to prove statements $$P(n)$$ for all integ
 
 If the step needs several earlier cases, use strong induction: assume $$P(n_0),\ldots,P(k)$$ and deduce $$P(k+1)$$.
 
-**Tips**: Manipulate $$P(k+1)$$ so $$P(k)$$ appears; watch indexing (sums from $$1$$ to $$k+1$$ split into $$1$$ to $$k$$ plus one term). **ADD EXAMPLES**
+**Tips**: Manipulate $$P(k+1)$$ so $$P(k)$$ appears; watch indexing (sums from $$1$$ to $$k+1$$ split into $$1$$ to $$k$$ plus one term).
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Prove that for every integer $$n \ge 1$$,
+
+$$
+\sum_{k=1}^{n} k(k!) = (n+1)! - 1.
+$$
+
+**Step 1: Base case.** For $$n = 1$$,
+
+Left-hand side:
+
+$$
+\sum_{k=1}^{1} k(k!) = 1(1!) = 1.
+$$
+
+Right-hand side:
+
+$$
+(1+1)! - 1 = 2! - 1 = 2 - 1 = 1.
+$$
+
+So the statement holds for $$n = 1$$.
+
+**Step 2: Inductive hypothesis.** Assume that for some $$n \ge 1$$,
+
+$$
+\sum_{k=1}^{n} k(k!) = (n+1)! - 1.
+$$
+
+We must prove
+
+$$
+\sum_{k=1}^{n+1} k(k!) = (n+2)! - 1.
+$$
+
+**Step 3: Inductive step.** Consider the left-hand side for $$n+1$$:
+
+$$
+\sum_{k=1}^{n+1} k(k!) = \sum_{k=1}^{n} k(k!) + (n+1)(n+1)!.
+$$
+
+Apply the induction hypothesis:
+
+$$
+= (n+1)! - 1 + (n+1)(n+1)!.
+$$
+
+Factor out $$(n+1)!$$:
+
+$$
+= (n+1)!\bigl(1 + (n+1)\bigr) - 1 = (n+1)!(n+2) - 1.
+$$
+
+Since $$(n+2)(n+1)! = (n+2)!$$,
+
+$$
+= (n+2)! - 1,
+$$
+
+which is exactly what we needed.
+
+**Conclusion.** Therefore, by mathematical induction,
+
+$$
+\sum_{k=1}^{n} k(k!) = (n+1)! - 1 \quad \text{for all integers } n \ge 1.
+$$
+
+</div>
 
 ---
 
