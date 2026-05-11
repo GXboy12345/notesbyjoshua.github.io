@@ -14,7 +14,8 @@ In Precalculus (**ADD EXAMPLES TO THIS PAGE!**) and beyond, we often use symbols
 
 - Union/OR: $$\cup$$
 - Intersection/AND: $$\cap$$
-- There exists: $$\exists$$ (e.g. $$\exists x$$ such that …); for all: $$\forall$$
+- There exists: $$\exists$$ (e.g. $$\exists x$$ such that …)
+- For all: $$\forall$$
 - Set A excluding B: $$A \setminus B $$
 - x in Set A: $$x \in A$$
 - Natural numbers: $$\mathbb{N} = {1, 2, 3, \ldots}$$ (including $$0$$ creates the whole numbers)
@@ -42,7 +43,7 @@ You can think of the distance as the hypotenuse of a triangle made of the differ
 - Define $$m$$ as the slope of the line, which is $$m=\frac{rise}{run}=\frac{\Delta y}{\Delta x}$$.
 - In slope-intercept form, the line can be defined as $$y=mx+b$$.
 - In point-slope form, the line can be defined as $$y-y_1 = m(x-x_1)$$ with ($$x_1$$, $$y_1$$) being a point on the line.
-- In standard form, the line becomes $$Ax + By = C$$, where $$A, B, C \in \mathbb{Z}$$ and $$A \ge 0$$ (if $$A=0$$, the line is horizontal). The slope would then be $$-\frac{A}{B}$$, with the $$x$$-int being $$\frac{C}{A}$$ and the $$y$$-int being $${C}\{B}$$.
+- In standard form, the line becomes $$Ax + By = C$$, where $$A, B, C \in \mathbb{Z}$$ and $$A \ge 0$$ (if $$A=0$$, the line is horizontal). The slope would then be $$-\frac{A}{B}$$, with the $$x$$-int being $$\frac{C}{A}$$ and the $$y$$-int being $$\frac{C}{B}$$.
 - If two lines are perpendicular, the respective slopes are negative reciprocals of each other ($$m_1 = -\frac{1}{m_2}$$), and if two lines are parallel, they have the same slope ($$m_1 = m_2$$).
 - To draw absolute value graphs, draw each section individually by getting rid of the absolute value sign and solving each section individually. Make sure to keep track of domain.
 
@@ -209,7 +210,7 @@ Strategy: isolate $$\lvert \cdots\rvert$$ first, then rewrite without absolute v
 Polynomials take form of $$p(x) > 0$$ with $$p$$ a polynomial.
 
 1. Move everything to one side (if it isn't already): $$p(x) > 0$$.
-2. Factor $$p(x)$$ as far as you can over $$\mathbb{R$$ (usually these problems do not require solutions in the complex plane).
+2. Factor $$p(x)$$ as far as you can over $$\mathbb{R}$$ (usually these problems do not require solutions in the complex plane).
 3. Mark zeros on a number line; they partition $$\mathbb{R}$$ into intervals.
 4. End behavior: the sign of $$p(x)$$ as $$x \to \pm\infty$$ follows the leading term (eventually the highest-degree term dominates).
 5. Move left to right across zeros: each simple real root (multiplicity $$1$$) flips the sign; a root of even multiplicity touches the axis but does not flip sign (the factor stays nonnegative or nonpositive on both sides locally).
@@ -264,4 +265,47 @@ Symmetry occurs when you flip along an axis of symmetry and mpa one half of a sh
 
 ## Practice
 
-1. Hah you thought!
+Problems are meant to match this page only: coordinates and lines, solving equations, inequalities (including absolute value, polynomial, rational, and radical types), and symmetry. Use interval notation where appropriate.
+
+### Rectangular coordinates and lines
+
+1. Find the distance between $$(1,-3)$$ and $$(5,5)$$ and write the equation of the line that contain both points in slope-intercept form.
+2. Find the equation of the line through $$(2,4)$$ that is perpendicular to $$3x - 4y = 12$$. Write your answer in point-slope form.
+3. **ADD SOMETHING**
+
+### Linear, quadratic, and polynomial equations
+
+4. Solve for $$x$$: $$\dfrac{2x-1}{3} - \dfrac{x+4}{2} = 1$$.
+5. Solve for $$x$$: $$x^4 - 13x^2 + 36 = 0$$.
+6. Simplify $$\sqrt{\frac{x^4}{16} + \frac{x^3}{32} + \frac{5x^2}{16} + x + 4 + 16x - 8\sqrt{4x-7} - 24 + 2(\frac{x^2}{16} + \frac{x}{4} + 2)(-2 + 2\sqrt{4x-7})}$$ (Hint: Use factor by grouping).
+7. Suppose $$p(x) = 3x^2 + 5x + c$$ for some $$c \ne 0$$. If $$r_1$$ and $$r_2 are the roots of $$p(x) = 0$$, find the value of $$\frac{1}{r_1} + \frac{1}{r_2}$$ in terms of $$c$$.
+
+### Rational, absolute value, exponential, and radical equations
+
+8. Solve for $$x$$ and discard any extraneous solutions: $$\dfrac{1}{x-1} + \dfrac{2}{x^2-1} = \dfrac{3}{x+1}$$.
+9. Solve for $$x$$ in $$\mathbb{R}$$: $$\lvert 2x - 5\rvert = \lvert x + 1\rvert$$ (square carefully or split into cases where the two linear expressions change sign).
+10. Solve for $$x$$ in $$\mathbb{R}$$: $$9^{x} - 10\cdot 3^{x} + 9 = 0$$ (rewrite $$9^{x}$$ as a power of $$3$$ and substitute $$u = 3^{x}$$).
+11. Solve for $$x$$ in $$\mathbb{R}$$ and check every candidate in the original equation: $$\sqrt{2x+3} + \sqrt{x+1} = 3$$.
+
+### Inequality basics and absolute value
+
+12. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\dfrac{3x+1}{x-2} > 2$$ (move everything to one side and compare a rational expression to $$0$$; watch the excluded value).
+13. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x - 2\rvert + \lvert x + 4\rvert \le 10$$ (split into intervals determined by $$x = -4$$ and $$x = 2$$).
+14. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x^{2} - 9\rvert \le 5$$ (rewrite as a compound quadratic inequality after isolating the absolute value).
+15. Solve for $$x$$: $$\frac{\lvert x - \lvert x \rvert \rvert}{x} > 0$$.
+
+### Polynomial and rational inequalities
+
+16. Solve in $$\mathbb{R}$$: $$(x-1)^{2}(x-4)(x+2) < 0$$. Explain how repeated roots change the sign chart compared with all simple roots.
+17. Solve in $$\mathbb{R}$$: $$x^{3} - 5x^{2} + 6x \ge 0$$ (factor completely first).
+18. Solve in $$\mathbb{R}$$: $$\dfrac{x^{2} - 4}{x^{2} + x} \le 0$$. Give the domain, a single rational inequality of the form $$\dfrac{R(x)}{Q(x)} \le 0$$ with no common factors, and the solution in interval notation.
+
+### Radical inequalities
+
+19. Solve in $$\mathbb{R}$$: $$\sqrt{4 - x^{2}} \ge x$$ (domain of the radical first, then split into $$x < 0$$ vs $$x \ge 0$$ before squaring where legal).
+20. Solve in $$\mathbb{R}$$: $$\sqrt{x^{2} + 5} \le x + 2$$ (impose all conditions needed before and after squaring, then intersect with the domain).
+
+### Symmetry
+
+21. For $$f(x) = \dfrac{x^{2}}{x^{2} + 1}$$, determine whether the graph has $$y$$-axis symmetry, $$x$$-axis symmetry, origin symmetry, or some combination (use the point tests from this page; note the domain is all $$\mathbb{R}$$).
+22. For $$g(x) = x\lvert x\rvert$$, decide which symmetries the graph has and relate your answer to the fact that $$g(x) = x^{2}$$ when $$x \ge 0$$ and $$g(x) = -x^{2}$$ when $$x < 0$$.
