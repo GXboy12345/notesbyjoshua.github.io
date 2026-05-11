@@ -81,11 +81,11 @@ Equation with $$x$$ in denominators (e.g. \frac{1}{y} + 1 = \frac{3}{y} - \frac{
 
 - ALWAYS check for domain and range restrictions first!
 - Strategy: multiply both sides by the least common denominator to clear fractions, then solve the resulting polynomial equation.
-- Extraneous solutions: multiplying can enlarge the domain (you might introduce values that make an original denominator $$0$$). Always substitute candidates back into the original equation or exclude values where any denominator was $$0$$.
+- Extraneous solutions: multiplying can enlarge the domain, so always substitute candidates back into the original equation or exclude values where any denominator was $$0$$.
 
 ### Polynomial equations
 
-- Polynomial equations are equations with only powers of x and real coefficients ($$y = a_0 x^n + a_1 x^(n-1) + ... + a_(n-1) x + a_n). Always push everything to one side if it isn't already!
+- Polynomial equations are equations with only powers of x and real coefficients ($$y = a_0 x^n + a_1 x^(n-1) + ... + a_(n-1) x + a_n$$). Always push everything to one side if it isn't already!
 - Factor if you can (GCF, grouping, recognizable patterns, etc.). Most precalculus problems can be solved by factoring somehow.
 - Substitution: e.g. $$x^4 - 5x^2 + 4 = 0$$ → let $$u = x^2$$, solve for $$u$$ and then solve for $$x$$. Make sure ALWAYS keep track of domains when you do this!
 - Higher degree: Rational Root Theorem suggests candidates for integer-coefficient polynomials; synthetic division / polynomial division lowers degree after you find a root (more in [Unit 4 & 13]({{ '/notes/ap/precalc/polyratopt/' | relative_url }})).
@@ -108,7 +108,7 @@ $$
 \lvert u\rvert > a \quad \Longrightarrow \quad u < -a \ \text{ or }\ u > a
 $$
 
-If $$a = 0$$, $$\lvert u\rvert = 0$$ means $$u = 0$$. If $$a < 0$$, $$\lvert u\rvert = a$$ has **no solution** in $$\mathbb{R}$$.
+If $$a = 0$$, $$\lvert u\rvert = 0$$ means $$u = 0$$. If $$a < 0$$, $$\lvert u\rvert = a$$ has no solution in $$\mathbb{R}$$.
 
 ### Exponential equations
 
@@ -119,7 +119,7 @@ If $$a = 0$$, $$\lvert u\rvert = 0$$ means $$u = 0$$. If $$a < 0$$, $$\lvert u\r
 
 - Rewrite $$x^{p/q}$$ using radicals: $$x^{p/q} = \sqrt[q]{x^p}$$ (or $$(\sqrt[q]{x})^p$$ when convenient).
 - Even roots require nonnegative radicands in $$\mathbb{R}$$ (unless you switch to $$\mathbb{C}$$). Odd roots are defined for all real $$x$$. Always keep track of domain when doing problems to avoid extraneous solutions.
-- Raise both sides to a power to clear fractional exponents when safe: still check domain and plug back when both sides were raised to an **even** power (same extraneous-root issue as squaring).
+- Raise both sides to a power to clear fractional exponents when safe: still check domain and plug back when both sides were raised to an even power (same extraneous-root issue as squaring).
 
 ### Radical equations
 

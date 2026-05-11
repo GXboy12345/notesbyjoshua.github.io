@@ -411,16 +411,49 @@ An **electrolytic cell** uses *external electrical energy* to drive a nonspontan
 
 Oxidation still occurs at the anode and reduction still occurs at the cathode. The sign of the electrodes changes compared with galvanic cells:
 
-
 | Cell type    | Anode    | Cathode  | Spontaneity                            |
 | ------------ | -------- | -------- | -------------------------------------- |
 | Galvanic     | Negative | Positive | Spontaneous                            |
 | Electrolytic | Positive | Negative | Nonspontaneous; driven by power source |
 
-
 If both electrodes are in the same compartment and an external battery is driving the reaction, the setup is usually electrolytic. The absence of a salt bridge can also suggest a simple electrolytic setup, though some galvanic cells use porous barriers instead of classic U-shaped bridges. Basically, electrolytics cells are like galvanic cells but reversed.
 
+---
 
+## Electrolysis of salts
+
+### Electrolysis of molten salts
+
+Often, we want to derive the individual solid metal components from a compound. One method that is used is the **electrolysis of molten salts**, when molten, liquid, *non-aqueous* ionic salts are electrolyzed into their elemental forms. The anions will react at the anode, while the cations will react at the cathode. For example, in the electrolysis of $$PbBr_2$$:
+
+At the anode: $$2 Br^{-} (l) \longrightarrow Br_2 (l) + 2 e^{-}$$
+
+At the cathode: $$Pb^{2+} (l) + 2 e^{-} \longrightarrow Pb(s)$$
+
+Since no water is present, it can't react! The metals/liquids should then form onto an **inert electrode** (like platinum and graphite). However, the electrolysis of molten salts is not very practical because it takes hundreds and even thousands of degrees to get the salts into molten form!
+
+### Electrolysis of aqueous solutions
+
+More commonly, electrolysis is done on *aqueous solutions* to generate the elemental form of elements from compounds. It is similar to the molten salt electrolysis, expect water is present and could react at either, both, or neither electrode. Usually, the half-reaction with a *higher potential* (whether oxidation or reduction) will be favored at an electrode (with the exception of the comparison of $$Cl_2$$ and water).
+
+At the **anode**: Compare the oxidation of anion vs. water ($$-1.23 V$$)
+At the **cathode**: Compare the reduction of cation vs. water ($$-0.83 V$$)
+
+Note that the reduction and oxidation of water have DIFFERENT magnitudes! They are two separate reactions and have different voltages!
+
+Below are some common observations that would occur if certain elements formed:
+
+| Element   | Observations        |
+| ----------| ------------------- |
+| $$Br_2$$ (l) | Yellow liquid, clear in starch |
+| $$I_2$$ (l) | Yellow liquid, dark blue in starch|
+| $$Cl_2$$ (g) | Gas that discolors green dye |
+| $$Cu$$ (s) | Orange-colored solid forming on electrode |
+| $$Co$$ (s) | Silver-colored solid forming on electrode |
+| $$H_2$$ (g) | Bubbling gas with small, fast-rising bubbles |
+| $$O_2$$ (g) | Bubbling gas with large, slow-rising bubbles |
+| $$OH^{-}$$ (aq) | Blue in bromothymol blue, pink in phenolphthalein|
+| $$H^{+}$$ (aq) | Yellow in bromothymol blue, clear in phenolphthalein |
 
 ---
 
