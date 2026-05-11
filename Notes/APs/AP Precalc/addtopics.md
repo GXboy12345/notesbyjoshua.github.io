@@ -371,10 +371,10 @@ Problems below use only ideas from this page: partial fractions, induction, the 
 4. Prove by induction that $$\sum_{k=1}^{n} k^3 = \frac{n^2 (n+1)^2}{4}$$ for all integers $$n \ge 1$$. Extension: This looks like the square of $$1 + 2 + .. + n = \frac{n(n+1)}{2}$$! Prove that this is true (you should not use induction here).
 5. Prove by induction that $$7^{2n+1} + 3^{n+2}$$ is a multiple of $$58$$ for all integers $$n \ge 1$$.
 6. Expand $$(x+y)^{5}$$ using the binomial theorem.
-7. What is the coefficient of the term containing $$x^{8}$$ in $$\left(x^{2} - \dfrac{3}{x^{2/3}}\right)^{12}$$?
+7. What is the coefficient of the term containing $$x^{20}$$ in $$\left(x^{3} - \dfrac{4}{\sqrt{x}}\right)^{12}$$?
 8. Explain why the powers of $$11$$ from $$11^{0}$$ to $$11^{4}$$ appear to match the rows of Pascal's Triangle, but the pattern fails at $$11^{5}$$. Use the binomial theorem in your answer.
 9. A sequence has $$a_3=-9$$ and $$a_6=243$$. Find the fifth term if the series is arithmetic and if the series is geometric.
-10. The first four terms of an arithmetic sequence is $$x+y$$, $$x-y$$, $$xy$$, and $$\frac{x}{y}$$, in that order. What is the fifth term? (2003 AMC 10B)
+10. The sequence $$1,x,y,z$$ is arithmetic. The sequence $$1,p,q,z$$ is geometric. Both sequences are strictly increasing and contain only integers, and $$z$$ is as small as possible. What is the value of $$x+y+z+p+q$$? (2025 AMC 10A)
 11. Find $$\sum_{i=5}^{100}(3i-2)$$.
 12. Evaluate $$\sum_{i=0}^{8} 3\cdot 2^i$$.
 13. The first three terms of a geometric series are the integers $$a$$, $$720$$, and $$b$$, where $$a < 720 < b$$. What is the sum of the digits of the least possible value of $$b$$? (2024 AMC 10A).

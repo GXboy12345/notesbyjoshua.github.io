@@ -436,8 +436,9 @@ Since no water is present, it can't react! The metals/liquids should then form o
 
 More commonly, electrolysis is done on *aqueous solutions* to generate the elemental form of elements from compounds. It is similar to the molten salt electrolysis, expect water is present and could react at either, both, or neither electrode. Usually, the half-reaction with a *higher potential* (whether oxidation or reduction) will be favored at an electrode (with the exception of the comparison of $$Cl_2$$ and water).
 
-At the **anode**: Compare the oxidation of anion vs. water ($$-1.23 V$$)
-At the **cathode**: Compare the reduction of cation vs. water ($$-0.83 V$$)
+At the anode: Compare the oxidation of anion vs. water ($$-1.23 V$$). If water was oxidized, gas is produced, and the solution should be acidic.
+
+At the cathode: Compare the reduction of cation vs. water ($$-0.83 V$$). If water was reduced, gas is produced, and the solution should be basic.
 
 Note that the reduction and oxidation of water have DIFFERENT magnitudes! They are two separate reactions and have different voltages!
 
