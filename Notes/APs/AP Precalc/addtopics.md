@@ -321,7 +321,7 @@ A sequence $$\{a_n\}$$ can be explicit ($$a_n$$ as a formula in $$n$$) or recurs
 
 ### Recursion
 
-A rule $$a_n = f(a_{n-1},\ldots)$$ plus initial conditions defines the sequence. Closed form may be found by pattern, generating-function methods, or solving linear recurrences. Learn more in [this lesson]({{ '/notes/math/alebgra/recursion' | relative_url }}).
+A rule $$a_n = f(a_{n-1},\ldots)$$ plus initial conditions defines the sequence. Closed form may be found by pattern, generating-function methods, or solving linear recurrences. Learn more in [this lesson]({{ '/notes/math/algebra/recursion/' | relative_url }}).
 
 ### Telescoping sums
 
@@ -329,11 +329,11 @@ If $$b_k = u_{k+1}-u_k$$, then $$\sum_{k=m}^{n} b_k = u_{n+1}-u_m$$. Partial fra
 
 <div class="theorem-box" markdown="1">
 
-**Example.** Let
+**Example.** Find
 
 $$
 S = \sum_{k=1}^{n} \frac{1}{k(k+1)}
-$$
+$$.
 
 Start by writing out $$\frac{1}{k(k+1)}$$ in terms of partial sums:
 
@@ -347,6 +347,30 @@ $$
 S = \frac{1}{1} - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + ... + \frac{1}{n} - \frac{1}{n+1}
 $$
 
-Notice that all the terms in the middle will cancel out (e.g. $$-\frac{1}{2}$$ and $$+\frac{1}{1}$$), leaving the sum as $$S = 1 - \frac{1}{n+1}.
+Notice that all the terms in the middle will cancel out (e.g. $$-\frac{1}{2}$$ and $$+\frac{1}{2}$$), leaving
+
+$$
+S = 1 - \frac{1}{n+1} = \frac{n}{n+1}.
+$$
 
 </div>
+
+## Practice
+
+Problems below use only ideas from this page: partial fractions, induction, the binomial theorem, arithmetic/geometric sequences and series, $$\sum$$ notation, telescoping, and recursion as described here.
+
+### Partial fractions
+
+1. Decompose $$\frac{3x+5}{(x-1)^3(x+2)}$$ into partial fractions.
+2. The rational function $$\frac{2x^3-x^2+3}{x^2-1}$$ is improper. Rewrite it using polynomial division in the form $$Q(x)+\dfrac{R(x)}{x^2-1}$$, then set up (you need not solve for constants) the partial-fraction form for $$\dfrac{R(x)}{(x-1)(x+1)}$$ over $$\mathbb{R}$$.
+3. Factor $$x^3-x^2$$ and write the template for decomposing $$\frac{x^2+1}{x^3-x^2}$$ (distinct linear and repeated linear factors only).
+4. Prove by induction that $$\sum_{k=1}^{n} k^3 = \frac{n^2 (n+1)^2}{4}$$ for all integers $$n \ge 1$$. Extension: This looks like the square of $$1 + 2 + .. + n = \frac{n(n+1)}{2}$$! Prove that this is true (you should not use induction here).
+5. Prove by induction that $$7^(2n+1) + 3^(n+2)$$ is a multiple of $$58$$ for all integers $$n \ge 1$$.
+6. Expand $$(x+y)^5$$ using binomial theorem.
+7. What is the coefficient of the term containing $$x^8$$ in $$(x^2 - \frac{3}{x^(2/3)})^12$$?
+8. Explain why the powers of $$11$$ from $$11^0$$ to $$11^4$$ appear to match the rows of Pascal's Triangle, but fails at $$11^5$$. Use the binomial theorem in your answer.
+9. A sequence has $$a_3=-9$$ and $$a_6=243$$. Find the fifth term if the series is arithmetic and if the series is geometric.
+10. The lengths of the sides of a right triangle form consecutive terms of an arithmetic sequence. Prove that the triangle is similar to the 3-4-5 right triangle.
+11. Find $$\sum_{i=5}^{100}(2i+1)$$.
+12. Evaluate $$\sum_{i=0}^{7} 3\cdot 2^i$$.
+13. Suppose the first three terms of a geometric sequence is $$x+1$$, $$x+4$$, and $$5x+2$$. Find the sum of the first 15 terms of the series (There may be more than one solution!).
