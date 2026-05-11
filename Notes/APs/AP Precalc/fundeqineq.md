@@ -271,14 +271,14 @@ Problems are meant to match this page only: coordinates and lines, solving equat
 
 1. Find the distance between $$(1,-3)$$ and $$(5,5)$$ and write the equation of the line that contain both points in slope-intercept form.
 2. Find the equation of the line through $$(2,4)$$ that is perpendicular to $$3x - 4y = 12$$. Write your answer in point-slope form.
-3. **ADD SOMETHING**
+3. The taxicab distance between points $$(x_1, y_1)$$ and $$(x_2, y_2)$$ in the coordinate plane is given by $$\lvert x_1 - x_2 \rvert + \lvert y_1 - y_2 \rvert$$. For how many points $P$ with integer coordinates is the taxicab distance between $P$ and the origin less than or equal to $$20$$? (2022 AMC 12A).
 
 ### Linear, quadratic, and polynomial equations
 
 4. Solve for $$x$$: $$\dfrac{2x-1}{3} - \dfrac{x+4}{2} = 1$$.
 5. Solve for $$x$$: $$x^4 - 13x^2 + 36 = 0$$.
 6. Simplify $$\sqrt{\frac{x^4}{16} + \frac{x^3}{32} + \frac{5x^2}{16} + x + 4 + 16x - 8\sqrt{4x-7} - 24 + 2(\frac{x^2}{16} + \frac{x}{4} + 2)(-2 + 2\sqrt{4x-7})}$$ (Hint: Use factor by grouping).
-7. Suppose $$p(x) = 3x^2 + 5x + c$$ for some $$c \ne 0$$. If $$r_1$$ and $$r_2 are the roots of $$p(x) = 0$$, find the value of $$\frac{1}{r_1} + \frac{1}{r_2}$$ in terms of $$c$$.
+7. Suppose $$p(x) = 3x^2 + 5x + c$$ for some $$c \ne 0$$. If $$r_1$$ and $$r_2$$ are the roots of $$p(x) = 0$$, find the value of $$\frac{1}{r_1} + \frac{1}{r_2}$$ in terms of $$c$$.
 
 ### Rational, absolute value, exponential, and radical equations
 
@@ -291,7 +291,7 @@ Problems are meant to match this page only: coordinates and lines, solving equat
 
 12. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\dfrac{3x+1}{x-2} > 2$$ (move everything to one side and compare a rational expression to $$0$$; watch the excluded value).
 13. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x - 2\rvert + \lvert x + 4\rvert \le 10$$ (split into intervals determined by $$x = -4$$ and $$x = 2$$).
-14. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x^{2} - 9\rvert \le 5$$ (rewrite as a compound quadratic inequality after isolating the absolute value).
+14. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x^{2} - 9\rvert \le 5$$.
 15. Solve for $$x$$: $$\frac{\lvert x - \lvert x \rvert \rvert}{x} > 0$$.
 
 ### Polynomial and rational inequalities

@@ -106,3 +106,87 @@ html[data-site-theme="dark"] .main-content .theorem-box {
   border-color: rgba(255, 255, 255, 0.12);
   background: rgba(14, 165, 233, 0.12);
 }
+
+// --- Markdown lists (bullets / numbers) ---
+// The remote theme draws markers with `li::before` + absolute positioning, which often
+// sits visually "high" compared to body text and especially next to MathJax.
+// Switch to normal CSS list markers + outside positioning for better baseline alignment.
+
+.main-content ul:not(.task-list),
+.main-content ol {
+  list-style-position: outside !important;
+  padding-left: 1.5rem !important;
+}
+
+.main-content ul:not(.task-list) {
+  list-style-type: disc !important;
+}
+
+.main-content ul:not(.task-list) ul {
+  list-style-type: circle !important;
+}
+
+.main-content ul:not(.task-list) ul ul {
+  list-style-type: square !important;
+}
+
+.main-content ol {
+  list-style-type: decimal !important;
+}
+
+// Drop theme pseudo-markers so native `list-style` shows on the `<li>`.
+.main-content ul:not(.task-list) > li::before,
+.main-content ol > li::before {
+  content: none !important;
+  display: none !important;
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  padding-right: 0 !important;
+}
+
+.main-content ul:not(.task-list) > li,
+.main-content ol > li {
+  position: relative !important;
+  padding-left: 0.35rem !important;
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+  list-style-type: inherit !important;
+  list-style-position: outside !important;
+}
+
+// First line in a list item often contains inline MathJax; nudge toward text cap-height.
+.main-content li > mjx-container[jax="CHTML"]:first-child {
+  vertical-align: -0.08em;
+}
+
+// Optional: add `{: .note-list--compact}` on a line immediately after an opening `-` list in Kramdown IAL,
+// or wrap content in `<div class="note-list--compact" markdown="1">` … for tighter items.
+.main-content .note-list--compact > li {
+  margin-top: 0.15em;
+  margin-bottom: 0.15em;
+}
+
+// Optional: `{: .note-list--dash}` on first list item's block IAL won't work for whole list—
+// use HTML `<ul class="note-list--dash" markdown="1">` if you want en-dash bullets.
+.main-content ul.note-list--dash:not(.task-list) {
+  list-style-type: none !important;
+  padding-left: 1.25rem !important;
+}
+
+.main-content ul.note-list--dash:not(.task-list) > li {
+  position: relative !important;
+  padding-left: 1rem !important;
+}
+
+.main-content ul.note-list--dash:not(.task-list) > li::before {
+  display: block !important;
+  content: "\2013" !important; // en dash
+  position: absolute !important;
+  left: 0 !important;
+  top: 0.45em !important;
+  width: 0.75rem !important;
+  font-size: 0.95em !important;
+  line-height: 1 !important;
+  color: inherit !important;
+}
