@@ -219,13 +219,11 @@ $$
 
 ### Geometric
 
-Constant ratio $$r$$ ($$r\ne 0$$):
+A geometric sequence is a sequence where terms differ by a constant ratio $$r$$ ($$r\ne 0$$):
 
 $$
 a_n = a_1\, r^{\,n-1} \quad\text{equivalently}\quad a_n = a_m\, r^{\,n-m}
 $$
-
----
 
 ## Arithmetic & Geometric Series
 
@@ -233,7 +231,11 @@ A series is a sum of sequence terms; $$\sum$$ notation packs long sums neatly.
 
 ### Summation Notation
 
-The $$\sum$$ notation is a compact way to write out series. For a sum $$f(1) + f(2) + ... + f(n)$$ for some function $$f(x)$$, you can rewrite it as $$\sum_{i=1}^{n} f(i)$$. You can always reindex to whatever is convenient (e.g. in the previous example you can start at $$i=3$$ by doing $$\sum_{i=3}^{n + 2} f(i - 2)$$)
+The $$\sum$$ notation is a compact way to write out series. For a sum $$f(1) + f(2) + ... + f(n)$$ for some function $$f(x)$$, you can rewrite it as $$\sum_{i=1}^{n} f(i)$$. You can always reindex to whatever is convenient (e.g. in the previous example you can start at $$i=3$$ by doing $$\sum_{i=3}^{n + 2} f(i - 2)$$).
+
+### Partial sums
+
+A partial sum is defined as $$S_n = \sum_{k=1}^{n} a_k$$. Note that a partial sum always assumes that the starting index is $$1$$. The convergence of an infinite series studies $$\lim_{n\to\infty} S_n$$ when that limit exists.
 
 ### Finite arithmetic series
 
@@ -319,20 +321,32 @@ A sequence $$\{a_n\}$$ can be explicit ($$a_n$$ as a formula in $$n$$) or recurs
 
 ### Recursion
 
-A rule $$a_n = f(a_{n-1},\ldots)$$ plus **initial conditions** defines the sequence. **Closed form** may be found by pattern, generating-function methods (later courses), or solving **linear recurrences** when taught (characteristic equation for $$a_n = pa_{n-1}+qa_{n-2}$$).
-
-### Sigma manipulation
-
-$$
-\sum (c_k \pm d_k) = \sum c_k \pm \sum d_k, \qquad \sum (c\cdot a_k) = c\sum a_k
-$$
-
-Index shifts: $$\sum_{k=m}^{n} a_k = \sum_{k=m+r}^{n+r} a_{k-r}$$.
+A rule $$a_n = f(a_{n-1},\ldots)$$ plus initial conditions defines the sequence. Closed form may be found by pattern, generating-function methods, or solving linear recurrences. Learn more in [this lesson]({{ '/notes/math/alebgra/recursion' | relative_url }}).
 
 ### Telescoping sums
 
-If $$b_k = u_{k+1}-u_k$$, then $$\sum_{k=m}^{n} b_k = u_{n+1}-u_m$$. Partial fractions often produce telescopes.
+If $$b_k = u_{k+1}-u_k$$, then $$\sum_{k=m}^{n} b_k = u_{n+1}-u_m$$. Partial fractions often produce telescopes. Telescoping is usaully done to cancel all the intermediate terms except for the first and last terms.
 
-### Partial sums
+<div class="theorem-box" markdown="1">
 
-$$S_n = \sum_{k=1}^{n} a_k$$. Convergence of an infinite series studies $$\lim_{n\to\infty} S_n$$ when that limit exists.
+**Example.** Let
+
+$$
+S = \sum_{k=1}^{n} \frac{1}{k(k+1)}
+$$
+
+Start by writing out $$\frac{1}{k(k+1)}$$ in terms of partial sums:
+
+$$
+\frac{1}{k(k+1)} = \frac{1}{k} - \frac{1}{k+1}
+$$ (try this yourself!)
+
+$$S$$ therefore becomes
+
+$$
+S = \frac{1}{1} - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + ... + \frac{1}{n} - \frac{1}{n+1}
+$$
+
+Notice that all the terms in the middle will cancel out (e.g. $$-\frac{1}{2}$$ and $$+\frac{1}{1}$$), leaving the sum as $$S = 1 - \frac{1}{n+1}.
+
+</div>
