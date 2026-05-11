@@ -21,9 +21,9 @@ Factor $$D(x)$$ into linear and irreducible quadratic factors over $$\mathbb{R}$
 | Factor in $$D(x)$$ | Partial fraction terms |
 |--------------------|-------------------------|
 | Distinct $$(x-a)$$ | $$\dfrac{A}{x-a}$$ |
-| Repeated $$(x-a)^m$$ | $$\dfrac{A_1}{x-a}+\dfrac{A_2}{(x-a)^2}+\cdots+\dfrac{A_m}{(x-a)^m}$$ |
+| Repeated $$(x-a)^{m}$$ | $$\dfrac{A_1}{x-a}+\dfrac{A_2}{(x-a)^{2}}+\cdots+\dfrac{A_m}{(x-a)^{m}}$$ |
 | Irreducible $$(ax^2+bx+c)$$ | $$\dfrac{Bx+C}{ax^2+bx+c}$$ |
-| Repeated quadratic $$(ax^2+bx+c)^m$$ | Similar chain with numerators $$B_k x + C_k$$ |
+| Repeated quadratic $$(ax^2+bx+c)^{m}$$ | Similar chain with numerators $$B_k x + C_k$$ |
 
 **Solve for coefficients**: multiply through by the LCD and equate coefficients, or substitute convenient $$x$$ values plus compare powers of $$x$$.
 
@@ -182,26 +182,30 @@ $$
 For any nonnegative integer $$n$$,
 
 $$
-(a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k
+(a+b)^{n} = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k
 $$
 
-where $$\displaystyle \binom{n}{k} = \frac{n!}{k!(n-k)!}$$ (also $$_nC_k$$). For $$(a-b)^n$$, just replace $$b$$ in the original equation with $$-b$$
+where $$\displaystyle \binom{n}{k} = \frac{n!}{k!(n-k)!}$$ (read as “$$n$$ choose $$k$$”). For $$(a-b)^{n}$$, replace $$b$$ with $$-b$$ in the expansion.
 
-- Pascal’s triangle: rows give coefficients for $$(a+b)^n$$ (Pascal's Triangle starts at Row 0 by convention)
+- Pascal’s triangle: rows give coefficients for $$(a+b)^{n}$$ (Pascal's Triangle starts at Row 0 by convention)
 - Symmetry: $$\binom{n}{k}=\binom{n}{n-k}$$
 - Specific term: the term containing $$a^r b^{n-r}$$ has coefficient $$\binom{n}{r}$$ (fix exponents so they sum to $$n$$)
 
 <div class="theorem-box" markdown="1">
 
-**Proof (Sum of Pascal's Triangle and Binomial Theorem).** We will prove that the sum of the $$n$$th row of Pascal's Triangle is equal to $$2^n$$. Suppose we have the polynomial $$(1+x)^n$$. By Binomial Theorem,
+**Proof (Sum of Pascal's Triangle and Binomial Theorem).** We will prove that the sum of the $$n$$th row of Pascal's Triangle is equal to $$2^{n}$$. Suppose we have the polynomial $$(1+x)^{n}$$. By the binomial theorem,
 
-$$(1+x)^n = \binom{n}{0} x^n + \binom{n}{1} x^(n-1) + ... + \binom{n}{n-1} x + \binom{n}{n}$$.
+$$
+(1+x)^{n} = \binom{n}{0} + \binom{n}{1}x + \binom{n}{2}x^{2} + \cdots + \binom{n}{n}x^{n}.
+$$
 
-Setting $$x = 1$$, we get that
+Setting $$x = 1$$,
 
-$$(1+1)^n = \binom{n}{0} + \binom{n}{1} + ... + \binom{n}{n}$$.
+$$
+(1+1)^{n} = \binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \cdots + \binom{n}{n}.
+$$
 
-The RHS is the sum of the values of the $$n$$th row of Pascal's Triangle, and the LHS can be simplified to $$2^n$$. Thus, the sum of the values in the $$n$$th row of Pascal's Triangle is equal to $$2^n$$.
+The RHS is the sum of the values of the $$n$$th row of Pascal's Triangle, and the LHS can be simplified to $$2^{n}$$. Thus, the sum of the values in the $$n$$th row of Pascal's Triangle is equal to $$2^{n}$$.
 
 </div>
 
@@ -325,26 +329,26 @@ A rule $$a_n = f(a_{n-1},\ldots)$$ plus initial conditions defines the sequence.
 
 ### Telescoping sums
 
-If $$b_k = u_{k+1}-u_k$$, then $$\sum_{k=m}^{n} b_k = u_{n+1}-u_m$$. Partial fractions often produce telescopes. Telescoping is usaully done to cancel all the intermediate terms except for the first and last terms.
+If $$b_k = u_{k+1}-u_k$$, then $$\sum_{k=m}^{n} b_k = u_{n+1}-u_m$$. Partial fractions often produce telescopes. Telescoping is usually done to cancel all the intermediate terms except for the first and last terms.
 
 <div class="theorem-box" markdown="1">
 
 **Example.** Find
 
 $$
-S = \sum_{k=1}^{n} \frac{1}{k(k+1)}
-$$.
+S = \sum_{k=1}^{n} \frac{1}{k(k+1)}.
+$$
 
-Start by writing out $$\frac{1}{k(k+1)}$$ in terms of partial sums:
+Start by decomposing $$\frac{1}{k(k+1)}$$ with partial fractions (try this yourself):
 
 $$
-\frac{1}{k(k+1)} = \frac{1}{k} - \frac{1}{k+1}
-$$ (try this yourself!)
+\frac{1}{k(k+1)} = \frac{1}{k} - \frac{1}{k+1}.
+$$
 
-$$S$$ therefore becomes
+Then $$S$$ becomes
 
 $$
-S = \frac{1}{1} - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + ... + \frac{1}{n} - \frac{1}{n+1}
+S = \frac{1}{1} - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + \cdots + \frac{1}{n} - \frac{1}{n+1}.
 $$
 
 Notice that all the terms in the middle will cancel out (e.g. $$-\frac{1}{2}$$ and $$+\frac{1}{2}$$), leaving
@@ -361,16 +365,16 @@ Problems below use only ideas from this page: partial fractions, induction, the 
 
 ### Partial fractions
 
-1. Decompose $$\frac{3x+5}{(x-1)^3(x+2)}$$ into partial fractions.
+1. Decompose $$\dfrac{3x+5}{(x-1)^{3}(x+2)}$$ into partial fractions.
 2. The rational function $$\frac{2x^3-x^2+3}{x^2-1}$$ is improper. Rewrite it using polynomial division in the form $$Q(x)+\dfrac{R(x)}{x^2-1}$$, then set up (you need not solve for constants) the partial-fraction form for $$\dfrac{R(x)}{(x-1)(x+1)}$$ over $$\mathbb{R}$$.
 3. Factor $$x^3-x^2$$ and write the template for decomposing $$\frac{x^2+1}{x^3-x^2}$$ (distinct linear and repeated linear factors only).
 4. Prove by induction that $$\sum_{k=1}^{n} k^3 = \frac{n^2 (n+1)^2}{4}$$ for all integers $$n \ge 1$$. Extension: This looks like the square of $$1 + 2 + .. + n = \frac{n(n+1)}{2}$$! Prove that this is true (you should not use induction here).
-5. Prove by induction that $$7^(2n+1) + 3^(n+2)$$ is a multiple of $$58$$ for all integers $$n \ge 1$$.
-6. Expand $$(x+y)^5$$ using binomial theorem.
-7. What is the coefficient of the term containing $$x^8$$ in $$(x^2 - \frac{3}{x^(2/3)})^12$$?
-8. Explain why the powers of $$11$$ from $$11^0$$ to $$11^4$$ appear to match the rows of Pascal's Triangle, but fails at $$11^5$$. Use the binomial theorem in your answer.
+5. Prove by induction that $$7^{2n+1} + 3^{n+2}$$ is a multiple of $$58$$ for all integers $$n \ge 1$$.
+6. Expand $$(x+y)^{5}$$ using the binomial theorem.
+7. What is the coefficient of the term containing $$x^{8}$$ in $$\left(x^{2} - \dfrac{3}{x^{2}/3}\right)^{12}$$? (You may simplify $$\dfrac{3}{x^{2}/3}$$ to a single power of $$x$$ first.)
+8. Explain why the powers of $$11$$ from $$11^{0}$$ to $$11^{4}$$ appear to match the rows of Pascal's Triangle, but the pattern fails at $$11^{5}$$. Use the binomial theorem in your answer.
 9. A sequence has $$a_3=-9$$ and $$a_6=243$$. Find the fifth term if the series is arithmetic and if the series is geometric.
 10. The lengths of the sides of a right triangle form consecutive terms of an arithmetic sequence. Prove that the triangle is similar to the 3-4-5 right triangle.
-11. Find $$\sum_{i=5}^{100}(2i+1)$$.
+11. Find $$\sum_{i=5}^{100}(3i-2)$$.
 12. Evaluate $$\sum_{i=0}^{7} 3\cdot 2^i$$.
 13. Suppose the first three terms of a geometric sequence is $$x+1$$, $$x+4$$, and $$5x+2$$. Find the sum of the first 15 terms of the series (There may be more than one solution!).

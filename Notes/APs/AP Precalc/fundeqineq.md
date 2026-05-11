@@ -24,8 +24,6 @@ In Precalculus and beyond, we often use symbols to denote certain sets of number
 
 ## Solving Equations
 
-## Solving Equations
-
 ### Linear equations
 
 Linear equations come in the form of $$y = mx + b$$, where $$m$$ is the "slope" of the line. To solve, you just isolate one variable and solve.
@@ -43,7 +41,39 @@ $$
 x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
 
-The discriminant $$\Delta = b^2 - 4ac$$ tells you how many real roots there are: $$\Delta > 0$$ two distinct; $$\Delta = 0$$ one repeated; $$\Delta < 0$$ two nonreal complex conjugates. **ADD PROOF OF QUAD FORMULA**
+The discriminant $$\Delta = b^2 - 4ac$$ tells you how many real roots there are: $$\Delta > 0$$ two distinct; $$\Delta = 0$$ one repeated; $$\Delta < 0$$ two nonreal complex conjugates.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Quadratic formula).** Let the quadratic be in the form of
+
+$$
+ax^2 + bx + c = 0
+$$,
+
+or equivalently:
+
+$$
+x^2 + \frac{b}{a} x + \frac{c}{a} = 0
+$$.
+
+Completing the square, we get
+
+$$
+(x + \frac{b}{2a})^2 - \frac{b^2}{4a^2} + \frac{c}{a} = 0
+$$
+
+$$
+(x+\frac{b}{2a})^2 = \frac{b^2}{4a^2} - \frac{c}{a} = \frac{b^2 - 4ac}{4a^2}
+$$
+
+Taking the square root of both sides and rearranging gives the desired formula:
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
+</div>
 
 ### Rational equations
 
@@ -82,22 +112,16 @@ If $$a = 0$$, $$\lvert u\rvert = 0$$ means $$u = 0$$. If $$a < 0$$, $$\lvert u\r
 
 ### Exponential equations
 
-Same base: if $$a^m = a^n$$ (with $$a>0$$, $$a \ne 1$$), then $$m = n$$.
-
-Different bases: take logs after isolating the exponential (or use logarithm laws on $$a^{f(x)}$$).
-
-Watch **domain**: bases must be positive where logs are used; avoid dividing by expressions that can be $$0$$.
+- Same base: if $$a^m = a^n$$ (with $$a>0$$, $$a \ne 1$$), then $$m = n$$.
+- Different bases: take logs after isolating the exponential (or use logarithm laws on $$a^{f(x)}$$), and then solve. Always watch domain: bases must be positive where logs are used, avoid dividing by expressions that can be $$0$$.
 
 ### Fractional exponents
 
-Rewrite $$x^{p/q}$$ using radicals: $$x^{p/q} = \sqrt[q]{x^p}$$ (or $$(\sqrt[q]{x})^p$$ when convenient).
-
-**Even roots** require nonnegative radicands in $$\mathbb{R}$$ (unless you switch to $$\mathbb{C}$$). **Odd roots** are defined for all real $$x$$.
-
-Raise both sides to a power to clear fractional exponents when safe—still **check domain** and plug back when both sides were raised to an **even** power (same extraneous-root issue as squaring).
+- Rewrite $$x^{p/q}$$ using radicals: $$x^{p/q} = \sqrt[q]{x^p}$$ (or $$(\sqrt[q]{x})^p$$ when convenient).
+- Even roots require nonnegative radicands in $$\mathbb{R}$$ (unless you switch to $$\mathbb{C}$$). Odd roots are defined for all real $$x$$. Always keep track of domain when doing problems to avoid extraneous solutions.
+- Raise both sides to a power to clear fractional exponents when safe: still check domain and plug back when both sides were raised to an **even** power (same extraneous-root issue as squaring).
 
 ### Radical equations
 
-Isolate one radical, then **square both sides** (or raise to the $$n$$th power for $$\sqrt[n]{\phantom{x}}$$). Repeat if needed until no radicals remain.
-
-**Squaring can introduce extraneous solutions**, so **check every candidate** in the **original** equation. Also enforce **domain**: even-index radicals need nonnegative insides in $$\mathbb{R}$$.
+- Isolate one radical, then square both sides (or raise to the $$n$$th power for $$\sqrt[n]{\phantom{x}}$$), and repeat if needed until no radicals remain. Squaring can introduce extraneous solutions, so check every candidate in the original equation. Also enforce domain: even-index radicals need nonnegative insides in $$\mathbb{R}$$.
+- If there is more than one radical, deal with them one at a time.
