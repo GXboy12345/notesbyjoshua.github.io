@@ -275,7 +275,7 @@ $$
 
 the equation of a parabola opening to the right with vertex at $$\left(-\frac{d}{2},\,0\right)$$.
 
-Case $$0 < e < 1$$. Then $$1 - e^{2} > 0$$. Divide the rearranged equation by $$1 - e^{2}$$ and complete the square in $$x$$:
+Case 1: $$0 < e < 1$$. Then $$1 - e^{2} > 0$$. Divide the rearranged equation by $$1 - e^{2}$$ and complete the square in $$x$$:
 
 $$
 \left(x - \frac{e^{2}d}{1 - e^{2}}\right)^{2} + \frac{y^{2}}{1 - e^{2}} = \frac{e^{2}d^{2}}{(1 - e^{2})^{2}}.
@@ -283,7 +283,7 @@ $$
 
 Both denominators on the left are positive after the division, so this is the equation of an ellipse in standard position (after translation of the $$x$$-axis).
 
-Case $$e > 1$$. Then $$1 - e^{2} < 0$$. Multiply the rearranged equation by $$-1$$ and write
+Case 2: $$e > 1$$. Then $$1 - e^{2} < 0$$. Multiply the rearranged equation by $$-1$$ and write
 
 $$
 (e^{2} - 1)x^{2} + 2e^{2}d\,x - y^{2} = -e^{2}d^{2}.
@@ -305,16 +305,16 @@ Thus the focus–directrix condition with fixed $$e > 0$$ produces exactly one n
 
 ## Conics in polar
 
-Place a focus at the pole $$(0,0)$$ and align the directrix perpendicular to the polar axis. With eccentricity $$e \ge 0$$ and semi-latus rectum $$p > 0$$ (your book may define $$p$$ slightly differently—match its diagram), a common form is:
+Place a focus at the pole $$(0,0)$$ and align the directrix perpendicular to the polar axis. With eccentricity $$e \ge 0$$ and distance to directrix (from focus) $$d$$, a common form is:
 
 $$
-r = \frac{ep}{1 + e\cos\theta}
+r = \frac{de}{1 + e\cos\theta}
 $$
 
 when the directrix is the vertical line $$x = -p$$ (to the left of the focus). Variants use $$e\sin\theta$$ in the denominator when the directrix is horizontal, and minus signs when the directrix lies on the other side of the focus, e.g.
 
 $$
-r = \frac{ep}{1 - e\cos\theta}
+r = \frac{de}{1 - e\cos\theta}
 $$
 
 for a directrix $$x = p$$ to the right.
@@ -326,3 +326,61 @@ Reading the graph:
 - $$e > 1$$: two branches (hyperbola); values of $$\theta$$ that make $$1 + e\cos\theta = 0$$ (or the corresponding denominator in your chosen form) are asymptotic directions (no finite points).
 
 Always check your course’s exact convention for $$p$$ and the sign in the denominator so your formulas match the textbook’s figure of the focus and directrix.
+
+## Practice
+
+1. Write $$y^{2} - 8y - 4x + 4 = 0$$ in one of the standard forms $$(y-k)^{2} = 4p(x-h)$$ or $$(x-h)^{2} = 4p(y-k)$$. Give the vertex, focus, directrix, and axis of symmetry.
+2. A parabola has vertex $$(2,-1)$$, vertical axis of symmetry, and passes through $$(5,5)$$. Find its equation in the form $$(x-h)^{2} = 4p(y-k)$$ (or the equivalent opening downward if $$p < 0$$).
+3. For which value(s) of $$k$$ is the line $$y = 2x + k$$ tangent to the parabola $$y = x^{2}$$?
+4. Complete the square and identify center, semi-axes $$a$$ and $$b$$ (with $$a > b$$), foci, and eccentricity for  
+$$9x^{2} + 25y^{2} - 36x + 150y + 36 = 0.$$
+5. The ellipse $$\dfrac{x^{2}}{25} + \dfrac{y^{2}}{9} = 1$$ has foci $$F_{1}$$ and $$F_{2}$$ on the $$x$$-axis. If $$P$$ is a point on the ellipse in the first quadrant with $$x$$-coordinate $$3$$, compute $$PF_{1} + PF_{2}$$ without finding $$P$$ explicitly (use the defining property of the ellipse).
+6. Find all real numbers $$m$$ such that the line $$y = mx + \sqrt{13}$$ is tangent to the ellipse $$3x^{2} + 4y^{2} = 12$$. (Substitute, then impose discriminant $$0$$ on the resulting quadratic in $$x$$.)
+7. Complete the square for $$4x^{2} - y^{2} + 24x + 4y + 36 = 0$$ and write the equation in standard form $$\dfrac{(x-h)^{2}}{a^{2}} - \dfrac{(y-k)^{2}}{b^{2}} = 1$$ or the vertical-transverse variant. Give center, vertices, foci, eccentricity, and equations of the asymptotes.
+8. A hyperbola has asymptotes $$y = \pm \dfrac{2}{3}(x - 1) + 2$$ and passes through $$(7,4)$$. Assuming a horizontal transverse axis and standard orientation, find an equation of the form $$\dfrac{(x-1)^{2}}{a^{2}} - \dfrac{(y-2)^{2}}{b^{2}} = 1$$.
+9. For the rectangular hyperbola $$xy = 4$$, sketch the branches and find the distance between its two vertices (the points where the hyperbola is closest to the origin along the line $$y = x$$).
+10. With focus at $$(0,0)$$ and directrix $$x = -4$$, write the Cartesian equation of the conic satisfying $$PF = \dfrac{1}{2}\,d(P,\ell)$$ for all $$P$$ on the curve (start from $$\sqrt{x^{2}+y^{2}} = \dfrac{1}{2}(x+4)$$ on the appropriate half-plane, then square and simplify). What type of conic is it?
+11. Identify the eccentricity and type of conic given in polar form by $$r = \dfrac{12}{3 + 2\cos\theta}.$$ Rewrite it as $$r = \dfrac{ed}{1 + e\cos\theta}$$ (or the equivalent with a minus sign) and state whether the directrix lies to the left or right of the focus at the pole.
+12. For $$r = \dfrac{6}{1 - 2\cos\theta}$$, determine the type of conic and the values of $$\theta$$ for which the denominator vanishes (asymptotic directions). Do not assume finite $$r$$ exists at those angles.
+13. Find all intersection points in $$\mathbb{R}^{2}$$ of the circle $$x^{2} + y^{2} = 25$$ and the hyperbola $$x^{2} - 4y^{2} = 4$$. (Substitution gives a quartic; factor it as a quadratic in $$x^{2}$$ or $$y^{2}$$.)
+14. Show that if a nondegenerate conic has both $$x$$-axis and $$y$$-axis symmetry, then its equation can be written in the form $$Ax^{2} + By^{2} = C$$ with $$A,B,C$$ constants. What does this imply about the possible types (circle, ellipse, hyperbola) when $$A,B,C$$ are all nonzero?
+15. For the parabola $$y^{2} = 4px$$ with $$p > 0$$, let a line through the focus $$(p,0)$$ have slope $$m \ne 0$$ and meet the parabola at two distinct points $$A$$ and $$B$$. Prove that the product of the $$y$$-coordinates of $$A$$ and $$B$$ equals $$-4p^{2}$$ (substitute $$x = p + \dfrac{y}{m}$$ or $$y = m(x-p)$$ and use Vieta’s formulas on the resulting quadratic in $$y$$).
+16. (Bonus, 2026 USAPHO) Charged particles in a central Coulomb field follow conic trajectories because the force magnitude obeys an inverse-square law. Fix a particle $$\alpha$$ with charge $$+1\ \mathrm{C}$$ at the origin. A second particle then moves on either an elliptic-type (bound) or hyperbolic-type (unbound) conic, with polar descriptions (using polar angle $$\phi$$ measured from the positive $$x$$-axis and radial distance from the origin):
+
+$$
+r = \frac{r_{0}}{1 + e\cos\phi} \qquad (0 < e < 1)
+$$
+
+for the attractive case, and
+
+$$
+R = \frac{r_{0}}{e\cos\phi - 1} \qquad (e > 1)
+$$
+
+for the repulsive case.
+
+You also have a camera that records the exact position of the moving particle at three different times.
+
+(A) Particle $$\beta$$ has charge $$-1\ \mathrm{C}$$ (attractive interaction with $$\alpha$$). The camera records
+
+$$
+(0,\,-5\ \mathrm{m}),\qquad (3\ \mathrm{m},\,0),\qquad (0,\,5\ \mathrm{m}).
+$$
+
+Assume the only force on $$\beta$$ is the Coulomb force from $$\alpha$$, so the path is described by the attractive polar model above. Find the maximum distance $$\beta$$ ever reaches from the origin.
+
+(B) Particle $$\gamma$$ has charge $$+2\ \mathrm{C}$$ (repulsive interaction with $$\alpha$$). The camera records
+
+$$
+(3\ \mathrm{m},\,-4\ \mathrm{m}),\qquad (2\ \mathrm{m},\,0),\qquad (3\ \mathrm{m},\,4\ \mathrm{m}).
+$$
+
+Assume the only force on $$\gamma$$ is the Coulomb force from $$\alpha$$, so the path is described by the repulsive polar model above. After a very long time, find the angle $$\theta$$ that the velocity of $$\gamma$$ makes with the positive $$x$$-axis (give an exact answer using inverse trigonometric functions if needed).
+
+(C) Now imagine firing a family of particles identical to $$\gamma$$ from infinity, one at a time, along the same incident asymptotic line as $$\gamma$$, so they do not interact with each other and only interact with $$\alpha$$ (each trajectory is a repulsive hyperbola as above).
+
+Define the **impact parameter** $$B$$ as the perpendicular distance from the origin (where $$\alpha$$ sits) to the incident asymptotic line of $$\gamma$$. To avoid a symbol clash with the label $$\alpha$$ for the fixed charge, denote the **deflection angle** by $$\Theta$$: that is the angle by which $$\gamma$$’s outgoing asymptotic direction differs from its incoming asymptotic direction, after a very long time.
+
+(i) Determine $$B(\Theta)$$: express $$B$$ in terms of $$\Theta$$ (and any constants such as $$e$$ or $$r_{0}$$ that you think must appear).
+
+(ii) Determine $$B(r_{0})$$: express $$B$$ in terms of $$r_{0}$$ (eliminating $$\Theta$$ if your answer in (i) still contains it, or giving the cleanest relation you can between $$B$$ and $$r_{0}$$ for this family of trajectories—state clearly what you are holding fixed).
