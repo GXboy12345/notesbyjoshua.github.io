@@ -277,7 +277,7 @@ Problems are meant to match this page only: coordinates and lines, solving equat
 
 4. Solve for $$x$$: $$\dfrac{2x-1}{3} - \dfrac{x+4}{2} = 1$$.
 5. Solve for $$x$$: $$x^4 - 13x^2 + 36 = 0$$.
-6. Simplify $$\sqrt{\frac{x^4}{16} + \frac{x^3}{32} + \frac{5x^2}{16} + x + 4 + 16x - 8\sqrt{4x-7} - 24 + 2(\frac{x^2}{16} + \frac{x}{4} + 2)(-2 + 2\sqrt{4x-7})}$$ (Hint: Use factor by grouping).
+6. Simplify $$\sqrt{\frac{x^4}{256} + \frac{x^3}{32} + \frac{5x^2}{16} + x + 4 + 16x - 8\sqrt{4x-7} - 24 + 2(\frac{x^2}{16} + \frac{x}{4} + 2)(-2 + 2\sqrt{4x-7})}$$ (Hint: Use factor by grouping).
 7. Suppose $$p(x) = 3x^2 + 5x + c$$ for some $$c \ne 0$$. If $$r_1$$ and $$r_2$$ are the roots of $$p(x) = 0$$, find the value of $$\frac{1}{r_1} + \frac{1}{r_2}$$ in terms of $$c$$.
 8. Solve for $$x$$ and discard any extraneous solutions: $$\dfrac{1}{x-1} + \dfrac{2}{x^2-1} = \dfrac{3}{x+1}$$.
 9. Solve for $$x$$ in $$\mathbb{R}$$: $$\lvert 2x - 5\rvert = \lvert x + 1\rvert$$.
@@ -294,3 +294,792 @@ Problems are meant to match this page only: coordinates and lines, solving equat
 20. Solve in $$\mathbb{R}$$: $$\sqrt{x^{2} + 5} \le x + 2$$ (impose all conditions needed before and after squaring, then intersect with the domain).
 21. For $$f(x) = \dfrac{x^{2}}{x^{2} + 1}$$, determine whether the graph has $$y$$-axis symmetry, $$x$$-axis symmetry, origin symmetry, or some combination (use the point tests from this page; note the domain is all $$\mathbb{R}$$).
 22. For $$g(x) = x\lvert x\rvert$$, decide which symmetries the graph has and relate your answer to the fact that $$g(x) = x^{2}$$ when $$x \ge 0$$ and $$g(x) = -x^{2}$$ when $$x < 0$$.
+
+## Solutions
+
+### Solution 1
+
+Use the distance formula:
+
+$$
+d=\sqrt{(5-1)^{2}+(5-(-3))^{2}}
+=\sqrt{4^{2}+8^{2}}
+=\sqrt{80}
+=4\sqrt{5}.
+$$
+
+The slope of the line through $$(1,-3)$$ and $$(5,5)$$ is
+
+$$
+m=\frac{5-(-3)}{5-1}=\frac{8}{4}=2.
+$$
+
+Use $$y=mx+b$$ with point $$(1,-3)$$:
+
+$$
+-3=2(1)+b \quad\Longrightarrow\quad b=-5.
+$$
+
+So
+
+$$
+\boxed{d=4\sqrt{5}\quad\text{and}\quad y=2x-5}.
+$$
+
+### Solution 2
+
+First find the slope of $$3x-4y=12$$:
+
+$$
+-4y=-3x+12
+\quad\Longrightarrow\quad
+y=\frac{3}{4}x-3.
+$$
+
+The slope is $$\frac{3}{4}$$, so a perpendicular line has slope $$-\frac{4}{3}$$. Through $$(2,4)$$, point-slope form is
+
+$$
+\boxed{y-4=-\frac{4}{3}(x-2)}.
+$$
+
+### Solution 3
+
+We want integer points $$(x,y)$$ satisfying
+
+$$
+|x|+|y|\le 20.
+$$
+
+For distance $$0$$, there is only the origin: $$1$$ point.
+
+For each distance $$r\ge 1$$, the equation $$|x|+|y|=r$$ has $$4r$$ integer points. Therefore the total number of points is
+
+$$
+1+\sum_{r=1}^{20}4r
+=1+4\left(\frac{20\cdot 21}{2}\right)
+=1+840
+=841.
+$$
+
+So the answer is
+
+$$
+\boxed{841}.
+$$
+
+### Solution 4
+
+Clear denominators by multiplying both sides by $$6$$:
+
+$$
+6\left(\frac{2x-1}{3}\right)-6\left(\frac{x+4}{2}\right)=6(1).
+$$
+
+Then
+
+$$
+2(2x-1)-3(x+4)=6.
+$$
+
+Simplify:
+
+$$
+4x-2-3x-12=6
+\quad\Longrightarrow\quad
+x-14=6
+\quad\Longrightarrow\quad
+x=20.
+$$
+
+Thus
+
+$$
+\boxed{x=20}.
+$$
+
+### Solution 5
+
+Let $$u=x^{2}$$. Then
+
+$$
+x^{4}-13x^{2}+36=0
+$$
+
+becomes
+
+$$
+u^{2}-13u+36=0.
+$$
+
+Factor:
+
+$$
+(u-9)(u-4)=0.
+$$
+
+So $$u=9$$ or $$u=4$$. Since $$u=x^{2}$$,
+
+$$
+x^{2}=9 \quad\text{or}\quad x^{2}=4.
+$$
+
+Therefore
+
+$$
+\boxed{x=-3,-2,2,3}.
+$$
+
+### Solution 6
+
+Group the expression under the square root as
+
+$$
+\left(\frac{x^{2}}{16}+\frac{x}{4}+2\right)^{2}
+ + \left(-2+2\sqrt{4x-7}\right)^{2}
+ + 2\left(\frac{x^{2}}{16}+\frac{x}{4}+2\right)\left(-2+2\sqrt{4x-7}\right).
+$$
+
+This matches the pattern
+
+$$
+a^{2}+b^{2}+2ab=(a+b)^{2},
+$$
+
+where
+
+$$
+a=\frac{x^{2}}{16}+\frac{x}{4}+2,
+\qquad
+b=-2+2\sqrt{4x-7}.
+$$
+
+So the whole expression becomes
+
+$$
+\sqrt{(a+b)^{2}}=|a+b|.
+$$
+
+Now simplify $$a+b$$:
+
+$$
+a+b
+=\frac{x^{2}}{16}+\frac{x}{4}+2-2+2\sqrt{4x-7}
+=\frac{x^{2}}{16}+\frac{x}{4}+2\sqrt{4x-7}.
+$$
+
+The domain requires $$4x-7\ge 0$$, so $$x\ge \frac{7}{4}$$. On this domain, $$a+b\ge 0$$, so the absolute value can be removed:
+
+$$
+\boxed{\frac{x^{2}}{16}+\frac{x}{4}+2\sqrt{4x-7}}.
+$$
+
+### Solution 7
+
+For
+
+$$
+p(x)=3x^{2}+5x+c,
+$$
+
+Vieta's formulas give
+
+$$
+r_{1}+r_{2}=-\frac{5}{3}
+\qquad\text{and}\qquad
+r_{1}r_{2}=\frac{c}{3}.
+$$
+
+Then
+
+$$
+\frac{1}{r_{1}}+\frac{1}{r_{2}}
+=\frac{r_{1}+r_{2}}{r_{1}r_{2}}
+=\frac{-5/3}{c/3}
+=-\frac{5}{c}.
+$$
+
+Thus
+
+$$
+\boxed{-\frac{5}{c}}.
+$$
+
+### Solution 8
+
+The denominators show that $$x\ne 1$$ and $$x\ne -1$$. Start with
+
+$$
+\frac{1}{x-1}+\frac{2}{x^{2}-1}=\frac{3}{x+1}.
+$$
+
+Factor $$x^{2}-1=(x-1)(x+1)$$ and multiply both sides by $$(x-1)(x+1)$$:
+
+$$
+x+1+2=3(x-1).
+$$
+
+Solve:
+
+$$
+x+3=3x-3
+\quad\Longrightarrow\quad
+6=2x
+\quad\Longrightarrow\quad
+x=3.
+$$
+
+Since $$3$$ is allowed in the original equation,
+
+$$
+\boxed{x=3}.
+$$
+
+### Solution 9
+
+Solve
+
+$$
+|2x-5|=|x+1|.
+$$
+
+Since equal absolute values have equal squares,
+
+$$
+(2x-5)^{2}=(x+1)^{2}.
+$$
+
+Expand and solve:
+
+$$
+4x^{2}-20x+25=x^{2}+2x+1
+$$
+
+$$
+3x^{2}-22x+24=0.
+$$
+
+Factor:
+
+$$
+(3x-4)(x-6)=0.
+$$
+
+Thus
+
+$$
+\boxed{x=\frac{4}{3},\,6}.
+$$
+
+### Solution 10
+
+Let
+
+$$
+u=3^{x}.
+$$
+
+Then $$9^{x}=(3^{2})^{x}=3^{2x}=(3^{x})^{2}=u^{2}$$. The equation becomes
+
+$$
+u^{2}-10u+9=0.
+$$
+
+Factor:
+
+$$
+(u-1)(u-9)=0.
+$$
+
+So $$u=1$$ or $$u=9$$. Returning to $$u=3^{x}$$:
+
+$$
+3^{x}=1 \quad\Longrightarrow\quad x=0,
+$$
+
+or
+
+$$
+3^{x}=9 \quad\Longrightarrow\quad x=2.
+$$
+
+Therefore
+
+$$
+\boxed{x=0,\,2}.
+$$
+
+### Solution 11
+
+The domain requires
+
+$$
+2x+3\ge 0
+\qquad\text{and}\qquad
+x+1\ge 0,
+$$
+
+so $$x\ge -1$$. Start with
+
+$$
+\sqrt{2x+3}+\sqrt{x+1}=3.
+$$
+
+Isolate one radical:
+
+$$
+\sqrt{2x+3}=3-\sqrt{x+1}.
+$$
+
+Square both sides:
+
+$$
+2x+3=9-6\sqrt{x+1}+x+1.
+$$
+
+Simplify:
+
+$$
+x-7=-6\sqrt{x+1}.
+$$
+
+Multiply by $$-1$$:
+
+$$
+7-x=6\sqrt{x+1}.
+$$
+
+Square again:
+
+$$
+(7-x)^{2}=36(x+1).
+$$
+
+Expand and solve:
+
+$$
+x^{2}-14x+49=36x+36
+$$
+
+$$
+x^{2}-50x+13=0.
+$$
+
+Use the quadratic formula:
+
+$$
+x=\frac{50\pm\sqrt{2500-52}}{2}
+=\frac{50\pm\sqrt{2448}}{2}
+=\frac{50\pm 12\sqrt{17}}{2}
+=25\pm 6\sqrt{17}.
+$$
+
+Check candidates. The value $$25+6\sqrt{17}$$ does not work because it makes $$7-x$$ negative in the step $$7-x=6\sqrt{x+1}$$. The value $$25-6\sqrt{17}$$ checks in the original equation. Therefore
+
+$$
+\boxed{x=25-6\sqrt{17}}.
+$$
+
+### Solution 12
+
+Start by moving everything to one side:
+
+$$
+\frac{3x+1}{x-2}>2
+\quad\Longrightarrow\quad
+\frac{3x+1}{x-2}-2>0.
+$$
+
+Combine into one rational expression:
+
+$$
+\frac{3x+1-2(x-2)}{x-2}>0.
+$$
+
+Simplify:
+
+$$
+\frac{x+5}{x-2}>0.
+$$
+
+Critical values are $$x=-5$$ and $$x=2$$. The denominator also shows $$x\ne 2$$. A sign chart gives positive values on $$(-\infty,-5)$$ and $$(2,\infty)$$. Since the inequality is strict, $$x=-5$$ is not included.
+
+Thus
+
+$$
+\boxed{(-\infty,-5)\cup(2,\infty)}.
+$$
+
+### Solution 13
+
+The expression
+
+$$
+|x-2|+|x+4|
+$$
+
+is the sum of the distances from $$x$$ to $$2$$ and from $$x$$ to $$-4$$. Break at $$x=-4$$ and $$x=2$$.
+
+If $$x<-4$$, then
+
+$$
+|x-2|+|x+4|=-(x-2)-(x+4)=-2x-2.
+$$
+
+So
+
+$$
+-2x-2\le 10
+\quad\Longrightarrow\quad
+x\ge -6.
+$$
+
+This gives $$[-6,-4)$$.
+
+If $$-4\le x\le 2$$, then
+
+$$
+|x-2|+|x+4|=(2-x)+(x+4)=6,
+$$
+
+which is always at most $$10$$. This gives $$[-4,2]$$.
+
+If $$x>2$$, then
+
+$$
+|x-2|+|x+4|=(x-2)+(x+4)=2x+2.
+$$
+
+So
+
+$$
+2x+2\le 10
+\quad\Longrightarrow\quad
+x\le 4.
+$$
+
+This gives $$(2,4]$$. Combining all pieces,
+
+$$
+\boxed{[-6,4]}.
+$$
+
+### Solution 14
+
+Start with
+
+$$
+|x^{2}-9|\le 5.
+$$
+
+Rewrite as a compound inequality:
+
+$$
+-5\le x^{2}-9\le 5.
+$$
+
+Add $$9$$ to all three parts:
+
+$$
+4\le x^{2}\le 14.
+$$
+
+Thus $$x^{2}$$ must be at least $$4$$ and at most $$14$$. Therefore
+
+$$
+\boxed{[-\sqrt{14},-2]\cup[2,\sqrt{14}]}.
+$$
+
+### Solution 15
+
+The expression is
+
+$$
+\frac{|x-|x||}{x}>0.
+$$
+
+The denominator shows $$x\ne 0$$.
+
+If $$x>0$$, then $$|x|=x$$, so
+
+$$
+\frac{|x-|x||}{x}=\frac{|x-x|}{x}=\frac{0}{x}=0,
+$$
+
+which is not greater than $$0$$.
+
+If $$x<0$$, then $$|x|=-x$$, so
+
+$$
+\frac{|x-|x||}{x}
+=\frac{|x-(-x)|}{x}
+=\frac{|2x|}{x}.
+$$
+
+Since $$x<0$$, $$|2x|=-2x$$. Thus
+
+$$
+\frac{|2x|}{x}=\frac{-2x}{x}=-2,
+$$
+
+which is also not greater than $$0$$. Therefore there are no real solutions:
+
+$$
+\boxed{\emptyset}.
+$$
+
+### Solution 16
+
+The inequality is already factored:
+
+$$
+(x-1)^{2}(x-4)(x+2)<0.
+$$
+
+The critical values are
+
+$$
+x=-2,\quad x=1,\quad x=4.
+$$
+
+The root $$x=1$$ has even multiplicity because of $$(x-1)^{2}$$. That means the sign does not change when crossing $$x=1$$. Simple roots, like $$x=-2$$ and $$x=4$$, do change the sign.
+
+Using a sign chart:
+
+- The expression is positive on $$(-\infty,-2)$$.
+- It is negative on $$(-2,1)$$.
+- It stays negative on $$(1,4)$$ because $$x=1$$ is a repeated root.
+- It is positive on $$(4,\infty)$$.
+
+Because the inequality is strict, none of the zeros are included. Thus
+
+$$
+\boxed{(-2,1)\cup(1,4)}.
+$$
+
+### Solution 17
+
+Factor:
+
+$$
+x^{3}-5x^{2}+6x=x(x^{2}-5x+6)=x(x-2)(x-3).
+$$
+
+Solve
+
+$$
+x(x-2)(x-3)\ge 0.
+$$
+
+The critical values are $$0$$, $$2$$, and $$3$$. A sign chart gives:
+
+- negative on $$(-\infty,0)$$,
+- positive on $$(0,2)$$,
+- negative on $$(2,3)$$,
+- positive on $$(3,\infty)$$.
+
+Since the inequality is $$\ge 0$$, include the zeros. Therefore
+
+$$
+\boxed{[0,2]\cup[3,\infty)}.
+$$
+
+### Solution 18
+
+The domain comes from the denominator:
+
+$$
+x^{2}+x=x(x+1)\ne 0.
+$$
+
+So
+
+$$
+x\ne 0,\qquad x\ne -1.
+$$
+
+Factor the rational expression:
+
+$$
+\frac{x^{2}-4}{x^{2}+x}
+=\frac{(x-2)(x+2)}{x(x+1)}.
+$$
+
+There are no common factors, so the rational inequality is
+
+$$
+\frac{(x-2)(x+2)}{x(x+1)}\le 0.
+$$
+
+The critical values are $$-2,-1,0,2$$. Remember that $$-1$$ and $$0$$ cannot be included because they make the denominator zero. A sign chart gives nonpositive values on
+
+$$
+[-2,-1)\quad\text{and}\quad(0,2].
+$$
+
+Thus
+
+$$
+\boxed{\text{domain: } x\ne -1,0;\quad \frac{(x-2)(x+2)}{x(x+1)}\le 0;\quad [-2,-1)\cup(0,2]}.
+$$
+
+### Solution 19
+
+First find the domain:
+
+$$
+4-x^{2}\ge 0
+\quad\Longrightarrow\quad
+-2\le x\le 2.
+$$
+
+Now solve
+
+$$
+\sqrt{4-x^{2}}\ge x.
+$$
+
+If $$x<0$$, the right side is negative and the left side is nonnegative, so the inequality is automatically true on the domain. This gives
+
+$$
+[-2,0).
+$$
+
+If $$x\ge 0$$, both sides are nonnegative, so we can square both sides:
+
+$$
+4-x^{2}\ge x^{2}.
+$$
+
+Then
+
+$$
+4\ge 2x^{2}
+\quad\Longrightarrow\quad
+x^{2}\le 2.
+$$
+
+With $$x\ge 0$$, this gives
+
+$$
+0\le x\le \sqrt{2}.
+$$
+
+Combining both cases,
+
+$$
+\boxed{[-2,\sqrt{2}]}.
+$$
+
+### Solution 20
+
+The radical is always defined because
+
+$$
+x^{2}+5>0
+$$
+
+for all real $$x$$. But since
+
+$$
+\sqrt{x^{2}+5}\ge 0,
+$$
+
+we also need the right side to be nonnegative:
+
+$$
+x+2\ge 0
+\quad\Longrightarrow\quad
+x\ge -2.
+$$
+
+Now square both sides:
+
+$$
+x^{2}+5\le (x+2)^{2}.
+$$
+
+Expand:
+
+$$
+x^{2}+5\le x^{2}+4x+4.
+$$
+
+Cancel $$x^{2}$$:
+
+$$
+5\le 4x+4
+\quad\Longrightarrow\quad
+1\le 4x
+\quad\Longrightarrow\quad
+x\ge \frac{1}{4}.
+$$
+
+This already satisfies $$x\ge -2$$, so
+
+$$
+\boxed{\left[\frac{1}{4},\infty\right)}.
+$$
+
+### Solution 21
+
+For
+
+$$
+f(x)=\frac{x^{2}}{x^{2}+1},
+$$
+
+test $$f(-x)$$:
+
+$$
+f(-x)=\frac{(-x)^{2}}{(-x)^{2}+1}
+=\frac{x^{2}}{x^{2}+1}
+=f(x).
+$$
+
+Since $$f(-x)=f(x)$$, the graph has $$y$$-axis symmetry.
+
+It does not have $$x$$-axis symmetry because reflecting a point $$(x,y)$$ to $$(x,-y)$$ would usually not stay on the graph of the same function. It does not have origin symmetry because origin symmetry would require $$f(-x)=-f(x)$$, but here $$f(-x)=f(x)$$.
+
+Thus
+
+$$
+\boxed{\text{the graph has } y\text{-axis symmetry only}}.
+$$
+
+### Solution 22
+
+For
+
+$$
+g(x)=x|x|,
+$$
+
+test $$g(-x)$$:
+
+$$
+g(-x)=(-x)|-x|=-x|x|=-g(x).
+$$
+
+Since $$g(-x)=-g(x)$$, the graph has origin symmetry.
+
+This also matches the piecewise description:
+
+$$
+g(x)=x^{2}\quad\text{when }x\ge 0,
+$$
+
+and
+
+$$
+g(x)=-x^{2}\quad\text{when }x<0.
+$$
+
+The right side of the graph is the upper half of a parabola, and the left side is the lower half after a $$180^\circ$$ rotation around the origin.
+
+It does not have $$y$$-axis symmetry because $$g(-x)\ne g(x)$$ in general. It does not have $$x$$-axis symmetry because reflecting a nonzero function value across the $$x$$-axis would not stay on the graph.
+
+Therefore
+
+$$
+\boxed{\text{the graph has origin symmetry only}}.
+$$

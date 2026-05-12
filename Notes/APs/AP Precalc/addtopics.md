@@ -361,8 +361,6 @@ $$
 
 ## Practice
 
-Problems below use only ideas from this page: partial fractions, induction, the binomial theorem, arithmetic/geometric sequences and series, $$\sum$$ notation, telescoping, and recursion as described here.
-
 1. Decompose $$\dfrac{3x+5}{(x-1)^{3}(x+2)}$$ into partial fractions.
 2. The rational function $$\frac{2x^3-x^2+3}{x^2-1}$$ is improper. Rewrite it using polynomial division in the form $$Q(x)+\dfrac{R(x)}{x^2-1}$$, then set up (you need not solve for constants) the partial-fraction form for $$\dfrac{R(x)}{(x-1)(x+1)}$$ over $$\mathbb{R}$$.
 3. Factor $$x^3-x^2$$ and write the template for decomposing $$\frac{x^2+1}{x^3-x^2}$$ (distinct linear and repeated linear factors only).
@@ -404,7 +402,7 @@ Compare $$x^{2}$$ coefficients: the term $$A(x-1)^{2}(x+2)$$ has no $$x^{2}$$ te
 Therefore
 
 $$
-\frac{3x+5}{(x-1)^{3}(x+2)} = -\frac{1}{27(x-1)} + \frac{1}{9(x-1)^{2}} + \frac{8}{3(x-1)^{3}} + \frac{1}{27(x+2)}.
+\boxed{\frac{3x+5}{(x-1)^{3}(x+2)} = -\frac{1}{27(x-1)} + \frac{1}{9(x-1)^{2}} + \frac{8}{3(x-1)^{3}} + \frac{1}{27(x+2)}}.
 $$
 
 ### Solution 2
@@ -427,54 +425,84 @@ $$
 \frac{2x+2}{(x-1)(x+1)} = \frac{A}{x-1} + \frac{B}{x+1}.
 $$
 
-The problem only asks for the setup, but solving confirms it: $$2x+2 = A(x+1) + B(x-1)$$. Plug $$x=1$$: $$4=2A$$ so $$A=2$$. Plug $$x=-1$$: $$0=-2B$$ so $$B=0$$. Thus the partial fraction part simplifies to $$\dfrac{2}{x-1}$$.
+The problem only asks for the setup, but solving confirms it: $$2x+2 = A(x+1) + B(x-1)$$. Plug $$x=1$$: $$4=2A$$ so $$A=2$$. Plug $$x=-1$$: $$0=-2B$$ so $$B=0$$. Thus
+
+$$
+\boxed{\frac{2x^{3}-x^{2}+3}{x^{2}-1}=2x-1+\frac{2}{x-1}}.
+$$
 
 ### Solution 3
 
 Factor: $$x^{3}-x^{2} = x^{2}(x-1)$$. Then
 
 $$
-\frac{x^{2}+1}{x^{3}-x^{2}} = \frac{x^{2}+1}{x^{2}(x-1)} = \frac{A}{x} + \frac{B}{x^{2}} + \frac{C}{x-1}
+\boxed{\frac{x^{2}+1}{x^{3}-x^{2}} = \frac{x^{2}+1}{x^{2}(x-1)} = \frac{A}{x} + \frac{B}{x^{2}} + \frac{C}{x-1}}
 $$
 
 for unknown constants $$A,B,C$$. (Denominator has a repeated linear factor $$x^{2}$$ and a simple factor $$x-1$$.)
 
 ### Solution 4
 
-Base $$n=1$$: $$\sum_{k=1}^{1} k^{3} = 1$$ and $$\dfrac{1^{2}\cdot 2^{2}}{4}=1$$.
-
-Assume that for some integer $$n \ge 1$$,
+**Base case**: $$n=1$$:
 
 $$
-\sum_{k=1}^{n} k^{3} = \frac{n^{2}(n+1)^{2}}{4}.
+\sum_{i=1}^{1} i^{3}=1^{3}=1
 $$
 
-We need to prove the statement for $$n+1$$. Starting with the left-hand side,
+and
 
 $$
-\sum_{k=1}^{n+1} k^{3}
-= \sum_{k=1}^{n} k^{3} + (n+1)^{3}.
+\frac{1^{2}(1+1)^{2}}{4}=\frac{1^{2}\cdot 2^{2}}{4}=1.
+$$
+
+Since both sides are equal, the statement is true for $$n=1$$.
+
+**Induction hypothesis**: Assume that for some integer $$k \ge 1$$,
+
+$$
+\sum_{i=1}^{k} i^{3} = \frac{k^{2}(k+1)^{2}}{4}.
+$$
+
+**Inductive step**: We need to show that
+
+$$
+\sum_{i=1}^{k+1} i^{3} = \frac{(k+1)^{2}(k+2)^{2}}{4}.
+$$
+
+Start with the expression for $$k+1$$:
+
+$$
+\sum_{i=1}^{k+1} i^{3}
+= \sum_{i=1}^{k} i^{3} + (k+1)^{3}.
 $$
 
 Use the induction hypothesis:
 
 $$
-\sum_{k=1}^{n+1} k^{3}
-= \frac{n^{2}(n+1)^{2}}{4} + (n+1)^{3}.
+\sum_{i=1}^{k+1} i^{3}
+= \frac{k^{2}(k+1)^{2}}{4} + (k+1)^{3}.
 $$
 
-Factor $$(n+1)^{2}$$:
+Factor $$(k+1)^{2}$$:
 
 $$
-= (n+1)^{2}\left(\frac{n^{2}}{4} + (n+1)\right)
-= (n+1)^{2}\left(\frac{n^{2}+4n+4}{4}\right)
-= \frac{(n+1)^{2}(n+2)^{2}}{4}.
+\frac{k^{2}(k+1)^{2}}{4} + (k+1)^{3}
+= (k+1)^{2}\left(\frac{k^{2}}{4} + (k+1)\right).
 $$
 
-This is exactly the desired formula with $$n+1$$ in place of $$n$$. Therefore, by induction,
+Simplify inside the parentheses:
 
 $$
-\sum_{k=1}^{n} k^{3} = \frac{n^{2}(n+1)^{2}}{4}
+(k+1)^{2}\left(\frac{k^{2}}{4} + (k+1)\right)
+= (k+1)^{2}\left(\frac{k^{2}+4k+4}{4}\right)
+= (k+1)^{2}\left(\frac{(k+2)^{2}}{4}\right)
+= \frac{(k+1)^{2}(k+2)^{2}}{4}.
+$$
+
+Thus the formula is true for $$k+1$$. By induction,
+
+$$
+\boxed{\sum_{i=1}^{n} i^{3} = \frac{n^{2}(n+1)^{2}}{4}}
 $$
 
 for all integers $$n \ge 1$$.
@@ -485,7 +513,13 @@ $$
 S_{n}^{2}-S_{n-1}^{2} = \left(\frac{n(n+1)}{2}\right)^{2}-\left(\frac{(n-1)n}{2}\right)^{2} = \frac{n^{2}}{4}\bigl((n+1)^{2}-(n-1)^{2}\bigr) = \frac{n^{2}}{4}\cdot 4n = n^{3}.
 $$
 
-Telescoping gives $$\sum_{k=1}^{n}k^{3}=S_{n}^{2}-S_{0}^{2}=S_{n}^{2}=\dfrac{n^{2}(n+1)^{2}}{4}$$ (with $$S_{0}=0$$).
+Telescoping gives
+
+$$
+\boxed{\sum_{k=1}^{n}k^{3}=S_{n}^{2}-S_{0}^{2}=S_{n}^{2}=\frac{n^{2}(n+1)^{2}}{4}}
+$$
+
+with $$S_{0}=0$$.
 
 ### Solution 5
 
@@ -527,7 +561,11 @@ $$
 
 By the induction hypothesis, $$8^{2k}-3^{2k}$$ is divisible by $$55$$, so $$64(8^{2k}-3^{2k})$$ is also divisible by $$55$$. The term $$55\cdot 3^{2k}$$ is clearly divisible by $$55$$. Therefore, their sum is divisible by $$55$$.
 
-Thus $$55 \mid 8^{2(k+1)} - 3^{2(k+1)}$$. By induction, $$8^{2n} - 3^{2n}$$ is divisible by $$55$$ for all integers $$n \ge 1$$.
+Thus $$55 \mid 8^{2(k+1)} - 3^{2(k+1)}$$. By induction,
+
+$$
+\boxed{55 \mid 8^{2n} - 3^{2n} \text{ for all integers } n \ge 1}.
+$$
 
 ### Solution 6
 
@@ -540,7 +578,7 @@ $$
 The coefficients from row $$5$$ of Pascal's Triangle are $$1,5,10,10,5,1$$, so
 
 $$
-(x+y)^{5}=x^{5}+5x^{4}y+10x^{3}y^{2}+10x^{2}y^{3}+5xy^{4}+y^{5}.
+\boxed{(x+y)^{5}=x^{5}+5x^{4}y+10x^{3}y^{2}+10x^{2}y^{3}+5xy^{4}+y^{5}}.
 $$
 
 ### Solution 7
@@ -563,7 +601,11 @@ $$
 \frac{7k}{2}=16 \quad\Longrightarrow\quad 7k=32 \quad\Longrightarrow\quad k=\frac{32}{7}.
 $$
 
-Since $$k$$ must be an integer from $$0$$ to $$12$$, there is no such term. Therefore, the coefficient of $$x^{20}$$ is $$0$$.
+Since $$k$$ must be an integer from $$0$$ to $$12$$, there is no such term. Therefore, the coefficient of $$x^{20}$$ is
+
+$$
+\boxed{0}.
+$$
 
 ### Solution 8
 
@@ -589,7 +631,11 @@ $$
 10^{5}+5\cdot 10^{4}+10\cdot 10^{3}+10\cdot 10^{2}+5\cdot 10+1,
 $$
 
-which simplifies to $$161051$$. Thus $$11^{5}=161051$$, not the direct concatenation $$15101051$$. The visual pattern breaks once a binomial coefficient reaches $$10$$ or more.
+which simplifies to $$161051$$. Thus $$11^{5}=161051$$, not the direct concatenation $$15101051$$. The visual pattern breaks once a binomial coefficient reaches $$10$$ or more:
+
+$$
+\boxed{11^{5}=161051}.
+$$
 
 ### Solution 9
 
@@ -617,7 +663,11 @@ $$
 a_{5}=a_{3}r^{2}=(-9)(9)=-81.
 $$
 
-So the fifth term is $$159$$ if the sequence is arithmetic and $$-81$$ if the sequence is geometric.
+So the fifth term is
+
+$$
+\boxed{159 \text{ if arithmetic, and } -81 \text{ if geometric}}.
+$$
 
 ### Solution 10
 
@@ -656,10 +706,22 @@ $$
 So the arithmetic sequence is $$1,22,43,64$$ and the geometric sequence is $$1,4,16,64$$. Therefore
 
 $$
-x+y+z+p+q=22+43+64+4+16=149.
+\boxed{x+y+z+p+q=22+43+64+4+16=149}.
 $$
 
 ### Solution 11
+
+The terms of the sum form an arithmetic series. The first term occurs when $$i=5$$:
+
+$$
+a_{1}=3(5)-2=13.
+$$
+
+The last term occurs when $$i=100$$:
+
+$$
+a_{96}=3(100)-2=298.
+$$
 
 There are
 
@@ -667,22 +729,16 @@ $$
 100-5+1=96
 $$
 
-terms. Use linearity of summation:
+terms. Using the finite arithmetic series formula,
 
 $$
-\sum_{i=5}^{100}(3i-2)=3\sum_{i=5}^{100}i - \sum_{i=5}^{100}2.
+\sum_{i=5}^{100}(3i-2)=\frac{96}{2}(13+298)=48(311)=14928.
 $$
 
-The constant sum is $$2\cdot 96=192$$. The sum of the integers from $$5$$ to $$100$$ is an arithmetic series:
+So
 
 $$
-\sum_{i=5}^{100}i=\frac{(5+100)(96)}{2}=5040.
-$$
-
-Therefore
-
-$$
-\sum_{i=5}^{100}(3i-2)=3(5040)-192=15120-192=14928.
+\boxed{14928}.
 $$
 
 ### Solution 12
@@ -699,7 +755,7 @@ $$
 Since $$2^{9}=512$$,
 
 $$
-3(2^{9}-1)=3(511)=1533.
+\boxed{3(2^{9}-1)=3(511)=1533}.
 $$
 
 ### Solution 13
@@ -731,5 +787,5 @@ $$
 which is an integer and satisfies $$675<720<768$$. The sum of the digits of $$768$$ is
 
 $$
-7+6+8=21.
+\boxed{7+6+8=21}.
 $$
