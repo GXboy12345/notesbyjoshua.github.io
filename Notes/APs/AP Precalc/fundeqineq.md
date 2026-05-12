@@ -431,43 +431,49 @@ $$
 
 ### Solution 6
 
-Group the expression under the square root as
+Let
+
+$$
+A=\frac{x^{2}}{16}+\frac{x}{4}+2
+\qquad\text{and}\qquad
+B=-2+2\sqrt{4x-7}.
+$$
+
+The first five terms under the square root are exactly $$A^{2}$$:
 
 $$
 \left(\frac{x^{2}}{16}+\frac{x}{4}+2\right)^{2}
- + \left(-2+2\sqrt{4x-7}\right)^{2}
- + 2\left(\frac{x^{2}}{16}+\frac{x}{4}+2\right)\left(-2+2\sqrt{4x-7}\right).
+=\frac{x^{4}}{256}+\frac{x^{3}}{32}+\frac{5x^{2}}{16}+x+4.
 $$
 
-This matches the pattern
+The next three terms are exactly $$B^{2}$$:
 
 $$
-a^{2}+b^{2}+2ab=(a+b)^{2},
+\left(-2+2\sqrt{4x-7}\right)^{2}
+=16x-8\sqrt{4x-7}-24.
 $$
 
-where
+The remaining term is $$2AB$$. Therefore the expression under the square root is
 
 $$
-a=\frac{x^{2}}{16}+\frac{x}{4}+2,
-\qquad
-b=-2+2\sqrt{4x-7}.
+A^{2}+B^{2}+2AB=(A+B)^{2}.
 $$
 
-So the whole expression becomes
+So the original expression is
 
 $$
-\sqrt{(a+b)^{2}}=|a+b|.
+\sqrt{(A+B)^{2}}=|A+B|.
 $$
 
-Now simplify $$a+b$$:
+Now simplify $$A+B$$:
 
 $$
-a+b
-=\frac{x^{2}}{16}+\frac{x}{4}+2-2+2\sqrt{4x-7}
+A+B
+=\frac{x^{2}}{16}+\frac{x}{4}+2+\left(-2+2\sqrt{4x-7}\right)
 =\frac{x^{2}}{16}+\frac{x}{4}+2\sqrt{4x-7}.
 $$
 
-The domain requires $$4x-7\ge 0$$, so $$x\ge \frac{7}{4}$$. On this domain, $$a+b\ge 0$$, so the absolute value can be removed:
+The domain requires $$4x-7\ge 0$$, so $$x\ge \frac{7}{4}$$. On this domain, $$A+B\ge 0$$, so the absolute value can be removed:
 
 $$
 \boxed{\frac{x^{2}}{16}+\frac{x}{4}+2\sqrt{4x-7}}.
@@ -481,7 +487,7 @@ $$
 p(x)=3x^{2}+5x+c,
 $$
 
-Vieta's formulas give
+we have $$a=3$$, $$b=5$$, and constant term $$c$$. By Vieta's formulas,
 
 $$
 r_{1}+r_{2}=-\frac{5}{3}
@@ -489,7 +495,7 @@ r_{1}+r_{2}=-\frac{5}{3}
 r_{1}r_{2}=\frac{c}{3}.
 $$
 
-Then
+Since $$c\ne 0$$, the product $$r_{1}r_{2}$$ is not $$0$$, so the reciprocal expression is defined. Then
 
 $$
 \frac{1}{r_{1}}+\frac{1}{r_{2}}
