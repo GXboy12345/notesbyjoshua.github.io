@@ -366,8 +366,8 @@ Problems below use only ideas from this page: partial fractions, induction, the 
 1. Decompose $$\dfrac{3x+5}{(x-1)^{3}(x+2)}$$ into partial fractions.
 2. The rational function $$\frac{2x^3-x^2+3}{x^2-1}$$ is improper. Rewrite it using polynomial division in the form $$Q(x)+\dfrac{R(x)}{x^2-1}$$, then set up (you need not solve for constants) the partial-fraction form for $$\dfrac{R(x)}{(x-1)(x+1)}$$ over $$\mathbb{R}$$.
 3. Factor $$x^3-x^2$$ and write the template for decomposing $$\frac{x^2+1}{x^3-x^2}$$ (distinct linear and repeated linear factors only).
-4. Prove by induction that $$\sum_{k=1}^{n} k^3 = \frac{n^2 (n+1)^2}{4}$$ for all integers $$n \ge 1$$. Extension: This looks like the square of $$1 + 2 + .. + n = \frac{n(n+1)}{2}$$! Prove that this is true (you should not use induction here).
-5. Prove by induction that $$7^{2n+1} + 3^{n+2}$$ is a multiple of $$58$$ for all integers $$n \ge 1$$.
+4. Prove by induction that $$\sum_{k=1}^{n} k^3 = \frac{n^2 (n+1)^2}{4}$$ for all integers $$n \ge 1$$. Extension: This looks like the square of $$1 + 2 + ... + n = \frac{n(n+1)}{2}$$! Prove that this is true (you should not use induction here).
+5. Prove by induction that $$8^{2n} - 3^{2n}$$ is divisible by $$55$$ for all integers $$n \ge 1$$.
 6. Expand $$(x+y)^{5}$$ using the binomial theorem.
 7. What is the coefficient of the term containing $$x^{20}$$ in $$\left(x^{3} - \dfrac{4}{\sqrt{x}}\right)^{12}$$?
 8. Explain why the powers of $$11$$ from $$11^{0}$$ to $$11^{4}$$ appear to match the rows of Pascal's Triangle, but the pattern fails at $$11^{5}$$. Use the binomial theorem in your answer.
@@ -376,3 +376,181 @@ Problems below use only ideas from this page: partial fractions, induction, the 
 11. Find $$\sum_{i=5}^{100}(3i-2)$$.
 12. Evaluate $$\sum_{i=0}^{8} 3\cdot 2^i$$.
 13. The first three terms of a geometric series are the integers $$a$$, $$720$$, and $$b$$, where $$a < 720 < b$$. What is the sum of the digits of the least possible value of $$b$$? (2024 AMC 10A).
+
+## Solutions
+
+### Solution 1
+
+We want
+
+$$
+\frac{3x+5}{(x-1)^{3}(x+2)} = \frac{A}{x-1} + \frac{B}{(x-1)^{2}} + \frac{C}{(x-1)^{3}} + \frac{D}{x+2}.
+$$
+
+Multiply by $$(x-1)^{3}(x+2)$$:
+
+$$
+3x+5 = A(x-1)^{2}(x+2) + B(x-1)(x+2) + C(x+2) + D(x-1)^{3}.
+$$
+
+Set $$x=-2$$: $$-1 = D(-3)^{3} = -27D$$, so $$\displaystyle D = \frac{1}{27}$$.
+
+Set $$x=1$$: $$8 = C(3)$$, so $$\displaystyle C = \frac{8}{3}$$.
+
+Compare $$x^{3}$$ coefficients: $$A + D = 0$$, so $$\displaystyle A = -D = -\frac{1}{27}$$.
+
+Compare $$x^{2}$$ coefficients: the $$x^{3}$$ term from $$A(x-1)^{2}(x+2)$$ has no $$x^{2}$$; from $$B(x-1)(x+2)$$ you get $$Bx^{2}$$; from $$D(x-1)^{3}$$ you get $$-3Dx^{2}$$. Thus $$B - 3D = 0$$, so $$\displaystyle B = 3D = \frac{1}{9}$$.
+
+(You can double-check by comparing the $$x$$ or constant terms.) Therefore
+
+$$
+\frac{3x+5}{(x-1)^{3}(x+2)} = -\frac{1}{27(x-1)} + \frac{1}{9(x-1)^{2}} + \frac{8}{3(x-1)^{3}} + \frac{1}{27(x+2)}.
+$$
+
+### Solution 2
+
+Divide $$2x^{3}-x^{2}+3$$ by $$x^{2}-1$$:
+
+$$
+2x^{3}-x^{2}+3 = (2x-1)(x^{2}-1) + (2x+2),
+$$
+
+so
+
+$$
+\frac{2x^{3}-x^{2}+3}{x^{2}-1} = 2x - 1 + \frac{2x+2}{x^{2}-1} = 2x - 1 + \frac{2(x+1)}{(x-1)(x+1)} = 2x - 1 + \frac{2}{x-1},
+$$
+
+with $$\deg(2x+2) < 2$$. For the remainder, use
+
+$$
+\frac{2x+2}{(x-1)(x+1)} = \frac{A}{x-1} + \frac{B}{x+1}.
+$$
+
+Then $$2x+2 = A(x+1) + B(x-1)$$. Plug $$x=1$$: $$4=2A$$ so $$A=2$$. Plug $$x=-1$$: $$0=-2B$$ so $$B=0$$. Template form: $$\dfrac{2}{x-1}$$ (only one nontrivial partial fraction).
+
+### Solution 3
+
+Factor: $$x^{3}-x^{2} = x^{2}(x-1)$$. Then
+
+$$
+\frac{x^{2}+1}{x^{3}-x^{2}} = \frac{x^{2}+1}{x^{2}(x-1)} = \frac{A}{x} + \frac{B}{x^{2}} + \frac{C}{x-1}
+$$
+
+for unknown constants $$A,B,C$$. (Denominator has a repeated linear factor $$x^{2}$$ and a simple factor $$x-1$$.)
+
+### Solution 4
+
+Base $$n=1$$: $$\sum_{k=1}^{1} k^{3} = 1$$ and $$\dfrac{1^{2}\cdot 2^{2}}{4}=1$$.
+
+Assume $$\sum_{k=1}^{n} k^{3} = \dfrac{n^{2}(n+1)^{2}}{4}$$. Then
+
+$$
+\sum_{k=1}^{n+1} k^{3} = \frac{n^{2}(n+1)^{2}}{4} + (n+1)^{3} = (n+1)^{2}\left(\frac{n^{2}}{4} + (n+1)\right) = (n+1)^{2}\frac{n^{2}+4n+4}{4} = \frac{(n+1)^{2}(n+2)^{2}}{4}.
+$$
+
+Induction complete.
+
+Extension (no induction): Let $$S_{n}=\sum_{k=1}^{n}k=\dfrac{n(n+1)}{2}$$. Then
+
+$$
+S_{n}^{2}-S_{n-1}^{2} = \left(\frac{n(n+1)}{2}\right)^{2}-\left(\frac{(n-1)n}{2}\right)^{2} = \frac{n^{2}}{4}\bigl((n+1)^{2}-(n-1)^{2}\bigr) = \frac{n^{2}}{4}\cdot 4n = n^{3}.
+$$
+
+Telescoping gives $$\sum_{k=1}^{n}k^{3}=S_{n}^{2}-S_{0}^{2}=S_{n}^{2}=\dfrac{n^{2}(n+1)^{2}}{4}$$ (with $$S_{0}=0$$).
+
+### Solution 5
+
+**Base case**: $$n=1$$: $$8^{2}-3^{2}=64-9=55$$, divisible by $$55$$.
+
+**Induction Hypothesis**: Assume $$55 \mid 8^{2k}-3^{2k}$$ for some $$k \in \mathbb{N}$$.
+
+**Inductive Step**: We need to show that
+
+$$
+55 \mid 8^{2(k+1)} - 3^{2(k+1)}.
+$$
+
+Start with the expression for $$k+1$$:
+
+$$
+8^{2(k+1)} - 3^{2(k+1)} = 8^{2k+2} - 3^{2k+2}.
+$$
+
+Rewrite using $$8^{2}=64$$ and $$3^{2}=9$$:
+
+$$
+8^{2k+2} - 3^{2k+2} = 64\cdot 8^{2k} - 9\cdot 3^{2k}.
+$$
+
+Now add and subtract $$64\cdot 3^{2k}$$ so that the induction hypothesis appears:
+
+$$
+64\cdot 8^{2k} - 9\cdot 3^{2k}
+= 64(8^{2k}-3^{2k}) + 64\cdot 3^{2k} - 9\cdot 3^{2k}.
+$$
+
+Simplify:
+
+$$
+64(8^{2k}-3^{2k}) + (64-9)3^{2k}
+= 64(8^{2k}-3^{2k}) + 55\cdot 3^{2k}.
+$$
+
+By the induction hypothesis, $$8^{2k}-3^{2k}$$ is divisible by $$55$$, so $$64(8^{2k}-3^{2k})$$ is also divisible by $$55$$. The term $$55\cdot 3^{2k}$$ is clearly divisible by $$55$$. Therefore, their sum is divisible by $$55$$.
+
+Thus $$55 \mid 8^{2(k+1)} - 3^{2(k+1)}$$. By induction, $$8^{2n} - 3^{2n}$$ is divisible by $$55$$ for all integers $$n \ge 1$$.
+
+### Solution 6
+
+$$
+(x+y)^{5} = \sum_{k=0}^{5} \binom{5}{k} x^{5-k} y^{k} = x^{5} + 5x^{4}y + 10x^{3}y^{2} + 10x^{2}y^{3} + 5xy^{4} + y^{5}.
+$$
+
+### Solution 7
+
+Write $$\left(x^{3} - \dfrac{4}{\sqrt{x}}\right)^{12} = \left(x^{3} - 4x^{-1/2}\right)^{12}$$. A general term in the binomial expansion is
+
+$$
+\binom{12}{k} (x^{3})^{12-k}\left(-4x^{-1/2}\right)^{k} = \binom{12}{k}(-4)^{k}\, x^{36 - 7k/2}.
+$$
+
+We need $$36 - \dfrac{7k}{2} = 20$$, i.e. $$7k = 32$$, which has no integer solution $$k$$. So no term contains $$x^{20}$$; the coefficient is $$0$$.
+
+(If you wanted a nonzero coefficient, change the target exponent—for example $$x^{15}$$ occurs when $$36 - 7k/2 = 15 \Rightarrow k=6$$, with coefficient $$\binom{12}{6}(-4)^{6}$$.)
+
+### Solution 8
+
+$$
+11^{n} = (10+1)^{n} = \sum_{k=0}^{n} \binom{n}{k} 10^{k}.
+$$
+
+For $$n=0,1,2,3,4$$, each binomial coefficient $$\binom{n}{k}<10$$, so the decimal expansion of $$11^{n}$$ is just the digits of that sum with no carries—they read like row $$n$$ of Pascal’s triangle (e.g. $$11^{2}=121$$, $$11^{3}=1331$$).
+
+For $$n=5$$, $$\binom{5}{2}=\binom{5}{3}=10$$. Then the “concatenated digits” $$1,5,10,10,5,1$$ cannot be read as base-$$10$$ digits without carrying (the two $$10$$’s force a carry into the hundreds place), so $$11^{5}=161051 \ne 15101051$$. The pattern breaks exactly when a binomial coefficient reaches $$10$$ or more.
+
+### Solution 9
+
+Arithmetic: $$a_{6}-a_{3}=3d = 243-(-9)=252$$, so $$d=84$$. Then $$a_{3}=a_{1}+2d$$ gives $$a_{1}=-9-168=-177$$. Hence $$a_{5}=a_{1}+4d=-177+336=159$$.
+
+Geometric: $$\dfrac{a_{6}}{a_{3}}=r^{3}=\dfrac{243}{-9}=-27$$, so $$r=-3$$. From $$a_{3}=a_{1}r^{2}$$, $$-9=a_{1}\cdot 9$$, so $$a_{1}=-1$$. Then $$a_{5}=a_{1}r^{4}=(-1)(81)=-81$$.
+
+### Solution 10
+
+Arithmetic: $$1,x,y,z$$ with common difference $$d$$ gives $$x=1+d$$, $$y=1+2d$$, $$z=1+3d$$. Geometric $$1,p,q,z$$ gives $$p=r$$, $$q=r^{2}$$, $$z=r^{3}$$ for some rational ratio $$r$$; with integer strictly increasing terms, $$r$$ is a positive integer $$\ge 2$$. So $$z=r^{3}=1+3d$$. Try $$r=2$$: $$z=8$$, then $$3d=7$$, not integer. $$r=3$$: $$z=27$$, $$3d=26$$, not integer. $$r=4$$: $$z=64$$, $$3d=63$$, $$d=21$$, giving arithmetic $$1,22,43,64$$ and geometric $$1,4,16,64$$. Smaller $$r$$ fails, so minimal $$z$$ is $$64$$. Sum $$x+y+z+p+q=22+43+64+4+16=149$$.
+
+### Solution 11
+
+There are $$100-5+1=96$$ terms. $$\sum_{i=5}^{100}(3i-2)=3\sum_{i=5}^{100}i - 2\cdot 96$$. Now $$\sum_{i=5}^{100}i = \dfrac{(5+100)\cdot 96}{2}=5040$$. So the sum is $$3\cdot 5040 - 192 = 15120 - 192 = 14928$$.
+
+### Solution 12
+
+$$
+\sum_{i=0}^{8} 3\cdot 2^{i} = 3\sum_{i=0}^{8}2^{i} = 3\cdot\frac{1-2^{9}}{1-2} = 3(2^{9}-1)=3\cdot 511 = 1533.
+$$
+
+### Solution 13
+
+For a geometric sequence $$a,\,720,\,b$$ with integer terms, $$720^{2}=ab$$ (middle term squared equals product of neighbors). So $$b=\dfrac{720^{2}}{a}$$ with integers $$a<720<b$$. Minimizing $$b$$ means maximizing $$a$$ among positive divisors of $$720^{2}=2^{8}\cdot 3^{4}\cdot 5^{2}$$ with $$a<720$$.
+
+The largest divisor of $$720^{2}$$ that is strictly less than $$720$$ is $$675=3^{3}\cdot 5^{2}$$, giving $$b=\dfrac{518400}{675}=768$$. (Any larger $$a<720$$ fails to divide $$518400$$.) Sum of digits of $$768$$ is $$7+6+8=21$$.
