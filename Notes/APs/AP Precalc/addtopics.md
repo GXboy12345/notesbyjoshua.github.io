@@ -363,8 +363,6 @@ $$
 
 Problems below use only ideas from this page: partial fractions, induction, the binomial theorem, arithmetic/geometric sequences and series, $$\sum$$ notation, telescoping, and recursion as described here.
 
-### Partial fractions
-
 1. Decompose $$\dfrac{3x+5}{(x-1)^{3}(x+2)}$$ into partial fractions.
 2. The rational function $$\frac{2x^3-x^2+3}{x^2-1}$$ is improper. Rewrite it using polynomial division in the form $$Q(x)+\dfrac{R(x)}{x^2-1}$$, then set up (you need not solve for constants) the partial-fraction form for $$\dfrac{R(x)}{(x-1)(x+1)}$$ over $$\mathbb{R}$$.
 3. Factor $$x^3-x^2$$ and write the template for decomposing $$\frac{x^2+1}{x^3-x^2}$$ (distinct linear and repeated linear factors only).
