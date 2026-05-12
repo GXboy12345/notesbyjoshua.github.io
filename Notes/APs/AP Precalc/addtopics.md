@@ -381,7 +381,7 @@ Problems below use only ideas from this page: partial fractions, induction, the 
 
 ### Solution 1
 
-We want
+Since the denominator has a repeated linear factor $$(x-1)^{3}$$ and a distinct linear factor $$(x+2)$$, use
 
 $$
 \frac{3x+5}{(x-1)^{3}(x+2)} = \frac{A}{x-1} + \frac{B}{(x-1)^{2}} + \frac{C}{(x-1)^{3}} + \frac{D}{x+2}.
@@ -399,9 +399,9 @@ Set $$x=1$$: $$8 = C(3)$$, so $$\displaystyle C = \frac{8}{3}$$.
 
 Compare $$x^{3}$$ coefficients: $$A + D = 0$$, so $$\displaystyle A = -D = -\frac{1}{27}$$.
 
-Compare $$x^{2}$$ coefficients: the $$x^{3}$$ term from $$A(x-1)^{2}(x+2)$$ has no $$x^{2}$$; from $$B(x-1)(x+2)$$ you get $$Bx^{2}$$; from $$D(x-1)^{3}$$ you get $$-3Dx^{2}$$. Thus $$B - 3D = 0$$, so $$\displaystyle B = 3D = \frac{1}{9}$$.
+Compare $$x^{2}$$ coefficients: the term $$A(x-1)^{2}(x+2)$$ has no $$x^{2}$$ term, $$B(x-1)(x+2)$$ contributes $$Bx^{2}$$, and $$D(x-1)^{3}$$ contributes $$-3Dx^{2}$$. Thus $$B - 3D = 0$$, so $$\displaystyle B = 3D = \frac{1}{9}$$.
 
-(You can double-check by comparing the $$x$$ or constant terms.) Therefore
+Therefore
 
 $$
 \frac{3x+5}{(x-1)^{3}(x+2)} = -\frac{1}{27(x-1)} + \frac{1}{9(x-1)^{2}} + \frac{8}{3(x-1)^{3}} + \frac{1}{27(x+2)}.
@@ -427,7 +427,7 @@ $$
 \frac{2x+2}{(x-1)(x+1)} = \frac{A}{x-1} + \frac{B}{x+1}.
 $$
 
-Then $$2x+2 = A(x+1) + B(x-1)$$. Plug $$x=1$$: $$4=2A$$ so $$A=2$$. Plug $$x=-1$$: $$0=-2B$$ so $$B=0$$. Template form: $$\dfrac{2}{x-1}$$ (only one nontrivial partial fraction).
+The problem only asks for the setup, but solving confirms it: $$2x+2 = A(x+1) + B(x-1)$$. Plug $$x=1$$: $$4=2A$$ so $$A=2$$. Plug $$x=-1$$: $$0=-2B$$ so $$B=0$$. Thus the partial fraction part simplifies to $$\dfrac{2}{x-1}$$.
 
 ### Solution 3
 
@@ -443,13 +443,41 @@ for unknown constants $$A,B,C$$. (Denominator has a repeated linear factor $$x^{
 
 Base $$n=1$$: $$\sum_{k=1}^{1} k^{3} = 1$$ and $$\dfrac{1^{2}\cdot 2^{2}}{4}=1$$.
 
-Assume $$\sum_{k=1}^{n} k^{3} = \dfrac{n^{2}(n+1)^{2}}{4}$$. Then
+Assume that for some integer $$n \ge 1$$,
 
 $$
-\sum_{k=1}^{n+1} k^{3} = \frac{n^{2}(n+1)^{2}}{4} + (n+1)^{3} = (n+1)^{2}\left(\frac{n^{2}}{4} + (n+1)\right) = (n+1)^{2}\frac{n^{2}+4n+4}{4} = \frac{(n+1)^{2}(n+2)^{2}}{4}.
+\sum_{k=1}^{n} k^{3} = \frac{n^{2}(n+1)^{2}}{4}.
 $$
 
-Induction complete.
+We need to prove the statement for $$n+1$$. Starting with the left-hand side,
+
+$$
+\sum_{k=1}^{n+1} k^{3}
+= \sum_{k=1}^{n} k^{3} + (n+1)^{3}.
+$$
+
+Use the induction hypothesis:
+
+$$
+\sum_{k=1}^{n+1} k^{3}
+= \frac{n^{2}(n+1)^{2}}{4} + (n+1)^{3}.
+$$
+
+Factor $$(n+1)^{2}$$:
+
+$$
+= (n+1)^{2}\left(\frac{n^{2}}{4} + (n+1)\right)
+= (n+1)^{2}\left(\frac{n^{2}+4n+4}{4}\right)
+= \frac{(n+1)^{2}(n+2)^{2}}{4}.
+$$
+
+This is exactly the desired formula with $$n+1$$ in place of $$n$$. Therefore, by induction,
+
+$$
+\sum_{k=1}^{n} k^{3} = \frac{n^{2}(n+1)^{2}}{4}
+$$
+
+for all integers $$n \ge 1$$.
 
 Extension (no induction): Let $$S_{n}=\sum_{k=1}^{n}k=\dfrac{n(n+1)}{2}$$. Then
 
@@ -463,9 +491,9 @@ Telescoping gives $$\sum_{k=1}^{n}k^{3}=S_{n}^{2}-S_{0}^{2}=S_{n}^{2}=\dfrac{n^{
 
 **Base case**: $$n=1$$: $$8^{2}-3^{2}=64-9=55$$, divisible by $$55$$.
 
-**Induction Hypothesis**: Assume $$55 \mid 8^{2k}-3^{2k}$$ for some $$k \in \mathbb{N}$$.
+**Induction hypothesis**: Assume $$55 \mid 8^{2k}-3^{2k}$$ for some integer $$k \ge 1$$.
 
-**Inductive Step**: We need to show that
+**Inductive step**: We need to show that
 
 $$
 55 \mid 8^{2(k+1)} - 3^{2(k+1)}.
@@ -503,8 +531,16 @@ Thus $$55 \mid 8^{2(k+1)} - 3^{2(k+1)}$$. By induction, $$8^{2n} - 3^{2n}$$ is d
 
 ### Solution 6
 
+Use the binomial theorem with $$a=x$$, $$b=y$$, and $$n=5$$:
+
 $$
-(x+y)^{5} = \sum_{k=0}^{5} \binom{5}{k} x^{5-k} y^{k} = x^{5} + 5x^{4}y + 10x^{3}y^{2} + 10x^{2}y^{3} + 5xy^{4} + y^{5}.
+(x+y)^{5} = \sum_{k=0}^{5} \binom{5}{k} x^{5-k} y^{k}.
+$$
+
+The coefficients from row $$5$$ of Pascal's Triangle are $$1,5,10,10,5,1$$, so
+
+$$
+(x+y)^{5}=x^{5}+5x^{4}y+10x^{3}y^{2}+10x^{2}y^{3}+5xy^{4}+y^{5}.
 $$
 
 ### Solution 7
@@ -515,42 +551,185 @@ $$
 \binom{12}{k} (x^{3})^{12-k}\left(-4x^{-1/2}\right)^{k} = \binom{12}{k}(-4)^{k}\, x^{36 - 7k/2}.
 $$
 
-We need $$36 - \dfrac{7k}{2} = 20$$, i.e. $$7k = 32$$, which has no integer solution $$k$$. So no term contains $$x^{20}$$; the coefficient is $$0$$.
+We need the exponent of $$x$$ to equal $$20$$:
 
-(If you wanted a nonzero coefficient, change the target exponent—for example $$x^{15}$$ occurs when $$36 - 7k/2 = 15 \Rightarrow k=6$$, with coefficient $$\binom{12}{6}(-4)^{6}$$.)
+$$
+36 - \frac{7k}{2}=20.
+$$
+
+Then
+
+$$
+\frac{7k}{2}=16 \quad\Longrightarrow\quad 7k=32 \quad\Longrightarrow\quad k=\frac{32}{7}.
+$$
+
+Since $$k$$ must be an integer from $$0$$ to $$12$$, there is no such term. Therefore, the coefficient of $$x^{20}$$ is $$0$$.
 
 ### Solution 8
 
 $$
-11^{n} = (10+1)^{n} = \sum_{k=0}^{n} \binom{n}{k} 10^{k}.
+11^{n} = (10+1)^{n} = \sum_{k=0}^{n} \binom{n}{k} 10^{n-k}.
 $$
 
-For $$n=0,1,2,3,4$$, each binomial coefficient $$\binom{n}{k}<10$$, so the decimal expansion of $$11^{n}$$ is just the digits of that sum with no carries—they read like row $$n$$ of Pascal’s triangle (e.g. $$11^{2}=121$$, $$11^{3}=1331$$).
+For $$n=0,1,2,3,4$$, every binomial coefficient in row $$n$$ is a single digit. That means the decimal expansion of $$11^{n}$$ can be read straight from the coefficients with no carrying:
 
-For $$n=5$$, $$\binom{5}{2}=\binom{5}{3}=10$$. Then the “concatenated digits” $$1,5,10,10,5,1$$ cannot be read as base-$$10$$ digits without carrying (the two $$10$$’s force a carry into the hundreds place), so $$11^{5}=161051 \ne 15101051$$. The pattern breaks exactly when a binomial coefficient reaches $$10$$ or more.
+$$
+11^{2}=121,\qquad 11^{3}=1331,\qquad 11^{4}=14641.
+$$
+
+For $$n=5$$, row $$5$$ is
+
+$$
+1,\ 5,\ 10,\ 10,\ 5,\ 1.
+$$
+
+The coefficients $$10$$ and $$10$$ are not single digits, so carrying is required. The uncarried expression is
+
+$$
+10^{5}+5\cdot 10^{4}+10\cdot 10^{3}+10\cdot 10^{2}+5\cdot 10+1,
+$$
+
+which simplifies to $$161051$$. Thus $$11^{5}=161051$$, not the direct concatenation $$15101051$$. The visual pattern breaks once a binomial coefficient reaches $$10$$ or more.
 
 ### Solution 9
 
-Arithmetic: $$a_{6}-a_{3}=3d = 243-(-9)=252$$, so $$d=84$$. Then $$a_{3}=a_{1}+2d$$ gives $$a_{1}=-9-168=-177$$. Hence $$a_{5}=a_{1}+4d=-177+336=159$$.
+Arithmetic: Terms $$a_{3}$$ and $$a_{6}$$ are three steps apart, so
 
-Geometric: $$\dfrac{a_{6}}{a_{3}}=r^{3}=\dfrac{243}{-9}=-27$$, so $$r=-3$$. From $$a_{3}=a_{1}r^{2}$$, $$-9=a_{1}\cdot 9$$, so $$a_{1}=-1$$. Then $$a_{5}=a_{1}r^{4}=(-1)(81)=-81$$.
+$$
+a_{6}-a_{3}=3d=243-(-9)=252.
+$$
+
+Thus $$d=84$$. Since $$a_{5}$$ is two steps after $$a_{3}$$,
+
+$$
+a_{5}=a_{3}+2d=-9+2(84)=159.
+$$
+
+Geometric: Terms $$a_{3}$$ and $$a_{6}$$ are three ratios apart, so
+
+$$
+\frac{a_{6}}{a_{3}}=r^{3}=\frac{243}{-9}=-27.
+$$
+
+Thus $$r=-3$$. Since $$a_{5}$$ is two steps after $$a_{3}$$,
+
+$$
+a_{5}=a_{3}r^{2}=(-9)(9)=-81.
+$$
+
+So the fifth term is $$159$$ if the sequence is arithmetic and $$-81$$ if the sequence is geometric.
 
 ### Solution 10
 
-Arithmetic: $$1,x,y,z$$ with common difference $$d$$ gives $$x=1+d$$, $$y=1+2d$$, $$z=1+3d$$. Geometric $$1,p,q,z$$ gives $$p=r$$, $$q=r^{2}$$, $$z=r^{3}$$ for some rational ratio $$r$$; with integer strictly increasing terms, $$r$$ is a positive integer $$\ge 2$$. So $$z=r^{3}=1+3d$$. Try $$r=2$$: $$z=8$$, then $$3d=7$$, not integer. $$r=3$$: $$z=27$$, $$3d=26$$, not integer. $$r=4$$: $$z=64$$, $$3d=63$$, $$d=21$$, giving arithmetic $$1,22,43,64$$ and geometric $$1,4,16,64$$. Smaller $$r$$ fails, so minimal $$z$$ is $$64$$. Sum $$x+y+z+p+q=22+43+64+4+16=149$$.
+Arithmetic: Since $$1,x,y,z$$ is arithmetic, let the common difference be $$d$$. Then
+
+$$
+x=1+d,\qquad y=1+2d,\qquad z=1+3d.
+$$
+
+Geometric: Since $$1,p,q,z$$ is geometric and all terms are strictly increasing integers, the common ratio must be an integer $$r\ge 2$$. Thus
+
+$$
+p=r,\qquad q=r^{2},\qquad z=r^{3}.
+$$
+
+The same value $$z$$ must work for both sequences, so
+
+$$
+r^{3}=1+3d.
+$$
+
+This means $$r^{3}-1$$ must be divisible by $$3$$. Try the smallest possible integer values of $$r$$:
+
+$$
+r=2:\quad z=8,\quad 3d=7 \quad \text{not possible},
+$$
+
+$$
+r=3:\quad z=27,\quad 3d=26 \quad \text{not possible},
+$$
+
+$$
+r=4:\quad z=64,\quad 3d=63,\quad d=21.
+$$
+
+So the arithmetic sequence is $$1,22,43,64$$ and the geometric sequence is $$1,4,16,64$$. Therefore
+
+$$
+x+y+z+p+q=22+43+64+4+16=149.
+$$
 
 ### Solution 11
 
-There are $$100-5+1=96$$ terms. $$\sum_{i=5}^{100}(3i-2)=3\sum_{i=5}^{100}i - 2\cdot 96$$. Now $$\sum_{i=5}^{100}i = \dfrac{(5+100)\cdot 96}{2}=5040$$. So the sum is $$3\cdot 5040 - 192 = 15120 - 192 = 14928$$.
+There are
+
+$$
+100-5+1=96
+$$
+
+terms. Use linearity of summation:
+
+$$
+\sum_{i=5}^{100}(3i-2)=3\sum_{i=5}^{100}i - \sum_{i=5}^{100}2.
+$$
+
+The constant sum is $$2\cdot 96=192$$. The sum of the integers from $$5$$ to $$100$$ is an arithmetic series:
+
+$$
+\sum_{i=5}^{100}i=\frac{(5+100)(96)}{2}=5040.
+$$
+
+Therefore
+
+$$
+\sum_{i=5}^{100}(3i-2)=3(5040)-192=15120-192=14928.
+$$
 
 ### Solution 12
 
+This is a finite geometric series with first term $$3$$, common ratio $$2$$, and $$9$$ terms:
+
 $$
-\sum_{i=0}^{8} 3\cdot 2^{i} = 3\sum_{i=0}^{8}2^{i} = 3\cdot\frac{1-2^{9}}{1-2} = 3(2^{9}-1)=3\cdot 511 = 1533.
+\sum_{i=0}^{8} 3\cdot 2^{i}
+= 3\sum_{i=0}^{8}2^{i}
+= 3\cdot\frac{1-2^{9}}{1-2}
+= 3(2^{9}-1).
+$$
+
+Since $$2^{9}=512$$,
+
+$$
+3(2^{9}-1)=3(511)=1533.
 $$
 
 ### Solution 13
 
-For a geometric sequence $$a,\,720,\,b$$ with integer terms, $$720^{2}=ab$$ (middle term squared equals product of neighbors). So $$b=\dfrac{720^{2}}{a}$$ with integers $$a<720<b$$. Minimizing $$b$$ means maximizing $$a$$ among positive divisors of $$720^{2}=2^{8}\cdot 3^{4}\cdot 5^{2}$$ with $$a<720$$.
+For a geometric sequence $$a,720,b$$, the middle term squared equals the product of the neighboring terms:
 
-The largest divisor of $$720^{2}$$ that is strictly less than $$720$$ is $$675=3^{3}\cdot 5^{2}$$, giving $$b=\dfrac{518400}{675}=768$$. (Any larger $$a<720$$ fails to divide $$518400$$.) Sum of digits of $$768$$ is $$7+6+8=21$$.
+$$
+720^{2}=ab.
+$$
+
+Since $$720<b$$, the value of $$b$$ is positive, so $$a$$ is also positive. We want the least possible integer $$b>720$$ such that $$b$$ divides $$720^{2}$$. Factor:
+
+$$
+720^{2}=(2^{4}\cdot 3^{2}\cdot 5)^{2}=2^{8}\cdot 3^{4}\cdot 5^{2}.
+$$
+
+So $$b$$ must have the form $$2^{\alpha}3^{\beta}5^{\gamma}$$, where $$0\le \alpha\le 8$$, $$0\le \beta\le 4$$, and $$0\le \gamma\le 2$$. Checking the smallest divisor above $$720$$:
+
+- If $$\gamma=0$$, the smallest possible divisor above $$720$$ is $$2^{8}\cdot 3=768$$.
+- If $$\gamma=1$$, we need $$2^{\alpha}3^{\beta}>144$$, and the smallest option is $$2\cdot 3^{4}=162$$, giving $$5\cdot 162=810$$.
+- If $$\gamma=2$$, we need $$2^{\alpha}3^{\beta}>28.8$$, and the smallest option above that is $$32$$, giving $$25\cdot 32=800$$.
+
+Thus the smallest possible value of $$b$$ is $$768$$. Then
+
+$$
+a=\frac{720^{2}}{768}=675,
+$$
+
+which is an integer and satisfies $$675<720<768$$. The sum of the digits of $$768$$ is
+
+$$
+7+6+8=21.
+$$
