@@ -272,9 +272,6 @@ Problems are meant to match this page only: coordinates and lines, solving equat
 1. Find the distance between $$(1,-3)$$ and $$(5,5)$$ and write the equation of the line that contain both points in slope-intercept form.
 2. Find the equation of the line through $$(2,4)$$ that is perpendicular to $$3x - 4y = 12$$. Write your answer in point-slope form.
 3. The taxicab distance between points $$(x_1, y_1)$$ and $$(x_2, y_2)$$ in the coordinate plane is given by $$\lvert x_1 - x_2 \rvert + \lvert y_1 - y_2 \rvert$$. For how many points $P$ with integer coordinates is the taxicab distance between $P$ and the origin less than or equal to $$20$$? (2022 AMC 12A).
-
-### Linear, quadratic, and polynomial equations
-
 4. Solve for $$x$$: $$\dfrac{2x-1}{3} - \dfrac{x+4}{2} = 1$$.
 5. Solve for $$x$$: $$x^4 - 13x^2 + 36 = 0$$.
 6. Simplify $$\sqrt{\frac{x^4}{256} + \frac{x^3}{32} + \frac{5x^2}{16} + x + 4 + 16x - 8\sqrt{4x-7} - 24 + 2(\frac{x^2}{16} + \frac{x}{4} + 2)(-2 + 2\sqrt{4x-7})}$$ (Hint: Use factor by grouping).
@@ -347,12 +344,12 @@ $$
 We want integer points $$(x,y)$$ satisfying
 
 $$
-|x|+|y|\le 20.
+\lvert x \rvert +\lvert y \rvert \le 20.
 $$
 
 For distance $$0$$, there is only the origin: $$1$$ point.
 
-For each distance $$r\ge 1$$, the equation $$|x|+|y|=r$$ has $$4r$$ integer points. Therefore the total number of points is
+For each distance $$r\ge 1$$, the equation $$\lvert x \rvert +\lvert y \rvert =r$$ has $$4r$$ integer points. Therefore the total number of points is
 
 $$
 1+\sum_{r=1}^{20}4r
