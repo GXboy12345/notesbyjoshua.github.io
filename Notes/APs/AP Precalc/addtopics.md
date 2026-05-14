@@ -100,10 +100,47 @@ Mathematical induction is a great way to prove statements $$P(n)$$ for all integ
 1. **Base case**: Verify $$P(n_0)$$ is true.
 2. **Inductive hypothesis**: Assume $$P(k)$$ holds for some $$k \ge n_0$$.
 3. **Inductive step**: Prove $$P(k+1)$$ follows from $$P(k)$$.
-
+fdf
 If the step needs several earlier cases, use strong induction: assume $$P(n_0),\ldots,P(k)$$ and deduce $$P(k+1)$$.
 
 **Tips**: Manipulate $$P(k+1)$$ so $$P(k)$$ appears; watch indexing (sums from $$1$$ to $$k+1$$ split into $$1$$ to $$k$$ plus one term).
+
+### Tips for induction
+
+Induction is like proving a row of dominoes will all fall. The base case knocks down the first domino, and the inductive step proves that whenever one domino falls, the next one must fall too.
+
+When writing an induction proof, be very explicit about the statement you are proving. If the statement is
+
+$$
+P(n):\quad \sum_{i=1}^{n} i = \frac{n(n+1)}{2},
+$$
+
+then the inductive hypothesis is not just "assume it works." It is the exact statement with $$n$$ replaced by $$k$$:
+
+$$
+\sum_{i=1}^{k} i = \frac{k(k+1)}{2}.
+$$
+
+Then the goal is the exact statement with $$n$$ replaced by $$k+1$$:
+
+$$
+\sum_{i=1}^{k+1} i = \frac{(k+1)(k+2)}{2}.
+$$
+
+The usual strategy is to start from the $$k+1$$ expression and split off the last term:
+
+$$
+\sum_{i=1}^{k+1} i = \sum_{i=1}^{k} i + (k+1).
+$$
+
+Now the induction hypothesis appears, so you can replace $$\sum_{i=1}^{k}i$$ with $$\frac{k(k+1)}{2}$$.
+
+Common induction proof types:
+
+- **Sum formulas**: split the $$k+1$$ sum into the first $$k$$ terms plus the new last term.
+- **Divisibility statements**: rewrite the $$k+1$$ expression so it contains the $$k$$ expression as a factor or piece.
+- **Product/factorial statements**: write the $$k+1$$ case in terms of the $$k$$ case, often using $$(k+1)!=(k+1)k!$$.
+- **Inequalities**: use the inductive hypothesis to get a lower or upper bound, then show that bound is strong enough for the next case.
 
 <div class="theorem-box" markdown="1">
 
@@ -175,43 +212,6 @@ $$
 
 </div>
 
-### How to Think About Regular Induction
-
-Induction is like proving a row of dominoes will all fall. The base case knocks down the first domino, and the inductive step proves that whenever one domino falls, the next one must fall too.
-
-When writing an induction proof, be very explicit about the statement you are proving. If the statement is
-
-$$
-P(n):\quad \sum_{i=1}^{n} i = \frac{n(n+1)}{2},
-$$
-
-then the inductive hypothesis is not just "assume it works." It is the exact statement with $$n$$ replaced by $$k$$:
-
-$$
-\sum_{i=1}^{k} i = \frac{k(k+1)}{2}.
-$$
-
-Then the goal is the exact statement with $$n$$ replaced by $$k+1$$:
-
-$$
-\sum_{i=1}^{k+1} i = \frac{(k+1)(k+2)}{2}.
-$$
-
-The usual strategy is to start from the $$k+1$$ expression and split off the last term:
-
-$$
-\sum_{i=1}^{k+1} i = \sum_{i=1}^{k} i + (k+1).
-$$
-
-Now the induction hypothesis appears, so you can replace $$\sum_{i=1}^{k}i$$ with $$\frac{k(k+1)}{2}$$.
-
-Common induction proof types:
-
-- **Sum formulas**: split the $$k+1$$ sum into the first $$k$$ terms plus the new last term.
-- **Divisibility statements**: rewrite the $$k+1$$ expression so it contains the $$k$$ expression as a factor or piece.
-- **Product/factorial statements**: write the $$k+1$$ case in terms of the $$k$$ case, often using $$(k+1)!=(k+1)k!$$.
-- **Inequalities**: use the inductive hypothesis to get a lower or upper bound, then show that bound is strong enough for the next case.
-
 ### Induction With Inequalities
 
 Induction with inequalities follows the same three-step structure, but the algebra feels a little different. Instead of trying to transform one side into exactly the other side, you usually build a chain of inequalities.
@@ -237,68 +237,79 @@ The most common mistake is stopping too early. It is not enough to use the induc
 **Example (Inequality induction).** Prove that
 
 $$
-3^{n}\ge 2n+1
+2^{n}\ge n^{2}
 $$
 
-for all integers $$n\ge 1$$.
+for all integers $$n\ge 4$$.
 
-**Base case**: $$n=1$$:
+**Base case**: $$n=4$$:
 
 $$
-3^{1}=3
+2^{4}=16
 $$
 
 and
 
 $$
-2(1)+1=3.
+4^{2}=16.
 $$
 
-So $$3^{1}\ge 2(1)+1$$ is true.
+So $$2^{4}\ge 4^{2}$$ is true.
 
-**Induction hypothesis**: Assume that for some integer $$k\ge 1$$,
+**Induction hypothesis**: Assume that for some integer $$k\ge 4$$,
 
 $$
-3^{k}\ge 2k+1.
+2^{k}\ge k^{2}.
 $$
 
 **Inductive step**: We need to prove
 
 $$
-3^{k+1}\ge 2(k+1)+1.
+2^{k+1}\ge (k+1)^{2}.
 $$
 
 Start with the left-hand side:
 
 $$
-3^{k+1}=3\cdot 3^{k}.
+2^{k+1}=2\cdot 2^{k}.
 $$
 
 Use the induction hypothesis:
 
 $$
-3\cdot 3^{k}\ge 3(2k+1)=6k+3.
+2\cdot 2^{k}\ge 2k^{2}.
 $$
 
-Now compare this to the expression we need:
+Now we need to show that $$2k^{2}$$ is at least $$(k+1)^{2}$$. Compare them:
 
 $$
-6k+3-(2k+3)=4k\ge 0
+2k^{2}-(k+1)^{2}
+=2k^{2}-(k^{2}+2k+1)
+=k^{2}-2k-1.
 $$
 
-because $$k\ge 1$$. Therefore
+For $$k\ge 4$$,
 
 $$
-6k+3\ge 2k+3=2(k+1)+1.
+k^{2}-2k-1
+=k(k-2)-1
+\ge 4(2)-1
+=7>0.
 $$
 
-So
+Therefore
 
 $$
-3^{k+1}\ge 2(k+1)+1.
+2k^{2}\ge (k+1)^{2}.
 $$
 
-By induction, $$3^{n}\ge 2n+1$$ for all integers $$n\ge 1$$.
+Combining the inequalities,
+
+$$
+2^{k+1}\ge 2k^{2}\ge (k+1)^{2}.
+$$
+
+So the statement is true for $$k+1$$. By induction, $$2^{n}\ge n^{2}$$ for all integers $$n\ge 4$$.
 
 </div>
 
