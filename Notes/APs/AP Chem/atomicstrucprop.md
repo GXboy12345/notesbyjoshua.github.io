@@ -16,16 +16,22 @@ Unit 1 establishes the vocabulary and models used everywhere else in chemistry: 
 
 **Significant figures** are the digits in a measurement that carry meaning—every digit we are entitled to report given how well we know the quantity. They matter whenever you round a calculated result so it does not pretend to be more precise than the data that produced it. On the AP exam they appear mainly in lab-style questions; in research they are non-negotiable.
 
-- Nonzero digits are always significant. **Leading zeros** (as in $$0.0045$$) are not significant; they only locate the decimal point. **Captive zeros** between nonzero digits are significant ($$1.05$$ has three significant figures). 
-- **Trailing zeros** require care: if a decimal point is shown, trailing zeros are significant ($$12.0$$ has three); if there is no decimal, trailing zeros are ambiguous in plain notation ($$1200$$ might be two, three, or four figures—scientific notation removes that ambiguity).
-- **Exact numbers**—such as a counted dozen eggs or a defined conversion within a system—have effectively unlimited significant figures and do not limit your result. 
-- For **addition and subtraction**, round the result to the same number of **decimal places** as the term with the fewest. For **multiplication and division**, round to the same number of **significant figures** as the factor with the fewest.
+- Nonzero digits are always significant.
+- **Leading zeros** (as in $$0.0045$$) are not significant; they only locate the decimal point. **Captive zeros** between nonzero digits are significant (e.g. $$1.05$$ has three significant figures).
+- **Trailing zeros** require care: if a decimal point is shown, trailing zeros are significant ($$12.0$$ has three); if there is no decimal, trailing zeros do not ocunt towards significant figures.
+- **Exact numbers** (such as a counted dozen eggs or a defined conversion within a system) have effectively unlimited significant figures and do not limit your result.
+- For addition and subtraction, round the result to the same number of *decimal places* as the term with the fewest. For multiplication and division, round to the same number of *significant figures* as the factor with the fewest.
 
 ---
 
 ## Matter and its classification
 
-**Matter** is anything that has mass and occupies volume. Chemists classify it first by **composition**. A **pure substance** has fixed composition; **elements** are made of one kind of atom, and **compounds** contain two or more elements combined in definite proportion. A **mixture** combines substances without fixed proportion; **homogeneous** mixtures (solutions) are uniform on a macroscopic scale, while **heterogeneous** mixtures are not.
+**Matter** is anything that has mass and occupies volume. Chemists classify it first by composition.
+
+- **Elements** are made of one kind of atom
+- **Compounds** contain two or more elements combined in definite proportion.
+- A **pure substance** has fixed composition, meaning only one type of substance makes it up.
+- A **mixture** combines substances without fixed proportion. A **homogeneous mixture** (solution) are uniform on a macroscopic scale, meaning you cannot tell the difference between molecules jsut by looking at it, while a **heterogeneous mixture** does not have this property.
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/Matter%20Chart.png' | relative_url }}" alt="Matter Chart" loading="lazy" decoding="async" />
 
@@ -35,7 +41,7 @@ Unit 1 establishes the vocabulary and models used everywhere else in chemistry: 
 
 The **periodic table** arranges elements by increasing **atomic number** $$Z$$. Horizontal rows are **periods**; vertical columns are **groups** (or families). Groups may be labeled $$1$$–$$18$$ or with Roman numerals and letters in older notation. Several families have traditional names that appear frequency:
 
-- **Alkali metals** (group 1, excluding hydrogen in most trend discussions)  
+- **Alkali metals** (group 1, excluding hydrogen)  
 - **Alkaline earth metals** (group 2)  
 - **Transition metals** (groups 3–12)  
 - **Pnictogens** (group 15)  
@@ -51,17 +57,17 @@ $$
 A = Z + N
 $$
 
-where $$N$$ is the neutron count. Isotopes of the same element share $$Z$$ but differ in $$A$$ and therefore in **neutron** number.
+where $$N$$ is the neutron count. Isotopes of the same element share $$Z$$ but differ in $$A$$ (and therefore in $$N$$).
 
 ---
 
 ## Ions
 
-An **ion** is an atom or group of atoms with a net **electric charge** from gain or loss of electrons. A **cation** is positive (fewer electrons than protons); an **anion** is negative (more electrons than protons). In broad periodic terms, **metals** tend to form cations and **nonmetals** tend to form anions, consistent with their positions relative to the **metalloid** (metalloids are elements that in between metal and nonmetal) “staircase.” Many **transition metals** exhibit **variable charge** in compounds because several **oxidation states** are comparably stable (Mentioned later in more detail).
+An **ion** is an atom or group of atoms with a net electric charge from gain or loss of electrons. A **cation** is positive (fewer electrons than protons); an **anion** is negative (more electrons than protons). A good way to remember this is that cats are always positive so CATions are positively charged! **Metals** tend to form cations and **nonmetals** tend to form anions. In addition, many **transition metals** exhibit variable charge in compounds because several oxidation states are comparably stable (mentioned later in more detail) due to the availability of their $$d$$ orbital (mentioned later as well).
 
 ### Polyatomic ions
 
-**Polyatomic ions** are charged **covalent** units that behave as a single piece in **ionic compounds**: for example, **nitrate** ($$\text{NO}_3^-$$), **sulfate** ($$\text{SO}_4^{2-}$$), and **ammonium** ($$\text{NH}_4^+$$). These are the polyatomic ions you need to memorize:
+**Polyatomic ions** are charged covalent units that behave as a single piece in **ionic compounds** due to their lower eneergy state compared to their individual atomic states: for example, nitrate ($$\text{NO}_3^-$$), sulfate ($$\text{SO}_4^{2-}$$), and ammonium ($$\text{NH}_4^+$$) are all good exmamples of polyatomic ions. These are the polyatomic ions you need to memorize for AP Chem:
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/polyions.png' | relative_url }}" alt="Polyatomic Ions" loading="lazy" decoding="async" />
 
@@ -69,15 +75,17 @@ An **ion** is an atom or group of atoms with a net **electric charge** from gain
 
 ## Avogadro’s number, the mole, and molar mass
 
-- The **mole** is the chemist’s unit of **counting**: one mole contains **Avogadro’s number** (sometimes denoted as $$N_A$$) of specified **entities** (atoms, molecules, ions, formula units, etc.):
+- The **mole** is the chemist’s unit of counting: one mole contains **Avogadro’s number** (sometimes denoted as $$N_A$$) of specified entities (atoms, molecules, ions, formula units, etc.):
 
 $$
 1 \text{ mol} = 6.022 \times 10^{23} \text{ entities}
 $$
 
-The **molar mass** of an element is the mass of one mole of its atoms, numerically equal (in $$\text{g/mol}$$) to the **average atomic mass** listed on the periodic table (which weights **isotopes** by natural **abundance**). For a **compound**, add the molar masses of all atoms in the formula to obtain the compound’s molar mass.
+If you are ever confused by moles and molar conversions, just replace "moles" with "dozens" and think about it that way.
 
-The **mass percent** of an element in a compound compares the mass of that element in one mole of compound to the molar mass of the whole:
+The **molar mass** of an element is the mass of one mole of its atoms, numerically equal (in $$\text{g/mol}$$) to the **average atomic mass** listed on the periodic table. For a **compound**, add the molar masses of all atoms in the formula to obtain the compound’s molar mass.
+
+Lastly, the **mass percent** of an element in a compound compares the mass of that element in one mole of compound to the molar mass of the whole:
 
 $$
 \% \text{ element} = \frac{\text{mass of element in } 1 \text{ mol of compound}}{\text{molar mass of compound}} \times 100\%
@@ -89,7 +97,7 @@ $$
 
 The **molecular formula** gives the *actual numbers* of atoms of each element in one molecule of a molecular compound (or one formula unit of an ionic solid, where “molecule” is not literal). The **empirical formula** gives the *smallest whole-number ratio* of atoms in that substance. Ionic compounds are usually reported by their empirical formula anyway (e.g. $$\text{NaCl}$$, $$\text{CaF}_2$$) because the crystal is an extended lattice, not discrete $$\text{NaCl}$$ molecules.
 
-For a molecular substance, the molecular formula is a **whole-number multiple** of the empirical formula:
+For a molecular substance, the molecular formula is a *whole-number multiple* of the empirical formula:
 
 $$
 \text{molecular formula} = (\text{empirical formula})_n, \qquad n = 1,\,2,\,3,\,\ldots
@@ -113,13 +121,13 @@ When a problem gives **mass percentages** (or masses of elements in a sample), t
 
 3. If ratios are not whole numbers within reasonable rounding, multiply all subscripts by a small integer ($$2$$, $$3$$, $$\ldots$$) to clear fractions (e.g. $$1 : 1 : 1.33$$ $$\rightarrow$$ multiply by $$3$$). If you see a ratio that is very hard to convert to integers, you likely did something wrong.
 
-That yields the **empirical formula**. **Combustion analysis** problems follow the same logic: measured masses of $$\text{CO}_2$$ and $$\text{H}_2\text{O}$$ produced fix the carbon and hydrogen in the original sample; any oxygen is often obtained by difference from the original sample mass if the compound contains only C, H, and O.
+That yields the empirical formula. **Combustion analysis** problems follow the same logic: measured masses of $$\text{CO}_2$$ and $$\text{H}_2\text{O}$$ produced fix the carbon and hydrogen in the original sample; any oxygen is often obtained by difference from the original sample mass if the compound contains only C, H, and O.
 
 ---
 
 ## Mass spectrometry
 
-**Mass spectrometry** separates ions by **mass-to-charge ratio** $$\frac{m}{z}$$. A typical spectrum plots *relative abundance* (or detector *intensity*) on the vertical axis against $$\frac{m}{z}$$ on the horizontal axis. For an element, the pattern of peaks reveals isotope masses and their approximate **natural abundances**; for molecules, **fragmentation** patterns can support structure assignment in advanced work. An example of a mass spectrometer chart is shown below:
+**Mass spectrometry** separates ions by *mass-to-charge ratio* $$\frac{m}{z}$$. A typical spectrum plots *relative abundance* (or detector *intensity*) on the vertical axis against $$\frac{m}{z}$$ on the horizontal axis. For an element, the pattern of peaks reveals isotope masses and their approximate natural abundances; for molecules, *fragmentation* patterns can support structure assignment in advanced work. An example of a mass spectrometer chart is shown below:
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/Mass%20Spectrometry.png' | relative_url }}" alt="Mass spectrometry chart" loading="lazy" decoding="async" />
 
@@ -145,7 +153,7 @@ $$
 \text{efficiency} = \frac{\text{useful energy output}}{\text{energy input}} \times 100\%
 $$
 
-Do not confuse percent yield (a mass or mole recovery for a reaction) with **thermodynamic efficiency** (an energy ratio). Use percent error when judging how far a measurement sits from a reference value.
+Do not confuse percent yield (a mass or mole recovery for a reaction) with thermodynamic efficiency (an energy ratio). Use percent error when judging how far a measurement sits from a reference value.
 
 ---
 

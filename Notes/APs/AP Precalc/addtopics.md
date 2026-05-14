@@ -372,7 +372,7 @@ $$
 9. A sequence has $$a_3=-9$$ and $$a_6=243$$. Find the fifth term if the series is arithmetic and if the series is geometric.
 10. The sequence $$1,x,y,z$$ is arithmetic. The sequence $$1,p,q,z$$ is geometric. Both sequences are strictly increasing and contain only integers, and $$z$$ is as small as possible. What is the value of $$x+y+z+p+q$$? (2025 AMC 10A)
 11. Find $$\sum_{i=5}^{100}(3i-2)$$.
-12. Evaluate $$\sum_{i=0}^{8} 3\cdot 2^i$$.
+12. Evaluate $$\sum_{i=6}^{12} 3\cdot 2^i$$.
 13. The first three terms of a geometric series are the integers $$a$$, $$720$$, and $$b$$, where $$a < 720 < b$$. What is the sum of the digits of the least possible value of $$b$$? (2024 AMC 10A).
 
 ## Solutions
@@ -569,16 +569,26 @@ $$
 
 ### Solution 6
 
-Use the binomial theorem with $$a=x$$, $$b=y$$, and $$n=5$$:
+Use the binomial theorem with $$a=3x$$, $$b=2y$$, and $$n=5$$:
 
 $$
-(x+y)^{5} = \sum_{k=0}^{5} \binom{5}{k} x^{5-k} y^{k}.
+(3x+2y)^{5} = \sum_{k=0}^{5} \binom{5}{k} (3x)^{5-k}(2y)^{k}.
 $$
 
 The coefficients from row $$5$$ of Pascal's Triangle are $$1,5,10,10,5,1$$, so
 
 $$
-\boxed{(x+y)^{5}=x^{5}+5x^{4}y+10x^{3}y^{2}+10x^{2}y^{3}+5xy^{4}+y^{5}}.
+\begin{aligned}
+(3x+2y)^{5}
+&= (3x)^5+5(3x)^4(2y)+10(3x)^3(2y)^2+10(3x)^2(2y)^3+5(3x)(2y)^4+(2y)^5\\
+&= 243x^5+810x^4y+1080x^3y^2+720x^2y^3+240xy^4+32y^5.
+\end{aligned}
+$$
+
+Thus
+
+$$
+\boxed{(3x+2y)^5=243x^5+810x^4y+1080x^3y^2+720x^2y^3+240xy^4+32y^5}.
 $$
 
 ### Solution 7
@@ -598,13 +608,19 @@ $$
 Then
 
 $$
-\frac{7k}{2}=16 \quad\Longrightarrow\quad 7k=32 \quad\Longrightarrow\quad k=\frac{32}{7}.
+\frac{7k}{2}=14 \quad\Longrightarrow\quad 7k=28 \quad\Longrightarrow\quad k=4.
 $$
 
-Since $$k$$ must be an integer from $$0$$ to $$12$$, there is no such term. Therefore, the coefficient of $$x^{20}$$ is
+Since $$k=4$$ is an integer between $$0$$ and $$12$$, the desired term exists. Its coefficient is
 
 $$
-\boxed{0}.
+\binom{12}{4}(-4)^4=495\cdot 256=126720.
+$$
+
+Therefore, the coefficient of $$x^{22}$$ is
+
+$$
+\boxed{126720}.
 $$
 
 ### Solution 8
@@ -743,19 +759,20 @@ $$
 
 ### Solution 12
 
-This is a finite geometric series with first term $$3$$, common ratio $$2$$, and $$9$$ terms:
+This is a finite geometric series with first term $$192$$, common ratio $$2$$, and $$7$$ terms:
 
 $$
-\sum_{i=0}^{8} 3\cdot 2^{i}
-= 3\sum_{i=0}^{8}2^{i}
-= 3\cdot\frac{1-2^{9}}{1-2}
-= 3(2^{9}-1).
+\sum_{i=6}^{12} 3\cdot 2^{i}
+= 3\sum_{i=6}^{12}2^{i}
+= 3\cdot2^6\sum{i=0}^{6}
+= 192\cdot\frac{1-2^{7}}{1-2}
+= 192(2^{7}-1).
 $$
 
-Since $$2^{9}=512$$,
+Since $$2^{9}=128$$,
 
 $$
-\boxed{3(2^{9}-1)=3(511)=1533}.
+\boxed{24384}.
 $$
 
 ### Solution 13

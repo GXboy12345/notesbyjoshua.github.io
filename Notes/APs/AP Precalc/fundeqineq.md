@@ -10,65 +10,184 @@ permalink: /notes/ap/precalc/fundeqineq/
 
 ## Definitions
 
-In Precalculus (**ADD EXAMPLES TO THIS PAGE!**) and beyond, we often use symbols to denote certain sets of numbers
+Before we solve anything, we need a shared language for the kinds of numbers that can show up. These sets are nested: every natural number is an integer, every integer is rational, and every rational number is real.
 
-- Union/OR: $$\cup$$
-- Intersection/AND: $$\cap$$
-- There exists: $$\exists$$ (e.g. $$\exists x$$ such that …)
-- For all: $$\forall$$
-- Set A excluding B: $$A \setminus B $$
-- x in Set A: $$x \in A$$
-- Natural numbers: $$\mathbb{N} = {1, 2, 3, \ldots}$$ (including $$0$$ creates the whole numbers)
-- Integers: $$\mathbb{Z} = {x \mid x \in \mathbb{N}, -x \in \mathbb{N}, x=0}$$
-- Rationals: $$\mathbb{Q} = {x = \frac{a}{b} \mid a, b \in \mathbb{Z}, b \ne 0}$$
-- Real numbers: $$\mathbb{R}$$ = Any number on the number line
-- Complex numbers: $$\mathbb{C} = {a + bi \mid a, b \in \mathbb{R}, i = \sqrt{-1}}$$
+- **Natural numbers**: $$\mathbb{N}=\{1,2,3,\ldots\}$$. These are the counting numbers.
+- **Whole numbers**: $$\{0,1,2,3,\ldots\}$$. This is the natural numbers plus $$0$$.
+- **Integers**: $$\mathbb{Z}=\{\ldots,-3,-2,-1,0,1,2,3,\ldots\}$$.
+- **Rational numbers**: $$\mathbb{Q}=\left\{\frac{p}{q}\mid p,q\in\mathbb{Z},\ q\ne 0\right\}$$. These are numbers that can be written as fractions of integers.
+- **Irrational numbers**: real numbers that are not rational, such as $$\pi$$, $$e$$, and $$\sqrt{2}$$.
+- **Real numbers**: $$\mathbb{R}$$. These are all numbers on the number line.
+- **Complex numbers**: $$\mathbb{C}=\{a+bi\mid a,b\in\mathbb{R},\ i=\sqrt{-1}\}$$.
+
+Decimal form is often a good way to tell rational and irrational numbers apart. Rational decimals either terminate, like $$\frac{1}{2}=0.5$$, or repeat, like $$\frac{1}{3}=0.333\ldots$$. Irrational decimals do not terminate and do not repeat.
+
+We also use set notation to describe groups of numbers:
+
+- $$x\in A$$ means "$$x$$ is in set $$A$$."
+- $$A\cup B$$ means "$$A$$ or $$B$$" (the **union**).
+- $$A\cap B$$ means "$$A$$ and $$B$$" (the **intersection**).
+- $$A\setminus B$$ means "in $$A$$ but not in $$B$$."
+- $$\exists$$ means "there exists."
+- $$\forall$$ means "for all."
+
+**Interval notation** is another way to describe parts of the number line. Parentheses mean an endpoint is *not* included; brackets mean it is included:
+
+$$
+(3,5)=\{x\mid 3<x<5\},\qquad [3,5]=\{x\mid 3\le x\le 5\}.
+$$
+
+Infinity is never included, so it always uses a parenthesis:
+
+$$
+(-\infty,4]\quad\text{or}\quad (2,\infty).
+$$
 
 ---
 
 ## Rectangular Coordinates
 
-To graph functions and to do any analytical algebra, we need to define a coordinate system, where we can set things as points on a graph. One common method is rectangular (Cartesian) coordinates, although we will learn about more coordinate systems in the future.
+The **rectangular (Cartesian) coordinate plane** lets us turn algebra into geometry. A point $$(x,y)$$ records two movements: horizontal movement first, then vertical movement. The plane is divided into four quadrants, starting with Quadrant I in the upper right and moving counterclockwise. The signs of $$x$$ and $$y$$ tell you where the point is:
 
-The Cartesian plane is divided into four quadrants, starting with Quadrant I at the top right one and going counter-clockwise. The distance between two points is defined by the distance formula:
+- Quadrant I: $$(+,+)$$
+- Quadrant II: $$(-,+)$$
+- Quadrant III: $$(-,-)$$
+- Quadrant IV: $$(+,-)$$
+
+The distance formula comes from the Pythagorean Theorem. For points $$A(x_1,y_1)$$ and $$B(x_2,y_2)$$,
 
 $$
-d(A,B) = \sqrt{(x_A^{2} - x_B^{2}) + (y_A^{2} - y_B^{2})}
+d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}.
 $$
 
-You can think of the distance as the hypotenuse of a triangle made of the difference of the two $$x-$$ and $$y-$$ coordinates of the two points.
+The midpoint formula averages the coordinates:
+
+$$
+M=\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right).
+$$
+
+These formulas are very useful later on for analytic geometry.
 
 ### Graphing lines
 
-- Define $$m$$ as the slope of the line, which is $$m=\frac{rise}{run}=\frac{\Delta y}{\Delta x}$$.
-- In slope-intercept form, the line can be defined as $$y=mx+b$$.
-- In point-slope form, the line can be defined as $$y-y_1 = m(x-x_1)$$ with ($$x_1$$, $$y_1$$) being a point on the line.
-- In standard form, the line becomes $$Ax + By = C$$, where $$A, B, C \in \mathbb{Z}$$ and $$A \ge 0$$ (if $$A=0$$, the line is horizontal). The slope would then be $$-\frac{A}{B}$$, with the $$x$$-int being $$\frac{C}{A}$$ and the $$y$$-int being $$\frac{C}{B}$$.
-- If two lines are perpendicular, the respective slopes are negative reciprocals of each other ($$m_1 = -\frac{1}{m_2}$$), and if two lines are parallel, they have the same slope ($$m_1 = m_2$$).
-- To draw absolute value graphs, draw each section individually by getting rid of the absolute value sign and solving each section individually. Make sure to keep track of domain.
+**Slope** measures how fast $$y$$ changes compared with $$x$$:
+
+$$
+m=\frac{\text{rise}}{\text{run}}=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}.
+$$
+
+The same line can be written in several useful forms:
+
+- **Slope-intercept form**: $$y=mx+b$$. This is best when you know the slope and $$y$$-intercept.
+- **Point-slope form**: $$y-y_1=m(x-x_1)$$. This is best when you know a point and a slope.
+- **Standard form**: $$Ax+By=C$$, usually with $$A,B,C\in\mathbb{Z}$$ and $$A\ge 0$$.
+
+From standard form, if $$B\ne 0$$, the slope is
+
+$$
+m=-\frac{A}{B}.
+$$
+
+The intercepts are found by setting the other variable equal to $$0$$. For example, in $$Ax+By=C$$, the $$x$$-intercept is $$\frac{C}{A}$$ when $$A\ne 0$$, and the $$y$$-intercept is $$\frac{C}{B}$$ when $$B\ne 0$$.
+
+Also, parallel lines have the same slope, while perpendicular lines have slopes that are negative reciprocals:
+
+$$
+m_1m_2=-1.
+$$
 
 ## Solving Equations
 
 ### Linear equations
 
-Linear equations come in the form of $$y = mx + b$$, where $$m$$ is the "slope" of the line. To solve, you just isolate one variable and solve.
+Solving a **linear equation** is usually a matter of undoing operations until the variable is alone. The main danger is not algebraic difficulty; it is losing track of what operation you applied to both sides.
+
+For example,
+
+$$
+3x-7=11
+$$
+
+becomes
+
+$$
+3x=18
+\quad\Longrightarrow\quad
+x=6.
+$$
+
+Linear equations usually have one solution, but there are two special cases:
+
+- If the variables disappear and you get a *true* statement, such as $$0=0$$, the equation is true for all real $$x$$ that sastisfies the equation.
+- If the variables disappear and you get a *false* statement, such as $$0=5$$, there is no solution.
 
 ---
 
 ### Quadratic equations
 
-A quadratic has the shape $$ax^2 + bx + c = 0$$ with $$a \ne 0$$.
+A quadratic equation has the form
 
-- Factoring: write $$ax^2+bx+c$$ as a product of linear factors, then use zero-product property: if $$AB=0$$, then $$A=0$$ or $$B=0$$. NEVER DIVIDE BY A VARIABLE AS THIS WILL LOSE A SOLUTION!
-- Completing the square: rearrange the quadratic to $$(x-h)^2 = k$$, then $$x = h \pm \sqrt{k}$$ (watch sign of $$k$$ in $$\mathbb{R}$$).
-- Vieta's formula: Given a quadratic has two (not necessarily distinct or real) roots $$x_1$$ and $$x_2$$, $$x_1 + x_2 = -\frac{b}{a}$$ and $$x_1 x_2 = \frac{c}{a}$$
-- Quadratic formula:
+$$
+ax^2+bx+c=0,\qquad a\ne 0.
+$$
+
+The basic idea is to get the equation into a form where the zero-product property, square roots, or the quadratic formula can finish the job.
+
+<div class="theorem-box" markdown="1">
+
+**Examples of problem solving techniques (Quadratics).**
+
+Factoring is the fastest method when it works:
+
+$$
+(x-3)(x+2)=0
+\quad\Longrightarrow\quad
+x=3\quad\text{or}\quad x=-2.
+$$
+
+Be careful not to divide by a variable expression unless you know it is nonzero. For example, dividing $$x^2=3x$$ by $$x$$ loses the solution $$x=0$$. Instead, move everything to one side:
+
+$$
+x^2-3x=0
+\quad\Longrightarrow\quad
+x(x-3)=0.
+$$
+
+Completing the square rewrites a quadratic as a perfect square:
+
+$$
+x^2+6x+5=0
+\quad\Longrightarrow\quad
+(x+3)^2=4.
+$$
+
+Then
+
+$$
+x+3=\pm 2,
+$$
+
+so $$x=-1$$ or $$x=-5$$.
+
+</div>
+
+The quadratic formula works for every quadratic, but often times it is very inefficient to use compared to the techniques shown above. The solutions to any quadratic come in the form of:
 
 $$
 x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
 
-The discriminant $$\Delta = b^2 - 4ac$$ tells you how many real roots there are: $$\Delta > 0$$ two distinct; $$\Delta = 0$$ one repeated; $$\Delta < 0$$ two nonreal complex conjugates.
+The discriminant $$b^2-4ac$$ tells you how many real roots the equation has:
+
+- $$b^2-4ac>0$$: two distinct real solutions.
+- $$b^2-4ac=0$$: one repeated real solution.
+- $$b^2-4ac<0$$: no real solutions, but two complex solutions.
+
+Vieta's formulas are also useful. If $$r_1$$ and $$r_2$$ are the roots of $$ax^2+bx+c=0$$, then
+
+$$
+r_1+r_2=-\frac{b}{a},\qquad r_1r_2=\frac{c}{a}.
+$$
 
 <div class="theorem-box" markdown="1">
 
@@ -76,25 +195,41 @@ The discriminant $$\Delta = b^2 - 4ac$$ tells you how many real roots there are:
 
 $$
 ax^2 + bx + c = 0
-$$,
+$$
 
-or equivalently:
+with $$a\ne 0$$. Divide both sides by $$a$$:
 
 $$
 x^2 + \frac{b}{a} x + \frac{c}{a} = 0
-$$.
-
-Completing the square, we get
-
-$$
-(x + \frac{b}{2a})^2 - \frac{b^2}{4a^2} + \frac{c}{a} = 0
 $$
 
+Move the constant term to the other side:
+
 $$
-(x+\frac{b}{2a})^2 = \frac{b^2}{4a^2} - \frac{c}{a} = \frac{b^2 - 4ac}{4a^2}
+x^2+\frac{b}{a}x=-\frac{c}{a}.
 $$
 
-Taking the square root of both sides and rearranging gives the desired formula:
+To complete the square, add $$\left(\frac{b}{2a}\right)^2$$ to both sides:
+
+$$
+\left(x+\frac{b}{2a}\right)^2
+=-\frac{c}{a}+\frac{b^2}{4a^2}.
+$$
+
+Combine the right-hand side:
+
+$$
+\left(x+\frac{b}{2a}\right)^2
+=\frac{b^2-4ac}{4a^2}.
+$$
+
+Take the square root of both sides:
+
+$$
+x+\frac{b}{2a}=\pm\frac{\sqrt{b^2-4ac}}{2a}.
+$$
+
+Subtract $$\frac{b}{2a}$$:
 
 $$
 x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
@@ -106,26 +241,66 @@ $$
 
 ### Rational equations
 
-Equation with $$x$$ in denominators (e.g. $$\frac{1}{y} + 1 = \frac{3}{y} - \frac{1}{2y}$$).
+Rational equations contain variables in denominators. The first step is always domain restrictions: denominators cannot be $$0$$.
 
-- ALWAYS check for domain and range restrictions first!
-- Strategy: multiply both sides by the least common denominator to clear fractions, then solve the resulting polynomial equation.
-- Extraneous solutions: multiplying can enlarge the domain, so always substitute candidates back into the original equation or exclude values where any denominator was $$0$$.
+For example, in
 
----
+$$
+\frac{x+2}{x-3}=\frac{5}{x-3},
+$$
+
+we must have $$x\ne 3$$ before doing anything else.
+
+The usual strategy is:
+
+1. State the restrictions.
+2. Multiply both sides by the least common denominator.
+3. Solve the resulting equation.
+4. Check that no answer violates the restrictions.
+
+Do not multiply by something like $$x-3$$ without remembering that $$x=3$$ was never allowed. That is how extraneous answers sneak in.
 
 ### Polynomial equations
 
-- Polynomial equations are equations with only powers of x and real coefficients ($$y = a_0 x^n + a_1 x^(n-1) + ... + a_(n-1) x + a_n$$). Always push everything to one side if it isn't already!
-- Factor if you can (GCF, grouping, recognizable patterns, etc.). Most precalculus problems can be solved by factoring somehow.
-- Substitution: e.g. $$x^4 - 5x^2 + 4 = 0$$ → let $$u = x^2$$, solve for $$u$$ and then solve for $$x$$. Make sure ALWAYS keep track of domains when you do this!
-- Higher degree: Rational Root Theorem suggests candidates for integer-coefficient polynomials; synthetic division / polynomial division lowers degree after you find a root (more in [Unit 4 & 13]({{ '/notes/ap/precalc/polyratopt/' | relative_url }})).
+A polynomial equation uses whole-number powers of the variable:
+
+$$
+a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0=0.
+$$
+
+The usual first move is to put everything on one side and make the other side $$0$$. Then factor if possible.
+
+Common factoring patterns include:
+
+- Greatest common factor: $$x^3-4x=x(x^2-4)$$.
+- Difference of squares: $$x^2-9=(x-3)(x+3)$$.
+- Quadratic in form: $$x^4-5x^2+4=0$$.
+
+For a quadratic-in-form equation, substitute. If
+
+$$
+x^4-5x^2+4=0,
+$$
+
+let $$u=x^2$$. Then
+
+$$
+u^2-5u+4=0.
+$$
+
+After solving for $$u$$, substitute back and solve for $$x$$. Do not stop at the substitution variable; the original question asked for $$x$$.
 
 ---
 
 ### Absolute value equations
 
-Geometrically, $$\lvert x - h\rvert$$ is distance from $$x$$ to $$h$$ on the number line.
+Absolute value measures distance from $$0$$:
+
+$$
+|x|=\text{the distance between }x\text{ and }0.
+$$
+
+More generally, $$|x-a|$$ is the distance between $$x$$ and $$a$$. This distance interpretation is usually easier than memorizing cases.
 
 For $$a > 0$$:
 
@@ -143,43 +318,124 @@ $$
 
 If $$a = 0$$, $$\lvert u\rvert = 0$$ means $$u = 0$$. If $$a < 0$$, $$\lvert u\rvert = a$$ has no solution in $$\mathbb{R}$$.
 
+Absolute value expressions are also naturally piecewise. For example,
+
+$$
+|x-3|=
+\begin{cases}
+x-3, & x\ge 3,\\
+3-x, & x<3.
+\end{cases}
+$$
+
+When an equation has several absolute values, break the number line at the values where the inside expressions equal $$0$$, solve on each interval, and check that each answer belongs to the interval where you found it.
+
 ---
 
 ### Exponential equations
 
-- Same base: if $$a^m = a^n$$ (with $$a>0$$, $$a \ne 1$$), then $$m = n$$.
-- Different bases (e.g. $$2^{x-3} = 8^{x^2}$$): take logs after isolating the exponential (or use logarithm laws on $$a^{f(x)}$$), and then solve. Always watch domain: bases must be positive where logs are used, avoid dividing by expressions that can be $$0$$.
+When the bases can be made the same, rewrite first:
+
+$$
+2^{x-3}=8^{x}
+\quad\Longrightarrow\quad
+2^{x-3}=(2^3)^x=2^{3x}.
+$$
+
+Since $$2^u$$ is one-to-one,
+
+$$
+x-3=3x.
+$$
+
+In general, if $$a>0$$ and $$a\ne 1$$, then
+
+$$
+a^m=a^n\quad\Longrightarrow\quad m=n.
+$$
+
+If the bases cannot be matched cleanly, isolate the exponential expression and use logarithms. Keep an eye on the domain: logarithms only accept positive inputs, and exponential bases must be positive and not equal to $$1$$ in the usual real-valued setting.
 
 ---
 
 ### Fractional exponents
 
-- Rewrite $$x^{p/q}$$ using radicals: $$x^{p/q} = \sqrt[q]{x^p}$$ (or $$(\sqrt[q]{x})^p$$ when convenient).
-- Even roots require nonnegative radicands in $$\mathbb{R}$$ (unless you switch to $$\mathbb{C}$$). Odd roots are defined for all real $$x$$. Always keep track of domain when doing problems to avoid extraneous solutions.
-- Raise both sides to a power to clear fractional exponents when safe: still check domain and plug back when both sides were raised to an even power (same extraneous-root issue as squaring).
+Fractional exponents are another way to write radicals:
+
+$$
+x^{p/q}=\sqrt[q]{x^p}.
+$$
+
+For example,
+
+$$
+x^{1/2}=\sqrt{x},\qquad x^{2/3}=\sqrt[3]{x^2}.
+$$
+
+Even roots require nonnegative radicands in the real numbers. Odd roots allow negative radicands. This is why $$\sqrt{x-4}$$ requires $$x\ge 4$$, but $$\sqrt[3]{x-4}$$ does not.
+
+One important simplification is
+
+$$
+\sqrt{x^2}=|x|,
+$$
+
+not just $$x$$. The square root symbol means the nonnegative square root.
 
 ---
 
 ### Radical equations
 
-- Isolate one radical, then square both sides (or raise to the $$n$$th power for $$\sqrt[n]{\phantom{x}}$$), and repeat if needed until no radicals remain. Squaring can introduce extraneous solutions, so check every candidate in the original equation. Also enforce domain: even-index radicals need nonnegative insides in $$\mathbb{R}$$.
-- If there is more than one radical, deal with them one at a time.
+Radical equations are equations with roots, such as
 
----
+$$
+\sqrt{x-5}=x-7.
+$$
+
+The process is careful, not mysterious:
+
+1. Write the domain restrictions.
+2. Isolate one radical.
+3. Raise both sides to the needed power.
+4. Repeat if another radical remains.
+5. Check every candidate in the original equation.
+
+The check is not optional. Squaring both sides can create answers that solve the squared equation but not the original equation.
+
+For example, if a step gives
+
+$$
+x-\sqrt{x}=20,
+$$
+
+then isolating and squaring may produce candidates. Each candidate must still be substituted back into the original radical equation.
 
 ## Inequalities
 
 ### Inequality basics
 
-- When multiplying an inequality by a negative number, flip the inequality sign (e.g. $$-x > 5$$ becomes $$x < -5$$). Multiplying or dividing by a positive number does not flip the sign.
-- Compound inequalities: $$\cap$$ means take the intersection of solution sets (overlap on a number line). If there is no overlap, the solution is empty ($$\emptyset$$). $$\cup$$ means take the union (everything that satisfies at least one part). If two “or” rays point away from each other on a line, the union can be all of $$\mathbb{R}$$ except possibly a gap in the middle—always sketch it.
-- Interval notation: square brackets $$[\,,\,]$$ include endpoints; parentheses $$(\,,\,)$$ exclude endpoints. Infinity is always written with a parenthesis: $$(-\infty,\,2]$$, not $$[-\infty,2]$$.
+Solving inequalities feels like solving equations, but the answer is usually an interval or a union of intervals instead of a single number.
+
+The key rule: multiplying or dividing by a negative number reverses the inequality sign:
+
+$$
+-2x<8
+\quad\Longrightarrow\quad
+x>-4.
+$$
+
+Compound inequalities describe overlaps or unions:
+
+- $$-3<2x-1\le 5$$ means both inequalities must be true at the same time.
+- $$x<-2$$ or $$x>4$$ means either interval works.
+
+Graphing on a number line is often the cleanest way to avoid mistakes. Open circles go with $$<$$ and $$>$$; closed circles go with $$\le$$ and $$\ge$$.
 
 ---
 
 ### Absolute value inequalities
 
-Absolute value inequalities follow the same distance idea as equations: $$\lvert u\rvert$$ measures size of $$u$$ from $$0$$. For $$a > 0$$:
+Absolute value inequalities are distance statements. For $$a>0$$:
 
 $$
 \lvert u\rvert < a \quad \Longleftrightarrow \quad -a < u < a
@@ -197,28 +453,66 @@ $$
 \lvert u\rvert \ge a \quad \Longleftrightarrow \quad u \le -a \ \text{ or }\ u \ge a
 $$
 
-If $$a \le 0$$: $$\lvert u\rvert < a$$ and $$\lvert u\rvert \le a$$ have no solution in $$\mathbb{R}$$; $$\lvert u\rvert > a$$ and $$\lvert u\rvert \ge a$$ reduce to “$$u \ne 0$$” or all $$\mathbb{R}$$ depending on $$a$$—check case by case.
+The short version:
 
-Strategy: isolate $$\lvert \cdots\rvert$$ first, then rewrite without absolute value. For inequalities like $$\lvert x - h\rvert < a$$, the solution is an interval centered at $$h$$; for $$\lvert x - h\rvert > a$$, you get two rays (unless empty). Make sure to always check for extraneous solutions by plugging in a value from each of your components of your solution!
+- "Less than" means between.
+- "Greater than" means outside.
 
-**ADD EXAMPLE**
+For example,
+
+$$
+|3x-2|\le 4
+$$
+
+means
+
+$$
+-4\le 3x-2\le 4.
+$$
+
+But
+
+$$
+|4-5x|>1
+$$
+
+means
+
+$$
+4-5x>1
+\quad\text{or}\quad
+4-5x<-1.
+$$
+
+If the absolute value expression is compared to a negative number, pause. Since absolute value is never negative, statements like $$|u|<-3$$ have no solution.
 
 ---
 
 ### Polynomial inequalities
 
-Polynomials take form of $$p(x) > 0$$ with $$p$$ a polynomial.
+Polynomial inequalities ask where a polynomial is positive or negative:
 
-1. Move everything to one side (if it isn't already): $$p(x) > 0$$.
-2. Factor $$p(x)$$ as far as you can over $$\mathbb{R}$$ (usually these problems do not require solutions in the complex plane).
-3. Mark zeros on a number line; they partition $$\mathbb{R}$$ into intervals.
-4. End behavior: the sign of $$p(x)$$ as $$x \to \pm\infty$$ follows the leading term (eventually the highest-degree term dominates).
-5. Move left to right across zeros: each simple real root (multiplicity $$1$$) flips the sign; a root of even multiplicity touches the axis but does not flip sign (the factor stays nonnegative or nonpositive on both sides locally).
-6. Color in your desired region. Remember if the sign is inclusive, zero points will always count even if it wouldn't lie within a colored region!
+$$
+p(x)>0,\qquad p(x)\le 0,\qquad \text{etc.}
+$$
 
-Sketch the graph mentally if it helps: you want where the graph is strictly above ($$> 0$$) or below ($$< 0$$) the $$x$$-axis, respecting open vs closed when using $$\ge$$ or $$\le$$ at zeros.
+The standard method is a sign chart:
 
-**ADD EXAMPLE**
+1. Move everything to one side so the other side is $$0$$.
+2. Factor the polynomial.
+3. Mark the zeros on a number line.
+4. Test one point in each interval, or use sign changes from multiplicity.
+5. Include zeros only when the inequality has $$\le$$ or $$\ge$$.
+
+Multiplicity matters. A simple root usually changes the sign. An even-multiplicity root touches the axis and does not change the sign.
+
+For example,
+
+$$
+(x-1)^2(x+3)<0
+$$
+
+has critical numbers $$-3$$ and $$1$$. The squared factor is never negative and does not change sign at $$x=1$$, so the sign behavior is controlled mostly by $$x+3$$.
 
 ---
 
@@ -226,13 +520,18 @@ Sketch the graph mentally if it helps: you want where the graph is strictly abov
 
 Typical form: $$\dfrac{P(x)}{Q(x)} > 0$$, $$\ge 0$$, $$< 0$$, or $$\le 0$$ (strict vs non-strict matters at zeros of the denominator).
 
-Standard method (sign chart / test points)
+The method is similar to polynomial inequalities, with one major warning: denominator zeros are never allowed.
 
-1. Move everything to one side so the inequality is compare to 0 (e.g. $$\dfrac{R(x)}{Q(x)} \ge 0$$). Do NOT multiply the denominator!
-2. Factor numerator and denominator completely over $$\mathbb{R}$$ (linear and irreducible quadratic factors). To take the denominator out of the rational expression, multiply by an even power of a factored form of the denominator.
-3. Do the steps you would do for a polynomial inequalities, but keep in mind the domain restrictions (the denominator cannot be $$0$$).
+The safest process is:
 
-**ADD EXAMPLES**
+1. Move everything to one side and combine into one fraction.
+2. Factor the numerator and denominator.
+3. Mark zeros of the numerator and denominator on a number line.
+4. Test signs on each interval.
+5. Include numerator zeros only if the inequality allows equality.
+6. Never include denominator zeros.
+
+Do not multiply both sides by the denominator unless you already know its sign. If the denominator could be positive or negative, multiplying by it may or may not reverse the inequality, which is exactly the problem the sign chart avoids.
 
 ---
 
@@ -240,34 +539,84 @@ Standard method (sign chart / test points)
 
 Example: $$\sqrt{f(x)} < g(x)$$.
 
-1. Always check the domain first: require $$f(x) \ge 0$$ wherever the radical is real (even index). Odd roots have fewer domain restrictions but still need consistent definitions.
-2. Get rid of all the roots by following the steps you would as if you are simplyfing a radical equation. Beware that if you take an even power, it is not always reversible because $$a < b$$ does not imply $$a^2 < b^2$$ without knowing signs. Common safe patterns:
-- If both sides are known nonnegative on the domain (e.g. $$\sqrt{f(x)} \le g(x)$$ after you require $$g(x) \ge 0$$), then squaring preserves order: $$\sqrt{f(x)} \le g(x)$$ is equivalent to $$f(x) \le g(x)^2$$ together with $$g(x) \ge 0$$ and $$f(x) \ge 0$$.
-- For $$\sqrt{f(x)} > g(x)$$, split cases: where $$g(x) < 0$$, the inequality often holds automatically on the domain of the radical (since LHS $$\ge 0$$); where $$g(x) \ge 0$$, square to get $$f(x) > g(x)^2$$ and intersect with those conditions.
-- Quick check: If you have an even-powered radical that is less than $$0$$, there can't be any solutions!
-3. Follow the process as you would for a polynomial inequality and check for domain restrictions. Always check to see if your solutions make sense!
+Radical inequalities need more care than radical equations because squaring inequalities is only automatically safe when both sides are known to be nonnegative.
+
+Always begin with the domain. For an even root,
+
+$$
+\sqrt{f(x)}
+$$
+
+requires $$f(x)\ge 0$$.
+
+If the inequality is
+
+$$
+\sqrt{f(x)}\le g(x),
+$$
+
+then we also need $$g(x)\ge 0$$, because the left side is nonnegative. After those conditions are in place, squaring is safe:
+
+$$
+f(x)\le g(x)^2.
+$$
+
+For
+
+$$
+\sqrt{f(x)}>g(x),
+$$
+
+split into cases:
+
+- If $$g(x)<0$$, the inequality is automatically true wherever the radical exists.
+- If $$g(x)\ge 0$$, square both sides and solve $$f(x)>g(x)^2$$.
+
+The final answer is the union of valid pieces that also satisfy the original domain.
 
 ## Symmetry
 
-Symmetry occurs when you flip along an axis of symmetry and mpa one half of a shape to another.
+Symmetry asks what happens to a graph when you reflect or rotate it. The algebra tests come from replacing points with their reflected versions.
 
 ### Symmetry about the axes
 
-- $$x$$-axis symmetry: Graphs from $$QI$$ and $$QII$$ would get flipped over the $$x$$-axis to $$QIV$$ and $$QIII$$, respectively, and vice versa. If point $$(x,y)$$ sastisfies the equation and $$(x,-y)$$ also sastisfies the equation for all points $$(x,y)$$ on the graph, then the graph have $$x$$-axis symmetry.
-- $$y$$-axis symmetry: Graphs from $$QI$$ and $$QIV$$ would get flipped over the $$y$$-axis to $$QII$$ and $$QIII$$, respectively, and vice versa. If point $$(x,y)$$ sastisfies the equation and $$(-x,y)$$ also sastisfies the equation for all points $$(x,y)$$ on the graph, then the graph have $$y$$-axis symmetry.
-- Origin symmetry: Graphs from $$QI$$ and $$QII$$ would get flipped over the $$y$$-axis to $$QIII$$ and $$QIV$$, respectively, and vice versa. If point $$(x,y)$$ sastisfies the equation and $$(-x,-y)$$ also sastisfies the equation for all points $$(x,y)$$ on the graph, then the graph have origin symmetry.
+- $$x$$-axis symmetry: if $$(x,y)$$ is on the graph, then $$(x,-y)$$ is also on the graph. Algebra test: replace $$y$$ with $$-y$$ and see whether the equation stays the same.
+- $$y$$-axis symmetry: if $$(x,y)$$ is on the graph, then $$(-x,y)$$ is also on the graph. Algebra test: replace $$x$$ with $$-x$$.
+- Origin symmetry: if $$(x,y)$$ is on the graph, then $$(-x,-y)$$ is also on the graph. Algebra test: replace both $$x$$ with $$-x$$ and $$y$$ with $$-y$$.
+
+For example, the graph of
+
+$$
+y=x^2
+$$
+
+has $$y$$-axis symmetry because replacing $$x$$ with $$-x$$ gives
+
+$$
+y=(-x)^2=x^2.
+$$
+
+The graph of
+
+$$
+y=x^3
+$$
+
+has origin symmetry because replacing both variables gives
+
+$$
+-y=(-x)^3=-x^3,
+$$
+
+which simplifies back to $$y=x^3$$.
 
 <div class="theorem-box" markdown="1">
 
-**Extension.** If a graph has both $$x$$-axis and $$y$$-axis symmetry, does it necessarily have origin symmetry? If a graph has origin symmetry, does it neccesarily have $$x$$-axis and $$y$$-axis symmmetry?
+**Extension.** If a graph has both $$x$$-axis and $$y$$-axis symmetry, does it necessarily have origin symmetry? If a graph has origin symmetry, does it necessarily have $$x$$-axis and $$y$$-axis symmetry?
 
 </div>
 
 ## Practice
-
-Problems are meant to match this page only: coordinates and lines, solving equations, inequalities (including absolute value, polynomial, rational, and radical types), and symmetry. Use interval notation where appropriate.
-
-### Rectangular coordinates and lines
 
 1. Find the distance between $$(1,-3)$$ and $$(5,5)$$ and write the equation of the line that contain both points in slope-intercept form.
 2. Find the equation of the line through $$(2,4)$$ that is perpendicular to $$3x - 4y = 12$$. Write your answer in point-slope form.
@@ -810,18 +1159,18 @@ $$
 
 which is not greater than $$0$$.
 
-If $$x<0$$, then $$|x|=-x$$, so
+If $$x<0$$, then $$\lvert x| \rvert =-x$$, so
 
 $$
-\frac{|x-|x||}{x}
-=\frac{|x-(-x)|}{x}
-=\frac{|2x|}{x}.
+\frac{\lvert x- \lvert x \rvert \rvert}{x}
+=\frac{\lvert x-(-x) \rvert}{x}
+=\frac{\lvert 2x \rvert}{x}.
 $$
 
 Since $$x<0$$, $$|2x|=-2x$$. Thus
 
 $$
-\frac{|2x|}{x}=\frac{-2x}{x}=-2,
+\frac{\lvert 2x \rvert}{x}=\frac{-2x}{x}=-2,
 $$
 
 which is also not greater than $$0$$. Therefore there are no real solutions:

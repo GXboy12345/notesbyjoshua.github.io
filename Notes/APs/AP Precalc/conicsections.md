@@ -331,22 +331,21 @@ Always check your course’s exact convention for $$p$$ and the sign in the deno
 
 ## Practice
 
-1. Write $$y^{2} - 8y - 4x + 4 = 0$$ in one of the standard forms $$(y-k)^{2} = 4p(x-h)$$ or $$(x-h)^{2} = 4p(y-k)$$. Give the vertex, focus, directrix, and axis of symmetry.
-2. A parabola has vertex $$(2,-1)$$, vertical axis of symmetry, and passes through $$(5,5)$$. Find its equation in the form $$(x-h)^{2} = 4p(y-k)$$.
-3. For which value(s) of $$k$$ is the line $$y = 2x + k$$ tangent to the parabola $$y = x^{2}$$?
-4. Complete the square and identify center, semi-axes $$a$$ and $$b$$ (with $$a > b$$), foci, and eccentricity for  
-$$9x^{2} + 25y^{2} - 36x + 150y + 36 = 0$$.
-5. The ellipse $$\dfrac{x^{2}}{25} + \dfrac{y^{2}}{9} = 1$$ has foci $$F_{1}$$ and $$F_{2}$$ on the $$x$$-axis. If $$P$$ is a point on the ellipse in the first quadrant with $$x$$-coordinate $$3$$, compute $$PF_{1} + PF_{2}$$ without finding $$P$$ explicitly.
-6. Find all real numbers $$m$$ such that the line $$y = mx + \sqrt{13}$$ is tangent to the ellipse $$3x^{2} + 4y^{2} = 12$$.
-7. Complete the square for $$4x^{2} - y^{2} + 24x + 4y + 36 = 0$$ and write the equation in standard form $$\dfrac{(x-h)^{2}}{a^{2}} - \dfrac{(y-k)^{2}}{b^{2}} = 1$$ or the vertical-transverse variant. Give center, vertices, foci, eccentricity, and equations of the asymptotes.
-8. A hyperbola has asymptotes $$y = \pm \dfrac{2}{3}(x - 1) + 2$$ and passes through $$(7,4)$$. Assuming a horizontal transverse axis and standard orientation, find an equation of the form $$\dfrac{(x-1)^{2}}{a^{2}} - \dfrac{(y-2)^{2}}{b^{2}} = 1$$.
-9. For the rectangular hyperbola $$xy = 4$$, sketch the branches and find the distance between its two vertices (the points where the hyperbola is closest to the origin along the line $$y = x$$).
-10. With focus at $$(0,0)$$ and directrix $$x = -4$$, write the Cartesian equation of the conic satisfying $$PF = \dfrac{1}{2}\,d(P,\ell)$$ for all $$P$$ on the curve (start from $$\sqrt{x^{2}+y^{2}} = \dfrac{1}{2}(x+4)$$ on the appropriate half-plane, then square and simplify). What type of conic is it?
-11. Identify the eccentricity and type of conic given in polar form by $$r = \dfrac{12}{3 + 2\cos\theta}.$$ Rewrite it as $$r = \dfrac{de}{1 + e\cos\theta}$$ (or the equivalent with a minus sign) and state whether the directrix lies to the left or right of the focus at the pole.
-12. For $$r = \dfrac{6}{1 - 2\cos\theta}$$, determine the type of conic and the values of $$\theta$$ for which the denominator vanishes (asymptotic directions). Do not assume finite $$r$$ exists at those angles.
-13. Find all intersection points in $$\mathbb{R}^{2}$$ of the circle $$x^{2} + y^{2} = 25$$ and the hyperbola $$x^{2} - 4y^{2} = 4$$.
-14. Show that if a nondegenerate conic has both $$x$$-axis and $$y$$-axis symmetry, then its equation can be written in the form $$Ax^{2} + By^{2} = C$$ with $$A,B,C$$ constants. What does this imply about the possible types (circle, ellipse, hyperbola) when $$A,B,C$$ are all nonzero?
-15. For the parabola $$y^{2} = 4px$$ with $$p > 0$$, let a line through the focus $$(p,0)$$ have slope $$m \ne 0$$ and meet the parabola at two distinct points $$A$$ and $$B$$. Prove that the product of the $$y$$-coordinates of $$A$$ and $$B$$ equals $$-4p^{2}$$ (substitute $$x = p + \dfrac{y}{m}$$ or $$y = m(x-p)$$ and use Vieta’s formulas on the resulting quadratic in $$y$$).
+1. Complete the square for $$4x^{2}+9y^{2}-24x+36y+36=0$$. Write the equation in standard form and give the center, vertices, co-vertices, foci, eccentricity, and major/minor axis lengths.
+2. Find the equation of the parabola whose focus is $$(5,-2)$$ and whose directrix is $$x=-1$$. Give the vertex, value of $$p$$, axis of symmetry, and latus rectum endpoints.
+3. Find all lines with slope $$-2$$ that are tangent to the parabola $$(x-1)^{2}=8(y+3)$$.
+4. An ellipse has foci $$(1,4)$$ and $$(1,-2)$$ and passes through $$(5,1)$$. Find its standard-form equation and its eccentricity.
+5. The ellipse $$\dfrac{(x+2)^{2}}{36}+\dfrac{(y-1)^{2}}{20}=1$$ has foci $$F_1$$ and $$F_2$$. If $$P$$ is the point on the ellipse with $$x=1$$ and $$y>1$$, find $$PF_1$$ and $$PF_2$$ separately.
+6. Find all real numbers $$m$$ such that the line $$y=mx+3$$ is tangent to the ellipse $$\dfrac{x^{2}}{9}+\dfrac{y^{2}}{4}=1$$.
+7. Complete the square for $$9y^{2}-4x^{2}-54y-16x+29=0$$. Write the equation in standard form and give the center, vertices, foci, eccentricity, and asymptotes.
+8. A hyperbola has center $$(2,-1)$$, asymptotes $$y+1=\pm\dfrac{3}{2}(x-2)$$, and one focus at $$(2+\sqrt{52},-1)$$. Assuming it opens left/right, find its standard-form equation.
+9. Find all intersection points in $$\mathbb{R}^{2}$$ of the ellipse $$\dfrac{x^{2}}{16}+\dfrac{y^{2}}{9}=1$$ and the hyperbola $$\dfrac{x^{2}}{4}-\dfrac{y^{2}}{9}=1$$.
+10. With focus at $$(0,0)$$, directrix $$x=-6$$, and eccentricity $$e=\dfrac{2}{3}$$, derive the Cartesian equation of the conic. Write it in standard form and identify the conic type.
+11. Convert $$r=\dfrac{10}{2-\cos\theta}$$ to a Cartesian equation. Identify the conic type, eccentricity, center, vertices, and foci.
+12. For $$r=\dfrac{12}{3+4\cos\theta}$$, identify the conic type and eccentricity, then find the values of $$\theta$$ where the denominator vanishes. Explain what those angles represent geometrically.
+13. A circle is tangent to both axes in Quadrant I and its center lies on the ellipse $$\dfrac{x^{2}}{25}+\dfrac{y^{2}}{9}=1$$. Find the circle's radius.
+14. Show that the conic $$Ax^{2}+Cy^{2}+Dx+Ey+F=0$$ has center $$(h,k)$$ when $$A\ne 0$$ and $$C\ne 0$$. Derive formulas for $$h$$ and $$k$$ in terms of $$A,C,D,E$$, then find the center of $$5x^{2}-3y^{2}+20x+18y-11=0$$.
+15. For the parabola $$y^{2}=4px$$ with $$p>0$$, let a line through the focus $$(p,0)$$ have slope $$m\ne 0$$ and meet the parabola at two distinct points $$A$$ and $$B$$. Prove that the product of the $$y$$-coordinates of $$A$$ and $$B$$ equals $$-4p^{2}$$.
 16. (Bonus, 2026 USAPHO) 
 
 Charged particles in a central Coulomb field follow conic trajectories because the force magnitude obeys an inverse-square law. Fix a particle $$\alpha$$ with charge $$+1\ \mathrm{C}$$ at the origin. A second particle then moves on either an elliptic-type (bound) or hyperbolic-type (unbound) conic, with polar descriptions (using polar angle $$\phi$$ measured from the positive $$x$$-axis and radial distance from the origin):
@@ -390,3 +389,821 @@ $$(i)$$ Determine $$B(\theta)$$: express $$B$$ in terms of $$\theta$$ (and any c
 $$(ii)$$ Determine $$B(r_{0})$$: express $$B$$ in terms of $$r_{0}$$ (eliminating $$\Theta$$ if your answer in (i) still contains it, or giving the cleanest relation you can between $$B$$ and $$r_{0}$$ for this family of trajectories—state clearly what you are holding fixed).
 
 ## Solutions
+
+### Solution 1
+
+Complete the square:
+
+$$
+4x^{2}+9y^{2}-24x+36y+36=0
+$$
+
+$$
+4(x^{2}-6x)+9(y^{2}+4y)+36=0.
+$$
+
+Then
+
+$$
+4\bigl((x-3)^{2}-9\bigr)+9\bigl((y+2)^{2}-4\bigr)+36=0.
+$$
+
+Simplify:
+
+$$
+4(x-3)^{2}+9(y+2)^{2}=36.
+$$
+
+Divide by $$36$$:
+
+$$
+\frac{(x-3)^{2}}{9}+\frac{(y+2)^{2}}{4}=1.
+$$
+
+This is an ellipse centered at $$(3,-2)$$ with horizontal major axis. Here $$a^{2}=9$$, $$b^{2}=4$$, so $$a=3$$ and $$b=2$$. Also
+
+$$
+c^{2}=a^{2}-b^{2}=9-4=5,
+$$
+
+so $$c=\sqrt{5}$$ and $$e=\dfrac{c}{a}=\dfrac{\sqrt{5}}{3}$$.
+
+Thus
+
+$$
+\boxed{\frac{(x-3)^{2}}{9}+\frac{(y+2)^{2}}{4}=1}
+$$
+
+with center $$\boxed{(3,-2)}$$, vertices $$\boxed{(0,-2),(6,-2)}$$, co-vertices $$\boxed{(3,-4),(3,0)}$$, foci $$\boxed{(3-\sqrt{5},-2),(3+\sqrt{5},-2)}$$, eccentricity $$\boxed{\frac{\sqrt{5}}{3}}$$, major axis length $$\boxed{6}$$, and minor axis length $$\boxed{4}$$.
+
+### Solution 2
+
+The focus is $$(5,-2)$$ and the directrix is $$x=-1$$, so the parabola opens horizontally. The vertex is halfway between the focus and directrix along the horizontal axis:
+
+$$
+\left(\frac{5+(-1)}{2},-2\right)=(2,-2).
+$$
+
+Thus $$h=2$$ and $$k=-2$$. Since the focus is $$(h+p,k)=(5,-2)$$,
+
+$$
+p=3.
+$$
+
+Use the horizontal parabola form
+
+$$
+(y-k)^{2}=4p(x-h).
+$$
+
+So
+
+$$
+\boxed{(y+2)^{2}=12(x-2)}.
+$$
+
+The axis of symmetry is $$\boxed{y=-2}$$. The latus rectum is vertical through the focus. Its length is $$|4p|=12$$, so its endpoints are $$6$$ units above and below the focus:
+
+$$
+\boxed{(5,4)\text{ and }(5,-8)}.
+$$
+
+### Solution 3
+
+A line with slope $$-2$$ has equation
+
+$$
+y=-2x+b.
+$$
+
+Substitute into the parabola
+
+$$
+(x-1)^{2}=8(y+3).
+$$
+
+Then
+
+$$
+(x-1)^{2}=8(-2x+b+3).
+$$
+
+Expand:
+
+$$
+x^{2}-2x+1=-16x+8b+24.
+$$
+
+Move everything to one side:
+
+$$
+x^{2}+14x-(8b+23)=0.
+$$
+
+For the line to be tangent, this quadratic must have exactly one solution, so its discriminant is $$0$$:
+
+$$
+14^{2}-4(1)(-(8b+23))=0.
+$$
+
+Thus
+
+$$
+196+32b+92=0
+\quad\Longrightarrow\quad
+32b=-288
+\quad\Longrightarrow\quad
+b=-9.
+$$
+
+Therefore the tangent line is
+
+$$
+\boxed{y=-2x-9}.
+$$
+
+### Solution 4
+
+The foci $$(1,4)$$ and $$(1,-2)$$ have midpoint
+
+$$
+(h,k)=\left(1,\frac{4+(-2)}{2}\right)=(1,1).
+$$
+
+The foci are vertical, so the major axis is vertical. The distance from the center to either focus is
+
+$$
+c=3.
+$$
+
+The point $$(5,1)$$ lies on the ellipse. Its distances to the foci are
+
+$$
+\sqrt{(5-1)^{2}+(1-4)^{2}}=5
+$$
+
+and
+
+$$
+\sqrt{(5-1)^{2}+(1-(-2))^{2}}=5.
+$$
+
+The sum of distances is $$10$$, so $$2a=10$$ and $$a=5$$. Then
+
+$$
+b^{2}=a^{2}-c^{2}=25-9=16.
+$$
+
+Since the major axis is vertical,
+
+$$
+\boxed{\frac{(x-1)^{2}}{16}+\frac{(y-1)^{2}}{25}=1}.
+$$
+
+The eccentricity is
+
+$$
+\boxed{e=\frac{c}{a}=\frac{3}{5}}.
+$$
+
+### Solution 5
+
+The ellipse
+
+$$
+\frac{(x+2)^{2}}{36}+\frac{(y-1)^{2}}{20}=1
+$$
+
+has center $$(-2,1)$$, $$a^{2}=36$$, and $$b^{2}=20$$. Therefore
+
+$$
+c^{2}=a^{2}-b^{2}=36-20=16,
+$$
+
+so $$c=4$$. The foci are
+
+$$
+(-2-4,1)=(-6,1)
+\quad\text{and}\quad
+(-2+4,1)=(2,1).
+$$
+
+Now use $$x=1$$:
+
+$$
+\frac{(1+2)^{2}}{36}+\frac{(y-1)^{2}}{20}=1.
+$$
+
+So
+
+$$
+\frac{9}{36}+\frac{(y-1)^{2}}{20}=1
+\quad\Longrightarrow\quad
+\frac{(y-1)^{2}}{20}=\frac{3}{4}.
+$$
+
+Thus
+
+$$
+(y-1)^{2}=15.
+$$
+
+Since $$y>1$$,
+
+$$
+y=1+\sqrt{15}.
+$$
+
+So $$P=(1,1+\sqrt{15})$$. Its distance to the right focus $$(2,1)$$ is
+
+$$
+\sqrt{(1-2)^{2}+(\sqrt{15})^{2}}=\sqrt{16}=4.
+$$
+
+Its distance to the left focus $$(-6,1)$$ is
+
+$$
+\sqrt{(1+6)^{2}+(\sqrt{15})^{2}}=\sqrt{64}=8.
+$$
+
+Therefore
+
+$$
+\boxed{PF_{\text{right}}=4\quad\text{and}\quad PF_{\text{left}}=8}.
+$$
+
+### Solution 6
+
+Substitute $$y=mx+3$$ into
+
+$$
+\frac{x^{2}}{9}+\frac{y^{2}}{4}=1.
+$$
+
+Then
+
+$$
+\frac{x^{2}}{9}+\frac{(mx+3)^{2}}{4}=1.
+$$
+
+Multiply by $$36$$:
+
+$$
+4x^{2}+9(mx+3)^{2}=36.
+$$
+
+Expand:
+
+$$
+4x^{2}+9(m^{2}x^{2}+6mx+9)=36.
+$$
+
+So
+
+$$
+(4+9m^{2})x^{2}+54mx+45=0.
+$$
+
+For tangency, the discriminant must be $$0$$:
+
+$$
+(54m)^{2}-4(4+9m^{2})(45)=0.
+$$
+
+Simplify:
+
+$$
+2916m^{2}-180(4+9m^{2})=0
+$$
+
+$$
+1296m^{2}-720=0
+\quad\Longrightarrow\quad
+m^{2}=\frac{5}{9}.
+$$
+
+Thus
+
+$$
+\boxed{m=\pm\frac{\sqrt{5}}{3}}.
+$$
+
+### Solution 7
+
+Start with
+
+$$
+9y^{2}-4x^{2}-54y-16x+29=0.
+$$
+
+Group and complete the square:
+
+$$
+9(y^{2}-6y)-4(x^{2}+4x)+29=0.
+$$
+
+Then
+
+$$
+9\bigl((y-3)^{2}-9\bigr)-4\bigl((x+2)^{2}-4\bigr)+29=0.
+$$
+
+Simplify:
+
+$$
+9(y-3)^{2}-4(x+2)^{2}-36=0.
+$$
+
+So
+
+$$
+9(y-3)^{2}-4(x+2)^{2}=36.
+$$
+
+Divide by $$36$$:
+
+$$
+\boxed{\frac{(y-3)^{2}}{4}-\frac{(x+2)^{2}}{9}=1}.
+$$
+
+This is a vertical hyperbola. The center is $$(-2,3)$$. Here $$a^{2}=4$$, $$b^{2}=9$$, so $$a=2$$ and $$b=3$$. Also
+
+$$
+c^{2}=a^{2}+b^{2}=4+9=13,
+$$
+
+so $$c=\sqrt{13}$$ and $$e=\dfrac{\sqrt{13}}{2}$$.
+
+The vertices are
+
+$$
+\boxed{(-2,1)\text{ and }(-2,5)}.
+$$
+
+The foci are
+
+$$
+\boxed{(-2,3-\sqrt{13})\text{ and }(-2,3+\sqrt{13})}.
+$$
+
+The asymptotes are
+
+$$
+\boxed{y-3=\pm\frac{2}{3}(x+2)}.
+$$
+
+### Solution 8
+
+A horizontal hyperbola centered at $$(2,-1)$$ has form
+
+$$
+\frac{(x-2)^{2}}{a^{2}}-\frac{(y+1)^{2}}{b^{2}}=1.
+$$
+
+Its asymptotes are
+
+$$
+y+1=\pm\frac{b}{a}(x-2).
+$$
+
+We are given slope $$\frac{3}{2}$$, so
+
+$$
+\frac{b}{a}=\frac{3}{2}.
+$$
+
+Let $$a=2t$$ and $$b=3t$$. The focus distance satisfies
+
+$$
+c^{2}=a^{2}+b^{2}.
+$$
+
+Since one focus is $$(2+\sqrt{52},-1)$$, we have $$c=\sqrt{52}$$. Thus
+
+$$
+52=(2t)^{2}+(3t)^{2}=13t^{2}.
+$$
+
+So $$t^{2}=4$$, and therefore
+
+$$
+a^{2}=(2t)^{2}=16,
+\qquad
+b^{2}=(3t)^{2}=36.
+$$
+
+Thus the equation is
+
+$$
+\boxed{\frac{(x-2)^{2}}{16}-\frac{(y+1)^{2}}{36}=1}.
+$$
+
+### Solution 9
+
+Solve the system
+
+$$
+\frac{x^{2}}{16}+\frac{y^{2}}{9}=1
+$$
+
+and
+
+$$
+\frac{x^{2}}{4}-\frac{y^{2}}{9}=1.
+$$
+
+Let $$X=x^{2}$$ and $$Y=y^{2}$$. Then
+
+$$
+\frac{X}{16}+\frac{Y}{9}=1
+$$
+
+and
+
+$$
+\frac{X}{4}-\frac{Y}{9}=1.
+$$
+
+From the second equation,
+
+$$
+X=4+\frac{4Y}{9}.
+$$
+
+Substitute into the first:
+
+$$
+\frac{4+\frac{4Y}{9}}{16}+\frac{Y}{9}=1.
+$$
+
+This gives
+
+$$
+\frac{1}{4}+\frac{Y}{36}+\frac{Y}{9}=1
+\quad\Longrightarrow\quad
+\frac{1}{4}+\frac{5Y}{36}=1.
+$$
+
+So
+
+$$
+\frac{5Y}{36}=\frac{3}{4}
+\quad\Longrightarrow\quad
+Y=\frac{27}{5}.
+$$
+
+Then
+
+$$
+X=4+\frac{4}{9}\cdot\frac{27}{5}
+=4+\frac{12}{5}
+=\frac{32}{5}.
+$$
+
+Therefore
+
+$$
+x=\pm\sqrt{\frac{32}{5}}=\pm\frac{4\sqrt{10}}{5},
+\qquad
+y=\pm\sqrt{\frac{27}{5}}=\pm\frac{3\sqrt{15}}{5}.
+$$
+
+All sign combinations work, so the intersection points are
+
+$$
+\boxed{\left(\pm\frac{4\sqrt{10}}{5},\,\pm\frac{3\sqrt{15}}{5}\right)}.
+$$
+
+### Solution 10
+
+The focus is $$(0,0)$$ and the directrix is $$x=-6$$. For a point $$(x,y)$$ on the conic,
+
+$$
+PF=\sqrt{x^{2}+y^{2}}
+$$
+
+and
+
+$$
+d(P,\ell)=x+6
+$$
+
+on the appropriate side of the directrix. Since $$e=\dfrac{2}{3}$$,
+
+$$
+\sqrt{x^{2}+y^{2}}=\frac{2}{3}(x+6).
+$$
+
+Square both sides:
+
+$$
+x^{2}+y^{2}=\frac{4}{9}(x+6)^{2}.
+$$
+
+Multiply by $$9$$:
+
+$$
+9x^{2}+9y^{2}=4x^{2}+48x+144.
+$$
+
+So
+
+$$
+5x^{2}+9y^{2}-48x-144=0.
+$$
+
+Complete the square in $$x$$:
+
+$$
+5\left(x^{2}-\frac{48}{5}x\right)+9y^{2}=144.
+$$
+
+Since
+
+$$
+x^{2}-\frac{48}{5}x=\left(x-\frac{24}{5}\right)^{2}-\frac{576}{25},
+$$
+
+we get
+
+$$
+5\left(x-\frac{24}{5}\right)^{2}+9y^{2}=\frac{1296}{5}.
+$$
+
+Divide by $$\dfrac{1296}{5}$$:
+
+$$
+\boxed{\frac{\left(x-\frac{24}{5}\right)^{2}}{\frac{1296}{25}}+\frac{y^{2}}{\frac{144}{5}}=1}.
+$$
+
+Since $$0<e<1$$, this conic is an ellipse.
+
+### Solution 11
+
+Start with
+
+$$
+r=\frac{10}{2-\cos\theta}.
+$$
+
+Rewrite:
+
+$$
+2r-r\cos\theta=10.
+$$
+
+Use $$r=\sqrt{x^{2}+y^{2}}$$ and $$r\cos\theta=x$$:
+
+$$
+2\sqrt{x^{2}+y^{2}}-x=10.
+$$
+
+So
+
+$$
+2\sqrt{x^{2}+y^{2}}=x+10.
+$$
+
+Square both sides:
+
+$$
+4(x^{2}+y^{2})=(x+10)^{2}.
+$$
+
+Expand:
+
+$$
+4x^{2}+4y^{2}=x^{2}+20x+100.
+$$
+
+So
+
+$$
+3x^{2}+4y^{2}-20x-100=0.
+$$
+
+Complete the square:
+
+$$
+3\left(x^{2}-\frac{20}{3}x\right)+4y^{2}=100.
+$$
+
+Since
+
+$$
+x^{2}-\frac{20}{3}x=\left(x-\frac{10}{3}\right)^{2}-\frac{100}{9},
+$$
+
+we get
+
+$$
+3\left(x-\frac{10}{3}\right)^{2}+4y^{2}=\frac{400}{3}.
+$$
+
+Divide by $$\dfrac{400}{3}$$:
+
+$$
+\boxed{\frac{\left(x-\frac{10}{3}\right)^{2}}{\frac{400}{9}}+\frac{y^{2}}{\frac{100}{3}}=1}.
+$$
+
+The conic is an ellipse. From
+
+$$
+r=\frac{10}{2-\cos\theta}=\frac{5}{1-\frac{1}{2}\cos\theta},
+$$
+
+the eccentricity is $$\boxed{e=\frac{1}{2}}$$. The center is $$\boxed{\left(\frac{10}{3},0\right)}$$. Since $$a^{2}=\frac{400}{9}$$, $$a=\frac{20}{3}$$. The vertices are
+
+$$
+\boxed{\left(-\frac{10}{3},0\right)\text{ and }(10,0)}.
+$$
+
+Also $$c=ea=\frac{10}{3}$$, so the foci are
+
+$$
+\boxed{(0,0)\text{ and }\left(\frac{20}{3},0\right)}.
+$$
+
+### Solution 12
+
+Rewrite
+
+$$
+r=\frac{12}{3+4\cos\theta}
+$$
+
+by factoring $$3$$ from the denominator:
+
+$$
+r=\frac{4}{1+\frac{4}{3}\cos\theta}.
+$$
+
+This matches polar conic form with eccentricity
+
+$$
+e=\frac{4}{3}.
+$$
+
+Since $$e>1$$, the conic is a hyperbola.
+
+The denominator vanishes when
+
+$$
+3+4\cos\theta=0.
+$$
+
+Thus
+
+$$
+\cos\theta=-\frac{3}{4}.
+$$
+
+So the angles are
+
+$$
+\boxed{\theta=\arccos\left(-\frac{3}{4}\right)\quad\text{and}\quad \theta=2\pi-\arccos\left(-\frac{3}{4}\right)}.
+$$
+
+At those angles, $$r$$ is not finite. Geometrically, they give the asymptotic directions of the hyperbola.
+
+### Solution 13
+
+A circle tangent to both axes in Quadrant I has center $$(r,r)$$ and radius $$r$$. Since the center lies on
+
+$$
+\frac{x^{2}}{25}+\frac{y^{2}}{9}=1,
+$$
+
+substitute $$(r,r)$$:
+
+$$
+\frac{r^{2}}{25}+\frac{r^{2}}{9}=1.
+$$
+
+Then
+
+$$
+r^{2}\left(\frac{1}{25}+\frac{1}{9}\right)=1.
+$$
+
+Compute:
+
+$$
+\frac{1}{25}+\frac{1}{9}=\frac{9+25}{225}=\frac{34}{225}.
+$$
+
+So
+
+$$
+r^{2}\cdot\frac{34}{225}=1
+\quad\Longrightarrow\quad
+r^{2}=\frac{225}{34}.
+$$
+
+Since $$r>0$$,
+
+$$
+\boxed{r=\frac{15}{\sqrt{34}}=\frac{15\sqrt{34}}{34}}.
+$$
+
+### Solution 14
+
+Start with
+
+$$
+Ax^{2}+Cy^{2}+Dx+Ey+F=0,
+$$
+
+where $$A\ne 0$$ and $$C\ne 0$$. Complete the square separately in $$x$$ and $$y$$:
+
+$$
+A\left(x^{2}+\frac{D}{A}x\right)+C\left(y^{2}+\frac{E}{C}y\right)+F=0.
+$$
+
+The centers of the completed squares occur at
+
+$$
+x=-\frac{D}{2A}
+\qquad\text{and}\qquad
+y=-\frac{E}{2C}.
+$$
+
+Therefore the center is
+
+$$
+\boxed{\left(-\frac{D}{2A},-\frac{E}{2C}\right)}.
+$$
+
+For
+
+$$
+5x^{2}-3y^{2}+20x+18y-11=0,
+$$
+
+we have $$A=5$$, $$C=-3$$, $$D=20$$, and $$E=18$$. Thus
+
+$$
+h=-\frac{20}{2(5)}=-2
+$$
+
+and
+
+$$
+k=-\frac{18}{2(-3)}=3.
+$$
+
+So the center is
+
+$$
+\boxed{(-2,3)}.
+$$
+
+### Solution 15
+
+The parabola is
+
+$$
+y^{2}=4px,
+$$
+
+and its focus is $$(p,0)$$. A line through the focus with slope $$m\ne 0$$ has equation
+
+$$
+y=m(x-p).
+$$
+
+Solve this for $$x$$:
+
+$$
+x=p+\frac{y}{m}.
+$$
+
+Substitute into the parabola:
+
+$$
+y^{2}=4p\left(p+\frac{y}{m}\right).
+$$
+
+Expand:
+
+$$
+y^{2}=4p^{2}+\frac{4p}{m}y.
+$$
+
+Move everything to one side:
+
+$$
+y^{2}-\frac{4p}{m}y-4p^{2}=0.
+$$
+
+This quadratic has roots equal to the $$y$$-coordinates of the two intersection points $$A$$ and $$B$$. By Vieta's formula, the product of the roots is the constant term divided by the leading coefficient:
+
+$$
+y_Ay_B=\frac{-4p^{2}}{1}.
+$$
+
+Therefore
+
+$$
+\boxed{y_Ay_B=-4p^{2}}.
+$$
