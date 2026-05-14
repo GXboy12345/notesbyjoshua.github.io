@@ -14,11 +14,11 @@ This unit connects what atoms are (Unit 1) to how they assemble into **compounds
 
 ## Types of chemical bonding
 
-Electrons are the currency of chemical bonding. Whether electrons are fully transferred, shared, or pooled determines the type of **bond** and, in broad terms, how strong and how directional that interaction is.
+Electrons are the currency of chemical bonding. Whether electrons are fully transferred, shared, or pooled determines the type of bond and, in broad terms, how strong and how directional that interaction is.
 
 ### Ionic bonding
 
-An **ionic bond** arises between a metal and a nonmetal when electrons are transferred so that both partners approach stable electron counts. The metal loses electrons to become a **cation**; the nonmetal gains electrons to become an **anion**. The resulting ions attract one another by **Coulomb’s law**. For two point charges $$Q_1$$ and $$Q_2$$ separated by distance $$r$$, the electrostatic potential energy has the familiar form as seen in Unit 1 (with $$k$$ a constant):
+An **ionic bond** arises between a metal and a nonmetal when electrons are transferred so that both partners approach stable electron counts. The metal loses electrons to become a **cation** and the nonmetal gains electrons to become an **anion**. The resulting ions attract one another by **Coulomb’s law** (see [Unit 1]({{ '/notes/ap/chem/compounds/' | relative_url }})). For two point charges $$Q_1$$ and $$Q_2$$ separated by distance $$r$$, the electrostatic potential energy has the familiar form as seen in Unit 1 (with $$k$$ a constant):
 
 $$
 U = k \frac{Q_1 Q_2}{r}
@@ -26,7 +26,7 @@ $$
 
 Oppositely charged ions ($$Q_1 Q_2 < 0$$) lower their energy as $$r$$ decreases, which is why a **crystal lattice** of alternating cations and anions is stable. **Lattice energy** trends (larger charges, smaller ions) follow from this same inverse dependence on $$r$$ and linear dependence on the product of charges.
 
-A standard classroom example is sodium chloride: chlorine accepts an electron to form $$\text{Cl}^-$$, and sodium becomes $$\text{Na}^+$$. The compound is held together by attraction between those ions, not by shared pairs in the sense of a covalent bond.
+A standard example is sodium chloride: chlorine accepts an electron to form $$\text{Cl}^-$$, and sodium becomes $$\text{Na}^+$$. The compound is held together by attraction between those ions, not by shared pairs in the sense of a covalent bond. However, counterintuitively, the ionic bond is the strongest type of bond.
 
 ### Covalent bonding
 

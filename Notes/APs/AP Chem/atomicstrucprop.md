@@ -171,17 +171,17 @@ Because volume changes with temperature, molarity is *temperature-dependent*. It
 
 ## Oxidation numbers
 
-An **oxidation number** (oxidation state) is a formal bookkeeping charge assigned to an atom in a compound or ion, as if electrons in every bond belonged entirely to the more **electronegative** partner. It tracks how electron density shifts relative to the element in its standard state.
+An **oxidation number** (oxidation state) is a formal bookkeeping charge assigned to an atom in a compound or ion, as if electrons in every bond belonged entirely to the more electronegative partner. It tracks how electron density shifts relative to the element in its standard state.
 
 Useful conventions include:
 
-- Any **element** in its elemental form (e.g. $$\text{O}_2$$, $$\text{Na}$$) has oxidation number $$0$$.  
-- A **monatomic ion** matches its charge (e.g. $$\text{Na}^+$$ is $$+1$$).  
-- **Oxygen** is usually $$-2$$ except in **peroxides** such as $$\text{H}_2\text{O}_2$$ ($$-1$$ for O) and in compounds with fluorine.  
-- **Hydrogen** is usually $$+1$$ except in **metal hydrides** (e.g. $$\text{NaH}$$), where it is $$-1$$.  
-- **Fluorine** is $$-1$$ in all compounds. Other **halogens** are $$-1$$ unless bonded to a more electronegative element (such as oxygen).  
+- Any element in its elemental form (e.g. $$\text{O}_2$$, $$\text{Na}$$) has oxidation number $$0$$.  
+- A monatomic ion matches its charge (e.g. $$\text{Na}^+$$ is $$+1$$).  
+- Oxygen is usually $$-2$$ except in peroxides such as $$\text{H}_2\text{O}_2$$ ($$-1$$ for O) and in compounds with fluorine.  
+- Hydrogen is usually $$+1$$ except in metal hydrides (e.g. $$\text{NaH}$$), where it is $$-1$$.  
+- Fluorine is $$-1$$ in all compounds. Other halogens are $$-1$$ unless bonded to a more electronegative element (such as oxygen).  
 
-When atoms tie, use structure or further rules; the guiding idea is that more electronegative atoms receive the negative assignment in a bond.
+The rule of thumb is that you always assign the most electronegative atom first in terms of oxidation states.
 
 ---
 
@@ -193,12 +193,12 @@ The **principal quantum number** $$n$$ is a positive integer ($$n = 1, 2, 3, \ld
 
 The **azimuthal** (or **angular momentum**) quantum number $$l$$ runs from $$0$$ to $$n - 1$$ and labels subshell shape:
 
-- $$l = 0$$ → **s** orbital  
-- $$l = 1$$ → **p** orbital  
-- $$l = 2$$ → **d** orbital  
-- $$l = 3$$ → **f** orbital  
+- $$l = 0$$ → s orbital  
+- $$l = 1$$ → p orbital  
+- $$l = 2$$ → d orbital  
+- $$l = 3$$ → f orbital  
 
-The **magnetic quantum number** $$m_l$$ takes integer values from $$-l$$ to $$+l$$ and distinguishes **orientations** of a subshell in space.
+The **magnetic quantum number** $$m_l$$ takes integer values from $$-l$$ to $$+l$$ and distinguishes *orientations* of a subshell in space (e.g. $$p_x$$ and $$p_y$$)
 
 The **spin quantum number** $$m_s$$ is $$+\frac{1}{2}$$ or $$-\frac{1}{2}$$ for the two **spin** states of a single electron.
 
@@ -208,7 +208,13 @@ The **Aufbau principle** directs you to fill orbitals in order of increasing ene
 
 **Hund’s rule** favors placing electrons singly in degenerate orbitals of a subshell before pairing, with *parallel spins* where possible, to reduce *electron–electron repulsion*.
 
-**Heisenberg’s uncertainty principle** limits how sharply *position* and *momentum* can be known simultaneously for a quantum particle—a conceptual foundation for why we speak in terms of orbitals (probability distributions) rather than classical orbits.
+**Heisenberg’s uncertainty principle** limits how sharply *position* and *momentum* can be known simultaneously for a quantum particle: a conceptual foundation for why we speak in terms of orbitals (probability distributions) rather than classical orbits. It states that:
+
+$$
+\Delta x \Delta p \ge \frac{h}{4\pi}
+$$,
+
+meaning that the uncertainty in position and momentum are always above some constant, implying that both cannot be known at a time. This is why we have electron clouds instead of set orbits.
 
 **Abbreviated configurations** use the previous noble gas core in brackets, e.g.
 
@@ -222,39 +228,29 @@ Two species are **isoelectronic** if they have the same electron configuration (
 
 ## Energy, light, and quantization
 
-**Bohr’s model** correctly emphasized that an electron in an atom can occupy only certain allowed energies (**quantization**), but the picture of electrons in circular orbits is obsolete; quantum mechanics replaces orbits with orbitals.
-
-For **electromagnetic radiation** (for AP Chemistry this is just light), **wavelength** $$\lambda$$ and **frequency** $$\nu$$ (or $$f$$) are related by
+For electromagnetic radiation (for AP Chemistry this is just light), **wavelength** $$\lambda$$ (distance between waves) and **frequency** $$\nu$$ (or $$f$$ (how many waves appear in a second) are related by
 
 $$
 c = \nu \lambda,
 $$
 
-where $$c \approx 3.00 \times 10^8 \text{ m/s}$$ is the **speed of light** in vacuum. **Frequency** is measured in **hertz** ($$\text{Hz}$$, or $$\text{s}^{-1}$$).
+where $$c \approx 3.00 \times 10^8 \text{ m/s}$$ is the *speed of light* in vacuum. Frequency is measured in hertz ($$\text{Hz}$$, or $$\text{s}^{-1}$$), and wavelength is usually given in $$nm$$, which requires conversions to $$m$$ to work.
 
-For the hydrogen atom, the energy of level $$n$$ is often written
-
-$$
-E_n = -2.178 \times 10^{-18} \frac{1}{n^2} \text{ J},
-$$
-
-with $$n$$ the *principal quantum number*. Spectroscopy probes **transitions** $$\Delta E$$ between levels and **emission** lines appear when an electron falls to a lower level and releases a photon (light particle).
-
-**Planck** related photon energy to frequency:
+Physicist Max Planck related photon energy to frequency through **Planck's constant**:
 
 $$
 E = h\nu = \frac{hc}{\lambda},
 $$
 
-with **Planck’s constant** $$h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s}$$. That relation explains **atomic spectra** and **line colors** in **flame tests** and discharge tubes: each transition corresponds to a specific $$\Delta E$$ and therefore a characteristic photon energy.
+with Planck’s constant $$h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s}$$. Essentially, Max Planck discovered that energy came in packets called **quanta**. which explains **atomic spectra** and **line colors** in **flame tests** and discharge tubes: each transition corresponds to a specific $$\Delta E$$ and therefore a characteristic photon energy. The release of light is caused by an electron moving to a lower energy state, which the absorbance of light is  caused by an electron moving to a higher energy state.
 
-**de Broglie** associated a wavelength with any particle of momentum $$p$$:
+Physicist Louis de Broglie associated a wavelength with any particle of momentum $$p$$:
 
 $$
 \lambda = \frac{h}{p} = \frac{h}{mv}
 $$
 
-for nonrelativistic speeds, linking particle and wave descriptions (wave-particle duality) at the quantum scale.
+for nonrelativistic speeds, demonstrating that any object has an intristic wavelength. However, at only quantum levels is this wavelength significant.
 
 ---
 
@@ -266,23 +262,25 @@ $$
 K_{\max} = h\nu - \Phi,
 $$ 
 
-but for all purposes, memorizing this equation is not necessary for the AP Chemistry exam. Increasing *intensity* at fixed frequency increases the number of ejected electrons, not their maximum *kinetic energy*.
+but for all purposes, memorizing this equation is not necessary for the AP Chemistry exam. It's just important to know that increasing *intensity* at fixed frequency increases the number of ejected electrons, not their maximum *kinetic energy*.
 
-**Photoelectron spectroscopy** (**PES**) measures how much energy must be supplied to remove electrons from subshells in atoms or molecules. Peaks appear at **binding energies** characteristic of each orbital type; **relative peak areas** (after accounting for ionization cross sections) reflect electron counts in those subshells. An example problem is shown below, feel free to try it out (Answer on the bottom of the notes page)!
+**Photoelectron spectroscopy** (**PES**) measures how much energy must be supplied to remove electrons from subshells in atoms or molecules. Peaks appear at **binding energies** characteristic of each orbital type; relative peak areas (after accounting for ionization cross sections) reflect electron counts in those subshells. An example problem is shown below, feel free to try it out!
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/PES.png' | relative_url }}" alt="PES chart" loading="lazy" decoding="async" />
+
+An important thing to note is that a PES graph shifted to the right indicates less nuclear charge, since it takes less energy to take away those electrons.
 
 ---
 
 ## Electromagnetic spectrum
 
-The **electromagnetic spectrum** orders all **electromagnetic radiation** by **photon energy** (equivalently frequency or wavelength). **Visible light** spans roughly
+The **electromagnetic spectrum** orders all electromagnetic radiation by **photon energy** (equivalently frequency or wavelength). **Visible light** spans roughly
 
 $$
 380\text{ nm} \text{ to } 760\text{ nm},
 $$
 
-a narrow window between **ultraviolet** and **infrared**. Moving toward shorter wavelength corresponds to higher photon energy (**gamma rays** and **X-rays** at the extreme) and longer wavelength to lower energy (**microwave**, **radio**). 
+a narrow window between **ultraviolet** and **infrared**. Moving toward shorter wavelength corresponds to higher photon energy (**gamma rays** and **X-rays** at the extreme) and longer wavelength to lower energy (**microwave**, **radio**).
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/em.jpg' | relative_url }}" alt="EM Spectrum" loading="lazy" decoding="async" />
 
@@ -290,7 +288,7 @@ a narrow window between **ultraviolet** and **infrared**. Moving toward shorter 
 
 ## Orbitals, nodes, shielding, and penetration
 
-An **atomic orbital** is a three-dimensional region where the probability of finding an electron exceeds some threshold. The total number of **nodes** for a hydrogen-like orbital is $$n - 1$$, split between **radial** and **angular** contributions according to $$n$$ and $$l$$.
+An **atomic orbital** is a three-dimensional region where the probability of finding an electron exceeds some threshold. The total number of **nodes** for an orbital is $$n - 1$$, with $$l$$ **angular nodes** (planar/conical surfaces), and the rest being **spherical nodes** (spherical surfaces).
 
 For a given $$n$$ in many-electron atoms, subshell energies usually follow
 
@@ -298,9 +296,9 @@ $$
 E_{ns} < E_{np} < E_{nd} < E_{nf},
 $$
 
-because **s** orbitals *penetrate* closer to the nucleus and experience less **shielding** from inner electrons than **p**, **d**, or **f** orbitals at comparable $$n$$.
+because s orbitals *penetrate* closer to the nucleus and experience less **shielding** from inner electrons than p, d, or f orbitals at comparable $$n$$.
 
-**Shielding** (screening) means inner and same-shell electrons reduce the **full nuclear charge** $$Z$$ felt by an electron of interest. More effective shielding lowers **effective nuclear charge** and stabilizes outer electrons less. Penetration explains why an $$ns$$ electron can be more tightly bound than an $$(n-1)d$$ electron despite the larger $$n$$ in the label—leading to the *aufbau* order you use when writing configurations.
+**Shielding** (screening) means inner and same-shell electrons reduce the **full nuclear charge** $$Z$$ felt by an electron of interest. More effective shielding lowers **effective nuclear charge** and stabilizes outer electrons less. Penetration explains why an $$ns$$ electron can be more tightly bound than an $$(n-1)d$$ electron despite the larger $$n$$ in the label, leading to the *aufbau* order you use when writing configurations.
 
 ---
 
@@ -312,7 +310,7 @@ $$
 Z_{\text{eff}} = Z - S,
 $$
 
-where $$S$$ is a **shielding constant** summarizing electron–electron repulsion. **Slater’s rules** and more advanced models give numerical estimates; qualitatively, $$S$$ grows as you add *inner shells*, so going *down a group* increases shielding even though $$Z$$ increases.
+where $$S$$ is a **shielding constant** summarizing electron–electron repulsion. **Slater’s rules** and more advanced models give numerical estimates; qualitatively, $$S$$ grows as you add *inner shells*, so going *down a group* increases shielding even though $$Z$$ increases. On the AP exam, this equation will not be tested in full but it is good to know that shielding decreases effective nuclear charge.
 
 Penetration order among subshell types at comparable $$n$$ is often summarized as
 
@@ -320,17 +318,17 @@ $$
 s > p > d > f,
 $$
 
-meaning **s** electrons “see” more of the nucleus and are stabilized relative to **p**, **d**, and **f** in the same shell.
+meaning s electrons “see” more of the nucleus and are stabilized relative to p, d, and f in the same shell.
 
 ---
 
 ## Periodic trends
 
-**Ionization energy** is the energy required to remove an electron from a gaseous atom or ion (first, second, … ionization energies for successive removals). **Electron affinity** is the energy change when an electron is added; *more exothermic* addition corresponds to a *more favorable* affinity in the usual sign convention used in textbooks (check your table’s sign choice).
+**Ionization energy** is the energy required to remove an electron from a gaseous atom or ion (first, second, … ionization energies for successive removals). **Electron affinity** is the energy change when an electron is added; *more exothermic* addition corresponds to a *more favorable* affinity in the usual sign convention.
 
 **Atomic radius** gauges the size of the **electron cloud** (often defined by metallic or covalent radii in different contexts). **Metallic character** is the tendency to lose electrons and behave as a metal (cations); **nonmetallic character** is the tendency to gain or share electrons with nonmetals (anions).
 
-Broad patterns: **atomic radius** increases *down a group* (new shells, more shielding) and decreases *across a period* (rising $$Z_{\text{eff}}$$). **Ionization energy** and **electron affinity** (for representative elements) generally show opposite **horizontal** trends to radius. **Metallic character** decreases across a period and increases down a group. Exceptions, such as the **ionization energy** dip at boron or the **electron affinity** anomaly for nitrogen, appear when subshell structure or pairing changes the cost of removing or adding an electron.
+Broad patterns: **atomic radius** increases *down a group* (new shells, more shielding) and decreases *across a period* (rising $$Z_{\text{eff}}$$). **Ionization energy** and **electron affinity** (for representative elements) generally show opposite *horizontal* trends to radius. **Metallic character** decreases across a period and increases down a group. Exceptions, such as the **ionization energy** dip at boron or the **electron affinity** anomaly for nitrogen, appear when subshell structure or pairing changes the cost of removing or adding an electron.
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/periodictrends.png' | relative_url }}" alt="Periodic Trends" loading="lazy" decoding="async" />
 
@@ -338,7 +336,7 @@ Broad patterns: **atomic radius** increases *down a group* (new shells, more shi
 
 ## Electrostatics and Coulomb’s law
 
-**Electrostatics** describes forces and **potential energies** between charges at rest. The **Coulomb force** between two point charges is
+**Electrostatics** describes forces and *potential energies* between charges at rest. The **Coulomb force** between two point charges is
 
 $$
 F = k \frac{Q_1 Q_2}{r^2},
@@ -352,4 +350,4 @@ $$
 U = k \frac{Q_1 Q_2}{r}.
 $$
 
-These expressions reappear when you interpret **lattice energy**, **bond** formation, and **ionic** attraction in [Unit 2]({{ '/notes/ap/chem/compounds/' | relative_url }}): same inverse dependence on distance, same sensitivity to charge magnitude.
+These expressions reappear when you interpret **lattice energy**, **bond** formation, and **ionic** attraction in [Unit 2]({{ '/notes/ap/chem/compounds/' | relative_url }}).

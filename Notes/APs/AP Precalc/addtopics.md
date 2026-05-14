@@ -103,8 +103,6 @@ Mathematical induction is a great way to prove statements $$P(n)$$ for all integ
 fdf
 If the step needs several earlier cases, use strong induction: assume $$P(n_0),\ldots,P(k)$$ and deduce $$P(k+1)$$.
 
-**Tips**: Manipulate $$P(k+1)$$ so $$P(k)$$ appears; watch indexing (sums from $$1$$ to $$k+1$$ split into $$1$$ to $$k$$ plus one term).
-
 ### Tips for induction
 
 Induction is like proving a row of dominoes will all fall. The base case knocks down the first domino, and the inductive step proves that whenever one domino falls, the next one must fall too.
@@ -504,15 +502,15 @@ $$
 3. Factor $$x^3-x^2$$ and write the template for decomposing $$\frac{x^2+1}{x^3-x^2}$$ (distinct linear and repeated linear factors only).
 4. Prove by induction that $$\sum_{k=1}^{n} k^3 = \frac{n^2 (n+1)^2}{4}$$ for all integers $$n \ge 1$$. Extension: This looks like the square of $$1 + 2 + ... + n = \frac{n(n+1)}{2}$$! Prove that this is true (you should not use induction here).
 5. Prove by induction that $$8^{2n} - 3^{2n}$$ is divisible by $$55$$ for all integers $$n \ge 1$$.
-6. Expand $$(3x+2y)^{5}$$ using the binomial theorem.
-7. What is the coefficient of the term containing $$x^{22}$$ in $$\left(x^{3} - \dfrac{4}{\sqrt{x}}\right)^{12}$$?
-8. Explain why the powers of $$11$$ from $$11^{0}$$ to $$11^{4}$$ appear to match the rows of Pascal's Triangle, but the pattern fails at $$11^{5}$$. Use the binomial theorem in your answer.
-9. A sequence has $$a_3=-9$$ and $$a_6=243$$. Find the fifth term if the series is arithmetic and if the series is geometric.
-10. The sequence $$1,x,y,z$$ is arithmetic. The sequence $$1,p,q,z$$ is geometric. Both sequences are strictly increasing and contain only integers, and $$z$$ is as small as possible. What is the value of $$x+y+z+p+q$$? (2025 AMC 10A)
-11. Find $$\sum_{i=5}^{100}(3i-2)$$.
-12. Evaluate $$\sum_{i=6}^{12} 3\cdot 2^i$$.
-13. The first three terms of a geometric series are the integers $$a$$, $$720$$, and $$b$$, where $$a < 720 < b$$. What is the sum of the digits of the least possible value of $$b$$? (2024 AMC 10A).
-14. Prove by induction that $$2^{n}\ge n+1$$ for all integers $$n\ge 1$$.
+6. Prove by induction that $$2^{n}\ge n^{3}$$ for all integers $$n\ge 10$$.
+7. Expand $$(3x+2y)^{5}$$ using the binomial theorem.
+8. What is the coefficient of the term containing $$x^{22}$$ in $$\left(x^{3} - \dfrac{4}{\sqrt{x}}\right)^{12}$$?
+9. Explain why the powers of $$11$$ from $$11^{0}$$ to $$11^{4}$$ appear to match the rows of Pascal's Triangle, but the pattern fails at $$11^{5}$$. Use the binomial theorem in your answer.
+10. A sequence has $$a_3=-9$$ and $$a_6=243$$. Find the fifth term if the series is arithmetic and if the series is geometric.
+11. The sequence $$1,x,y,z$$ is arithmetic. The sequence $$1,p,q,z$$ is geometric. Both sequences are strictly increasing and contain only integers, and $$z$$ is as small as possible. What is the value of $$x+y+z+p+q$$? (2025 AMC 10A)
+12. Find $$\sum_{i=5}^{100}(3i-2)$$.
+13. Evaluate $$\sum_{i=6}^{12} 3\cdot 2^i$$.
+14. The first three terms of a geometric series are the integers $$a$$, $$720$$, and $$b$$, where $$a < 720 < b$$. What is the sum of the digits of the least possible value of $$b$$? (2024 AMC 10A).
 
 ## Solutions
 
@@ -708,6 +706,85 @@ $$
 
 ### Solution 6
 
+**Base case**: $$n=10$$:
+
+$$
+2^{10}=1024
+$$
+
+and
+
+$$
+10^{3}=1000.
+$$
+
+Since $$1024\ge 1000$$, the inequality is true for $$n=10$$.
+
+**Induction hypothesis**: Assume that for some integer $$k\ge 10$$,
+
+$$
+2^{k}\ge k^{3}.
+$$
+
+**Inductive step**: We need to show that
+
+$$
+2^{k+1}\ge (k+1)^{3}.
+$$
+
+Start with the left-hand side:
+
+$$
+2^{k+1}=2\cdot 2^{k}.
+$$
+
+Use the induction hypothesis:
+
+$$
+2\cdot 2^{k}\ge 2k^{3}.
+$$
+
+Now we need to show that $$2k^{3}$$ is at least $$(k+1)^{3}$$. Compare them:
+
+$$
+2k^{3}-(k+1)^{3}
+=2k^{3}-(k^{3}+3k^{2}+3k+1)
+=k^{3}-3k^{2}-3k-1.
+$$
+
+For $$k\ge 10$$,
+
+$$
+k^{3}-3k^{2}-3k-1
+= k^{2}(k-6)+3k(k-1)-1.
+$$
+
+Since $$k\ge 10$$, both $$k^{2}(k-6)$$ and $$3k(k-1)$$ are positive, and more specifically,
+
+$$
+k^{2}(k-6)+3k(k-1)-1\ge 10^{2}(4)+0-1=399>0.
+$$
+
+Therefore
+
+$$
+2k^{3}\ge (k+1)^{3}.
+$$
+
+Combining the inequalities,
+
+$$
+2^{k+1}\ge 2k^{3}\ge (k+1)^{3}.
+$$
+
+Thus the inequality is true for $$k+1$$. By induction,
+
+$$
+\boxed{2^{n}\ge n^{3} \text{ for all integers } n\ge 10}.
+$$
+
+### Solution 7
+
 Use the binomial theorem with $$a=3x$$, $$b=2y$$, and $$n=5$$:
 
 $$
@@ -730,7 +807,7 @@ $$
 \boxed{(3x+2y)^5=243x^5+810x^4y+1080x^3y^2+720x^2y^3+240xy^4+32y^5}.
 $$
 
-### Solution 7
+### Solution 8
 
 Write $$\left(x^{3} - \dfrac{4}{\sqrt{x}}\right)^{12} = \left(x^{3} - 4x^{-1/2}\right)^{12}$$. A general term in the binomial expansion is
 
@@ -762,7 +839,7 @@ $$
 \boxed{126720}.
 $$
 
-### Solution 8
+### Solution 9
 
 $$
 11^{n} = (10+1)^{n} = \sum_{k=0}^{n} \binom{n}{k} 10^{n-k}.
@@ -792,7 +869,7 @@ $$
 \boxed{11^{5}=161051}.
 $$
 
-### Solution 9
+### Solution 10
 
 Arithmetic: Terms $$a_{3}$$ and $$a_{6}$$ are three steps apart, so
 
@@ -824,7 +901,7 @@ $$
 \boxed{159 \text{ if arithmetic, and } -81 \text{ if geometric}}.
 $$
 
-### Solution 10
+### Solution 11
 
 Arithmetic: Since $$1,x,y,z$$ is arithmetic, let the common difference be $$d$$. Then
 
@@ -864,7 +941,7 @@ $$
 \boxed{x+y+z+p+q=22+43+64+4+16=149}.
 $$
 
-### Solution 11
+### Solution 12
 
 The terms of the sum form an arithmetic series. The first term occurs when $$i=5$$:
 
@@ -890,13 +967,13 @@ $$
 \sum_{i=5}^{100}(3i-2)=\frac{96}{2}(13+298)=48(311)=14928.
 $$
 
-So
+So the answer is
 
 $$
 \boxed{14928}.
 $$
 
-### Solution 12
+### Solution 13
 
 This is a finite geometric series with first term $$192$$, common ratio $$2$$, and $$7$$ terms:
 
@@ -908,13 +985,13 @@ $$
 = 192(2^{7}-1).
 $$
 
-Since $$2^{7}=128$$,
+Since $$2^{7}=128$$, the answer is $$192\cdot127$$ which is
 
 $$
 \boxed{24384}.
 $$
 
-### Solution 13
+### Solution 14
 
 For a geometric sequence $$a,720,b$$, the middle term squared equals the product of the neighboring terms:
 
@@ -944,68 +1021,4 @@ which is an integer and satisfies $$675<720<768$$. The sum of the digits of $$76
 
 $$
 \boxed{7+6+8=21}.
-$$
-
-### Solution 14
-
-**Base case**: $$n=1$$:
-
-$$
-2^{1}=2
-$$
-
-and
-
-$$
-1+1=2.
-$$
-
-Since both sides are equal, $$2^{1}\ge 1+1$$ is true.
-
-**Induction hypothesis**: Assume that for some integer $$k\ge 1$$,
-
-$$
-2^{k}\ge k+1.
-$$
-
-**Inductive step**: We need to show that
-
-$$
-2^{k+1}\ge (k+1)+1=k+2.
-$$
-
-Start with the left-hand side:
-
-$$
-2^{k+1}=2\cdot 2^{k}.
-$$
-
-Use the induction hypothesis:
-
-$$
-2\cdot 2^{k}\ge 2(k+1)=2k+2.
-$$
-
-Now compare $$2k+2$$ to the expression we need:
-
-$$
-2k+2-(k+2)=k.
-$$
-
-Since $$k\ge 1$$, we know $$k\ge 0$$, so
-
-$$
-2k+2\ge k+2.
-$$
-
-Therefore,
-
-$$
-2^{k+1}\ge k+2.
-$$
-
-Thus the inequality is true for $$k+1$$. By induction,
-
-$$
-\boxed{2^{n}\ge n+1 \text{ for all integers } n\ge 1}.
 $$
