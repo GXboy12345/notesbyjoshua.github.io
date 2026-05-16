@@ -25,7 +25,7 @@ Factor $$D(x)$$ into linear and irreducible quadratic factors over $$\mathbb{R}$
 | Irreducible $$(ax^2+bx+c)$$ | $$\dfrac{Bx+C}{ax^2+bx+c}$$ |
 | Repeated quadratic $$(ax^2+bx+c)^{m}$$ | Similar chain with numerators $$B_k x + C_k$$ |
 
-**Solve for coefficients**: multiply through by the LCD and equate coefficients, or substitute convenient $$x$$ values plus compare powers of $$x$$.
+**Solve for coefficients**: multiply through by the LCD and equate coefficients, or substitute convenient $$x$$ values plus compare powers of $$x$$. Note that for all polynomials with a degree of 3 or higher can be factored into the form $$ax^2+bx+c$$ for some $$a$$, $$b$$, and $$c$$. To solve out, you can do a partial fraction-style solving for the coefficients.
 
 <div class="theorem-box" markdown="1">
 
@@ -505,8 +505,8 @@ $$
 6. Prove by induction that $$2^{n}\ge n^{3}$$ for all integers $$n\ge 10$$.
 7. Expand $$(3x+2y)^{5}$$ using the binomial theorem.
 8. What is the coefficient of the term containing $$x^{22}$$ in $$\left(x^{3} - \dfrac{4}{\sqrt{x}}\right)^{12}$$?
-9. Explain why the powers of $$11$$ from $$11^{0}$$ to $$11^{4}$$ appear to match the rows of Pascal's Triangle, but the pattern fails at $$11^{5}$$. Use the binomial theorem in your answer.
-10. A sequence has $$a_3=-9$$ and $$a_6=243$$. Find the fifth term if the series is arithmetic and if the series is geometric.
+9. Use the binomial theorem to prove that $$9^{n}-1$$ is divisible by $$8$$ for every integer $$n\ge 1$$.
+10. A nonconstant arithmetic sequence has first term $$5$$ and common difference $$d$$. Its first, third, and seventh terms form a geometric sequence in that order. Find $$d$$ and the three geometric terms.
 11. The sequence $$1,x,y,z$$ is arithmetic. The sequence $$1,p,q,z$$ is geometric. Both sequences are strictly increasing and contain only integers, and $$z$$ is as small as possible. What is the value of $$x+y+z+p+q$$? (2025 AMC 10A)
 12. Find $$\sum_{i=5}^{100}(3i-2)$$.
 13. Evaluate $$\sum_{i=6}^{12} 3\cdot 2^i$$.
@@ -842,63 +842,81 @@ $$
 ### Solution 9
 
 $$
-11^{n} = (10+1)^{n} = \sum_{k=0}^{n} \binom{n}{k} 10^{n-k}.
+9^{n}-1=(8+1)^{n}-1.
 $$
 
-For $$n=0,1,2,3,4$$, every binomial coefficient in row $$n$$ is a single digit. That means the decimal expansion of $$11^{n}$$ can be read straight from the coefficients with no carrying:
+By the binomial theorem,
 
 $$
-11^{2}=121,\qquad 11^{3}=1331,\qquad 11^{4}=14641.
+(8+1)^{n}=\sum_{k=0}^{n}\binom{n}{k}8^{k}1^{n-k}.
 $$
 
-For $$n=5$$, row $$5$$ is
+So
 
 $$
-1,\ 5,\ 10,\ 10,\ 5,\ 1.
+(8+1)^n=\binom{n}{0}8^{0}+\sum_{k=1}^{n}\binom{n}{k}8^{k}.
 $$
 
-The coefficients $$10$$ and $$10$$ are not single digits, so carrying is required. The uncarried expression is
+Since $$\binom{n}{0}8^{0}=1$$,
 
 $$
-10^{5}+5\cdot 10^{4}+10\cdot 10^{3}+10\cdot 10^{2}+5\cdot 10+1,
+(8+1)^n-1=\sum_{k=1}^{n}\binom{n}{k}8^{k}.
 $$
 
-which simplifies to $$161051$$. Thus $$11^{5}=161051$$, not the direct concatenation $$15101051$$. The visual pattern breaks once a binomial coefficient reaches $$10$$ or more:
+Every term in the sum has a factor of $$8$$ because $$k\ge 1$$. Therefore the entire sum is divisible by $$8$$. Thus
 
 $$
-\boxed{11^{5}=161051}.
+\boxed{8\mid 9^{n}-1 \text{ for every integer } n\ge 1}.
 $$
 
 ### Solution 10
 
-Arithmetic: Terms $$a_{3}$$ and $$a_{6}$$ are three steps apart, so
+The arithmetic sequence has terms
 
 $$
-a_{6}-a_{3}=3d=243-(-9)=252.
+a_1=5,\qquad a_3=5+2d,\qquad a_7=5+6d.
 $$
 
-Thus $$d=84$$. Since $$a_{5}$$ is two steps after $$a_{3}$$,
+These three terms form a geometric sequence in order, so the middle term squared equals the product of the first and third terms:
 
 $$
-a_{5}=a_{3}+2d=-9+2(84)=159.
+(5+2d)^2=5(5+6d).
 $$
 
-Geometric: Terms $$a_{3}$$ and $$a_{6}$$ are three ratios apart, so
+Expand:
 
 $$
-\frac{a_{6}}{a_{3}}=r^{3}=\frac{243}{-9}=-27.
+25+20d+4d^{2}=25+30d.
 $$
 
-Thus $$r=-3$$. Since $$a_{5}$$ is two steps after $$a_{3}$$,
+Simplify:
 
 $$
-a_{5}=a_{3}r^{2}=(-9)(9)=-81.
+4d^{2}-10d=0.
 $$
 
-So the fifth term is
+Factor:
 
 $$
-\boxed{159 \text{ if arithmetic, and } -81 \text{ if geometric}}.
+2d(2d-5)=0.
+$$
+
+So $$d=0$$ or $$d=\frac{5}{2}$$. The sequence is nonconstant, so $$d\ne 0$$. Therefore
+
+$$
+d=\frac{5}{2}.
+$$
+
+The three geometric terms are
+
+$$
+5,\qquad 5+2\left(\frac{5}{2}\right)=10,\qquad 5+6\left(\frac{5}{2}\right)=20.
+$$
+
+Thus
+
+$$
+\boxed{d=\frac{5}{2}\quad\text{and the geometric terms are }5,10,20}.
 $$
 
 ### Solution 11
