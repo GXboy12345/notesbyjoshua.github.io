@@ -511,28 +511,16 @@ $$
 12. Find $$\sum_{i=5}^{100}(3i-2)$$.
 13. Evaluate $$\sum_{i=6}^{12} 3\cdot 2^i$$.
 14. The first three terms of a geometric series are the integers $$a$$, $$720$$, and $$b$$, where $$a < 720 < b$$. What is the sum of the digits of the least possible value of $$b$$? (2024 AMC 10A).
-15. Evaluate the finite sum $$\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1)$$ in closed form.
+15. Evaluate the finite sum $$\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1)$$ in closed form. Hint: $$k\binom{n}{k} = n\binom{n-1}{k-1}$$
 16. (Bonus, Binet's Formula)
 
 Binet's Formula is a famous explicit formula for the Fibonnaci series. Let $$F_0=0$$, $$F_1=1$$, and $$F_{n+2}=F_{n+1}+F_n$$ for $$n\ge 0$$.
 
-$$(A)$$ Define a function
+$$(A)$$ Define a function $$G(x)=\sum_{n=0}^{\infty}F_nx^n$$. Use the recurrence to show that $$G(x)=\frac{x}{1-x-x^2}$$. $$G(x)$$ is called the generating function of $$F_n$$. Hint: How can you telescope to cancel out the correct terms?
 
-$$
-G(x)=\sum_{n=0}^{\infty}F_nx^n.
-$$
+$$(B)$$ Decompose $$G(x)$$ into partial fractions (Hint: All terms should be linear!).
 
-Use the recurrence to show that
-
-$$
-G(x)=\frac{x}{1-x-x^2}.
-$$
-
-$$G(x)$$ is called the generating function of $$F_n$$. Hint: How can you telescope to cancel out the correct terms?
-
-$$(B)$$ Decompose $$G(x)$$ into partial fractions.
-
-$$(C)$$ Set the linear factors found in part (B) to $$\alpha$$ and $$\beta$$ (so your partial fraction looks like $$\frac{A}{x - \alpha}$$ and $$\frac{B}{x - \beta}$$). Use the geometric series formula to prove Binet's formula:
+$$(C)$$ Set the linear factors found in part (B) to $$\alpha$$ and $$\beta$$ (so your partial fraction looks like $$\frac{A}{1 - \alpha x}$$ and $$\frac{B}{1 - \beta x}$$). Use the geometric series formula to prove Binet's formula:
 
 $$
 F_n=\frac{\alpha^n-\beta^n}{\sqrt5}.
@@ -1184,72 +1172,72 @@ $$
 For part (B), use
 
 $$
-\varphi+\psi=1
+\alpha+\beta=1
 \qquad\text{and}\qquad
-\varphi\psi=-1.
+\alpha\beta=-1.
 $$
 
 Then
 
 $$
-(1-\varphi x)(1-\psi x)
-=1-(\varphi+\psi)x+\varphi\psi x^2
+(1-\alpha x)(1-\beta x)
+=1-(\alpha+\beta)x+\alpha\beta x^2
 =1-x-x^2.
 $$
 
 So
 
 $$
-G(x)=\frac{x}{(1-\varphi x)(1-\psi x)}.
+G(x)=\frac{x}{(1-\alpha x)(1-\beta x)}.
 $$
 
-For part (C), claim
+Now, just solve out for the constants. We claim that
 
 $$
 G(x)=\frac{1}{\sqrt5}
 \left(
-\frac{1}{1-\varphi x}
+\frac{1}{1-\alpha x}
 -
-\frac{1}{1-\psi x}
+\frac{1}{1-\beta x}
 \right).
 $$
 
-Check this by combining the fractions:
+Check this by combining the fractions (or derive it algebraically which is a bit tedious):
 
 $$
 \frac{1}{\sqrt5}
 \left(
-\frac{1}{1-\varphi x}
+\frac{1}{1-\alpha x}
 -
-\frac{1}{1-\psi x}
+\frac{1}{1-\beta x}
 \right)
 =
 \frac{1}{\sqrt5}\cdot
-\frac{(1-\psi x)-(1-\varphi x)}
-(1-\varphi x)(1-\psi x).
+\frac{(1-\beta x)-(1-\alpha x)}
+{(1-\alpha x)(1-\beta x)}.
 $$
 
 The numerator simplifies:
 
 $$
-(1-\psi x)-(1-\varphi x)
-=(\varphi-\psi)x.
+(1-\beta x)-(1-\alpha x)
+=(\alpha-\beta)x.
 $$
 
 Since
 
 $$
-\varphi-\psi=\sqrt5,
+\alpha-\beta=\sqrt5,
 $$
 
 we get
 
 $$
 \frac{1}{\sqrt5}\cdot
-\frac{(\varphi-\psi)x}
-(1-\varphi x)(1-\psi x)
+\frac{(\alpha-\beta)x}
+(1-\alpha x)(1-\beta x)
 =
-\frac{x}{(1-\varphi x)(1-\psi x)}.
+\frac{x}{(1-\alpha x)(1-\beta x)}.
 $$
 
 Thus
@@ -1258,23 +1246,23 @@ $$
 \boxed{
 G(x)=\frac{1}{\sqrt5}
 \left(
-\frac{1}{1-\varphi x}
+\frac{1}{1-\alpha x}
 -
-\frac{1}{1-\psi x}
+\frac{1}{1-\beta x}
 \right)
 }.
 $$
 
-For part (D), use the geometric series formula:
+For part (C), use the geometric series formula:
 
 $$
-\frac{1}{1-\varphi x}=\sum_{n=0}^{\infty}\varphi^nx^n
+\frac{1}{1-\alpha x}=\sum_{n=0}^{\infty}\alpha^nx^n
 $$
 
 and
 
 $$
-\frac{1}{1-\psi x}=\sum_{n=0}^{\infty}\psi^nx^n.
+\frac{1}{1-\beta x}=\sum_{n=0}^{\infty}\beta^nx^n.
 $$
 
 Therefore
@@ -1284,9 +1272,9 @@ G(x)
 =
 \frac{1}{\sqrt5}
 \left(
-\sum_{n=0}^{\infty}\varphi^nx^n
+\sum_{n=0}^{\infty}\alpha^nx^n
 -
-\sum_{n=0}^{\infty}\psi^nx^n
+\sum_{n=0}^{\infty}\beta^nx^n
 \right).
 $$
 
@@ -1295,7 +1283,7 @@ Combine the sums:
 $$
 G(x)=
 \sum_{n=0}^{\infty}
-\frac{\varphi^n-\psi^n}{\sqrt5}x^n.
+\frac{\alpha^n-\beta^n}{\sqrt5}x^n.
 $$
 
 But by definition,
@@ -1307,5 +1295,5 @@ $$
 Matching coefficients of $$x^n$$ gives
 
 $$
-\boxed{F_n=\frac{\varphi^n-\psi^n}{\sqrt5}}.
+\boxed{F_n=\frac{\alpha^n-\beta^n}{\sqrt5}}.
 $$
