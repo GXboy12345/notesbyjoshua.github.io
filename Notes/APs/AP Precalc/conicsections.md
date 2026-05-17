@@ -462,7 +462,7 @@ $$
 \boxed{(y+2)^{2}=12(x-2)}.
 $$
 
-The axis of symmetry is $$\boxed{y=-2}$$. The latus rectum is vertical through the focus. Its length is $$|4p|=12$$, so its endpoints are $$6$$ units above and below the focus:
+The axis of symmetry is $$\boxed{y=-2}$$. The latus rectum is vertical through the focus. Its length is $$\lvert 4p \rvert=12$$, so its endpoints are $$6$$ units above and below the focus:
 
 $$
 \boxed{(5,4)\text{ and }(5,-8)}.
@@ -1206,4 +1206,248 @@ Therefore
 
 $$
 \boxed{y_Ay_B=-4p^{2}}.
+$$
+
+### Solution 16
+
+For part (A), use the attractive model
+
+$$
+r=\frac{r_0}{1+e\cos\phi}.
+$$
+
+The points $$(0,-5)$$ and $$(0,5)$$ have radial distance $$5$$ and satisfy $$\cos\phi=0$$. Therefore
+
+$$
+5=\frac{r_0}{1+e(0)}
+\quad\Longrightarrow\quad
+r_0=5.
+$$
+
+The point $$(3,0)$$ has $$r=3$$ and $$\cos\phi=1$$, so
+
+$$
+3=\frac{5}{1+e}.
+$$
+
+Thus
+
+$$
+1+e=\frac53
+\quad\Longrightarrow\quad
+e=\frac23.
+$$
+
+The maximum distance from the origin occurs when the denominator is smallest. Since $$0<e<1$$, this happens at $$\cos\phi=-1$$:
+
+$$
+r_{\max}=\frac{r_0}{1-e}
+=\frac{5}{1-\frac23}
+=15.
+$$
+
+So
+
+$$
+\boxed{r_{\max}=15\ \mathrm{m}}.
+$$
+
+For part (B), use the repulsive model
+
+$$
+R=\frac{r_0}{e\cos\phi-1}.
+$$
+
+The point $$(2,0)$$ has $$R=2$$ and $$\cos\phi=1$$, so
+
+$$
+2=\frac{r_0}{e-1}
+\quad\Longrightarrow\quad
+r_0=2(e-1).
+$$
+
+The points $$(3,-4)$$ and $$(3,4)$$ have $$R=5$$ and $$\cos\phi=\frac35$$, so
+
+$$
+5=\frac{r_0}{\frac35e-1}.
+$$
+
+Substitute $$r_0=2(e-1)$$:
+
+$$
+5\left(\frac35e-1\right)=2(e-1).
+$$
+
+Then
+
+$$
+3e-5=2e-2
+\quad\Longrightarrow\quad
+e=3.
+$$
+
+Therefore
+
+$$
+r_0=2(3-1)=4.
+$$
+
+The asymptotic directions occur when the denominator tends to $$0$$:
+
+$$
+e\cos\phi-1=0.
+$$
+
+Since $$e=3$$,
+
+$$
+\cos\phi=\frac13.
+$$
+
+Thus the outgoing asymptotic direction in the upper half-plane makes angle
+
+$$
+\boxed{\theta=\arccos\left(\frac13\right)}
+$$
+
+with the positive $$x$$-axis. Equivalently,
+
+$$
+\boxed{\theta=\arctan(2\sqrt2)}.
+$$
+
+For part (C), start from the general repulsive equation
+
+$$
+R=\frac{r_0}{e\cos\phi-1}.
+$$
+
+Since $$R\cos\phi=x$$, multiply through:
+
+$$
+R(e\cos\phi-1)=r_0
+\quad\Longrightarrow\quad
+ex-R=r_0.
+$$
+
+So
+
+$$
+R=ex-r_0.
+$$
+
+Square and use $$R^2=x^2+y^2$$:
+
+$$
+x^2+y^2=(ex-r_0)^2.
+$$
+
+Rearrange:
+
+$$
+(e^2-1)x^2-2er_0x+r_0^2-y^2=0.
+$$
+
+Complete the square in $$x$$:
+
+$$
+(e^2-1)\left(x-\frac{er_0}{e^2-1}\right)^2-y^2
+=\frac{r_0^2}{e^2-1}.
+$$
+
+Divide by $$\dfrac{r_0^2}{e^2-1}$$:
+
+$$
+\frac{\left(x-\frac{er_0}{e^2-1}\right)^2}{\frac{r_0^2}{(e^2-1)^2}}
+-
+\frac{y^2}{\frac{r_0^2}{e^2-1}}
+=1.
+$$
+
+Thus the asymptotes are
+
+$$
+y=\pm\sqrt{e^2-1}\left(x-\frac{er_0}{e^2-1}\right).
+$$
+
+The impact parameter $$B$$ is the perpendicular distance from the origin to either asymptote. For the line
+
+$$
+y=\sqrt{e^2-1}\left(x-\frac{er_0}{e^2-1}\right),
+$$
+
+this distance is
+
+$$
+B=
+\frac{\sqrt{e^2-1}\cdot \frac{er_0}{e^2-1}}
+{\sqrt{1+(e^2-1)}}.
+$$
+
+Since $$\sqrt{1+(e^2-1)}=e$$,
+
+$$
+\boxed{B=\frac{r_0}{\sqrt{e^2-1}}}.
+$$
+
+Now relate this to the deflection angle. The outgoing asymptote makes angle
+
+$$
+\alpha=\arccos\left(\frac1e\right)
+$$
+
+with the positive $$x$$-axis. The incoming and outgoing velocity directions differ by
+
+$$
+\theta=\pi-2\alpha.
+$$
+
+So
+
+$$
+\frac{\theta}{2}=\frac{\pi}{2}-\alpha.
+$$
+
+Because $$\cos\alpha=\frac1e$$,
+
+$$
+\sin\left(\frac{\theta}{2}\right)=\frac1e.
+$$
+
+Therefore
+
+$$
+\sqrt{e^2-1}=\cot\left(\frac{\theta}{2}\right),
+$$
+
+and
+
+$$
+\boxed{B(\theta)=r_0\tan\left(\frac{\theta}{2}\right)}.
+$$
+
+For the specific trajectory of $$\gamma$$ from part (B), $$e=3$$ and $$r_0=4$$, so
+
+$$
+B=\frac{4}{\sqrt{3^2-1}}
+=\frac{4}{\sqrt8}
+=\sqrt2.
+$$
+
+Thus, if the family is fired along the same incident asymptotic line as $$\gamma$$, the impact parameter is fixed:
+
+$$
+\boxed{B=\sqrt2\ \mathrm{m}}.
+$$
+
+If instead one holds the eccentricity $$e$$ fixed while varying $$r_0$$, then the clean relation is
+
+$$
+\boxed{B(r_0)=\frac{r_0}{\sqrt{e^2-1}}}.
+$$
+
+In particular, for the same eccentricity as $$\gamma$$, namely $$e=3$$,
+
+$$
+\boxed{B(r_0)=\frac{r_0}{2\sqrt2}}.
 $$

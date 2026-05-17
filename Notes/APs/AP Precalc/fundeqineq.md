@@ -618,77 +618,44 @@ which simplifies back to $$y=x^3$$.
 
 ## Practice
 
-1. Find the distance between $$(1,-3)$$ and $$(5,5)$$ and write the equation of the line that contain both points in slope-intercept form.
-2. Find the equation of the line through $$(2,4)$$ that is perpendicular to $$3x - 4y = 12$$. Write your answer in point-slope form.
-3. The taxicab distance between points $$(x_1, y_1)$$ and $$(x_2, y_2)$$ in the coordinate plane is given by $$\lvert x_1 - x_2 \rvert + \lvert y_1 - y_2 \rvert$$. For how many points $P$ with integer coordinates is the taxicab distance between $P$ and the origin less than or equal to $$20$$? (2022 AMC 12A).
-4. Solve for $$x$$: $$\dfrac{2x-1}{3} - \dfrac{x+4}{2} = 1$$.
-5. Solve for $$x$$: $$x^4 - 13x^2 + 36 = 0$$.
-6. Simplify $$\sqrt{\frac{x^4}{256} + \frac{x^3}{32} + \frac{5x^2}{16} + x + 4 + 16x - 8\sqrt{4x-7} - 24 + 2(\frac{x^2}{16} + \frac{x}{4} + 2)(-2 + 2\sqrt{4x-7})}$$ (Hint: Use factor by grouping).
-7. Suppose $$p(x) = 3x^2 + 5x + c$$ for some $$c \ne 0$$. If $$r_1$$ and $$r_2$$ are the roots of $$p(x) = 0$$, find the value of $$\frac{1}{r_1} + \frac{1}{r_2}$$ in terms of $$c$$.
-8. Solve for $$x$$ and discard any extraneous solutions: $$\dfrac{1}{x-1} + \dfrac{2}{x^2-1} = \dfrac{3}{x+1}$$.
-9. Solve for $$x$$ in $$\mathbb{R}$$: $$\lvert 2x - 5\rvert = \lvert x + 1\rvert$$.
-10. Solve for $$x$$ in $$\mathbb{R}$$: $$9^{x} - 10\cdot 3^{x} + 9 = 0$$.
-11. Solve for $$x$$ in $$\mathbb{R}$$ and check every candidate in the original equation: $$\sqrt{2x+3} + \sqrt{x+1} = 3$$.
-12. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\dfrac{3x+1}{x-2} > 2$$.
-13. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x - 2\rvert + \lvert x + 4\rvert \le 10$$.
-14. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x^{2} - 9\rvert \le 5$$.
-15. Solve for $$x$$: $$\frac{\lvert x - \lvert x \rvert \rvert}{x} > 0$$.
-16. Solve in $$\mathbb{R}$$: $$(x-1)^{2}(x-4)(x+2) < 0$$. Explain how repeated roots change the sign chart compared with all simple roots.
-17. Solve in $$\mathbb{R}$$: $$x^{3} - 5x^{2} + 6x \ge 0$$.
-18. Solve in $$\mathbb{R}$$: $$\dfrac{x^{2} - 4}{x^{2} + x} \le 0$$. Give the domain, a single rational inequality of the form $$\dfrac{R(x)}{Q(x)} \le 0$$ with no common factors, and the solution in interval notation.
-19. Solve in $$\mathbb{R}$$: $$\sqrt{4 - x^{2}} \ge x$$ (domain of the radical first, then split into $$x < 0$$ vs $$x \ge 0$$ before squaring where legal).
-20. Solve in $$\mathbb{R}$$: $$\sqrt{x^{2} + 5} \le x + 2$$ (impose all conditions needed before and after squaring, then intersect with the domain).
-21. For $$f(x) = \dfrac{x^{2}}{x^{2} + 1}$$, determine whether the graph has $$y$$-axis symmetry, $$x$$-axis symmetry, origin symmetry, or some combination (use the point tests from this page; note the domain is all $$\mathbb{R}$$).
-22. For $$g(x) = x\lvert x\rvert$$, decide which symmetries the graph has and relate your answer to the fact that $$g(x) = x^{2}$$ when $$x \ge 0$$ and $$g(x) = -x^{2}$$ when $$x < 0$$.
+1. The taxicab distance between points $$(x_1, y_1)$$ and $$(x_2, y_2)$$ in the coordinate plane is given by $$\lvert x_1 - x_2 \rvert + \lvert y_1 - y_2 \rvert$$. For how many points $$P$$ with integer coordinates is the taxicab distance between $$P$$ and the origin less than or equal to $$20$$? (2022 AMC 12A)
+2. Solve for $$x$$: $$x^4 - 13x^2 + 36 = 0$$.
+3. Simplify $$\sqrt{\frac{x^4}{256} + \frac{x^3}{32} + \frac{5x^2}{16} + x + 4 + 16x - 8\sqrt{4x-7} - 24 + 2(\frac{x^2}{16} + \frac{x}{4} + 2)(-2 + 2\sqrt{4x-7})}$$. (Hint: Use factor by grouping.)
+4. Solve for $$x$$ and discard any extraneous solutions: $$\dfrac{1}{x-1} + \dfrac{2}{x^2-1} = \dfrac{3}{x+1}$$.
+5. Solve for $$x$$ in $$\mathbb{R}$$: $$9^x - 10\cdot 3^x + 9 = 0$$.
+6. Solve for $$x$$ in $$\mathbb{R}$$ and check every candidate in the original equation: $$\sqrt{2x+3} + \sqrt{x+1} = 3$$.
+7. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\dfrac{3x+1}{x-2} > 2$$.
+8. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x - 2\rvert + \lvert x + 4\rvert \le 10$$.
+9. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x^{2} - 9\rvert \le 5$$.
+10. Solve in $$\mathbb{R}$$: $$(x-1)^{2}(x-4)(x+2) < 0$$. Explain how repeated roots change the sign chart compared with all simple roots.
+11. Solve in $$\mathbb{R}$$: $$x^{3} - 5x^{2} + 6x \ge 0$$.
+12. Solve in $$\mathbb{R}$$: $$\dfrac{x^{2} - 4}{x^{2} + x} \le 0$$. Give the domain, a single rational inequality of the form $$\dfrac{R(x)}{Q(x)} \le 0$$ with no common factors, and the solution in interval notation.
+13. Solve in $$\mathbb{R}$$: $$\sqrt{4 - x^{2}} \ge x$$. Find the radical domain first, then split into $$x < 0$$ and $$x \ge 0$$ before squaring where legal.
+14. Solve in $$\mathbb{R}$$: $$\sqrt{x^{2} + 5} \le x + 2$$. Impose all conditions needed before and after squaring.
+15. Determine the symmetries of both graphs: $$f(x)=\dfrac{x^2}{x^2+1}$$ and $$g(x)=x\lvert x\rvert$$. For each, decide whether the graph has $$y$$-axis symmetry, $$x$$-axis symmetry, origin symmetry, or none.
+16. (Bonus, Markov equations)
+
+Our goal is to find all positive integer solutions $$(x,y)$$ to
+
+$$
+x^2+y^2+1=3xy.
+$$
+
+This is a small version of a famous family of Diophantine equations (equations with positive integer solutions) known as Markov equations.
+
+$$(A)$$ Find the solutions with $$y=1$$.
+
+$$(B)$$ Treat the equation as a quadratic in $$x$$. If $$x$$ is one root, use Vieta's formulas to find the other root $$x'$$.
+
+$$(C)$$ Suppose $$(x,y)$$ is a positive integer solution with $$x\ge y\ge 2$$. Prove that the other root $$x'$$ is a positive integer and that $$x'<y$$.
+
+$$(D)$$ Explain why repeatedly replacing the larger coordinate by the smaller Vieta root must eventually reach a solution with one coordinate equal to $$1$$.
+
+$$(E)$$ Reverse the process to describe all positive integer solutions.
 
 ## Solutions
 
 ### Solution 1
-
-Use the distance formula:
-
-$$
-d=\sqrt{(5-1)^{2}+(5-(-3))^{2}}
-=\sqrt{4^{2}+8^{2}}
-=\sqrt{80}
-=4\sqrt{5}.
-$$
-
-The slope of the line through $$(1,-3)$$ and $$(5,5)$$ is
-
-$$
-m=\frac{5-(-3)}{5-1}=\frac{8}{4}=2.
-$$
-
-Use $$y=mx+b$$ with point $$(1,-3)$$:
-
-$$
--3=2(1)+b \quad\Longrightarrow\quad b=-5.
-$$
-
-So
-
-$$
-\boxed{d=4\sqrt{5}\quad\text{and}\quad y=2x-5}.
-$$
-
-### Solution 2
-
-First find the slope of $$3x-4y=12$$:
-
-$$
--4y=-3x+12
-\quad\Longrightarrow\quad
-y=\frac{3}{4}x-3.
-$$
-
-The slope is $$\frac{3}{4}$$, so a perpendicular line has slope $$-\frac{4}{3}$$. Through $$(2,4)$$, point-slope form is
-
-$$
-\boxed{y-4=-\frac{4}{3}(x-2)}.
-$$
-
-### Solution 3
 
 We want integer points $$(x,y)$$ satisfying
 
@@ -698,7 +665,13 @@ $$
 
 For distance $$0$$, there is only the origin: $$1$$ point.
 
-For each distance $$r\ge 1$$, the equation $$\lvert x \rvert +\lvert y \rvert =r$$ has $$4r$$ integer points. Therefore the total number of points is
+For each distance $$r\ge 1$$, the equation
+
+$$
+\lvert x \rvert +\lvert y \rvert =r
+$$
+
+has $$4r$$ integer points. Therefore the total number of points is
 
 $$
 1+\sum_{r=1}^{20}4r
@@ -707,54 +680,24 @@ $$
 =841.
 $$
 
-So the answer is
+Thus
 
 $$
 \boxed{841}.
 $$
 
-### Solution 4
+### Solution 2
 
-Clear denominators by multiplying both sides by $$6$$:
-
-$$
-6\left(\frac{2x-1}{3}\right)-6\left(\frac{x+4}{2}\right)=6(1).
-$$
-
-Then
+Let $$u=x^2$$. Then
 
 $$
-2(2x-1)-3(x+4)=6.
-$$
-
-Simplify:
-
-$$
-4x-2-3x-12=6
-\quad\Longrightarrow\quad
-x-14=6
-\quad\Longrightarrow\quad
-x=20.
-$$
-
-Thus
-
-$$
-\boxed{x=20}.
-$$
-
-### Solution 5
-
-Let $$u=x^{2}$$. Then
-
-$$
-x^{4}-13x^{2}+36=0
+x^4-13x^2+36=0
 $$
 
 becomes
 
 $$
-u^{2}-13u+36=0.
+u^2-13u+36=0.
 $$
 
 Factor:
@@ -763,10 +706,12 @@ $$
 (u-9)(u-4)=0.
 $$
 
-So $$u=9$$ or $$u=4$$. Since $$u=x^{2}$$,
+So $$u=9$$ or $$u=4$$. Since $$u=x^2$$,
 
 $$
-x^{2}=9 \quad\text{or}\quad x^{2}=4.
+x^2=9
+\quad\text{or}\quad
+x^2=4.
 $$
 
 Therefore
@@ -775,7 +720,7 @@ $$
 \boxed{x=-3,-2,2,3}.
 $$
 
-### Solution 6
+### Solution 3
 
 Let
 
@@ -785,86 +730,59 @@ A=\frac{x^{2}}{16}+\frac{x}{4}+2
 B=-2+2\sqrt{4x-7}.
 $$
 
-The first five terms under the square root are exactly $$A^{2}$$:
+The first five terms under the square root are exactly $$A^2$$:
 
 $$
-\left(\frac{x^{2}}{16}+\frac{x}{4}+2\right)^{2}
-=\frac{x^{4}}{256}+\frac{x^{3}}{32}+\frac{5x^{2}}{16}+x+4.
+\left(\frac{x^{2}}{16}+\frac{x}{4}+2\right)^2
+=\frac{x^4}{256}+\frac{x^3}{32}+\frac{5x^2}{16}+x+4.
 $$
 
-The next three terms are exactly $$B^{2}$$:
+The next three terms are exactly $$B^2$$:
 
 $$
-\left(-2+2\sqrt{4x-7}\right)^{2}
+\left(-2+2\sqrt{4x-7}\right)^2
 =16x-8\sqrt{4x-7}-24.
 $$
 
-The remaining term is $$2AB$$. Therefore the expression under the square root is
+The remaining term is $$2AB$$, so the expression under the radical is
 
 $$
-A^{2}+B^{2}+2AB=(A+B)^{2}.
+A^2+B^2+2AB=(A+B)^2.
 $$
 
-So the original expression is
+Thus the original expression is
 
 $$
-\sqrt{(A+B)^{2}}=|A+B|.
+\sqrt{(A+B)^2}=\lvert A+B\rvert.
 $$
 
-Now simplify $$A+B$$:
+Now
 
 $$
-A+B
-=\frac{x^{2}}{16}+\frac{x}{4}+2+\left(-2+2\sqrt{4x-7}\right)
-=\frac{x^{2}}{16}+\frac{x}{4}+2\sqrt{4x-7}.
+A+B=\frac{x^2}{16}+\frac{x}{4}+2\sqrt{4x-7}.
 $$
 
-The domain requires $$4x-7\ge 0$$, so $$x\ge \frac{7}{4}$$. On this domain, $$A+B\ge 0$$, so the absolute value can be removed:
+The domain requires $$4x-7\ge 0$$, so $$x\ge \frac74$$. On this domain, $$A+B\ge 0$$, so
 
 $$
-\boxed{\frac{x^{2}}{16}+\frac{x}{4}+2\sqrt{4x-7}}.
+\boxed{\frac{x^2}{16}+\frac{x}{4}+2\sqrt{4x-7}}.
 $$
 
-### Solution 7
+### Solution 4
 
-For
-
-$$
-p(x)=3x^{2}+5x+c,
-$$
-
-we have $$a=3$$, $$b=5$$, and constant term $$c$$. By Vieta's formulas,
+The denominators show that
 
 $$
-r_{1}+r_{2}=-\frac{5}{3}
-\qquad\text{and}\qquad
-r_{1}r_{2}=\frac{c}{3}.
+x\ne 1,\qquad x\ne -1.
 $$
 
-Since $$c\ne 0$$, the product $$r_{1}r_{2}$$ is not $$0$$, so the reciprocal expression is defined. Then
+Start with
 
 $$
-\frac{1}{r_{1}}+\frac{1}{r_{2}}
-=\frac{r_{1}+r_{2}}{r_{1}r_{2}}
-=\frac{-5/3}{c/3}
-=-\frac{5}{c}.
+\frac{1}{x-1}+\frac{2}{x^2-1}=\frac{3}{x+1}.
 $$
 
-Thus
-
-$$
-\boxed{-\frac{5}{c}}.
-$$
-
-### Solution 8
-
-The denominators show that $$x\ne 1$$ and $$x\ne -1$$. Start with
-
-$$
-\frac{1}{x-1}+\frac{2}{x^{2}-1}=\frac{3}{x+1}.
-$$
-
-Factor $$x^{2}-1=(x-1)(x+1)$$ and multiply both sides by $$(x-1)(x+1)$$:
+Factor $$x^2-1=(x-1)(x+1)$$ and multiply both sides by $$(x-1)(x+1)$$:
 
 $$
 x+1+2=3(x-1).
@@ -886,54 +804,24 @@ $$
 \boxed{x=3}.
 $$
 
-### Solution 9
-
-Solve
-
-$$
-|2x-5|=|x+1|.
-$$
-
-Since equal absolute values have equal squares,
-
-$$
-(2x-5)^{2}=(x+1)^{2}.
-$$
-
-Expand and solve:
-
-$$
-4x^{2}-20x+25=x^{2}+2x+1
-$$
-
-$$
-3x^{2}-22x+24=0.
-$$
-
-Factor:
-
-$$
-(3x-4)(x-6)=0.
-$$
-
-Thus
-
-$$
-\boxed{x=\frac{4}{3},\,6}.
-$$
-
-### Solution 10
+### Solution 5
 
 Let
 
 $$
-u=3^{x}.
+u=3^x.
 $$
 
-Then $$9^{x}=(3^{2})^{x}=3^{2x}=(3^{x})^{2}=u^{2}$$. The equation becomes
+Then $$9^x=(3^x)^2=u^2$$, so
 
 $$
-u^{2}-10u+9=0.
+9^x-10\cdot 3^x+9=0
+$$
+
+becomes
+
+$$
+u^2-10u+9=0.
 $$
 
 Factor:
@@ -942,25 +830,29 @@ $$
 (u-1)(u-9)=0.
 $$
 
-So $$u=1$$ or $$u=9$$. Returning to $$u=3^{x}$$:
+Thus $$u=1$$ or $$u=9$$. Returning to $$u=3^x$$:
 
 $$
-3^{x}=1 \quad\Longrightarrow\quad x=0,
+3^x=1
+\quad\Longrightarrow\quad
+x=0,
 $$
 
 or
 
 $$
-3^{x}=9 \quad\Longrightarrow\quad x=2.
+3^x=9
+\quad\Longrightarrow\quad
+x=2.
 $$
 
 Therefore
 
 $$
-\boxed{x=0,\,2}.
+\boxed{x=0,2}.
 $$
 
-### Solution 11
+### Solution 6
 
 The domain requires
 
@@ -994,7 +886,7 @@ $$
 x-7=-6\sqrt{x+1}.
 $$
 
-Multiply by $$-1$$:
+Then
 
 $$
 7-x=6\sqrt{x+1}.
@@ -1003,37 +895,35 @@ $$
 Square again:
 
 $$
-(7-x)^{2}=36(x+1).
+(7-x)^2=36(x+1).
 $$
 
 Expand and solve:
 
 $$
-x^{2}-14x+49=36x+36
+x^2-14x+49=36x+36
 $$
 
 $$
-x^{2}-50x+13=0.
+x^2-50x+13=0.
 $$
 
-Use the quadratic formula:
+By the quadratic formula,
 
 $$
 x=\frac{50\pm\sqrt{2500-52}}{2}
-=\frac{50\pm\sqrt{2448}}{2}
-=\frac{50\pm 12\sqrt{17}}{2}
 =25\pm 6\sqrt{17}.
 $$
 
-Check candidates. The value $$25+6\sqrt{17}$$ does not work because it makes $$7-x$$ negative in the step $$7-x=6\sqrt{x+1}$$. The value $$25-6\sqrt{17}$$ checks in the original equation. Therefore
+Check candidates in the original equation. The value $$25+6\sqrt{17}$$ is extraneous because it makes $$7-x<0$$ in the equation $$7-x=6\sqrt{x+1}$$. The value $$25-6\sqrt{17}$$ works. Therefore
 
 $$
 \boxed{x=25-6\sqrt{17}}.
 $$
 
-### Solution 12
+### Solution 7
 
-Start by moving everything to one side:
+Move everything to one side:
 
 $$
 \frac{3x+1}{x-2}>2
@@ -1053,7 +943,7 @@ $$
 \frac{x+5}{x-2}>0.
 $$
 
-Critical values are $$x=-5$$ and $$x=2$$. The denominator also shows $$x\ne 2$$. A sign chart gives positive values on $$(-\infty,-5)$$ and $$(2,\infty)$$. Since the inequality is strict, $$x=-5$$ is not included.
+The critical values are $$x=-5$$ and $$x=2$$. A sign chart gives positive values on $$(-\infty,-5)$$ and $$(2,\infty)$$. Since the inequality is strict, $$x=-5$$ is not included, and $$x=2$$ is never allowed.
 
 Thus
 
@@ -1061,12 +951,12 @@ $$
 \boxed{(-\infty,-5)\cup(2,\infty)}.
 $$
 
-### Solution 13
+### Solution 8
 
 The expression
 
 $$
-|x-2|+|x+4|
+\lvert x-2\rvert+\lvert x+4\rvert
 $$
 
 is the sum of the distances from $$x$$ to $$2$$ and from $$x$$ to $$-4$$. Break at $$x=-4$$ and $$x=2$$.
@@ -1074,7 +964,7 @@ is the sum of the distances from $$x$$ to $$2$$ and from $$x$$ to $$-4$$. Break 
 If $$x<-4$$, then
 
 $$
-|x-2|+|x+4|=-(x-2)-(x+4)=-2x-2.
+\lvert x-2\rvert+\lvert x+4\rvert=-(x-2)-(x+4)=-2x-2.
 $$
 
 So
@@ -1090,7 +980,7 @@ This gives $$[-6,-4)$$.
 If $$-4\le x\le 2$$, then
 
 $$
-|x-2|+|x+4|=(2-x)+(x+4)=6,
+\lvert x-2\rvert+\lvert x+4\rvert=(2-x)+(x+4)=6,
 $$
 
 which is always at most $$10$$. This gives $$[-4,2]$$.
@@ -1098,7 +988,7 @@ which is always at most $$10$$. This gives $$[-4,2]$$.
 If $$x>2$$, then
 
 $$
-|x-2|+|x+4|=(x-2)+(x+4)=2x+2.
+\lvert x-2\rvert+\lvert x+4\rvert=(x-2)+(x+4)=2x+2.
 $$
 
 So
@@ -1115,76 +1005,38 @@ $$
 \boxed{[-6,4]}.
 $$
 
-### Solution 14
+### Solution 9
 
 Start with
 
 $$
-|x^{2}-9|\le 5.
+\lvert x^2-9\rvert\le 5.
 $$
 
-Rewrite as a compound inequality:
+Rewrite this as a compound inequality:
 
 $$
--5\le x^{2}-9\le 5.
+-5\le x^2-9\le 5.
 $$
 
-Add $$9$$ to all three parts:
+Add $$9$$ to all parts:
 
 $$
-4\le x^{2}\le 14.
+4\le x^2\le 14.
 $$
 
-Thus $$x^{2}$$ must be at least $$4$$ and at most $$14$$. Therefore
+Thus $$x^2$$ must be at least $$4$$ and at most $$14$$. Therefore
 
 $$
 \boxed{[-\sqrt{14},-2]\cup[2,\sqrt{14}]}.
 $$
 
-### Solution 15
-
-The expression is
-
-$$
-\frac{|x-|x||}{x}>0.
-$$
-
-The denominator shows $$x\ne 0$$.
-
-If $$x>0$$, then $$|x|=x$$, so
-
-$$
-\frac{|x-|x||}{x}=\frac{|x-x|}{x}=\frac{0}{x}=0,
-$$
-
-which is not greater than $$0$$.
-
-If $$x<0$$, then $$\lvert x| \rvert =-x$$, so
-
-$$
-\frac{\lvert x- \lvert x \rvert \rvert}{x}
-=\frac{\lvert x-(-x) \rvert}{x}
-=\frac{\lvert 2x \rvert}{x}.
-$$
-
-Since $$x<0$$, $$|2x|=-2x$$. Thus
-
-$$
-\frac{\lvert 2x \rvert}{x}=\frac{-2x}{x}=-2,
-$$
-
-which is also not greater than $$0$$. Therefore there are no real solutions:
-
-$$
-\boxed{\emptyset}.
-$$
-
-### Solution 16
+### Solution 10
 
 The inequality is already factored:
 
 $$
-(x-1)^{2}(x-4)(x+2)<0.
+(x-1)^2(x-4)(x+2)<0.
 $$
 
 The critical values are
@@ -1193,14 +1045,14 @@ $$
 x=-2,\quad x=1,\quad x=4.
 $$
 
-The root $$x=1$$ has even multiplicity because of $$(x-1)^{2}$$. That means the sign does not change when crossing $$x=1$$. Simple roots, like $$x=-2$$ and $$x=4$$, do change the sign.
+The root $$x=1$$ has even multiplicity because of $$(x-1)^2$$, so the sign does not change when crossing $$x=1$$. Simple roots, like $$x=-2$$ and $$x=4$$, do change the sign.
 
-Using a sign chart:
+A sign chart gives:
 
-- The expression is positive on $$(-\infty,-2)$$.
-- It is negative on $$(-2,1)$$.
-- It stays negative on $$(1,4)$$ because $$x=1$$ is a repeated root.
-- It is positive on $$(4,\infty)$$.
+- positive on $$(-\infty,-2)$$,
+- negative on $$(-2,1)$$,
+- negative on $$(1,4)$$,
+- positive on $$(4,\infty)$$.
 
 Because the inequality is strict, none of the zeros are included. Thus
 
@@ -1208,12 +1060,12 @@ $$
 \boxed{(-2,1)\cup(1,4)}.
 $$
 
-### Solution 17
+### Solution 11
 
 Factor:
 
 $$
-x^{3}-5x^{2}+6x=x(x^{2}-5x+6)=x(x-2)(x-3).
+x^3-5x^2+6x=x(x^2-5x+6)=x(x-2)(x-3).
 $$
 
 Solve
@@ -1235,12 +1087,12 @@ $$
 \boxed{[0,2]\cup[3,\infty)}.
 $$
 
-### Solution 18
+### Solution 12
 
 The domain comes from the denominator:
 
 $$
-x^{2}+x=x(x+1)\ne 0.
+x^2+x=x(x+1)\ne 0.
 $$
 
 So
@@ -1252,7 +1104,7 @@ $$
 Factor the rational expression:
 
 $$
-\frac{x^{2}-4}{x^{2}+x}
+\frac{x^2-4}{x^2+x}
 =\frac{(x-2)(x+2)}{x(x+1)}.
 $$
 
@@ -1265,21 +1117,23 @@ $$
 The critical values are $$-2,-1,0,2$$. Remember that $$-1$$ and $$0$$ cannot be included because they make the denominator zero. A sign chart gives nonpositive values on
 
 $$
-[-2,-1)\quad\text{and}\quad(0,2].
+[-2,-1)
+\quad\text{and}\quad
+(0,2].
 $$
 
 Thus
 
 $$
-\boxed{\text{domain: } x\ne -1,0;\quad \frac{(x-2)(x+2)}{x(x+1)}\le 0;\quad [-2,-1)\cup(0,2]}.
+\boxed{\text{domain: }x\ne -1,0;\quad \frac{(x-2)(x+2)}{x(x+1)}\le 0;\quad [-2,-1)\cup(0,2]}.
 $$
 
-### Solution 19
+### Solution 13
 
 First find the domain:
 
 $$
-4-x^{2}\ge 0
+4-x^2\ge 0
 \quad\Longrightarrow\quad
 -2\le x\le 2.
 $$
@@ -1287,53 +1141,43 @@ $$
 Now solve
 
 $$
-\sqrt{4-x^{2}}\ge x.
+\sqrt{4-x^2}\ge x.
 $$
 
-If $$x<0$$, the right side is negative and the left side is nonnegative, so the inequality is automatically true on the domain. This gives
+If $$x<0$$, the right side is negative and the left side is nonnegative, so the inequality is automatically true on the domain. This gives $$[-2,0)$$.
+
+If $$x\ge 0$$, both sides are nonnegative, so we can square:
 
 $$
-[-2,0).
-$$
-
-If $$x\ge 0$$, both sides are nonnegative, so we can square both sides:
-
-$$
-4-x^{2}\ge x^{2}.
+4-x^2\ge x^2.
 $$
 
 Then
 
 $$
-4\ge 2x^{2}
+4\ge 2x^2
 \quad\Longrightarrow\quad
-x^{2}\le 2.
+x^2\le 2.
 $$
 
-With $$x\ge 0$$, this gives
+With $$x\ge 0$$, this gives $$0\le x\le \sqrt2$$. Combining both cases,
 
 $$
-0\le x\le \sqrt{2}.
+\boxed{[-2,\sqrt2]}.
 $$
 
-Combining both cases,
-
-$$
-\boxed{[-2,\sqrt{2}]}.
-$$
-
-### Solution 20
+### Solution 14
 
 The radical is always defined because
 
 $$
-x^{2}+5>0
+x^2+5>0
 $$
 
 for all real $$x$$. But since
 
 $$
-\sqrt{x^{2}+5}\ge 0,
+\sqrt{x^2+5}\ge 0,
 $$
 
 we also need the right side to be nonnegative:
@@ -1347,91 +1191,239 @@ $$
 Now square both sides:
 
 $$
-x^{2}+5\le (x+2)^{2}.
+x^2+5\le (x+2)^2.
 $$
 
 Expand:
 
 $$
-x^{2}+5\le x^{2}+4x+4.
+x^2+5\le x^2+4x+4.
 $$
 
-Cancel $$x^{2}$$:
+Cancel $$x^2$$:
 
 $$
 5\le 4x+4
 \quad\Longrightarrow\quad
-1\le 4x
-\quad\Longrightarrow\quad
-x\ge \frac{1}{4}.
+x\ge \frac14.
 $$
 
 This already satisfies $$x\ge -2$$, so
 
 $$
-\boxed{\left[\frac{1}{4},\infty\right)}.
+\boxed{\left[\frac14,\infty\right)}.
 $$
 
-### Solution 21
+### Solution 15
 
 For
 
 $$
-f(x)=\frac{x^{2}}{x^{2}+1},
+f(x)=\frac{x^2}{x^2+1},
 $$
 
 test $$f(-x)$$:
 
 $$
-f(-x)=\frac{(-x)^{2}}{(-x)^{2}+1}
-=\frac{x^{2}}{x^{2}+1}
+f(-x)=\frac{(-x)^2}{(-x)^2+1}
+=\frac{x^2}{x^2+1}
 =f(x).
 $$
 
-Since $$f(-x)=f(x)$$, the graph has $$y$$-axis symmetry.
-
-It does not have $$x$$-axis symmetry because reflecting a point $$(x,y)$$ to $$(x,-y)$$ would usually not stay on the graph of the same function. It does not have origin symmetry because origin symmetry would require $$f(-x)=-f(x)$$, but here $$f(-x)=f(x)$$.
-
-Thus
-
-$$
-\boxed{\text{the graph has } y\text{-axis symmetry only}}.
-$$
-
-### Solution 22
+So $$f$$ has $$y$$-axis symmetry. It does not have origin symmetry because $$f(-x)\ne -f(x)$$ in general, and it does not have $$x$$-axis symmetry because reflecting a nonzero function value across the $$x$$-axis would not stay on the graph of the same function.
 
 For
 
 $$
-g(x)=x|x|,
+g(x)=x\lvert x\rvert,
 $$
 
 test $$g(-x)$$:
 
 $$
-g(-x)=(-x)|-x|=-x|x|=-g(x).
+g(-x)=(-x)\lvert -x\rvert=-x\lvert x\rvert=-g(x).
 $$
 
-Since $$g(-x)=-g(x)$$, the graph has origin symmetry.
+So $$g$$ has origin symmetry. It does not have $$y$$-axis symmetry because $$g(-x)\ne g(x)$$ in general, and it does not have $$x$$-axis symmetry for the same reason ordinary nonzero functions usually do not.
 
-This also matches the piecewise description:
+Therefore
 
 $$
-g(x)=x^{2}\quad\text{when }x\ge 0,
+\boxed{f\text{ has }y\text{-axis symmetry only, and }g\text{ has origin symmetry only}}.
+$$
+
+### Solution 16
+
+We solve
+
+$$
+x^2+y^2+1=3xy
+$$
+
+in positive integers.
+
+For part (A), set $$y=1$$. Then
+
+$$
+x^2+2=3x.
+$$
+
+So
+
+$$
+x^2-3x+2=0
+\quad\Longrightarrow\quad
+(x-1)(x-2)=0.
+$$
+
+Thus the solutions with $$y=1$$ are
+
+$$
+\boxed{(1,1)\text{ and }(2,1)}.
+$$
+
+By symmetry, $$(1,2)$$ is also a solution.
+
+For part (B), treat the equation as a quadratic in $$x$$:
+
+$$
+x^2-3yx+(y^2+1)=0.
+$$
+
+If $$x$$ is one root, let $$x'$$ be the other root. By Vieta's formulas,
+
+$$
+x+x'=3y
 $$
 
 and
 
 $$
-g(x)=-x^{2}\quad\text{when }x<0.
+xx'=y^2+1.
 $$
 
-The right side of the graph is the upper half of a parabola, and the left side is the lower half after a $$180^\circ$$ rotation around the origin.
+From the sum formula,
 
-It does not have $$y$$-axis symmetry because $$g(-x)\ne g(x)$$ in general. It does not have $$x$$-axis symmetry because reflecting a nonzero function value across the $$x$$-axis would not stay on the graph.
+$$
+x'=\boxed{3y-x}.
+$$
+
+Because $$x$$ and $$y$$ are integers, $$x'$$ is also an integer. The pair $$(x',y)$$ satisfies the same equation because $$x'$$ is the other root of the same quadratic.
+
+For part (C), suppose $$(x,y)$$ is a positive integer solution with
+
+$$
+x\ge y\ge 2.
+$$
+
+We first show $$x'>0$$. Since
+
+$$
+x'=3y-x,
+$$
+
+it is enough to show $$x<3y$$. If $$x\ge 3y$$, then
+
+$$
+x^2-3xy+y^2+1>0,
+$$
+
+which contradicts the equation rewritten as
+
+$$
+x^2-3xy+y^2+1=0.
+$$
+
+Therefore $$x<3y$$, so $$x'>0$$.
+
+Now show $$x'<y$$. Since $$x\ge y\ge 2$$, the larger root is
+
+$$
+x=\frac{3y+\sqrt{5y^2-4}}{2}.
+$$
+
+Because $$y\ge 2$$,
+
+$$
+5y^2-4>y^2,
+$$
+
+so
+
+$$
+\sqrt{5y^2-4}>y.
+$$
+
+Thus
+
+$$
+x>\frac{3y+y}{2}=2y.
+$$
 
 Therefore
 
 $$
-\boxed{\text{the graph has origin symmetry only}}.
+x'=3y-x<3y-2y=y.
+$$
+
+So every solution with $$x\ge y\ge 2$$ creates a smaller positive integer solution
+
+$$
+(x',y)
+$$
+
+with $$0<x'<y\le x$$.
+
+For part (D), repeat this step. Each time, the larger coordinate decreases to a smaller positive integer. A strictly decreasing sequence of positive integers cannot continue forever, so the descent must eventually stop.
+
+It can only stop when the smaller coordinate is $$1$$. By part (A), the terminal solutions are $$(1,1)$$, $$(2,1)$$, and by symmetry $$(1,2)$$.
+
+For part (E), reverse the descent. Starting with $$(1,1)$$, repeatedly replace the smaller coordinate by
+
+$$
+\text{new coordinate}=3(\text{larger coordinate})-(\text{smaller coordinate}).
+$$
+
+This gives
+
+$$
+(1,1),\ (1,2),\ (2,5),\ (5,13),\ (13,34),\ldots
+$$
+
+and the swapped pairs.
+
+Equivalently, define a sequence by
+
+$$
+a_0=1,\qquad a_1=1,\qquad a_{n+1}=3a_n-a_{n-1}.
+$$
+
+Then all positive integer solutions are
+
+$$
+\boxed{(a_n,a_{n+1})\text{ and }(a_{n+1},a_n)\quad\text{for }n\ge 0}.
+$$
+
+The first few values are
+
+$$
+a_0=1,\quad a_1=1,\quad a_2=2,\quad a_3=5,\quad a_4=13,\quad a_5=34.
+$$
+
+It remains to check that this sequence really gives solutions. If $$(u,v)$$ satisfies
+
+$$
+u^2+v^2+1=3uv,
+$$
+
+then $$(v,3v-u)$$ also satisfies the equation because $$u$$ and $$3v-u$$ are the two Vieta roots of
+
+$$
+X^2-3vX+(v^2+1)=0.
+$$
+
+Since $$(1,1)$$ works, every pair generated by the recurrence works. The descent argument shows there are no others.
+
+$$
+\boxed{\text{All positive integer solutions are }(1,1),(1,2),(2,1),(2,5),(5,2),(5,13),(13,5),\ldots}
 $$

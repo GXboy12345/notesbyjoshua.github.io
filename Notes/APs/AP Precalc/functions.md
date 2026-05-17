@@ -802,9 +802,13 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below (this i
 Consider a function $$\mathbb{Q} \longrightarrow \mathbb{Q}$$ (basically taking rational inputs and giving rational outputs) such that $$f(x+y)=f(x)+f(y)$$ (basically for any two rational numbers, this equation holds true for $$f(x)$$).
 
 (A) Show that $$f(0) = 0$$ and $$f(-x) = -f(x)$$. What does this show about $$f(x)$$?
+
 (B) Prove that $$f(nx) = nf(x)$$ for all $$n \in \mathbb{Z}$$ (for all integer $$n$$).
+
 (C) Prove that $$f(\frac{x}{n}) = \frac{f(x)}{n}$$.
+
 (D) Determine all such functions $$f(x)$$ that sastisfies Cauchy's Functional Equation. Remember you not only need to find all such solutions, but prove that each one is a valid solution to the equation.
+
 (E) The solution in part (D) is the only solution for the rationals, but there exist infinitely more solutions for the reals! Why can't your proof in steps (A) - (D) extend to real numbers?
 
 ## Solutions
