@@ -652,6 +652,12 @@ $$
 
 in general. The expression $$x^{-1}$$ means $$1/x$$, but $$f^{-1}$$ means an inverse function. Sometimes you will see the inverse written as $$fp$$, but this can be confused with the derivative notation (used in calculus) and is seldom used.
 
+<div class="theorem-box" markdown="1">
+
+**Extension.** Why is it important that both conditions ($$f(g(x))=x$$ and $$g(f(x))=x$$) are sastisfied to ensure two functions are inverses?
+
+</div>
+
 ---
 
 ## Finding an Inverse
@@ -781,100 +787,29 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below (this i
 
 ## Practice
 
-1. Find the domain and range of
+1. Find the domain and range of $$f(x)=\frac{\sqrt{9-(x-2)^2}}{x-2}$$.
+2. Let $$f(x)=\begin{cases}x^2-4x+1, & x<1,\\ax+b, & 1\le x<4,\\\sqrt{x+c}, & x\ge 4.\end{cases}$$. Find $$a$$, $$b$$, and $$c$$ so that the pieces connect at $$x=1$$ and $$x=4$$, and so that the middle piece has average rate of change $$3$$ on $$[1,4]$$.
+3. Find the explicit form(s) for the relation $$(x^2+y^2)^2=4(x^2-y^2)$$.
+4. Find the explicit form(s) for the relation $$\frac{x}{y-1}+\frac{y}{x-1}=\frac{x+y}{xy}$$.
+5. Let $$f(x)=(x-3)^2+2$$ with domain $$x\ge 3$$. Find $$f^{-1}(x)$$, and state the domain and range of $$f^{-1}$$.
+6. Let $$f:[-2,\infty)\to[-4,\infty)$$ be defined by $$f(x)=(x+2)^2-4$$. Determine whether $$f$$ is injective, surjective, bijective, or none.
+7. Simplify the difference quotient for $$f(x)=\frac{2}{x-1}$$. That is, simplify $$\frac{f(x+h)-f(x)}{h}.$$
+8. The graph of $$y=f(x)$$ has domain $$[-4,6]$$ and range $$[-2,5]$$. Find the domain and range of $$g(x)=-3f(\frac{x-2}{x+1})+7$$.
+9. Find $$f^{-1}(3)$$ given that $$f(x)=\frac{3x+1}{2x+f(x)}$$.
+10. Let $$h(x)=\sqrt{4-\lvert x-1 \rvert}.$$ Find the domain and range of $$h$$, and describe the transformations from $$y=\sqrt{x}$$ as clearly as possible.
+11. (Bonus, Cauchy's Functional Equation)
 
-$$
-f(x)=\frac{\sqrt{9-(x-2)^2}}{x-2}.
-$$
+Consider a function $$\mathbb{Q} \longrightarrow \mathbb{Q}$$ (basically taking rational inputs and giving rational outputs) such that $$f(x+y)=f(x)+f(y)$$ (basically for any two rational numbers, this equation holds true for $$f(x)$$).
 
-2. Let
-
-$$
-f(x)=
-\begin{cases}
-x^2-4x+1, & x<1,\\
-ax+b, & 1\le x<4,\\
-\sqrt{x+c}, & x\ge 4.
-\end{cases}
-$$
-
-Find $$a$$, $$b$$, and $$c$$ so that the pieces connect at $$x=1$$ and $$x=4$$, and so that the middle piece has average rate of change $$3$$ on $$[1,4]$$.
-
-3. Find the explicit forms for the relation
-
-$$
-(x^2+y^2)^2=4(x^2-y^2).
-$$
-
-4. Let
-
-$$
-f(x)=\frac{1}{x^2-9}
-\qquad\text{and}\qquad
-g(x)=\sqrt{x+1}.
-$$
-
-Find $$(f\circ g)(x)$$ and its domain. Then find $$(g\circ f)(x)$$ and its domain.
-
-5. Let
-
-$$
-f(x)=(x-3)^2+2
-$$
-
-with domain $$x\ge 3$$. Find $$f^{-1}(x)$$, and state the domain and range of $$f^{-1}$$.
-
-6. Let
-
-$$
-f:[-2,\infty)\to[-4,\infty)
-$$
-
-be defined by
-
-$$
-f(x)=(x+2)^2-4.
-$$
-
-Determine whether $$f$$ is injective, surjective, bijective, or none.
-
-7. Simplify the difference quotient for
-
-$$
-f(x)=\frac{2}{x-1}.
-$$
-
-That is, simplify
-
-$$
-\frac{f(x+h)-f(x)}{h}.
-$$
-
-8. The graph of $$y=f(x)$$ has domain $$[-4,6]$$ and range $$[-2,5]$$. Find the domain and range of
-
-$$
-g(x)=-3f(x-2)+7.
-$$
-
-9. Find all values of $$k$$ for which
-
-$$
-f(x)=\frac{x+k}{x^2-5x+6}
-$$
-
-has exactly one vertical asymptote. Then state the simplified function and its domain for each value of $$k$$.
-
-10. Let
-
-$$
-h(x)=\sqrt{4-|x-1|}.
-$$
-
-Find the domain and range of $$h$$, and describe the transformations from $$y=\sqrt{x}$$ as clearly as possible.
+(A) Show that $$f(0) = 0$$ and $$f(-x) = -f(x)$$. What does this show about $$f(x)$$?
+(B) Prove that $$f(nx) = nf(x)$$ for all $$n \in \mathbb{Z}$$ (for all integer $$n$$).
+(C) Prove that $$f(\frac{x}{n}) = \frac{f(x)}{n}$$.
+(D) Determine all such functions $$f(x)$$ that sastisfies Cauchy's Functional Equation. Remember you not only need to find all such solutions, but prove that each one is a valid solution to the equation.
+(E) The solution in part (D) is the only solution for the rationals, but there exist infinitely more solutions for the reals! Why can't your proof in steps (A) - (D) extend to real numbers?
 
 ## Solutions
 
-### 1.
+### Solution 1
 
 The square root requires
 
@@ -882,7 +817,7 @@ $$
 9-(x-2)^2\ge 0.
 $$
 
-So
+Thus
 
 $$
 -3\le x-2\le 3
@@ -890,27 +825,27 @@ $$
 -1\le x\le 5.
 $$
 
-The denominator also requires $$x\ne 2$$. Therefore,
+The denominator also requires $$x\ne 2$$, so
 
 $$
-\text{domain}=[-1,2)\cup(2,5].
+\boxed{\text{domain}=[-1,2)\cup(2,5]}.
 $$
 
-Let $$t=x-2$$. Then $$t\in[-3,0)\cup(0,3]$$, and
+Let $$t=x-2$$. Then
 
 $$
-f(x)=\frac{\sqrt{9-t^2}}{t}.
+f(x)=\frac{\sqrt{9-t^2}}{t},
+\qquad
+t\in[-3,0)\cup(0,3].
 $$
 
-On $$t>0$$, the function moves from very large positive values down to $$0$$. On $$t<0$$, the function moves from $$0$$ down to very large negative values. Thus,
+For $$t>0$$, the outputs cover $$[0,\infty)$$. For $$t<0$$, the outputs cover $$(-\infty,0]$$. Therefore
 
 $$
-\text{range}=(-\infty,\infty).
+\boxed{\text{range}=(-\infty,\infty)}.
 $$
 
----
-
-### 2.
+### Solution 2
 
 The average rate of change of the middle piece $$ax+b$$ is its slope, so
 
@@ -918,53 +853,43 @@ $$
 a=3.
 $$
 
-At $$x=1$$, the left piece gives
+The pieces connect at $$x=1$$, so
 
 $$
-1^2-4(1)+1=-2.
+1^2-4(1)+1=3(1)+b.
 $$
 
-So the middle piece must satisfy
+This gives
 
 $$
-3(1)+b=-2,
-$$
-
-which gives
-
-$$
+-2=3+b
+\quad\Longrightarrow\quad
 b=-5.
 $$
 
-At $$x=4$$, the middle piece approaches
+The pieces connect at $$x=4$$, so
 
 $$
-3(4)-5=7.
+3(4)-5=\sqrt{4+c}.
 $$
 
-The radical piece must start at that same value:
+Thus
 
 $$
-\sqrt{4+c}=7.
-$$
-
-So
-
-$$
-4+c=49
+7=\sqrt{4+c}
+\quad\Longrightarrow\quad
+49=4+c
 \quad\Longrightarrow\quad
 c=45.
 $$
 
-Therefore,
+Therefore
 
 $$
-a=3,\qquad b=-5,\qquad c=45.
+\boxed{a=3,\qquad b=-5,\qquad c=45}.
 $$
 
----
-
-### 3.
+### Solution 3
 
 Let
 
@@ -978,19 +903,17 @@ $$
 (x^2+u)^2=4(x^2-u).
 $$
 
-Expand:
+Expand and collect terms:
 
 $$
-x^4+2x^2u+u^2=4x^2-4u.
+x^4+2x^2u+u^2=4x^2-4u
 $$
-
-Move everything to one side:
 
 $$
 u^2+(2x^2+4)u+x^4-4x^2=0.
 $$
 
-Use the quadratic formula:
+Using the quadratic formula,
 
 $$
 u=\frac{-(2x^2+4)\pm\sqrt{(2x^2+4)^2-4(x^4-4x^2)}}{2}.
@@ -1020,96 +943,102 @@ $$
 y^2=-(x^2+2)-2\sqrt{2x^2+1}.
 $$
 
-The second expression is always negative, so it gives no real branches. Therefore,
+The second expression is always negative, so it gives no real branches. The real explicit forms are
 
 $$
-y=\pm\sqrt{-(x^2+2)+2\sqrt{2x^2+1}}.
-$$
-
-For real outputs, the inside must be nonnegative:
-
-$$
--(x^2+2)+2\sqrt{2x^2+1}\ge 0.
-$$
-
-This simplifies to
-
-$$
-x^2\le 4.
-$$
-
-Thus the explicit branches are
-
-$$
-y=\sqrt{-(x^2+2)+2\sqrt{2x^2+1}}
+\boxed{y=\sqrt{-(x^2+2)+2\sqrt{2x^2+1}}}
 $$
 
 and
 
 $$
-y=-\sqrt{-(x^2+2)+2\sqrt{2x^2+1}},
+\boxed{y=-\sqrt{-(x^2+2)+2\sqrt{2x^2+1}}}.
 $$
 
-both on $$[-2,2]$$.
-
----
-
-### 4.
-
-First,
+For these branches to be real,
 
 $$
-(f\circ g)(x)=f(\sqrt{x+1})
-=\frac{1}{(\sqrt{x+1})^2-9}
-=\frac{1}{x-8}.
+-(x^2+2)+2\sqrt{2x^2+1}\ge 0.
 $$
 
-The inside function $$g$$ requires $$x\ge -1$$, and the denominator requires $$x\ne 8$$. So
+This simplifies to $$x^2\le 4$$, so both branches have domain
 
 $$
-\text{domain of }f\circ g=[-1,8)\cup(8,\infty).
+\boxed{[-2,2]}.
 $$
 
-Now,
+### Solution 4
+
+First note the original restrictions:
 
 $$
-(g\circ f)(x)=g\left(\frac{1}{x^2-9}\right)
-=\sqrt{\frac{1}{x^2-9}+1}.
+x\ne 0,\qquad x\ne 1,\qquad y\ne 0,\qquad y\ne 1.
 $$
 
-Combine the expression inside the radical:
+Start with
 
 $$
-\frac{1}{x^2-9}+1=\frac{x^2-8}{x^2-9}.
+\frac{x}{y-1}+\frac{y}{x-1}=\frac{x+y}{xy}.
 $$
 
-So
+Multiply both sides by $$xy(y-1)(x-1)$$:
 
 $$
-(g\circ f)(x)=\sqrt{\frac{x^2-8}{x^2-9}}.
+x^2y(x-1)+xy^2(y-1)=(x+y)(y-1)(x-1).
 $$
 
-For the domain, require
+After expanding and collecting powers of $$y$$,
 
 $$
-\frac{x^2-8}{x^2-9}\ge 0
+xy^3+(1-2x)y^2+(x^3-2x^2+2x-1)y+x^2-x=0.
 $$
 
-and $$x\ne \pm 3$$. The critical values are
+This is a cubic equation in $$y$$. Unlike the earlier implicit examples, it does not split into clean square-root branches. A fully explicit radical form would require the cubic formula, so the clean Precalculus-level answer is:
 
 $$
--3,\quad -2\sqrt{2},\quad 2\sqrt{2},\quad 3.
+\boxed{xy^3+(1-2x)y^2+(x^3-2x^2+2x-1)y+x^2-x=0}
 $$
 
-A sign chart gives
+with
 
 $$
-\text{domain of }g\circ f=(-\infty,-3)\cup[-2\sqrt2,2\sqrt2]\cup(3,\infty).
+\boxed{x\ne 0,1\quad\text{and}\quad y\ne 0,1}.
 $$
 
----
+If one insists on a formal explicit form, let
 
-### 5.
+$$
+a=x,\quad b=1-2x,\quad c=x^3-2x^2+2x-1,\quad d=x^2-x.
+$$
+
+Then the three Cardano branches are
+
+$$
+y_k=-\frac{1}{3a}\left(b+\omega^k C+\frac{\Delta_0}{\omega^k C}\right),
+\qquad k=0,1,2,
+$$
+
+where
+
+$$
+\omega=\frac{-1+i\sqrt3}{2},
+$$
+
+$$
+\Delta_0=b^2-3ac,
+\qquad
+\Delta_1=2b^3-9abc+27a^2d,
+$$
+
+and
+
+$$
+C=\sqrt[3]{\frac{\Delta_1+\sqrt{\Delta_1^2-4\Delta_0^3}}{2}}.
+$$
+
+Only the real branches satisfying the original restrictions belong to the real relation.
+
+### Solution 5
 
 Start with
 
@@ -1123,59 +1052,61 @@ $$
 x=(y-3)^2+2.
 $$
 
-Solve:
+Then
 
 $$
 x-2=(y-3)^2.
 $$
 
-Since the original domain is $$x\ge 3$$, use the positive branch:
+Since the original domain is $$x\ge 3$$, use the positive square-root branch:
 
 $$
 y-3=\sqrt{x-2}.
 $$
 
-Thus
+Therefore
 
 $$
-f^{-1}(x)=3+\sqrt{x-2}.
+\boxed{f^{-1}(x)=3+\sqrt{x-2}}.
 $$
 
-The inverse domain is the original range:
+The domain of $$f^{-1}$$ is the range of $$f$$:
 
 $$
-[2,\infty).
+\boxed{[2,\infty)}.
 $$
 
-The inverse range is the original domain:
+The range of $$f^{-1}$$ is the domain of $$f$$:
 
 $$
-[3,\infty).
+\boxed{[3,\infty)}.
 $$
 
----
+### Solution 6
 
-### 6.
+On $$[-2,\infty)$$, the parabola starts at its vertex and increases. Therefore it passes the horizontal line test, so it is injective.
 
-On $$[-2,\infty)$$, the parabola starts at its vertex and increases. Therefore, it passes the horizontal line test and is injective.
-
-Its minimum value is
+Also,
 
 $$
-f(-2)=-4.
+f(-2)=-4,
 $$
 
-As $$x\to\infty$$, $$f(x)\to\infty$$, so the range is exactly
+and as $$x\to\infty$$, $$f(x)\to\infty$$. Therefore the range is
 
 $$
-[-4,\infty).
+[-4,\infty),
 $$
 
-This matches the codomain, so the function is surjective. Since it is both injective and surjective, it is bijective.
+which matches the codomain. So $$f$$ is surjective.
 
----
+Since $$f$$ is both injective and surjective,
 
-### 7.
+$$
+\boxed{f\text{ is bijective}}.
+$$
+
+### Solution 7
 
 First,
 
@@ -1183,7 +1114,7 @@ $$
 f(x+h)=\frac{2}{x+h-1}.
 $$
 
-Then
+So
 
 $$
 \frac{f(x+h)-f(x)}{h}
@@ -1194,164 +1125,169 @@ $$
 Use a common denominator:
 
 $$
-=\frac{\frac{2(x-1)-2(x+h-1)}{(x+h-1)(x-1)}}{h}.
+\frac{\frac{2(x-1)-2(x+h-1)}{(x+h-1)(x-1)}}{h}.
 $$
 
-Simplify:
+The numerator simplifies:
 
 $$
 2(x-1)-2(x+h-1)=-2h.
 $$
 
-So
-
-$$
-\frac{f(x+h)-f(x)}{h}
-=\frac{\frac{-2h}{(x+h-1)(x-1)}}{h}.
-$$
-
-Cancel $$h$$:
-
-$$
-\frac{f(x+h)-f(x)}{h}
-=\frac{-2}{(x+h-1)(x-1)}.
-$$
-
----
-
-### 8.
-
-For the domain, the input $$x-2$$ must lie in $$[-4,6]$$:
-
-$$
--4\le x-2\le 6.
-$$
-
-Add $$2$$:
-
-$$
--2\le x\le 8.
-$$
-
-So
-
-$$
-\text{domain}=[-2,8].
-$$
-
-For the range, start with
-
-$$
--2\le f(x)\le 5.
-$$
-
-Multiply by $$-3$$ and reverse the inequalities:
-
-$$
-6\ge -3f(x)\ge -15.
-$$
-
-Rewrite in increasing order and add $$7$$:
-
-$$
--8\le -3f(x)+7\le 13.
-$$
-
 Thus
 
 $$
-\text{range}=[-8,13].
+\frac{f(x+h)-f(x)}{h}
+=\frac{\frac{-2h}{(x+h-1)(x-1)}}{h}
+=\boxed{\frac{-2}{(x+h-1)(x-1)}}.
 $$
 
----
+### Solution 8
 
-### 9.
-
-Factor the denominator:
+For the domain, the input to $$f$$ must lie in $$[-4,6]$$:
 
 $$
-x^2-5x+6=(x-2)(x-3).
+-4\le \frac{x-2}{x+1}\le 6,
+\qquad x\ne -1.
 $$
 
-To have exactly one vertical asymptote, the numerator must cancel exactly one denominator factor.
-
-If $$x+k=x-2$$, then $$k=-2$$. The function becomes
+Solve the two inequalities separately:
 
 $$
-f(x)=\frac{x-2}{(x-2)(x-3)}=\frac{1}{x-3},
-$$
-
-but the original domain still excludes $$x=2$$ and $$x=3$$. Thus $$x=2$$ is a hole and $$x=3$$ is the only vertical asymptote:
-
-$$
-\text{domain}=(-\infty,2)\cup(2,3)\cup(3,\infty).
-$$
-
-If $$x+k=x-3$$, then $$k=-3$$. The function becomes
-
-$$
-f(x)=\frac{x-3}{(x-2)(x-3)}=\frac{1}{x-2},
-$$
-
-with original domain still excluding $$x=2$$ and $$x=3$$. Thus $$x=3$$ is a hole and $$x=2$$ is the only vertical asymptote:
-
-$$
-\text{domain}=(-\infty,2)\cup(2,3)\cup(3,\infty).
-$$
-
-Therefore,
-
-$$
-k=-2\quad\text{or}\quad k=-3.
-$$
-
----
-
-### 10.
-
-For the domain, require
-
-$$
-4-|x-1|\ge 0.
-$$
-
-So
-
-$$
-|x-1|\le 4.
-$$
-
-This gives
-
-$$
--4\le x-1\le 4,
+\frac{x-2}{x+1}\ge -4
+\quad\Longrightarrow\quad
+\frac{5x+2}{x+1}\ge 0,
 $$
 
 so
 
 $$
-\text{domain}=[-3,5].
+x<-1\quad\text{or}\quad x\ge -\frac25.
 $$
 
-The largest value occurs when $$|x-1|=0$$:
+Also,
 
 $$
-h(1)=\sqrt4=2.
+\frac{x-2}{x+1}\le 6
+\quad\Longrightarrow\quad
+\frac{-5x-8}{x+1}\le 0,
 $$
 
-The smallest value occurs at the endpoints, where $$|x-1|=4$$:
+so
 
 $$
-h(-3)=h(5)=0.
+x\le -\frac85\quad\text{or}\quad x>-1.
+$$
+
+Intersecting these gives
+
+$$
+\boxed{\text{domain}=(-\infty,-8/5]\cup[-2/5,\infty)}.
+$$
+
+The range cannot be determined from only the information given. The inner function
+
+$$
+\frac{x-2}{x+1}
+$$
+
+takes values in $$[-4,6]$$ except it never equals $$1$$. Since we only know the domain and range of $$f$$, we do not know whether removing the input $$1$$ changes the outputs of $$f$$. If the graph of $$f$$ still hits every value in $$[-2,5]$$ away from input $$1$$, then the range would be
+
+$$
+[-8,13],
+$$
+
+but that is an extra assumption. Therefore the correct conclusion from the stated information is
+
+$$
+\boxed{\text{the range is not determined by the given data}}.
+$$
+
+### Solution 9
+
+We want $$f^{-1}(3)$$, meaning we want the input $$x$$ for which
+
+$$
+f(x)=3.
+$$
+
+Use the given relation:
+
+$$
+f(x)=\frac{3x+1}{2x+f(x)}.
+$$
+
+Substitute $$f(x)=3$$:
+
+$$
+3=\frac{3x+1}{2x+3}.
+$$
+
+Then
+
+$$
+3(2x+3)=3x+1
+$$
+
+$$
+6x+9=3x+1
+$$
+
+$$
+3x=-8.
+$$
+
+So
+
+$$
+\boxed{f^{-1}(3)=-\frac83}.
+$$
+
+### Solution 10
+
+For the domain, require
+
+$$
+4-\lvert x-1\rvert\ge 0.
+$$
+
+Then
+
+$$
+\lvert x-1\rvert\le 4,
+$$
+
+so
+
+$$
+-4\le x-1\le 4.
 $$
 
 Thus
 
 $$
-\text{range}=[0,2].
+\boxed{\text{domain}=[-3,5]}.
 $$
 
-This graph is a square-root graph applied to the expression $$4-|x-1|$$. It is symmetric about $$x=1$$, has maximum $$(1,2)$$, and has endpoints $$(-3,0)$$ and $$(5,0)$$. It is not a single basic transformation of $$y=\sqrt{x}$$; it is better understood as two square-root branches joined at $$x=1$$:
+The largest value occurs when $$\lvert x-1\rvert=0$$:
+
+$$
+h(1)=\sqrt4=2.
+$$
+
+The smallest value occurs when $$\lvert x-1\rvert=4$$:
+
+$$
+h(-3)=h(5)=0.
+$$
+
+Therefore
+
+$$
+\boxed{\text{range}=[0,2]}.
+$$
+
+This is not a single basic transformation of $$y=\sqrt{x}$$. It is better viewed as two square-root pieces:
 
 $$
 h(x)=
@@ -1360,3 +1296,111 @@ h(x)=
 \sqrt{5-x}, & 1\le x\le 5.
 \end{cases}
 $$
+
+The graph is symmetric about $$x=1$$, has endpoints $$(-3,0)$$ and $$(5,0)$$, and reaches its maximum at $$(1,2)$$.
+
+### Solution 11
+
+We are given
+
+$$
+f(x+y)=f(x)+f(y)
+$$
+
+for rational inputs.
+
+For part (A), set $$x=0$$ and $$y=0$$:
+
+$$
+f(0)=f(0+0)=f(0)+f(0).
+$$
+
+Thus
+
+$$
+\boxed{f(0)=0}.
+$$
+
+Now use $$0=x+(-x)$$:
+
+$$
+0=f(0)=f(x+(-x))=f(x)+f(-x).
+$$
+
+So
+
+$$
+\boxed{f(-x)=-f(x)}.
+$$
+
+This shows that $$f$$ is an odd function.
+
+For part (B), if $$n$$ is a positive integer, then
+
+$$
+f(nx)=f(\underbrace{x+x+\cdots+x}_{n\text{ times}})
+=\underbrace{f(x)+f(x)+\cdots+f(x)}_{n\text{ times}}
+=nf(x).
+$$
+
+For $$n=0$$, this says $$f(0)=0$$. For negative $$n$$, use part (A):
+
+$$
+f(nx)=f(-(|n|x))=-f(|n|x)=-|n|f(x)=nf(x).
+$$
+
+Therefore
+
+$$
+\boxed{f(nx)=nf(x)\quad\text{for all }n\in\mathbb{Z}}.
+$$
+
+For part (C), apply part (B) to $$x/n$$:
+
+$$
+f(x)=f\left(n\cdot\frac{x}{n}\right)=n f\left(\frac{x}{n}\right).
+$$
+
+Therefore
+
+$$
+\boxed{f\left(\frac{x}{n}\right)=\frac{f(x)}{n}}.
+$$
+
+For part (D), let
+
+$$
+c=f(1).
+$$
+
+For any rational number $$r=\frac{m}{n}$$,
+
+$$
+f(r)=f\left(\frac{m}{n}\right)=\frac{f(m)}{n}.
+$$
+
+By part (B),
+
+$$
+f(m)=mf(1)=mc.
+$$
+
+So
+
+$$
+f(r)=\frac{mc}{n}=cr.
+$$
+
+Thus every solution must have the form
+
+$$
+\boxed{f(x)=cx}
+$$
+
+for some rational constant $$c$$. Conversely, every function of the form $$f(x)=cx$$ works because
+
+$$
+f(x+y)=c(x+y)=cx+cy=f(x)+f(y).
+$$
+
+For part (E), the proof works over $$\mathbb{Q}$$ because every rational number is a rational multiple of $$1$$. It does not extend to all real numbers because not every real number can be built from $$1$$ using only integer multiplication and division. Over $$\mathbb{R}$$, there are many wild additive functions if no conditions like continuity, monotonicity, or boundedness are required.
