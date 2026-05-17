@@ -96,6 +96,8 @@ $$
 m_1m_2=-1.
 $$
 
+---
+
 ## Solving Equations
 
 ### Linear equations
@@ -297,10 +299,10 @@ After solving for $$u$$, substitute back and solve for $$x$$. Do not stop at the
 Absolute value measures distance from $$0$$:
 
 $$
-|x|=\text{the distance between }x\text{ and }0.
+\lvert x \rvert =\text{the distance between }x\text{ and }0.
 $$
 
-More generally, $$|x-a|$$ is the distance between $$x$$ and $$a$$. This distance interpretation is usually easier than memorizing cases.
+More generally, $$\lvert x-a \rvert$$ is the distance between $$x$$ and $$a$$. This distance interpretation is usually easier than memorizing cases.
 
 For $$a > 0$$:
 
@@ -321,7 +323,7 @@ If $$a = 0$$, $$\lvert u\rvert = 0$$ means $$u = 0$$. If $$a < 0$$, $$\lvert u\r
 Absolute value expressions are also naturally piecewise. For example,
 
 $$
-|x-3|=
+\lvert x-3 \rvert=
 \begin{cases}
 x-3, & x\ge 3,\\
 3-x, & x<3.
@@ -377,7 +379,7 @@ Even roots require nonnegative radicands in the real numbers. Odd roots allow ne
 One important simplification is
 
 $$
-\sqrt{x^2}=|x|,
+\sqrt{x^2}=\lvert x \rvert,
 $$
 
 not just $$x$$. The square root symbol means the nonnegative square root.
@@ -409,6 +411,8 @@ x-\sqrt{x}=20,
 $$
 
 then isolating and squaring may produce candidates. Each candidate must still be substituted back into the original radical equation.
+
+---
 
 ## Inequalities
 
@@ -461,7 +465,7 @@ The short version:
 For example,
 
 $$
-|3x-2|\le 4
+\lvert 3x-2 \rvert \le 4
 $$
 
 means
@@ -473,7 +477,7 @@ $$
 But
 
 $$
-|4-5x|>1
+\lvert 4-5x \rvert >1
 $$
 
 means
@@ -484,7 +488,7 @@ $$
 4-5x<-1.
 $$
 
-If the absolute value expression is compared to a negative number, pause. Since absolute value is never negative, statements like $$|u|<-3$$ have no solution.
+If the absolute value expression is compared to a negative number, pause. Since absolute value is never negative, statements like $$\lvert u \rvert <-3$$ have no solution.
 
 ---
 
@@ -574,6 +578,8 @@ split into cases:
 
 The final answer is the union of valid pieces that also satisfy the original domain.
 
+---
+
 ## Symmetry
 
 Symmetry asks what happens to a graph when you reflect or rotate it. The algebra tests come from replacing points with their reflected versions.
@@ -616,6 +622,8 @@ which simplifies back to $$y=x^3$$.
 
 </div>
 
+---
+
 ## Practice
 
 1. The taxicab distance between points $$(x_1, y_1)$$ and $$(x_2, y_2)$$ in the coordinate plane is given by $$\lvert x_1 - x_2 \rvert + \lvert y_1 - y_2 \rvert$$. For how many points $$P$$ with integer coordinates is the taxicab distance between $$P$$ and the origin less than or equal to $$20$$? (2022 AMC 12A)
@@ -652,6 +660,8 @@ $$(C)$$ Suppose $$(x,y)$$ is a positive integer solution with $$x\ge y\ge 2$$. P
 $$(D)$$ Explain why repeatedly replacing the larger coordinate by the smaller Vieta root must eventually reach a solution with one coordinate equal to $$1$$.
 
 $$(E)$$ Reverse the process to describe all positive integer solutions.
+
+---
 
 ## Solutions
 

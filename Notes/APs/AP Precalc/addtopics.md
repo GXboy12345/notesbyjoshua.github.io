@@ -511,6 +511,32 @@ $$
 12. Find $$\sum_{i=5}^{100}(3i-2)$$.
 13. Evaluate $$\sum_{i=6}^{12} 3\cdot 2^i$$.
 14. The first three terms of a geometric series are the integers $$a$$, $$720$$, and $$b$$, where $$a < 720 < b$$. What is the sum of the digits of the least possible value of $$b$$? (2024 AMC 10A).
+15. Evaluate the finite sum $$\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1)$$ in closed form.
+16. (Bonus, Binet's Formula)
+
+Binet's Formula is a famous explicit formula for the Fibonnaci series. Let $$F_0=0$$, $$F_1=1$$, and $$F_{n+2}=F_{n+1}+F_n$$ for $$n\ge 0$$.
+
+$$(A)$$ Define a function
+
+$$
+G(x)=\sum_{n=0}^{\infty}F_nx^n.
+$$
+
+Use the recurrence to show that
+
+$$
+G(x)=\frac{x}{1-x-x^2}.
+$$
+
+$$G(x)$$ is called the generating function of $$F_n$$. Hint: How can you telescope to cancel out the correct terms?
+
+$$(B)$$ Decompose $$G(x)$$ into partial fractions.
+
+$$(C)$$ Set the linear factors found in part (B) to $$\alpha$$ and $$\beta$$ (so your partial fraction looks like $$\frac{A}{x - \alpha}$$ and $$\frac{B}{x - \beta}$$). Use the geometric series formula to prove Binet's formula:
+
+$$
+F_n=\frac{\alpha^n-\beta^n}{\sqrt5}.
+$$
 
 ## Solutions
 
@@ -1039,4 +1065,247 @@ which is an integer and satisfies $$675<720<768$$. The sum of the digits of $$76
 
 $$
 \boxed{7+6+8=21}.
+$$
+
+### Solution 15
+
+Let
+
+$$
+S=\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1).
+$$
+
+Split $$k+1$$ into $$k$$ and $$1$$:
+
+$$
+S=
+\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}k
++
+\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}.
+$$
+
+The second sum is a direct binomial expansion:
+
+$$
+\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}=(3+2)^n=5^n.
+$$
+
+For the first sum, use
+
+$$
+k\binom{n}{k}=n\binom{n-1}{k-1}.
+$$
+
+Then
+
+$$
+\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}k
+=
+\sum_{k=1}^{n}n\binom{n-1}{k-1}3^k2^{n-k}.
+$$
+
+Factor out $$3n$$:
+
+$$
+=3n\sum_{k=1}^{n}\binom{n-1}{k-1}3^{k-1}2^{n-k}.
+$$
+
+Let $$j=k-1$$. Then
+
+$$
+3n\sum_{j=0}^{n-1}\binom{n-1}{j}3^j2^{n-1-j}
+=3n(3+2)^{n-1}
+=3n5^{n-1}.
+$$
+
+Therefore
+
+$$
+S=3n5^{n-1}+5^n
+=5^{n-1}(3n+5).
+$$
+
+So
+
+$$
+\boxed{\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1)=5^{n-1}(3n+5)}.
+$$
+
+### Solution 16
+
+For part (A), start with
+
+$$
+G(x)=F_0+F_1x+F_2x^2+F_3x^3+\cdots.
+$$
+
+Compute
+
+$$
+xG(x)=F_0x+F_1x^2+F_2x^3+\cdots
+$$
+
+and
+
+$$
+x^2G(x)=F_0x^2+F_1x^3+F_2x^4+\cdots.
+$$
+
+Then
+
+$$
+G(x)-xG(x)-x^2G(x)
+$$
+
+has constant term $$F_0=0$$, coefficient of $$x$$ equal to $$F_1=1$$, and for every $$n\ge 2$$ the coefficient of $$x^n$$ is
+
+$$
+F_n-F_{n-1}-F_{n-2}=0.
+$$
+
+Thus
+
+$$
+G(x)-xG(x)-x^2G(x)=x.
+$$
+
+Factor:
+
+$$
+G(x)(1-x-x^2)=x.
+$$
+
+Therefore
+
+$$
+\boxed{G(x)=\frac{x}{1-x-x^2}}.
+$$
+
+For part (B), use
+
+$$
+\varphi+\psi=1
+\qquad\text{and}\qquad
+\varphi\psi=-1.
+$$
+
+Then
+
+$$
+(1-\varphi x)(1-\psi x)
+=1-(\varphi+\psi)x+\varphi\psi x^2
+=1-x-x^2.
+$$
+
+So
+
+$$
+G(x)=\frac{x}{(1-\varphi x)(1-\psi x)}.
+$$
+
+For part (C), claim
+
+$$
+G(x)=\frac{1}{\sqrt5}
+\left(
+\frac{1}{1-\varphi x}
+-
+\frac{1}{1-\psi x}
+\right).
+$$
+
+Check this by combining the fractions:
+
+$$
+\frac{1}{\sqrt5}
+\left(
+\frac{1}{1-\varphi x}
+-
+\frac{1}{1-\psi x}
+\right)
+=
+\frac{1}{\sqrt5}\cdot
+\frac{(1-\psi x)-(1-\varphi x)}
+(1-\varphi x)(1-\psi x).
+$$
+
+The numerator simplifies:
+
+$$
+(1-\psi x)-(1-\varphi x)
+=(\varphi-\psi)x.
+$$
+
+Since
+
+$$
+\varphi-\psi=\sqrt5,
+$$
+
+we get
+
+$$
+\frac{1}{\sqrt5}\cdot
+\frac{(\varphi-\psi)x}
+(1-\varphi x)(1-\psi x)
+=
+\frac{x}{(1-\varphi x)(1-\psi x)}.
+$$
+
+Thus
+
+$$
+\boxed{
+G(x)=\frac{1}{\sqrt5}
+\left(
+\frac{1}{1-\varphi x}
+-
+\frac{1}{1-\psi x}
+\right)
+}.
+$$
+
+For part (D), use the geometric series formula:
+
+$$
+\frac{1}{1-\varphi x}=\sum_{n=0}^{\infty}\varphi^nx^n
+$$
+
+and
+
+$$
+\frac{1}{1-\psi x}=\sum_{n=0}^{\infty}\psi^nx^n.
+$$
+
+Therefore
+
+$$
+G(x)
+=
+\frac{1}{\sqrt5}
+\left(
+\sum_{n=0}^{\infty}\varphi^nx^n
+-
+\sum_{n=0}^{\infty}\psi^nx^n
+\right).
+$$
+
+Combine the sums:
+
+$$
+G(x)=
+\sum_{n=0}^{\infty}
+\frac{\varphi^n-\psi^n}{\sqrt5}x^n.
+$$
+
+But by definition,
+
+$$
+G(x)=\sum_{n=0}^{\infty}F_nx^n.
+$$
+
+Matching coefficients of $$x^n$$ gives
+
+$$
+\boxed{F_n=\frac{\varphi^n-\psi^n}{\sqrt5}}.
 $$
