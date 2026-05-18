@@ -8,10 +8,6 @@ permalink: /notes/ap/precalc/functions/
 
 # Unit 3: Functions
 
-Functions are a way to describe dependence: one quantity is chosen as an input, and the rule returns exactly one output. In AP Precalculus, the most important habits are reading a function from multiple representations, keeping track of domain restrictions, and understanding how graphs change when the formula changes.
-
----
-
 ## Definition of a Function
 
 A **function** assigns each input exactly **one** output. If $$f$$ is a function and $$x$$ is an input, then $$f(x)$$ is the output.
@@ -654,7 +650,7 @@ in general. The expression $$x^{-1}$$ means $$1/x$$, but $$f^{-1}$$ means an inv
 
 <div class="theorem-box" markdown="1">
 
-**Extension.** Why is it important that both conditions ($$f(g(x))=x$$ and $$g(f(x))=x$$) are sastisfied to ensure two functions are inverses?
+**Extension.** Prove that the graph of $$f(x)$$ and $$f^{-1}(x)$$ are reflections of each other over the line $$y=x$$.
 
 </div>
 

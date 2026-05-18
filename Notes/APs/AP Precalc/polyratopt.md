@@ -8,10 +8,6 @@ permalink: /notes/ap/precalc/polyratopt/
 
 # Unit 4 & 13: Polynomial & Rational Functions and Applications to Optimization
 
-This unit is about building functions from algebra and then reading the algebra back into the graph. Polynomial functions are built from powers of $$x$$, rational functions are ratios of polynomials, and optimization problems ask us to choose the input that gives the largest or smallest possible output.
-
----
-
 ## Basic polynomial families
 
 Linear and quadratic functions are the first two polynomial families. They are worth separating out because they show up constantly in modeling and optimization.
@@ -1489,13 +1485,13 @@ $$
 p\mid a_0q^n.
 $$
 
-For part (B), since $$\frac{p}{q}$$ is in lowest terms, $$\gcd(p,q)=1$$. Therefore $$p$$ is relatively prime to $$q^n$$. If $$p$$ divides $$a_0q^n$$ and shares no factor with $$q^n$$, then
+Since $$\frac{p}{q}$$ is in lowest terms, $$\gcd(p,q)=1$$. Therefore $$p$$ is relatively prime to $$q^n$$. If $$p$$ divides $$a_0q^n$$ and shares no factor with $$q^n$$, then
 
 $$
 \boxed{p\mid a_0}.
 $$
 
-$$(D)$$ Now move the leading-term part instead:
+For part (B), now move the leading-term part instead:
 
 $$
 a_{n-1}p^{n-1}q+\cdots+a_1pq^{n-1}+a_0q^n=-a_np^n.
