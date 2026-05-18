@@ -495,6 +495,8 @@ $$
 
 </div>
 
+---
+
 ## Practice
 
 1. Decompose $$\dfrac{3x+5}{(x-1)^{3}(x+2)}$$ into partial fractions.
@@ -525,6 +527,8 @@ $$(C)$$ Set the linear factors found in part (B) to $$\alpha$$ and $$\beta$$ (so
 $$
 F_n=\frac{\alpha^n-\beta^n}{\sqrt5}.
 $$
+
+---
 
 ## Solutions
 

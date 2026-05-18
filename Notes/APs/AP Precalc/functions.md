@@ -790,7 +790,7 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below (this i
 1. Find the domain and range of $$f(x)=\frac{\sqrt{9-(x-2)^2}}{x-2}$$.
 2. Let $$f(x)=\begin{cases}x^2-4x+1, & x<1,\\ax+b, & 1\le x<4,\\\sqrt{x+c}, & x\ge 4.\end{cases}$$. Find $$a$$, $$b$$, and $$c$$ so that the pieces connect at $$x=1$$ and $$x=4$$, and so that the middle piece has average rate of change $$3$$ on $$[1,4]$$.
 3. Find the explicit form(s) for the relation $$(x^2+y^2)^2=4(x^2-y^2)$$.
-4. Find the explicit form(s) for the relation $$\frac{x}{y-1}+\frac{y}{x-1}=\frac{x+y}{xy}$$.
+4. Find the explicit form(s) for the relation $$y^2-2xy+x^2=4x+4$$. State the domain of each branch.
 5. Let $$f(x)=(x-3)^2+2$$ with domain $$x\ge 3$$. Find $$f^{-1}(x)$$, and state the domain and range of $$f^{-1}$$.
 6. Let $$f:[-2,\infty)\to[-4,\infty)$$ be defined by $$f(x)=(x+2)^2-4$$. Determine whether $$f$$ is injective, surjective, bijective, or none.
 7. Simplify the difference quotient for $$f(x)=\frac{2}{x-1}$$. That is, simplify $$\frac{f(x+h)-f(x)}{h}.$$
@@ -973,74 +973,82 @@ $$
 
 ### Solution 4
 
-First note the original restrictions:
-
-$$
-x\ne 0,\qquad x\ne 1,\qquad y\ne 0,\qquad y\ne 1.
-$$
-
 Start with
 
 $$
-\frac{x}{y-1}+\frac{y}{x-1}=\frac{x+y}{xy}.
+y^2-2xy+x^2=4x+4.
 $$
 
-Multiply both sides by $$xy(y-1)(x-1)$$:
+This equation is quadratic in $$y$$. Move everything to one side:
 
 $$
-x^2y(x-1)+xy^2(y-1)=(x+y)(y-1)(x-1).
+y^2-2xy+(x^2-4x-4)=0.
 $$
 
-After expanding and collecting powers of $$y$$,
+Using the quadratic formula with
 
 $$
-xy^3+(1-2x)y^2+(x^3-2x^2+2x-1)y+x^2-x=0.
+a=1,\qquad b=-2x,\qquad c=x^2-4x-4,
 $$
 
-This is a cubic equation in $$y$$. Unlike the earlier implicit examples, it does not split into clean square-root branches. A fully explicit radical form would require the cubic formula, so the clean Precalculus-level answer is:
+we get
 
 $$
-\boxed{xy^3+(1-2x)y^2+(x^3-2x^2+2x-1)y+x^2-x=0}
+y=\frac{-(-2x)\pm\sqrt{(-2x)^2-4(1)(x^2-4x-4)}}{2}.
 $$
 
-with
+Simplify the discriminant:
 
 $$
-\boxed{x\ne 0,1\quad\text{and}\quad y\ne 0,1}.
+(-2x)^2-4(x^2-4x-4)
+=4x^2-4x^2+16x+16
+=16(x+1).
 $$
 
-If one insists on a formal explicit form, let
+So
 
 $$
-a=x,\quad b=1-2x,\quad c=x^3-2x^2+2x-1,\quad d=x^2-x.
+y=\frac{2x\pm\sqrt{16(x+1)}}{2}
+=\frac{2x\pm 4\sqrt{x+1}}{2}.
 $$
 
-Then the three Cardano branches are
+Thus the explicit branches are
 
 $$
-y_k=-\frac{1}{3a}\left(b+\omega^k C+\frac{\Delta_0}{\omega^k C}\right),
-\qquad k=0,1,2,
-$$
-
-where
-
-$$
-\omega=\frac{-1+i\sqrt3}{2},
-$$
-
-$$
-\Delta_0=b^2-3ac,
-\qquad
-\Delta_1=2b^3-9abc+27a^2d,
+y=x+2\sqrt{x+1}
 $$
 
 and
 
 $$
-C=\sqrt[3]{\frac{\Delta_1+\sqrt{\Delta_1^2-4\Delta_0^3}}{2}}.
+y=x-2\sqrt{x+1}.
 $$
 
-Only the real branches satisfying the original restrictions belong to the real relation.
+Both branches require
+
+$$
+x+1\ge 0,
+$$
+
+so each branch has domain
+
+$$
+\boxed{[-1,\infty)}.
+$$
+
+Therefore the relation is not one function of $$x$$ on most of its domain; it splits into
+
+$$
+\boxed{y=x+2\sqrt{x+1}}
+$$
+
+and
+
+$$
+\boxed{y=x-2\sqrt{x+1}}
+$$
+
+each with domain $$[-1,\infty)$$.
 
 ### Solution 5
 
