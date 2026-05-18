@@ -10,14 +10,6 @@ permalink: /notes/ap/precalc/polyratopt/
 
 This unit is about building functions from algebra and then reading the algebra back into the graph. Polynomial functions are built from powers of $$x$$, rational functions are ratios of polynomials, and optimization problems ask us to choose the input that gives the largest or smallest possible output.
 
-The order below follows the usual workflow:
-
-1. start with basic polynomial families,
-2. use degree, leading coefficient, and zeros to understand graphs,
-3. use factoring theorems to find zeros,
-4. extend the same ideas to rational functions,
-5. build one-variable functions for optimization.
-
 ---
 
 ## Basic polynomial families
@@ -121,7 +113,7 @@ $$
 so the vertex is
 
 $$
-\left(-\frac{b}{2a},\,c-\frac{b^2}{4a}).
+(-\frac{b}{2a},\,c-\frac{b^2}{4a}).
 $$
 
 This is vertex form:
@@ -248,7 +240,7 @@ In general, a polynomial of degree $$n$$ has at most $$n-1$$ turning points. Thi
 
 <div class="theorem-box" markdown="1">
 
-**Example.** Suppose $$P(x)=2x^{4}+5x^{3}-38x^{2}+28x+24$$ and we are given that $$P(2)=0$$. Graph the polynomial.
+**Example.** Suppose $$P(x)=2x^{4}+5x^{3}-38x^{2}+28x+24$$ and we are given that $$P(2)=0$$ with a multiplicity of 2. Graph the polynomial.
 
 Since $$P(2)=0$$, $$x-2$$ is a factor. Synthetic division by $$2$$ gives:
 
@@ -266,7 +258,7 @@ $$
 P(x)=(x-2)(2x^{3}+9x^{2}-20x-12).
 $$
 
-Factoring the cubic further:
+Factoring the cubic further (you can first divide by $$x-2$$ again and then factoring the resulting quadratic):
 
 $$
 2x^{3}+9x^{2}-20x-12
@@ -354,13 +346,9 @@ $$
 \pm\frac{\text{factor of constant term}}{\text{factor of leading coefficient}}.
 $$
 
-#### Example
+<div class="theorem-box" markdown="1">
 
-Find the possible rational zeros of
-
-$$
-f(x)=2x^{4}-x^{3}+7x^{2}+3x-3.
-$$
+**Example.** Find the possible rational zeros of $$f(x)=2x^{4}-x^{3}+7x^{2}+3x-3.$$
 
 Here the constant term is $$-3$$ and the leading coefficient is $$2$$. Thus
 
@@ -377,6 +365,8 @@ $$
 $$
 
 This theorem only gives candidates. You still need to test them.
+
+</div>
 
 ---
 
@@ -533,7 +523,7 @@ Below are two common examples of rational polynomials and their horizontal asymp
 
 **Example 1.** Find the horizontal/slant asymptote of $$\frac{2x+3}{x-1}$$.
 
-The numerator and debominator have equal degrees, so the horizontal asymptote is
+The numerator and denominator have equal degrees, so the horizontal asymptote is
 
 $$
 y=2.
@@ -567,7 +557,7 @@ $$
 as $$x\to \pm\infty$$, the slant asymptote is
 
 $$
-\boxed{y=x+2}.
+y=x+2.
 $$
 
 </div>
@@ -756,32 +746,44 @@ This method is useful when the equation can be rewritten as a quadratic in the i
 
 ## Practice
 
-1. Find the linear function $$f(x)$$ such that $$f(4)=-3$$ and the graph of $$y=f(x)$$ is parallel to $$5x+2y=8$$.
-2. Let $$f(x)=mx+b$$. If $$f(a+b)=f(a)+f(b)$$ for all real numbers $$a,b$$, prove that the graph of $$f$$ passes through the origin.
-3. Find the vertex, axis of symmetry, maximum/minimum value, and range of $$q(x)=-2x^2+12x-11$$.
-4. Find the two real numbers with sum $$30$$ whose product is as large as possible.
-5. Determine the degree, leading coefficient, end behavior, and maximum possible number of turning points for $$p(x)=-4x^{7}+2x^{5}-9x+1$$.
-6. Sketch the main features of $$f(x)=-(x+2)(x-3)^2$$. Give the zeros, multiplicities, $$y$$-intercept, end behavior, and crossing/bouncing behavior.
-7. Given $$P(x)=2x^4+5x^3-38x^2+28x+24$$ and $$P(2)=0$$, factor $$P(x)$$ completely over the real numbers.
-8. List all possible rational zeros of $$f(x)=3x^4-2x^3+5x^2-4x+2$$.
-9. Use the Remainder Theorem to find the remainder when $$f(x)=4x^5-3x^2+7x-10$$ is divided by $$x+2$$.
-10. A real-coefficient polynomial of degree $$5$$ has zeros $$-2$$, $$4$$, $$1+i$$, and $$3-\sqrt5$$. Find the fifth zero and write one possible polynomial with these zeros.
-11. For $$R(x)=\dfrac{(x-1)(x+4)}{(x-1)(x-3)}$$, state the domain, hole, vertical asymptote, horizontal asymptote, and intercepts.
-12. For $$g(x)=\dfrac{x^2-4}{x+1}$$, find the domain, intercepts, vertical asymptote, and slant asymptote.
-13. Solve in $$\mathbb{R}$$: $$\dfrac{x^2-9}{x^2-4x+3}\le 0$$.
-14. A rectangle has perimeter $$96$$. Find the dimensions that maximize its area, and state the maximum area.
-15. A box with no top is made by cutting squares of side length $$x$$ from each corner of a $$20\text{ in}$$ by $$12\text{ in}$$ sheet and folding up the sides. Write the volume as a function of $$x$$, state the practical domain, and use a calculator or graph to approximate the value of $$x$$ that maximizes the volume.
+1. Let $$f(x)=mx+b$$. Suppose $$f(a+b)=f(a)+f(b)-6$$ for all real numbers $$a,b$$ and $$f(4)=10$$. Find $$f(x)$$, its $$x$$-intercept, and the equation of the line perpendicular to $$f$$ through $$(4,10)$$.
+2. A quadratic function has $$x$$-intercepts $$-1$$ and $$5$$ and passes through $$(0,10)$$. Find the function, its vertex, maximum/minimum value, and range.
+3. For $$h(x)=\sqrt{-2x^2+8x+10}$$, find the domain, range, and maximum value of $$h$$.
+4. Find the lowest-degree polynomial $$p(x)$$ with real coefficients such that $$x=-3$$ is a zero of multiplicity $$2$$, $$x=1$$ is a zero of multiplicity $$3$$, and $$p(0)=-18$$. Give the end behavior.
+5. For $$f(x)=-\dfrac12(x+4)(x-1)^2(x-3)^3$$, give the degree, leading coefficient, end behavior, zeros with multiplicities, crossing/bouncing behavior, $$y$$-intercept, and maximum possible number of turning points.
+6. Find the lowest-degree polynomial with real coefficients, leading coefficient positive, zeros $$2$$ with multiplicity $$2$$, $$-1$$, and $$3+i$$, and $$f(0)=100$$.
+7. Factor $$P(x)=x^4-3x^3-11x^2+39x-18$$ completely over the real numbers, given that $$P(3)=0$$.
+8. Use the Rational Root Theorem to list the possible rational zeros of $$f(x)=2x^4-x^3-20x^2+13x+30$$, then find all real zeros.
+9. A polynomial $$f(x)$$ leaves remainder $$5$$ when divided by $$x-2$$ and remainder $$-4$$ when divided by $$x+1$$. Find the remainder when $$f(x)$$ is divided by $$(x-2)(x+1)$$.
+10. Find the monic polynomial with rational coefficients whose zeros include $$1+i$$ and $$2-\sqrt3$$.
+11. For $$R(x)=\dfrac{(x-2)(x+1)^2}{(x+1)(x-3)}$$, state the domain, hole, vertical asymptote, slant asymptote, and intercepts.
+12. Solve in $$\mathbb{R}$$: $$\dfrac{(x-4)(x+1)^2}{(x-2)(x+1)}\le 0$$. Be careful about holes.
+13. A box with no top is made by cutting squares of side length $$x$$ from each corner of a $$24\text{ in}$$ by $$18\text{ in}$$ sheet and folding up the sides. Write the volume function, state the practical domain, and use a graph or calculator to approximate the value of $$x$$ that maximizes the volume.
+14. A machine's output is modeled by $$M(x)=\dfrac{150x}{x^2+25}$$ for $$x\ge 0$$. Use an algebraic method to find the maximum possible output and the input where it occurs.
+15. A farmer has $$240$$ feet of fencing to build three identical rectangular pens side-by-side, sharing interior fences. If the pens together form one large rectangle split by two parallel dividers, find the dimensions of the large rectangle that maximize the total area.
 16. (Bonus, Rational Root Theorem)
 
-Prove the Rational Root Theorem:
+Prove the Rational Root Theorem by following these steps.
 
-If
+Let
 
 $$
 f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0
 $$
 
-has integer coefficients and $$\frac{p}{q}$$ is a rational zero in lowest terms, then $$p\mid a_0$$ and $$q\mid a_n$$.
+have integer coefficients. Suppose $$\frac{p}{q}$$ is a rational zero in lowest terms.
+
+$$(A)$$ Substitute $$\frac{p}{q}$$ into $$f(x)=0$$ and multiply by $$q^n$$.
+
+$$(B)$$ Rearrange your equation to show that $$p\mid a_0q^n$$.
+
+$$(C)$$ Explain why $$\gcd(p,q)=1$$ implies $$p\mid a_0$$.
+
+$$(D)$$ Rearrange the equation from part $$(A)$$ in a different way to show that $$q\mid a_np^n$$.
+
+$$(E)$$ Explain why $$\gcd(p,q)=1$$ implies $$q\mid a_n$$.
+
+$$(F)$$ State the Rational Root Theorem in words.
 
 ---
 
@@ -789,41 +791,7 @@ has integer coefficients and $$\frac{p}{q}$$ is a rational zero in lowest terms,
 
 ### Solution 1
 
-Rewrite the given line:
-
-$$
-5x+2y=8
-\quad\Longrightarrow\quad
-y=-\frac52x+4.
-$$
-
-A parallel line has slope $$-\frac52$$, so
-
-$$
-f(x)=-\frac52x+b.
-$$
-
-Use $$f(4)=-3$$:
-
-$$
--3=-\frac52(4)+b=-10+b,
-$$
-
-so $$b=7$$. Therefore
-
-$$
-\boxed{f(x)=-\frac52x+7}.
-$$
-
-### Solution 2
-
-Write
-
-$$
-f(x)=mx+b.
-$$
-
-Then
+Let $$f(x)=mx+b$$. Then
 
 $$
 f(a+b)=m(a+b)+b=ma+mb+b,
@@ -832,298 +800,428 @@ $$
 while
 
 $$
-f(a)+f(b)=(ma+b)+(mb+b)=ma+mb+2b.
+f(a)+f(b)-6=(ma+b)+(mb+b)-6=ma+mb+2b-6.
 $$
 
-These are equal for all $$a,b$$ only if
+Since these are equal for all $$a,b$$,
 
 $$
-b=2b,
+b=2b-6,
 $$
 
-so $$b=0$$. Thus
+so $$b=6$$. Use $$f(4)=10$$:
 
 $$
-f(x)=mx
+4m+6=10,
 $$
 
-and the graph passes through $$(0,0)$$.
-
-### Solution 3
-
-For
+so $$m=1$$. Therefore
 
 $$
-q(x)=-2x^2+12x-11,
+\boxed{f(x)=x+6}.
 $$
 
-we have $$a=-2$$ and $$b=12$$. The vertex's $$x$$-coordinate is
+The $$x$$-intercept satisfies $$x+6=0$$, so it is
 
 $$
-x=-\frac{b}{2a}
-=-\frac{12}{2(-2)}
-=3.
+\boxed{(-6,0)}.
+$$
+
+The slope of $$f$$ is $$1$$, so a perpendicular line has slope $$-1$$. Through $$(4,10)$$:
+
+$$
+y-10=-(x-4),
+$$
+
+so
+
+$$
+\boxed{y=-x+14}.
+$$
+
+### Solution 2
+
+Since the zeros are $$-1$$ and $$5$$,
+
+$$
+q(x)=a(x+1)(x-5).
+$$
+
+Use $$(0,10)$$:
+
+$$
+10=a(1)(-5),
+$$
+
+so $$a=-2$$. Thus
+
+$$
+\boxed{q(x)=-2(x+1)(x-5)}.
+$$
+
+Expanding,
+
+$$
+q(x)=-2x^2+8x+10.
+$$
+
+The axis of symmetry is halfway between the zeros:
+
+$$
+x=\frac{-1+5}{2}=2.
 $$
 
 Then
 
 $$
-q(3)=-2(3)^2+12(3)-11=-18+36-11=7.
+q(2)=-2(3)(-3)=18.
 $$
 
 The vertex is
 
 $$
-\boxed{(3,7)}.
+\boxed{(2,18)}.
 $$
 
-The axis of symmetry is
+Since $$a<0$$, this is a maximum. The maximum value is $$18$$ and the range is
 
 $$
-\boxed{x=3}.
+\boxed{(-\infty,18]}.
 $$
 
-Since $$a<0$$, the parabola opens downward, so the maximum value is
+### Solution 3
+
+The square root requires
 
 $$
-\boxed{7}.
+-2x^2+8x+10\ge 0.
 $$
 
-The range is
+Factor:
 
 $$
-\boxed{(-\infty,7]}.
+-2(x^2-4x-5)\ge 0
+$$
+
+so
+
+$$
+-2(x-5)(x+1)\ge 0.
+$$
+
+This is true for
+
+$$
+\boxed{-1\le x\le 5}.
+$$
+
+Thus the domain is
+
+$$
+\boxed{[-1,5]}.
+$$
+
+The inside quadratic has maximum at the midpoint of the roots:
+
+$$
+x=2.
+$$
+
+Its maximum value is
+
+$$
+-2(2)^2+8(2)+10=18.
+$$
+
+Since square root is increasing, the maximum of $$h$$ is
+
+$$
+\boxed{\sqrt{18}=3\sqrt2}.
+$$
+
+At the endpoints, $$h(x)=0$$, so the range is
+
+$$
+\boxed{[0,3\sqrt2]}.
 $$
 
 ### Solution 4
 
-Let the numbers be $$x$$ and $$30-x$$. The product is
+The lowest-degree polynomial must have factors
 
 $$
-P(x)=x(30-x)=30x-x^2.
+(x+3)^2
+\qquad\text{and}\qquad
+(x-1)^3.
 $$
 
-This parabola opens downward, so its maximum occurs at
+So
 
 $$
-x=-\frac{30}{2(-1)}=15.
+p(x)=a(x+3)^2(x-1)^3.
 $$
 
-The other number is also $$15$$. The maximum product is
+Use $$p(0)=-18$$:
 
 $$
-15\cdot 15=225.
+-18=a(3)^2(-1)^3=-9a.
 $$
 
-Thus the numbers are
+Thus $$a=2$$, so
 
 $$
-\boxed{15\text{ and }15}.
+\boxed{p(x)=2(x+3)^2(x-1)^3}.
+$$
+
+The degree is $$5$$ and the leading coefficient is $$2$$. Therefore
+
+$$
+x\to -\infty \Rightarrow p(x)\to -\infty,
+\qquad
+x\to \infty \Rightarrow p(x)\to \infty.
 $$
 
 ### Solution 5
 
-The highest power is $$x^7$$, so the degree is
+For
 
 $$
-\boxed{7}.
+f(x)=-\frac12(x+4)(x-1)^2(x-3)^3,
+$$
+
+the degree is
+
+$$
+1+2+3=6.
 $$
 
 The leading coefficient is
 
 $$
-\boxed{-4}.
+\boxed{-\frac12}.
 $$
 
-The degree is odd and the leading coefficient is negative, so
+Even degree with negative leading coefficient means
 
 $$
-x\to -\infty \Rightarrow p(x)\to \infty,
+x\to -\infty \Rightarrow f(x)\to -\infty,
 \qquad
-x\to \infty \Rightarrow p(x)\to -\infty.
-$$
-
-A degree $$7$$ polynomial has at most
-
-$$
-7-1=6
-$$
-
-turning points, so the maximum possible number is
-
-$$
-\boxed{6}.
-$$
-
-### Solution 6
-
-The factored form is
-
-$$
-f(x)=-(x+2)(x-3)^2.
+x\to \infty \Rightarrow f(x)\to -\infty.
 $$
 
 The zeros are:
 
-$$
-x=-2
-\quad\text{with multiplicity }1,
-$$
-
-and
-
-$$
-x=3
-\quad\text{with multiplicity }2.
-$$
-
-The graph crosses at $$x=-2$$ and bounces at $$x=3$$.
+- $$x=-4$$, multiplicity $$1$$, crosses.
+- $$x=1$$, multiplicity $$2$$, bounces.
+- $$x=3$$, multiplicity $$3$$, crosses with flattening.
 
 The $$y$$-intercept is
 
 $$
-f(0)=-(2)(9)=-18,
+f(0)=-\frac12(4)(1)(-27)=54,
 $$
 
 so it is
 
 $$
-\boxed{(0,-18)}.
+\boxed{(0,54)}.
 $$
 
-The degree is $$3$$, and the leading term is
+The maximum possible number of turning points is
 
 $$
--x^3.
+\boxed{5}.
 $$
 
-Thus
+### Solution 6
+
+Because the polynomial has real coefficients, $$3-i$$ must also be a zero. The lowest-degree polynomial has the form
 
 $$
-x\to -\infty \Rightarrow f(x)\to \infty,
-\qquad
-x\to \infty \Rightarrow f(x)\to -\infty.
+f(x)=a(x-2)^2(x+1)\bigl(x-(3+i)\bigr)\bigl(x-(3-i)\bigr).
+$$
+
+The complex pair multiplies to
+
+$$
+\bigl(x-(3+i)\bigr)\bigl(x-(3-i)\bigr)=(x-3)^2+1.
+$$
+
+So
+
+$$
+f(x)=a(x-2)^2(x+1)\bigl((x-3)^2+1\bigr).
+$$
+
+Use $$f(0)=100$$:
+
+$$
+100=a(4)(1)(10)=40a.
+$$
+
+Thus $$a=\dfrac52$$, and
+
+$$
+\boxed{f(x)=\frac52(x-2)^2(x+1)\bigl((x-3)^2+1\bigr)}.
 $$
 
 ### Solution 7
 
-Since $$P(2)=0$$, divide by $$x-2$$:
+Since $$P(3)=0$$, $$x-3$$ is a factor. Synthetic division gives
 
 $$
 \begin{array}{r|rrrrr}
-2 & 2 & 5 & -38 & 28 & 24\\
-  &   & 4 & 18 & -40 & -24\\ \hline
-  & 2 & 9 & -20 & -12 & 0
+3 & 1 & -3 & -11 & 39 & -18\\
+  &   & 3 & 0 & -33 & 18\\ \hline
+  & 1 & 0 & -11 & 6 & 0
 \end{array}
 $$
 
 So
 
 $$
-P(x)=(x-2)(2x^3+9x^2-20x-12).
+P(x)=(x-3)(x^3-11x+6).
 $$
 
-The cubic is not friendly by grouping:
-
-$$
-2x^3+9x^2-20x-12
-=x^2(2x+9)-4(5x+3),
-$$
-
-so test another rational root. Since $$x=2$$ works again,
+Test $$x=3$$ again:
 
 $$
 \begin{array}{r|rrrr}
-2 & 2 & 9 & -20 & -12\\
-  &   & 4 & 26 & 12\\ \hline
-  & 2 & 13 & 6 & 0
+3 & 1 & 0 & -11 & 6\\
+  &   & 3 & 9 & -6\\ \hline
+  & 1 & 3 & -2 & 0
 \end{array}
 $$
 
 Thus
 
 $$
-P(x)=(x-2)^2(2x^2+13x+6).
+P(x)=(x-3)^2(x^2+3x-2).
 $$
 
-Now factor:
+The quadratic formula gives
 
 $$
-2x^2+13x+6=(2x+1)(x+6).
+x=\frac{-3\pm\sqrt{9+8}}{2}
+=\frac{-3\pm\sqrt{17}}{2}.
 $$
 
 Therefore
 
 $$
-\boxed{P(x)=(x-2)^2(2x+1)(x+6)}.
+\boxed{P(x)=(x-3)^2\left(x-\frac{-3+\sqrt{17}}{2}\right)\left(x-\frac{-3-\sqrt{17}}{2}\right)}.
 $$
 
 ### Solution 8
 
-The constant term is $$2$$ and the leading coefficient is $$3$$.
-
-Thus
+By the Rational Root Theorem, possible rational zeros are
 
 $$
-p=\pm1,\pm2
-\qquad\text{and}\qquad
-q=\pm1,\pm3.
+\pm1,\ \pm2,\ \pm3,\ \pm5,\ \pm6,\ \pm10,\ \pm15,\ \pm30,
 $$
 
-The possible rational zeros are
+and
 
 $$
-\boxed{\pm1,\ \pm2,\ \pm\frac13,\ \pm\frac23}.
+\pm\frac12,\ \pm\frac32,\ \pm\frac52,\ \pm\frac{15}{2}.
+$$
+
+Factor by grouping:
+
+$$
+2x^4-x^3-20x^2+13x+30
+=(x^2+x-6)(2x^2-3x-5).
+$$
+
+Then
+
+$$
+(x^2+x-6)(2x^2-3x-5)
+=(x+3)(x-2)(2x-5)(x+1).
+$$
+
+So the real zeros are
+
+$$
+\boxed{-3,\ -1,\ 2,\ \frac52}.
 $$
 
 ### Solution 9
 
-Dividing by $$x+2$$ means dividing by $$x-(-2)$$, so the remainder is $$f(-2)$$.
+When dividing by $$(x-2)(x+1)$$, the remainder must be linear:
 
 $$
-f(-2)=4(-2)^5-3(-2)^2+7(-2)-10.
+R(x)=ax+b.
 $$
 
-Compute:
+Since the remainder after division by $$x-2$$ is $$5$$,
 
 $$
-4(-32)-3(4)-14-10
-=-128-12-14-10
-=-164.
+R(2)=5.
 $$
 
-The remainder is
+Since the remainder after division by $$x+1$$ is $$-4$$,
 
 $$
-\boxed{-164}.
+R(-1)=-4.
+$$
+
+Thus
+
+$$
+2a+b=5,
+\qquad
+-a+b=-4.
+$$
+
+Subtract:
+
+$$
+3a=9,
+$$
+
+so $$a=3$$. Then $$b=-1$$. The remainder is
+
+$$
+\boxed{3x-1}.
 $$
 
 ### Solution 10
 
-Since the polynomial has real coefficients, the complex conjugate of $$1+i$$ must also be a zero:
+For rational coefficients, conjugate pairs are required:
 
 $$
-\boxed{1-i}.
+1+i,\ 1-i,\ 2-\sqrt3,\ 2+\sqrt3.
 $$
 
-If the problem had said rational coefficients, then $$3+\sqrt5$$ would also be required. But the problem only said real coefficients, so the necessary fifth zero is only $$1-i$$.
-
-One possible real-coefficient polynomial is
+The polynomial is
 
 $$
-\boxed{(x+2)(x-4)\bigl(x-(1+i)\bigr)\bigl(x-(1-i)\bigr)\bigl(x-(3-\sqrt5)\bigr)}.
+\bigl(x-(1+i)\bigr)\bigl(x-(1-i)\bigr)\bigl(x-(2-\sqrt3)\bigr)\bigl(x-(2+\sqrt3)\bigr).
 $$
 
 Since
 
 $$
-\bigl(x-(1+i)\bigr)\bigl(x-(1-i)\bigr)=(x-1)^2+1,
+\bigl(x-(1+i)\bigr)\bigl(x-(1-i)\bigr)=(x-1)^2+1=x^2-2x+2
 $$
 
-this can also be written as
+and
 
 $$
-\boxed{(x+2)(x-4)\bigl((x-1)^2+1\bigr)(x-3+\sqrt5)}.
+\bigl(x-(2-\sqrt3)\bigr)\bigl(x-(2+\sqrt3)\bigr)=(x-2)^2-3=x^2-4x+1,
+$$
+
+we get
+
+$$
+(x^2-2x+2)(x^2-4x+1).
+$$
+
+Expanding:
+
+$$
+\boxed{x^4-6x^3+11x^2-10x+2}.
 $$
 
 ### Solution 11
@@ -1131,32 +1229,32 @@ $$
 Start with
 
 $$
-R(x)=\frac{(x-1)(x+4)}{(x-1)(x-3)}.
+R(x)=\frac{(x-2)(x+1)^2}{(x+1)(x-3)}.
 $$
 
-The original denominator is zero at $$x=1$$ and $$x=3$$, so the domain is
+The original denominator is zero at $$x=-1$$ and $$x=3$$, so the domain is
 
 $$
-\boxed{x\ne 1,3}.
+\boxed{x\ne -1,3}.
 $$
 
 Cancel the common factor:
 
 $$
-R(x)=\frac{x+4}{x-3},
-\qquad x\ne 1,3.
+R(x)=\frac{(x-2)(x+1)}{x-3},
+\qquad x\ne -1,3.
 $$
 
-The canceled factor creates a hole at $$x=1$$. Its $$y$$-value is
+The canceled factor creates a hole at $$x=-1$$. Its $$y$$-value is
 
 $$
-\frac{1+4}{1-3}=-\frac52,
+\frac{(-1-2)(-1+1)}{-1-3}=0,
 $$
 
 so the hole is
 
 $$
-\boxed{\left(1,-\frac52\right)}.
+\boxed{(-1,0)}.
 $$
 
 The uncanceled denominator gives the vertical asymptote:
@@ -1165,255 +1263,239 @@ $$
 \boxed{x=3}.
 $$
 
-The degrees are equal, so the horizontal asymptote is the ratio of leading coefficients:
+There is no horizontal asymptote because the numerator degree is one more than the denominator degree. For the slant asymptote, simplify the numerator:
 
 $$
-\boxed{y=1}.
+(x-2)(x+1)=x^2-x-2.
 $$
 
-The $$x$$-intercept comes from the simplified numerator:
+Divide:
 
 $$
-x+4=0
-\quad\Longrightarrow\quad
-x=-4,
-$$
-
-so the $$x$$-intercept is
-
-$$
-\boxed{(-4,0)}.
-$$
-
-The $$y$$-intercept is
-
-$$
-R(0)=\frac{(-1)(4)}{(-1)(-3)}=-\frac43,
-$$
-
-so it is
-
-$$
-\boxed{\left(0,-\frac43\right)}.
-$$
-
-### Solution 12
-
-The function is
-
-$$
-g(x)=\frac{x^2-4}{x+1}.
-$$
-
-The domain is
-
-$$
-\boxed{x\ne -1}.
-$$
-
-Factor the numerator:
-
-$$
-g(x)=\frac{(x-2)(x+2)}{x+1}.
-$$
-
-There is no common factor, so $$x=-1$$ is a vertical asymptote:
-
-$$
-\boxed{x=-1}.
-$$
-
-The $$x$$-intercepts are
-
-$$
-\boxed{(-2,0)\text{ and }(2,0)}.
-$$
-
-The $$y$$-intercept is
-
-$$
-g(0)=\frac{-4}{1}=-4,
-$$
-
-so it is
-
-$$
-\boxed{(0,-4)}.
-$$
-
-Divide to find the slant asymptote:
-
-$$
-\frac{x^2-4}{x+1}
-=x-1-\frac{3}{x+1}.
+\frac{x^2-x-2}{x-3}
+=x+2+\frac{4}{x-3}.
 $$
 
 Thus the slant asymptote is
 
 $$
-\boxed{y=x-1}.
+\boxed{y=x+2}.
 $$
 
-### Solution 13
-
-Factor:
+The true $$x$$-intercept comes from the simplified numerator and must be in the original domain. Since $$x=-1$$ is a hole, the only $$x$$-intercept is
 
 $$
-\frac{x^2-9}{x^2-4x+3}
-=\frac{(x-3)(x+3)}{(x-1)(x-3)}.
+\boxed{(2,0)}.
 $$
 
-The domain excludes
+The $$y$$-intercept is
 
 $$
-x=1,\ 3.
+R(0)=\frac{(-2)(1)^2}{(1)(-3)}=\frac23,
 $$
 
-For sign-chart purposes, use the original critical numbers:
+so it is
 
 $$
--3,\ 1,\ 3.
+\boxed{\left(0,\frac23\right)}.
 $$
 
-After canceling the common factor, the expression equals
+### Solution 12
 
 $$
-\frac{x+3}{x-1}
+\frac{(x-4)(x+1)^2}{(x-2)(x+1)}
 $$
 
-except there is still a hole at $$x=3$$.
+has original domain restrictions
+
+$$
+x\ne -1,\ 2.
+$$
+
+Cancel one factor of $$x+1$$:
+
+$$
+\frac{(x-4)(x+1)}{x-2}\le 0,
+\qquad x\ne -1,2.
+$$
+
+The critical numbers are
+
+$$
+-1,\ 2,\ 4.
+$$
 
 Test intervals:
 
-- On $$(-\infty,-3)$$, the expression is positive.
-- At $$x=-3$$, the expression is $$0$$, so include it.
-- On $$(-3,1)$$, the expression is negative.
-- At $$x=1$$, the expression is undefined.
-- On $$(1,3)$$, the expression is positive.
-- At $$x=3$$, the expression is undefined.
-- On $$(3,\infty)$$, the expression is positive.
+- On $$(-\infty,-1)$$, the expression is negative.
+- At $$x=-1$$, the original expression is undefined.
+- On $$(-1,2)$$, the expression is positive.
+- At $$x=2$$, the expression is undefined.
+- On $$(2,4)$$, the expression is negative.
+- At $$x=4$$, the expression is zero.
+- On $$(4,\infty)$$, the expression is positive.
 
 Therefore the solution is
 
 $$
-\boxed{[-3,1)}.
+\boxed{(-\infty,-1)\cup(2,4]}.
 $$
 
-### Solution 14
+### Solution 13
 
-Let the rectangle have length $$x$$ and width $$y$$. Since the perimeter is $$96$$,
-
-$$
-2x+2y=96
-\quad\Longrightarrow\quad
-x+y=48.
-$$
-
-Thus
+The dimensions of the box are:
 
 $$
-y=48-x.
-$$
-
-The area is
-
-$$
-A(x)=x(48-x)=48x-x^2.
-$$
-
-This parabola opens downward, so its maximum occurs at
-
-$$
-x=-\frac{48}{2(-1)}=24.
-$$
-
-Then
-
-$$
-y=48-24=24.
-$$
-
-The maximum area is
-
-$$
-24\cdot 24=576.
-$$
-
-Thus the rectangle is a square with dimensions
-
-$$
-\boxed{24\text{ by }24}
-$$
-
-and maximum area
-
-$$
-\boxed{576}.
-$$
-
-### Solution 15
-
-Cutting squares of side length $$x$$ from a $$20$$ by $$12$$ sheet leaves box dimensions:
-
-$$
-\text{length}=20-2x,
+\text{length}=24-2x,
 $$
 
 $$
-\text{width}=12-2x,
+\text{width}=18-2x,
 $$
 
 $$
 \text{height}=x.
 $$
 
-So the volume is
+So
 
 $$
-V(x)=x(20-2x)(12-2x).
+V(x)=x(24-2x)(18-2x).
 $$
 
-The practical domain requires all dimensions to be positive:
+The practical domain is
 
 $$
-x>0,\qquad 20-2x>0,\qquad 12-2x>0.
-$$
-
-Thus
-
-$$
-\boxed{0<x<6}.
+\boxed{0<x<9}.
 $$
 
 Expanding,
 
 $$
-V(x)=4x^{3}-64x^{2}+240x.
+V(x)=4x^3-84x^2+432x.
 $$
 
-Using a graph or calculator on $$0<x<6$$, the maximum occurs at approximately
+Using a graph or calculator on $$0<x<9$$, the maximum occurs at approximately
 
 $$
-\boxed{x\approx 2.39\text{ in}}.
+\boxed{x\approx 3.39\text{ in}}.
 $$
 
 The maximum volume is approximately
 
 $$
-V(2.39)\approx 262.7\text{ in}^3.
+V(3.39)\approx 655.0\text{ in}^3.
+$$
+
+### Solution 14
+
+Let
+
+$$
+y=\frac{150x}{x^2+25}.
+$$
+
+Then
+
+$$
+y(x^2+25)=150x.
+$$
+
+Rearrange as a quadratic in $$x$$:
+
+$$
+yx^2-150x+25y=0.
+$$
+
+For real $$x$$, the discriminant must be nonnegative:
+
+$$
+(-150)^2-4(y)(25y)\ge 0.
+$$
+
+Thus
+
+$$
+22500-100y^2\ge 0
+\quad\Longrightarrow\quad
+y^2\le 225.
+$$
+
+Since $$M(x)\ge 0$$ for $$x\ge 0$$, the maximum possible output is
+
+$$
+\boxed{15}.
+$$
+
+Find where it occurs:
+
+$$
+15=\frac{150x}{x^2+25}.
+$$
+
+Then
+
+$$
+15x^2+375=150x
+\quad\Longrightarrow\quad
+x^2-10x+25=0
+\quad\Longrightarrow\quad
+(x-5)^2=0.
+$$
+
+So the maximum occurs at
+
+$$
+\boxed{x=5}.
+$$
+
+### Solution 15
+
+Let the large rectangle have length $$y$$ and width $$x$$, where the two interior dividers are each parallel to the width. Then the fencing uses four widths and two lengths:
+
+$$
+4x+2y=240.
+$$
+
+So
+
+$$
+y=120-2x.
+$$
+
+The total area is
+
+$$
+A(x)=xy=x(120-2x)=120x-2x^2.
+$$
+
+This parabola opens downward, so its maximum occurs at
+
+$$
+x=-\frac{120}{2(-2)}=30.
+$$
+
+Then
+
+$$
+y=120-2(30)=60.
+$$
+
+Thus the large rectangle should be
+
+$$
+\boxed{30\text{ ft by }60\text{ ft}}.
+$$
+
+The maximum total area is
+
+$$
+\boxed{1800\text{ ft}^2}.
 $$
 
 ### Solution 16
 
-Suppose
-
-$$
-\frac{p}{q}
-$$
-
-is a rational zero of $$f$$ in lowest terms, so $$\gcd(p,q)=1$$ and $$q\ne 0$$.
-
-Then
+$$(A)$$ Since $$\frac{p}{q}$$ is a zero,
 
 $$
 a_n\left(\frac{p}{q}\right)^n
@@ -1422,46 +1504,50 @@ a_n\left(\frac{p}{q}\right)^n
 +a_1\left(\frac{p}{q}\right)+a_0=0.
 $$
 
-Multiply by $$q^n$$:
+Multiplying by $$q^n$$ gives
 
 $$
 a_np^n+a_{n-1}p^{n-1}q+\cdots+a_1pq^{n-1}+a_0q^n=0.
 $$
 
-Move the constant-term part to the other side:
+$$(B)$$ Move the constant-term part:
 
 $$
 a_np^n+a_{n-1}p^{n-1}q+\cdots+a_1pq^{n-1}=-a_0q^n.
 $$
 
-Every term on the left has a factor of $$p$$, so $$p$$ divides the left side. Therefore $$p$$ divides the right side:
+Every term on the left has a factor of $$p$$, so
 
 $$
 p\mid a_0q^n.
 $$
 
-Since $$p$$ and $$q$$ are relatively prime, $$p$$ is relatively prime to $$q^n$$. Therefore
+$$(C)$$ Since $$\frac{p}{q}$$ is in lowest terms, $$\gcd(p,q)=1$$. Therefore $$p$$ is relatively prime to $$q^n$$. If $$p$$ divides $$a_0q^n$$ and shares no factor with $$q^n$$, then
 
 $$
 \boxed{p\mid a_0}.
 $$
 
-Now move the leading-term part to the other side:
+$$(D)$$ Now move the leading-term part instead:
 
 $$
 a_{n-1}p^{n-1}q+\cdots+a_1pq^{n-1}+a_0q^n=-a_np^n.
 $$
 
-Every term on the left has a factor of $$q$$, so $$q$$ divides the right side:
+Every term on the left has a factor of $$q$$, so
 
 $$
 q\mid a_np^n.
 $$
 
-Since $$p$$ and $$q$$ are relatively prime, $$q$$ is relatively prime to $$p^n$$. Therefore
+$$(E)$$ Since $$\gcd(p,q)=1$$, $$q$$ is relatively prime to $$p^n$$. If $$q$$ divides $$a_np^n$$ and shares no factor with $$p^n$$, then
 
 $$
 \boxed{q\mid a_n}.
 $$
 
-This proves the Rational Root Theorem.
+$$(F)$$ Therefore, if a polynomial with integer coefficients has a rational zero $$\frac{p}{q}$$ in lowest terms, then the numerator must divide the constant term and the denominator must divide the leading coefficient.
+
+$$
+\boxed{p\mid a_0\quad\text{and}\quad q\mid a_n}.
+$$
