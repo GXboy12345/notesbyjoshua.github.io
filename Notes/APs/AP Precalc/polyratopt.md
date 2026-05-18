@@ -132,7 +132,7 @@ $$
 y=\sqrt{f(x)}
 $$
 
-is minimized at $$x=\frac12$$ because the square-root function is increasing, so the smallest legal value of $$f(x)$$ gives the smallest value of $$\sqrt{f(x)}$$. However, you have to be careful and always double-check your work for domain shifts or restrictions.
+is minimized at $$x=\frac12$$ because the square-root function is increasing, so the smallest legal value of $$f(x)$$ gives the smallest value of $$\sqrt{f(x)}$$. However, you have to be careful and always double-check your work for domain shifts or restrictions, since a function like $$\sqrt{(x-2.5)^2-5}$$ does not have a minimum at $$x=2.5$$ since it is not in the domain! In this case, the minimum are always the zeroes of the quadratic.
 
 ---
 
@@ -521,7 +521,7 @@ a **horizontal asymptote** is the value of which $$y$$ approaches as $$x$$ appro
 
 Below are two common examples of rational polynomials and their horizontal asymptotes.
 
-**Example 1.** Find the horizontal/slant asymptote of $$\frac{2x+3}{x-1}$$.
+**Example (Horizontal asymptote).** Find the horizontal/slant asymptote of $$\frac{2x+3}{x-1}$$.
 
 The numerator and denominator have equal degrees, so the horizontal asymptote is
 
@@ -539,7 +539,7 @@ $$
 
 as $$x\to \pm\infty$$.
 
-**Example 2.** Find the horizontal/slant asymptote for $$R(x)=\frac{x^2+1}{x-2}.$$
+**Example (Slant asymptote).** Find the horizontal/slant asymptote for $$R(x)=\frac{x^2+1}{x-2}.$$
 
 The numerator degree is one more than the denominator degree. Divide:
 
@@ -590,42 +590,7 @@ The usual workflow is:
 4. Use constraints to write the target quantity as a function of one variable.
 5. State the allowed domain from the context.
 6. Find the maximum or minimum using algebra, graphing, or a calculator.
-7. Answer the original question with units.
-
-<div class="theorem-box" markdown="1">
-
-**Example (two numbers with fixed sum).**
-
-Find two numbers that add to $$20$$ such that the sum of their squares is as small as possible.
-
-Let the numbers be $$x$$ and $$20-x$$. The quantity to minimize is
-
-$$
-S(x)=x^2+(20-x)^2.
-$$
-
-Simplify:
-
-$$
-S(x)=x^2+400-40x+x^2
-=2x^2-40x+400.
-$$
-
-This parabola opens upward, so its minimum occurs at
-
-$$
-x=-\frac{b}{2a}
-=-\frac{-40}{2(2)}
-=10.
-$$
-
-Thus the two numbers are
-
-$$
-\boxed{10\text{ and }10}.
-$$
-
-</div>
+7. Answer the original question with units and in context.
 
 <div class="theorem-box" markdown="1">
 
@@ -750,20 +715,20 @@ This method is useful when the equation can be rewritten as a quadratic in the i
 2. A quadratic function has $$x$$-intercepts $$-1$$ and $$5$$ and passes through $$(0,10)$$. Find the function, its vertex, maximum/minimum value, and range.
 3. For $$h(x)=\sqrt{-2x^2+8x+10}$$, find the domain, range, and maximum value of $$h$$.
 4. Find the lowest-degree polynomial $$p(x)$$ with real coefficients such that $$x=-3$$ is a zero of multiplicity $$2$$, $$x=1$$ is a zero of multiplicity $$3$$, and $$p(0)=-18$$. Give the end behavior.
-5. For $$f(x)=-\dfrac12(x+4)(x-1)^2(x-3)^3$$, give the degree, leading coefficient, end behavior, zeros with multiplicities, crossing/bouncing behavior, $$y$$-intercept, and maximum possible number of turning points.
+5. For $$f(x)=-\dfrac12(x+4)(x-1)^2(x-3)^3$$, give the degree, leading coefficient, end behavior, zeros with multiplicities, crossing/bouncing behavior, $$y$$-intercept, and maximum possible number of turning points. Give a rough graph of the function.
 6. Find the lowest-degree polynomial with real coefficients, leading coefficient positive, zeros $$2$$ with multiplicity $$2$$, $$-1$$, and $$3+i$$, and $$f(0)=100$$.
 7. Factor $$P(x)=x^4-3x^3-11x^2+39x-18$$ completely over the real numbers, given that $$P(3)=0$$.
 8. Use the Rational Root Theorem to list the possible rational zeros of $$f(x)=2x^4-x^3-20x^2+13x+30$$, then find all real zeros.
 9. A polynomial $$f(x)$$ leaves remainder $$5$$ when divided by $$x-2$$ and remainder $$-4$$ when divided by $$x+1$$. Find the remainder when $$f(x)$$ is divided by $$(x-2)(x+1)$$.
 10. Find the monic polynomial with rational coefficients whose zeros include $$1+i$$ and $$2-\sqrt3$$.
-11. For $$R(x)=\dfrac{(x-2)(x+1)^2}{(x+1)(x-3)}$$, state the domain, hole, vertical asymptote, slant asymptote, and intercepts.
-12. Solve in $$\mathbb{R}$$: $$\dfrac{(x-4)(x+1)^2}{(x-2)(x+1)}\le 0$$. Be careful about holes.
+11. For $$R(x)=\dfrac{(x-2)(x+1)^2}{(x+1)(x-3)}$$, state the domain, hole, vertical asymptote, slant asymptote, and intercepts. Give a rough graph of this function.
+12. Solve in $$\mathbb{R}$$: $$\dfrac{(x-4)(x+1)^2}{(x-2)(x+1)}\le 0$$.
 13. A box with no top is made by cutting squares of side length $$x$$ from each corner of a $$24\text{ in}$$ by $$18\text{ in}$$ sheet and folding up the sides. Write the volume function, state the practical domain, and use a graph or calculator to approximate the value of $$x$$ that maximizes the volume.
 14. A machine's output is modeled by $$M(x)=\dfrac{150x}{x^2+25}$$ for $$x\ge 0$$. Use an algebraic method to find the maximum possible output and the input where it occurs.
 15. A farmer has $$240$$ feet of fencing to build three identical rectangular pens side-by-side, sharing interior fences. If the pens together form one large rectangle split by two parallel dividers, find the dimensions of the large rectangle that maximize the total area.
 16. (Bonus, Rational Root Theorem)
 
-Prove the Rational Root Theorem by following these steps.
+In this unit, we have introduced the Rational Root Theorem as a quick way of finding rational roots. We will now get a chance to prove this theorem.
 
 Let
 
@@ -771,19 +736,13 @@ $$
 f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0
 $$
 
-have integer coefficients. Suppose $$\frac{p}{q}$$ is a rational zero in lowest terms.
+have integer coefficients. Suppose $$\frac{p}{q}$$ is a rational zero in lowest terms. Note that $$a \mid b$$ means $$a$$ divides $$b$$ and $$gcd$$ means greatest common divisor.
 
-$$(A)$$ Substitute $$\frac{p}{q}$$ into $$f(x)=0$$ and multiply by $$q^n$$.
+$$(A)$$ Substitute $$\frac{p}{q}$$ into $$f(x)=0$$ and multiply by $$q^n$$ and rearrange your equation to show that $$p\mid a_0q^n$$. Also explain why $$\gcd(p,q)=1$$ implies $$p\mid a_0$$.
 
-$$(B)$$ Rearrange your equation to show that $$p\mid a_0q^n$$.
+$$(B)$$ Rearrange the equation from part $$(A)$$ in a different way to show that $$q\mid a_np^n$$ and explain why $$\gcd(p,q)=1$$ implies $$q\mid a_n$$.
 
-$$(C)$$ Explain why $$\gcd(p,q)=1$$ implies $$p\mid a_0$$.
-
-$$(D)$$ Rearrange the equation from part $$(A)$$ in a different way to show that $$q\mid a_np^n$$.
-
-$$(E)$$ Explain why $$\gcd(p,q)=1$$ implies $$q\mid a_n$$.
-
-$$(F)$$ State the Rational Root Theorem in words.
+$$(C)$$ State the Rational Root Theorem in words.
 
 ---
 
@@ -1032,6 +991,10 @@ The maximum possible number of turning points is
 $$
 \boxed{5}.
 $$
+
+This graph is shown below:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/polygraph1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 ### Solution 6
 
@@ -1300,6 +1263,10 @@ $$
 \boxed{\left(0,\frac23\right)}.
 $$
 
+The graph is shown below:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/ratgraph1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+
 ### Solution 12
 
 $$
@@ -1495,7 +1462,7 @@ $$
 
 ### Solution 16
 
-$$(A)$$ Since $$\frac{p}{q}$$ is a zero,
+For part (A), since $$\frac{p}{q}$$ is a zero,
 
 $$
 a_n\left(\frac{p}{q}\right)^n
@@ -1510,7 +1477,7 @@ $$
 a_np^n+a_{n-1}p^{n-1}q+\cdots+a_1pq^{n-1}+a_0q^n=0.
 $$
 
-$$(B)$$ Move the constant-term part:
+Move the constant-term part:
 
 $$
 a_np^n+a_{n-1}p^{n-1}q+\cdots+a_1pq^{n-1}=-a_0q^n.
@@ -1522,7 +1489,7 @@ $$
 p\mid a_0q^n.
 $$
 
-$$(C)$$ Since $$\frac{p}{q}$$ is in lowest terms, $$\gcd(p,q)=1$$. Therefore $$p$$ is relatively prime to $$q^n$$. If $$p$$ divides $$a_0q^n$$ and shares no factor with $$q^n$$, then
+For part (B), since $$\frac{p}{q}$$ is in lowest terms, $$\gcd(p,q)=1$$. Therefore $$p$$ is relatively prime to $$q^n$$. If $$p$$ divides $$a_0q^n$$ and shares no factor with $$q^n$$, then
 
 $$
 \boxed{p\mid a_0}.
@@ -1540,13 +1507,13 @@ $$
 q\mid a_np^n.
 $$
 
-$$(E)$$ Since $$\gcd(p,q)=1$$, $$q$$ is relatively prime to $$p^n$$. If $$q$$ divides $$a_np^n$$ and shares no factor with $$p^n$$, then
+Since $$\gcd(p,q)=1$$, $$q$$ is relatively prime to $$p^n$$. If $$q$$ divides $$a_np^n$$ and shares no factor with $$p^n$$, then
 
 $$
 \boxed{q\mid a_n}.
 $$
 
-$$(F)$$ Therefore, if a polynomial with integer coefficients has a rational zero $$\frac{p}{q}$$ in lowest terms, then the numerator must divide the constant term and the denominator must divide the leading coefficient.
+For part (C), the theorem statement is this: If a polynomial with integer coefficients has a rational zero $$\frac{p}{q}$$ in lowest terms, then the numerator must divide the constant term and the denominator must divide the leading coefficient.
 
 $$
 \boxed{p\mid a_0\quad\text{and}\quad q\mid a_n}.

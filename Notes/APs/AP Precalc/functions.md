@@ -143,7 +143,7 @@ $$
 Therefore $$-1<y<1$$. The value $$y=0$$ occurs at $$x=-4$$ and $$x=0$$, while $$y=1$$ and $$y=-1$$ are approached but never reached. Therefore,
 
 $$
-\text{range}=(-1,1).
+range=(-1,1).
 $$
 </div>
 
