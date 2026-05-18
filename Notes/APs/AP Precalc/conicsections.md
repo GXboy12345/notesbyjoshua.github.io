@@ -8,6 +8,8 @@ permalink: /notes/ap/precalc/conicsections/
 
 # Unit 12: Conic Sections
 
+---
+
 ## Introduction to conics
 
 A conic section is the curve you get when a plane meets a right circular cone: circle, ellipse, parabola, or hyperbola (the “degenerate” cases: point, line, pair of lines show up when the plane passes through the vertex in special ways and will not be talked about here).

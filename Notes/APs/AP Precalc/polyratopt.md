@@ -8,6 +8,8 @@ permalink: /notes/ap/precalc/polyratopt/
 
 # Unit 4 & 13: Polynomial & Rational Functions and Applications to Optimization
 
+---
+
 ## Basic polynomial families
 
 Linear and quadratic functions are the first two polynomial families. They are worth separating out because they show up constantly in modeling and optimization.

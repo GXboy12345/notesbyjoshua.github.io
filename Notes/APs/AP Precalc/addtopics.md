@@ -8,6 +8,8 @@ permalink: /notes/ap/precalc/addtopics/
 
 # Unit 13 & 14: Additional Topics in Algebra
 
+---
+
 ## Introduction to Partial Fractions
 
 **Goal**: Write a proper rational function $$\dfrac{N(x)}{D(x)}$$ ($$\deg N < \deg D$$) as a sum of simpler fractions so it is easier to integrate, sum, or manipulate algebraically. If the fraction is improper ($$\deg N \ge \deg D$$): polynomial long division first:

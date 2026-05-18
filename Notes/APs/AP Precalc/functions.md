@@ -8,6 +8,8 @@ permalink: /notes/ap/precalc/functions/
 
 # Unit 3: Functions
 
+---
+
 ## Definition of a Function
 
 A **function** assigns each input exactly **one** output. If $$f$$ is a function and $$x$$ is an input, then $$f(x)$$ is the output.

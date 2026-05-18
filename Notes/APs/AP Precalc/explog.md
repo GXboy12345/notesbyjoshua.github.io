@@ -8,6 +8,8 @@ permalink: /notes/ap/precalc/explog/
 
 # Unit 5: Exponential & Logarithmic Functions
 
+---
+
 ## Exponential functions
 
 An **exponential function** has the form
@@ -78,7 +80,7 @@ $$
 2^{-x}=\left(\frac12\right)^x.
 $$
 
-Be careful with signs:
+But, you should always be careful with signs:
 
 $$
 -2^x=-(2^x),
@@ -110,7 +112,7 @@ A good idea is to always plot a couple of integer points to start with.
 
 <div class="theorem-box" markdown="1">
 
-**Example.** Graph the function
+**Example.** Graph the function and give the domain and range of
 
 $$
 y=\frac12(4)^{x-3}+2.
@@ -121,24 +123,26 @@ The parent function $$4^x$$ is exponential growth because $$4>1$$. The expressio
 The horizontal asymptote is
 
 $$
-\boxed{y=2}.
+y=2.
 $$
 
 The domain is
 
 $$
-\boxed{(-\infty,\infty)}.
+(-\infty,\infty).
 $$
 
 Since $$\frac12(4)^{x-3}>0$$ for every real $$x$$, the range is
 
 $$
-\boxed{(2,\infty)}.
+(2,\infty).
 $$
 
-</div>
+The graph is shown below (Note that the scale is a bit off, the dashed line is the horizontal asymptote):
 
-**ADD IMAGE**
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/expgraph1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+
+</div>
 
 ---
 
@@ -737,3 +741,42 @@ $$
 </div>
 
 If the logarithm base is between $$0$$ and $$1$$, remember that the logarithm is decreasing, so inequalities reverse when you compare inputs.
+
+---
+
+## Practice
+
+1. Let $$f(x)=3-2\cdot 5^{x+1}$$. State the domain, range, horizontal asymptote, intercepts, intervals of increase/decrease, and find an explicit formula for $$f^{-1}(x)$$ with the domain and range of the inverse.
+2. The points $$(-1,17)$$ and $$(2,1)$$ lie on the graph of $$g(x)=a\cdot b^{x-h}+k$$. The horizontal asymptote is $$y=-1$$, and $$h=1$$. Find $$a$$ and $$b$$, then determine whether $$g$$ represents exponential growth or decay.
+3. Find all real solutions to $$4^{x+1}-10\cdot 2^x+1=0$$. Give exact answers.
+4. Solve in $$\mathbb{R}$$: $$3^{2x}-28\cdot 3^x+27\le 0$$. Write the answer in interval notation.
+5. Solve for $$x$$ exactly: $$2^{x+1}=5^{2x-3}.$$
+6. Solve in $$\mathbb{R}$$: $$e^x+e^{-x}=\frac{13}{6}.$$
+7. Rewrite the following expression as a single logarithm with coefficient $$1$$, and state the full domain of the original expression: $$\frac12\ln(x^2-9)-2\ln(x-3)+\ln\left(\frac{x+1}{x}\right).$$
+8. Expand completely using logarithm properties, and state all restrictions on $$x$$ and $$y$$: $$\log_3\left(\frac{x^4\sqrt{y-2}}{(x^2+1)^3(5-y)}\right).$$
+9. Solve in $$\mathbb{R}$$: $$\log_{1/3}(2x-1)\ge \log_{1/4}(7-x).$$
+10. Solve in $$\mathbb{R}$$: $$\ln(x^2-5x+6)\le \ln(2x+3).$$
+11. Let $$h(x)=\log_4(16-4x)-2$$. State the domain, range, vertical asymptote, intercepts, intervals of increase/decrease, and find $$h^{-1}(x)$$. Graph both equations.
+12. A population is modeled by $$P(t)=\dfrac{1200}{1+19e^{-0.4t}}$$ for $$t\ge 0$$. Find the initial population, the limiting population (aka horizontal asymptote), and the exact time when $$P(t)=900$$.
+13. Find the unique positive integer $$n$$ such that $$\log_2 (\log_16 n) = \log_4 (\log_4 n)$$ (2020 AMC 12A).
+14. Let $$F(x)=\ln\left(\dfrac{x-a}{b-x}\right)$$, where $$a<b$$. Find the domain, intercepts in terms of $$a$$ and $$b$$, the vertical asymptotes, and an explicit formula for $$F^{-1}(x)$$. Then determine the range of $$F$$.
+15. Find the exact value of the product $$\prod_{k=4}^{63}\frac{\log_k\left(5^{k^2-1}\right)}{\log_{k+1}\left(5^{k^2-4}\right)}$$. $$\Pi$$ represents the multiplication function, research about it if you don't understand the notation.
+16. (Bonus, logarithmic means)
+
+For positive numbers $$a\ne b$$, define
+
+$$
+L(a,b)=\frac{b-a}{\ln b-\ln a}.
+$$
+
+$$(A)$$ Show that $$L(a,b)$$ is unchanged if $$a$$ and $$b$$ are switched.
+
+$$(B)$$ Prove that $$a<L(a,b)<b$$ whenever $$0<a<b$$.
+
+$$(C)$$ Let $$f(x)=\ln x$$. Interpret $$L(a,b)$$ using the average rate of change of $$f$$ on $$[a,b]$$.
+
+$$(D)$$ Explain why part $$(B)$$ is consistent with the fact that $$\ln x$$ is increasing and concave down on $$x>0$$.
+
+---
+
+## Solutions
