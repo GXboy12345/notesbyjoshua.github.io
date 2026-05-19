@@ -754,14 +754,14 @@ If the logarithm base is between $$0$$ and $$1$$, remember that the logarithm is
 6. Solve in $$\mathbb{R}$$: $$e^x+e^{-x}=\frac{13}{6}.$$
 7. Rewrite the following expression as a single logarithm with coefficient $$1$$, and state the full domain of the original expression: $$\frac12\ln(x^2-9)-2\ln(x-3)+\ln\left(\frac{x+1}{x}\right).$$
 8. Expand completely using logarithm properties, and state all restrictions on $$x$$ and $$y$$: $$\log_3\left(\frac{x^4\sqrt{y-2}}{(x^2+1)^3(5-y)}\right).$$
-9. Solve in $$\mathbb{R}$$: $$\log_{1/3}(2x-1)\ge \log_{1/4}(7-x).$$
+9. Solve in $$\mathbb{R}$$: $$\log_{1/3}(2x-1)\ge \log_{1/3}(7-x).$$
 10. Solve in $$\mathbb{R}$$: $$\ln(x^2-5x+6)\le \ln(2x+3).$$
 11. Let $$h(x)=\log_4(16-4x)-2$$. State the domain, range, vertical asymptote, intercepts, intervals of increase/decrease, and find $$h^{-1}(x)$$. Graph both equations.
 12. A population is modeled by $$P(t)=\dfrac{1200}{1+19e^{-0.4t}}$$ for $$t\ge 0$$. Find the initial population, the limiting population (aka horizontal asymptote), and the exact time when $$P(t)=900$$.
 13. Find the unique positive integer $$n$$ such that $$\log_2 (\log_{16} n) = \log_4 (\log_4 n)$$ (2020 AMC 12A).
 14. Let $$F(x)=\ln\left(\dfrac{x-a}{b-x}\right)$$, where $$a<b$$. Find the domain, intercepts in terms of $$a$$ and $$b$$, the vertical asymptotes, and an explicit formula for $$F^{-1}(x)$$. Then determine the range of $$F$$.
-15. Find the exact value of the product $$\prod_{k=4}^{63}\frac{\log_k\left(5^{k^2-1}\right)}{\log_{k+1}\left(5^{k^2-4}\right)}$$. (Hint: Use change of base and cancel out things) (2025 AIME II)
-16. (Bonus, the EML function)
+15. Find the exact value of the product $$\prod_{k=4}^{63}\frac{\log_k\left(5^{k^2-1}\right)}{\log_{k+1}\left(5^{k^2-4}\right)}$$. (Hint: Use change of base and cancel out things to simplify the expression) (2025 AIME II)
+16. (Bonus, The EML function)
 
 Define a binary operation called $$\operatorname{EML}$$ by
 
@@ -769,7 +769,7 @@ $$
 \operatorname{EML}(x,y)=e^x-\ln y,
 $$
 
-where $$y>0$$. The paper *All elementary functions from a single operator* studies the surprising claim that repeated use of this single operation, together with the constant $$1$$, can generate the usual operations and functions of a scientific calculator.
+where $$y>0$$.
 
 $$(A)$$ First, show that EML contains the exponential function directly: $$e^x=\operatorname{EML}(x,1).$$
 
@@ -781,7 +781,7 @@ $$(D)$$ Since EML can produce both exponentials and logarithms, it can also buil
 
 $$(E)$$ An **EML tree** is an expression built by repeatedly feeding outputs of EML into new EML operations. For example, $$\operatorname{EML}\left(\operatorname{EML}(x,1),\operatorname{EML}(0,y)\right)$$ is an EML tree. Draw its tree diagram, then simplify the expression as much as possible using exponent and logarithm rules.
 
-$$(F)$$ The paper claims that EML trees can represent all standard elementary functions. In a short paragraph, compare this idea to the way a single NAND gate can generate all Boolean logic. A NAND gate outputs $$0$$ only when both inputs are $$1$$, and outputs $$1$$ otherwise.
+$$(F)$$ It is claimed that EML trees can represent all standard elementary functions. In a short paragraph, compare this idea to the way a single NAND gate can generate all Boolean logic. A NAND gate outputs $$0$$ only when both inputs are $$1$$, and outputs $$1$$ otherwise.
 
 This problem is inspired by the paper *All elementary functions from a single operator* by Andrzej Odrzywołek. Learn more here: [https://arxiv.org/html/2603.21852v2](https://arxiv.org/html/2603.21852v2).
 
@@ -1338,69 +1338,31 @@ $$
 The inequality is
 
 $$
-\log_{1/3}(2x-1)\ge \log_{1/4}(7-x).
+\log_{1/3}(2x-1)\ge \log_{1/3}(7-x).
 $$
 
-Change both sides to natural logs:
+Since the base $$\frac13$$ is between $$0$$ and $$1$$, the logarithm is decreasing. Therefore the inequality reverses when we compare inputs:
 
 $$
-\frac{\ln(2x-1)}{\ln(1/3)}
-\ge
-\frac{\ln(7-x)}{\ln(1/4)}.
+2x-1\le 7-x.
 $$
 
-Since
+Solve:
 
 $$
-\ln(1/3)=-\ln 3
-\qquad\text{and}\qquad
-\ln(1/4)=-\ln 4,
+3x\le 8,
 $$
 
-this becomes
+so
 
 $$
-\frac{\ln(2x-1)}{-\ln 3}
-\ge
-\frac{\ln(7-x)}{-\ln 4}.
+x\le \frac83.
 $$
 
-Multiplying by the positive number $$\ln 3\ln 4$$ gives
+Intersect this with the domain $$\frac12<x<7$$:
 
 $$
-\ln 4\ln(2x-1)\le \ln 3\ln(7-x).
-$$
-
-Equivalently,
-
-$$
-\log_3(2x-1)\le \log_4(7-x).
-$$
-
-Let
-
-$$
-F(x)=\log_3(2x-1)-\log_4(7-x).
-$$
-
-On $$\left(\frac12,7\right)$$, $$F(x)$$ is increasing because $$\log_3(2x-1)$$ is increasing and $$-\log_4(7-x)$$ is also increasing.
-
-So there is at most one boundary point. Let $$\alpha$$ be the unique solution to
-
-$$
-\log_3(2x-1)=\log_4(7-x)
-$$
-
-on $$\left(\frac12,7\right)$$. Numerically,
-
-$$
-\alpha\approx 2.2257862319.
-$$
-
-Since the inequality is true near $$x=\frac12$$ and false near $$x=7$$, the solution is
-
-$$
-\boxed{\left(\frac12,\alpha\right]\approx\left(\frac12,\ 2.2257862319\ldots\right]}.
+\boxed{\left(\frac12,\frac83\right]}.
 $$
 
 ### Solution 10
@@ -1613,6 +1575,10 @@ $$
 $$
 
 The inverse has domain $$(-\infty,\infty)$$ and range $$(-\infty,4)$$. The graphs of $$h$$ and $$h^{-1}$$ are reflections across the line $$y=x$$.
+
+The graph of both functions are shown below (green = inverse function):
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/expgraph2.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 ### Solution 12
 
@@ -2002,12 +1968,6 @@ Therefore the product is
 
 $$
 \frac{31}{13}\cdot 3=\boxed{\frac{93}{13}}.
-$$
-
-If written as $$\frac{m}{n}$$, then $$m=93$$ and $$n=13$$, so
-
-$$
-\boxed{m+n=106}.
 $$
 
 ### Solution 16

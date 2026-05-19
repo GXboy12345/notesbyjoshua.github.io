@@ -7,3 +7,1110 @@ permalink: /notes/ap/precalc/trigfunc/
 ---
 
 # Unit 6 & 7: Trigonometric Functions
+
+---
+
+## Angles definitions
+
+An **angle** is formed by rotating a ray around a fixed endpoint. The starting ray is called the **initial side**, and the ending ray is called the **terminal side**.
+
+An angle is in **standard position** if:
+
+- its vertex is at the origin,
+- its initial side lies on the positive $$x$$-axis,
+- its terminal side is determined by rotating from the positive $$x$$-axis.
+
+**ADD IMAGE OF ANGLE IN STANDARD POSITION**
+
+By definition, counterclockwise rotations are positive, and clockwise rotations are negative.
+
+For example, $$135^\circ$$ is a positive angle, while $$-45^\circ$$ is a negative angle.
+
+### Degrees and radians
+
+Degrees measure angles by splitting a full circle into $$360$$ equal parts. **Radians** measure angles by comparing arc length to radius, where one radian is the angle an arc length that measures out $$r$$ units.
+
+One full circle is
+
+$$
+360^\circ=2\pi\text{ radians}.
+$$
+
+so therefore
+
+$$
+180^\circ=\pi\text{ radians}.
+$$
+
+<div class="theorem-box" markdown="1">
+
+**Extension.** The radian is a unitless measure, meaning that it is not arbitrarily set. Why is there always $$2/pi$$ radians in a circle?
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Convert $$225^\circ$$ to radians.
+
+Multiply by $$\frac{\pi}{180}$$:
+
+$$
+225^\circ\cdot\frac{\pi}{180}
+=\frac{225\pi}{180}
+=\frac{5\pi}{4}.
+$$
+
+Thus
+
+$$
+\boxed{225^\circ=\frac{5\pi}{4}}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Convert $$-\frac{4\pi}{3}$$ radians to degrees.
+
+Multiply by $$\frac{180}{\pi}$$:
+
+$$
+-\frac{4\pi}{3}\cdot\frac{180}{\pi}
+=-240^\circ.
+$$
+
+Thus
+
+$$
+\boxed{-\frac{4\pi}{3}=-240^\circ}.
+$$
+
+</div>
+
+### Common angles
+
+These are the most important degree-radian conversions, but many other conversions can be done through trig rules which will be discussed later:
+
+$$
+\begin{array}{c|c}
+\text{Degrees} & \text{Radians}\\
+\hline
+0^\circ & 0\\
+30^\circ & \frac{\pi}{6}\\
+45^\circ & \frac{\pi}{4}\\
+60^\circ & \frac{\pi}{3}\\
+90^\circ & \frac{\pi}{2}\\
+120^\circ & \frac{2\pi}{3}\\
+135^\circ & \frac{3\pi}{4}\\
+150^\circ & \frac{5\pi}{6}\\
+180^\circ & \pi\\
+210^\circ & \frac{7\pi}{6}\\
+225^\circ & \frac{5\pi}{4}\\
+240^\circ & \frac{4\pi}{3}\\
+270^\circ & \frac{3\pi}{2}\\
+300^\circ & \frac{5\pi}{3}\\
+315^\circ & \frac{7\pi}{4}\\
+330^\circ & \frac{11\pi}{6}\\
+360^\circ & 2\pi
+\end{array}
+$$
+
+---
+
+## Arc length and sector area
+
+Radians are useful because they connect angles directly to lengths on a circle.
+
+If a central angle $$\theta$$ cuts off an arc of length $$s$$ on a circle of radius $$r$$, then
+
+$$
+\boxed{\theta=\frac{s}{r}}.
+$$
+
+Solving for arc length gives
+
+$$
+\boxed{s=r\theta}.
+$$
+
+The angle $$\theta$$ must be measured in radians. On your calculator, if you go to **MODE**, you can switch from degrees to radians.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the arc length of a circle of radius $$3$$ meters subtended by a central angle of $$120^\circ$$.
+
+First convert the angle to radians:
+
+$$
+120^\circ\cdot\frac{\pi}{180}=\frac{2\pi}{3}.
+$$
+
+Then use $$s=r\theta$$:
+
+$$
+s=3\cdot\frac{2\pi}{3}=2\pi.
+$$
+
+So the arc length is
+
+$$
+\boxed{2\pi\text{ meters}}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the radius of a circle whose arc length is $$6$$ meters and whose central angle is $$\frac14$$ radian.
+
+Use
+
+$$
+s=r\theta.
+$$
+
+Then
+
+$$
+6=r\left(\frac14\right).
+$$
+
+Thus
+
+$$
+\boxed{r=24\text{ meters}}.
+$$
+
+</div>
+
+### Sector area
+
+A **sector** is a region cut out by two radii and the arc between them. If $$\theta$$ is measured in radians, the area of a sector is
+
+$$
+\boxed{A=\frac12r^2\theta}.
+$$
+
+This comes from taking the fraction $$\frac{\theta}{2\pi}$$ of the full circle area $$\pi r^2$$:
+
+$$
+A=\frac{\theta}{2\pi}\cdot \pi r^2=\frac12r^2\theta.
+$$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the area of a sector with radius $$6$$ and central angle $$\frac{5\pi}{6}$$.
+
+Use the sector area formula:
+
+$$
+A=\frac12r^2\theta.
+$$
+
+Then
+
+$$
+A=\frac12(6)^2\left(\frac{5\pi}{6}\right)
+=18\cdot\frac{5\pi}{6}
+=15\pi.
+$$
+
+Thus
+
+$$
+\boxed{15\pi}.
+$$
+
+</div>
+
+---
+
+## Circular motion
+
+When an object moves around a circle, there are two related speeds:
+
+- **Angular speed** measures how quickly the angle changes.
+- **Linear speed** measures how quickly the object moves along the circle.
+
+If an angle $$\theta$$ is swept out in time $$t$$, then the angular speed is
+
+$$
+\boxed{\omega=\frac{\theta}{t}}.
+$$
+
+If a distance $$d$$ is traveled along the circle in time $$t$$, then the linear speed is
+
+$$
+\boxed{v=\frac{d}{t}}.
+$$
+
+Since arc length is $$s=r\theta$$, linear speed and angular speed are connected by
+
+$$
+\boxed{v=r\omega}.
+$$
+
+Again, angular speed must be measured in radians per unit time.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A wheel rotates at $$15$$ revolutions per second. The radius of the wheel is $$20$$ cm. Find the angular speed in radians per second and the linear speed of a point on the edge of the wheel.
+
+One revolution is $$2\pi$$ radians, so
+
+$$
+\omega=15\cdot 2\pi=30\pi.
+$$
+
+Thus the angular speed is
+
+$$
+\boxed{30\pi\text{ rad/sec}}.
+$$
+
+Now use $$v=r\omega$$:
+
+$$
+v=20(30\pi)=600\pi.
+$$
+
+So the linear speed is
+
+$$
+\boxed{600\pi\text{ cm/sec}}.
+$$
+
+</div>
+
+---
+
+## Right-triangle trigonometry
+
+For an acute angle $$\theta$$ in a right triangle, the three main trigonometric ratios are:
+
+$$
+\sin\theta=\frac{\text{opposite}}{\text{hypotenuse}},
+$$
+
+$$
+\cos\theta=\frac{\text{adjacent}}{\text{hypotenuse}},
+$$
+
+and
+
+$$
+\tan\theta=\frac{\text{opposite}}{\text{adjacent}}.
+$$
+
+A common memory device is **SOH-CAH-TOA**:
+
+- **S**ine = **O**pposite over **H**ypotenuse.
+- **C**osine = **A**djacent over **H**ypotenuse.
+- **T**angent = **O**pposite over **A**djacent.
+
+The reciprocal trigonometric functions are also defined as well:
+
+$$
+\csc\theta=\frac{1}{\sin\theta}
+=\frac{\text{hypotenuse}}{\text{opposite}},
+$$
+
+$$
+\sec\theta=\frac{1}{\cos\theta}
+=\frac{\text{hypotenuse}}{\text{adjacent}},
+$$
+
+and
+
+$$
+\cot\theta=\frac{1}{\tan\theta}
+=\frac{\text{adjacent}}{\text{opposite}}.
+$$.
+
+The three functions are called cosecant, secant, and cotangent, respectively. To memorize, remember that you have to add co- to any trig function without a co- and do not add one otherwise.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A right triangle has legs $$6$$ and $$2$$. Find the six trigonometric functions for the acute angle opposite the side of length $$6$$.
+
+First find the hypotenuse:
+
+$$
+c=\sqrt{6^2+2^2}=\sqrt{40}=2\sqrt{10}.
+$$
+
+For the angle opposite the side of length $$6$$:
+
+$$
+\sin\theta=\frac{6}{2\sqrt{10}}=\frac{3}{\sqrt{10}},
+$$
+
+$$
+\cos\theta=\frac{2}{2\sqrt{10}}=\frac{1}{\sqrt{10}},
+$$
+
+and
+
+$$
+\tan\theta=\frac{6}{2}=3.
+$$
+
+The reciprocal functions are
+
+$$
+\csc\theta=\frac{\sqrt{10}}{3},
+$$
+
+$$
+\sec\theta=\sqrt{10},
+$$
+
+and
+
+$$
+\cot\theta=\frac13.
+$$
+
+</div>
+
+### Cofunction identities
+
+The acute angles in a right triangle are complementary. This means their measures add to $$90^\circ$$, or $$\frac{\pi}{2}$$ radians.
+
+Cofunctions of complementary angles are equal:
+
+$$
+\sin\theta=\cos\left(\frac{\pi}{2}-\theta\right),
+$$
+
+$$
+\cos\theta=\sin\left(\frac{\pi}{2}-\theta\right),
+$$
+
+$$
+\tan\theta=\cot\left(\frac{\pi}{2}-\theta\right),
+$$
+
+and
+
+$$
+\sec\theta=\csc\left(\frac{\pi}{2}-\theta\right).
+$$
+
+For example,
+
+$$
+\sin 37^\circ=\cos 53^\circ.
+$$
+
+<div class="theorem-box" markdown="1">
+
+**Extension.** Prove the six theorems above.
+
+</div>
+
+---
+
+## Special right triangles
+
+Two special triangles produce many exact trigonometric values.
+
+### The 30-60-90 triangle
+
+A $$30^\circ$$-$$60^\circ$$-$$90^\circ$$ triangle has side ratio
+
+$$
+\boxed{x:x\sqrt3:2x}.
+$$
+
+The side opposite $$30^\circ$$ is $$x$$, the side opposite $$60^\circ$$ is $$x\sqrt3$$, and the hypotenuse is $$2x$$.
+
+Therefore:
+
+$$
+\sin 30^\circ=\frac12,
+\qquad
+\cos 30^\circ=\frac{\sqrt3}{2},
+\qquad
+\tan 30^\circ=\frac{1}{\sqrt3}.
+$$
+
+Also:
+
+$$
+\sin 60^\circ=\frac{\sqrt3}{2},
+\qquad
+\cos 60^\circ=\frac12,
+\qquad
+\tan 60^\circ=\sqrt3.
+$$
+
+### The 45-45-90 triangle
+
+A $$45^\circ$$-$$45^\circ$$-$$90^\circ$$ triangle has side ratio
+
+$$
+\boxed{x:x:x\sqrt2}.
+$$
+
+Therefore:
+
+$$
+\sin 45^\circ=\frac{1}{\sqrt2}=\frac{\sqrt2}{2},
+$$
+
+$$
+\cos 45^\circ=\frac{1}{\sqrt2}=\frac{\sqrt2}{2},
+$$
+
+and
+
+$$
+\tan 45^\circ=1.
+$$
+
+All of the values seen on a traditional unit circle come from these two special right triangles.
+
+---
+
+## Trig functions of any angle
+
+Right-triangle definitions only directly handle acute angles. To define trig functions for any angle, use the unit circle.
+
+The **unit circle** is the circle
+
+$$
+x^2+y^2=1.
+$$
+
+If an angle $$\theta$$ is in standard position and its terminal side intersects the unit circle at $$P(x,y)$$, then
+
+$$
+\boxed{x=\cos\theta}
+$$
+
+and
+
+$$
+\boxed{y=\sin\theta}.
+$$
+
+So the point on the unit circle is
+
+$$
+\boxed{P=(\cos\theta,\sin\theta)}.
+$$
+
+This also gives
+
+$$
+\tan\theta=\frac{y}{x}=\frac{\sin\theta}{\cos\theta},
+$$
+
+as long as $$x\ne0$$.
+
+The reciprocal functions are:
+
+$$
+\csc\theta=\frac1{\sin\theta},
+\qquad
+\sec\theta=\frac1{\cos\theta},
+\qquad
+\cot\theta=\frac1{\tan\theta}=\frac{\cos\theta}{\sin\theta}.
+$$
+
+### Quadrant signs
+
+The signs of trig functions depend on the quadrant:
+
+$$
+\begin{array}{c|c|c|c}
+\text{Quadrant} & \sin\theta & \cos\theta & \tan\theta\\
+\hline
+\text{I} & + & + & +\\
+\text{II} & + & - & -\\
+\text{III} & - & - & +\\
+\text{IV} & - & + & -
+\end{array}
+$$
+
+Since sine is the $$y$$-coordinate, it is positive above the $$x$$-axis and negative below it. Since cosine is the $$x$$-coordinate, it is positive to the right of the $$y$$-axis and negative to the left.
+
+### Reference angles
+
+The **reference angle** is the acute angle formed by the terminal side of $$\theta$$ and the $$x$$-axis.
+
+For common quadrant angles:
+
+- If $$\theta$$ is in Quadrant I, the reference angle is $$\theta$$.
+- If $$\theta$$ is in Quadrant II, the reference angle is $$\pi-\theta$$.
+- If $$\theta$$ is in Quadrant III, the reference angle is $$\theta-\pi$$.
+- If $$\theta$$ is in Quadrant IV, the reference angle is $$2\pi-\theta$$.
+
+The reference angle gives the magnitude of the trig value. The quadrant gives the sign.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Evaluate $$\cos 315^\circ$$.
+
+The angle $$315^\circ$$ is in Quadrant IV. Its reference angle is
+
+$$
+360^\circ-315^\circ=45^\circ.
+$$
+
+Cosine is positive in Quadrant IV, so
+
+$$
+\cos 315^\circ=\cos 45^\circ=\frac{\sqrt2}{2}.
+$$
+
+Thus
+
+$$
+\boxed{\cos 315^\circ=\frac{\sqrt2}{2}}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Evaluate $$\sin\left(\frac{4\pi}{3}\right)$$.
+
+The angle $$\frac{4\pi}{3}$$ is in Quadrant III. Its reference angle is
+
+$$
+\frac{4\pi}{3}-\pi=\frac{\pi}{3}.
+$$
+
+Sine is negative in Quadrant III, so
+
+$$
+\sin\left(\frac{4\pi}{3}\right)
+=-\sin\left(\frac{\pi}{3}\right)
+=-\frac{\sqrt3}{2}.
+$$
+
+Thus
+
+$$
+\boxed{\sin\left(\frac{4\pi}{3}\right)=-\frac{\sqrt3}{2}}.
+$$
+
+</div>
+
+**ADD IMAGE OF UNIT CIRCLE**
+
+### Coterminal angles
+
+Two angles are **coterminal** if they share the same terminal side.
+
+In degrees, coterminal angles differ by a multiple of $$360^\circ$$:
+
+$$
+\theta+360^\circ k,\qquad k\in\mathbb{Z}.
+$$
+
+In radians, coterminal angles differ by a multiple of $$2\pi$$:
+
+$$
+\theta+2\pi k,\qquad k\in\mathbb{Z}.
+$$
+
+For example, $$120^\circ$$ and $$-240^\circ$$ are coterminal because
+
+$$
+120^\circ-360^\circ=-240^\circ.
+$$
+
+All coterminal angles will have the same trig values, so usually we define the angles from $$0^\circ$$ to $$360^\circ$$ or from $$0$$ to $$2\pi$$ radians.
+
+---
+
+## Unit circle values
+
+The most common unit circle coordinates are:
+
+$$
+\begin{array}{c|c|c|c}
+\theta & \text{Degrees} & \cos\theta & \sin\theta\\
+\hline
+0 & 0^\circ & 1 & 0\\
+\frac{\pi}{6} & 30^\circ & \frac{\sqrt3}{2} & \frac12\\
+\frac{\pi}{4} & 45^\circ & \frac{\sqrt2}{2} & \frac{\sqrt2}{2}\\
+\frac{\pi}{3} & 60^\circ & \frac12 & \frac{\sqrt3}{2}\\
+\frac{\pi}{2} & 90^\circ & 0 & 1\\
+\frac{2\pi}{3} & 120^\circ & -\frac12 & \frac{\sqrt3}{2}\\
+\frac{3\pi}{4} & 135^\circ & -\frac{\sqrt2}{2} & \frac{\sqrt2}{2}\\
+\frac{5\pi}{6} & 150^\circ & -\frac{\sqrt3}{2} & \frac12\\
+\pi & 180^\circ & -1 & 0\\
+\frac{7\pi}{6} & 210^\circ & -\frac{\sqrt3}{2} & -\frac12\\
+\frac{5\pi}{4} & 225^\circ & -\frac{\sqrt2}{2} & -\frac{\sqrt2}{2}\\
+\frac{4\pi}{3} & 240^\circ & -\frac12 & -\frac{\sqrt3}{2}\\
+\frac{3\pi}{2} & 270^\circ & 0 & -1\\
+\frac{5\pi}{3} & 300^\circ & \frac12 & -\frac{\sqrt3}{2}\\
+\frac{7\pi}{4} & 315^\circ & \frac{\sqrt2}{2} & -\frac{\sqrt2}{2}\\
+\frac{11\pi}{6} & 330^\circ & \frac{\sqrt3}{2} & -\frac12\\
+2\pi & 360^\circ & 1 & 0
+\end{array}
+$$
+
+The first-quadrant values are repeated around the circle with signs determined by the quadrant.
+
+For example:
+
+$$
+\cos\left(\frac{2\pi}{3}\right)=-\frac12,
+\qquad
+\sin\left(\frac{2\pi}{3}\right)=\frac{\sqrt3}{2}.
+$$
+
+and
+
+$$
+\cos\left(\frac{7\pi}{4}\right)=\frac{\sqrt2}{2},
+\qquad
+\sin\left(\frac{7\pi}{4}\right)=-\frac{\sqrt2}{2}.
+$$
+
+Some reciprocal or quotient trig functions are undefined when their denominator is $$0$$:
+
+- $$\tan\theta=\frac{\sin\theta}{\cos\theta}$$ is undefined when $$\cos\theta=0$$.
+- $$\sec\theta=\frac1{\cos\theta}$$ is undefined when $$\cos\theta=0$$.
+- $$\csc\theta=\frac1{\sin\theta}$$ is undefined when $$\sin\theta=0$$.
+- $$\cot\theta=\frac{\cos\theta}{\sin\theta}$$ is undefined when $$\sin\theta=0$$.
+
+For example,
+
+$$
+\tan\left(\frac{3\pi}{2}\right)
+=\frac{\sin\left(\frac{3\pi}{2}\right)}{\cos\left(\frac{3\pi}{2}\right)}
+=\frac{-1}{0},
+$$
+
+so
+
+$$
+\boxed{\tan\left(\frac{3\pi}{2}\right)\text{ is undefined}}.
+$$
+
+---
+
+## Trig identities
+
+The unit circle equation
+
+$$
+x^2+y^2=1
+$$
+
+becomes the most important trigonometric identity because $$x=\cos\theta$$ and $$y=\sin\theta$$:
+
+$$
+\boxed{\sin^2\theta+\cos^2\theta=1}.
+$$
+
+This is called the **Pythagorean identity**.
+
+Dividing both sides by $$\cos^2\theta$$ gives
+
+$$
+\frac{\sin^2\theta}{\cos^2\theta}
++\frac{\cos^2\theta}{\cos^2\theta}
+=\frac1{\cos^2\theta}.
+$$
+
+Thus
+
+$$
+\boxed{1+\tan^2\theta=\sec^2\theta}.
+$$
+
+Dividing both sides by $$\sin^2\theta$$ gives
+
+$$
+\boxed{1+\cot^2\theta=\csc^2\theta}.
+$$
+
+### Quotient and reciprocal identities
+
+The quotient identities are
+
+$$
+\boxed{\tan\theta=\frac{\sin\theta}{\cos\theta}}
+$$
+
+and
+
+$$
+\boxed{\cot\theta=\frac{\cos\theta}{\sin\theta}}.
+$$
+
+The reciprocal identities are
+
+$$
+\boxed{\csc\theta=\frac1{\sin\theta}},
+\qquad
+\boxed{\sec\theta=\frac1{\cos\theta}},
+\qquad
+\boxed{\cot\theta=\frac1{\tan\theta}}.
+$$
+
+### Finding trig values from one trig value
+
+If one trig value is known, the Pythagorean identity and the quadrant can determine the others.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Suppose $$90^\circ<\beta<180^\circ$$ and $$\sin\beta=\frac14$$. Find $$\cos\beta$$ and $$\tan\beta$$.
+
+Since $$\beta$$ is in Quadrant II, cosine is negative and tangent is negative.
+
+Use
+
+$$
+\sin^2\beta+\cos^2\beta=1.
+$$
+
+Substitute $$\sin\beta=\frac14$$:
+
+$$
+\left(\frac14\right)^2+\cos^2\beta=1.
+$$
+
+Then
+
+$$
+\cos^2\beta=1-\frac1{16}=\frac{15}{16}.
+$$
+
+So
+
+$$
+\cos\beta=\pm\frac{\sqrt{15}}{4}.
+$$
+
+Because $$\beta$$ is in Quadrant II,
+
+$$
+\boxed{\cos\beta=-\frac{\sqrt{15}}4}.
+$$
+
+Now
+
+$$
+\tan\beta=\frac{\sin\beta}{\cos\beta}
+=\frac{\frac14}{-\frac{\sqrt{15}}4}
+=-\frac1{\sqrt{15}}.
+$$
+
+Thus
+
+$$
+\boxed{\tan\beta=-\frac1{\sqrt{15}}}.
+$$
+
+</div>
+
+### Proving identities
+
+To prove a trigonometric identity, work on one side of the equation and transform it into the other side. Common strategies include:
+
+- rewrite everything in terms of sine and cosine,
+- use the Pythagorean identities,
+- combine fractions,
+- substitute if necessary,
+- factor,
+- multiply by a conjugate when useful.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Prove that
+
+$$
+\tan\theta\sin\theta=\sec\theta-\cos\theta.
+$$
+
+Start with the left-hand side:
+
+$$
+\tan\theta\sin\theta
+=\frac{\sin\theta}{\cos\theta}\cdot\sin\theta.
+$$
+
+So
+
+$$
+\tan\theta\sin\theta
+=\frac{\sin^2\theta}{\cos\theta}.
+$$
+
+Use $$\sin^2\theta=1-\cos^2\theta$$:
+
+$$
+\frac{\sin^2\theta}{\cos\theta}
+=\frac{1-\cos^2\theta}{\cos\theta}.
+$$
+
+Split the fraction:
+
+$$
+\frac{1-\cos^2\theta}{\cos\theta}
+=\frac1{\cos\theta}-\frac{\cos^2\theta}{\cos\theta}.
+$$
+
+Simplify:
+
+$$
+\frac1{\cos\theta}-\cos\theta
+=\sec\theta-\cos\theta.
+$$
+
+Thus
+
+$$
+\boxed{\tan\theta\sin\theta=\sec\theta-\cos\theta}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Prove that
+
+$$
+\frac{\sin A}{1+\cos A}+\frac{1+\cos A}{\sin A}=2\csc A.
+$$
+
+Start with the left-hand side:
+
+$$
+\frac{\sin A}{1+\cos A}+\frac{1+\cos A}{\sin A}.
+$$
+
+Use the common denominator $$\sin A(1+\cos A)$$:
+
+$$
+\frac{\sin^2 A+(1+\cos A)^2}{\sin A(1+\cos A)}.
+$$
+
+Expand the numerator:
+
+$$
+\sin^2 A+1+2\cos A+\cos^2 A.
+$$
+
+Use $$\sin^2 A+\cos^2 A=1$$:
+
+$$
+\sin^2 A+1+2\cos A+\cos^2 A
+=2+2\cos A.
+$$
+
+So the expression becomes
+
+$$
+\frac{2+2\cos A}{\sin A(1+\cos A)}.
+$$
+
+Factor the numerator:
+
+$$
+\frac{2(1+\cos A)}{\sin A(1+\cos A)}.
+$$
+
+Cancel:
+
+$$
+\frac2{\sin A}=2\csc A.
+$$
+
+Thus
+
+$$
+\boxed{\frac{\sin A}{1+\cos A}+\frac{1+\cos A}{\sin A}=2\csc A}.
+$$
+
+</div>
+
+---
+
+## Even, odd, and periodic behavior
+
+The unit circle also explains the symmetry between trig functions.
+
+Cosine is an even function:
+
+$$
+\boxed{\cos(-\theta)=\cos\theta}.
+$$
+
+Sine and tangent are odd functions:
+
+$$
+\boxed{\sin(-\theta)=-\sin\theta}
+$$
+
+and
+
+$$
+\boxed{\tan(-\theta)=-\tan\theta}.
+$$
+
+Sine and cosine are periodic with period $$2\pi$$:
+
+$$
+\boxed{\sin(\theta+2\pi k)=\sin\theta}
+$$
+
+and
+
+$$
+\boxed{\cos(\theta+2\pi k)=\cos\theta},
+$$
+
+where $$k$$ is any integer.
+
+Tangent has period $$\pi$$:
+
+$$
+\boxed{\tan(\theta+\pi k)=\tan\theta}.
+$$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** If $$\sin t=\frac23$$, find $$\sin(-t)$$.
+
+Since sine is odd,
+
+$$
+\sin(-t)=-\sin t.
+$$
+
+Therefore
+
+$$
+\boxed{\sin(-t)=-\frac23}.
+$$
+
+</div>
+
+---
+
+## Graphs of sine and cosine
+
+The parent sine function is
+
+$$
+y=\sin x.
+$$
+
+It has:
+
+- Domain: $$(-\infty,\infty)$$.
+- Range: $$[-1,1]$$.
+- Period: $$2\pi$$.
+- Amplitude: $$1$$.
+- Midline: $$y=0$$.
+
+One full cycle of $$y=\sin x$$ goes through these key points:
+
+$$
+\left(0,0\right),
+\left(\frac{\pi}{2},1\right),
+\left(\pi,0\right),
+\left(\frac{3\pi}{2},-1\right),
+\left(2\pi,0\right).
+$$
+
+The parent cosine function is
+
+$$
+y=\cos x.
+$$
+
+It has:
+
+- Domain: $$(-\infty,\infty)$$.
+- Range: $$[-1,1]$$.
+- Period: $$2\pi$$.
+- Amplitude: $$1$$.
+- Midline: $$y=0$$.
+
+One full cycle of $$y=\cos x$$ goes through these key points:
+
+$$
+\left(0,1\right),
+\left(\frac{\pi}{2},0\right),
+\left(\pi,-1\right),
+\left(\frac{3\pi}{2},0\right),
+\left(2\pi,1\right).
+$$
+
+Sine and cosine are phase shifts of each other. For example,
+
+$$
+\cos x=\sin\left(x+\frac{\pi}{2}\right).
+$$
+
+### Solving basic trig equations with graphs
+
+Graphs and the unit circle both help solve equations like $$\sin x=0.75$$ or $$\cos x=-0.35$$ on an interval.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Solve $$\sin x=0.75$$ on $$[0,2\pi)$$.
+
+The calculator gives the first solution
+
+$$
+x\approx \sin^{-1}(0.75)\approx 0.848.
+$$
+
+Since sine is also positive in Quadrant II, the second solution is
+
+$$
+x=\pi-0.848\approx 2.294.
+$$
+
+Thus
+
+$$
+\boxed{x\approx0.848\quad\text{or}\quad x\approx2.294}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Solve $$\cos x=-0.35$$ on $$[0,2\pi)$$.
+
+Cosine is negative in Quadrants II and III. The calculator gives
+
+$$
+x\approx \cos^{-1}(-0.35)\approx 1.928.
+$$
+
+The second solution is
+
+$$
+x=2\pi-1.928\approx 4.355.
+$$
+
+Thus
+
+$$
+\boxed{x\approx1.928\quad\text{or}\quad x\approx4.355}.
+$$
+
+</div>
+
+REMEMBER to always check for multiple solutions using the trig rules!
+
+---
+
+## Practice
+
+---
+
+## Solutions
