@@ -1130,53 +1130,1047 @@ $$(D)$$ Evaluate all six trigonometric functions of $$\theta$$ exactly.
 8. Solve exactly on $$[0,4\pi)$$: $$2\sin^2x-\sin x-1=0.$$
 9. Solve exactly on $$[0,2\pi)$$:$$2\cos^2x+\sqrt3\cos x-1=0.$$
 10. Solve exactly on $$[0,3\pi)$$:$$\tan^2x-3=0.$$
-11. Suppose $$\frac{\pi}{2}<x<\pi$$ and $$\sin x=\frac{5}{13}$$. Find exact values of $$\cos(2\pi-x),\qquad \sin\left(x+\frac{\pi}{2}\right),\qquad \tan(\pi-x),\qquad \sec(-x).$$
+11. The radius of the circle in the figure is 2 units. Express the length of $$DC$$ in terms of $$\alpha$$.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/cirtri1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+
 12. Prove the identity: $$\frac{1-\cos\theta}{\sin\theta}+\frac{\sin\theta}{1-\cos\theta}=2\csc\theta.$$ Then state all values of $$\theta$$ in $$[0,2\pi)$$ for which the original identity is undefined.
 13. Prove the identity: $$\frac{\cot^2\theta-\tan^2\theta}{(\cot\theta+\tan\theta)^2}=2\cos^2\theta-1.$$
-14. For each of the following trigonometric expressions, find a segment in the diagram that has length equal to the trigonometric expression: $$sin\theta, cos\theta, sec\theta, csc\theta, tan\theta, cot\theta. (Notethat you are not asked to express each trigonometric function in terms of multiple segments in the diagram. You must find a segment whose whole length equals the corresponding trig function.) The graph is given below:
+14. For each of the following trigonometric expressions, find a segment in the diagram that has length equal to the trigonometric expression: $$\sin\theta, \cos\theta, \sec\theta, \csc\theta, \tan\theta, \cot\theta. (Note that you are not asked to express each trigonometric function in terms of multiple segments in the diagram. You must find a segment whose whole length equals the corresponding trig function.) The graph is given below:
 
-**ADD IMAGE**
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/cirtri2.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
-15. On $$[0,2\pi)$$, solve the equation numerically to three decimal places: $$3\sin x-2\cos x=1.$$ Then rewrite the left side in the form $$R\sin(x-\varphi)$$, where $$R>0$$ and $$0<\varphi<\frac{\pi}{2}$$, and use this form to explain why the equation has exactly two solutions on $$[0,2\pi)$$.
-16. (Bonus, Viète's formula for $$\pi$$)
+15. On $$[0,2\pi)$$, solve the equation numerically to three decimal places: $$3\sin x-2\cos x=1.$$ (Hint: Try the substitution $$t=\tan{x/2}$$, and solve for $$x$$ using the $$tan^{-1}$$ button on the calculator)
+16. (Bonus, rational points on the unit circle)
 
-Let
-
-$$
-a_1=\sqrt2
-$$
-
-and define
+The unit circle is
 
 $$
-a_{n+1}=\sqrt{2+a_n}.
+x^2+y^2=1.
 $$
 
-The nested radicals
+One obvious rational point on the unit circle is $$(-1,0)$$. Now draw a line with rational slope $$m$$ through $$(-1,0)$$:
 
 $$
-\sqrt2,\quad \sqrt{2+\sqrt2},\quad \sqrt{2+\sqrt{2+\sqrt2}},\quad \ldots
+y=m(x+1).
 $$
 
-are connected to repeated half-angle identities.
+$$(A)$$ Substitute $$y=m(x+1)$$ into $$x^2+y^2=1$$ and show that the line intersects the unit circle at $$(-1,0)$$ and one other point.
 
-$$(A)$$ Use the half-angle identity for cosine to show that
+$$(B)$$ Find the coordinates of the second intersection point in terms of $$m$$.
 
-$$
-a_n=2\cos\left(\frac{\pi}{2^{n+1}}\right).
-$$
+$$(C)$$ Explain why every rational value of $$m$$ gives a rational point on the unit circle.
 
-$$(B)$$ Use part $$(A)$$ and the identity $$\sin(2x)=2\sin x\cos x$$ to show how products of the terms $$\frac{a_n}{2}$$ are related to $$\frac{2}{\pi}$$.
+$$(D)$$ Use your formula to find a rational point on the unit circle when $$m=\frac23$$, then interpret that point as $$(\cos\theta,\sin\theta)$$ for some angle $$\theta$$.
 
-$$(C)$$ Explain why this leads to Viète's infinite product:
-
-$$
-\frac{2}{\pi}
-=\frac{\sqrt2}{2}\cdot
-\frac{\sqrt{2+\sqrt2}}{2}\cdot
-\frac{\sqrt{2+\sqrt{2+\sqrt2}}}{2}\cdots.
-$$
+$$(E)$$ Why does this method not produce the point $$(-1,0)$$ as the second intersection point? What slope would be needed to reach the point $$(1,0)$$?
 
 ---
 
 ## Solutions
+
+### Solution 1
+
+Add multiples of $$2\pi$$ to find a positive coterminal angle:
+
+$$
+-\frac{29\pi}{6}+3(2\pi)
+=-\frac{29\pi}{6}+\frac{36\pi}{6}
+=\frac{7\pi}{6}.
+$$
+
+This is positive, but not least positive, since
+
+$$
+\frac{7\pi}{6}-2\pi=-\frac{5\pi}{6}<0.
+$$
+
+So the least positive coterminal angle is
+
+$$
+\boxed{\frac{7\pi}{6}}.
+$$
+
+Convert the original angle to degrees:
+
+$$
+-\frac{29\pi}{6}\cdot\frac{180}{\pi}
+=-870^\circ.
+$$
+
+Also,
+
+$$
+\frac{7\pi}{6}\cdot\frac{180}{\pi}
+=210^\circ.
+$$
+
+Thus
+
+$$
+\boxed{-\frac{29\pi}{6}=-870^\circ,\qquad \frac{7\pi}{6}=210^\circ}.
+$$
+
+The angle $$\frac{7\pi}{6}$$ is in Quadrant III, and its reference angle is
+
+$$
+\frac{7\pi}{6}-\pi=\frac{\pi}{6}.
+$$
+
+So
+
+$$
+\boxed{\text{reference angle }=\frac{\pi}{6},\quad \text{Quadrant III}}.
+$$
+
+Since $$\theta$$ is coterminal with $$\frac{7\pi}{6}$$,
+
+$$
+\sin\theta=-\frac12,
+\qquad
+\cos\theta=-\frac{\sqrt3}{2},
+\qquad
+\tan\theta=\frac{\sqrt3}{3}.
+$$
+
+The reciprocal functions are
+
+$$
+\csc\theta=-2,
+\qquad
+\sec\theta=-\frac{2\sqrt3}{3},
+\qquad
+\cot\theta=\sqrt3.
+$$
+
+### Solution 2
+
+For a sector,
+
+$$
+P=2r+s.
+$$
+
+Since $$s=r\theta$$,
+
+$$
+P=2r+r\theta=r(2+\theta).
+$$
+
+We are given $$P=40$$ and $$\theta=\frac{5\pi}{6}$$, so
+
+$$
+40=r\left(2+\frac{5\pi}{6}\right).
+$$
+
+Thus
+
+$$
+r=\frac{40}{2+\frac{5\pi}{6}}
+=\frac{240}{12+5\pi}.
+$$
+
+So
+
+$$
+\boxed{r=\frac{240}{12+5\pi}\text{ cm}}.
+$$
+
+The arc length is
+
+$$
+s=r\theta
+=\frac{240}{12+5\pi}\cdot\frac{5\pi}{6}
+=\frac{200\pi}{12+5\pi}.
+$$
+
+Thus
+
+$$
+\boxed{s=\frac{200\pi}{12+5\pi}\text{ cm}}.
+$$
+
+The sector area is
+
+$$
+A=\frac12r^2\theta.
+$$
+
+So
+
+$$
+A=\frac12\left(\frac{240}{12+5\pi}\right)^2\left(\frac{5\pi}{6}\right)
+=\frac{24000\pi}{(12+5\pi)^2}.
+$$
+
+Therefore
+
+$$
+\boxed{A=\frac{24000\pi}{(12+5\pi)^2}\text{ cm}^2}.
+$$
+
+### Solution 3
+
+The wheel rotates at
+
+$$
+45\text{ rev/min}=45(2\pi)=90\pi\text{ rad/min}.
+$$
+
+Convert to radians per second:
+
+$$
+\omega=\frac{90\pi}{60}=\frac{3\pi}{2}\text{ rad/sec}.
+$$
+
+The bug starts at the point closest to the ground, so its starting angle is
+
+$$
+\frac{3\pi}{2}.
+$$
+
+After $$7$$ seconds, the angle swept out is
+
+$$
+\omega t=\frac{3\pi}{2}(7)=\frac{21\pi}{2}.
+$$
+
+The total angle is
+
+$$
+\frac{3\pi}{2}+\frac{21\pi}{2}
+=\frac{24\pi}{2}
+=12\pi.
+$$
+
+This is coterminal with $$0$$, so the bug is at
+
+$$
+\boxed{(18,0)}.
+$$
+
+The angle in standard position is
+
+$$
+\boxed{0\text{ radians}}
+$$
+
+after reducing coterminally.
+
+The linear speed is
+
+$$
+v=r\omega=18\cdot\frac{3\pi}{2}=27\pi.
+$$
+
+Thus
+
+$$
+\boxed{v=27\pi\text{ cm/sec}}.
+$$
+
+### Solution 4
+
+Wheel A rotates at
+
+$$
+150\text{ rev/min}=300\pi\text{ rad/min}.
+$$
+
+Its linear speed is
+
+$$
+v=r\omega=4(300\pi)=1200\pi\text{ in/min}.
+$$
+
+The belt does not slip, so Wheel B has the same linear speed.
+
+Wheel B rotates at
+
+$$
+60\text{ rev/min}=120\pi\text{ rad/min}.
+$$
+
+So
+
+$$
+1200\pi=r_B(120\pi).
+$$
+
+Therefore
+
+$$
+\boxed{r_B=10\text{ inches}}.
+$$
+
+Convert the belt speed to inches per second:
+
+$$
+1200\pi\text{ in/min}
+=\frac{1200\pi}{60}\text{ in/sec}
+=20\pi\text{ in/sec}.
+$$
+
+Thus
+
+$$
+\boxed{20\pi\text{ in/sec}}.
+$$
+
+### Solution 5
+
+Since $$\theta$$ is in Quadrant II and
+
+$$
+\tan\theta=-\frac{8}{15},
+$$
+
+we can use a reference triangle with opposite side $$8$$, adjacent side $$-15$$, and hypotenuse
+
+$$
+\sqrt{8^2+15^2}=17.
+$$
+
+Thus
+
+$$
+\boxed{\sin\theta=\frac8{17}},
+\qquad
+\boxed{\cos\theta=-\frac{15}{17}},
+\qquad
+\boxed{\tan\theta=-\frac8{15}}.
+$$
+
+The reciprocal functions are
+
+$$
+\boxed{\sec\theta=-\frac{17}{15}},
+\qquad
+\boxed{\csc\theta=\frac{17}{8}},
+\qquad
+\boxed{\cot\theta=-\frac{15}{8}}.
+$$
+
+Now,
+
+$$
+\sin(\pi-\theta)=\sin\theta=\frac8{17}.
+$$
+
+Also,
+
+$$
+\cos(\theta+\pi)=-\cos\theta=\frac{15}{17}.
+$$
+
+So
+
+$$
+\boxed{\sin(\pi-\theta)=\frac8{17}},
+\qquad
+\boxed{\cos(\theta+\pi)=\frac{15}{17}}.
+$$
+
+### Solution 6
+
+Since $$P=(x,y)$$ is on the unit circle,
+
+$$
+x^2+y^2=1.
+$$
+
+We are also given
+
+$$
+x-y=\frac{\sqrt2}{2}.
+$$
+
+So
+
+$$
+y=x-\frac{\sqrt2}{2}.
+$$
+
+Substitute:
+
+$$
+x^2+\left(x-\frac{\sqrt2}{2}\right)^2=1.
+$$
+
+Expand:
+
+$$
+x^2+x^2-\sqrt2x+\frac12=1.
+$$
+
+Thus
+
+$$
+2x^2-\sqrt2x-\frac12=0.
+$$
+
+Multiply by $$2$$:
+
+$$
+4x^2-2\sqrt2x-1=0.
+$$
+
+Use the quadratic formula:
+
+$$
+x=\frac{2\sqrt2\pm\sqrt{8+16}}{8}
+=\frac{2\sqrt2\pm2\sqrt6}{8}
+=\frac{\sqrt2\pm\sqrt6}{4}.
+$$
+
+Since the point is in Quadrant III, $$x<0$$. Therefore
+
+$$
+x=\frac{\sqrt2-\sqrt6}{4}.
+$$
+
+Then
+
+$$
+y=x-\frac{\sqrt2}{2}
+=\frac{\sqrt2-\sqrt6}{4}-\frac{2\sqrt2}{4}
+=-\frac{\sqrt2+\sqrt6}{4}.
+$$
+
+So
+
+$$
+\boxed{P=\left(\frac{\sqrt2-\sqrt6}{4},-\frac{\sqrt2+\sqrt6}{4}\right)}.
+$$
+
+This is the unit-circle point for
+
+$$
+\boxed{\theta=\frac{17\pi}{12}}.
+$$
+
+Equivalently, $$\theta\approx4.451$$ radians.
+
+### Solution 7
+
+Use coterminal angles:
+
+$$
+\sin\left(-\frac{7\pi}{6}\right)=\sin\left(\frac{5\pi}{6}\right)=\frac12.
+$$
+
+Also,
+
+$$
+\cos\left(\frac{11\pi}{3}\right)=\cos\left(\frac{5\pi}{3}\right)=\frac12.
+$$
+
+Next,
+
+$$
+\tan\left(-\frac{13\pi}{4}\right)=\tan\left(\frac{3\pi}{4}\right)=-1.
+$$
+
+Finally,
+
+$$
+\sec\left(\frac{17\pi}{6}\right)=\sec\left(\frac{5\pi}{6}\right)
+=\frac1{-\frac{\sqrt3}{2}}
+=-\frac{2\sqrt3}{3}.
+$$
+
+Substitute:
+
+$$
+6\left(\frac12\right)
+-4\left(\frac12\right)
++3(-1)
+-2\left(-\frac{2\sqrt3}{3}\right).
+$$
+
+This becomes
+
+$$
+3-2-3+\frac{4\sqrt3}{3}.
+$$
+
+Therefore
+
+$$
+\boxed{-2+\frac{4\sqrt3}{3}}.
+$$
+
+### Solution 8
+
+Let
+
+$$
+u=\sin x.
+$$
+
+Then
+
+$$
+2u^2-u-1=0.
+$$
+
+Factor:
+
+$$
+(2u+1)(u-1)=0.
+$$
+
+Thus
+
+$$
+\sin x=1
+\qquad\text{or}\qquad
+\sin x=-\frac12.
+$$
+
+On $$[0,4\pi)$$, $$\sin x=1$$ at
+
+$$
+x=\frac{\pi}{2},\frac{5\pi}{2}.
+$$
+
+Also, $$\sin x=-\frac12$$ at
+
+$$
+x=\frac{7\pi}{6},\frac{11\pi}{6},\frac{19\pi}{6},\frac{23\pi}{6}.
+$$
+
+Therefore
+
+$$
+\boxed{x=\frac{\pi}{2},\frac{7\pi}{6},\frac{11\pi}{6},\frac{5\pi}{2},\frac{19\pi}{6},\frac{23\pi}{6}}.
+$$
+
+### Solution 9
+
+Let
+
+$$
+u=\cos x.
+$$
+
+Then
+
+$$
+2u^2+\sqrt3u-1=0.
+$$
+
+Use the quadratic formula:
+
+$$
+u=\frac{-\sqrt3\pm\sqrt{3+8}}{4}
+=\frac{-\sqrt3\pm\sqrt{11}}{4}.
+$$
+
+The value
+
+$$
+\frac{-\sqrt3-\sqrt{11}}{4}
+$$
+
+is less than $$-1$$, so it is impossible for $$\cos x$$. Thus
+
+$$
+\cos x=\frac{\sqrt{11}-\sqrt3}{4}.
+$$
+
+On $$[0,2\pi)$$, cosine is positive in Quadrants I and IV, so
+
+$$
+\boxed{x=\cos^{-1}\left(\frac{\sqrt{11}-\sqrt3}{4}\right)
+\quad\text{or}\quad
+x=2\pi-\cos^{-1}\left(\frac{\sqrt{11}-\sqrt3}{4}\right)}.
+$$
+
+### Solution 10
+
+We have
+
+$$
+\tan^2x-3=0.
+$$
+
+So
+
+$$
+\tan^2x=3,
+$$
+
+which gives
+
+$$
+\tan x=\pm\sqrt3.
+$$
+
+The tangent function has period $$\pi$$. On $$[0,3\pi)$$, the solutions are
+
+$$
+\boxed{x=\frac{\pi}{3},\frac{2\pi}{3},\frac{4\pi}{3},\frac{5\pi}{3},\frac{7\pi}{3},\frac{8\pi}{3}}.
+$$
+
+### Solution 11
+
+Since
+
+$$
+\frac{\pi}{2}<x<\pi
+$$
+
+and
+
+$$
+\sin x=\frac5{13},
+$$
+
+the angle is in Quadrant II. Therefore
+
+$$
+\cos x=-\frac{12}{13}.
+$$
+
+Now,
+
+$$
+\cos(2\pi-x)=\cos x=-\frac{12}{13}.
+$$
+
+Also,
+
+$$
+\sin\left(x+\frac{\pi}{2}\right)=\cos x=-\frac{12}{13}.
+$$
+
+Next,
+
+$$
+\tan x=\frac{\sin x}{\cos x}
+=\frac{\frac5{13}}{-\frac{12}{13}}
+=-\frac5{12}.
+$$
+
+Since
+
+$$
+\tan(\pi-x)=-\tan x,
+$$
+
+we get
+
+$$
+\tan(\pi-x)=\frac5{12}.
+$$
+
+Finally, secant is even because cosine is even, so
+
+$$
+\sec(-x)=\sec x=\frac1{\cos x}=-\frac{13}{12}.
+$$
+
+Thus
+
+$$
+\boxed{\cos(2\pi-x)=-\frac{12}{13}},
+\qquad
+\boxed{\sin\left(x+\frac{\pi}{2}\right)=-\frac{12}{13}},
+$$
+
+$$
+\boxed{\tan(\pi-x)=\frac5{12}},
+\qquad
+\boxed{\sec(-x)=-\frac{13}{12}}.
+$$
+
+### Solution 12
+
+Start with the left-hand side:
+
+$$
+\frac{1-\cos\theta}{\sin\theta}+\frac{\sin\theta}{1-\cos\theta}.
+$$
+
+Use the common denominator $$\sin\theta(1-\cos\theta)$$:
+
+$$
+\frac{(1-\cos\theta)^2+\sin^2\theta}{\sin\theta(1-\cos\theta)}.
+$$
+
+Expand the numerator:
+
+$$
+1-2\cos\theta+\cos^2\theta+\sin^2\theta.
+$$
+
+Use $$\sin^2\theta+\cos^2\theta=1$$:
+
+$$
+1-2\cos\theta+\cos^2\theta+\sin^2\theta
+=2-2\cos\theta.
+$$
+
+So the expression becomes
+
+$$
+\frac{2-2\cos\theta}{\sin\theta(1-\cos\theta)}.
+$$
+
+Factor:
+
+$$
+\frac{2(1-\cos\theta)}{\sin\theta(1-\cos\theta)}.
+$$
+
+Cancel:
+
+$$
+\frac2{\sin\theta}=2\csc\theta.
+$$
+
+Therefore
+
+$$
+\boxed{\frac{1-\cos\theta}{\sin\theta}+\frac{\sin\theta}{1-\cos\theta}=2\csc\theta}.
+$$
+
+The original expression is undefined when
+
+$$
+\sin\theta=0
+$$
+
+or
+
+$$
+1-\cos\theta=0.
+$$
+
+On $$[0,2\pi)$$, this happens at
+
+$$
+\boxed{\theta=0,\pi}.
+$$
+
+### Solution 13
+
+Start with the left-hand side:
+
+$$
+\frac{\cot^2\theta-\tan^2\theta}{(\cot\theta+\tan\theta)^2}.
+$$
+
+Factor the numerator:
+
+$$
+\frac{(\cot\theta-\tan\theta)(\cot\theta+\tan\theta)}{(\cot\theta+\tan\theta)^2}.
+$$
+
+Cancel one factor:
+
+$$
+\frac{\cot\theta-\tan\theta}{\cot\theta+\tan\theta}.
+$$
+
+Rewrite in terms of sine and cosine:
+
+$$
+\frac{\frac{\cos\theta}{\sin\theta}-\frac{\sin\theta}{\cos\theta}}{\frac{\cos\theta}{\sin\theta}+\frac{\sin\theta}{\cos\theta}}.
+$$
+
+Multiply the top and bottom by $$\sin\theta\cos\theta$$:
+
+$$
+\frac{\cos^2\theta-\sin^2\theta}{\cos^2\theta+\sin^2\theta}.
+$$
+
+Since $$\cos^2\theta+\sin^2\theta=1$$, this becomes
+
+$$
+\cos^2\theta-\sin^2\theta.
+$$
+
+Use $$\sin^2\theta=1-\cos^2\theta$$:
+
+$$
+\cos^2\theta-(1-\cos^2\theta)
+=2\cos^2\theta-1.
+$$
+
+Thus
+
+$$
+\boxed{\frac{\cot^2\theta-\tan^2\theta}{(\cot\theta+\tan\theta)^2}=2\cos^2\theta-1}.
+$$
+
+### Solution 14
+
+In the diagram, the circle is the unit circle and $$A=(\cos\theta,\sin\theta)$$.
+
+The horizontal segment from the origin to the foot under $$A$$ is
+
+$$
+\boxed{OC=\cos\theta}.
+$$
+
+The vertical segment from the $$x$$-axis up to $$A$$ is
+
+$$
+\boxed{AC=\sin\theta}.
+$$
+
+The line through $$A$$ is tangent to the unit circle. Its equation is
+
+$$
+x\cos\theta+y\sin\theta=1.
+$$
+
+At the $$x$$-intercept, $$y=0$$, so
+
+$$
+x\cos\theta=1
+$$
+
+and
+
+$$
+x=\sec\theta.
+$$
+
+Thus
+
+$$
+\boxed{OD=\sec\theta}.
+$$
+
+At the $$y$$-intercept, $$x=0$$, so
+
+$$
+y\sin\theta=1
+$$
+
+and
+
+$$
+y=\csc\theta.
+$$
+
+Thus
+
+$$
+\boxed{OB=\csc\theta}.
+$$
+
+The tangent segment from $$A$$ to $$D$$ has length
+
+$$
+\boxed{AD=\tan\theta}.
+$$
+
+The tangent segment from $$A$$ to $$B$$ has length
+
+$$
+\boxed{AB=\cot\theta}.
+$$
+
+So the six matching segments are
+
+$$
+\boxed{\sin\theta=AC,\quad \cos\theta=OC,\quad \sec\theta=OD,\quad \csc\theta=OB,\quad \tan\theta=AD,\quad \cot\theta=AB}.
+$$
+
+### Solution 15
+
+Use the substitution
+
+$$
+t=\tan\frac{x}{2}.
+$$
+
+Then
+
+$$
+\sin x=\frac{2t}{1+t^2}
+$$
+
+and
+
+$$
+\cos x=\frac{1-t^2}{1+t^2}.
+$$
+
+Substitute into
+
+$$
+3\sin x-2\cos x=1.
+$$
+
+This gives
+
+$$
+3\left(\frac{2t}{1+t^2}\right)-2\left(\frac{1-t^2}{1+t^2}\right)=1.
+$$
+
+Multiply by $$1+t^2$$:
+
+$$
+6t-2(1-t^2)=1+t^2.
+$$
+
+Expand:
+
+$$
+6t-2+2t^2=1+t^2.
+$$
+
+Rearrange:
+
+$$
+t^2+6t-3=0.
+$$
+
+Use the quadratic formula:
+
+$$
+t=\frac{-6\pm\sqrt{36+12}}{2}
+=-3\pm2\sqrt3.
+$$
+
+So
+
+$$
+\tan\frac{x}{2}=-3+2\sqrt3
+$$
+
+or
+
+$$
+\tan\frac{x}{2}=-3-2\sqrt3.
+$$
+
+Using a calculator and choosing values of $$x$$ in $$[0,2\pi)$$ gives
+
+$$
+\boxed{x\approx0.869\quad\text{or}\quad x\approx3.450}.
+$$
+
+### Solution 16
+
+For part $$(A)$$, substitute
+
+$$
+y=m(x+1)
+$$
+
+into
+
+$$
+x^2+y^2=1.
+$$
+
+This gives
+
+$$
+x^2+m^2(x+1)^2=1.
+$$
+
+Expand:
+
+$$
+x^2+m^2(x^2+2x+1)=1.
+$$
+
+So
+
+$$
+(1+m^2)x^2+2m^2x+m^2-1=0.
+$$
+
+Since $$x=-1$$ is one solution, factor:
+
+$$
+(x+1)\left((1+m^2)x+(m^2-1)\right)=0.
+$$
+
+Therefore the line intersects the circle at $$(-1,0)$$ and one other point.
+
+For part $$(B)$$, the second point comes from
+
+$$
+(1+m^2)x+(m^2-1)=0.
+$$
+
+Thus
+
+$$
+x=\frac{1-m^2}{1+m^2}.
+$$
+
+Now plug into $$y=m(x+1)$$:
+
+$$
+y=m\left(\frac{1-m^2}{1+m^2}+1\right).
+$$
+
+Simplify:
+
+$$
+y=m\left(\frac{1-m^2+1+m^2}{1+m^2}\right)
+=m\left(\frac{2}{1+m^2}\right)
+=\frac{2m}{1+m^2}.
+$$
+
+So the second intersection point is
+
+$$
+\boxed{\left(\frac{1-m^2}{1+m^2},\frac{2m}{1+m^2}\right)}.
+$$
+
+For part $$(C)$$, if $$m$$ is rational, then $$m^2$$ is rational. The expressions
+
+$$
+\frac{1-m^2}{1+m^2}
+\qquad\text{and}\qquad
+\frac{2m}{1+m^2}
+$$
+
+are made from rational numbers using addition, subtraction, multiplication, and division. Therefore both coordinates are rational.
+
+For part $$(D)$$, use $$m=\frac23$$:
+
+$$
+x=\frac{1-\left(\frac23\right)^2}{1+\left(\frac23\right)^2}
+=\frac{1-\frac49}{1+\frac49}
+=\frac{\frac59}{\frac{13}{9}}
+=\frac5{13}.
+$$
+
+Also,
+
+$$
+y=\frac{2\left(\frac23\right)}{1+\left(\frac23\right)^2}
+=\frac{\frac43}{\frac{13}{9}}
+=\frac{12}{13}.
+$$
+
+So the rational point is
+
+$$
+\boxed{\left(\frac5{13},\frac{12}{13}\right)}.
+$$
+
+This means there is an angle $$\theta$$ such that
+
+$$
+\boxed{\cos\theta=\frac5{13},\qquad \sin\theta=\frac{12}{13}}.
+$$
+
+For part $$(E)$$, this method does not produce $$(-1,0)$$ as the second intersection point because $$(-1,0)$$ is the fixed point used to build every line. A finite nonvertical slope through $$(-1,0)$$ intersects the circle at exactly one other point.
+
+To reach $$(1,0)$$, the line must be the $$x$$-axis, which has slope
+
+$$
+\boxed{m=0}.
+$$
