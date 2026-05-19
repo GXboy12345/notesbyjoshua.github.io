@@ -44,7 +44,7 @@ $$
 
 <div class="theorem-box" markdown="1">
 
-**Extension.** The radian is a unitless measure, meaning that it is not arbitrarily set. Why is there always $$2/pi$$ radians in a circle?
+**Extension.** The radian is a unitless measure, meaning that it is not arbitrarily set. Why is there always $$2\pi$$ radians in a circle?
 
 </div>
 
@@ -324,7 +324,7 @@ and
 
 $$
 \cot\theta=\frac{1}{\tan\theta}
-=\frac{\text{adjacent}}{\text{opposite}}.
+=\frac{\text{adjacent}}{\text{opposite}}
 $$.
 
 The three functions are called cosecant, secant, and cotangent, respectively. To memorize, remember that you have to add co- to any trig function without a co- and do not add one otherwise.
@@ -1110,6 +1110,72 @@ REMEMBER to always check for multiple solutions using the trig rules!
 ---
 
 ## Practice
+
+1. Let $$\theta=-\frac{29\pi}{6}$$.
+
+$$(A)$$ Find the least positive coterminal angle with $$\theta$$.
+
+$$(B)$$ Convert both angles to degrees.
+
+$$(C)$$ Find the reference angle and quadrant of $$\theta$$.
+
+$$(D)$$ Evaluate all six trigonometric functions of $$\theta$$ exactly.
+
+2. A sector of a circle has perimeter $$40$$ cm and central angle $$\frac{5\pi}{6}$$. Find the radius, arc length, and area of the sector exactly.
+3. A wheel of radius $$18$$ cm rotates counterclockwise at $$45$$ revolutions per minute. A bug starts at the point on the wheel closest to the ground. After $$7$$ seconds, find the bug's angle in standard position, its coordinates relative to the center of the wheel, and its linear speed in cm/sec.
+4. A pulley system has two wheels connected by a belt without slipping. Wheel A has radius $$4$$ inches and rotates at $$150$$ revolutions per minute. Wheel B rotates at $$60$$ revolutions per minute. Find the radius of Wheel B. Then find the linear belt speed in inches per second.
+5. Let $$\theta$$ be in Quadrant II and suppose $$\tan\theta=-\frac{8}{15}$$. Find exact values of $$\sin\theta$$, $$\cos\theta$$, $$\sec\theta$$, $$\csc\theta$$, and $$\cot\theta$$. Then evaluate $$\sin(\pi-\theta)$$ and $$\cos(\theta+\pi)$$.
+6. Let $$P=(x,y)$$ be a point on the unit circle in Quadrant III. If $$x-y=\frac{\sqrt2}{2}$$, find $$P$$ and the angle $$\theta\in[0,2\pi)$$ whose terminal side passes through $$P$$.
+7. Evaluate exactly: $$6\sin\left(-\frac{7\pi}{6}\right)-4\cos\left(\frac{11\pi}{3}\right)+3\tan\left(-\frac{13\pi}{4}\right)-2\sec\left(\frac{17\pi}{6}\right).$$
+8. Solve exactly on $$[0,4\pi)$$: $$2\sin^2x-\sin x-1=0.$$
+9. Solve exactly on $$[0,2\pi)$$:$$2\cos^2x+\sqrt3\cos x-1=0.$$
+10. Solve exactly on $$[0,3\pi)$$:$$\tan^2x-3=0.$$
+11. Suppose $$\frac{\pi}{2}<x<\pi$$ and $$\sin x=\frac{5}{13}$$. Find exact values of $$\cos(2\pi-x),\qquad \sin\left(x+\frac{\pi}{2}\right),\qquad \tan(\pi-x),\qquad \sec(-x).$$
+12. Prove the identity: $$\frac{1-\cos\theta}{\sin\theta}+\frac{\sin\theta}{1-\cos\theta}=2\csc\theta.$$ Then state all values of $$\theta$$ in $$[0,2\pi)$$ for which the original identity is undefined.
+13. Prove the identity: $$\frac{\cot^2\theta-\tan^2\theta}{(\cot\theta+\tan\theta)^2}=2\cos^2\theta-1.$$
+14. For each of the following trigonometric expressions, find a segment in the diagram that has length equal to the trigonometric expression: $$sin\theta, cos\theta, sec\theta, csc\theta, tan\theta, cot\theta. (Notethat you are not asked to express each trigonometric function in terms of multiple segments in the diagram. You must find a segment whose whole length equals the corresponding trig function.) The graph is given below:
+
+**ADD IMAGE**
+
+15. On $$[0,2\pi)$$, solve the equation numerically to three decimal places: $$3\sin x-2\cos x=1.$$ Then rewrite the left side in the form $$R\sin(x-\varphi)$$, where $$R>0$$ and $$0<\varphi<\frac{\pi}{2}$$, and use this form to explain why the equation has exactly two solutions on $$[0,2\pi)$$.
+16. (Bonus, Viète's formula for $$\pi$$)
+
+Let
+
+$$
+a_1=\sqrt2
+$$
+
+and define
+
+$$
+a_{n+1}=\sqrt{2+a_n}.
+$$
+
+The nested radicals
+
+$$
+\sqrt2,\quad \sqrt{2+\sqrt2},\quad \sqrt{2+\sqrt{2+\sqrt2}},\quad \ldots
+$$
+
+are connected to repeated half-angle identities.
+
+$$(A)$$ Use the half-angle identity for cosine to show that
+
+$$
+a_n=2\cos\left(\frac{\pi}{2^{n+1}}\right).
+$$
+
+$$(B)$$ Use part $$(A)$$ and the identity $$\sin(2x)=2\sin x\cos x$$ to show how products of the terms $$\frac{a_n}{2}$$ are related to $$\frac{2}{\pi}$$.
+
+$$(C)$$ Explain why this leads to Viète's infinite product:
+
+$$
+\frac{2}{\pi}
+=\frac{\sqrt2}{2}\cdot
+\frac{\sqrt{2+\sqrt2}}{2}\cdot
+\frac{\sqrt{2+\sqrt{2+\sqrt2}}}{2}\cdots.
+$$
 
 ---
 
