@@ -1132,15 +1132,15 @@ $$(D)$$ Evaluate all six trigonometric functions of $$\theta$$ exactly.
 10. Solve exactly on $$[0,3\pi)$$:$$\tan^2x-3=0.$$
 11. The radius of the circle in the figure is 2 units. Express the length of $$DC$$ in terms of $$\alpha$$.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/cirtri1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+   <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/cirtri1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 12. Prove the identity: $$\frac{1-\cos\theta}{\sin\theta}+\frac{\sin\theta}{1-\cos\theta}=2\csc\theta.$$ Then state all values of $$\theta$$ in $$[0,2\pi)$$ for which the original identity is undefined.
 13. Prove the identity: $$\frac{\cot^2\theta-\tan^2\theta}{(\cot\theta+\tan\theta)^2}=2\cos^2\theta-1.$$
-14. For each of the following trigonometric expressions, find a segment in the diagram that has length equal to the trigonometric expression: $$\sin\theta, \cos\theta, \sec\theta, \csc\theta, \tan\theta, \cot\theta. (Note that you are not asked to express each trigonometric function in terms of multiple segments in the diagram. You must find a segment whose whole length equals the corresponding trig function.) The graph is given below:
+14. For each of the following trigonometric expressions, find a segment in the diagram that has length equal to the trigonometric expression: $$\sin\theta, \cos\theta, \sec\theta, \csc\theta, \tan\theta, \cot\theta$$. Note that you are not asked to express each trigonometric function in terms of multiple segments in the diagram. You must find a segment whose whole length equals the corresponding trig function. The graph is given below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/cirtri2.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+   <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/cirtri2.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
-15. On $$[0,2\pi)$$, solve the equation numerically to three decimal places: $$3\sin x-2\cos x=1.$$ (Hint: Try the substitution $$t=\tan{x/2}$$, and solve for $$x$$ using the $$tan^{-1}$$ button on the calculator)
+15. On $$[0,2\pi)$$, solve the equation numerically to three decimal places: $$3\sin x-2\cos x=1.$$ (Hint: Try the substitution $$t=\tan(x/2)$$, and solve for $$x$$ using the $$\tan^{-1}$$ button on the calculator.)
 16. (Bonus, rational points on the unit circle)
 
 The unit circle is
@@ -1715,74 +1715,28 @@ $$
 
 ### Solution 11
 
-Since
+The radius of the circle is $$2$$, and $$C$$ is the point on the positive $$x$$-axis at the right edge of the circle. Thus
 
 $$
-\frac{\pi}{2}<x<\pi
+OC=2.
 $$
 
-and
+The ray from $$O$$ through $$B$$ and $$D$$ makes angle $$\alpha$$ with the positive $$x$$-axis. In right triangle $$ODC$$,
 
 $$
-\sin x=\frac5{13},
+\tan\alpha=\frac{DC}{OC}.
 $$
 
-the angle is in Quadrant II. Therefore
+Substitute $$OC=2$$:
 
 $$
-\cos x=-\frac{12}{13}.
+\tan\alpha=\frac{DC}{2}.
 $$
 
-Now,
+Therefore
 
 $$
-\cos(2\pi-x)=\cos x=-\frac{12}{13}.
-$$
-
-Also,
-
-$$
-\sin\left(x+\frac{\pi}{2}\right)=\cos x=-\frac{12}{13}.
-$$
-
-Next,
-
-$$
-\tan x=\frac{\sin x}{\cos x}
-=\frac{\frac5{13}}{-\frac{12}{13}}
-=-\frac5{12}.
-$$
-
-Since
-
-$$
-\tan(\pi-x)=-\tan x,
-$$
-
-we get
-
-$$
-\tan(\pi-x)=\frac5{12}.
-$$
-
-Finally, secant is even because cosine is even, so
-
-$$
-\sec(-x)=\sec x=\frac1{\cos x}=-\frac{13}{12}.
-$$
-
-Thus
-
-$$
-\boxed{\cos(2\pi-x)=-\frac{12}{13}},
-\qquad
-\boxed{\sin\left(x+\frac{\pi}{2}\right)=-\frac{12}{13}},
-$$
-
-$$
-\boxed{\tan(\pi-x)=\frac5{12}},
-\qquad
-\boxed{\sec(-x)=-\frac{13}{12}}.
+\boxed{DC=2\tan\alpha}.
 $$
 
 ### Solution 12
@@ -1966,10 +1920,39 @@ $$
 The tangent segment from $$A$$ to $$D$$ has length
 
 $$
+AD=\sqrt{(\sec\theta-\cos\theta)^2+(0-\sin\theta)^2}.
+$$
+
+Since
+
+$$
+\sec\theta-\cos\theta
+=\frac1{\cos\theta}-\cos\theta
+=\frac{1-\cos^2\theta}{\cos\theta}
+=\frac{\sin^2\theta}{\cos\theta},
+$$
+
+this length simplifies to $$\tan\theta$$ in the first-quadrant diagram. Therefore
+
+$$
 \boxed{AD=\tan\theta}.
 $$
 
 The tangent segment from $$A$$ to $$B$$ has length
+
+$$
+AB=\sqrt{(0-\cos\theta)^2+(\csc\theta-\sin\theta)^2}.
+$$
+
+Similarly,
+
+$$
+\csc\theta-\sin\theta
+=\frac1{\sin\theta}-\sin\theta
+=\frac{\cos^2\theta}{\sin\theta},
+$$
+
+so this length simplifies to $$\cot\theta$$ in the first-quadrant diagram. Therefore
 
 $$
 \boxed{AB=\cot\theta}.
