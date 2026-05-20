@@ -1174,7 +1174,7 @@ $$
 3. For $$g(x)=2\tan\left(3\left(x+\frac{\pi}{12}\right)\right)-1$$, find the period, center point of one branch, vertical asymptotes surrounding that branch, and the $$x$$-intercept in that branch. Then sketch the branch.
 4. For $$h(x)=-2\sec\left(\frac12(x-\pi)\right)+3$$, find the period, midline, vertical asymptotes in one period starting at $$x=\pi$$, and range. Then sketch one full period, including the guiding cosine curve.
 5. Solve exactly on $$[0,4\pi)$$. Then sketch $$y=2\sin^2x-\sin x-1$$ on $$[0,4\pi)$$ and label all $$x$$-intercepts: $$2\sin^2x-\sin x-1=0.$$
-6. Solve exactly on $$[0,2\pi)$$. Then sketch $$y=2\cos(2x - \frac{\pi}{3})-1$$ on $$[0,2\pi)$$ and label all $$x$$-intercepts: $$2\cos(2x - \frac{\pi}{3})-1=0.$$
+6. Solve on $$[0, 4\pi)$$: $$4\sin(4x)\cos(6x)= 2\sin(10x)+1$$.
 7. Solve exactly on $$[0,2\pi)$$: $$\tan x+\cot x=4.$$
 8. Evaluate each of these exactly: $$\sin 75^\circ, \cos 15^\circ,\tan 105^\circ.$$ The sine and cosine values for $$15^\circ$$ and $$75^\circ$$ are also useful to memorize as well.
 9. Prove the identity: $$\frac{\sin(x+y)+\sin(x-y)}{\cos(x+y)+\cos(x-y)}=\tan x.$$
@@ -1318,7 +1318,9 @@ $$
 \left(\frac{7\pi}{6},1\right)}.
 $$
 
-**ADD IMAGE OF GRAPH**
+A graph with many key points is shown below:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 ### Solution 2
 
@@ -1376,7 +1378,9 @@ $$
 \left(2\pi,7\right)}.
 $$
 
-**ADD IMAGE OF GRAPH**
+A graph with many key points is shown below:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph2.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 ### Solution 3
 
@@ -1472,7 +1476,9 @@ $$
 
 The branch should increase from the vertical asymptote $$x=-\frac{\pi}{4}$$ to the vertical asymptote $$x=\frac{\pi}{12}$$, passing through the center point $$\left(-\frac{\pi}{12},-1\right)$$ and the $$x$$-intercept above.
 
-**ADD IMAGE OF GRAPH**
+A graph with many key points is shown below:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph3.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 ### Solution 4
 
@@ -1556,7 +1562,9 @@ $$
 
 The secant graph has vertices at $$(\pi,1)$$, $$(3\pi,5)$$, and $$(5\pi,1)$$, with vertical asymptotes at $$x=2\pi$$ and $$x=4\pi$$.
 
-**ADD IMAGE OF GRAPH**
+A graph with many key points is shown below:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph4.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 ### Solution 5
 
@@ -1618,61 +1626,74 @@ $$
 
 The graph of $$y=2\sin^2x-\sin x-1$$ crosses the $$x$$-axis exactly at those values on $$[0,4\pi)$$.
 
-**ADD IMAGE OF GRAPH**
+A graph with many key points is shown below:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph5.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 ### Solution 6
 
 Start with
 
 $$
-2\cos\left(2x-\frac{\pi}{3}\right)-1=0.
+4\sin(4x)\cos(6x)=2\sin(10x)+1.
+$$
+
+Use the product-to-sum identity
+
+$$
+\sin A\cos B=\frac12[\sin(A+B)+\sin(A-B)].
 $$
 
 Then
 
 $$
-\cos\left(2x-\frac{\pi}{3}\right)=\frac12.
+4\sin(4x)\cos(6x)
+=2[\sin(10x)+\sin(-2x)].
 $$
 
-Let
+Since $$\sin(-2x)=-\sin(2x)$$,
 
 $$
-u=2x-\frac{\pi}{3}.
+4\sin(4x)\cos(6x)=2\sin(10x)-2\sin(2x).
 $$
 
-Since $$x\in[0,2\pi)$$, we have
+So the equation becomes
 
 $$
-u\in\left[-\frac{\pi}{3},\frac{11\pi}{3}\right).
+2\sin(10x)-2\sin(2x)=2\sin(10x)+1.
 $$
 
-On this interval,
+Subtract $$2\sin(10x)$$ from both sides:
 
 $$
-\cos u=\frac12
+-2\sin(2x)=1.
 $$
 
-when
+Thus
 
 $$
-u=-\frac{\pi}{3},\frac{\pi}{3},\frac{5\pi}{3},\frac{7\pi}{3}.
+\sin(2x)=-\frac12.
 $$
 
-Now solve each equation
+Let $$u=2x$$. Since $$x\in[0,4\pi)$$,
 
 $$
-2x-\frac{\pi}{3}=u.
+u\in[0,8\pi).
 $$
 
-This gives
+On $$[0,8\pi)$$, $$\sin u=-\frac12$$ at
 
 $$
-\boxed{x=0,\frac{\pi}{3},\pi,\frac{4\pi}{3}}.
+u=\frac{7\pi}{6},\frac{11\pi}{6},\frac{19\pi}{6},\frac{23\pi}{6},
+\frac{31\pi}{6},\frac{35\pi}{6},\frac{43\pi}{6},\frac{47\pi}{6}.
 $$
 
-The graph of $$y=2\cos\left(2x-\frac{\pi}{3}\right)-1$$ has period $$\pi$$, phase shift $$\frac{\pi}{6}$$ right, midline $$y=-1$$, and amplitude $$2$$. It crosses the $$x$$-axis at those four values on $$[0,2\pi)$$.
+Divide by $$2$$:
 
-**ADD IMAGE OF GRAPH**
+$$
+\boxed{x=\frac{7\pi}{12},\frac{11\pi}{12},\frac{19\pi}{12},\frac{23\pi}{12},
+\frac{31\pi}{12},\frac{35\pi}{12},\frac{43\pi}{12},\frac{47\pi}{12}}.
+$$
 
 ### Solution 7
 
