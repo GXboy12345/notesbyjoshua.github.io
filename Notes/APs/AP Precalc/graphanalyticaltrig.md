@@ -54,7 +54,7 @@ x & 0 & \frac{\pi}{2} & \pi & \frac{3\pi}{2} & 2\pi\\
 \end{array}
 $$
 
-The sine graph starts at the midline, reaches a maximum after one fourth of a period, returns to the midline after half a period, reaches a minimum after three fourths of a period, and returns to the midline after one full period. These 5 points should be always graphed when graphing the cosine function.
+The sine graph starts at the midline, reaches a maximum after one fourth of a period, returns to the midline after half a period, reaches a minimum after three fourths of a period, and returns to the midline after one full period.
 
 ### Cosine
 
@@ -82,7 +82,7 @@ x & 0 & \frac{\pi}{2} & \pi & \frac{3\pi}{2} & 2\pi\\
 \end{array}
 $$
 
-The cosine graph starts at a maximum, crosses the midline after one fourth of a period, reaches a minimum after half a period, crosses the midline again after three fourths of a period, and returns to a maximum after one full period. These 5 points should be always graphed when graphing the cosine function.
+The cosine graph starts at a maximum, crosses the midline after one fourth of a period, reaches a minimum after half a period, crosses the midline again after three fourths of a period, and returns to a maximum after one full period.
 
 ---
 
@@ -102,7 +102,7 @@ $$
 
 The constants control the shape of the graph:
 
-- $$|A|$$ is the **amplitude**.
+- $$\lvert A \rvert$$ is the **amplitude**.
 - If $$A<0$$, the graph is reflected over the $$x$$-axis.
 - $$\frac{2\pi}{\lvert B \rvert}$$ is the **period**.
 - $$C$$ is the **phase shift**.
@@ -131,7 +131,7 @@ So the phase shift is
 
 $$
 \frac{C}{B}.
-$$.
+$$
 
 All the transformations learned in Unit 4 apply here as well.
 
@@ -139,8 +139,8 @@ All the transformations learned in Unit 4 apply here as well.
 
 To graph one full period:
 
-1. Find the amplitude $$|A|$$.
-2. Find the period $$\frac{2\pi}{|B|}$$.
+1. Find the amplitude $$\lvert A \rvert$$.
+2. Find the period $$\frac{2\pi}{\lvert B \rvert}$$.
 3. Find the phase shift and starting point.
 4. Divide the period into four equal increments.
 5. Plot the five key points, then apply any reflection and vertical shift.
@@ -159,6 +159,56 @@ $$
 \frac14\cdot\frac{2\pi}{3}
 =\frac{\pi}{6}.
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the amplitude, period, phase shift, midline, range, and key-point increment for $$y=-2\cos\left(3\left(x-\frac{\pi}{4}\right)\right)+1.$$ Then graph the function.
+
+Here
+
+$$
+A=-2,\qquad B=3,\qquad C=\frac{\pi}{4},\qquad D=1.
+$$
+
+So the amplitude is
+
+$$
+\lvert A\rvert=2.
+$$
+
+The period is
+
+$$
+\frac{2\pi}{\lvert B\rvert}
+=\frac{2\pi}{3}.
+$$
+
+The phase shift is right $$\frac{\pi}{4}$$, and the midline is
+
+$$
+y=1.
+$$
+
+The range is
+
+$$
+[1-2,1+2]=[-1,3].
+$$
+
+Since one full period is $$\frac{2\pi}{3}$$, the key-point increment is
+
+$$
+\frac14\cdot\frac{2\pi}{3}
+=\frac{\pi}{6}.
+$$
+
+Because $$A<0$$, the cosine graph is reflected over its midline.
+
+The graph of the function is shown below:
+
+**ADD GRAPH**
+
+</div>
 
 ---
 
@@ -189,6 +239,38 @@ For all real solutions, add the period:
 $$
 x=\text{solution}+2\pi k,\qquad k\in\mathbb Z.
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Solve on $$[0,4\pi)$$: $$\sin x=\frac12.$$
+
+The reference angle is
+
+$$
+\frac{\pi}{6},
+$$
+
+because
+
+$$
+\sin\left(\frac{\pi}{6}\right)=\frac12.
+$$
+
+Sine is positive in Quadrants I and II, so the two standard solutions are
+
+$$
+x=\frac{\pi}{6},\frac{5\pi}{6}.
+$$
+
+Since we repeat over 2 periods, we add on $$2\pi$$ to each solution:
+
+$$
+\boxed{x=\frac{\pi}{6},\frac{5\pi}{6},\frac{13\pi}{6},\frac{17\pi}{6}}.
+$$
+
+Graphically, the horizontal line $$y=\frac12$$ intersects one full sine cycle twice, and since there are two cycles there are four intersections.
+
+</div>
 
 ---
 
@@ -233,6 +315,48 @@ $$
 $$
 
 The distance from the center point to each neighboring vertical asymptote is one half of the period.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Graph $$y=3\tan\left(2\left(x+\frac{\pi}{8}\right)\right)-4,$$ and list all important features.
+
+the period is
+
+$$
+\frac{\pi}{2}.
+$$
+
+The center of a tangent branch happens where the inside angle equals $$0$$:
+
+$$
+2\left(x+\frac{\pi}{8}\right)=0
+\quad\Rightarrow\quad
+x=-\frac{\pi}{8}.
+$$
+
+At this point, $$\tan(0)=0$$, so
+
+$$
+y=3(0)-4=-4.
+$$
+
+The center point is
+
+$$
+\left(-\frac{\pi}{8},-4\right).
+$$
+
+Since half the period is $$\frac{\pi}{4}$$, the neighboring vertical asymptotes are
+
+$$
+x=-\frac{\pi}{8}-\frac{\pi}{4}=-\frac{3\pi}{8}
+\qquad\text{and}\qquad
+x=-\frac{\pi}{8}+\frac{\pi}{4}=\frac{\pi}{8}.
+$$
+
+**ADD GRAPH**
+
+</div>
 
 ### Cotangent
 
@@ -350,39 +474,123 @@ $$
 
 The angle addition and subtraction formulas let us rewrite trig functions of sums and differences of angles.
 
-### Sine
+<div class="theorem-box" markdown="1">
+
+**Proof (Angle addition formulas).** Let two points on the unit circle be
 
 $$
-\boxed{\sin(A+B)=\sin A\cos B+\cos A\sin B}
+P=(\cos A,\sin A)
 $$
 
-$$
-\boxed{\sin(A-B)=\sin A\cos B-\cos A\sin B}
-$$
-
-### Cosine
+and
 
 $$
-\boxed{\cos(A+B)=\cos A\cos B-\sin A\sin B}
+Q=(\cos B,\sin B).
 $$
 
-$$
-\boxed{\cos(A-B)=\cos A\cos B+\sin A\sin B}
-$$
-
-Notice that cosine has the opposite sign pattern from the angle expression.
-
-### Tangent
+The distance between them depends only on the angle between them, which is $$A-B$$. Using the distance formula:
 
 $$
-\boxed{\tan(A+B)=\frac{\tan A+\tan B}{1-\tan A\tan B}}
+PQ^2=(\cos A-\cos B)^2+(\sin A-\sin B)^2.
 $$
 
+Expanding gives
+
 $$
-\boxed{\tan(A-B)=\frac{\tan A-\tan B}{1+\tan A\tan B}}
+PQ^2=2-2(\cos A\cos B+\sin A\sin B).
 $$
+
+The same chord length can also be written using the angle difference:
+
+$$
+PQ^2=(1-\cos(A-B))^2+\sin^2(A-B)=2-2\cos(A-B).
+$$
+
+Set the two expressions equal:
+
+$$
+2-2(\cos A\cos B+\sin A\sin B)=2-2\cos(A-B).
+$$
+
+Therefore
+
+$$
+\cos(A-B)=\cos A\cos B+\sin A\sin B.
+$$
+
+The other addition and subtraction formulas follow from this identity, even/odd identities, and cofunction relationships. For example, a similar proof can be done for sine addition/subtraction, and the proof is left to the reader as an exercise.
+
+</div>
+
+### List of identities
+
+- $$\sin(A+B)=\sin A\cos B+\cos A\sin B$$
+- $$\sin(A-B)=\sin A\cos B-\cos A\sin B$$
+- $$\cos(A+B)=\cos A\cos B-\sin A\sin B$$
+- $$\cos(A-B)=\cos A\cos B+\sin A\sin B$$
+- $$\tan(A+B)=\frac{\tan A+\tan B}{1-\tan A\tan B}$$
+- $$\tan(A-B)=\frac{\tan A-\tan B}{1+\tan A\tan B}$$
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Tangent addition formula).** Use the fact that tangent is sine divided by cosine: $$\tan(A+B)=\frac{\sin(A+B)}{\cos(A+B)}$$ to prove the tangent addition formula.
+
+Substitute the addition formulas:
+
+$$
+\tan(A+B)
+=\frac{\sin A\cos B+\cos A\sin B}{\cos A\cos B-\sin A\sin B}.
+$$
+
+Divide every term in the numerator and denominator by $$\cos A\cos B$$:
+
+$$
+\tan(A+B)
+=\frac{\frac{\sin A\cos B}{\cos A\cos B}+\frac{\cos A\sin B}{\cos A\cos B}}
+{\frac{\cos A\cos B}{\cos A\cos B}-\frac{\sin A\sin B}{\cos A\cos B}}.
+$$
+
+This simplifies to
+
+$$
+\tan(A+B)
+=\frac{\tan A+\tan B}{1-\tan A\tan B}.
+$$
+
+The subtraction formula follows the same way using $$\sin(A-B)$$ and $$\cos(A-B)$$.
+
+</div>
 
 These formulas are especially useful for finding exact trig values for angles that can be written as sums or differences of special angles, such as $$75^\circ=45^\circ+30^\circ$$.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the exact value of $$\sin 75^\circ$$.
+
+Rewrite the angle as a sum of special angles:
+
+$$
+75^\circ=45^\circ+30^\circ.
+$$
+
+Then use the sine addition formula:
+
+$$
+\sin(75^\circ)
+=\sin(45^\circ+30^\circ)
+=\sin45^\circ\cos30^\circ+\cos45^\circ\sin30^\circ.
+$$
+
+Substitute exact values:
+
+$$
+\sin75^\circ
+=\frac{\sqrt2}{2}\cdot\frac{\sqrt3}{2}
++\frac{\sqrt2}{2}\cdot\frac12
+=\boxed{\frac{\sqrt6+\sqrt2}{4}}.
+$$
+
+</div>
 
 ---
 
@@ -390,35 +598,77 @@ These formulas are especially useful for finding exact trig values for angles th
 
 Double-angle formulas are the addition formulas with the same angle used twice.
 
-### Sine
+<div class="theorem-box" markdown="1">
+
+**Proof.** Start with the angle addition formula for sine:
 
 $$
-\boxed{\sin(2\theta)=2\sin\theta\cos\theta}
+\sin(A+B)=\sin A\cos B+\cos A\sin B.
 $$
 
-### Cosine
-
-There are three common forms:
+Let $$A=\theta$$ and $$B=\theta$$:
 
 $$
-\boxed{\cos(2\theta)=\cos^2\theta-\sin^2\theta}
+\sin(2\theta)
+=\sin\theta\cos\theta+\cos\theta\sin\theta
+=2\sin\theta\cos\theta.
+$$
+
+So
+
+$$
+\boxed{\sin(2\theta)=2\sin\theta\cos\theta}.
+$$
+
+The cosine double-angle formula comes from the cosine addition formula:
+
+$$
+\cos(2\theta)
+=\cos(\theta+\theta)
+=\cos^2\theta-\sin^2\theta.
+$$
+
+The alternate forms come from the Pythagorean identity:
+
+$$
+\sin^2\theta+\cos^2\theta=1.
+$$
+
+Since $$\sin^2\theta=1-\cos^2\theta$$,
+
+$$
+\cos^2\theta-\sin^2\theta
+=\cos^2\theta-(1-\cos^2\theta)
+=2\cos^2\theta-1.
+$$
+
+Since $$\cos^2\theta=1-\sin^2\theta$$,
+
+$$
+\cos^2\theta-\sin^2\theta
+=(1-\sin^2\theta)-\sin^2\theta
+=1-2\sin^2\theta.
+$$
+
+So
+
+$$
+\boxed{\cos(2\theta)=\cos^2\theta-\sin^2\theta=(1-\sin^2\theta)-\sin^2\theta=1-2\sin^2\theta.}.
+$$
+
+Similarly, the tangent double angle formula can come from either dividing sine by cosine or using the tangent addition formula:
+
+$$
+\tan(2\theta)
+=\tan(\theta+\theta)
+=\frac{2\tan A}{1 - \tan^2 A}.
 $$
 
 $$
-\boxed{\cos(2\theta)=2\cos^2\theta-1}
+\boxed{\tan(2\theta)=\frac{2\tan A}{1 - \tan^2 A}}.
 $$
 
-$$
-\boxed{\cos(2\theta)=1-2\sin^2\theta}
-$$
-
-The best version depends on what information is given.
-
-### Tangent
-
-$$
-\boxed{\tan(2\theta)=\frac{2\tan\theta}{1-\tan^2\theta}}
-$$
+</div>
 
 ---
 
@@ -434,7 +684,43 @@ $$
 \boxed{\sin^2\theta=\frac{1-\cos(2\theta)}{2}}
 $$
 
-These are useful when rewriting expressions with even powers of sine or cosine.
+These are useful when rewriting expressions with powers of sine or cosine. Later we will learn De Moivre's Theorem to generalize power formulas.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Power reduction formulas).** Prove the two power reduction formulas.
+
+Use the cosine double-angle identities:
+
+$$
+\cos(2\theta)=2\cos^2\theta-1.
+$$
+
+Solve for $$\cos^2\theta$$:
+
+$$
+2\cos^2\theta=1+\cos(2\theta)
+$$
+
+so
+
+$$
+\cos^2\theta=\frac{1+\cos(2\theta)}{2}.
+$$
+
+Similarly, use
+
+$$
+\cos(2\theta)=1-2\sin^2\theta.
+$$
+
+Solving for $$\sin^2\theta$$ gives
+
+$$
+\sin^2\theta=\frac{1-\cos(2\theta)}{2}.
+$$
+
+</div>
 
 ### Half-angle formulas
 
@@ -461,6 +747,52 @@ which can also be written as
 $$
 \boxed{\tan\left(\frac{\theta}{2}\right)=\frac{1-\cos\theta}{\sin\theta}}.
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Extension.** Prove the tangent half angle identity. As a bonus, try to solve it geometrically!
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the exact value of $$\sin 105^\circ$$.
+
+Since
+
+$$
+105^\circ=\frac{210^\circ}{2},
+$$
+
+use the half-angle formula:
+
+$$
+\sin\left(\frac{\theta}{2}\right)=\pm\sqrt{\frac{1-\cos\theta}{2}}.
+$$
+
+Here $$\theta=210^\circ$$, so $$\frac{\theta}{2}=105^\circ$$. Since $$105^\circ$$ is in Quadrant II, sine is positive:
+
+$$
+\sin105^\circ
+=\sqrt{\frac{1-\cos210^\circ}{2}}.
+$$
+
+Because
+
+$$
+\cos210^\circ=-\frac{\sqrt3}{2},
+$$
+
+we get
+
+$$
+\sin105^\circ
+=\sqrt{\frac{1+\frac{\sqrt3}{2}}{2}}
+=\sqrt{\frac{2+\sqrt3}{4}}
+=\boxed{\frac{\sqrt{2+\sqrt3}}{2}}.
+$$
+
+</div>
 
 ---
 
@@ -506,7 +838,76 @@ These formulas are useful for simplifying expressions and for rewriting function
 
 <div class="theorem-box" markdown="1">
 
-**Extension.** Prove the formulas above.
+**Proof (Sum-to-product/Product-to-sum formulas).** Prove the formulas above.
+
+Add the cosine addition and subtraction formulas:
+
+$$
+\cos(A-B)=\cos A\cos B+\sin A\sin B
+$$
+
+and
+
+$$
+\cos(A+B)=\cos A\cos B-\sin A\sin B.
+$$
+
+Adding them gives
+
+$$
+\cos(A-B)+\cos(A+B)=2\cos A\cos B.
+$$
+
+Therefore
+
+$$
+\cos A\cos B=\frac12[\cos(A-B)+\cos(A+B)].
+$$
+
+Subtracting instead gives
+
+$$
+\cos(A-B)-\cos(A+B)=2\sin A\sin B,
+$$
+
+so
+
+$$
+\sin A\sin B=\frac12[\cos(A-B)-\cos(A+B)].
+$$
+
+The other product-to-sum formulas come from adding or subtracting the sine addition and subtraction formulas and is left as an exercise to the reader.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Rewrite
+
+$$
+\cos(5x)+\cos(3x)
+$$
+
+as a product.
+
+Use
+
+$$
+\cos A+\cos B=2\cos\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right).
+$$
+
+Let $$A=5x$$ and $$B=3x$$:
+
+$$
+\cos(5x)+\cos(3x)
+=2\cos\left(\frac{5x+3x}{2}\right)\cos\left(\frac{5x-3x}{2}\right).
+$$
+
+So
+
+$$
+\boxed{\cos(5x)+\cos(3x)=2\cos(4x)\cos x}.
+$$
 
 </div>
 
@@ -525,32 +926,63 @@ A general strategy is:
 1. Use identities to rewrite the equation using one trig function when possible.
 2. Factor if the equation is quadratic in a trig expression.
 3. Find the reference angle using the unit circle.
-4. Use the interval and quadrant signs to list every solution.
+4. Use the interval and quadrant signs to list every solution. Always reject values outside the allowed domain and range!
 5. Check for extraneous solutions if the work involved squaring, dividing by a variable expression, or using reciprocal functions.
 
-For example, an equation like
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Solve exactly on $$[0,2\pi)$$:
 
 $$
-2\sin^2 x+\sin x-1=0
+2\sin^2x+\sin x-1=0.
 $$
 
-can be treated like a quadratic:
+Factor:
 
 $$
 (2\sin x-1)(\sin x+1)=0.
 $$
 
-Then solve
+So
+
+$$
+\sin x=\frac12
+\qquad\text{or}\qquad
+\sin x=-1.
+$$
+
+On $$[0,2\pi)$$,
 
 $$
 \sin x=\frac12
 $$
 
-or
+at
 
 $$
-\sin x=-1.
+x=\frac{\pi}{6},\frac{5\pi}{6}.
 $$
+
+Also,
+
+$$
+\sin x=-1
+$$
+
+at
+
+$$
+x=\frac{3\pi}{2}.
+$$
+
+Thus
+
+$$
+\boxed{x=\frac{\pi}{6},\frac{5\pi}{6},\frac{3\pi}{2}}.
+$$
+
+</div>
 
 ### General solutions
 
@@ -578,7 +1010,7 @@ A function needs to be one-to-one in order to have an inverse function. The orig
 
 ### Inverse sine
 
-For inverse sine,
+For inverse sine (arcsine),
 
 $$
 y=\sin^{-1}x
@@ -590,7 +1022,7 @@ $$
 \sin y=x.
 $$
 
-The restricted sine function uses the interval
+The restricted sine function for the standard arcsine function uses the interval
 
 $$
 \left[-\frac{\pi}{2},\frac{\pi}{2}\right].
@@ -603,7 +1035,7 @@ So
 
 ### Inverse cosine
 
-For inverse cosine,
+For inverse cosine (arccosine),
 
 $$
 y=\cos^{-1}x
@@ -615,7 +1047,7 @@ $$
 \cos y=x.
 $$
 
-The restricted cosine function uses the interval
+The restricted cosine function for the standard arccosine function uses the interval
 
 $$
 [0,\pi].
@@ -628,7 +1060,7 @@ So
 
 ### Inverse tangent
 
-For inverse tangent,
+For inverse tangent (arctangent),
 
 $$
 y=\tan^{-1}x
@@ -640,7 +1072,7 @@ $$
 \tan y=x.
 $$
 
-The restricted tangent function uses the interval
+The restricted tangent function for the standard arctangent function uses the interval
 
 $$
 \left(-\frac{\pi}{2},\frac{\pi}{2}\right).
@@ -689,7 +1121,49 @@ $$
 \sin(\cos^{-1}x),
 $$
 
-draw a triangle or use an identity. If $$\theta=\cos^{-1}x$$, then $$\cos\theta=x$$ and $$\theta$$ is in $$[0,\pi]$$. The sign of the final answer should match the quadrant allowed by the inverse trig function.
+draw a triangle or use an identity and always inverse trig functions represent angles. If $$\theta=\cos^{-1}x$$, then $$\cos\theta=x$$ and $$\theta$$ is in $$[0,\pi]$$. The sign of the final answer should match the quadrant allowed by the inverse trig function.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Evaluate exactly:
+
+$$
+\sin\left(\cos^{-1}\frac35\right).
+$$
+
+Let
+
+$$
+\theta=\cos^{-1}\frac35.
+$$
+
+Then
+
+$$
+\cos\theta=\frac35,
+$$
+
+and $$\theta$$ must be in $$[0,\pi]$$. Since cosine is positive, $$\theta$$ is in Quadrant I.
+
+Draw a right triangle with adjacent side $$3$$ and hypotenuse $$5$$. The opposite side is
+
+$$
+\sqrt{5^2-3^2}=\sqrt{16}=4.
+$$
+
+Therefore
+
+$$
+\sin\theta=\frac45.
+$$
+
+So
+
+$$
+\boxed{\sin\left(\cos^{-1}\frac35\right)=\frac45}.
+$$
+
+</div>
 
 ---
 
@@ -699,73 +1173,16 @@ draw a triangle or use an identity. If $$\theta=\cos^{-1}x$$, then $$\cos\theta=
 2. A sinusoidal function has maximum value $$7$$ at $$x=\frac{\pi}{3}$$ and minimum value $$-1$$ at $$x=\frac{7\pi}{6}$$. Write a cosine model for the function, assuming the given maximum and minimum are consecutive. Then find five key points and sketch one full period.
 3. For $$g(x)=2\tan\left(3\left(x+\frac{\pi}{12}\right)\right)-1$$, find the period, center point of one branch, vertical asymptotes surrounding that branch, and the $$x$$-intercept in that branch. Then sketch the branch.
 4. For $$h(x)=-2\sec\left(\frac12(x-\pi)\right)+3$$, find the period, midline, vertical asymptotes in one period starting at $$x=\pi$$, and range. Then sketch one full period, including the guiding cosine curve.
-5. Solve exactly on $$[0,4\pi)$$. Then sketch $$y=2\sin^2x-\sin x-1$$ on $$[0,4\pi)$$ and label all $$x$$-intercepts:
-
-$$
-2\sin^2x-\sin x-1=0.
-$$
-
-6. Solve exactly on $$[0,2\pi)$$. Then sketch $$y=2\cos(2x)-1$$ on $$[0,2\pi)$$ and label all $$x$$-intercepts:
-
-$$
-2\cos(2x)-1=0.
-$$
-
-7. Solve exactly on $$[0,2\pi)$$:
-
-$$
-\tan x+\cot x=4.
-$$
-
-8. Evaluate exactly:
-
-$$
-\sin 75^\circ,\qquad \cos 15^\circ,\qquad \tan 105^\circ.
-$$
-
-9. Prove the identity:
-
-$$
-\frac{\sin(x+y)+\sin(x-y)}{\cos(x+y)+\cos(x-y)}=\tan x.
-$$
-
-10. Solve exactly on $$[0,2\pi)$$. Then use the product-to-sum form to sketch enough of the graph to explain why your number of solutions makes sense:
-
-$$
-\cos(5x)+\cos(3x)=0.
-$$
-
-11. Evaluate exactly:
-
-$$
-\sin\left(\cos^{-1}\frac35\right)
-+\cos\left(\sin^{-1}\left(-\frac5{13}\right)\right)
-+\tan\left(\cos^{-1}\left(-\frac45\right)\right).
-$$
-
-12. Evaluate exactly:
-
-$$
-\sin^{-1}\left(\sin\frac{11\pi}{6}\right),\qquad
-\cos^{-1}\left(\cos\frac{7\pi}{4}\right),\qquad
-\tan^{-1}\left(\tan\frac{5\pi}{4}\right).
-$$
-
-13. Suppose $$\frac{\pi}{2}<\theta<\pi$$ and $$\cos\theta=-\frac35$$. Find exact values of
-
-$$
-\sin\left(\frac{\theta}{2}\right),\qquad
-\cos\left(\frac{\theta}{2}\right),\qquad
-\tan\left(\frac{\theta}{2}\right).
-$$
-
-14. Rewrite
-
-$$
-4\sin^2x\cos^2x
-$$
-
-as an expression involving only $$\cos(4x)$$. Then find its maximum and minimum values.
+5. Solve exactly on $$[0,4\pi)$$. Then sketch $$y=2\sin^2x-\sin x-1$$ on $$[0,4\pi)$$ and label all $$x$$-intercepts: $$2\sin^2x-\sin x-1=0.$$
+6. Solve exactly on $$[0,2\pi)$$. Then sketch $$y=2\cos(2x - \frac{\pi}{3})-1$$ on $$[0,2\pi)$$ and label all $$x$$-intercepts: $$2\cos(2x - \frac{\pi}{3})-1=0.$$
+7. Solve exactly on $$[0,2\pi)$$: $$\tan x+\cot x=4.$$
+8. Evaluate each of these exactly: $$\sin 75^\circ, \cos 15^\circ,\tan 105^\circ.$$ The sine and cosine values for $$15^\circ$$ and $$75^\circ$$ are also useful to memorize as well.
+9. Prove the identity: $$\frac{\sin(x+y)+\sin(x-y)}{\cos(x+y)+\cos(x-y)}=\tan x.$$
+10. Solve exactly on $$[0,2\pi)$$. Then use the product-to-sum form to sketch enough of the graph to explain why your number of solutions makes sense: $$\cos(5x)+\cos(3x)=0.$$
+11. Evaluate exactly: $$\sin\left(\cos^{-1}\frac35\right)+\cos\left(\sin^{-1}\left(-\frac5{13}\right)\right)+\tan\left(\cos^{-1}\left(-\frac45\right)\right).$$
+12. How many solutions does the equation $$\tan(2x)=\cos(\tfrac{x}{2})$$ have on the interval $$[0,2\pi]$$?
+13. Suppose $$\frac{\pi}{2}<\theta<\pi$$ and $$\cos\theta=-\frac35$$. Find exact values of $$\sin\left(\frac{\theta}{2}\right), \cos\left(\frac{\theta}{2}\right),$$ and $$\tan\left(\frac{\theta}{2}\right).$$
+14. Let $$x$$ and $$y$$ be real numbers such that $$\frac{\sin x}{\sin y} = 3$$ and $$\frac{\cos x}{\cos y} = \frac{1}{2}$$. The value of $$\frac{\sin 2x}{\sin 2y} + \frac{\cos 2x}{\cos 2y}$$ can be expressed in the form $$\frac{p}{q}$$, where $$p$$ and $$q$$ are relatively prime positive integers. Find $$p+q$$. (2014 AIME II)
 15. A tide height is modeled by a sinusoidal function of time. At $$t=2$$ hours, the tide is at a high of $$11$$ feet. At $$t=8$$ hours, the tide is at the next low of $$3$$ feet.
 
 $$(A)$$ Write a cosine model $$H(t)$$ for the tide height.
@@ -836,7 +1253,7 @@ $$
 The period is
 
 $$
-\frac{2\pi}{|2|}=\pi.
+\frac{2\pi}{\lvert 2 \rvert}=\pi.
 $$
 
 So
@@ -972,7 +1389,7 @@ $$
 The period of tangent is
 
 $$
-\frac{\pi}{|3|}=\frac{\pi}{3}.
+\frac{\pi}{\lvert 3 \rvert}=\frac{\pi}{3}.
 $$
 
 So
@@ -1068,7 +1485,7 @@ $$
 The period of secant is
 
 $$
-\frac{2\pi}{\left|\frac12\right|}=4\pi.
+\frac{2\pi}{\left\lvert \frac12\right\rvert}=4\pi.
 $$
 
 So
@@ -1208,40 +1625,52 @@ The graph of $$y=2\sin^2x-\sin x-1$$ crosses the $$x$$-axis exactly at those val
 Start with
 
 $$
-2\cos(2x)-1=0.
+2\cos\left(2x-\frac{\pi}{3}\right)-1=0.
 $$
 
 Then
 
 $$
-\cos(2x)=\frac12.
+\cos\left(2x-\frac{\pi}{3}\right)=\frac12.
 $$
 
-Let $$u=2x$$. Since $$x\in[0,2\pi)$$, we have
+Let
 
 $$
-u\in[0,4\pi).
+u=2x-\frac{\pi}{3}.
 $$
 
-On $$[0,4\pi)$$,
+Since $$x\in[0,2\pi)$$, we have
+
+$$
+u\in\left[-\frac{\pi}{3},\frac{11\pi}{3}\right).
+$$
+
+On this interval,
 
 $$
 \cos u=\frac12
 $$
 
-at
+when
 
 $$
-u=\frac{\pi}{3},\frac{5\pi}{3},\frac{7\pi}{3},\frac{11\pi}{3}.
+u=-\frac{\pi}{3},\frac{\pi}{3},\frac{5\pi}{3},\frac{7\pi}{3}.
 $$
 
-Divide by $$2$$:
+Now solve each equation
 
 $$
-\boxed{x=\frac{\pi}{6},\frac{5\pi}{6},\frac{7\pi}{6},\frac{11\pi}{6}}.
+2x-\frac{\pi}{3}=u.
 $$
 
-The graph of $$y=2\cos(2x)-1$$ has period $$\pi$$ and crosses the $$x$$-axis at those four values on $$[0,2\pi)$$.
+This gives
+
+$$
+\boxed{x=0,\frac{\pi}{3},\pi,\frac{4\pi}{3}}.
+$$
+
+The graph of $$y=2\cos\left(2x-\frac{\pi}{3}\right)-1$$ has period $$\pi$$, phase shift $$\frac{\pi}{6}$$ right, midline $$y=-1$$, and amplitude $$2$$. It crosses the $$x$$-axis at those four values on $$[0,2\pi)$$.
 
 **ADD IMAGE OF GRAPH**
 
@@ -1574,52 +2003,68 @@ $$
 
 ### Solution 12
 
-First,
+We need count solutions to
 
 $$
-\sin\frac{11\pi}{6}=-\frac12.
+\tan(2x)=\cos\left(\frac{x}{2}\right)
 $$
 
-The inverse sine range is
+on $$[0,2\pi]$$.
+
+The tangent side is undefined when
 
 $$
-\left[-\frac{\pi}{2},\frac{\pi}{2}\right],
+2x=\frac{\pi}{2}+k\pi.
 $$
 
-so
+Thus
 
 $$
-\boxed{\sin^{-1}\left(\sin\frac{11\pi}{6}\right)=-\frac{\pi}{6}}.
+x=\frac{\pi}{4}+\frac{k\pi}{2}.
 $$
 
-Next,
+On $$[0,2\pi]$$, these asymptotes occur at
 
 $$
-\cos\frac{7\pi}{4}=\frac{\sqrt2}{2}.
+\frac{\pi}{4},\frac{3\pi}{4},\frac{5\pi}{4},\frac{7\pi}{4}.
 $$
 
-The inverse cosine range is $$[0,\pi]$$, so
+These split the interval into five pieces:
 
 $$
-\boxed{\cos^{-1}\left(\cos\frac{7\pi}{4}\right)=\frac{\pi}{4}}.
+\left[0,\frac{\pi}{4}\right),\quad
+\left(\frac{\pi}{4},\frac{3\pi}{4}\right),\quad
+\left(\frac{3\pi}{4},\frac{5\pi}{4}\right),\quad
+\left(\frac{5\pi}{4},\frac{7\pi}{4}\right),\quad
+\left(\frac{7\pi}{4},2\pi\right].
 $$
 
-Finally,
+Let
 
 $$
-\tan\frac{5\pi}{4}=1.
+F(x)=\tan(2x)-\cos\left(\frac{x}{2}\right).
 $$
 
-The inverse tangent range is
+On each of the five pieces, $$\tan(2x)$$ increases from $$-\infty$$ to $$\infty$$, except on the first and last pieces where one endpoint is finite. Also, $$\cos\left(\frac{x}{2}\right)$$ decreases from $$1$$ to $$-1$$ on $$[0,2\pi]$$.
+
+More formally,
 
 $$
-\left(-\frac{\pi}{2},\frac{\pi}{2}\right),
+F'(x)=2\sec^2(2x)+\frac12\sin\left(\frac{x}{2}\right)>0
 $$
 
-so
+wherever $$F$$ is defined on $$[0,2\pi]$$. So $$F$$ is strictly increasing on each piece.
+
+On each piece, the function changes from negative to positive:
+
+- On the first interval, $$F(0)=-1$$ and $$F(x)\to\infty$$ as $$x\to\frac{\pi}{4}^{-}$$.
+- On each middle interval, $$F(x)\to-\infty$$ from the left asymptote and $$F(x)\to\infty$$ at the right asymptote.
+- On the last interval, $$F(x)\to-\infty$$ as $$x\to\frac{7\pi}{4}^{+}$$ and $$F(2\pi)=1$$.
+
+Therefore there is exactly one solution in each of the five pieces.
 
 $$
-\boxed{\tan^{-1}\left(\tan\frac{5\pi}{4}\right)=\frac{\pi}{4}}.
+\boxed{5}
 $$
 
 ### Solution 13
@@ -1692,70 +2137,161 @@ $$
 
 ### Solution 14
 
-Start with
+We are given
 
 $$
-4\sin^2x\cos^2x.
+\frac{\sin x}{\sin y}=3
 $$
 
-Since
+and
 
 $$
-\sin(2x)=2\sin x\cos x,
+\frac{\cos x}{\cos y}=\frac12.
 $$
 
-we have
+So
 
 $$
-4\sin^2x\cos^2x=\sin^2(2x).
+\sin x=3\sin y
 $$
 
-Use the power-reducing formula:
+and
 
 $$
-\sin^2 u=\frac{1-\cos(2u)}{2}.
+\cos x=\frac12\cos y.
 $$
 
-With $$u=2x$$,
+Let
 
 $$
-\sin^2(2x)=\frac{1-\cos(4x)}{2}.
+S=\sin^2 y
+\qquad\text{and}\qquad
+C=\cos^2 y.
+$$
+
+Since $$S+C=1$$, we also know
+
+$$
+\sin^2x+\cos^2x=1.
+$$
+
+Substitute the given ratios:
+
+$$
+(3\sin y)^2+\left(\frac12\cos y\right)^2=1.
+$$
+
+Thus
+
+$$
+9S+\frac14C=1.
+$$
+
+Since $$C=1-S$$,
+
+$$
+9S+\frac14(1-S)=1.
+$$
+
+Multiply by $$4$$:
+
+$$
+36S+1-S=4.
+$$
+
+So
+
+$$
+35S=3,
+$$
+
+and
+
+$$
+S=\frac3{35}.
+$$
+
+Then
+
+$$
+C=1-\frac3{35}=\frac{32}{35}.
+$$
+
+Now,
+
+$$
+\frac{\sin 2x}{\sin 2y}
+=\frac{2\sin x\cos x}{2\sin y\cos y}
+=\frac{\sin x}{\sin y}\cdot\frac{\cos x}{\cos y}
+=3\cdot\frac12
+=\frac32.
+$$
+
+Also,
+
+$$
+\frac{\cos 2x}{\cos 2y}
+=\frac{\cos^2x-\sin^2x}{\cos^2y-\sin^2y}.
+$$
+
+Compute the numerator:
+
+$$
+\cos^2x-\sin^2x
+=\frac14C-9S.
+$$
+
+Using $$C=\frac{32}{35}$$ and $$S=\frac3{35}$$:
+
+$$
+\frac14C-9S
+=\frac14\cdot\frac{32}{35}-9\cdot\frac3{35}
+=\frac8{35}-\frac{27}{35}
+=-\frac{19}{35}.
+$$
+
+The denominator is
+
+$$
+C-S=\frac{32}{35}-\frac3{35}
+=\frac{29}{35}.
 $$
 
 Therefore
 
 $$
-\boxed{4\sin^2x\cos^2x=\frac{1-\cos(4x)}{2}}.
+\frac{\cos 2x}{\cos 2y}
+=\frac{-\frac{19}{35}}{\frac{29}{35}}
+=-\frac{19}{29}.
 $$
 
-Since $$\cos(4x)$$ ranges from $$-1$$ to $$1$$, the expression
+Now add:
 
 $$
-\frac{1-\cos(4x)}{2}
+\frac{\sin 2x}{\sin 2y}+\frac{\cos 2x}{\cos 2y}
+=\frac32-\frac{19}{29}.
 $$
 
-ranges from
+Use denominator $$58$$:
 
 $$
-\frac{1-1}{2}=0
+\frac32-\frac{19}{29}
+=\frac{87}{58}-\frac{38}{58}
+=\frac{49}{58}.
 $$
 
-to
+Thus
 
 $$
-\frac{1-(-1)}{2}=1.
+p=49
+\qquad\text{and}\qquad
+q=58.
 $$
 
-So the minimum is
+So
 
 $$
-\boxed{0}
-$$
-
-and the maximum is
-
-$$
-\boxed{1}.
+\boxed{p+q=107}.
 $$
 
 ### Solution 15
