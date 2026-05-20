@@ -20,7 +20,7 @@ An angle is in **standard position** if:
 - its initial side lies on the positive $$x$$-axis,
 - its terminal side is determined by rotating from the positive $$x$$-axis.
 
-**ADD IMAGE OF ANGLE IN STANDARD POSITION**
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/standpos.jpg' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 By definition, counterclockwise rotations are positive, and clockwise rotations are negative.
 
@@ -599,7 +599,9 @@ $$
 
 </div>
 
-**ADD IMAGE OF UNIT CIRCLE**
+An image of the unit circle is shown below (with filled in values as described later):
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/unitcircle.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 ### Coterminal angles
 

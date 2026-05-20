@@ -7,6 +7,6 @@ permalink: /blog/
 
 # Blog
 
-Bum bum bum sahur.
+"Your notes page increased my test score by at least 10 points." - Student
 
 ---

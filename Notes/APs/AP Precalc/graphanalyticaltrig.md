@@ -265,7 +265,7 @@ $$
 Since we repeat over 2 periods, we add on $$2\pi$$ to each solution:
 
 $$
-\boxed{x=\frac{\pi}{6},\frac{5\pi}{6},\frac{13\pi}{6},\frac{17\pi}{6}}.
+x=\frac{\pi}{6},\frac{5\pi}{6},\frac{13\pi}{6},\frac{17\pi}{6}.
 $$
 
 Graphically, the horizontal line $$y=\frac12$$ intersects one full sine cycle twice, and since there are two cycles there are four intersections.
@@ -587,7 +587,7 @@ $$
 \sin75^\circ
 =\frac{\sqrt2}{2}\cdot\frac{\sqrt3}{2}
 +\frac{\sqrt2}{2}\cdot\frac12
-=\boxed{\frac{\sqrt6+\sqrt2}{4}}.
+\frac{\sqrt6+\sqrt2}{4}.
 $$
 
 </div>
@@ -617,7 +617,7 @@ $$
 So
 
 $$
-\boxed{\sin(2\theta)=2\sin\theta\cos\theta}.
+\sin(2\theta)=2\sin\theta\cos\theta.
 $$
 
 The cosine double-angle formula comes from the cosine addition formula:
@@ -653,7 +653,7 @@ $$
 So
 
 $$
-\boxed{\cos(2\theta)=\cos^2\theta-\sin^2\theta=(1-\sin^2\theta)-\sin^2\theta=1-2\sin^2\theta.}.
+\cos(2\theta)=\cos^2\theta-\sin^2\theta=(1-\sin^2\theta)-\sin^2\theta=1-2\sin^2\theta..
 $$
 
 Similarly, the tangent double angle formula can come from either dividing sine by cosine or using the tangent addition formula:
@@ -665,7 +665,7 @@ $$
 $$
 
 $$
-\boxed{\tan(2\theta)=\frac{2\tan A}{1 - \tan^2 A}}.
+\tan(2\theta)=\frac{2\tan A}{1 - \tan^2 A}.
 $$
 
 </div>
@@ -677,11 +677,11 @@ $$
 Power-reducing formulas come from the double-angle formulas for cosine.
 
 $$
-\boxed{\cos^2\theta=\frac{1+\cos(2\theta)}{2}}
+\cos^2\theta=\frac{1+\cos(2\theta)}{2}
 $$
 
 $$
-\boxed{\sin^2\theta=\frac{1-\cos(2\theta)}{2}}
+\sin^2\theta=\frac{1-\cos(2\theta)}{2}
 $$
 
 These are useful when rewriting expressions with powers of sine or cosine. Later we will learn De Moivre's Theorem to generalize power formulas.
@@ -727,11 +727,11 @@ $$
 The half-angle formulas come from replacing $$\theta$$ with $$\frac{\theta}{2}$$ in the power-reducing formulas.
 
 $$
-\boxed{\cos\left(\frac{\theta}{2}\right)=\pm\sqrt{\frac{1+\cos\theta}{2}}}
+\cos\left(\frac{\theta}{2}\right)=\pm\sqrt{\frac{1+\cos\theta}{2}}
 $$
 
 $$
-\boxed{\sin\left(\frac{\theta}{2}\right)=\pm\sqrt{\frac{1-\cos\theta}{2}}}
+\sin\left(\frac{\theta}{2}\right)=\pm\sqrt{\frac{1-\cos\theta}{2}}
 $$
 
 The sign depends on the quadrant of $$\frac{\theta}{2}$$.
@@ -739,13 +739,13 @@ The sign depends on the quadrant of $$\frac{\theta}{2}$$.
 Another useful half-angle identity is
 
 $$
-\boxed{\tan\left(\frac{\theta}{2}\right)=\frac{\sin\theta}{1+\cos\theta}}
+\tan\left(\frac{\theta}{2}\right)=\frac{\sin\theta}{1+\cos\theta}
 $$
 
 which can also be written as
 
 $$
-\boxed{\tan\left(\frac{\theta}{2}\right)=\frac{1-\cos\theta}{\sin\theta}}.
+\tan\left(\frac{\theta}{2}\right)=\frac{1-\cos\theta}{\sin\theta}.
 $$
 
 <div class="theorem-box" markdown="1">
@@ -789,7 +789,7 @@ $$
 \sin105^\circ
 =\sqrt{\frac{1+\frac{\sqrt3}{2}}{2}}
 =\sqrt{\frac{2+\sqrt3}{4}}
-=\boxed{\frac{\sqrt{2+\sqrt3}}{2}}.
+=\frac{\sqrt{2+\sqrt3}}{2}.
 $$
 
 </div>
@@ -801,37 +801,37 @@ $$
 Product-to-sum formulas rewrite products of trig functions as sums or differences.
 
 $$
-\boxed{\sin A\sin B=\frac12[\cos(A-B)-\cos(A+B)]}
+\sin A\sin B=\frac12[\cos(A-B)-\cos(A+B)]
 $$
 
 $$
-\boxed{\cos A\cos B=\frac12[\cos(A-B)+\cos(A+B)]}
+\cos A\cos B=\frac12[\cos(A-B)+\cos(A+B)]
 $$
 
 $$
-\boxed{\sin A\cos B=\frac12[\sin(A+B)+\sin(A-B)]}
+\sin A\cos B=\frac12[\sin(A+B)+\sin(A-B)]
 $$
 
 $$
-\boxed{\cos A\sin B=\frac12[\sin(A+B)-\sin(A-B)]}
+\cos A\sin B=\frac12[\sin(A+B)-\sin(A-B)]
 $$
 
 Sum-to-product formulas reverse the idea.
 
 $$
-\boxed{\sin A+\sin B=2\sin\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)}
+\sin A+\sin B=2\sin\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)
 $$
 
 $$
-\boxed{\sin A-\sin B=2\cos\left(\frac{A+B}{2}\right)\sin\left(\frac{A-B}{2}\right)}
+\sin A-\sin B=2\cos\left(\frac{A+B}{2}\right)\sin\left(\frac{A-B}{2}\right)
 $$
 
 $$
-\boxed{\cos A+\cos B=2\cos\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)}
+\cos A+\cos B=2\cos\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)
 $$
 
 $$
-\boxed{\cos A-\cos B=-2\sin\left(\frac{A+B}{2}\right)\sin\left(\frac{A-B}{2}\right)}
+\cos A-\cos B=-2\sin\left(\frac{A+B}{2}\right)\sin\left(\frac{A-B}{2}\right)
 $$
 
 These formulas are useful for simplifying expressions and for rewriting functions in a graphable form.
@@ -906,7 +906,7 @@ $$
 So
 
 $$
-\boxed{\cos(5x)+\cos(3x)=2\cos(4x)\cos x}.
+\cos(5x)+\cos(3x)=2\cos(4x)\cos x.
 $$
 
 </div>
@@ -979,7 +979,7 @@ $$
 Thus
 
 $$
-\boxed{x=\frac{\pi}{6},\frac{5\pi}{6},\frac{3\pi}{2}}.
+x=\frac{\pi}{6},\frac{5\pi}{6},\frac{3\pi}{2}.
 $$
 
 </div>
@@ -1160,7 +1160,7 @@ $$
 So
 
 $$
-\boxed{\sin\left(\cos^{-1}\frac35\right)=\frac45}.
+\sin\left(\cos^{-1}\frac35\right)=\frac45.
 $$
 
 </div>
