@@ -6,7 +6,7 @@ nav_order: 1
 
 # Introduction
 
-Welcome to Notes by Joshua! Currently we are in alpha-2 phase.
+Welcome to Notes by Joshua! Currently we are in alpha-3 phase.
 
 This site is a peek into all of my notes, and it is ***FREE*** for you all to share!
 

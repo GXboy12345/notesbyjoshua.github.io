@@ -63,7 +63,7 @@ $$
 Thus
 
 $$
-\boxed{225^\circ=\frac{5\pi}{4}}.
+225^\circ=\frac{5\pi}{4}.
 $$
 
 </div>
@@ -82,7 +82,7 @@ $$
 Thus
 
 $$
-\boxed{-\frac{4\pi}{3}=-240^\circ}.
+-\frac{4\pi}{3}=-240^\circ.
 $$
 
 </div>
@@ -124,13 +124,13 @@ Radians are useful because they connect angles directly to lengths on a circle.
 If a central angle $$\theta$$ cuts off an arc of length $$s$$ on a circle of radius $$r$$, then
 
 $$
-\boxed{\theta=\frac{s}{r}}.
+\theta=\frac{s}{r}.
 $$
 
 Solving for arc length gives
 
 $$
-\boxed{s=r\theta}.
+s=r\theta.
 $$
 
 The angle $$\theta$$ must be measured in radians. On your calculator, if you go to **MODE**, you can switch from degrees to radians.
@@ -154,7 +154,7 @@ $$
 So the arc length is
 
 $$
-\boxed{2\pi\text{ meters}}.
+2\pi\text{ meters}.
 $$
 
 </div>
@@ -178,7 +178,7 @@ $$
 Thus
 
 $$
-\boxed{r=24\text{ meters}}.
+r=24\text{ meters}.
 $$
 
 </div>
@@ -188,7 +188,7 @@ $$
 A **sector** is a region cut out by two radii and the arc between them. If $$\theta$$ is measured in radians, the area of a sector is
 
 $$
-\boxed{A=\frac12r^2\theta}.
+A=\frac12r^2\theta.
 $$
 
 This comes from taking the fraction $$\frac{\theta}{2\pi}$$ of the full circle area $$\pi r^2$$:
@@ -218,7 +218,7 @@ $$
 Thus
 
 $$
-\boxed{15\pi}.
+15\pi.
 $$
 
 </div>
@@ -235,19 +235,19 @@ When an object moves around a circle, there are two related speeds:
 If an angle $$\theta$$ is swept out in time $$t$$, then the angular speed is
 
 $$
-\boxed{\omega=\frac{\theta}{t}}.
+\omega=\frac{\theta}{t}.
 $$
 
 If a distance $$d$$ is traveled along the circle in time $$t$$, then the linear speed is
 
 $$
-\boxed{v=\frac{d}{t}}.
+v=\frac{d}{t}.
 $$
 
 Since arc length is $$s=r\theta$$, linear speed and angular speed are connected by
 
 $$
-\boxed{v=r\omega}.
+v=r\omega.
 $$
 
 Again, angular speed must be measured in radians per unit time.
@@ -265,7 +265,7 @@ $$
 Thus the angular speed is
 
 $$
-\boxed{30\pi\text{ rad/sec}}.
+30\pi\text{ rad/sec}.
 $$
 
 Now use $$v=r\omega$$:
@@ -277,7 +277,7 @@ $$
 So the linear speed is
 
 $$
-\boxed{600\pi\text{ cm/sec}}.
+600\pi\text{ cm/sec}.
 $$
 
 </div>
@@ -420,7 +420,7 @@ Two special triangles produce many exact trigonometric values.
 A $$30^\circ$$-$$60^\circ$$-$$90^\circ$$ triangle has side ratio
 
 $$
-\boxed{x:x\sqrt3:2x}.
+x:x\sqrt3:2x.
 $$
 
 The side opposite $$30^\circ$$ is $$x$$, the side opposite $$60^\circ$$ is $$x\sqrt3$$, and the hypotenuse is $$2x$$.
@@ -450,7 +450,7 @@ $$
 A $$45^\circ$$-$$45^\circ$$-$$90^\circ$$ triangle has side ratio
 
 $$
-\boxed{x:x:x\sqrt2}.
+x:x:x\sqrt2.
 $$
 
 Therefore:
@@ -486,19 +486,19 @@ $$
 If an angle $$\theta$$ is in standard position and its terminal side intersects the unit circle at $$P(x,y)$$, then
 
 $$
-\boxed{x=\cos\theta}
+x=\cos\theta
 $$
 
 and
 
 $$
-\boxed{y=\sin\theta}.
+y=\sin\theta.
 $$
 
 So the point on the unit circle is
 
 $$
-\boxed{P=(\cos\theta,\sin\theta)}.
+P=(\cos\theta,\sin\theta).
 $$
 
 This also gives
@@ -568,7 +568,7 @@ $$
 Thus
 
 $$
-\boxed{\cos 315^\circ=\frac{\sqrt2}{2}}.
+\cos 315^\circ=\frac{\sqrt2}{2}.
 $$
 
 </div>
@@ -594,7 +594,7 @@ $$
 Thus
 
 $$
-\boxed{\sin\left(\frac{4\pi}{3}\right)=-\frac{\sqrt3}{2}}.
+\sin\left(\frac{4\pi}{3}\right)=-\frac{\sqrt3}{2}.
 $$
 
 </div>
@@ -693,7 +693,7 @@ $$
 so
 
 $$
-\boxed{\tan\left(\frac{3\pi}{2}\right)\text{ is undefined}}.
+\tan\left(\frac{3\pi}{2}\right)\text{ is undefined}.
 $$
 
 ---
@@ -709,7 +709,7 @@ $$
 becomes the most important trigonometric identity because $$x=\cos\theta$$ and $$y=\sin\theta$$:
 
 $$
-\boxed{\sin^2\theta+\cos^2\theta=1}.
+\sin^2\theta+\cos^2\theta=1.
 $$
 
 This is called the **Pythagorean identity**.
@@ -725,37 +725,13 @@ $$
 Thus
 
 $$
-\boxed{1+\tan^2\theta=\sec^2\theta}.
+1+\tan^2\theta=\sec^2\theta.
 $$
 
 Dividing both sides by $$\sin^2\theta$$ gives
 
 $$
-\boxed{1+\cot^2\theta=\csc^2\theta}.
-$$
-
-### Quotient and reciprocal identities
-
-The quotient identities are
-
-$$
-\boxed{\tan\theta=\frac{\sin\theta}{\cos\theta}}
-$$
-
-and
-
-$$
-\boxed{\cot\theta=\frac{\cos\theta}{\sin\theta}}.
-$$
-
-The reciprocal identities are
-
-$$
-\boxed{\csc\theta=\frac1{\sin\theta}},
-\qquad
-\boxed{\sec\theta=\frac1{\cos\theta}},
-\qquad
-\boxed{\cot\theta=\frac1{\tan\theta}}.
+1+\cot^2\theta=\csc^2\theta.
 $$
 
 ### Finding trig values from one trig value
@@ -795,7 +771,7 @@ $$
 Because $$\beta$$ is in Quadrant II,
 
 $$
-\boxed{\cos\beta=-\frac{\sqrt{15}}4}.
+\cos\beta=-\frac{\sqrt{15}}4.
 $$
 
 Now
@@ -809,7 +785,7 @@ $$
 Thus
 
 $$
-\boxed{\tan\beta=-\frac1{\sqrt{15}}}.
+\tan\beta=-\frac1{\sqrt{15}}.
 $$
 
 </div>
@@ -871,7 +847,7 @@ $$
 Thus
 
 $$
-\boxed{\tan\theta\sin\theta=\sec\theta-\cos\theta}.
+\tan\theta\sin\theta=\sec\theta-\cos\theta.
 $$
 
 </div>
@@ -930,7 +906,7 @@ $$
 Thus
 
 $$
-\boxed{\frac{\sin A}{1+\cos A}+\frac{1+\cos A}{\sin A}=2\csc A}.
+\frac{\sin A}{1+\cos A}+\frac{1+\cos A}{\sin A}=2\csc A.
 $$
 
 </div>
@@ -944,31 +920,31 @@ The unit circle also explains the symmetry between trig functions.
 Cosine is an even function:
 
 $$
-\boxed{\cos(-\theta)=\cos\theta}.
+\cos(-\theta)=\cos\theta.
 $$
 
 Sine and tangent are odd functions:
 
 $$
-\boxed{\sin(-\theta)=-\sin\theta}
+\sin(-\theta)=-\sin\theta
 $$
 
 and
 
 $$
-\boxed{\tan(-\theta)=-\tan\theta}.
+\tan(-\theta)=-\tan\theta.
 $$
 
 Sine and cosine are periodic with period $$2\pi$$:
 
 $$
-\boxed{\sin(\theta+2\pi k)=\sin\theta}
+\sin(\theta+2\pi k)=\sin\theta
 $$
 
 and
 
 $$
-\boxed{\cos(\theta+2\pi k)=\cos\theta},
+\cos(\theta+2\pi k)=\cos\theta,
 $$
 
 where $$k$$ is any integer.
@@ -976,7 +952,7 @@ where $$k$$ is any integer.
 Tangent has period $$\pi$$:
 
 $$
-\boxed{\tan(\theta+\pi k)=\tan\theta}.
+\tan(\theta+\pi k)=\tan\theta.
 $$
 
 <div class="theorem-box" markdown="1">
@@ -992,7 +968,7 @@ $$
 Therefore
 
 $$
-\boxed{\sin(-t)=-\frac23}.
+\sin(-t)=-\frac23.
 $$
 
 </div>
@@ -1078,7 +1054,7 @@ $$
 Thus
 
 $$
-\boxed{x\approx0.848\quad\text{or}\quad x\approx2.294}.
+x\approx0.848\quad\text{or}\quad x\approx2.294.
 $$
 
 </div>
@@ -1102,7 +1078,7 @@ $$
 Thus
 
 $$
-\boxed{x\approx1.928\quad\text{or}\quad x\approx4.355}.
+x\approx1.928\quad\text{or}\quad x\approx4.355.
 $$
 
 </div>

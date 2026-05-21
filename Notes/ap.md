@@ -18,7 +18,7 @@ These notes will roughly follow a AP curriculum but might have some extra stuff 
 
 - ### [AP Chemistry hub]({{ '/notes/ap/chemistry/' | relative_url }})
 
-- ### AP Computer Science A 🚧 
+- ### AP Computer Science A 🚧
 
 - ### [AP Physics C Mechanics hub]({{ '/notes/ap/ap-physics-c-mechanics/' | relative_url }})
 
