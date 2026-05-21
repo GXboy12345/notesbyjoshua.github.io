@@ -1091,13 +1091,13 @@ REMEMBER to always check for multiple solutions using the trig rules!
 
 1. Let $$\theta=-\frac{29\pi}{6}$$.
 
-$$(A)$$ Find the least positive coterminal angle with $$\theta$$.
+   $$(A)$$ Find the least positive coterminal angle with $$\theta$$.
 
-$$(B)$$ Convert both angles to degrees.
+   $$(B)$$ Convert both angles to degrees.
 
-$$(C)$$ Find the reference angle and quadrant of $$\theta$$.
+   $$(C)$$ Find the reference angle and quadrant of $$\theta$$.
 
-$$(D)$$ Evaluate all six trigonometric functions of $$\theta$$ exactly.
+   $$(D)$$ Evaluate all six trigonometric functions of $$\theta$$ exactly.
 
 2. A sector of a circle has perimeter $$40$$ cm and central angle $$\frac{5\pi}{6}$$. Find the radius, arc length, and area of the sector exactly.
 3. A wheel of radius $$18$$ cm rotates counterclockwise at $$45$$ revolutions per minute. A bug starts at the point on the wheel closest to the ground. After $$7$$ seconds, find the bug's angle in standard position, its coordinates relative to the center of the wheel, and its linear speed in cm/sec.
@@ -1121,27 +1121,27 @@ $$(D)$$ Evaluate all six trigonometric functions of $$\theta$$ exactly.
 15. On $$[0,2\pi)$$, solve the equation numerically to three decimal places: $$3\sin x-2\cos x=1.$$ (Hint: Try the substitution $$t=\tan(x/2)$$, and solve for $$x$$ using the $$\tan^{-1}$$ button on the calculator.)
 16. (Bonus, rational points on the unit circle)
 
-The unit circle is
+   The unit circle is
 
-$$
-x^2+y^2=1.
-$$
+   $$
+   x^2+y^2=1.
+   $$
 
-One obvious rational point on the unit circle is $$(-1,0)$$. Now draw a line with rational slope $$m$$ through $$(-1,0)$$:
+   One obvious rational point on the unit circle is $$(-1,0)$$. Now draw a line with rational slope $$m$$ through $$(-1,0)$$:
 
-$$
-y=m(x+1).
-$$
+   $$
+   y=m(x+1).
+   $$
 
-$$(A)$$ Substitute $$y=m(x+1)$$ into $$x^2+y^2=1$$ and show that the line intersects the unit circle at $$(-1,0)$$ and one other point.
+   $$(A)$$ Substitute $$y=m(x+1)$$ into $$x^2+y^2=1$$ and show that the line intersects the unit circle at $$(-1,0)$$ and one other point.
 
-$$(B)$$ Find the coordinates of the second intersection point in terms of $$m$$.
+   $$(B)$$ Find the coordinates of the second intersection point in terms of $$m$$.
 
-$$(C)$$ Explain why every rational value of $$m$$ gives a rational point on the unit circle.
+   $$(C)$$ Explain why every rational value of $$m$$ gives a rational point on the unit circle.
 
-$$(D)$$ Use your formula to find a rational point on the unit circle when $$m=\frac23$$, then interpret that point as $$(\cos\theta,\sin\theta)$$ for some angle $$\theta$$.
+   $$(D)$$ Use your formula to find a rational point on the unit circle when $$m=\frac23$$, then interpret that point as $$(\cos\theta,\sin\theta)$$ for some angle $$\theta$$.
 
-$$(E)$$ Why does this method not produce the point $$(-1,0)$$ as the second intersection point? What slope would be needed to reach the point $$(1,0)$$?
+   $$(E)$$ Why does this method not produce the point $$(-1,0)$$ as the second intersection point? What slope would be needed to reach the point $$(1,0)$$?
 
 ---
 

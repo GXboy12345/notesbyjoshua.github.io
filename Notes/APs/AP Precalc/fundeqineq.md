@@ -643,23 +643,23 @@ which simplifies back to $$y=x^3$$.
 15. Determine the symmetries of both graphs: $$f(x)=\dfrac{x^2}{x^2+1}$$ and $$g(x)=x\lvert x\rvert$$. For each, decide whether the graph has $$y$$-axis symmetry, $$x$$-axis symmetry, origin symmetry, or none.
 16. (Bonus, Markov equations)
 
-Our goal is to find all positive integer solutions $$(x,y)$$ to
+   Our goal is to find all positive integer solutions $$(x,y)$$ to
 
-$$
-x^2+y^2+1=3xy.
-$$
+   $$
+   x^2+y^2+1=3xy.
+   $$
 
-This is a small version of a famous family of Diophantine equations (equations with positive integer solutions) known as Markov equations.
+   This is a small version of a famous family of Diophantine equations (equations with positive integer solutions) known as Markov equations.
 
-$$(A)$$ Find the solutions with $$y=1$$.
+   $$(A)$$ Find the solutions with $$y=1$$.
 
-$$(B)$$ Treat the equation as a quadratic in $$x$$. If $$x$$ is one root, use Vieta's formulas to find the other root $$x'$$.
+   $$(B)$$ Treat the equation as a quadratic in $$x$$. If $$x$$ is one root, use Vieta's formulas to find the other root $$x'$$.
 
-$$(C)$$ Suppose $$(x,y)$$ is a positive integer solution with $$x\ge y\ge 2$$. Prove that the other root $$x'$$ is a positive integer and that $$x'<y$$.
+   $$(C)$$ Suppose $$(x,y)$$ is a positive integer solution with $$x\ge y\ge 2$$. Prove that the other root $$x'$$ is a positive integer and that $$x'<y$$.
 
-$$(D)$$ Explain why repeatedly replacing the larger coordinate by the smaller Vieta root must eventually reach a solution with one coordinate equal to $$1$$.
+   $$(D)$$ Explain why repeatedly replacing the larger coordinate by the smaller Vieta root must eventually reach a solution with one coordinate equal to $$1$$.
 
-$$(E)$$ Reverse the process to describe all positive integer solutions.
+   $$(E)$$ Reverse the process to describe all positive integer solutions.
 
 ---
 

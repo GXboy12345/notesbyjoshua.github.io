@@ -21,7 +21,7 @@ $$
 This is the **Law of Sines**. It is useful when a triangle has an angle-side opposite pair, especially in the following cases:
 
 - **ASA** or **AAS**, when two angles and one side are known.
-- **ASS**, when two sides and a non-included angle are known.
+- **SSA**, when two sides and a non-included angle are known.
 
 The area of a triangle can also be written using two sides and the included angle:
 
@@ -248,7 +248,7 @@ $$
 
 <div class="theorem-box" markdown="1">
 
-**Example.** If $$b=7$$, $$c=10$$, and $$A=60^\circ$$,, find side $$a$$.
+**Example.** If $$b=7$$, $$c=10$$, and $$A=60^\circ$$, find side $$a$$.
 
 By Law of Cosines,
 
@@ -283,29 +283,29 @@ Geometrically, a vector is drawn as a directed line segment. The starting point 
 The magnitude of vector $$\overrightarrow{PQ}$$ is the length of the directed segment:
 
 $$
-\left|\overrightarrow{PQ}\right|.
+\left\lvert \overrightarrow{PQ}\right \rvert.
 $$
 
 Two vectors are equal if they have the same magnitude and the same direction, even if they are drawn in different locations. Basically, they are the same vector just translated.
 
 ### Components
 
-If a vector has magnitude $$|\mathbf v|$$ and direction angle $$\theta$$, then its horizontal and vertical components are
+If a vector has magnitude $$\lvert \mathbf v \rvert$$ and direction angle $$\theta$$, then its horizontal and vertical components are
 
 $$
-v_x=|\mathbf v|\cos\theta
+v_x=\lvert \mathbf v \rvert\cos\theta
 $$
 
 and
 
 $$
-v_y=|\mathbf v|\sin\theta.
+v_y=\lvert \mathbf v\rvert \sin\theta.
 $$
 
 Thus,
 
 $$
-\mathbf v=\langle |\mathbf v|\cos\theta,|\mathbf v|\sin\theta\rangle.
+\mathbf v=\langle \lvert \mathbf v \rvert \cos\theta, \lvert \mathbf v \rvert\sin\theta\rangle.
 $$
 
 <div class="theorem-box" markdown="1">
@@ -360,9 +360,9 @@ but the quadrant of the vector must be considered.
 
 <div class="theorem-box" markdown="1">
 
-**Example.** A force has magnitude $$6.34$$ Newtons and direction angle $$175^\circ$$.
+**Example.**  A force has magnitude $$6.34$$ Newtons and direction angle $$175^\circ$$. Find the corresponding force vector.
 
-Its components are
+The components of the vector are
 
 $$
 F_x=6.34\cos175^\circ\approx -6.32
@@ -453,7 +453,7 @@ $$
 k\mathbf u=\langle ku_1,ku_2\rangle.
 $$
 
-The magnitude changes by a factor of $$|k|$$:
+The magnitude changes by a factor of $$\lvert k \rvert$$:
 
 $$
 \lvert k\mathbf u \rvert = \lvert k \rvert \lvert \mathbf u \rvert.
@@ -523,7 +523,37 @@ $$
 \cos\theta=\frac{\mathbf A\cdot \mathbf B}{\lvert \mathbf A \rvert \lvert \mathbf B \rvert}.
 $$
 
-The dot product is a method of multiplication of two vectors, and always returns a *scalar*. Another form is the cross product, which will not be taught here.
+The dot product is a method of multiplication of two vectors, and always returns a *scalar*. Another form of vector multiplication is the cross product, which will not be taught here.
+
+Useful vector formulas that follow from the dot product include
+
+$$
+\mathbf v\cdot \mathbf v=|\mathbf v|^2,
+$$
+
+so a vector dotted with itself gives the square of its magnitude. Also,
+
+$$
+|\mathbf v|=\sqrt{\mathbf v\cdot \mathbf v}.
+$$
+
+For two nonzero vectors $$\mathbf A$$ and $$\mathbf B$$,
+
+$$
+\mathbf A\perp \mathbf B\quad \text{if and only if}\quad \mathbf A\cdot \mathbf B=0.
+$$
+
+The scalar projection of $$\mathbf A$$ onto $$\mathbf B$$ is
+
+$$
+\operatorname{comp}_{\mathbf B}\mathbf A=\frac{\mathbf A\cdot \mathbf B}{|\mathbf B|},
+$$
+
+and the vector projection of $$\mathbf A$$ onto $$\mathbf B$$ is
+
+$$
+\operatorname{proj}_{\mathbf B}\mathbf A=\frac{\mathbf A\cdot \mathbf B}{|\mathbf B|^2}\mathbf B.
+$$
 
 <div class="theorem-box" markdown="1">
 
@@ -638,7 +668,7 @@ Parametric equations describe both:
 
 To eliminate the parameter, solve one equation for $$t$$ and substitute into the other equation.
 
-If
+For example, if
 
 $$
 x=3t,
@@ -652,7 +682,7 @@ $$
 
 Substituting this into the equation for $$y$$ gives a rectangular equation relating $$x$$ and $$y$$ directly.
 
-The rectangular equation may not show the full behavior of the parametric curve, because the parameter can restrict the domain or determine the direction of travel.
+The rectangular equation may not show the full behavior of the parametric curve, because the parameter can restrict the domain or determine the direction of travel. Always indicate the allowed domain for $$t$$.
 
 <div class="theorem-box" markdown="1">
 
@@ -716,42 +746,6 @@ $$
 x^2+y^2=a^2.
 $$
 
-<div class="theorem-box" markdown="1">
-
-**Why this traces a circle.** If
-
-$$
-x=a\cos t,\qquad y=a\sin t,
-$$
-
-then
-
-$$
-x^2+y^2=(a\cos t)^2+(a\sin t)^2.
-$$
-
-Factor out $$a^2$$:
-
-$$
-x^2+y^2=a^2(\cos^2t+\sin^2t).
-$$
-
-Since
-
-$$
-\cos^2t+\sin^2t=1,
-$$
-
-we get
-
-$$
-x^2+y^2=a^2.
-$$
-
-As $$t$$ increases from $$0$$ to $$2\pi$$, the point travels once around the circle counterclockwise.
-
-</div>
-
 For an ellipse centered at the origin:
 
 $$
@@ -765,6 +759,12 @@ $$
 $$
 
 Switching sine and cosine, or making one coefficient negative, can change where the graph starts and which direction it is traced, but the rectangular equation may stay the same.
+
+For trig parametrizations, there are many simple steps to eliminate the parameter:
+
+1. Isolate the two trig expressions (e.g. $$\cos t = \frac{x}{a}$$).
+2. Use a version of the Pythagoren Identity (e.g. $$\cos^2 t + \sin^2 t = 1$$) to combine the two equations
+3. State any domain restrictions on the graph and indicate orientation/direction.
 
 <div class="theorem-box" markdown="1">
 
@@ -932,8 +932,8 @@ $$
 Similarly, since $$\tan\theta$$ represents the slope of the line connecting the origin to the point,
 
 $$
-\tan\theta=\frac{y}{x}
-$$.
+\tan\theta=\frac{y}{x}.
+$$
 
 </div>
 
@@ -1112,6 +1112,8 @@ $$
 
 </div>
 
+Alternatively, you can write the circle equation (centered at the origin) as $$r=a$$, which represents the set of all points $$a$$ away from origin (aka a circle).
+
 A line through the pole has the form
 
 $$
@@ -1197,6 +1199,8 @@ To graph one:
 3. Watch for negative $$r$$ values.
 4. Use symmetry and periodicity to complete the curve.
 
+However, it is also very helpful to know some of the most common types of polar curves.
+
 ### Spirals
 
 An equation like
@@ -1209,13 +1213,9 @@ creates a spiral. As $$\theta$$ increases, $$r$$ changes, so the point moves far
 
 <div class="theorem-box" markdown="1">
 
-**Example.** For
+**Example.** Graph $$r=\frac{\theta}{\pi},$$
 
-$$
-r=\frac{\theta}{\pi},
-$$
-
-the radius grows as $$\theta$$ grows:
+The radius grows as $$\theta$$ grows:
 
 $$
 \begin{array}{c|ccccc}
@@ -1227,7 +1227,9 @@ $$
 
 So the graph spirals outward from the pole.
 
-**ADD IMAGE**
+A graph (with the helper graph) of the function is shown below:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/polargraph1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 </div>
 
@@ -1265,7 +1267,9 @@ the graph has an inner loop.
 
 If the equation uses sine, the main symmetry is usually vertical. If the equation uses cosine, the main symmetry is usually horizontal.
 
-**ADD CARDIOD VS. LIMACON VS. LIMACON WITH LOOP**
+A list of all the limacons are shown below (note that a circle is technically a limacon as well):
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/limacon.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -1279,9 +1283,11 @@ $$
 
 the graph is a limacon with an inner loop.
 
-Because the equation uses cosine, the graph has symmetry across the polar axis.
+Since the equation uses cosine, the graph has symmetry across the polar axis.
 
-**ADD IMAGE**
+A graph (with the helper graph) of the function is shown below:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/polargraph2.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 </div>
 
@@ -1336,11 +1342,13 @@ For even $$n$$, the negative radius portions trace new petals, so there are $$2n
 
 **Example.** Draw the rose curve $$r=4\sin(3\theta)$$.
 
-For this curve, the value of $$n$$ is $$3$$, which is odd. Therefore, the rose curve has $$3$$ petals, and each petal has length $$4$$.
+For this curve, the value of $$n$$ is $$2$$, which is odd. Therefore, the rose curve has $$3$$ petals, and each petal has length $$2$$.
 
 To draw the rose, start at $$\theta=0$$ (point $$0,0$$) and start plotting points along a polar graph. Once you draw one petal, repeat for the other two petals and make sure they are evenly spread out.
 
-**ADD IMAGE**
+A graph (with the helper graph) of the function is shown below:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/polargraph3.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 </div>
 
@@ -1370,7 +1378,9 @@ The graph is a lemniscate. Since it uses $$\sin(2\theta)$$, its loops lie along 
 
 An image of the lemniscate is shown below:
 
-**ADD IAMGE**
+A graph (with the helper graph) of the function is shown below:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/polargraph4.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 </div>
 
@@ -1927,12 +1937,6 @@ $$
 
 </div>
 
-<div class="theorem-box" markdown="1">
-
-**Extension.** Prove that the solutions to $$w^n=z$$ lie on a regular $$n$$-sided polygon that is inscribed in a circle with radius $$\lvert z \rvert$$.
-
-</div>
-
 ### Roots of unity
 
 The **$$n$$th roots of unity** are the complex numbers that solve
@@ -2075,7 +2079,7 @@ $$.
 
 <div class="theorem-box" markdown="1">
 
-**Extension.** Prove that the product of the $$n$$ roots of unity is $$(-1)^{n+1}. (Hint: Use dot product!)
+**Extension.** Prove that the product of the $$n$$ roots of unity is $$(-1)^{n+1}$$. (Hint: Use dot product!)
 
 </div>
 
@@ -2115,91 +2119,833 @@ So the $$n$$ roots of any nonzero complex number also form a regular $$n$$-gon c
 4. Prove that for any triangle with side lengths $$a,b,c$$ and semiperimeter $$s=\frac12(a+b+c)$$, $$\sin^2\left(\frac C2\right)=\frac{(s-a)(s-b)}{ab}.$$
 5. Let $$\mathbf u=\langle -2,1\rangle$$ and $$\mathbf v=\langle -5,3\rangle$$.
 
-$$(A)$$ Find $$2\mathbf u-3\mathbf v$$.
+   $$(A)$$ Find $$2\mathbf u-3\mathbf v$$.
 
-$$(B)$$ Find the angle between $$\mathbf u$$ and $$\mathbf v$$ to the nearest degree.
+   $$(B)$$ Find the angle between $$\mathbf u$$ and $$\mathbf v$$ to the nearest degree.
 
-$$(C)$$ Find a unit vector in the direction of $$\mathbf u+\mathbf v$$.
+   $$(C)$$ Find a unit vector in the direction of $$\mathbf u+\mathbf v$$.
 
 6. A plane is heading $$40^\circ$$ east of north at $$120$$ mph. A wind blows directly from the east at $$10$$ mph. Find the ground-speed vector, the ground speed, and the drift angle from the plane's intended heading.
 7. A force of $$18$$ Newtons acts in the direction $$235^\circ$$ from the positive $$x$$-axis. Resolve the force into horizontal and vertical components. Then find the magnitude and direction of the vector obtained by adding this force to $$\langle 12,-5\rangle$$.
 8. A particle moves according to $$x(t)=2\cos t-\sin(2t),\qquad y(t)=6\sin t,$$ for $$0\le t\le 2\pi$$.
 
-$$(A)$$ Find all exact $$x$$-intercepts.
+   $$(A)$$ Find all exact $$x$$-intercepts.
 
-$$(B)$$ Find the particle's position when $$t=\frac{\pi}{2}$$ and when $$t=\frac{7\pi}{6}$$.
+   $$(B)$$ Find the particle's position when $$t=\frac{\pi}{2}$$ and when $$t=\frac{7\pi}{6}$$.
 
-$$(C)$$ Write a formula for the particle's distance from the origin as a function of $$t$$.
+   $$(C)$$ Write a formula for the particle's distance from the origin as a function of $$t$$.
 
 9. Eliminate the parameter and describe the curve, including any domain restrictions and orientation: $$x=e^t,\qquad y=e^{2t}-3,\qquad -\ln2\le t\le \ln3.$$
-
 10. The curve $$x=4\cos t,\qquad y=-2\sin t$$ is traced for $$0\le t\le 2\pi$$. Eliminate the parameter, state where the curve starts, and determine the direction (clockwise or counterclockwise) the curve is traced in.
-
 11. Graph the polar curve $$r=\frac{2\theta}{\pi}$$ for $$-4\pi\le\theta\le 4\pi$$.
 12. Convert each equation to rectangular form and identify the graph:
 
-$$(A)$$ $$r=6\cos\theta-8\sin\theta$$
+   $$(A)$$ $$r=6\cos\theta-8\sin\theta$$
 
-$$(B)$$ $$r\sin\left(\theta+\frac{\pi}{3}\right)=4$$
+   $$(B)$$ $$r\sin\left(\theta+\frac{\pi}{3}\right)=4$$
 
-$$(C)$$ $$r^2=16\cos(2\theta)$$
+   $$(C)$$ $$r^2=16\cos(2\theta)$$
 
 13. Classify each polar curve as a cardioid, limacon, rose curve, lemniscate, circle, line, or spiral. For rose curves, state the number of petals. Graph each of the curves.
 
-$$(A)$$ $$r=3-3\sin\theta$$
+   $$(A)$$ $$r=3-3\sin\theta$$
 
-$$(B)$$ $$r=2+5\cos\theta$$
+   $$(B)$$ $$r=2+5\cos\theta$$
 
-$$(C)$$ $$r=4\sin(3\theta)$$
+   $$(C)$$ $$r=4\sin(3\theta)$$
 
-$$(D)$$ $$r^2=25\sin(2\theta)$$
+   $$(D)$$ $$r^2=25\sin(2\theta)$$
 
 14. Let $$z_1=-2+2\sqrt3i,\qquad z_2=1-i.$$
 
-$$(A)$$ Write both numbers in polar form.
+   $$(A)$$ Write both numbers in polar form.
 
-$$(B)$$ Write both numbers in exponential form.
+   $$(B)$$ Write both numbers in exponential form.
 
-$$(C)$$ Compute $$z_1z_2$$ in polar form and rectangular form.
+   $$(C)$$ Compute $$z_1z_2$$ in polar form and rectangular form.
 
 15. Use De Moivre's Theorem to find all fourth roots of $$16\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right).$$
-
 16. (Extension, Brahmagupta's formula)
 
-Let $$ABCD$$ be a cyclic quadrilateral, meaning all four vertices lie on one circle. Let its side lengths be $$a,b,c,d$$, and let its semiperimeter be
+   Let $$ABCD$$ be a cyclic quadrilateral, meaning all four vertices lie on one circle. Let its side lengths be $$a,b,c,d$$, and let its semiperimeter be
 
-$$
-s=\frac12(a+b+c+d).
-$$
+   $$
+   s=\frac12(a+b+c+d).
+   $$
 
-The goal is to prove **Brahmagupta's formula**:
+   The goal is to prove **Brahmagupta's formula**:
 
-$$
-K=\sqrt{(s-a)(s-b)(s-c)(s-d)},
-$$
+   $$
+   K=\sqrt{(s-a)(s-b)(s-c)(s-d)},
+   $$
 
-where $$K$$ is the area of the cyclic quadrilateral.
+   where $$K$$ is the area of the cyclic quadrilateral.
 
-$$(A)$$ Draw diagonal $$AC$$. Let $$\angle ABC=B$$ and $$\angle ADC=D$$. Use triangle area formulas to show that $$K=\frac12ab\sin B+\frac12cd\sin D.$$
+   $$(A)$$ Draw diagonal $$AC$$. Let $$\angle ABC=B$$ and $$\angle ADC=D$$. Use triangle area formulas to show that $$K=\frac12ab\sin B+\frac12cd\sin D.$$
 
-$$(B)$$ Use $$D=180^\circ-B$$ to rewrite the area as
+   $$(B)$$ Use $$D=180^\circ-B$$ to rewrite the area as
 
-$$
-K=\frac12(ab+cd)\sin B.
-$$
+   $$
+   K=\frac12(ab+cd)\sin B.
+   $$
 
-$$(C)$$ Apply the Law of Cosines to triangles $$ABC$$ and $$ADC$$ to show that
+   $$(C)$$ Apply the Law of Cosines to triangles $$ABC$$ and $$ADC$$ to show that
 
-$$
-2ab\cos B=a^2+b^2-c^2-d^2+2cd\cos D.
-$$
+   $$
+   2ab\cos B=a^2+b^2-c^2-d^2+2cd\cos D.
+   $$
 
-$$(D)$$ Use $$\cos D=-\cos B$$ to solve for $$\cos B$$, then combine this with $$K=\frac12(ab+cd)\sin B$$ and $$\sin^2B=1-\cos^2B$$ to prove
+   $$(D)$$ Use $$\cos D=-\cos B$$ to solve for $$\cos B$$, then combine this with $$K=\frac12(ab+cd)\sin B$$ and $$\sin^2B=1-\cos^2B$$ to prove
 
-$$
-K^2=(s-a)(s-b)(s-c)(s-d).
-$$
+   $$
+   K^2=(s-a)(s-b)(s-c)(s-d).
+   $$
 
 ---
 
 ## Solutions
+
+1. By the Law of Sines,
+
+   $$
+   \frac{\sin B}{10}=\frac{\sin 60^\circ}{9},
+   $$
+
+   so
+
+   $$
+   \sin B=\frac{10\sin 60^\circ}{9}=\frac{5\sqrt3}{9}.
+   $$
+
+   This gives two possible angles:
+
+   $$
+   B\approx 74.2^\circ\quad \text{or}\quad B\approx 105.8^\circ.
+   $$
+
+   If $$B\approx 74.2^\circ$$, then
+
+   $$
+   C\approx 45.8^\circ,\qquad c\approx 7.45\text{ cm}.
+   $$
+
+   If $$B\approx 105.8^\circ$$, then
+
+   $$
+   C\approx 14.2^\circ,\qquad c\approx 2.55\text{ cm}.
+   $$
+
+   Therefore, there are **two possible triangles**.
+
+2. The plane-to-ship distance is $$5120$$ ft, and the angle of depression to the ship is $$17^\circ$$. So the plane's height is
+
+   $$
+   h=5120\sin 17^\circ\approx 1496.94\text{ ft}.
+   $$
+
+   The horizontal distance from the plane to the ship is
+
+   $$
+   5120\cos 17^\circ\approx 4896.28\text{ ft}.
+   $$
+
+   The horizontal distance from the plane to the submarine is
+
+   $$
+   \frac{h}{\tan 24^\circ}\approx 3362.19\text{ ft}.
+   $$
+
+   Assuming the ship and submarine are on the same side of the plane, their distance apart is
+
+   $$
+   4896.28-3362.19\approx 1534.09\text{ ft}.
+   $$
+
+3. Place town $$A$$ at $$(0,0)$$ and town $$B$$ at $$(1.4,0)$$. The bearing $$S22^\circ E$$ from $$A$$ points down and right, while $$S43^\circ W$$ from $$B$$ points down and left.
+
+   Solving the two bearing lines gives the signal at approximately
+
+   $$
+   (0.423,-1.047).
+   $$
+
+   Therefore,
+
+   $$
+   AS\approx 1.13\text{ miles},\qquad BS\approx 1.43\text{ miles}.
+   $$
+
+4. Use the half-angle identity:
+
+   $$
+   \sin^2\left(\frac C2\right)=\frac{1-\cos C}{2}.
+   $$
+
+   By the Law of Cosines,
+
+   $$
+   \cos C=\frac{a^2+b^2-c^2}{2ab}.
+   $$
+
+   Substitute:
+
+   $$
+   \sin^2\left(\frac C2\right)
+   =\frac{1}{2}\left(1-\frac{a^2+b^2-c^2}{2ab}\right)
+   =\frac{c^2-(a-b)^2}{4ab}.
+   $$
+
+   Factor the numerator:
+
+   $$
+   c^2-(a-b)^2=(c-a+b)(c+a-b).
+   $$
+
+   Since $$s=\frac12(a+b+c)$$,
+
+   $$
+   c-a+b=2(s-a),\qquad c+a-b=2(s-b).
+   $$
+
+   Thus,
+
+   $$
+   \sin^2\left(\frac C2\right)=\frac{(s-a)(s-b)}{ab}.
+   $$
+
+5. We have
+
+   $$
+   \mathbf u=\langle -2,1\rangle,\qquad \mathbf v=\langle -5,3\rangle.
+   $$
+
+   $$(A)$$
+
+   $$
+   2\mathbf u-3\mathbf v
+   =\langle -4,2\rangle-\langle -15,9\rangle
+   =\langle 11,-7\rangle.
+   $$
+
+   $$(B)$$
+
+   $$
+   \mathbf u\cdot \mathbf v=(-2)(-5)+(1)(3)=13.
+   $$
+
+   Also,
+
+   $$
+   |\mathbf u|=\sqrt5,\qquad |\mathbf v|=\sqrt{34}.
+   $$
+
+   So
+
+   $$
+   \cos\theta=\frac{13}{\sqrt5\sqrt{34}}=\frac{13}{\sqrt{170}}.
+   $$
+
+   Therefore,
+
+   $$
+   \theta\approx 4^\circ.
+   $$
+
+   $$(C)$$ Since
+
+   $$
+   \mathbf u+\mathbf v=\langle -7,4\rangle,
+   $$
+
+   a unit vector in that direction is
+
+   $$
+   \frac{\langle -7,4\rangle}{\sqrt{65}}
+   =\left\langle \frac{-7}{\sqrt{65}},\frac{4}{\sqrt{65}}\right\rangle.
+   $$
+
+6. Let east be positive $$x$$ and north be positive $$y$$. A heading of $$40^\circ$$ east of north at $$120$$ mph has velocity
+
+   $$
+   \langle 120\sin40^\circ,120\cos40^\circ\rangle.
+   $$
+
+   A wind directly from the east blows west, so its vector is
+
+   $$
+   \langle -10,0\rangle.
+   $$
+
+   The ground-speed vector is
+
+   $$
+   \langle 120\sin40^\circ-10,120\cos40^\circ\rangle
+   \approx \langle 67.13,91.93\rangle.
+   $$
+
+   The ground speed is
+
+   $$
+   \sqrt{67.13^2+91.93^2}\approx 113.83\text{ mph}.
+   $$
+
+   The actual direction is about
+
+   $$
+   \tan^{-1}\left(\frac{67.13}{91.93}\right)\approx 36.1^\circ
+   $$
+
+   east of north. Since the intended heading was $$40^\circ$$ east of north, the drift angle is about
+
+   $$
+   40^\circ-36.1^\circ=3.9^\circ
+   $$
+
+   west of the intended heading.
+
+7. The force components are
+
+   $$
+   \langle 18\cos235^\circ,18\sin235^\circ\rangle
+   \approx \langle -10.32,-14.74\rangle.
+   $$
+
+   Add $$\langle 12,-5\rangle$$:
+
+   $$
+   \langle -10.32,-14.74\rangle+\langle 12,-5\rangle
+   \approx \langle 1.68,-19.74\rangle.
+   $$
+
+   The magnitude is
+
+   $$
+   \sqrt{1.68^2+(-19.74)^2}\approx 19.82.
+   $$
+
+   The direction angle is approximately
+
+   $$
+   274.9^\circ.
+   $$
+
+8. The particle has
+
+   $$
+   x(t)=2\cos t-\sin(2t),\qquad y(t)=6\sin t.
+   $$
+
+   $$(A)$$ Use $$\sin(2t)=2\sin t\cos t$$:
+
+   $$
+   x(t)=2\cos t-2\sin t\cos t=2\cos t(1-\sin t).
+   $$
+
+   So $$x(t)=0$$ when
+
+   $$
+   \cos t=0\quad \text{or}\quad \sin t=1.
+   $$
+
+   On $$0\le t\le 2\pi$$, this gives
+
+   $$
+   t=\frac{\pi}{2},\frac{3\pi}{2}.
+   $$
+
+   The exact $$x$$-intercepts are
+
+   $$
+   (0,6)\quad \text{and}\quad (0,-6).
+   $$
+
+   $$(B)$$ When $$t=\frac{\pi}{2}$$,
+
+   $$
+   (x,y)=(0,6).
+   $$
+
+   When $$t=\frac{7\pi}{6}$$,
+
+   $$
+   x=2\cos\frac{7\pi}{6}-\sin\frac{7\pi}{3}
+   =-\sqrt3-\frac{\sqrt3}{2}
+   =-\frac{3\sqrt3}{2},
+   $$
+
+   and
+
+   $$
+   y=6\sin\frac{7\pi}{6}=-3.
+   $$
+
+   So the position is
+
+   $$
+   \left(-\frac{3\sqrt3}{2},-3\right).
+   $$
+
+   $$(C)$$ The distance from the origin is
+
+   $$
+   d(t)=\sqrt{x(t)^2+y(t)^2}.
+   $$
+
+   Therefore,
+
+   $$
+   d(t)=\sqrt{(2\cos t-\sin(2t))^2+36\sin^2t}.
+   $$
+
+9. Since
+
+   $$
+   x=e^t,
+   $$
+
+   we have
+
+   $$
+   t=\ln x.
+   $$
+
+   Then
+
+   $$
+   y=e^{2t}-3=(e^t)^2-3=x^2-3.
+   $$
+
+   Because
+
+   $$
+   -\ln2\le t\le \ln3,
+   $$
+
+   the domain is
+
+   $$
+   \frac12\le x\le 3.
+   $$
+
+   The curve is the parabola
+
+   $$
+   y=x^2-3
+   $$
+
+   restricted to $$\frac12\le x\le 3$$. As $$t$$ increases, $$x=e^t$$ increases, so the curve moves from
+
+   $$
+   \left(\frac12,-\frac{11}{4}\right)
+   $$
+
+   to
+
+   $$
+   (3,6).
+   $$
+
+10. From
+
+   $$
+   x=4\cos t,
+   $$
+
+   we get
+
+   $$
+   \cos t=\frac{x}{4}.
+   $$
+
+   From
+
+   $$
+   y=-2\sin t,
+   $$
+
+   we get
+
+   $$
+   \sin t=-\frac{y}{2}.
+   $$
+
+   Using $$\cos^2t+\sin^2t=1$$,
+
+   $$
+   \frac{x^2}{16}+\frac{y^2}{4}=1.
+   $$
+
+   This is an ellipse. At $$t=0$$, the curve starts at
+
+   $$
+   (4,0).
+   $$
+
+   For small positive $$t$$, $$y=-2\sin t$$ is negative, so the curve moves downward from $$(4,0)$$. Therefore, the ellipse is traced **clockwise**.
+
+11. This is an Archimedean spiral:
+
+   $$
+   r=\frac{2\theta}{\pi}.
+   $$
+
+   As $$\theta$$ increases from $$-4\pi$$ to $$4\pi$$, $$r$$ increases from $$-8$$ to $$8$$. Negative $$r$$ values are plotted in the opposite direction from the angle $$\theta$$.
+
+   **ADD IMAGE HERE**
+
+12. $$(A)$$
+
+   $$
+   r=6\cos\theta-8\sin\theta.
+   $$
+
+   Multiply by $$r$$:
+
+   $$
+   r^2=6r\cos\theta-8r\sin\theta.
+   $$
+
+   Since $$r^2=x^2+y^2$$, $$r\cos\theta=x$$, and $$r\sin\theta=y$$,
+
+   $$
+   x^2+y^2=6x-8y.
+   $$
+
+   Complete the square:
+
+   $$
+   (x-3)^2+(y+4)^2=25.
+   $$
+
+   This is a circle centered at $$(3,-4)$$ with radius $$5$$.
+
+   $$(B)$$
+
+   $$
+   r\sin\left(\theta+\frac{\pi}{3}\right)=4.
+   $$
+
+   Expand:
+
+   $$
+   r\left(\sin\theta\cos\frac{\pi}{3}+\cos\theta\sin\frac{\pi}{3}\right)=4.
+   $$
+
+   So
+
+   $$
+   \frac12y+\frac{\sqrt3}{2}x=4.
+   $$
+
+   Therefore,
+
+   $$
+   \sqrt3x+y=8.
+   $$
+
+   This is a line.
+
+   $$(C)$$
+
+   $$
+   r^2=16\cos(2\theta).
+   $$
+
+   Since
+
+   $$
+   \cos(2\theta)=\cos^2\theta-\sin^2\theta=\frac{x^2-y^2}{r^2},
+   $$
+
+   we get
+
+   $$
+   r^2=16\cdot \frac{x^2-y^2}{r^2}.
+   $$
+
+   Since $$r^2=x^2+y^2$$,
+
+   $$
+   (x^2+y^2)^2=16(x^2-y^2).
+   $$
+
+   This is a lemniscate.
+
+13. $$(A)$$
+
+   $$
+   r=3-3\sin\theta
+   $$
+
+   is a **cardioid**. It has a cusp when $$\sin\theta=1$$, so the cusp points upward and the larger part opens downward.
+
+   **ADD IMAGE HERE**
+
+   $$(B)$$
+
+   $$
+   r=2+5\cos\theta
+   $$
+
+   is a **limacon with an inner loop**, since $$5>2$$. Because it uses cosine, it is symmetric about the polar axis.
+
+   **ADD IMAGE HERE**
+
+   $$(C)$$
+
+   $$
+   r=4\sin(3\theta)
+   $$
+
+   is a **rose curve**. Since $$3$$ is odd, it has $$3$$ petals.
+
+   **ADD IMAGE HERE**
+
+   $$(D)$$
+
+   $$
+   r^2=25\sin(2\theta)
+   $$
+
+   is a **lemniscate**. Since it uses $$\sin(2\theta)$$, its loops lie along the diagonal directions $$\theta=\frac{\pi}{4}$$ and $$\theta=\frac{5\pi}{4}$$.
+
+   **ADD IMAGE HERE**
+
+14. $$(A)$$ For
+
+   $$
+   z_1=-2+2\sqrt3i,
+   $$
+
+   the magnitude is
+
+   $$
+   |z_1|=\sqrt{(-2)^2+(2\sqrt3)^2}=4.
+   $$
+
+   Since $$z_1$$ is in Quadrant II,
+
+   $$
+   \theta_1=120^\circ=\frac{2\pi}{3}.
+   $$
+
+   So
+
+   $$
+   z_1=4\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right).
+   $$
+
+   For
+
+   $$
+   z_2=1-i,
+   $$
+
+   the magnitude is $$\sqrt2$$ and the angle is $$-45^\circ=-\frac{\pi}{4}$$. So
+
+   $$
+   z_2=\sqrt2\left(\cos\left(-\frac{\pi}{4}\right)+i\sin\left(-\frac{\pi}{4}\right)\right).
+   $$
+
+   $$(B)$$ In exponential form,
+
+   $$
+   z_1=4e^{2\pi i/3},\qquad z_2=\sqrt2e^{-\pi i/4}.
+   $$
+
+   $$(C)$$ Multiply magnitudes and add angles:
+
+   $$
+   z_1z_2=4\sqrt2e^{i(2\pi/3-\pi/4)}=4\sqrt2e^{5\pi i/12}.
+   $$
+
+   In polar form,
+
+   $$
+   z_1z_2=4\sqrt2\left(\cos\frac{5\pi}{12}+i\sin\frac{5\pi}{12}\right).
+   $$
+
+   In rectangular form,
+
+   $$
+   z_1z_2=(2\sqrt3-2)+(2\sqrt3+2)i.
+   $$
+
+15. Write the complex number as
+
+   $$
+   16\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right).
+   $$
+
+   The fourth roots have magnitude
+
+   $$
+   \sqrt[4]{16}=2.
+   $$
+
+   Their angles are
+
+   $$
+   \frac{\frac{2\pi}{3}+2\pi k}{4}
+   =\frac{\pi}{6}+\frac{k\pi}{2},
+   $$
+
+   where $$k=0,1,2,3$$. Therefore the roots are
+
+   $$
+   2\operatorname{cis}\frac{\pi}{6},\quad
+   2\operatorname{cis}\frac{2\pi}{3},\quad
+   2\operatorname{cis}\frac{7\pi}{6},\quad
+   2\operatorname{cis}\frac{5\pi}{3}.
+   $$
+
+   In rectangular form, these are
+
+   $$
+   \sqrt3+i,\quad -1+\sqrt3i,\quad -\sqrt3-i,\quad 1-\sqrt3i.
+   $$
+
+16. $$(A)$$ Draw diagonal $$AC$$. The diagonal splits the quadrilateral into triangles $$ABC$$ and $$ADC$$. Using $$K=\frac12ab\sin C$$ for triangle area,
+
+   $$
+   [ABC]=\frac12ab\sin B
+   $$
+
+   and
+
+   $$
+   [ADC]=\frac12cd\sin D.
+   $$
+
+   Therefore,
+
+   $$
+   K=\frac12ab\sin B+\frac12cd\sin D.
+   $$
+
+   $$(B)$$ Since $$ABCD$$ is cyclic, opposite angles are supplementary:
+
+   $$
+   B+D=180^\circ.
+   $$
+
+   So
+
+   $$
+   D=180^\circ-B
+   $$
+
+   and
+
+   $$
+   \sin D=\sin(180^\circ-B)=\sin B.
+   $$
+
+   Therefore,
+
+   $$
+   K=\frac12ab\sin B+\frac12cd\sin B
+   =\frac12(ab+cd)\sin B.
+   $$
+
+   $$(C)$$ Apply the Law of Cosines to triangle $$ABC$$:
+
+   $$
+   AC^2=a^2+b^2-2ab\cos B.
+   $$
+
+   Apply the Law of Cosines to triangle $$ADC$$:
+
+   $$
+   AC^2=c^2+d^2-2cd\cos D.
+   $$
+
+   Set these equal:
+
+   $$
+   a^2+b^2-2ab\cos B=c^2+d^2-2cd\cos D.
+   $$
+
+   Rearranging gives
+
+   $$
+   2ab\cos B=a^2+b^2-c^2-d^2+2cd\cos D.
+   $$
+
+   $$(D)$$ Since $$D=180^\circ-B$$,
+
+   $$
+   \cos D=-\cos B.
+   $$
+
+   Substitute into the result from part $$(C)$$:
+
+   $$
+   2ab\cos B=a^2+b^2-c^2-d^2-2cd\cos B.
+   $$
+
+   So
+
+   $$
+   2(ab+cd)\cos B=a^2+b^2-c^2-d^2,
+   $$
+
+   and
+
+   $$
+   \cos B=\frac{a^2+b^2-c^2-d^2}{2(ab+cd)}.
+   $$
+
+   From part $$(B)$$,
+
+   $$
+   K=\frac12(ab+cd)\sin B.
+   $$
+
+   Square both sides:
+
+   $$
+   K^2=\frac14(ab+cd)^2\sin^2B.
+   $$
+
+   Use $$\sin^2B=1-\cos^2B$$:
+
+   $$
+   K^2=\frac14(ab+cd)^2\left(1-\left(\frac{a^2+b^2-c^2-d^2}{2(ab+cd)}\right)^2\right).
+   $$
+
+   Simplifying gives
+
+   $$
+   K^2=\frac{4(ab+cd)^2-(a^2+b^2-c^2-d^2)^2}{16}.
+   $$
+
+   This factors as
+
+   $$
+   K^2=\frac{(a+b+c-d)(a+b-c+d)(a-b+c+d)(-a+b+c+d)}{16}.
+   $$
+
+   Since
+
+   $$
+   s=\frac12(a+b+c+d),
+   $$
+
+   the four factors are
+
+   $$
+   2(s-d),\quad 2(s-c),\quad 2(s-b),\quad 2(s-a).
+   $$
+
+   Therefore,
+
+   $$
+   K^2=(s-a)(s-b)(s-c)(s-d),
+   $$
+
+   so
+
+   $$
+   K=\sqrt{(s-a)(s-b)(s-c)(s-d)}.
+   $$

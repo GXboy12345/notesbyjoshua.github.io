@@ -202,11 +202,11 @@ $$
 =\frac{\pi}{6}.
 $$
 
-Because $$A<0$$, the cosine graph is reflected over its midline.
+Since $$A<0$$, the cosine graph is reflected over its midline.
 
-The graph of the function is shown below:
+A graph with many key points is shown below:
 
-**ADD GRAPH**
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph6.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 </div>
 
@@ -354,7 +354,9 @@ x=-\frac{\pi}{8}-\frac{\pi}{4}=-\frac{3\pi}{8}
 x=-\frac{\pi}{8}+\frac{\pi}{4}=\frac{\pi}{8}.
 $$
 
-**ADD GRAPH**
+A graph with many key points is shown below:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph7.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 </div>
 
@@ -524,12 +526,29 @@ The other addition and subtraction formulas follow from this identity, even/odd 
 
 ### List of identities
 
-- $$\sin(A+B)=\sin A\cos B+\cos A\sin B$$
-- $$\sin(A-B)=\sin A\cos B-\cos A\sin B$$
-- $$\cos(A+B)=\cos A\cos B-\sin A\sin B$$
-- $$\cos(A-B)=\cos A\cos B+\sin A\sin B$$
-- $$\tan(A+B)=\frac{\tan A+\tan B}{1-\tan A\tan B}$$
-- $$\tan(A-B)=\frac{\tan A-\tan B}{1+\tan A\tan B}$$
+$$
+\sin(A+B)=\sin A\cos B+\cos A\sin B
+$$
+
+$$
+\sin(A-B)=\sin A\cos B-\cos A\sin B
+$$
+
+$$
+\cos(A+B)=\cos A\cos B-\sin A\sin B
+$$
+
+$$
+\cos(A-B)=\cos A\cos B+\sin A\sin B
+$$
+
+$$
+\tan(A+B)=\frac{\tan A+\tan B}{1-\tan A\tan B}
+$$
+
+$$
+\tan(A-B)=\frac{\tan A-\tan B}{1+\tan A\tan B}
+$$
 
 <div class="theorem-box" markdown="1">
 
@@ -1185,52 +1204,52 @@ $$
 14. Let $$x$$ and $$y$$ be real numbers such that $$\frac{\sin x}{\sin y} = 3$$ and $$\frac{\cos x}{\cos y} = \frac{1}{2}$$. The value of $$\frac{\sin 2x}{\sin 2y} + \frac{\cos 2x}{\cos 2y}$$ can be expressed in the form $$\frac{p}{q}$$, where $$p$$ and $$q$$ are relatively prime positive integers. Find $$p+q$$. (2014 AIME II)
 15. A tide height is modeled by a sinusoidal function of time. At $$t=2$$ hours, the tide is at a high of $$11$$ feet. At $$t=8$$ hours, the tide is at the next low of $$3$$ feet.
 
-$$(A)$$ Write a cosine model $$H(t)$$ for the tide height.
+   $$(A)$$ Write a cosine model $$H(t)$$ for the tide height.
 
-$$(B)$$ Find the period and midline.
+   $$(B)$$ Find the period and midline.
 
-$$(C)$$ Find the first time after $$t=2$$ when the tide height is $$9$$ feet.
+   $$(C)$$ Find the first time after $$t=2$$ when the tide height is $$9$$ feet.
 
-$$(D)$$ Sketch one full period of the tide model and label the high tide, low tide, midline, and the point where $$H(t)=9$$ first occurs after $$t=2$$.
+   $$(D)$$ Sketch one full period of the tide model and label the high tide, low tide, midline, and the point where $$H(t)=9$$ first occurs after $$t=2$$.
 
 16. (Bonus, Viète's formula for $$\pi$$)
 
-Let
+   Let
 
-$$
-a_1=\sqrt2
-$$
+   $$
+   a_1=\sqrt2
+   $$
 
-and define
+   and define
 
-$$
-a_{n+1}=\sqrt{2+a_n}.
-$$
+   $$
+   a_{n+1}=\sqrt{2+a_n}.
+   $$
 
-The nested radicals
+   The nested radicals
 
-$$
-\sqrt2,\quad \sqrt{2+\sqrt2},\quad \sqrt{2+\sqrt{2+\sqrt2}},\quad \ldots
-$$
+   $$
+   \sqrt2,\quad \sqrt{2+\sqrt2},\quad \sqrt{2+\sqrt{2+\sqrt2}},\quad \ldots
+   $$
 
-are connected to repeated half-angle identities.
+   are connected to repeated half-angle identities.
 
-$$(A)$$ Use the half-angle identity for cosine to show that
+   $$(A)$$ Use the half-angle identity for cosine to show that
 
-$$
-a_n=2\cos\left(\frac{\pi}{2^{n+1}}\right).
-$$
+   $$
+   a_n=2\cos\left(\frac{\pi}{2^{n+1}}\right).
+   $$
 
-$$(B)$$ Use part $$(A)$$ and the identity $$\sin(2x)=2\sin x\cos x$$ to show how products of the terms $$\frac{a_n}{2}$$ are related to $$\frac{2}{\pi}$$.
+   $$(B)$$ Use part $$(A)$$ and the identity $$\sin(2x)=2\sin x\cos x$$ to show how products of the terms $$\frac{a_n}{2}$$ are related to $$\frac{2}{\pi}$$.
 
-$$(C)$$ Explain why this leads to Viète's infinite product:
+   $$(C)$$ Explain why this leads to Viète's infinite product:
 
-$$
-\frac{2}{\pi}
-=\frac{\sqrt2}{2}\cdot
-\frac{\sqrt{2+\sqrt2}}{2}\cdot
-\frac{\sqrt{2+\sqrt{2+\sqrt2}}}{2}\cdots.
-$$
+   $$
+   \frac{2}{\pi}
+   =\frac{\sqrt2}{2}\cdot
+   \frac{\sqrt{2+\sqrt2}}{2}\cdot
+   \frac{\sqrt{2+\sqrt{2+\sqrt2}}}{2}\cdots.
+   $$
 
 ---
 
