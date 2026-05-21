@@ -651,15 +651,15 @@ which simplifies back to $$y=x^3$$.
 
    This is a small version of a famous family of Diophantine equations (equations with positive integer solutions) known as Markov equations.
 
-   **(A)** Find the solutions with $$y=1$$.
+   $$(A)$$ Find the solutions with $$y=1$$.
 
-   **(B)** Treat the equation as a quadratic in $$x$$. If $$x$$ is one root, use Vieta's formulas to find the other root $$x'$$.
+   $$(B)$$ Treat the equation as a quadratic in $$x$$. If $$x$$ is one root, use Vieta's formulas to find the other root $$x'$$.
 
-   **(C)** Suppose $$(x,y)$$ is a positive integer solution with $$x\ge y\ge 2$$. Prove that the other root $$x'$$ is a positive integer and that $$x'<y$$.
+   $$(C)$$ Suppose $$(x,y)$$ is a positive integer solution with $$x\ge y\ge 2$$. Prove that the other root $$x'$$ is a positive integer and that $$x'<y$$.
 
-   **(D)** Explain why repeatedly replacing the larger coordinate by the smaller Vieta root must eventually reach a solution with one coordinate equal to $$1$$.
+   $$(D)$$ Explain why repeatedly replacing the larger coordinate by the smaller Vieta root must eventually reach a solution with one coordinate equal to $$1$$.
 
-   **(E)** Reverse the process to describe all positive integer solutions.
+   $$(E)$$ Reverse the process to describe all positive integer solutions.
 
 ---
 

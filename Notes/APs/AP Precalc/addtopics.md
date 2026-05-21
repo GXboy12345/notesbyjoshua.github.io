@@ -520,11 +520,11 @@ $$
 
    Binet's Formula is a famous explicit formula for the Fibonnaci series. Let $$F_0=0$$, $$F_1=1$$, and $$F_{n+2}=F_{n+1}+F_n$$ for $$n\ge 0$$.
 
-   **(A)** Define a function $$G(x)=\sum_{n=0}^{\infty}F_nx^n$$. Use the recurrence to show that $$G(x)=\frac{x}{1-x-x^2}$$. $$G(x)$$ is called the generating function of $$F_n$$. Hint: How can you telescope to cancel out the correct terms?
+   $$(A)$$ Define a function $$G(x)=\sum_{n=0}^{\infty}F_nx^n$$. Use the recurrence to show that $$G(x)=\frac{x}{1-x-x^2}$$. $$G(x)$$ is called the generating function of $$F_n$$. Hint: How can you telescope to cancel out the correct terms?
 
-   **(B)** Decompose $$G(x)$$ into partial fractions (Hint: All terms should be linear!).
+   $$(B)$$ Decompose $$G(x)$$ into partial fractions (Hint: All terms should be linear!).
 
-   **(C)** Set the linear factors found in part (B) to $$\alpha$$ and $$\beta$$ (so your partial fraction looks like $$\frac{A}{1 - \alpha x}$$ and $$\frac{B}{1 - \beta x}$$). Use the geometric series formula to prove Binet's formula:
+   $$(C)$$ Set the linear factors found in part (B) to $$\alpha$$ and $$\beta$$ (so your partial fraction looks like $$\frac{A}{1 - \alpha x}$$ and $$\frac{B}{1 - \beta x}$$). Use the geometric series formula to prove Binet's formula:
 
    $$
    F_n=\frac{\alpha^n-\beta^n}{\sqrt5}.

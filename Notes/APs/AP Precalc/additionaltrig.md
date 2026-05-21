@@ -2119,50 +2119,50 @@ So the $$n$$ roots of any nonzero complex number also form a regular $$n$$-gon c
 4. Prove that for any triangle with side lengths $$a,b,c$$ and semiperimeter $$s=\frac12(a+b+c)$$, $$\sin^2\left(\frac C2\right)=\frac{(s-a)(s-b)}{ab}.$$
 5. Let $$\mathbf u=\langle -2,1\rangle$$ and $$\mathbf v=\langle -5,3\rangle$$.
 
-   **(A)** Find $$2\mathbf u-3\mathbf v$$.
+   $$(A)$$ Find $$2\mathbf u-3\mathbf v$$.
 
-   **(B)** Find the angle between $$\mathbf u$$ and $$\mathbf v$$ to the nearest degree.
+   $$(B)$$ Find the angle between $$\mathbf u$$ and $$\mathbf v$$ to the nearest degree.
 
-   **(C)** Find a unit vector in the direction of $$\mathbf u+\mathbf v$$.
+   $$(C)$$ Find a unit vector in the direction of $$\mathbf u+\mathbf v$$.
 
 6. A plane is heading $$40^\circ$$ east of north at $$120$$ mph. A wind blows directly from the east at $$10$$ mph. Find the ground-speed vector, the ground speed, and the drift angle from the plane's intended heading.
 7. A force of $$18$$ Newtons acts in the direction $$235^\circ$$ from the positive $$x$$-axis. Resolve the force into horizontal and vertical components. Then find the magnitude and direction of the vector obtained by adding this force to $$\langle 12,-5\rangle$$.
 8. A particle moves according to $$x(t)=2\cos t-\sin(2t),\qquad y(t)=6\sin t,$$ for $$0\le t\le 2\pi$$.
 
-   **(A)** Find all exact $$x$$-intercepts.
+   $$(A)$$ Find all exact $$x$$-intercepts.
 
-   **(B)** Find the particle's position when $$t=\frac{\pi}{2}$$ and when $$t=\frac{7\pi}{6}$$.
+   $$(B)$$ Find the particle's position when $$t=\frac{\pi}{2}$$ and when $$t=\frac{7\pi}{6}$$.
 
-   **(C)** Write a formula for the particle's distance from the origin as a function of $$t$$.
+   $$(C)$$ Write a formula for the particle's distance from the origin as a function of $$t$$.
 
 9. Eliminate the parameter and describe the curve, including any domain restrictions and orientation: $$x=e^t,\qquad y=e^{2t}-3,\qquad -\ln2\le t\le \ln3.$$
 10. The curve $$x=4\cos t,\qquad y=-2\sin t$$ is traced for $$0\le t\le 2\pi$$. Eliminate the parameter, state where the curve starts, and determine the direction (clockwise or counterclockwise) the curve is traced in.
 11. Graph the polar curve $$r=\frac{2\theta}{\pi}$$ for $$-4\pi\le\theta\le 4\pi$$.
 12. Convert each equation to rectangular form and identify the graph:
 
-   **(A)** $$r=6\cos\theta-8\sin\theta$$
+   $$(A)$$ $$r=6\cos\theta-8\sin\theta$$
 
-   **(B)** $$r\sin\left(\theta+\frac{\pi}{3}\right)=4$$
+   $$(B)$$ $$r\sin\left(\theta+\frac{\pi}{3}\right)=4$$
 
-   **(C)** $$r^2=16\cos(2\theta)$$
+   $$(C)$$ $$r^2=16\cos(2\theta)$$
 
 13. Classify each polar curve as a cardioid, limacon, rose curve, lemniscate, circle, line, or spiral. For rose curves, state the number of petals. Graph each of the curves.
 
-   **(A)** $$r=3-3\sin\theta$$
+   $$(A)$$ $$r=3-3\sin\theta$$
 
-   **(B)** $$r=2+5\cos\theta$$
+   $$(B)$$ $$r=2+5\cos\theta$$
 
-   **(C)** $$r=4\sin(3\theta)$$
+   $$(C)$$ $$r=4\sin(3\theta)$$
 
-   **(D)** $$r^2=25\sin(2\theta)$$
+   $$(D)$$ $$r^2=25\sin(2\theta)$$
 
 14. Let $$z_1=-2+2\sqrt3i,\qquad z_2=1-i.$$
 
-   **(A)** Write both numbers in polar form.
+   $$(A)$$ Write both numbers in polar form.
 
-   **(B)** Write both numbers in exponential form.
+   $$(B)$$ Write both numbers in exponential form.
 
-   **(C)** Compute $$z_1z_2$$ in polar form and rectangular form.
+   $$(C)$$ Compute $$z_1z_2$$ in polar form and rectangular form.
 
 15. Use De Moivre's Theorem to find all fourth roots of $$16\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right).$$
 16. (Extension, Brahmagupta's formula)
@@ -2181,21 +2181,21 @@ So the $$n$$ roots of any nonzero complex number also form a regular $$n$$-gon c
 
    where $$K$$ is the area of the cyclic quadrilateral.
 
-   **(A)** Draw diagonal $$AC$$. Let $$\angle ABC=B$$ and $$\angle ADC=D$$. Use triangle area formulas to show that $$K=\frac12ab\sin B+\frac12cd\sin D.$$
+   $$(A)$$ Draw diagonal $$AC$$. Let $$\angle ABC=B$$ and $$\angle ADC=D$$. Use triangle area formulas to show that $$K=\frac12ab\sin B+\frac12cd\sin D.$$
 
-   **(B)** Use $$D=180^\circ-B$$ to rewrite the area as
+   $$(B)$$ Use $$D=180^\circ-B$$ to rewrite the area as
 
    $$
    K=\frac12(ab+cd)\sin B.
    $$
 
-   **(C)** Apply the Law of Cosines to triangles $$ABC$$ and $$ADC$$ to show that
+   $$(C)$$ Apply the Law of Cosines to triangles $$ABC$$ and $$ADC$$ to show that
 
    $$
    2ab\cos B=a^2+b^2-c^2-d^2+2cd\cos D.
    $$
 
-   **(D)** Use $$\cos D=-\cos B$$ to solve for $$\cos B$$, then combine this with $$K=\frac12(ab+cd)\sin B$$ and $$\sin^2B=1-\cos^2B$$ to prove
+   $$(D)$$ Use $$\cos D=-\cos B$$ to solve for $$\cos B$$, then combine this with $$K=\frac12(ab+cd)\sin B$$ and $$\sin^2B=1-\cos^2B$$ to prove
 
    $$
    K^2=(s-a)(s-b)(s-c)(s-d).
@@ -2329,7 +2329,7 @@ $$
 \mathbf u=\langle -2,1\rangle,\qquad \mathbf v=\langle -5,3\rangle.
 $$
 
-**(A)**
+$$(A)$$
 
 $$
 2\mathbf u-3\mathbf v
@@ -2337,7 +2337,7 @@ $$
 =\langle 11,-7\rangle.
 $$
 
-**(B)**
+$$(B)$$
 
 $$
 \mathbf u\cdot \mathbf v=(-2)(-5)+(1)(3)=13.
@@ -2361,7 +2361,7 @@ $$
 \theta\approx 4^\circ.
 $$
 
-**(C)** Since
+$$(C)$$ Since
 
 $$
 \mathbf u+\mathbf v=\langle -7,4\rangle,
@@ -2451,7 +2451,7 @@ $$
 x(t)=2\cos t-\sin(2t),\qquad y(t)=6\sin t.
 $$
 
-**(A)** Use $$\sin(2t)=2\sin t\cos t$$:
+$$(A)$$ Use $$\sin(2t)=2\sin t\cos t$$:
 
 $$
 x(t)=2\cos t-2\sin t\cos t=2\cos t(1-\sin t).
@@ -2475,7 +2475,7 @@ $$
 (0,6)\quad \text{and}\quad (0,-6).
 $$
 
-**(B)** When $$t=\frac{\pi}{2}$$,
+$$(B)$$ When $$t=\frac{\pi}{2}$$,
 
 $$
 (x,y)=(0,6).
@@ -2501,7 +2501,7 @@ $$
 \left(-\frac{3\sqrt3}{2},-3\right).
 $$
 
-**(C)** The distance from the origin is
+$$(C)$$ The distance from the origin is
 
 $$
 d(t)=\sqrt{x(t)^2+y(t)^2}.
@@ -2617,7 +2617,7 @@ As $$\theta$$ increases from $$-4\pi$$ to $$4\pi$$, $$r$$ increases from $$-8$$ 
 
 ### Solution 12
 
-**(A)**
+$$(A)$$
 
 $$
 r=6\cos\theta-8\sin\theta.
@@ -2643,7 +2643,7 @@ $$
 
 This is a circle centered at $$(3,-4)$$ with radius $$5$$.
 
-**(B)**
+$$(B)$$
 
 $$
 r\sin\left(\theta+\frac{\pi}{3}\right)=4.
@@ -2669,7 +2669,7 @@ $$
 
 This is a line.
 
-**(C)**
+$$(C)$$
 
 $$
 r^2=16\cos(2\theta).
@@ -2697,7 +2697,7 @@ This is a lemniscate.
 
 ### Solution 13
 
-**(A)**
+$$(A)$$
 
 $$
 r=3-3\sin\theta
@@ -2707,7 +2707,7 @@ is a **cardioid**. It has a cusp when $$\sin\theta=1$$, so the cusp points upwar
 
 **ADD IMAGE HERE**
 
-**(B)**
+$$(B)$$
 
 $$
 r=2+5\cos\theta
@@ -2717,7 +2717,7 @@ is a **limacon with an inner loop**, since $$5>2$$. Because it uses cosine, it i
 
 **ADD IMAGE HERE**
 
-**(C)**
+$$(C)$$
 
 $$
 r=4\sin(3\theta)
@@ -2727,7 +2727,7 @@ is a **rose curve**. Since $$3$$ is odd, it has $$3$$ petals.
 
 **ADD IMAGE HERE**
 
-**(D)**
+$$(D)$$
 
 $$
 r^2=25\sin(2\theta)
@@ -2739,7 +2739,7 @@ is a **lemniscate**. Since it uses $$\sin(2\theta)$$, its loops lie along the di
 
 ### Solution 14
 
-**(A)** For
+$$(A)$$ For
 
 $$
 z_1=-2+2\sqrt3i,
@@ -2775,13 +2775,13 @@ $$
 z_2=\sqrt2\left(\cos\left(-\frac{\pi}{4}\right)+i\sin\left(-\frac{\pi}{4}\right)\right).
 $$
 
-**(B)** In exponential form,
+$$(B)$$ In exponential form,
 
 $$
 z_1=4e^{2\pi i/3},\qquad z_2=\sqrt2e^{-\pi i/4}.
 $$
 
-**(C)** Multiply magnitudes and add angles:
+$$(C)$$ Multiply magnitudes and add angles:
 
 $$
 z_1z_2=4\sqrt2e^{i(2\pi/3-\pi/4)}=4\sqrt2e^{5\pi i/12}.
@@ -2837,7 +2837,7 @@ $$
 
 ### Solution 16
 
-**(A)** Draw diagonal $$AC$$. The diagonal splits the quadrilateral into triangles $$ABC$$ and $$ADC$$. Using $$K=\frac12ab\sin C$$ for triangle area,
+$$(A)$$ Draw diagonal $$AC$$. The diagonal splits the quadrilateral into triangles $$ABC$$ and $$ADC$$. Using $$K=\frac12ab\sin C$$ for triangle area,
 
 $$
 [ABC]=\frac12ab\sin B
@@ -2855,7 +2855,7 @@ $$
 K=\frac12ab\sin B+\frac12cd\sin D.
 $$
 
-**(B)** Since $$ABCD$$ is cyclic, opposite angles are supplementary:
+$$(B)$$ Since $$ABCD$$ is cyclic, opposite angles are supplementary:
 
 $$
 B+D=180^\circ.
@@ -2880,7 +2880,7 @@ K=\frac12ab\sin B+\frac12cd\sin B
 =\frac12(ab+cd)\sin B.
 $$
 
-**(C)** Apply the Law of Cosines to triangle $$ABC$$:
+$$(C)$$ Apply the Law of Cosines to triangle $$ABC$$:
 
 $$
 AC^2=a^2+b^2-2ab\cos B.
@@ -2904,13 +2904,13 @@ $$
 2ab\cos B=a^2+b^2-c^2-d^2+2cd\cos D.
 $$
 
-**(D)** Since $$D=180^\circ-B$$,
+$$(D)$$ Since $$D=180^\circ-B$$,
 
 $$
 \cos D=-\cos B.
 $$
 
-Substitute into the result from part **(C)**:
+Substitute into the result from part $$(C)$$:
 
 $$
 2ab\cos B=a^2+b^2-c^2-d^2-2cd\cos B.
@@ -2928,7 +2928,7 @@ $$
 \cos B=\frac{a^2+b^2-c^2-d^2}{2(ab+cd)}.
 $$
 
-From part **(B)**,
+From part $$(B)$$,
 
 $$
 K=\frac12(ab+cd)\sin B.

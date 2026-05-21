@@ -1091,13 +1091,13 @@ REMEMBER to always check for multiple solutions using the trig rules!
 
 1. Let $$\theta=-\frac{29\pi}{6}$$.
 
-   **(A)** Find the least positive coterminal angle with $$\theta$$.
+   $$(A)$$ Find the least positive coterminal angle with $$\theta$$.
 
-   **(B)** Convert both angles to degrees.
+   $$(B)$$ Convert both angles to degrees.
 
-   **(C)** Find the reference angle and quadrant of $$\theta$$.
+   $$(C)$$ Find the reference angle and quadrant of $$\theta$$.
 
-   **(D)** Evaluate all six trigonometric functions of $$\theta$$ exactly.
+   $$(D)$$ Evaluate all six trigonometric functions of $$\theta$$ exactly.
 
 2. A sector of a circle has perimeter $$40$$ cm and central angle $$\frac{5\pi}{6}$$. Find the radius, arc length, and area of the sector exactly.
 3. A wheel of radius $$18$$ cm rotates counterclockwise at $$45$$ revolutions per minute. A bug starts at the point on the wheel closest to the ground. After $$7$$ seconds, find the bug's angle in standard position, its coordinates relative to the center of the wheel, and its linear speed in cm/sec.
@@ -1133,15 +1133,15 @@ REMEMBER to always check for multiple solutions using the trig rules!
    y=m(x+1).
    $$
 
-   **(A)** Substitute $$y=m(x+1)$$ into $$x^2+y^2=1$$ and show that the line intersects the unit circle at $$(-1,0)$$ and one other point.
+   $$(A)$$ Substitute $$y=m(x+1)$$ into $$x^2+y^2=1$$ and show that the line intersects the unit circle at $$(-1,0)$$ and one other point.
 
-   **(B)** Find the coordinates of the second intersection point in terms of $$m$$.
+   $$(B)$$ Find the coordinates of the second intersection point in terms of $$m$$.
 
-   **(C)** Explain why every rational value of $$m$$ gives a rational point on the unit circle.
+   $$(C)$$ Explain why every rational value of $$m$$ gives a rational point on the unit circle.
 
-   **(D)** Use your formula to find a rational point on the unit circle when $$m=\frac23$$, then interpret that point as $$(\cos\theta,\sin\theta)$$ for some angle $$\theta$$.
+   $$(D)$$ Use your formula to find a rational point on the unit circle when $$m=\frac23$$, then interpret that point as $$(\cos\theta,\sin\theta)$$ for some angle $$\theta$$.
 
-   **(E)** Why does this method not produce the point $$(-1,0)$$ as the second intersection point? What slope would be needed to reach the point $$(1,0)$$?
+   $$(E)$$ Why does this method not produce the point $$(-1,0)$$ as the second intersection point? What slope would be needed to reach the point $$(1,0)$$?
 
 ---
 
@@ -2019,7 +2019,7 @@ $$
 
 ### Solution 16
 
-For part **(A)**, substitute
+For part $$(A)$$, substitute
 
 $$
 y=m(x+1)
@@ -2057,7 +2057,7 @@ $$
 
 Therefore the line intersects the circle at $$(-1,0)$$ and one other point.
 
-For part **(B)**, the second point comes from
+For part $$(B)$$, the second point comes from
 
 $$
 (1+m^2)x+(m^2-1)=0.
@@ -2089,7 +2089,7 @@ $$
 \boxed{\left(\frac{1-m^2}{1+m^2},\frac{2m}{1+m^2}\right)}.
 $$
 
-For part **(C)**, if $$m$$ is rational, then $$m^2$$ is rational. The expressions
+For part $$(C)$$, if $$m$$ is rational, then $$m^2$$ is rational. The expressions
 
 $$
 \frac{1-m^2}{1+m^2}
@@ -2099,7 +2099,7 @@ $$
 
 are made from rational numbers using addition, subtraction, multiplication, and division. Therefore both coordinates are rational.
 
-For part **(D)**, use $$m=\frac23$$:
+For part $$(D)$$, use $$m=\frac23$$:
 
 $$
 x=\frac{1-\left(\frac23\right)^2}{1+\left(\frac23\right)^2}
@@ -2128,7 +2128,7 @@ $$
 \boxed{\cos\theta=\frac5{13},\qquad \sin\theta=\frac{12}{13}}.
 $$
 
-For part **(E)**, this method does not produce $$(-1,0)$$ as the second intersection point because $$(-1,0)$$ is the fixed point used to build every line. A finite nonvertical slope through $$(-1,0)$$ intersects the circle at exactly one other point.
+For part $$(E)$$, this method does not produce $$(-1,0)$$ as the second intersection point because $$(-1,0)$$ is the fixed point used to build every line. A finite nonvertical slope through $$(-1,0)$$ intersects the circle at exactly one other point.
 
 To reach $$(1,0)$$, the line must be the $$x$$-axis, which has slope
 

@@ -1204,13 +1204,13 @@ $$
 14. Let $$x$$ and $$y$$ be real numbers such that $$\frac{\sin x}{\sin y} = 3$$ and $$\frac{\cos x}{\cos y} = \frac{1}{2}$$. The value of $$\frac{\sin 2x}{\sin 2y} + \frac{\cos 2x}{\cos 2y}$$ can be expressed in the form $$\frac{p}{q}$$, where $$p$$ and $$q$$ are relatively prime positive integers. Find $$p+q$$. (2014 AIME II)
 15. A tide height is modeled by a sinusoidal function of time. At $$t=2$$ hours, the tide is at a high of $$11$$ feet. At $$t=8$$ hours, the tide is at the next low of $$3$$ feet.
 
-   **(A)** Write a cosine model $$H(t)$$ for the tide height.
+   $$(A)$$ Write a cosine model $$H(t)$$ for the tide height.
 
-   **(B)** Find the period and midline.
+   $$(B)$$ Find the period and midline.
 
-   **(C)** Find the first time after $$t=2$$ when the tide height is $$9$$ feet.
+   $$(C)$$ Find the first time after $$t=2$$ when the tide height is $$9$$ feet.
 
-   **(D)** Sketch one full period of the tide model and label the high tide, low tide, midline, and the point where $$H(t)=9$$ first occurs after $$t=2$$.
+   $$(D)$$ Sketch one full period of the tide model and label the high tide, low tide, midline, and the point where $$H(t)=9$$ first occurs after $$t=2$$.
 
 16. (Bonus, Viète's formula for $$\pi$$)
 
@@ -1234,15 +1234,15 @@ $$
 
    are connected to repeated half-angle identities.
 
-   **(A)** Use the half-angle identity for cosine to show that
+   $$(A)$$ Use the half-angle identity for cosine to show that
 
    $$
    a_n=2\cos\left(\frac{\pi}{2^{n+1}}\right).
    $$
 
-   **(B)** Use part **(A)** and the identity $$\sin(2x)=2\sin x\cos x$$ to show how products of the terms $$\frac{a_n}{2}$$ are related to $$\frac{2}{\pi}$$.
+   $$(B)$$ Use part $$(A)$$ and the identity $$\sin(2x)=2\sin x\cos x$$ to show how products of the terms $$\frac{a_n}{2}$$ are related to $$\frac{2}{\pi}$$.
 
-   **(C)** Explain why this leads to Viète's infinite product:
+   $$(C)$$ Explain why this leads to Viète's infinite product:
 
    $$
    \frac{2}{\pi}
@@ -2436,7 +2436,7 @@ $$
 
 ### Solution 16
 
-For part **(A)**, first note that
+For part $$(A)$$, first note that
 
 $$
 a_1=\sqrt2=2\cdot\frac{\sqrt2}{2}=2\cos\left(\frac{\pi}{4}\right).
@@ -2499,7 +2499,7 @@ $$
 \boxed{a_n=2\cos\left(\frac{\pi}{2^{n+1}}\right)}.
 $$
 
-For part **(B)**, part **(A)** gives
+For part $$(B)$$, part $$(A)$$ gives
 
 $$
 \frac{a_n}{2}=\cos\left(\frac{\pi}{2^{n+1}}\right).
@@ -2538,7 +2538,7 @@ $$
 P_N=\frac{1}{2^N\sin\left(\frac{\pi}{2^{N+1}}\right)}.
 $$
 
-For part **(C)**, let
+For part $$(C)$$, let
 
 $$
 u_N=\frac{\pi}{2^{N+1}}.

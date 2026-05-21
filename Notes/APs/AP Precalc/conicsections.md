@@ -366,7 +366,7 @@ Always check your course’s exact convention for $$p$$ and the sign in the deno
 
    You also have a camera that records the exact position of the moving particle at three different times.
 
-   **(A)** Particle $$\beta$$ has charge $$-1\ \mathrm{C}$$ (attractive interaction with $$\alpha$$). The camera records
+   $$(A)$$ Particle $$\beta$$ has charge $$-1\ \mathrm{C}$$ (attractive interaction with $$\alpha$$). The camera records
 
    $$
    (0,\,-5\ \mathrm{m}),\qquad (3\ \mathrm{m},\,0),\qquad (0,\,5\ \mathrm{m}).
@@ -374,7 +374,7 @@ Always check your course’s exact convention for $$p$$ and the sign in the deno
 
    Assume the only force on $$\beta$$ is the Coulomb force from $$\alpha$$, so the path is described by the attractive polar model above. Find the maximum distance $$\beta$$ ever reaches from the origin.
 
-   **(B)** Particle $$\gamma$$ has charge $$+2\ \mathrm{C}$$ (repulsive interaction with $$\alpha$$). The camera records
+   $$(B)$$ Particle $$\gamma$$ has charge $$+2\ \mathrm{C}$$ (repulsive interaction with $$\alpha$$). The camera records
 
    $$
    (3\ \mathrm{m},\,-4\ \mathrm{m}),\qquad (2\ \mathrm{m},\,0),\qquad (3\ \mathrm{m},\,4\ \mathrm{m}).
@@ -382,7 +382,7 @@ Always check your course’s exact convention for $$p$$ and the sign in the deno
 
    Assume the only force on $$\gamma$$ is the Coulomb force from $$\alpha$$, so the path is described by the repulsive polar model above. After a very long time, find the angle $$\theta$$ that the velocity of $$\gamma$$ makes with the positive $$x$$-axis (give an exact answer using inverse trigonometric functions if needed).
 
-   **(C)** Now imagine firing a family of particles identical to $$\gamma$$ from infinity, one at a time, along the same incident asymptotic line as $$\gamma$$, so they do not interact with each other and only interact with $$\alpha$$ (each trajectory is a repulsive hyperbola as above).
+   $$(C)$$ Now imagine firing a family of particles identical to $$\gamma$$ from infinity, one at a time, along the same incident asymptotic line as $$\gamma$$, so they do not interact with each other and only interact with $$\alpha$$ (each trajectory is a repulsive hyperbola as above).
 
    Define the **impact parameter** $$B$$ as the perpendicular distance from the origin (where $$\alpha$$ sits) to the incident asymptotic line of $$\gamma$$. To avoid a symbol clash with the label $$\alpha$$ for the fixed charge, denote the **deflection angle** by $$\theta$$: that is the angle by which $$\gamma$$’s outgoing asymptotic direction differs from its incoming asymptotic direction, after a very long time.
 
