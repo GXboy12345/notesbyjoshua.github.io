@@ -771,17 +771,17 @@ If the logarithm base is between $$0$$ and $$1$$, remember that the logarithm is
 
    where $$y>0$$.
 
-   $$(A)$$ First, show that EML contains the exponential function directly: $$e^x=\operatorname{EML}(x,1).$$
+   **(A)** First, show that EML contains the exponential function directly: $$e^x=\operatorname{EML}(x,1).$$
 
-   $$(B)$$ Now show that EML also contains logarithms: $$\operatorname{EML}(0,x)=1-\ln x.$$ Use this equation to solve for $$\ln x$$ in terms of $$\operatorname{EML}(0,x)$$.
+   **(B)** Now show that EML also contains logarithms: $$\operatorname{EML}(0,x)=1-\ln x.$$ Use this equation to solve for $$\ln x$$ in terms of $$\operatorname{EML}(0,x)$$.
 
-   $$(C)$$ Using part $$(B)$$, write $$\log_b x$$ in terms of EML expressions, where $$b>0$$, $$b\ne1$$, and $$x>0$$.
+   **(C)** Using part **(B)**, write $$\log_b x$$ in terms of EML expressions, where $$b>0$$, $$b\ne1$$, and $$x>0$$.
 
-   $$(D)$$ Since EML can produce both exponentials and logarithms, it can also build simpler operations. Use the identities $$x+y=\ln(e^x e^y)$$ and $$x-y=\ln\left(\frac{e^x}{e^y}\right)$$ to write formulas for $$x+y$$ and $$x-y$$ using EML expressions.
+   **(D)** Since EML can produce both exponentials and logarithms, it can also build simpler operations. Use the identities $$x+y=\ln(e^x e^y)$$ and $$x-y=\ln\left(\frac{e^x}{e^y}\right)$$ to write formulas for $$x+y$$ and $$x-y$$ using EML expressions.
 
-   $$(E)$$ An **EML tree** is an expression built by repeatedly feeding outputs of EML into new EML operations. For example, $$\operatorname{EML}\left(\operatorname{EML}(x,1),\operatorname{EML}(0,y)\right)$$ is an EML tree. Draw its tree diagram, then simplify the expression as much as possible using exponent and logarithm rules.
+   **(E)** An **EML tree** is an expression built by repeatedly feeding outputs of EML into new EML operations. For example, $$\operatorname{EML}\left(\operatorname{EML}(x,1),\operatorname{EML}(0,y)\right)$$ is an EML tree. Draw its tree diagram, then simplify the expression as much as possible using exponent and logarithm rules.
 
-   $$(F)$$ It is claimed that EML trees can represent all standard elementary functions. In a short paragraph, compare this idea to the way a single NAND gate can generate all Boolean logic. A NAND gate outputs $$0$$ only when both inputs are $$1$$, and outputs $$1$$ otherwise.
+   **(F)** It is claimed that EML trees can represent all standard elementary functions. In a short paragraph, compare this idea to the way a single NAND gate can generate all Boolean logic. A NAND gate outputs $$0$$ only when both inputs are $$1$$, and outputs $$1$$ otherwise.
 
    This problem is inspired by the paper *All elementary functions from a single operator* by Andrzej Odrzywołek. Learn more here: [https://arxiv.org/html/2603.21852v2](https://arxiv.org/html/2603.21852v2).
 
@@ -1972,7 +1972,7 @@ $$
 
 ### Solution 16
 
-For part $$(A)$$,
+For part **(A)**,
 
 $$
 \operatorname{EML}(x,1)=e^x-\ln 1.
@@ -1990,7 +1990,7 @@ $$
 \boxed{e^x=\operatorname{EML}(x,1)}.
 $$
 
-For part $$(B)$$,
+For part **(B)**,
 
 $$
 \operatorname{EML}(0,x)=e^0-\ln x.
@@ -2008,13 +2008,13 @@ $$
 \boxed{\ln x=1-\operatorname{EML}(0,x)}.
 $$
 
-For part $$(C)$$, use change of base:
+For part **(C)**, use change of base:
 
 $$
 \log_b x=\frac{\ln x}{\ln b}.
 $$
 
-Using part $$(B)$$,
+Using part **(B)**,
 
 $$
 \ln x=1-\operatorname{EML}(0,x)
@@ -2032,7 +2032,7 @@ $$
 \boxed{\log_b x=\frac{1-\operatorname{EML}(0,x)}{1-\operatorname{EML}(0,b)}}.
 $$
 
-For part $$(D)$$, use
+For part **(D)**, use
 
 $$
 e^x=\operatorname{EML}(x,1)
@@ -2068,7 +2068,7 @@ $$
 \boxed{x-y=1-\operatorname{EML}\left(0,\frac{\operatorname{EML}(x,1)}{\operatorname{EML}(y,1)}\right)}.
 $$
 
-For part $$(E)$$, the tree for
+For part **(E)**, the tree for
 
 $$
 \operatorname{EML}\left(\operatorname{EML}(x,1),\operatorname{EML}(0,y)\right)
@@ -2132,4 +2132,4 @@ $$
 0<y<e.
 $$
 
-For part $$(F)$$, the comparison is that both EML and NAND are examples of a very small set of building blocks being powerful enough to generate a much larger system. A NAND gate alone can build NOT, AND, OR, and therefore all Boolean logic circuits. Similarly, the paper claims that EML, together with the constant $$1$$, can be composed into trees that represent the standard elementary functions. In both cases, complicated expressions can be built from repeated uses of one simple operation.
+For part **(F)**, the comparison is that both EML and NAND are examples of a very small set of building blocks being powerful enough to generate a much larger system. A NAND gate alone can build NOT, AND, OR, and therefore all Boolean logic circuits. Similarly, the paper claims that EML, together with the constant $$1$$, can be composed into trees that represent the standard elementary functions. In both cases, complicated expressions can be built from repeated uses of one simple operation.
