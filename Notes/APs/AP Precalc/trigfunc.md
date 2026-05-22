@@ -1113,7 +1113,7 @@ REMEMBER to always check for multiple solutions using the trig rules!
    <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/cirtri1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
 12. Prove the identity: $$\frac{1-\cos\theta}{\sin\theta}+\frac{\sin\theta}{1-\cos\theta}=2\csc\theta.$$ Then state all values of $$\theta$$ in $$[0,2\pi)$$ for which the original identity is undefined.
-13. Prove the identity: $$\frac{\cot^2\theta-\tan^2\theta}{(\cot\theta+\tan\theta)^2}=2\cos^2\theta-1.$$
+13. Prove the identity: $$1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}=\sin\theta\cos\theta.$$
 14. For each of the following trigonometric expressions, find a segment in the diagram that has length equal to the trigonometric expression: $$\sin\theta, \cos\theta, \sec\theta, \csc\theta, \tan\theta, \cot\theta$$. Note that you are not asked to express each trigonometric function in terms of multiple segments in the diagram. You must find a segment whose whole length equals the corresponding trig function. The graph is given below:
 
    <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/cirtri2.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
@@ -1791,50 +1791,73 @@ $$
 Start with the left-hand side:
 
 $$
-\frac{\cot^2\theta-\tan^2\theta}{(\cot\theta+\tan\theta)^2}.
+1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}.
 $$
 
-Factor the numerator:
+Rewrite cotangent and tangent using sine and cosine:
 
 $$
-\frac{(\cot\theta-\tan\theta)(\cot\theta+\tan\theta)}{(\cot\theta+\tan\theta)^2}.
+1-\frac{\sin^2\theta}{1+\frac{\cos\theta}{\sin\theta}}-\frac{\cos^2\theta}{1+\frac{\sin\theta}{\cos\theta}}.
 $$
 
-Cancel one factor:
+Simplify the denominators:
 
 $$
-\frac{\cot\theta-\tan\theta}{\cot\theta+\tan\theta}.
+1+\frac{\cos\theta}{\sin\theta}=\frac{\sin\theta+\cos\theta}{\sin\theta}
 $$
 
-Rewrite in terms of sine and cosine:
+and
 
 $$
-\frac{\frac{\cos\theta}{\sin\theta}-\frac{\sin\theta}{\cos\theta}}{\frac{\cos\theta}{\sin\theta}+\frac{\sin\theta}{\cos\theta}}.
+1+\frac{\sin\theta}{\cos\theta}=\frac{\sin\theta+\cos\theta}{\cos\theta}.
 $$
 
-Multiply the top and bottom by $$\sin\theta\cos\theta$$:
+So the expression becomes
 
 $$
-\frac{\cos^2\theta-\sin^2\theta}{\cos^2\theta+\sin^2\theta}.
+1-\frac{\sin^3\theta}{\sin\theta+\cos\theta}-\frac{\cos^3\theta}{\sin\theta+\cos\theta}.
 $$
 
-Since $$\cos^2\theta+\sin^2\theta=1$$, this becomes
+Combine the fractions:
 
 $$
-\cos^2\theta-\sin^2\theta.
+1-\frac{\sin^3\theta+\cos^3\theta}{\sin\theta+\cos\theta}.
 $$
 
-Use $$\sin^2\theta=1-\cos^2\theta$$:
+Use the sum of cubes formula:
 
 $$
-\cos^2\theta-(1-\cos^2\theta)
-=2\cos^2\theta-1.
+a^3+b^3=(a+b)(a^2-ab+b^2).
 $$
 
-Thus
+Then
 
 $$
-\boxed{\frac{\cot^2\theta-\tan^2\theta}{(\cot\theta+\tan\theta)^2}=2\cos^2\theta-1}.
+\sin^3\theta+\cos^3\theta=(\sin\theta+\cos\theta)(\sin^2\theta-\sin\theta\cos\theta+\cos^2\theta).
+$$
+
+Cancel the common factor:
+
+$$
+1-(\sin^2\theta-\sin\theta\cos\theta+\cos^2\theta).
+$$
+
+Since
+
+$$
+\sin^2\theta+\cos^2\theta=1,
+$$
+
+this becomes
+
+$$
+1-(1-\sin\theta\cos\theta)=\sin\theta\cos\theta.
+$$
+
+Therefore,
+
+$$
+\boxed{1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}=\sin\theta\cos\theta}.
 $$
 
 ### Solution 14

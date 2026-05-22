@@ -2135,27 +2135,19 @@ So the $$n$$ roots of any nonzero complex number also form a regular $$n$$-gon c
 
    $$(C)$$ Write a formula for the particle's distance from the origin as a function of $$t$$.
 
-9. Eliminate the parameter and describe the curve, including any domain restrictions and orientation: $$x=e^t,\qquad y=e^{2t}-3,\qquad -\ln2\le t\le \ln3.$$
-10. The curve $$x=4\cos t,\qquad y=-2\sin t$$ is traced for $$0\le t\le 2\pi$$. Eliminate the parameter, state where the curve starts, and determine the direction (clockwise or counterclockwise) the curve is traced in.
-11. Graph the polar curve $$r=\frac{2\theta}{\pi}$$ for $$-4\pi\le\theta\le 4\pi$$.
-12. Convert each equation to rectangular form and identify the graph:
+9. Eliminate the parameter and describe the curve, including any domain restrictions and orientation: $$x=e^t$$, $$y=e^{2t}-3$$, $$-\ln2\le t\le \ln3.$$
+10. The curve $$x=4\cos $$, $$y=-2\sin t$$ is traced for $$0\le t\le 2\pi$$. Eliminate the parameter, state where the curve starts, and determine the direction (clockwise or counterclockwise) the curve is traced in.
+11. Classify each polar curve as a cardioid, limacon, rose curve, lemniscate, circle, line, or spiral. For rose curves, state the number of petals. Graph each of the curves.
 
-   $$(A)$$ $$r=6\cos\theta-8\sin\theta$$
+   $$(A)$$ Graph $$r=3-3\sin\theta$$
 
-   $$(B)$$ $$r\sin\left(\theta+\frac{\pi}{3}\right)=4$$
+   $$(B)$$ Graph $$r=2+5\cos\theta$$
 
-   $$(C)$$ $$r^2=16\cos(2\theta)$$
+   $$(C)$$ Graph $$r=4\sin(3\theta)$$
 
-13. Classify each polar curve as a cardioid, limacon, rose curve, lemniscate, circle, line, or spiral. For rose curves, state the number of petals. Graph each of the curves.
-
-   $$(A)$$ $$r=3-3\sin\theta$$
-
-   $$(B)$$ $$r=2+5\cos\theta$$
-
-   $$(C)$$ $$r=4\sin(3\theta)$$
-
-   $$(D)$$ $$r^2=25\sin(2\theta)$$
-
+   $$(D)$$ Graph $$r^2=25\sin(2\theta)$$
+12. Graph both $$r=2+2\cos\theta$$ and $$r=2-2\cos\theta$$. Then, find the number of intersection points.
+13. Suppose you have an octagon centered at the origin with one vertex at $$P_1=2\sqrt2$$. Find a vertex in the third quadrant and a vertex in the fourth quadrant. Without finding all of the vertices, also calculate $$P_1+P_2+\cdots+P_8$$ and $$P_1P_2\cdots P_8$$.
 14. Let $$z_1=-2+2\sqrt3i,\qquad z_2=1-i.$$
 
    $$(A)$$ Write both numbers in polar form.
@@ -2167,19 +2159,19 @@ So the $$n$$ roots of any nonzero complex number also form a regular $$n$$-gon c
 15. Use De Moivre's Theorem to find all fourth roots of $$16\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right).$$
 16. (Extension, Brahmagupta's formula)
 
-   Let $$ABCD$$ be a cyclic quadrilateral, meaning all four vertices lie on one circle. Let its side lengths be $$a,b,c,d$$, and let its semiperimeter be
+Let $$ABCD$$ be a cyclic quadrilateral, meaning all four vertices lie on one circle. Let its side lengths be $$a,b,c,d$$, and let its semiperimeter be
 
-   $$
-   s=\frac12(a+b+c+d).
-   $$
+$$
+s=\frac12(a+b+c+d).
+$$
 
-   The goal is to prove **Brahmagupta's formula**:
+The goal is to prove **Brahmagupta's formula**:
 
-   $$
-   K=\sqrt{(s-a)(s-b)(s-c)(s-d)},
-   $$
+$$
+K=\sqrt{(s-a)(s-b)(s-c)(s-d)},
+$$
 
-   where $$K$$ is the area of the cyclic quadrilateral.
+where $$K$$ is the area of the cyclic quadrilateral.
 
    $$(A)$$ Draw diagonal $$AC$$. Let $$\angle ABC=B$$ and $$\angle ADC=D$$. Use triangle area formulas to show that $$K=\frac12ab\sin B+\frac12cd\sin D.$$
 
@@ -2617,125 +2609,123 @@ As $$\theta$$ increases from $$-4\pi$$ to $$4\pi$$, $$r$$ increases from $$-8$$ 
 
 ### Solution 12
 
-$$(A)$$
+The curves are
 
 $$
-r=6\cos\theta-8\sin\theta.
+r=2+2\cos\theta
 $$
 
-Multiply by $$r$$:
+and
 
 $$
-r^2=6r\cos\theta-8r\sin\theta.
+r=2-2\cos\theta.
 $$
 
-Since $$r^2=x^2+y^2$$, $$r\cos\theta=x$$, and $$r\sin\theta=y$$,
+Both are cardioids. The first opens to the right, and the second opens to the left.
+
+**ADD IMAGE HERE**
+
+To find intersections with the same angle, set the equations equal:
 
 $$
-x^2+y^2=6x-8y.
+2+2\cos\theta=2-2\cos\theta.
 $$
 
-Complete the square:
+Then
 
 $$
-(x-3)^2+(y+4)^2=25.
+4\cos\theta=0,
 $$
 
-This is a circle centered at $$(3,-4)$$ with radius $$5$$.
-
-$$(B)$$
+so
 
 $$
-r\sin\left(\theta+\frac{\pi}{3}\right)=4.
+\cos\theta=0.
 $$
 
-Expand:
+Thus,
 
 $$
-r\left(\sin\theta\cos\frac{\pi}{3}+\cos\theta\sin\frac{\pi}{3}\right)=4.
+\theta=\frac{\pi}{2},\frac{3\pi}{2}.
 $$
 
-So
+These give the points
 
 $$
-\frac12y+\frac{\sqrt3}{2}x=4.
+(0,2)\quad \text{and}\quad (0,-2).
 $$
 
-Therefore,
+Both cardioids also pass through the pole: $$r=0$$ for the first curve when $$\theta=\pi$$, and $$r=0$$ for the second curve when $$\theta=0$$. Therefore, the curves have
 
 $$
-\sqrt3x+y=8.
+\boxed{3}
 $$
 
-This is a line.
+intersection points.
 
-$$(C)$$
+### Solution 13
+
+The octagon is regular, so consecutive vertices differ by an angle of
 
 $$
-r^2=16\cos(2\theta).
+\frac{2\pi}{8}=\frac{\pi}{4}.
 $$
 
 Since
 
 $$
-\cos(2\theta)=\cos^2\theta-\sin^2\theta=\frac{x^2-y^2}{r^2},
+P_1=2\sqrt2,
 $$
 
-we get
+the first vertex lies on the positive real axis with magnitude $$2\sqrt2$$. The vertices in the third and fourth quadrants can be found by rotating by multiples of $$45^\circ$$.
+
+A third-quadrant vertex occurs at angle $$225^\circ$$:
 
 $$
-r^2=16\cdot \frac{x^2-y^2}{r^2}.
+2\sqrt2(\cos225^\circ+i\sin225^\circ)=-2-2i.
 $$
 
-Since $$r^2=x^2+y^2$$,
+A fourth-quadrant vertex occurs at angle $$315^\circ$$:
 
 $$
-(x^2+y^2)^2=16(x^2-y^2).
+2\sqrt2(\cos315^\circ+i\sin315^\circ)=2-2i.
 $$
 
-This is a lemniscate.
-
-### Solution 13
-
-$$(A)$$
+For a regular polygon centered at the origin, the vertices balance evenly around the circle, so
 
 $$
-r=3-3\sin\theta
+P_1+P_2+\cdots+P_8=0.
 $$
 
-is a **cardioid**. It has a cusp when $$\sin\theta=1$$, so the cusp points upward and the larger part opens downward.
-
-**ADD IMAGE HERE**
-
-$$(B)$$
+For the product $$P_1P_2\cdots P_8$$, multiply magnitudes and add angles. The magnitude is
 
 $$
-r=2+5\cos\theta
+(2\sqrt2)^8=4096.
 $$
 
-is a **limacon with an inner loop**, since $$5>2$$. Because it uses cosine, it is symmetric about the polar axis.
-
-**ADD IMAGE HERE**
-
-$$(C)$$
+The eight angles are
 
 $$
-r=4\sin(3\theta)
+0^\circ,45^\circ,90^\circ,135^\circ,180^\circ,225^\circ,270^\circ,315^\circ,
 $$
 
-is a **rose curve**. Since $$3$$ is odd, it has $$3$$ petals.
-
-**ADD IMAGE HERE**
-
-$$(D)$$
+whose sum is
 
 $$
-r^2=25\sin(2\theta)
+1260^\circ.
 $$
 
-is a **lemniscate**. Since it uses $$\sin(2\theta)$$, its loops lie along the diagonal directions $$\theta=\frac{\pi}{4}$$ and $$\theta=\frac{5\pi}{4}$$.
+Since $$1260^\circ$$ is coterminal with $$180^\circ$$,
 
-**ADD IMAGE HERE**
+$$
+P_1P_2\cdots P_8=4096(\cos180^\circ+i\sin180^\circ).
+$$
+
+Therefore,
+
+$$
+P_1P_2\cdots P_8=-4096.
+$$
 
 ### Solution 14
 
