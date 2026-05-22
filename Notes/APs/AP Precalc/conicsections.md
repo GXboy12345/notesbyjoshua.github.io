@@ -62,9 +62,117 @@ $$
 
 The quantity $$\lvert 4p\rvert$$ controls how “wide” the parabola is: larger $$\lvert p\rvert$$ means a more gradual curve.
 
+<div class="theorem-box" markdown="1">
+
+**Proof (standard equation of a vertical parabola).** Suppose the vertex is $$(h,k)$$, the focus is $$(h,k+p)$$, and the directrix is
+
+$$
+y=k-p.
+$$
+
+Let $$P=(x,y)$$ be a point on the parabola. By definition,
+
+$$
+PF=d(P,\text{directrix}).
+$$
+
+The distance to the focus is
+
+$$
+PF=\sqrt{(x-h)^2+(y-(k+p))^2}.
+$$
+
+The perpendicular distance to the directrix is
+
+$$
+\lvert y-(k-p)\rvert.
+$$
+
+For points on the parabola, squaring both sides gives
+
+$$
+(x-h)^2+(y-k-p)^2=(y-k+p)^2.
+$$
+
+Expand the two squared terms involving $$y$$:
+
+$$
+(x-h)^2+(y-k)^2-2p(y-k)+p^2=(y-k)^2+2p(y-k)+p^2.
+$$
+
+Cancel common terms:
+
+$$
+(x-h)^2=4p(y-k).
+$$
+
+This gives the standard form for a vertical parabola.
+
+</div>
+
 ### Latus rectum
 
 The latus rectum is the chord through the focus perpendicular to the axis of symmetry, with a length of $$\lvert 4p\rvert$$ (same as the absolute coefficient in the standard forms above). It should be parallel to the directrix.
+
+For
+
+$$
+(x-h)^2=4p(y-k),
+$$
+
+the latus rectum endpoints are
+
+$$
+(h-2p,k+p)
+$$
+
+and
+
+$$
+(h+2p,k+p).
+$$
+
+For
+
+$$
+(y-k)^2=4p(x-h),
+$$
+
+the latus rectum endpoints are
+
+$$
+(h+p,k-2p)
+$$
+
+and
+
+$$
+(h+p,k+2p).
+$$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** For
+
+$$
+x^2=16y,
+$$
+
+compare with
+
+$$
+(x-h)^2=4p(y-k).
+$$
+
+Here $$h=0$$, $$k=0$$, and $$4p=16$$, so $$p=4$$. Therefore:
+
+- Vertex: $$(0,0)$$.
+- Focus: $$(0,4)$$.
+- Directrix: $$y=-4$$.
+- Focal width: $$16$$.
+- Latus rectum endpoints: $$(-8,4)$$ and $$(8,4)$$.
+
+</div>
 
 ### Applications of parabolas
 
@@ -113,6 +221,135 @@ $$
 - Foci: $$(h,\, k \pm c)$$ with $$c^{2} = a^{2} - b^{2}$$.
 
 If the denominators are equal ($$a = b$$), the ellipse is a circle of radius $$a$$.
+
+### Graphing an ellipse
+
+To graph an ellipse in standard form:
+
+1. Find the center $$(h,k)$$.
+2. Identify the larger denominator. This determines the major axis.
+3. Move $$a$$ units from the center along the major axis to find the vertices.
+4. Move $$b$$ units from the center along the minor axis to find the co-vertices.
+5. Use $$c^2=a^2-b^2$$ to locate the foci along the major axis.
+6. Sketch a smooth oval through the vertices and co-vertices.
+
+The sum of the distances from any point on the ellipse to the two foci is always
+
+$$
+2a.
+$$
+
+This is why $$a$$ is the semi-major axis.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Graph and identify the key features of
+
+$$
+\frac{x^2}{9}+\frac{y^2}{4}=1.
+$$
+
+The center is
+
+$$
+(0,0).
+$$
+
+Since $$9>4$$, the major axis is horizontal. Thus,
+
+$$
+a^2=9,\qquad b^2=4,
+$$
+
+so
+
+$$
+a=3,\qquad b=2.
+$$
+
+The vertices are
+
+$$
+(\pm3,0),
+$$
+
+and the co-vertices are
+
+$$
+(0,\pm2).
+$$
+
+Find $$c$$:
+
+$$
+c^2=a^2-b^2=9-4=5.
+$$
+
+So
+
+$$
+c=\sqrt5,
+$$
+
+and the foci are
+
+$$
+(-\sqrt5,0)
+$$
+
+and
+
+$$
+(\sqrt5,0).
+$$
+
+The eccentricity is
+
+$$
+e=\frac{c}{a}=\frac{\sqrt5}{3}.
+$$
+
+</div>
+
+### Directrices of an ellipse
+
+For a horizontal ellipse centered at the origin,
+
+$$
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1,\qquad a>b,
+$$
+
+the foci are $$(\pm c,0)$$, where $$c^2=a^2-b^2$$, and the eccentricity is
+
+$$
+e=\frac ca.
+$$
+
+The directrices are
+
+$$
+x=\pm\frac{a}{e}.
+$$
+
+Since $$e=\frac ca$$, this can also be written as
+
+$$
+x=\pm\frac{a^2}{c}.
+$$
+
+For a vertical ellipse,
+
+$$
+\frac{x^2}{b^2}+\frac{y^2}{a^2}=1,
+$$
+
+the directrices are
+
+$$
+y=\pm\frac{a}{e}=\pm\frac{a^2}{c}.
+$$
+
+Each focus has its own directrix. The right focus pairs with the right directrix, the left focus pairs with the left directrix, and similarly for vertical ellipses.
 
 <div class="theorem-box" markdown="1">
 
@@ -215,6 +452,145 @@ Eccentricity: $$\displaystyle e = \frac{c}{a} > 1$$.
 
 The conjugate hyperbola swaps the roles of the terms (e.g. $$\frac{y^{2}}{a^{2}} - \frac{x^{2}}{b^{2}} = 1$$ vs $$\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 1$$) and shares the same asymptote rectangle but different vertices and branches.
 
+### Graphing a hyperbola
+
+To graph a hyperbola in standard form:
+
+1. Find the center $$(h,k)$$.
+2. Identify the positive term. This tells you whether the transverse axis is horizontal or vertical.
+3. Move $$a$$ units from the center along the transverse axis to find the vertices.
+4. Build the asymptote rectangle using $$a$$ and $$b$$.
+5. Draw the asymptotes through opposite corners of the rectangle.
+6. Sketch the branches opening along the transverse axis.
+
+For a horizontal hyperbola,
+
+$$
+\frac{(x-h)^2}{a^2}-\frac{(y-k)^2}{b^2}=1,
+$$
+
+the asymptotes have slope
+
+$$
+\pm\frac ba.
+$$
+
+For a vertical hyperbola,
+
+$$
+\frac{(y-k)^2}{a^2}-\frac{(x-h)^2}{b^2}=1,
+$$
+
+the asymptotes have slope
+
+$$
+\pm\frac ab.
+$$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Graph and identify the key features of
+
+$$
+\frac{x^2}{9}-\frac{y^2}{4}=1.
+$$
+
+The center is $$(0,0)$$. The positive term is the $$x$$-term, so the hyperbola opens left and right.
+
+Here
+
+$$
+a^2=9,\qquad b^2=4,
+$$
+
+so
+
+$$
+a=3,\qquad b=2.
+$$
+
+The vertices are
+
+$$
+(\pm3,0).
+$$
+
+The asymptotes are
+
+$$
+y=\pm\frac23x.
+$$
+
+For the foci,
+
+$$
+c^2=a^2+b^2=9+4=13,
+$$
+
+so
+
+$$
+c=\sqrt{13}.
+$$
+
+The foci are
+
+$$
+(\pm\sqrt{13},0),
+$$
+
+and the eccentricity is
+
+$$
+e=\frac ca=\frac{\sqrt{13}}{3}.
+$$
+
+</div>
+
+### Directrices of a hyperbola
+
+For a horizontal hyperbola centered at the origin,
+
+$$
+\frac{x^2}{a^2}-\frac{y^2}{b^2}=1,
+$$
+
+the foci are $$(\pm c,0)$$, where
+
+$$
+c^2=a^2+b^2.
+$$
+
+The eccentricity is
+
+$$
+e=\frac ca>1.
+$$
+
+The directrices are
+
+$$
+x=\pm\frac ae=\pm\frac{a^2}{c}.
+$$
+
+For a vertical hyperbola,
+
+$$
+\frac{y^2}{a^2}-\frac{x^2}{b^2}=1,
+$$
+
+the directrices are
+
+$$
+y=\pm\frac ae=\pm\frac{a^2}{c}.
+$$
+
+Unlike ellipses, the directrices of a hyperbola lie between the vertices:
+
+$$
+\frac ae<a<c.
+$$
+
 <div class="theorem-box" markdown="1">
 
 **Extension.** Prove the standard formula for a hyperbola. This procedure should be similar to the procedure for deriving the equation for an ellipse.
@@ -240,6 +616,110 @@ where $$PF$$ is the distance from $$P$$ to $$F$$ and $$d(P,\ell)$$ is the perpen
 (The case $$e = 0$$ would force $$PF = 0$$ for every point on the directrix in a naive reading; the circle is usually treated via the two-focus definition or as $$a = b$$ in the ellipse equation.)
 
 For parabolas, this matches the equal-distance definition to focus and directrix. For ellipses and hyperbolas, the same relation holds once focus and directrix are chosen consistently (a second focus appears from symmetry in the standard pictures).
+
+### Standard focus-directrix facts
+
+The focus-directrix definition can be written as a ratio:
+
+$$
+\frac{PF}{d(P,\ell)}=e.
+$$
+
+This ratio is constant for every point $$P$$ on the conic.
+
+For an ellipse or hyperbola centered at the origin with a horizontal major/transverse axis:
+
+$$
+e=\frac ca.
+$$
+
+For an ellipse,
+
+$$
+0<e<1,\qquad c<a,
+$$
+
+so the directrices
+
+$$
+x=\pm\frac ae
+$$
+
+lie outside the ellipse.
+
+For a hyperbola,
+
+$$
+e>1,\qquad c>a,
+$$
+
+so the directrices
+
+$$
+x=\pm\frac ae
+$$
+
+lie between the two vertices.
+
+For vertical conics, replace $$x=\pm\frac ae$$ with
+
+$$
+y=\pm\frac ae.
+$$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the foci, eccentricity, and directrices of
+
+$$
+9x^2+16y^2=144.
+$$
+
+Write in standard form:
+
+$$
+\frac{x^2}{16}+\frac{y^2}{9}=1.
+$$
+
+This is a horizontal ellipse with
+
+$$
+a=4,\qquad b=3.
+$$
+
+Then
+
+$$
+c^2=a^2-b^2=16-9=7,
+$$
+
+so
+
+$$
+c=\sqrt7.
+$$
+
+The foci are
+
+$$
+(\pm\sqrt7,0).
+$$
+
+The eccentricity is
+
+$$
+e=\frac ca=\frac{\sqrt7}{4}.
+$$
+
+The directrices are
+
+$$
+x=\pm\frac ae
+=\pm\frac{4}{\sqrt7/4}
+=\pm\frac{16}{\sqrt7}.
+$$
+
+</div>
 
 <div class="theorem-box" markdown="1">
 
@@ -309,19 +789,36 @@ Much of the final algebra is not shown here and is left as practice.
 
 ## Conics in polar
 
-Place a focus at the pole $$(0,0)$$ and align the directrix perpendicular to the polar axis. With eccentricity $$e \ge 0$$ and distance to directrix (from focus) $$d$$, a common form is:
+Place a focus at the pole $$(0,0)$$ and align the directrix perpendicular to the polar axis. With eccentricity $$e \ge 0$$ and distance to directrix (from focus) $$d$$, polar conics usually have the form
 
 $$
-r = \frac{de}{1 + e\cos\theta}
+r=\frac{ed}{1\pm e\cos\theta}
 $$
 
-when the directrix is the vertical line $$x = -p$$ (to the left of the focus). Variants use $$e\sin\theta$$ in the denominator when the directrix is horizontal, and minus signs when the directrix lies on the other side of the focus, e.g.
+or
 
 $$
-r = \frac{de}{1 - e\cos\theta}
+r=\frac{ed}{1\pm e\sin\theta}.
 $$
 
-for a directrix $$x = p$$ to the right.
+Here:
+
+- $$e$$ is the eccentricity.
+- $$d$$ is the distance from the focus to the directrix.
+- $$ed$$ is the numerator.
+
+The denominator tells which direction the directrix lies.
+
+$$
+\begin{array}{c|c}
+\text{Polar equation} & \text{Directrix}\\
+\hline
+r=\frac{ed}{1+e\cos\theta} & x=d\\
+r=\frac{ed}{1-e\cos\theta} & x=-d\\
+r=\frac{ed}{1+e\sin\theta} & y=d\\
+r=\frac{ed}{1-e\sin\theta} & y=-d
+\end{array}
+$$
 
 Reading the graph:
 
@@ -330,6 +827,197 @@ Reading the graph:
 - $$e > 1$$: two branches (hyperbola); values of $$\theta$$ that make $$1 + e\cos\theta = 0$$ (or the corresponding denominator in your chosen form) are asymptotic directions (no finite points).
 
 Always check your course’s exact convention for $$p$$ and the sign in the denominator so your formulas match the textbook’s figure of the focus and directrix.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (polar conic with directrix $$x=d$$).** Put the focus at the pole and let the directrix be
+
+$$
+x=d.
+$$
+
+For a point $$P=(r,\theta)$$, the distance to the focus is
+
+$$
+PF=r.
+$$
+
+Since
+
+$$
+x=r\cos\theta,
+$$
+
+the horizontal distance from $$P$$ to the directrix is
+
+$$
+d-r\cos\theta.
+$$
+
+Using the focus-directrix definition,
+
+$$
+\frac{PF}{d(P,\ell)}=e,
+$$
+
+we get
+
+$$
+\frac{r}{d-r\cos\theta}=e.
+$$
+
+Solve for $$r$$:
+
+$$
+r=e(d-r\cos\theta).
+$$
+
+So
+
+$$
+r=ed-er\cos\theta.
+$$
+
+Move the $$r$$ terms together:
+
+$$
+r(1+e\cos\theta)=ed.
+$$
+
+Thus,
+
+$$
+r=\frac{ed}{1+e\cos\theta}.
+$$
+
+Depending on which side the directrix is on and whether it is horizontal or vertical, the sign and trig function change.
+
+</div>
+
+### Reading polar conic equations
+
+To identify a polar conic:
+
+1. Rewrite the denominator so the constant term is $$1$$.
+2. The coefficient of $$\sin\theta$$ or $$\cos\theta$$ is the eccentricity $$e$$.
+3. Use $$e$$ to classify the conic.
+4. Use the numerator $$ed$$ to find $$d$$.
+5. Use the sign and trig function to locate the directrix.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Identify the conic:
+
+$$
+r=\frac{10}{2-\cos\theta}.
+$$
+
+First factor the denominator:
+
+$$
+r=\frac{10}{2\left(1-\frac12\cos\theta\right)}
+=\frac{5}{1-\frac12\cos\theta}.
+$$
+
+So
+
+$$
+e=\frac12.
+$$
+
+Since $$0<e<1$$, the conic is an ellipse.
+
+The numerator is $$ed$$:
+
+$$
+ed=5.
+$$
+
+Since $$e=\frac12$$,
+
+$$
+d=10.
+$$
+
+Because the denominator is
+
+$$
+1-e\cos\theta,
+$$
+
+the directrix is
+
+$$
+x=-d=-10.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Identify the conic:
+
+$$
+r=\frac{12}{3+4\cos\theta}.
+$$
+
+Rewrite with constant term $$1$$:
+
+$$
+r=\frac{4}{1+\frac43\cos\theta}.
+$$
+
+Thus,
+
+$$
+e=\frac43.
+$$
+
+Since $$e>1$$, the conic is a hyperbola.
+
+The numerator is $$ed=4$$, so
+
+$$
+d=\frac{4}{4/3}=3.
+$$
+
+Because the denominator is
+
+$$
+1+e\cos\theta,
+$$
+
+the directrix is
+
+$$
+x=3.
+$$
+
+The denominator is zero when
+
+$$
+1+\frac43\cos\theta=0,
+$$
+
+so
+
+$$
+\cos\theta=-\frac34.
+$$
+
+These angles give the asymptotic directions of the hyperbola.
+
+</div>
+
+### Polar conics and orbits
+
+Polar conics appear naturally in orbital motion because one focus is physically important. For example:
+
+- Planets and many moons move in elliptical orbits with the central body at one focus.
+- Some comets follow parabolic-type escape paths.
+- Objects that pass by a planet and escape can follow hyperbolic paths.
+
+This is why polar equations with a focus at the pole are often more natural than rectangular equations for astronomy and central-force motion.
 
 ## Practice
 
