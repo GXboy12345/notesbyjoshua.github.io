@@ -1214,25 +1214,25 @@ $$
 
 16. (Bonus, Viète's formula for $$\pi$$)
 
-   Let
+Let
 
-   $$
-   a_1=\sqrt2
-   $$
+$$
+a_1=\sqrt2
+$$
 
-   and define
+and define
 
-   $$
-   a_{n+1}=\sqrt{2+a_n}.
-   $$
+$$
+a_{n+1}=\sqrt{2+a_n}.
+$$
 
-   The nested radicals
+The nested radicals
 
-   $$
-   \sqrt2,\quad \sqrt{2+\sqrt2},\quad \sqrt{2+\sqrt{2+\sqrt2}},\quad \ldots
-   $$
+$$
+\sqrt2,\quad \sqrt{2+\sqrt2},\quad \sqrt{2+\sqrt{2+\sqrt2}},\quad \ldots
+$$
 
-   are connected to repeated half-angle identities.
+are connected to repeated half-angle identities.
 
    $$(A)$$ Use the half-angle identity for cosine to show that
 

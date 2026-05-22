@@ -525,36 +525,6 @@ $$
 
 The dot product is a method of multiplication of two vectors, and always returns a *scalar*. Another form of vector multiplication is the cross product, which will not be taught here.
 
-Useful vector formulas that follow from the dot product include
-
-$$
-\mathbf v\cdot \mathbf v=|\mathbf v|^2,
-$$
-
-so a vector dotted with itself gives the square of its magnitude. Also,
-
-$$
-|\mathbf v|=\sqrt{\mathbf v\cdot \mathbf v}.
-$$
-
-For two nonzero vectors $$\mathbf A$$ and $$\mathbf B$$,
-
-$$
-\mathbf A\perp \mathbf B\quad \text{if and only if}\quad \mathbf A\cdot \mathbf B=0.
-$$
-
-The scalar projection of $$\mathbf A$$ onto $$\mathbf B$$ is
-
-$$
-\operatorname{comp}_{\mathbf B}\mathbf A=\frac{\mathbf A\cdot \mathbf B}{|\mathbf B|},
-$$
-
-and the vector projection of $$\mathbf A$$ onto $$\mathbf B$$ is
-
-$$
-\operatorname{proj}_{\mathbf B}\mathbf A=\frac{\mathbf A\cdot \mathbf B}{|\mathbf B|^2}\mathbf B.
-$$
-
 <div class="theorem-box" markdown="1">
 
 **Proof (Dot product formula).** Let
@@ -606,6 +576,36 @@ $$
 $$
 
 </div>
+
+Useful vector formulas that follow from the dot product include
+
+$$
+\mathbf v\cdot \mathbf v=\lvert\mathbf v\rvert^2,
+$$
+
+so a vector dotted with itself gives the square of its magnitude. Also,
+
+$$
+\lvert\mathbf v\rvert=\sqrt{\mathbf v\cdot \mathbf v}.
+$$
+
+For two nonzero vectors $$\mathbf A$$ and $$\mathbf B$$,
+
+$$
+\mathbf A\perp \mathbf B\quad \text{if and only if}\quad \mathbf A\cdot \mathbf B=0.
+$$
+
+The scalar projection of $$\mathbf A$$ onto $$\mathbf B$$ is
+
+$$
+\operatorname{comp}_{\mathbf B}\mathbf A=\frac{\mathbf A\cdot \mathbf B}{\lvert\mathbf B\rvert},
+$$
+
+and the vector projection of $$\mathbf A$$ onto $$\mathbf B$$ is
+
+$$
+\operatorname{proj}_{\mathbf B}\mathbf A=\frac{\mathbf A\cdot \mathbf B}{\lvert \mathbf B \rvert^2}\mathbf B.
+$$
 
 <div class="theorem-box" markdown="1">
 
@@ -2040,8 +2040,9 @@ $$
 $$
 
 Geomertrically, the solutions look like this:
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph7.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
-**ADD IAMGE**
+Note that the rendering on the $$y$$-axis shows that it is real, but treat it like the imaginary axis.
 
 </div>
 
@@ -2146,6 +2147,7 @@ So the $$n$$ roots of any nonzero complex number also form a regular $$n$$-gon c
    $$(C)$$ Graph $$r=4\sin(3\theta)$$
 
    $$(D)$$ Graph $$r^2=25\sin(2\theta)$$
+
 12. Graph both $$r=2+2\cos\theta$$ and $$r=2-2\cos\theta$$. Then, find the number of intersection points.
 13. Suppose you have an octagon centered at the origin with one vertex at $$P_1=2\sqrt2$$. Find a vertex in the third quadrant and a vertex in the fourth quadrant. Without finding all of the vertices, also calculate $$P_1+P_2+\cdots+P_8$$ and $$P_1P_2\cdots P_8$$.
 14. Let $$z_1=-2+2\sqrt3i,\qquad z_2=1-i.$$
@@ -2157,7 +2159,7 @@ So the $$n$$ roots of any nonzero complex number also form a regular $$n$$-gon c
    $$(C)$$ Compute $$z_1z_2$$ in polar form and rectangular form.
 
 15. Use De Moivre's Theorem to find all fourth roots of $$16\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right).$$
-16. (Extension, Brahmagupta's formula)
+16. (Extension, Brahmagupta's and Bretschneider's formulas)
 
 Let $$ABCD$$ be a cyclic quadrilateral, meaning all four vertices lie on one circle. Let its side lengths be $$a,b,c,d$$, and let its semiperimeter be
 
@@ -2165,33 +2167,25 @@ $$
 s=\frac12(a+b+c+d).
 $$
 
-The goal is to prove **Brahmagupta's formula**:
+The goal is to prove the area of a cyclic quadrilateral is:
 
 $$
 K=\sqrt{(s-a)(s-b)(s-c)(s-d)},
 $$
 
-where $$K$$ is the area of the cyclic quadrilateral.
+where $$K$$ is the area of the cyclic quadrilateral. We will also extend the area formula to all cases, not just cyclic ones.
 
-   $$(A)$$ Draw diagonal $$AC$$. Let $$\angle ABC=B$$ and $$\angle ADC=D$$. Use triangle area formulas to show that $$K=\frac12ab\sin B+\frac12cd\sin D.$$
+   $$(A)$$ Draw diagonal $$AC$$. Let $$\angle ABC=B$$ and $$\angle ADC=D$$. Use triangle area formulas and $$D=180^\circ-B$$ (A property of cyclic quadrilaterals) to rewrite the area as $$K=\frac12(ab+cd)\sin B.$$
 
-   $$(B)$$ Use $$D=180^\circ-B$$ to rewrite the area as
+   $$(B)$$ Apply the Law of Cosines to triangles $$ABC$$ and $$ADC$$ to show that $$2ab\cos B=a^2+b^2-c^2-d^2+2cd\cos D.$$
 
-   $$
-   K=\frac12(ab+cd)\sin B.
-   $$
+   $$(C)$$ Use $$\cos D=-\cos B$$ to solve for $$\cos B$$, then combine this with $$K=\frac12(ab+cd)\sin B$$ and $$\sin^2B=1-\cos^2B$$ to prove $$K^2=(s-a)(s-b)(s-c)(s-d).$$ This is Brahmagupta's formula.
 
-   $$(C)$$ Apply the Law of Cosines to triangles $$ABC$$ and $$ADC$$ to show that
+   $$(D)$$ Now suppose $$ABCD$$ is not necessarily cyclic. Keep the same notation, with opposite angles $$B$$ and $$D$$. Show that $$(4K)^2+(a^2+b^2-c^2-d^2)^2=4(a^2b^2+c^2d^2-2abcd\cos(B+D)).$$
 
-   $$
-   2ab\cos B=a^2+b^2-c^2-d^2+2cd\cos D.
-   $$
+   $$(E)$$ Now prove **Bretschneider's formula**: $$K^2=(s-a)(s-b)(s-c)(s-d)-abcd\cos^2\left(\frac{B+D}{2}\right).$$
 
-   $$(D)$$ Use $$\cos D=-\cos B$$ to solve for $$\cos B$$, then combine this with $$K=\frac12(ab+cd)\sin B$$ and $$\sin^2B=1-\cos^2B$$ to prove
-
-   $$
-   K^2=(s-a)(s-b)(s-c)(s-d).
-   $$
+   $$(F)$$ Explain why Bretschneider's formula turns into Brahmagupta's formula when $$ABCD$$ is cyclic.
 
 ---
 
@@ -2338,7 +2332,7 @@ $$
 Also,
 
 $$
-|\mathbf u|=\sqrt5,\qquad |\mathbf v|=\sqrt{34}.
+\lvert \mathbf u \rvert=\sqrt5,\qquad \lvert \mathbf v \rvert=\sqrt{34}.
 $$
 
 So
@@ -2738,7 +2732,7 @@ $$
 the magnitude is
 
 $$
-|z_1|=\sqrt{(-2)^2+(2\sqrt3)^2}=4.
+\lvert z_1 \rvert=\sqrt{(-2)^2+(2\sqrt3)^2}=4.
 $$
 
 Since $$z_1$$ is in Quadrant II,
@@ -2827,7 +2821,7 @@ $$
 
 ### Solution 16
 
-$$(A)$$ Draw diagonal $$AC$$. The diagonal splits the quadrilateral into triangles $$ABC$$ and $$ADC$$. Using $$K=\frac12ab\sin C$$ for triangle area,
+For part (A), draw diagonal $$AC$$. The diagonal splits the quadrilateral into triangles $$ABC$$ and $$ADC$$. Using $$K=\frac12ab\sin C$$ for triangle area,
 
 $$
 [ABC]=\frac12ab\sin B
@@ -2845,7 +2839,7 @@ $$
 K=\frac12ab\sin B+\frac12cd\sin D.
 $$
 
-$$(B)$$ Since $$ABCD$$ is cyclic, opposite angles are supplementary:
+$Since $$ABCD$$ is cyclic, opposite angles are supplementary:
 
 $$
 B+D=180^\circ.
@@ -2870,7 +2864,7 @@ K=\frac12ab\sin B+\frac12cd\sin B
 =\frac12(ab+cd)\sin B.
 $$
 
-$$(C)$$ Apply the Law of Cosines to triangle $$ABC$$:
+For part (B), apply the Law of Cosines to triangle $$ABC$$:
 
 $$
 AC^2=a^2+b^2-2ab\cos B.
@@ -2894,7 +2888,7 @@ $$
 2ab\cos B=a^2+b^2-c^2-d^2+2cd\cos D.
 $$
 
-$$(D)$$ Since $$D=180^\circ-B$$,
+For part (C), since $$D=180^\circ-B$$,
 
 $$
 \cos D=-\cos B.
@@ -2971,3 +2965,172 @@ so
 $$
 K=\sqrt{(s-a)(s-b)(s-c)(s-d)}.
 $$
+
+For part (D), for a general quadrilateral, the area is still
+
+$$
+K=\frac12ab\sin B+\frac12cd\sin D,
+$$
+
+so
+
+$$
+4K=2ab\sin B+2cd\sin D.
+$$
+
+Also, using the shared diagonal $$AC$$ again,
+
+$$
+a^2+b^2-2ab\cos B=c^2+d^2-2cd\cos D.
+$$
+
+Thus,
+
+$$
+a^2+b^2-c^2-d^2=2ab\cos B-2cd\cos D.
+$$
+
+Now compute
+
+$$
+(4K)^2+(a^2+b^2-c^2-d^2)^2.
+$$
+
+Substitute the two expressions above:
+
+$$
+(2ab\sin B+2cd\sin D)^2+(2ab\cos B-2cd\cos D)^2.
+$$
+
+Expand:
+
+$$
+4a^2b^2\sin^2B+8abcd\sin B\sin D+4c^2d^2\sin^2D
+$$
+
+$$
++4a^2b^2\cos^2B-8abcd\cos B\cos D+4c^2d^2\cos^2D.
+$$
+
+Group terms:
+
+$$
+4a^2b^2(\sin^2B+\cos^2B)+4c^2d^2(\sin^2D+\cos^2D)
+$$
+
+$$
++8abcd(\sin B\sin D-\cos B\cos D).
+$$
+
+Since
+
+$$
+\sin^2x+\cos^2x=1
+$$
+
+and
+
+$$
+\cos(B+D)=\cos B\cos D-\sin B\sin D,
+$$
+
+this becomes
+
+$$
+4a^2b^2+4c^2d^2-8abcd\cos(B+D).
+$$
+
+Therefore,
+
+$$
+(4K)^2+(a^2+b^2-c^2-d^2)^2=4(a^2b^2+c^2d^2-2abcd\cos(B+D)).
+$$
+
+For part (E), rearrange the result from part (D):
+
+$$
+16K^2=4(a^2b^2+c^2d^2-2abcd\cos(B+D))-(a^2+b^2-c^2-d^2)^2.
+$$
+
+Use
+
+$$
+\cos(B+D)=2\cos^2\left(\frac{B+D}{2}\right)-1.
+$$
+
+Then
+
+$$
+-2abcd\cos(B+D)
+=-4abcd\cos^2\left(\frac{B+D}{2}\right)+2abcd.
+$$
+
+So
+
+$$
+16K^2=4(a^2b^2+c^2d^2+2abcd)-(a^2+b^2-c^2-d^2)^2
+$$
+
+$$
+-16abcd\cos^2\left(\frac{B+D}{2}\right).
+$$
+
+Since
+
+$$
+4(a^2b^2+c^2d^2+2abcd)=4(ab+cd)^2,
+$$
+
+we get
+
+$$
+16K^2=4(ab+cd)^2-(a^2+b^2-c^2-d^2)^2
+-16abcd\cos^2\left(\frac{B+D}{2}\right).
+$$
+
+From part $$(D)$$, the first two terms factor as
+
+$$
+16(s-a)(s-b)(s-c)(s-d).
+$$
+
+Therefore,
+
+$$
+16K^2=16(s-a)(s-b)(s-c)(s-d)
+-16abcd\cos^2\left(\frac{B+D}{2}\right).
+$$
+
+Divide by $$16$$:
+
+$$
+K^2=(s-a)(s-b)(s-c)(s-d)-abcd\cos^2\left(\frac{B+D}{2}\right).
+$$
+
+This is Bretschneider's formula.
+
+For part (F), if $$ABCD$$ is cyclic, then opposite angles are supplementary:
+
+$$
+B+D=180^\circ.
+$$
+
+Thus,
+
+$$
+\frac{B+D}{2}=90^\circ,
+$$
+
+so
+
+$$
+\cos^2\left(\frac{B+D}{2}\right)=\cos^2(90^\circ)=0.
+$$
+
+Bretschneider's formula becomes
+
+$$
+K^2=(s-a)(s-b)(s-c)(s-d),
+$$
+
+which is Brahmagupta's formula.
