@@ -64,7 +64,7 @@ The quantity $$\lvert 4p\rvert$$ controls how “wide” the parabola is: larger
 
 <div class="theorem-box" markdown="1">
 
-**Proof (standard equation of a vertical parabola).** Suppose the vertex is $$(h,k)$$, the focus is $$(h,k+p)$$, and the directrix is
+**Proof (Standard equation of a vertical parabola).** Suppose the vertex is $$(h,k)$$, the focus is $$(h,k+p)$$, and the directrix is
 
 $$
 y=k-p.
@@ -150,6 +150,8 @@ $$
 (h+p,k+2p).
 $$
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/parabolastuff.jpg' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+
 <div class="theorem-box" markdown="1">
 
 **Example.** For
@@ -221,6 +223,58 @@ $$
 - Foci: $$(h,\, k \pm c)$$ with $$c^{2} = a^{2} - b^{2}$$.
 
 If the denominators are equal ($$a = b$$), the ellipse is a circle of radius $$a$$.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Standard equation of an ellipse, horizontal major axis).** Place the foci on the $$x$$-axis at $$F_{1} = (-c,0)$$ and $$F_{2} = (c,0)$$ with $$0 < c < a$$. The ellipse is the set of points $$P = (x,y)$$ such that the sum of distances to the foci is the constant $$2a$$:
+
+$$
+\sqrt{(x+c)^{2} + y^{2}} + \sqrt{(x-c)^{2} + y^{2}} = 2a.
+$$
+
+Write $$r_{1} = \sqrt{(x+c)^{2} + y^{2}}$$ and $$r_{2} = \sqrt{(x-c)^{2} + y^{2}}$$, so $$r_{1} + r_{2} = 2a$$. Isolate $$r_{1} = 2a - r_{2}$$ and square (both sides are nonnegative):
+
+$$
+(x+c)^{2} + y^{2} = 4a^{2} - 4a r_{2} + (x-c)^{2} + y^{2}.
+$$
+
+Expand and cancel $$x^{2}$$, $$y^{2}$$, and $$c^{2}$$:
+
+$$
+4cx = 4a^{2} - 4a r_{2} \quad\Longrightarrow\quad a r_{2} = a^{2} - cx.
+$$
+
+Since $$r_{2} \ge 0$$ and (one can show) $$\lvert cx\rvert \le a^{2}$$ on the ellipse, the right-hand side is nonnegative, so we may square again:
+
+$$
+a^{2}\bigl((x-c)^{2} + y^{2}\bigr) = (a^{2} - cx)^{2}.
+$$
+
+Multiply out:
+
+$$
+a^{2}x^{2} - 2a^{2}cx + a^{2}c^{2} + a^{2}y^{2} = a^{4} - 2a^{2}cx + c^{2}x^{2}.
+$$
+
+Cancel $$-2a^{2}cx$$ and rearrange:
+
+$$
+a^{2}x^{2} - c^{2}x^{2} + a^{2}y^{2} = a^{4} - a^{2}c^{2}
+\quad\Longrightarrow\quad
+(a^{2} - c^{2})x^{2} + a^{2}y^{2} = a^{2}(a^{2} - c^{2}).
+$$
+
+Define $$b^{2} = a^{2} - c^{2} > 0$$. Then $$b^{2}x^{2} + a^{2}y^{2} = a^{2}b^{2}$$. Divide by $$a^{2}b^{2}$$:
+
+$$
+\frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} = 1.
+$$
+
+Thus the two-focus definition yields the standard equation with $$c^{2} = a^{2} - b^{2}$$. Translating the center to $$(h,k)$$ replaces $$x$$ by $$x-h$$ and $$y$$ by $$y-k$$, giving $$\dfrac{(x-h)^{2}}{a^{2}} + \dfrac{(y-k)^{2}}{b^{2}} = 1$$.
+
+For a vertical major axis, the same algebra applies after swapping the roles of $$x$$ and $$y$$ (foci on the vertical line through the center), which produces $$\dfrac{(x-h)^{2}}{b^{2}} + \dfrac{(y-k)^{2}}{a^{2}} = 1$$ with $$a > b$$ and again $$c^{2} = a^{2} - b^{2}$$.
+
+</div>
 
 ### Graphing an ellipse
 
@@ -349,59 +403,9 @@ $$
 y=\pm\frac{a}{e}=\pm\frac{a^2}{c}.
 $$
 
-Each focus has its own directrix. The right focus pairs with the right directrix, the left focus pairs with the left directrix, and similarly for vertical ellipses.
+Each focus has its own directrix. The right focus pairs with the right directrix, the left focus pairs with the left directrix, and similarly for vertical ellipses. These directrices will come in handy later in the Focus-Directrix section.
 
-<div class="theorem-box" markdown="1">
-
-**Proof (Standard equation of an ellipse, horizontal major axis).** Place the foci on the $$x$$-axis at $$F_{1} = (-c,0)$$ and $$F_{2} = (c,0)$$ with $$0 < c < a$$. The ellipse is the set of points $$P = (x,y)$$ such that the sum of distances to the foci is the constant $$2a$$:
-
-$$
-\sqrt{(x+c)^{2} + y^{2}} + \sqrt{(x-c)^{2} + y^{2}} = 2a.
-$$
-
-Write $$r_{1} = \sqrt{(x+c)^{2} + y^{2}}$$ and $$r_{2} = \sqrt{(x-c)^{2} + y^{2}}$$, so $$r_{1} + r_{2} = 2a$$. Isolate $$r_{1} = 2a - r_{2}$$ and square (both sides are nonnegative):
-
-$$
-(x+c)^{2} + y^{2} = 4a^{2} - 4a r_{2} + (x-c)^{2} + y^{2}.
-$$
-
-Expand and cancel $$x^{2}$$, $$y^{2}$$, and $$c^{2}$$:
-
-$$
-4cx = 4a^{2} - 4a r_{2} \quad\Longrightarrow\quad a r_{2} = a^{2} - cx.
-$$
-
-Since $$r_{2} \ge 0$$ and (one can show) $$\lvert cx\rvert \le a^{2}$$ on the ellipse, the right-hand side is nonnegative, so we may square again:
-
-$$
-a^{2}\bigl((x-c)^{2} + y^{2}\bigr) = (a^{2} - cx)^{2}.
-$$
-
-Multiply out:
-
-$$
-a^{2}x^{2} - 2a^{2}cx + a^{2}c^{2} + a^{2}y^{2} = a^{4} - 2a^{2}cx + c^{2}x^{2}.
-$$
-
-Cancel $$-2a^{2}cx$$ and rearrange:
-
-$$
-a^{2}x^{2} - c^{2}x^{2} + a^{2}y^{2} = a^{4} - a^{2}c^{2}
-\quad\Longrightarrow\quad
-(a^{2} - c^{2})x^{2} + a^{2}y^{2} = a^{2}(a^{2} - c^{2}).
-$$
-
-Define $$b^{2} = a^{2} - c^{2} > 0$$. Then $$b^{2}x^{2} + a^{2}y^{2} = a^{2}b^{2}$$. Divide by $$a^{2}b^{2}$$:
-
-$$
-\frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} = 1.
-$$
-
-Thus the two-focus definition yields the standard equation with $$c^{2} = a^{2} - b^{2}$$. Translating the center to $$(h,k)$$ replaces $$x$$ by $$x-h$$ and $$y$$ by $$y-k$$, giving $$\dfrac{(x-h)^{2}}{a^{2}} + \dfrac{(y-k)^{2}}{b^{2}} = 1$$.
-
-For a vertical major axis, the same algebra applies after swapping the roles of $$x$$ and $$y$$ (foci on the vertical line through the center), which produces $$\dfrac{(x-h)^{2}}{b^{2}} + \dfrac{(y-k)^{2}}{a^{2}} = 1$$ with $$a > b$$ and again $$c^{2} = a^{2} - b^{2}$$.
-
-</div>
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/ellipsedir.png' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
 
 ### Applications of ellipses
 
@@ -451,6 +455,8 @@ $$
 Eccentricity: $$\displaystyle e = \frac{c}{a} > 1$$.
 
 The conjugate hyperbola swaps the roles of the terms (e.g. $$\frac{y^{2}}{a^{2}} - \frac{x^{2}}{b^{2}} = 1$$ vs $$\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 1$$) and shares the same asymptote rectangle but different vertices and branches.
+
+**ADD IMAGE HERE**
 
 ### Graphing a hyperbola
 
@@ -545,6 +551,8 @@ $$
 e=\frac ca=\frac{\sqrt{13}}{3}.
 $$
 
+**ADD IMAGE HERE**
+
 </div>
 
 ### Directrices of a hyperbola
@@ -590,6 +598,8 @@ Unlike ellipses, the directrices of a hyperbola lie between the vertices:
 $$
 \frac ae<a<c.
 $$
+
+**ADD IMAGE HERE**
 
 <div class="theorem-box" markdown="1">
 
@@ -666,6 +676,8 @@ For vertical conics, replace $$x=\pm\frac ae$$ with
 $$
 y=\pm\frac ae.
 $$
+
+**ADD IMAGE HERE**
 
 <div class="theorem-box" markdown="1">
 
@@ -819,6 +831,8 @@ r=\frac{ed}{1+e\sin\theta} & y=d\\
 r=\frac{ed}{1-e\sin\theta} & y=-d
 \end{array}
 $$
+
+**ADD IMAGE HERE**
 
 Reading the graph:
 
@@ -1007,6 +1021,8 @@ $$
 
 These angles give the asymptotic directions of the hyperbola.
 
+**ADD IMAGE HERE**
+
 </div>
 
 ### Polar conics and orbits
@@ -1036,47 +1052,51 @@ This is why polar equations with a focus at the pole are often more natural than
 13. A circle is tangent to both axes in Quadrant I and its center lies on the ellipse $$\dfrac{x^{2}}{25}+\dfrac{y^{2}}{9}=1$$. Find the circle's radius.
 14. Show that the conic $$Ax^{2}+Cy^{2}+Dx+Ey+F=0$$ has center $$(h,k)$$ when $$A\ne 0$$ and $$C\ne 0$$. Derive formulas for $$h$$ and $$k$$ in terms of $$A,C,D,E$$, then find the center of $$5x^{2}-3y^{2}+20x+18y-11=0$$.
 15. For the parabola $$y^{2}=4px$$ with $$p>0$$, let a line through the focus $$(p,0)$$ have slope $$m\ne 0$$ and meet the parabola at two distinct points $$A$$ and $$B$$. Prove that the product of the $$y$$-coordinates of $$A$$ and $$B$$ equals $$-4p^{2}$$.
-16. (Bonus, 2026 USAPHO) 
+16. (Bonus, 2026 USAPhO)
 
-   Charged particles in a central Coulomb field follow conic trajectories because the force magnitude obeys an inverse-square law. Fix a particle $$\alpha$$ with charge $$+1\ \mathrm{C}$$ at the origin. A second particle then moves on either an elliptic-type (bound) or hyperbolic-type (unbound) conic, with polar descriptions (using polar angle $$\phi$$ measured from the positive $$x$$-axis and radial distance from the origin):
+You are studying the motion of charged particles constrained to the $$xy$$-plane. Particle $$\alpha$$, with charge $$+1\ \mathrm{C}$$, is fixed at the origin.
 
-   $$
-   r = \frac{r_{0}}{1 + e\cos\phi} \qquad (0 < e < 1)
-   $$
+For motion under an inverse-square central force, trajectories are conic sections with the fixed particle at a focus. In polar coordinates:
 
-   for the attractive case, and
+- For an attractive interaction (ellipse),
 
-   $$
-   R = \frac{r_{0}}{e\cos\phi - 1} \qquad (e > 1)
-   $$
+$$
+r=\frac{r_0}{1+e\cos\phi},\qquad e<1.
+$$
 
-   for the repulsive case.
+- For a repulsive interaction (hyperbola),
 
-   You also have a camera that records the exact position of the moving particle at three different times.
+$$
+r=\frac{r_0}{e\cos\phi-1},\qquad e>1.
+$$
 
-   $$(A)$$ Particle $$\beta$$ has charge $$-1\ \mathrm{C}$$ (attractive interaction with $$\alpha$$). The camera records
+You have a camera that takes three snapshots of a moving particle at equal time intervals.
 
-   $$
-   (0,\,-5\ \mathrm{m}),\qquad (3\ \mathrm{m},\,0),\qquad (0,\,5\ \mathrm{m}).
-   $$
-
-   Assume the only force on $$\beta$$ is the Coulomb force from $$\alpha$$, so the path is described by the attractive polar model above. Find the maximum distance $$\beta$$ ever reaches from the origin.
-
-   $$(B)$$ Particle $$\gamma$$ has charge $$+2\ \mathrm{C}$$ (repulsive interaction with $$\alpha$$). The camera records
+   $$(A)$$ A particle $$\beta$$, with charge $$-1\ \mathrm{C}$$, moves under the electrostatic force of particle $$\alpha$$. In three consecutive snapshots, its positions are
 
    $$
-   (3\ \mathrm{m},\,-4\ \mathrm{m}),\qquad (2\ \mathrm{m},\,0),\qquad (3\ \mathrm{m},\,4\ \mathrm{m}).
+   (0,-5\ \mathrm{m}),\qquad (3\ \mathrm{m},0),\qquad (0,5\ \mathrm{m}).
    $$
 
-   Assume the only force on $$\gamma$$ is the Coulomb force from $$\alpha$$, so the path is described by the repulsive polar model above. After a very long time, find the angle $$\theta$$ that the velocity of $$\gamma$$ makes with the positive $$x$$-axis (give an exact answer using inverse trigonometric functions if needed).
+   Assuming the motion is governed only by the Coulomb interaction with $$\alpha$$, determine the maximum distance that particle $$\beta$$ reaches from the origin.
 
-   $$(C)$$ Now imagine firing a family of particles identical to $$\gamma$$ from infinity, one at a time, along the same incident asymptotic line as $$\gamma$$, so they do not interact with each other and only interact with $$\alpha$$ (each trajectory is a repulsive hyperbola as above).
+   $$(B)$$ Now particle $$\beta$$ is replaced by particle $$\gamma$$, which has charge $$+2\ \mathrm{C}$$ and is free to move in the plane. In three consecutive snapshots, its positions are
 
-   Define the **impact parameter** $$B$$ as the perpendicular distance from the origin (where $$\alpha$$ sits) to the incident asymptotic line of $$\gamma$$. To avoid a symbol clash with the label $$\alpha$$ for the fixed charge, denote the **deflection angle** by $$\theta$$: that is the angle by which $$\gamma$$’s outgoing asymptotic direction differs from its incoming asymptotic direction, after a very long time.
+   $$
+   (3\ \mathrm{m},-4\ \mathrm{m}),\qquad (2\ \mathrm{m},0),\qquad (3\ \mathrm{m},4\ \mathrm{m}).
+   $$
 
-   $$(i)$$ Determine $$B(\theta)$$: express $$B$$ in terms of $$\theta$$ (and any constants such as $$e$$ or $$r_{0}$$ that you think must appear).
+   Assuming the motion is governed only by the Coulomb interaction with $$\alpha$$, determine the angle $$\theta$$, measured from the positive $$x$$-axis, of the velocity of particle $$\gamma$$ at a large time.
 
-   $$(ii)$$ Determine $$B(r_{0})$$: express $$B$$ in terms of $$r_{0}$$ (eliminating $$\Theta$$ if your answer in (i) still contains it, or giving the cleanest relation you can between $$B$$ and $$r_{0}$$ for this family of trajectories—state clearly what you are holding fixed).
+   $$(C)$$ A family of particles, each identical to particle $$\gamma$$ (that is, each has charge $$+2\ \mathrm{C}$$), approaches from infinity in the $$xy$$-plane. All particles have the same speed $$v_{\infty}$$ far from the origin and move along lines parallel to the initial asymptotic direction of particle $$\gamma$$ from part $$(B)$$. The particles are injected one at a time, so they do not interact with one another.
+
+   For each trajectory, define the **impact parameter** $$B$$ to be the perpendicular distance between the initial straight-line path of the particle and the origin.
+
+   As a particle passes near the scattering center, its direction changes due to Coulomb repulsion. Let $$\alpha$$ denote the total deflection angle of the trajectory, i.e. the angle between the incoming and outgoing asymptotic directions.
+
+   $$(i)$$ Using the conic form of the trajectory, derive a formula for $$B(\alpha)$$.
+
+   $$(ii)$$ Using the result of part $$(B)$$, express $$B(\alpha)$$ in terms of $$r_0$$.
 
 ## Solutions
 
@@ -1906,29 +1926,51 @@ $$
 r=\frac{r_0}{1+e\cos\phi}.
 $$
 
-The points $$(0,-5)$$ and $$(0,5)$$ have radial distance $$5$$ and satisfy $$\cos\phi=0$$. Therefore
+Since the first and third snapshots are at $$(0,-5)$$ and $$(0,5)$$, while the middle snapshot is at $$(3,0)$$, and the time intervals are equal, the path is symmetric about the $$x$$-axis. Therefore, $$(3,0)$$ is the closest point to the origin, called the **pericenter**.
+
+At pericenter, $$\phi=0$$, so
 
 $$
-5=\frac{r_0}{1+e(0)}
-\quad\Longrightarrow\quad
+r_{\min}=\frac{r_0}{1+e}=3.
+$$
+
+The other two photographed points are on the $$y$$-axis. There,
+
+$$
+\phi=\pm\frac{\pi}{2},\qquad r=5.
+$$
+
+Since $$\cos\left(\pm\frac{\pi}{2}\right)=0$$,
+
+$$
+5=\frac{r_0}{1+e(0)}=r_0.
+$$
+
+So
+
+$$
 r_0=5.
 $$
 
-The point $$(3,0)$$ has $$r=3$$ and $$\cos\phi=1$$, so
+Now use the pericenter equation:
 
 $$
 3=\frac{5}{1+e}.
 $$
 
-Thus
+Thus,
 
 $$
-1+e=\frac53
-\quad\Longrightarrow\quad
+1+e=\frac53,
+$$
+
+so
+
+$$
 e=\frac23.
 $$
 
-The maximum distance from the origin occurs when the denominator is smallest. Since $$0<e<1$$, this happens at $$\cos\phi=-1$$:
+The farthest point on the ellipse is the **apocenter**, where $$\phi=\pi$$ and $$\cos\phi=-1$$. Therefore,
 
 $$
 r_{\max}=\frac{r_0}{1-e}
@@ -1945,88 +1987,156 @@ $$
 For part (B), use the repulsive model
 
 $$
-R=\frac{r_0}{e\cos\phi-1}.
+r=\frac{r_0}{e\cos\phi-1}.
 $$
 
-The point $$(2,0)$$ has $$R=2$$ and $$\cos\phi=1$$, so
+Again, the first and third snapshots are symmetric about the $$x$$-axis, and the middle snapshot is at $$(2,0)$$. Since the snapshots are equally spaced in time, $$(2,0)$$ is the point of closest approach.
+
+At closest approach,
 
 $$
-2=\frac{r_0}{e-1}
-\quad\Longrightarrow\quad
+r_{\min}=\frac{r_0}{e-1}=2.
+$$
+
+Thus,
+
+$$
 r_0=2(e-1).
 $$
 
-The points $$(3,-4)$$ and $$(3,4)$$ have $$R=5$$ and $$\cos\phi=\frac35$$, so
+Now use the point $$(3,4)$$. Its distance from the origin is
 
 $$
-5=\frac{r_0}{\frac35e-1}.
+r=\sqrt{3^2+4^2}=5,
 $$
 
-Substitute $$r_0=2(e-1)$$:
+and
+
+$$
+\cos\phi=\frac{x}{r}=\frac35.
+$$
+
+Substitute into the polar equation:
+
+$$
+5=\frac{r_0}{e\cdot\frac35-1}.
+$$
+
+Using $$r_0=2(e-1)$$,
+
+$$
+5=\frac{2(e-1)}{\frac35e-1}.
+$$
+
+Multiply through:
 
 $$
 5\left(\frac35e-1\right)=2(e-1).
 $$
 
-Then
+So
 
 $$
-3e-5=2e-2
-\quad\Longrightarrow\quad
+3e-5=2e-2,
+$$
+
+which gives
+
+$$
 e=3.
 $$
 
-Therefore
+Then
 
 $$
-r_0=2(3-1)=4.
+r_0=2(e-1)=4.
 $$
 
-The asymptotic directions occur when the denominator tends to $$0$$:
+At large times, the particle approaches an asymptote of the hyperbola. The asymptote occurs when the denominator goes to zero:
 
 $$
 e\cos\phi-1=0.
 $$
 
-Since $$e=3$$,
+Therefore,
 
 $$
-\cos\phi=\frac13.
+\cos\phi=\frac1e=\frac13.
 $$
 
-Thus the outgoing asymptotic direction in the upper half-plane makes angle
+Thus the outgoing velocity direction at large positive time is
 
 $$
 \boxed{\theta=\arccos\left(\frac13\right)}
 $$
 
-with the positive $$x$$-axis. Equivalently,
+measured from the positive $$x$$-axis. Numerically,
 
 $$
-\boxed{\theta=\arctan(2\sqrt2)}.
+\theta\approx70.5^\circ.
 $$
 
-For part (C), start from the general repulsive equation
+For part (C), for a repulsive inverse-square force, the trajectory is
 
 $$
-R=\frac{r_0}{e\cos\phi-1}.
+r=\frac{r_0}{e\cos\phi-1},\qquad e>1.
 $$
 
-Since $$R\cos\phi=x$$, multiply through:
+The asymptotes occur when the denominator vanishes:
 
 $$
-R(e\cos\phi-1)=r_0
-\quad\Longrightarrow\quad
-ex-R=r_0.
+e\cos\phi-1=0.
+$$
+
+Thus,
+
+$$
+\cos\phi=\frac1e.
+$$
+
+The two asymptotes are symmetric about the $$x$$-axis, so the total deflection angle is
+
+$$
+\alpha=2\phi=2\arccos\left(\frac1e\right).
+$$
+
+Hence,
+
+$$
+\cos\left(\frac{\alpha}{2}\right)=\frac1e,
+$$
+
+so
+
+$$
+e=\frac{1}{\cos(\alpha/2)}.
+$$
+
+Now relate the impact parameter $$B$$ to the conic parameters. Starting from
+
+$$
+r=\frac{r_0}{e\cos\phi-1},
+$$
+
+multiply through:
+
+$$
+r(e\cos\phi-1)=r_0.
+$$
+
+Since $$r\cos\phi=x$$,
+
+$$
+ex-r=r_0.
 $$
 
 So
 
 $$
-R=ex-r_0.
+r=ex-r_0.
 $$
 
-Square and use $$R^2=x^2+y^2$$:
+Square both sides and use $$r^2=x^2+y^2$$:
 
 $$
 x^2+y^2=(ex-r_0)^2.
@@ -2038,106 +2148,106 @@ $$
 (e^2-1)x^2-2er_0x+r_0^2-y^2=0.
 $$
 
-Complete the square in $$x$$:
+Complete the square:
 
 $$
 (e^2-1)\left(x-\frac{er_0}{e^2-1}\right)^2-y^2
 =\frac{r_0^2}{e^2-1}.
 $$
 
-Divide by $$\dfrac{r_0^2}{e^2-1}$$:
-
-$$
-\frac{\left(x-\frac{er_0}{e^2-1}\right)^2}{\frac{r_0^2}{(e^2-1)^2}}
--
-\frac{y^2}{\frac{r_0^2}{e^2-1}}
-=1.
-$$
-
-Thus the asymptotes are
+Thus the hyperbola has asymptotes
 
 $$
 y=\pm\sqrt{e^2-1}\left(x-\frac{er_0}{e^2-1}\right).
 $$
 
-The impact parameter $$B$$ is the perpendicular distance from the origin to either asymptote. For the line
+The impact parameter $$B$$ is the perpendicular distance from the origin to the incoming asymptote. For a line
 
 $$
-y=\sqrt{e^2-1}\left(x-\frac{er_0}{e^2-1}\right),
+y=m(x-h),
 $$
 
-this distance is
+the distance from the origin is
 
 $$
-B=
-\frac{\sqrt{e^2-1}\cdot \frac{er_0}{e^2-1}}
-{\sqrt{1+(e^2-1)}}.
+\frac{\lvert mh \rvert}{\sqrt{m^2+1}}.
 $$
 
-Since $$\sqrt{1+(e^2-1)}=e$$,
+Here
 
 $$
-\boxed{B=\frac{r_0}{\sqrt{e^2-1}}}.
-$$
-
-Now relate this to the deflection angle. The outgoing asymptote makes angle
-
-$$
-\alpha=\arccos\left(\frac1e\right)
-$$
-
-with the positive $$x$$-axis. The incoming and outgoing velocity directions differ by
-
-$$
-\theta=\pi-2\alpha.
-$$
-
-So
-
-$$
-\frac{\theta}{2}=\frac{\pi}{2}-\alpha.
-$$
-
-Because $$\cos\alpha=\frac1e$$,
-
-$$
-\sin\left(\frac{\theta}{2}\right)=\frac1e.
-$$
-
-Therefore
-
-$$
-\sqrt{e^2-1}=\cot\left(\frac{\theta}{2}\right),
+m=\sqrt{e^2-1}
 $$
 
 and
 
 $$
-\boxed{B(\theta)=r_0\tan\left(\frac{\theta}{2}\right)}.
+h=\frac{er_0}{e^2-1}.
 $$
 
-For the specific trajectory of $$\gamma$$ from part (B), $$e=3$$ and $$r_0=4$$, so
+Therefore,
 
 $$
-B=\frac{4}{\sqrt{3^2-1}}
-=\frac{4}{\sqrt8}
-=\sqrt2.
+B=
+\frac{\sqrt{e^2-1}\cdot \frac{er_0}{e^2-1}}
+{\sqrt{(e^2-1)+1}}.
 $$
 
-Thus, if the family is fired along the same incident asymptotic line as $$\gamma$$, the impact parameter is fixed:
+Since $$\sqrt{(e^2-1)+1}=e$$,
 
 $$
-\boxed{B=\sqrt2\ \mathrm{m}}.
+B=\frac{r_0}{\sqrt{e^2-1}}.
 $$
 
-If instead one holds the eccentricity $$e$$ fixed while varying $$r_0$$, then the clean relation is
+Now substitute
 
 $$
-\boxed{B(r_0)=\frac{r_0}{\sqrt{e^2-1}}}.
+e=\frac{1}{\cos(\alpha/2)}.
 $$
 
-In particular, for the same eccentricity as $$\gamma$$, namely $$e=3$$,
+Then
 
 $$
-\boxed{B(r_0)=\frac{r_0}{2\sqrt2}}.
+e^2-1
+=\frac{1}{\cos^2(\alpha/2)}-1
+=\tan^2\left(\frac{\alpha}{2}\right).
 $$
+
+So
+
+$$
+\sqrt{e^2-1}=\tan\left(\frac{\alpha}{2}\right).
+$$
+
+Therefore,
+
+$$
+\boxed{B(\alpha)=r_0\cot\left(\frac{\alpha}{2}\right)}.
+$$
+
+For the particular trajectory in part $$(B)$$, the asymptote angle satisfies
+
+$$
+\cos\left(\frac{\alpha}{2}\right)=\frac13,
+$$
+
+so
+
+$$
+\tan\left(\frac{\alpha}{2}\right)=2\sqrt2.
+$$
+
+Therefore, for any trajectory whose asymptote angle matches the one from part $$(B)$$,
+
+$$
+B=r_0\cot\left(\frac{\alpha}{2}\right)
+=\frac{r_0}{2\sqrt2}.
+$$
+
+For the specific particle in part $$(B)$$, $$r_0=4$$, so
+
+$$
+B=\frac{4}{2\sqrt2}=\sqrt2\ \mathrm{m}.
+$$
+
+Note that the answer may be different depending on how you define the asymptote angle, so always match your work instead of necessarily matching solutions.
