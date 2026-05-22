@@ -15,8 +15,16 @@ function remarkJekyllUrls() {
   };
 }
 
+const repo = process.env.GITHUB_REPOSITORY || '';
+const isUpstream = repo === 'notesbyjoshua/notesbyjoshua.github.io';
+const base = process.env.ASTRO_BASE || (isUpstream ? '/' : '/notesbyjoshua.github.io/');
+const site =
+  process.env.ASTRO_SITE ||
+  (isUpstream ? 'https://notesbyjoshua.github.io' : 'https://gxboy12345.github.io/notesbyjoshua.github.io');
+
 export default defineConfig({
-  site: 'https://notesbyjoshua.github.io',
+  site,
+  base,
   trailingSlash: 'always',
   markdown: {
     remarkPlugins: [remarkMath, remarkJekyllUrls],

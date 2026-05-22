@@ -23,6 +23,15 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - name: Resolve Pages base path
+        run: |
+          if [ "${{ github.repository }}" = "notesbyjoshua/notesbyjoshua.github.io" ]; then
+            echo "ASTRO_BASE=/" >> "$GITHUB_ENV"
+            echo "ASTRO_SITE=https://notesbyjoshua.github.io" >> "$GITHUB_ENV"
+          else
+            echo "ASTRO_BASE=/notesbyjoshua.github.io/" >> "$GITHUB_ENV"
+            echo "ASTRO_SITE=https://gxboy12345.github.io/notesbyjoshua.github.io" >> "$GITHUB_ENV"
+          fi
       - run: npm ci
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
