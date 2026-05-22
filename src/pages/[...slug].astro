@@ -1,0 +1,58 @@
+---
+import { getCollection, render } from 'astro:content';
+import DocLayout from '../layouts/DocLayout.astro';
+import { routePath, routeSlug, allDocs } from '../lib/routes';
+
+export async function getStaticPaths() {
+  const [notes, pages, blog, practice, resources, feedback] = await Promise.all([
+    getCollection('notes'),
+    getCollection('pages'),
+    getCollection('blog'),
+    getCollection('practice'),
+    getCollection('resources'),
+    getCollection('feedback'),
+  ]);
+
+  const docs = allDocs(notes, pages, blog, practice, resources, feedback);
+  const seen = new Set<string>();
+
+  return docs
+    .map((entry) => {
+      const slug = routeSlug(entry);
+      if (!slug || slug === 'index') return null;
+      const path = routePath(entry);
+      if (seen.has(path)) return null;
+      seen.add(path);
+      return {
+        params: { slug },
+        props: { entry },
+      };
+    })
+    .filter(Boolean);
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+const title = entry.data.title ?? entry.id.replace(/\.md$/, '');
+const isFeedback = entry.collection === 'feedback';
+const embedUrl =
+  entry.collection === 'feedback'
+    ? 'https://docs.google.com/forms/d/e/1FAIpQLSeV_8oTyDJ_Yycjq1r4GPXFNjka71Vg5LNjEh4iYJsn7bgaXQ/viewform?embedded=true'
+    : undefined;
+---
+
+<DocLayout title={title} headings={headings.map((h) => ({ depth: h.depth, slug: h.slug, text: h.text }))}>
+  <Content />
+  {
+    isFeedback && embedUrl && (
+      <iframe
+        class="feedback-embed"
+        src={embedUrl}
+        title="Feedback form"
+        loading="lazy"
+      >
+        Loading form…
+      </iframe>
+    )
+  }
+</DocLayout>

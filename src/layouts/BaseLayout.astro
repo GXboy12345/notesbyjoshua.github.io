@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+import 'katex/dist/katex.min.css';
+import ThemeScript from '../components/ThemeScript.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Notes by Joshua', description = 'Math, physics, and AP study notes' } = Astro.props;
+const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Joshua`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{fullTitle}</title>
+    <link rel="icon" type="image/jpeg" href="/assets/Images/favicon.jpeg" />
+    <ThemeScript />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-868QCS9DJP"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-868QCS9DJP');
+    </script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <SiteHeader current={Astro.url.pathname} />
+      <slot />
+      <footer class="site-footer">
+        <p>Study notes by Joshua · <a href="https://github.com/notesbyjoshua">GitHub</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import DocSidebar from '../components/DocSidebar.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  headings?: { depth: number; slug: string; text: string }[];
+}
+
+const { title, description, headings = [] } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="layout-doc">
+    <DocSidebar current={Astro.url.pathname} />
+    <main class="doc-main">
+      <article class="prose">
+        <slot />
+      </article>
+    </main>
+    <TableOfContents headings={headings} />
+  </div>
+</BaseLayout>

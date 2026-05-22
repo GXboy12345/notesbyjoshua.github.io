@@ -1,9 +1,31 @@
 # Notes by Joshua
-Study website created by me! Currently in alpha-1 phase. You can see some of my to-do work here:
 
-## TODO for Alpha-3 Phase
+Study site for AP, math, and physics notes. Static site built with Astro and deployed to GitHub Pages.
 
-- Add tags?
-- Make into study site? Progress bar?
-- Add more notes (Precalc, Physics, Calc)
-- Add practice problems to notes other than precalc
+## Local preview
+
+```bash
+npm ci
+npm run dev
+```
+
+Open the URL printed in the terminal (default port 4321).
+
+## Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+Output is in `dist/`.
+
+## Deploy
+
+Push to `main` (or `frontend` on the fork). GitHub Actions workflow `.github/workflows/deploy.yml` builds and publishes to Pages. In the repo **Settings → Pages**, set source to **GitHub Actions**.
+
+## Content
+
+Markdown lives under `Notes/`, `blog/`, `Practice Problems/`, `Resources/`, and `feedback/`. Each file can set `permalink:` in frontmatter for the canonical URL path.
+
+Legacy Jekyll files (`_config.yml`, `_includes/`) remain for reference but are not part of the Astro build.

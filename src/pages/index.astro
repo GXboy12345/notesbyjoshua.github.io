@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { subjectHubs } from '../data/navigation';
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Free study notes for AP, math, and physics</h1>
+        <p class="hero-lead">
+          Notes by Joshua is in alpha-3: structured units, competition prep, and hub pages for every subject on the site.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/how-to-use-these-notes/">How to use these notes</a>
+          <a class="btn" href="/notes/ap/">Browse AP notes</a>
+          <a class="btn" href="/feedback/">Feedback</a>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>News</h2>
+        <ul class="news-list">
+          <li><strong>May 19, 2026</strong> — Alpha-3: AP Precalculus notes added.</li>
+          <li><strong>April 2, 2026</strong> — Alpha-2: AP Chem, Physics C E&amp;M, and Statistics.</li>
+          <li><strong>March 29, 2026</strong> — Alpha-1 launch; more units incoming.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="subject-grid" aria-label="Subjects">
+    {
+      subjectHubs.map((hub) => (
+        <a class="subject-card" href={hub.href} data-tone={hub.tone}>
+          <h3>{hub.title}</h3>
+          <p>{hub.desc}</p>
+        </a>
+      ))
+    }
+    <a class="subject-card" href="/practiceproblems/practice/" data-tone="math">
+      <h3>Practice problems</h3>
+      <p>Exercises paired with units where available</p>
+    </a>
+    <a class="subject-card" href="/Resources/resources/" data-tone="physics">
+      <h3>Resources</h3>
+      <p>External links, books, and tools</p>
+    </a>
+  </section>
+
+  <section class="hero" style="padding-top: 0">
+    <div class="panel" style="max-width: 72rem; margin: 0 auto">
+      <h2>Available now</h2>
+      <ul>
+        <li>AP Chem units 1–9</li>
+        <li>AP Physics C E&amp;M units 1–2</li>
+        <li>AP Stats units 1–9</li>
+        <li>AP Physics C Mech unit 1</li>
+        <li>AP Precalc units 1–14 (except unit 10)</li>
+      </ul>
+      <h2>In progress</h2>
+      <ul>
+        <li>AP Precalc unit 10</li>
+        <li>AP Calc BC units 1–10</li>
+        <li>AP Physics C E&amp;M units 3–6</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

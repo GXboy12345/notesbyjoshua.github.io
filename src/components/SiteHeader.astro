@@ -1,0 +1,38 @@
+---
+import { mainNav } from '../data/navigation';
+import ThemeToggle from './ThemeToggle.astro';
+
+interface Props {
+  current?: string;
+}
+
+const { current = Astro.url.pathname } = Astro.props;
+---
+
+<header class="site-header">
+  <a class="brand" href="/">Notes by <span>Joshua</span></a>
+  <nav class="header-nav" aria-label="Primary">
+    {
+      mainNav.map((item) => (
+        <a href={item.href} aria-current={current === item.href || current.startsWith(item.href.replace(/\/$/, '') + '/') ? 'page' : undefined}>
+          {item.label}
+        </a>
+      ))
+    }
+  </nav>
+  <div class="header-actions">
+    <ThemeToggle />
+    <button type="button" class="btn menu-toggle" aria-expanded="false" aria-controls="doc-sidebar">
+      Menu
+    </button>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const sidebar = document.getElementById('doc-sidebar');
+  toggle?.addEventListener('click', () => {
+    const open = sidebar?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>

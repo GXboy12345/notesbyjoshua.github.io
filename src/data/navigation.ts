@@ -1,0 +1,33 @@
+export type NavItem = { label: string; href: string; children?: NavItem[] };
+
+export const mainNav: NavItem[] = [
+  { label: 'Home', href: '/' },
+  { label: 'How to use', href: '/how-to-use-these-notes/' },
+  { label: 'Notes', href: '/Notes/notes/' },
+  { label: 'Practice', href: '/practiceproblems/practice/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Resources', href: '/Resources/resources/' },
+  { label: 'Feedback', href: '/feedback/' },
+  { label: 'About', href: '/about/' },
+];
+
+export const subjectHubs = [
+  {
+    title: 'AP courses',
+    desc: 'Chem, Calc, Physics C, Precalc, Stats',
+    href: '/notes/ap/',
+    tone: 'ap',
+  },
+  {
+    title: 'Math',
+    desc: 'Algebra, competition prep',
+    href: '/notes/math/',
+    tone: 'math',
+  },
+  {
+    title: 'Physics',
+    desc: 'F=ma, USAPhO, AP Physics',
+    href: '/notes/physics/',
+    tone: 'physics',
+  },
+];

@@ -1,0 +1,25 @@
+<button type="button" class="btn theme-toggle" aria-label="Toggle color theme">
+  <span class="theme-icon" data-light="☀" data-dark="☾">☀</span>
+</button>
+
+<script>
+  const k = 'notes-site-theme';
+  const btn = document.querySelector('.theme-toggle');
+  const icon = btn?.querySelector('.theme-icon');
+
+  function sync() {
+    const t = document.documentElement.getAttribute('data-theme') || 'light';
+    if (icon) icon.textContent = t === 'dark' ? '☾' : '☀';
+  }
+
+  btn?.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try {
+      localStorage.setItem(k, next);
+    } catch (_) {}
+    sync();
+  });
+
+  sync();
+</script>

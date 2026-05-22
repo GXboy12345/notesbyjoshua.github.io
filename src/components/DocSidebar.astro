@@ -1,0 +1,25 @@
+---
+import { mainNav } from '../data/navigation';
+
+interface Props {
+  current?: string;
+}
+
+const { current = Astro.url.pathname } = Astro.props;
+---
+
+<aside id="doc-sidebar" class="doc-sidebar" aria-label="Section navigation">
+  <nav>
+    {
+      mainNav.map((item) => (
+        <a href={item.href} aria-current={current === item.href ? 'page' : undefined}>
+          {item.label}
+        </a>
+      ))
+    }
+  </nav>
+  <p class="nav-section">Subjects</p>
+  <a href="/notes/ap/" aria-current={current.startsWith('/notes/ap') ? 'page' : undefined}>AP</a>
+  <a href="/notes/math/" aria-current={current.startsWith('/notes/math') ? 'page' : undefined}>Math</a>
+  <a href="/notes/physics/" aria-current={current.startsWith('/notes/physics') ? 'page' : undefined}>Physics</a>
+</aside>
