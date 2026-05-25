@@ -188,9 +188,23 @@ Higher $$T$$ increases vapor pressure; stronger IMFs tend to lower vapor pressur
    (C) The reaction has no enthalpy change.<br>
    (D) The reaction must have $$\Delta S<0$$.
 
+5. Which equation correctly represents Hess's law?
+
+   (A) $$q=mc\Delta T$$<br>
+   (B) $$\Delta H_{\text{rxn}}=\sum \Delta H_{\text{steps}}$$<br>
+   (C) $$PV=nRT$$<br>
+   (D) $$K=\frac{[\text{products}]}{[\text{reactants}]}$$
+
+6. If bonds broken require $$650\ \text{kJ}$$ and bonds formed release $$900\ \text{kJ}$$, what is the approximate $$\Delta H_{\text{rxn}}$$?
+
+   (A) $$+250\ \text{kJ}$$<br>
+   (B) $$-250\ \text{kJ}$$<br>
+   (C) $$+1550\ \text{kJ}$$<br>
+   (D) $$-1550\ \text{kJ}$$
+
 ### FRQ
 
-5. A reaction is represented by
+7. A reaction is represented by
 
 $$
 2\text{H}_2(g)+\text{O}_2(g)\rightarrow2\text{H}_2\text{O}(l)
@@ -204,7 +218,7 @@ with $$\Delta H^\circ_{\text{rxn}}=-572\ \text{kJ}$$ for the reaction as written
 
    $$(C)$$ Explain why breaking bonds is endothermic even when the overall reaction is exothermic.
 
-6. The 2026 AP Chemistry exam included a sodium oxide thermochemistry problem using formation enthalpy and limiting reactants. (Adapted from College Board, [2026 AP Chemistry FRQ 7](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
+8. The 2026 AP Chemistry exam included a sodium oxide thermochemistry problem using formation enthalpy and limiting reactants. (Adapted from College Board, [2026 AP Chemistry FRQ 7](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
    $$(A)$$ For $$4\text{Na}(s)+\text{O}_2(g)\rightarrow2\text{Na}_2\text{O}(s)$$ with $$\Delta H^\circ_{\text{rxn}}=-828\ \text{kJ}$$, calculate $$\Delta H_f^\circ$$ for $$\text{Na}_2\text{O}(s)$$.
 
@@ -215,6 +229,8 @@ with $$\Delta H^\circ_{\text{rxn}}=-572\ \text{kJ}$$ for the reaction as written
 ---
 
 ## Solutions
+
+### MCQ
 
 <div class="theorem-box" markdown="1">
 
@@ -278,19 +294,11 @@ $$
 
 ### Solution 5
 
-$$(A)$$ The reaction forms $$2$$ moles of water, so for $$1.00$$ mole:
+Hess's law says enthalpy is a state function, so the enthalpy change for an overall reaction equals the sum of the enthalpy changes for the steps.
 
 $$
-\frac{-572\ \text{kJ}}{2}=-286\ \text{kJ}.
+\boxed{\text{B}}
 $$
-
-$$(B)$$ The reaction as written consumes $$2$$ moles of $$\text{H}_2$$. Consuming $$4.00$$ moles doubles the reaction:
-
-$$
-2(-572\ \text{kJ})=-1144\ \text{kJ}.
-$$
-
-$$(C)$$ Energy must be added to separate bonded atoms, so bond breaking is endothermic. The overall reaction is exothermic because forming the O-H bonds in water releases more energy than was required to break the H-H and O=O bonds.
 
 </div>
 
@@ -298,7 +306,51 @@ $$(C)$$ Energy must be added to separate bonded atoms, so bond breaking is endot
 
 ### Solution 6
 
-$$(A)$$ The reaction forms $$2$$ moles of $$\text{Na}_2\text{O}(s)$$, so
+Use
+
+$$
+\Delta H_{\text{rxn}}\approx \sum D(\text{broken})-\sum D(\text{formed}).
+$$
+
+$$
+\Delta H_{\text{rxn}}=650-900=-250\ \text{kJ}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$(A)$$ The reaction forms $$2$$ moles of water, so the enthalpy change must be divided by $$2$$ to find the value per mole of water:
+
+$$
+\frac{-572\ \text{kJ}}{2}=-286\ \text{kJ}.
+$$
+
+The negative sign means heat is released when water forms from hydrogen and oxygen.
+
+$$(B)$$ The reaction as written consumes $$2$$ moles of $$\text{H}_2$$. Consuming $$4.00$$ moles doubles the reaction, so the enthalpy change also doubles:
+
+$$
+2(-572\ \text{kJ})=-1144\ \text{kJ}.
+$$
+
+$$(C)$$ Energy must be added to separate bonded atoms, so bond breaking is endothermic. The overall reaction is exothermic because forming the O-H bonds in water releases more energy than was required to break the H-H and O=O bonds. In bond-enthalpy language, $$\Delta H_{\text{rxn}}$$ is negative because the energy released by bonds formed is greater than the energy absorbed by bonds broken.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+$$(A)$$ The reaction forms $$2$$ moles of $$\text{Na}_2\text{O}(s)$$ from elements in their standard states, so the reaction enthalpy is twice the molar enthalpy of formation:
 
 $$
 \Delta H_f^\circ=\frac{-828\ \text{kJ}}{2}=-414\ \text{kJ/mol}.
@@ -312,6 +364,6 @@ $$
 
 So $$414\ \text{kJ}$$ of heat is released.
 
-$$(C)$$ Formation enthalpy measures formation from elements in their standard states. An element already in its standard state requires no formation reaction, so its assigned value is zero.
+$$(C)$$ Formation enthalpy measures formation from elements in their standard states. An element already in its standard state requires no formation reaction, so its assigned value is zero. This is a reference convention that lets formation enthalpies be added and subtracted consistently in Hess's law calculations.
 
 </div>

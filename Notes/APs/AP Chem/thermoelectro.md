@@ -572,9 +572,23 @@ Since this unit is very equation-heavy, below is a list of all important equatio
    (C) salt bridge.<br>
    (D) voltmeter.
 
+5. If $$\Delta G^\circ<0$$ for a reaction under standard conditions, which statement is true?
+
+   (A) $$K<1$$<br>
+   (B) $$K=1$$<br>
+   (C) $$K>1$$<br>
+   (D) $$E^\circ_{\text{cell}}<0$$ for the corresponding galvanic cell
+
+6. What mass of Ag is plated by $$1.00\ \text{mol}$$ of electrons from $$\text{Ag}^+$$?
+
+   (A) $$53.9\ \text{g}$$<br>
+   (B) $$107.9\ \text{g}$$<br>
+   (C) $$215.8\ \text{g}$$<br>
+   (D) $$96500\ \text{g}$$
+
 ### FRQ
 
-5. A galvanic cell is based on the reaction
+7. A galvanic cell is based on the reaction
 
 $$
 \text{Zn}(s)+\text{Cu}^{2+}(aq)\rightarrow\text{Zn}^{2+}(aq)+\text{Cu}(s).
@@ -590,7 +604,7 @@ Use $$E^\circ_{\text{red}}(\text{Cu}^{2+}/\text{Cu})=+0.34\ \text{V}$$ and $$E^\
 
    $$(D)$$ Explain the direction of electron flow in the external circuit.
 
-6. The 2024 AP Chemistry exam included electroplating and nonspontaneous electrochemistry in a sterling silver context. (Adapted from College Board, [2024 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
+8. The 2024 AP Chemistry exam included electroplating and nonspontaneous electrochemistry in a sterling silver context. (Adapted from College Board, [2024 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
 
    $$(A)$$ Explain why an electrolytic plating process requires an external power source.
 
@@ -601,6 +615,8 @@ Use $$E^\circ_{\text{red}}(\text{Cu}^{2+}/\text{Cu})=+0.34\ \text{V}$$ and $$E^\
 ---
 
 ## Solutions
+
+### MCQ
 
 <div class="theorem-box" markdown="1">
 
@@ -666,13 +682,55 @@ $$
 
 ### Solution 5
 
+Since
+
+$$
+\Delta G^\circ=-RT\ln K,
+$$
+
+a negative $$\Delta G^\circ$$ means $$\ln K>0$$, so $$K>1$$.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+For $$\text{Ag}^+ + e^- \rightarrow \text{Ag}(s)$$, $$1.00\ \text{mol}$$ of electrons plates $$1.00\ \text{mol}$$ of Ag.
+
+$$
+1.00\ \text{mol Ag}\times107.9\ \text{g/mol}=107.9\ \text{g}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
 $$(A)$$ Zinc is oxidized:
 
 $$
 \text{Zn}(s)\rightarrow\text{Zn}^{2+}(aq)+2e^-,
 $$
 
-so zinc is the anode. Copper(II) is reduced at the cathode.
+so zinc is the anode. Copper(II) is reduced at the cathode:
+
+$$
+\text{Cu}^{2+}(aq)+2e^-\rightarrow\text{Cu}(s).
+$$
+
+This follows the rule that oxidation occurs at the anode and reduction occurs at the cathode.
 
 $$(B)$$
 
@@ -683,6 +741,8 @@ $$
 $$
 E^\circ_{\text{cell}}=0.34-(-0.76)=1.10\ \text{V}.
 $$
+
+The positive cell potential is consistent with the reaction being spontaneous as a galvanic cell under standard conditions.
 
 $$(C)$$ Here $$n=2$$.
 
@@ -700,15 +760,21 @@ $$
 \boxed{\Delta G^\circ=-212\ \text{kJ/mol rxn}}.
 $$
 
-$$(D)$$ Electrons are produced at the zinc anode and consumed at the copper cathode, so electrons flow from Zn to Cu through the external circuit.
+$$(D)$$ Electrons are produced at the zinc anode and consumed at the copper cathode, so electrons flow from Zn to Cu through the external circuit. Ions move through the salt bridge to maintain charge balance, but electrons do not travel through the salt bridge.
+
+<div class="placeholder-box" markdown="1">
+
+**Image placeholder:** Galvanic cell diagram with Zn anode, Cu cathode, electron flow from Zn to Cu, and ion flow through the salt bridge.
+
+</div>
 
 </div>
 
 <div class="theorem-box" markdown="1">
 
-### Solution 6
+### Solution 2
 
-$$(A)$$ Electroplating is nonspontaneous as written, so an external power source is needed to drive electron flow and force reduction of metal ions onto the object.
+$$(A)$$ Electroplating is nonspontaneous as written, so an external power source is needed to drive electron flow and force reduction of metal ions onto the object. In other words, electrical energy is used to make a thermodynamically unfavorable redox process occur.
 
 $$(B)$$ Moles of copper plated:
 
@@ -734,6 +800,8 @@ $$
 t=\frac{3.04\times10^3\ \text{C}}{2.00\ \text{C/s}}=1.52\times10^3\ \text{s}.
 $$
 
-$$(C)$$ Metal ions gain electrons and become solid metal on the object, so reduction occurs at the object being plated.
+This is about $$25.3\ \text{min}$$ if converted to minutes.
+
+$$(C)$$ Metal ions gain electrons and become solid metal on the object, so reduction occurs at the object being plated. The object being plated acts as the cathode in the electrolytic cell.
 
 </div>

@@ -333,9 +333,23 @@ This unit’s equilibrium constant logic is the same machinery you will reuse fo
    (C) $$\text{CaO}(s)$$ and $$\text{CO}_2(g)$$<br>
    (D) all species
 
+5. For $$\text{AgCl}(s)\rightleftharpoons\text{Ag}^+(aq)+\text{Cl}^-(aq)$$, what is the expression for $$K_{sp}$$?
+
+   (A) $$[\text{Ag}^+][\text{Cl}^-]$$<br>
+   (B) $$\dfrac{[\text{Ag}^+][\text{Cl}^-]}{[\text{AgCl}]}$$<br>
+   (C) $$[\text{AgCl}]$$<br>
+   (D) $$\dfrac{1}{[\text{Ag}^+][\text{Cl}^-]}$$
+
+6. If an exothermic equilibrium reaction is heated, the equilibrium shifts
+
+   (A) toward products.<br>
+   (B) toward reactants.<br>
+   (C) nowhere, because temperature does not affect equilibrium.<br>
+   (D) only if a catalyst is present.
+
 ### FRQ
 
-5. At a certain temperature, $$K_c=4.00$$ for
+7. At a certain temperature, $$K_c=4.00$$ for
 
 $$
 \text{A}(g)\rightleftharpoons2\text{B}(g).
@@ -349,7 +363,7 @@ A sealed container initially has $$0.600\ M$$ $$\text{A}$$ and no $$\text{B}$$.
 
    $$(C)$$ Calculate the equilibrium concentrations of $$\text{A}$$ and $$\text{B}$$.
 
-6. The 2024 AP Chemistry exam included an equilibrium particle-diagram question for $$\text{H}_2(g)+\text{I}_2(g)\rightleftharpoons2\text{HI}(g)$$. (Adapted from College Board, [2024 AP Chemistry FRQ 5](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
+8. The 2024 AP Chemistry exam included an equilibrium particle-diagram question for $$\text{H}_2(g)+\text{I}_2(g)\rightleftharpoons2\text{HI}(g)$$. (Adapted from College Board, [2024 AP Chemistry FRQ 5](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
 
    $$(A)$$ Write the expression for $$Q$$.
 
@@ -360,6 +374,8 @@ A sealed container initially has $$0.600\ M$$ $$\text{A}$$ and no $$\text{B}$$.
 ---
 
 ## Solutions
+
+### MCQ
 
 <div class="theorem-box" markdown="1">
 
@@ -417,11 +433,43 @@ $$
 
 ### Solution 5
 
+Pure solids are omitted from equilibrium expressions, so
+
+$$
+K_{sp}=[\text{Ag}^+][\text{Cl}^-].
+$$
+
+$$
+\boxed{\text{A}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+For an exothermic reaction, heat behaves like a product. Adding heat shifts the equilibrium toward reactants.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
 $$(A)$$
 
 $$
 K_c=\frac{[\text{B}]^2}{[\text{A}]}.
 $$
+
+The coefficient $$2$$ in front of $$\text{B}$$ becomes the exponent $$2$$ in the equilibrium expression. There are no solids or liquids to omit in this reaction.
 
 $$(B)$$ The ICE setup is
 
@@ -430,6 +478,8 @@ $$(B)$$ The ICE setup is
 | Initial | $$0.600$$ | $$0$$ |
 | Change | $$-x$$ | $$+2x$$ |
 | Equilibrium | $$0.600-x$$ | $$2x$$ |
+
+The $$+2x$$ appears because every mole of $$\text{A}$$ that reacts produces $$2$$ moles of $$\text{B}$$.
 
 $$(C)$$ Substitute into $$K_c$$:
 
@@ -467,11 +517,13 @@ $$
 [\text{B}]_{\text{eq}}=2(0.421)=0.842\ M.
 $$
 
+The negative root is rejected because it would make no physical sense for the reaction progress variable in this setup. Both equilibrium concentrations are positive, which is a useful check.
+
 </div>
 
 <div class="theorem-box" markdown="1">
 
-### Solution 6
+### Solution 2
 
 $$(A)$$
 
@@ -479,12 +531,20 @@ $$
 Q=\frac{[\text{HI}]^2}{[\text{H}_2][\text{I}_2]}.
 $$
 
+The coefficient $$2$$ on $$\text{HI}$$ becomes the exponent $$2$$.
+
 $$(B)$$
 
 $$
 Q=\frac{(0.30)^2}{(0.20)(0.10)}=\frac{0.090}{0.020}=4.5.
 $$
 
-$$(C)$$ Since $$Q<K$$, the system has too little product relative to equilibrium. It shifts toward products, forming more $$\text{HI}$$.
+$$(C)$$ Since $$Q<K$$, the system has too little product relative to equilibrium. It shifts toward products, forming more $$\text{HI}$$ and consuming $$\text{H}_2$$ and $$\text{I}_2$$. The value of $$K$$ does not change during the shift because temperature is not changed.
+
+<div class="placeholder-box" markdown="1">
+
+**Image placeholder:** Particle diagram for $$\text{H}_2+\text{I}_2\rightleftharpoons2\text{HI}$$ showing the mixture shifting toward more $$\text{HI}$$.
+
+</div>
 
 </div>

@@ -594,6 +594,8 @@ $$
 
 ## Solutions
 
+### MCQ
+
 <div class="theorem-box" markdown="1">
 
 ### Solution 1
@@ -628,9 +630,11 @@ $$
 
 </div>
 
+### FRQ
+
 <div class="theorem-box" markdown="1">
 
-### Solution 3
+### Solution 1
 
 $$(A)$$ Before the equivalence point, added strong base or strong acid reacts essentially completely with the weak acid or conjugate base. The reaction changes the amounts present, so the equilibrium calculation must use the post-stoichiometry mixture.
 

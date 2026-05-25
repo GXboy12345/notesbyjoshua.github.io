@@ -284,9 +284,23 @@ What is the rate law?
    (C) It quadruples.<br>
    (D) It stays the same.
 
+5. A reaction has a rate law $$\text{rate}=k[A]$$. What are the units of $$k$$ if rate is measured in $$M/s$$?
+
+   (A) $$M^{-1}s^{-1}$$<br>
+   (B) $$s^{-1}$$<br>
+   (C) $$M/s$$<br>
+   (D) $$M^2/s$$
+
+6. Increasing temperature usually increases reaction rate because
+
+   (A) the activation energy becomes zero.<br>
+   (B) more collisions have energy greater than or equal to $$E_a$$.<br>
+   (C) the equilibrium constant must become larger.<br>
+   (D) the reaction mechanism cannot change.
+
 ### FRQ
 
-5. A first-order decomposition has rate constant $$k=0.0300\ \text{s}^{-1}$$.
+7. A first-order decomposition has rate constant $$k=0.0300\ \text{s}^{-1}$$.
 
    $$(A)$$ Calculate the half-life.
 
@@ -294,7 +308,7 @@ What is the rate law?
 
    $$(C)$$ Explain how the slope of a graph of $$\ln[A]$$ versus time is related to $$k$$.
 
-6. The 2026 AP Chemistry exam included a kinetics question using concentration-time data and a graph of natural log of concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
+8. The 2026 AP Chemistry exam included a kinetics question using concentration-time data and a graph of natural log of concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
    $$(A)$$ Explain how concentration-time data can support that a reaction is first order in a reactant.
 
@@ -305,6 +319,8 @@ What is the rate law?
 ---
 
 ## Solutions
+
+### MCQ
 
 <div class="theorem-box" markdown="1">
 
@@ -376,6 +392,36 @@ $$
 
 ### Solution 5
 
+For $$\text{rate}=k[A]$$,
+
+$$
+k=\frac{M/s}{M}=s^{-1}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+At higher temperature, particles have greater kinetic energy on average, so a larger fraction of collisions can overcome the activation energy.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
 $$(A)$$ For a first-order reaction,
 
 $$
@@ -387,6 +433,8 @@ Thus
 $$
 t_{1/2}=\frac{0.693}{0.0300}=23.1\ \text{s}.
 $$
+
+The units are seconds because the rate constant has units of $$\text{s}^{-1}$$ for a first-order reaction.
 
 $$(B)$$ Use the integrated rate law:
 
@@ -404,19 +452,23 @@ $$
 [A]_t=0.132\ M.
 $$
 
+This is less than the initial $$0.800\ M$$, which is reasonable because the reactant is decomposing over time.
+
 $$(C)$$ For a first-order reaction, a graph of $$\ln[A]$$ versus time is linear with slope
 
 $$
 \boxed{-k}.
 $$
 
+The negative slope shows that $$[A]$$ decreases as time increases. The magnitude of the slope gives the rate constant, so a steeper negative line means a faster first-order reaction.
+
 </div>
 
 <div class="theorem-box" markdown="1">
 
-### Solution 6
+### Solution 2
 
-$$(A)$$ If a plot of $$\ln[A]$$ versus time is linear, the data support a first-order relationship in $$A$$. Equivalently, the concentration should decrease by the same fraction over equal time intervals.
+$$(A)$$ If a plot of $$\ln[A]$$ versus time is linear, the data support a first-order relationship in $$A$$. Equivalently, the concentration should decrease by the same fraction over equal time intervals. A plot of $$[A]$$ versus time or $$1/[A]$$ versus time would be used to test zero-order or second-order behavior, so the linear graph identifies the order.
 
 $$(B)$$ For a first-order reaction, the slope is $$-k$$, so
 
@@ -424,10 +476,14 @@ $$
 k=0.0150\ \text{s}^{-1}.
 $$
 
+The sign of $$k$$ is positive; the negative sign belongs to the slope because the concentration is decreasing.
+
 $$(C)$$
 
 $$
 t_{1/2}=\frac{0.693}{k}=\frac{0.693}{0.0150}=46.2\ \text{s}.
 $$
+
+For a first-order reaction, this half-life is constant, meaning every $$46.2\ \text{s}$$ the concentration is cut in half regardless of the starting concentration.
 
 </div>

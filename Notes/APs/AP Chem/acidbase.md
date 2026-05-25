@@ -333,9 +333,23 @@ $$\text{HF}$$ is weak; $$\text{HSO}_4^-$$ is a weak acid.
    (C) all weak acid has been converted to conjugate base.<br>
    (D) $$[\text{H}_3\text{O}^+]=[\text{OH}^-]$$.
 
+5. Which species is the conjugate base of $$\text{H}_2\text{PO}_4^-$$?
+
+   (A) $$\text{H}_3\text{PO}_4$$<br>
+   (B) $$\text{HPO}_4^{2-}$$<br>
+   (C) $$\text{PO}_4^{3-}$$<br>
+   (D) $$\text{OH}^-$$
+
+6. Which mixture is a buffer?
+
+   (A) $$\text{HCl}$$ and $$\text{NaCl}$$<br>
+   (B) $$\text{NaOH}$$ and $$\text{NaCl}$$<br>
+   (C) $$\text{HF}$$ and $$\text{NaF}$$<br>
+   (D) $$\text{HNO}_3$$ and $$\text{NaNO}_3$$
+
 ### FRQ
 
-5. A $$0.100\ M$$ solution of acetic acid, $$\text{HC}_2\text{H}_3\text{O}_2$$, has $$K_a=1.8\times10^{-5}$$.
+7. A $$0.100\ M$$ solution of acetic acid, $$\text{HC}_2\text{H}_3\text{O}_2$$, has $$K_a=1.8\times10^{-5}$$.
 
    $$(A)$$ Write the acid-ionization equation.
 
@@ -345,7 +359,7 @@ $$\text{HF}$$ is weak; $$\text{HSO}_4^-$$ is a weak acid.
 
    $$(D)$$ Explain what happens to the percent ionization if sodium acetate is added.
 
-6. The 2026 AP Chemistry exam included a nitrous acid titration and indicator question. (Adapted from College Board, [2026 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
+8. The 2026 AP Chemistry exam included a nitrous acid titration and indicator question. (Adapted from College Board, [2026 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
    $$(A)$$ Explain why the equivalence point of a weak acid-strong base titration has $$\text{pH}>7$$.
 
@@ -356,6 +370,8 @@ $$\text{HF}$$ is weak; $$\text{HSO}_4^-$$ is a weak acid.
 ---
 
 ## Solutions
+
+### MCQ
 
 <div class="theorem-box" markdown="1">
 
@@ -431,11 +447,39 @@ $$
 
 ### Solution 5
 
+A conjugate base is formed by removing one proton. Removing $$\text{H}^+$$ from $$\text{H}_2\text{PO}_4^-$$ gives $$\text{HPO}_4^{2-}$$.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+A buffer contains a weak acid and its conjugate base, or a weak base and its conjugate acid. $$\text{HF}$$ and $$\text{F}^-$$ form a buffer pair.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
 $$(A)$$
 
 $$
 \text{HC}_2\text{H}_3\text{O}_2(aq)+\text{H}_2\text{O}(l)\rightleftharpoons \text{H}_3\text{O}^+(aq)+\text{C}_2\text{H}_3\text{O}_2^-(aq)
 $$
+
+Water is included in the chemical equation because it accepts the proton, but liquid water is omitted from the $$K_a$$ expression.
 
 $$(B)$$ Let $$x=[\text{H}_3\text{O}^+]$$ at equilibrium. Then
 
@@ -455,21 +499,33 @@ $$
 x=\sqrt{(1.8\times10^{-5})(0.100)}=1.34\times10^{-3}\ M.
 $$
 
+This value is small compared with $$0.100\ M$$, so the small-$$x$$ approximation is reasonable:
+
+$$
+\frac{1.34\times10^{-3}}{0.100}\times100\%=1.34\%.
+$$
+
 $$(C)$$
 
 $$
 \text{pH}=-\log(1.34\times10^{-3})=2.87.
 $$
 
-$$(D)$$ Sodium acetate adds the common ion $$\text{C}_2\text{H}_3\text{O}_2^-$$, shifting the acid ionization left. The percent ionization decreases.
+$$(D)$$ Sodium acetate adds the common ion $$\text{C}_2\text{H}_3\text{O}_2^-$$, shifting the acid ionization left. Since less acetic acid ionizes, $$[\text{H}_3\text{O}^+]$$ decreases and the percent ionization decreases. This is the common-ion effect.
 
 </div>
 
 <div class="theorem-box" markdown="1">
 
-### Solution 6
+### Solution 2
 
-$$(A)$$ At equivalence, the weak acid has been converted mostly into its conjugate base. The conjugate base reacts with water to produce $$\text{OH}^-$$, so the solution is basic.
+$$(A)$$ At equivalence, the weak acid has been converted mostly into its conjugate base. The conjugate base reacts with water to produce $$\text{OH}^-$$:
+
+$$
+\text{NO}_2^-(aq)+\text{H}_2\text{O}(l)\rightleftharpoons\text{HNO}_2(aq)+\text{OH}^-(aq).
+$$
+
+Because $$\text{OH}^-$$ is produced, the solution is basic and the equivalence-point pH is greater than $$7$$.
 
 $$(B)$$ At equivalence,
 
@@ -487,6 +543,12 @@ $$
 M_{\text{HNO}_2}=\frac{0.00336\ \text{mol}}{0.0350\ \text{L}}=0.0960\ M.
 $$
 
-$$(C)$$ The steep part of the titration curve is where a tiny volume change causes a large pH change, so the color change most closely marks the equivalence point.
+$$(C)$$ The steep part of the titration curve is where a tiny volume change causes a large pH change, so the color change most closely marks the equivalence point. If the indicator changes color far from that steep region, it will signal the endpoint too early or too late and create systematic error.
+
+<div class="placeholder-box" markdown="1">
+
+**Image placeholder:** Weak acid-strong base titration curve with equivalence point above $$\text{pH}=7$$ and an indicator transition range near the steep region.
+
+</div>
 
 </div>

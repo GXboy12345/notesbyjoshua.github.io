@@ -356,9 +356,23 @@ but transmittance rarely shows up on the AP exam. Beer's law is very applicable 
    (C) remains exactly zero.<br>
    (D) becomes independent of gas identity.
 
+5. Which sample should behave most ideally as a gas?
+
+   (A) $$\text{NH}_3$$ at high pressure and low temperature<br>
+   (B) $$\text{CO}_2$$ at high pressure and low temperature<br>
+   (C) He at low pressure and high temperature<br>
+   (D) $$\text{H}_2\text{O}$$ vapor near condensation
+
+6. Which solution has the highest boiling point, assuming ideal behavior?
+
+   (A) $$0.10\ m$$ glucose<br>
+   (B) $$0.10\ m\ \text{NaCl}$$<br>
+   (C) $$0.10\ m\ \text{CaCl}_2$$<br>
+   (D) pure water
+
 ### FRQ
 
-5. A student measures the absorbance of several solutions of $$\text{Cu}^{2+}$$ at the same wavelength and path length.
+7. A student measures the absorbance of several solutions of $$\text{Cu}^{2+}$$ at the same wavelength and path length.
 
    $$(A)$$ Explain why absorbance can be used to determine concentration.
 
@@ -366,7 +380,7 @@ but transmittance rarely shows up on the AP exam. Beer's law is very applicable 
 
    $$(C)$$ Explain why the wavelength should be chosen near the color most strongly absorbed by the solution.
 
-6. The 2026 AP Chemistry exam included a spectrophotometry particle-diagram question about absorbance and ion concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 6](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
+8. The 2026 AP Chemistry exam included a spectrophotometry particle-diagram question about absorbance and ion concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 6](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
    $$(A)$$ Explain why a solution with greater concentration of colored ions has greater absorbance at a fixed wavelength.
 
@@ -377,6 +391,8 @@ but transmittance rarely shows up on the AP exam. Beer's law is very applicable 
 ---
 
 ## Solutions
+
+### MCQ
 
 <div class="theorem-box" markdown="1">
 
@@ -442,13 +458,39 @@ $$
 
 ### Solution 5
 
+Gases behave most ideally at low pressure and high temperature, especially when particles have weak intermolecular forces. Helium fits best.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+Boiling-point elevation depends on total dissolved particle concentration. $$\text{CaCl}_2$$ produces about three ions per formula unit, the largest value among the choices.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
 $$(A)$$ Beer-Lambert law gives
 
 $$
 A=\varepsilon lc.
 $$
 
-If $$\varepsilon$$ and $$l$$ are constant, absorbance is directly proportional to concentration.
+If $$\varepsilon$$ and $$l$$ are constant, absorbance is directly proportional to concentration. This means a calibration curve can be used because a solution with more absorbing particles in the same path length absorbs more light. The relationship is only reliable when all measurements use the same wavelength and cuvette path length.
 
 $$(B)$$ Substitute into the calibration equation:
 
@@ -462,13 +504,13 @@ $$
 c=\frac{0.420}{15.0}=0.0280\ \text{mol/L}.
 $$
 
-$$(C)$$ Choosing a strongly absorbed wavelength gives a larger absorbance change for a given concentration change, which makes the measurement more sensitive.
+$$(C)$$ Choosing a strongly absorbed wavelength gives a larger absorbance change for a given concentration change, which makes the measurement more sensitive. If the wavelength is poorly absorbed, the absorbance values may be too small and close together, making it harder to distinguish concentrations accurately.
 
 </div>
 
 <div class="theorem-box" markdown="1">
 
-### Solution 6
+### Solution 2
 
 $$(A)$$ More colored ions means more particles are available to absorb photons at that wavelength. For fixed path length, Beer-Lambert law says absorbance is proportional to concentration.
 
@@ -484,6 +526,12 @@ $$
 c=0.0300\ M.
 $$
 
-$$(C)$$ The $$0.040\ M$$ solution has twice the concentration, so an equal-volume particle diagram should show twice as many colored ions.
+$$(C)$$ The $$0.040\ M$$ solution has twice the concentration, so an equal-volume particle diagram should show twice as many colored ions. The volume of the box must stay the same; only the number of solute particles should change.
+
+<div class="placeholder-box" markdown="1">
+
+**Image placeholder:** Equal-volume particle diagrams showing the $$0.040\ M$$ solution with twice as many colored ions as the $$0.020\ M$$ solution.
+
+</div>
 
 </div>

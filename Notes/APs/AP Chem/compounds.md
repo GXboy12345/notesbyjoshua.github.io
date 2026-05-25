@@ -225,9 +225,23 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
    (C) the actual ion has three equivalent N-O bonds with bond order between single and double.<br>
    (D) the ion violates conservation of charge.
 
+5. Which molecule has a bent molecular geometry?
+
+   (A) $$\text{CO}_2$$<br>
+   (B) $$\text{H}_2\text{O}$$<br>
+   (C) $$\text{BF}_3$$<br>
+   (D) $$\text{CH}_4$$
+
+6. Which bond is most polar?
+
+   (A) C-H<br>
+   (B) C-C<br>
+   (C) H-F<br>
+   (D) Cl-Cl
+
 ### FRQ
 
-5. Consider the molecules $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
+7. Consider the molecules $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
 
    $$(A)$$ Draw a reasonable Lewis structure for each molecule.
 
@@ -235,7 +249,7 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
 
    $$(C)$$ Explain which molecule can form stronger intermolecular attractions with water.
 
-6. The 2026 AP Chemistry exam asked students about chromate resonance and VSEPR geometry. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
+8. The 2026 AP Chemistry exam asked students about chromate resonance and VSEPR geometry. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
    $$(A)$$ Predict the molecular geometry around chromium in $$\text{CrO}_4^{2-}$$.
 
@@ -246,6 +260,8 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
 ---
 
 ## Solutions
+
+### MCQ
 
 <div class="theorem-box" markdown="1">
 
@@ -299,7 +315,39 @@ $$
 
 ### Solution 5
 
+Water has two bonding domains and two lone pairs around oxygen, giving a bent molecular geometry.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+The H-F bond has the largest electronegativity difference among the choices, so it is the most polar.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
 $$(A)$$ In $$\text{CH}_2\text{O}$$, carbon is bonded to two H atoms and double-bonded to O. In $$\text{CH}_3\text{OH}$$, carbon is bonded to three H atoms and single-bonded to O, while O is bonded to H and has two lone pairs.
+
+<div class="placeholder-box" markdown="1">
+
+**Image placeholder:** Lewis structures for $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
+
+</div>
 
 $$(B)$$ The carbon in $$\text{CH}_2\text{O}$$ has three electron domains, so it is
 
@@ -313,22 +361,22 @@ $$
 \boxed{sp^3}.
 $$
 
-$$(C)$$ $$\text{CH}_3\text{OH}$$ forms stronger attractions with water because it can both donate and accept hydrogen bonds through its $$\text{O-H}$$ group. $$\text{CH}_2\text{O}$$ can accept hydrogen bonds at oxygen, but it cannot donate hydrogen bonds.
+$$(C)$$ $$\text{CH}_3\text{OH}$$ forms stronger attractions with water because it can both donate and accept hydrogen bonds through its $$\text{O-H}$$ group. The O atom has lone pairs that can accept hydrogen bonds, and the H attached to O can be donated into a hydrogen bond with water. $$\text{CH}_2\text{O}$$ can accept hydrogen bonds at oxygen, but it cannot donate hydrogen bonds because its H atoms are bonded to carbon, not to a highly electronegative atom. This gives methanol stronger overall interactions with water.
 
 </div>
 
 <div class="theorem-box" markdown="1">
 
-### Solution 6
+### Solution 2
 
-$$(A)$$ The chromium has four bonding regions around it, so the geometry is
+$$(A)$$ The chromium has four bonding regions around it, so the electron-domain geometry and molecular geometry are both
 
 $$
 \boxed{\text{tetrahedral}}.
 $$
 
-$$(B)$$ The double-bond character can be placed between chromium and different oxygen atoms while keeping the same atom connectivity and total number of valence electrons.
+$$(B)$$ The double-bond character can be placed between chromium and different oxygen atoms while keeping the same atom connectivity and total number of valence electrons. These drawings differ only in electron placement, not in which atoms are bonded to which, so they are resonance structures rather than different compounds.
 
-$$(C)$$ The resonance hybrid averages the valid resonance structures. Since no single resonance structure fully describes the ion, the Cr-O bonds have the same average bond order and are equivalent.
+$$(C)$$ The resonance hybrid averages the valid resonance structures. Since no single resonance structure fully describes the ion, the Cr-O bonds have the same average bond order and are equivalent. A good particle-level explanation is that the extra electron density is delocalized over the Cr-O bonding framework rather than locked into one permanent double bond.
 
 </div>

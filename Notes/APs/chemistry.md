@@ -70,6 +70,8 @@ AP free-response questions often reward clear particle-level explanations, corre
 
 ## Solutions
 
+### MCQ
+
 <div class="theorem-box" markdown="1">
 
 ### Solution 1
@@ -94,9 +96,11 @@ $$
 
 </div>
 
+### FRQ
+
 <div class="theorem-box" markdown="1">
 
-### Solution 3
+### Solution 1
 
 $$(A)$$ Kinetics predicts how fast a reaction occurs and what factors affect rate. Equilibrium predicts the relative amounts of reactants and products after the forward and reverse processes balance.
 

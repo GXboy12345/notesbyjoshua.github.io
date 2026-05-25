@@ -252,9 +252,23 @@ A **colloid** contains dispersed particles larger than single molecules but smal
    (C) The total volume of solution increases.<br>
    (D) The beaker is made of glass.
 
+5. What is the oxidation number of sulfur in $$\text{SO}_4^{2-}$$?
+
+   (A) $$+2$$<br>
+   (B) $$+4$$<br>
+   (C) $$+6$$<br>
+   (D) $$-2$$
+
+6. Which pair of aqueous solutions will produce a precipitate when mixed?
+
+   (A) $$\text{NaNO}_3$$ and $$\text{KCl}$$<br>
+   (B) $$\text{BaCl}_2$$ and $$\text{Na}_2\text{SO}_4$$<br>
+   (C) $$\text{KNO}_3$$ and $$\text{NaC}_2\text{H}_3\text{O}_2$$<br>
+   (D) $$\text{NH}_4\text{Cl}$$ and $$\text{NaNO}_3$$
+
 ### FRQ
 
-5. A $$2.50\ \text{g}$$ sample of impure $$\text{CaCO}_3$$ reacts with excess $$\text{HCl}$$ according to
+7. A $$2.50\ \text{g}$$ sample of impure $$\text{CaCO}_3$$ reacts with excess $$\text{HCl}$$ according to
 
 $$
 \text{CaCO}_3(s)+2\text{HCl}(aq)\rightarrow \text{CaCl}_2(aq)+\text{CO}_2(g)+\text{H}_2\text{O}(l).
@@ -268,7 +282,7 @@ The reaction produces $$0.0200\ \text{mol}$$ of $$\text{CO}_2$$.
 
    $$(C)$$ Calculate the percent by mass of $$\text{CaCO}_3$$ in the impure sample.
 
-6. A released AP Chemistry question asked students to identify a limiting reactant from experimental data. (Adapted from College Board, [2024 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
+8. A released AP Chemistry question asked students to identify a limiting reactant from experimental data. (Adapted from College Board, [2024 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
 
    $$(A)$$ In a trial, $$0.0300\ \text{mol}$$ of $$\text{Al}$$ reacts with $$0.0200\ \text{mol}$$ of $$\text{Cl}_2$$ according to $$2\text{Al}+3\text{Cl}_2\rightarrow2\text{AlCl}_3$$. Identify the limiting reactant.
 
@@ -279,6 +293,8 @@ The reaction produces $$0.0200\ \text{mol}$$ of $$\text{CO}_2$$.
 ---
 
 ## Solutions
+
+### MCQ
 
 <div class="theorem-box" markdown="1">
 
@@ -354,7 +370,39 @@ $$
 
 ### Solution 5
 
-$$(A)$$ The balanced equation has a $$1:1$$ mole ratio between $$\text{CaCO}_3$$ and $$\text{CO}_2$$, so
+Oxygen is usually $$-2$$. Let sulfur be $$x$$:
+
+$$
+x+4(-2)=-2.
+$$
+
+So $$x=+6$$.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+$$\text{Ba}^{2+}$$ and $$\text{SO}_4^{2-}$$ form $$\text{BaSO}_4(s)$$, which is insoluble.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$(A)$$ The balanced equation has a $$1:1$$ mole ratio between $$\text{CaCO}_3$$ and $$\text{CO}_2$$. The problem says the acid is in excess, so all of the carbonate that can react is converted to products, and the moles of $$\text{CO}_2$$ produced directly equal the moles of $$\text{CaCO}_3$$ that reacted:
 
 $$
 \boxed{0.0200\ \text{mol CaCO}_3}.
@@ -366,17 +414,21 @@ $$
 (0.0200\ \text{mol})(100.09\ \text{g/mol})=2.00\ \text{g}.
 $$
 
+The answer has three significant figures because the measured amount of $$\text{CO}_2$$ is given as $$0.0200\ \text{mol}$$.
+
 $$(C)$$ The mass percent is
 
 $$
 \frac{2.00\ \text{g}}{2.50\ \text{g}}\times 100\%=80.0\%.
 $$
 
+This means $$80.0\%$$ of the impure sample was reactive $$\text{CaCO}_3$$, and the remaining $$20.0\%$$ was impurity that did not produce $$\text{CO}_2$$.
+
 </div>
 
 <div class="theorem-box" markdown="1">
 
-### Solution 6
+### Solution 2
 
 $$(A)$$ Compare how much $$\text{Cl}_2$$ is needed for the available Al:
 
@@ -384,7 +436,7 @@ $$
 0.0300\ \text{mol Al}\times\frac{3\ \text{mol Cl}_2}{2\ \text{mol Al}}=0.0450\ \text{mol Cl}_2.
 $$
 
-Only $$0.0200\ \text{mol Cl}_2$$ is available, so $$\text{Cl}_2$$ is limiting.
+Only $$0.0200\ \text{mol Cl}_2$$ is available, which is less than the $$0.0450\ \text{mol Cl}_2$$ required to consume all of the aluminum. Therefore, $$\text{Cl}_2$$ is the limiting reactant.
 
 $$(B)$$ Use the limiting reactant:
 
@@ -392,6 +444,8 @@ $$
 0.0200\ \text{mol Cl}_2\times\frac{2\ \text{mol AlCl}_3}{3\ \text{mol Cl}_2}=0.0133\ \text{mol AlCl}_3.
 $$
 
-$$(C)$$ The balanced reaction requires fixed mole ratios. Once $$\text{Cl}_2$$ is used up, no more $$\text{AlCl}_3$$ can form, even though some Al remains.
+The mole ratio comes from the balanced equation: $$3$$ moles of $$\text{Cl}_2$$ produce $$2$$ moles of $$\text{AlCl}_3$$.
+
+$$(C)$$ The balanced reaction requires fixed mole ratios. Once $$\text{Cl}_2$$ is used up, no more $$\text{AlCl}_3$$ can form, even though some Al remains. The excess reactant remains because there are no longer enough particles of the limiting reactant available to collide and react in the required stoichiometric ratio.
 
 </div>
