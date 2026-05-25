@@ -153,3 +153,97 @@ $$
 $$
 
 Higher $$T$$ increases vapor pressure; stronger IMFs tend to lower vapor pressure at a given $$T$$ (see [Unit 3]({{ '/notes/ap/chem/submix/' | relative_url }})). This formula will likely not appear on the AP test, but is good to know
+
+---
+
+## Practice
+
+### MCQ
+
+1. A reaction has $$\Delta H=-85\ \text{kJ/mol}$$. Which statement is correct?
+
+   (A) The reaction absorbs heat from the surroundings.<br>
+   (B) The products have greater enthalpy than the reactants.<br>
+   (C) The reaction is exothermic.<br>
+   (D) The reaction must be spontaneous at all temperatures.
+
+2. A $$50.0\ \text{g}$$ sample of water is warmed from $$22.0^\circ\text{C}$$ to $$28.0^\circ\text{C}$$. Using $$c=4.184\ \text{J/(g}\cdot^\circ\text{C)}$$, how much heat is absorbed by the water?
+
+   (A) $$1.26\times10^2\ \text{J}$$<br>
+   (B) $$1.26\times10^3\ \text{J}$$<br>
+   (C) $$5.02\times10^3\ \text{J}$$<br>
+   (D) $$1.17\times10^4\ \text{J}$$
+
+### FRQ
+
+3. A reaction is represented by
+
+$$
+2\text{H}_2(g)+\text{O}_2(g)\rightarrow2\text{H}_2\text{O}(l)
+$$
+
+with $$\Delta H^\circ_{\text{rxn}}=-572\ \text{kJ}$$ for the reaction as written.
+
+   $$(A)$$ Calculate the enthalpy change for forming $$1.00\ \text{mol}$$ of $$\text{H}_2\text{O}(l)$$.
+
+   $$(B)$$ Calculate the enthalpy change when $$4.00\ \text{mol}$$ of $$\text{H}_2(g)$$ reacts completely.
+
+   $$(C)$$ Explain why breaking bonds is endothermic even when the overall reaction is exothermic.
+
+---
+
+## Solutions
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+A negative $$\Delta H$$ means heat is released by the system. The reaction is exothermic.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+Use
+
+$$
+q=mc\Delta T.
+$$
+
+Here $$\Delta T=6.0^\circ\text{C}$$, so
+
+$$
+q=(50.0)(4.184)(6.0)=1.26\times10^3\ \text{J}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+$$(A)$$ The reaction forms $$2$$ moles of water, so for $$1.00$$ mole:
+
+$$
+\frac{-572\ \text{kJ}}{2}=-286\ \text{kJ}.
+$$
+
+$$(B)$$ The reaction as written consumes $$2$$ moles of $$\text{H}_2$$. Consuming $$4.00$$ moles doubles the reaction:
+
+$$
+2(-572\ \text{kJ})=-1144\ \text{kJ}.
+$$
+
+$$(C)$$ Energy must be added to separate bonded atoms, so bond breaking is endothermic. The overall reaction is exothermic because forming the O-H bonds in water releases more energy than was required to break the H-H and O=O bonds.
+
+</div>

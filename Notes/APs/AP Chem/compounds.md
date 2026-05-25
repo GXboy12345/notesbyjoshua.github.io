@@ -157,13 +157,13 @@ The **Born–Haber cycle** is a **Hess’s law** (See more in [Unit 6]({{ '/note
 
 Take a 1:1 alkali halide $$\text{MX}$$, formed from $$\text{M}(s)$$ and $$\tfrac{1}{2}\text{X}_2(g)$$. Imagine the path:
 
-1. **Atomize the metal** (sublimation): $$\text{M}(s) \rightarrow \text{M}(g)$$ with $$\Delta H = \Delta H_{\text{sub}}$$ (usually endothermic).  
+1. **Atomize the metal** (sublimation): $$\text{M}(s) \rightarrow \text{M}(g)$$ with $$\Delta H = \Delta H_{\text{sub}}$$ (usually endothermic).
 
-2. **Ionize the metal**: $$\text{M}(g) \rightarrow \text{M}^+(g) + e^-$$ with $$\Delta H = \text{IE}$$ (endothermic; use the correct successive ionization energies if more than one electron is lost). 
+2. **Ionize the metal**: $$\text{M}(g) \rightarrow \text{M}^+(g) + e^-$$ with $$\Delta H = \text{IE}$$ (endothermic; use the correct successive ionization energies if more than one electron is lost).
 
-3. **Atomize the halogen**: $$\tfrac{1}{2}\text{X}_2(g) \rightarrow \text{X}(g)$$ with $$\Delta H = \tfrac{1}{2}D_{\text{X–X}}$$ (endothermic; half the $$\text{X–X}$$ bond enthalpy).  
+3. **Atomize the halogen**: $$\tfrac{1}{2}\text{X}_2(g) \rightarrow \text{X}(g)$$ with $$\Delta H = \tfrac{1}{2}D_{\text{X–X}}$$ (endothermic; half the $$\text{X–X}$$ bond enthalpy).
 
-4. **Attach an electron to the halogen**: $$\text{X}(g) + e^- \rightarrow \text{X}^-(g)$$ with $$\Delta H = \Delta H_{\text{ea}}$$. For halogens this step is exothermic, so $$\Delta H_{\text{ea}}$$ is negative when reported as an enthalpy change. (If a table lists **electron affinity** with a different sign convention, convert it to $$\Delta H$$ for this step before you add.)  
+4. **Attach an electron to the halogen**: $$\text{X}(g) + e^- \rightarrow \text{X}^-(g)$$ with $$\Delta H = \Delta H_{\text{ea}}$$. For halogens this step is exothermic, so $$\Delta H_{\text{ea}}$$ is negative when reported as an enthalpy change. (If a table lists **electron affinity** with a different sign convention, convert it to $$\Delta H$$ for this step before you add.)
 
 5. **Form the crystal from gas ions**: $$\text{M}^+(g) + \text{X}^-(g) \rightarrow \text{MX}(s)$$. This step is strongly exothermic. Textbooks often define **lattice energy** $$U_{\text{lattice}}$$ as a positive number equal to the endothermic enthalpy of the **reverse** process: one mole of solid separated into isolated gaseous ions:
 
@@ -190,3 +190,83 @@ For salts with other stoichiometries (e.g. $$\text{MgCl}_2$$, $$\text{Na}_2\text
 Qualitatively, larger ion charges and smaller ions (shorter internuclear distances in the lattice) increase $$U_{\text{lattice}}$$, consistent with Coulomb attraction in the lattice and with the trends introduced earlier in this unit. A picture has been added below for illustrative purposes.
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/compounds/bornhaber.gif' | relative_url }}" alt="Born-Haber Cycle" loading="lazy" decoding="async" />
+
+---
+
+## Practice
+
+### MCQ
+
+1. Which molecule is polar?
+
+   (A) $$\text{CO}_2$$<br>
+   (B) $$\text{BF}_3$$<br>
+   (C) $$\text{CH}_4$$<br>
+   (D) $$\text{NH}_3$$
+
+2. Which compound should have the greatest lattice energy magnitude?
+
+   (A) $$\text{NaF}$$<br>
+   (B) $$\text{NaCl}$$<br>
+   (C) $$\text{MgO}$$<br>
+   (D) $$\text{MgCl}_2$$
+
+### FRQ
+
+3. Consider the molecules $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
+
+   $$(A)$$ Draw a reasonable Lewis structure for each molecule.
+
+   $$(B)$$ Identify the hybridization of the carbon atom in each molecule.
+
+   $$(C)$$ Explain which molecule can form stronger intermolecular attractions with water.
+
+---
+
+## Solutions
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$\text{NH}_3$$ has three N-H bonds and one lone pair on nitrogen, giving a trigonal pyramidal shape. The bond dipoles do not cancel.
+
+$$
+\boxed{\text{D}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+Lattice energy increases when ion charges are larger and ion radii are smaller. $$\text{MgO}$$ contains $$\text{Mg}^{2+}$$ and $$\text{O}^{2-}$$, so the charge product is larger than in the salts with only $$1+$$ or $$1-$$ ions.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+$$(A)$$ In $$\text{CH}_2\text{O}$$, carbon is bonded to two H atoms and double-bonded to O. In $$\text{CH}_3\text{OH}$$, carbon is bonded to three H atoms and single-bonded to O, while O is bonded to H and has two lone pairs.
+
+$$(B)$$ The carbon in $$\text{CH}_2\text{O}$$ has three electron domains, so it is
+
+$$
+\boxed{sp^2}.
+$$
+
+The carbon in $$\text{CH}_3\text{OH}$$ has four electron domains, so it is
+
+$$
+\boxed{sp^3}.
+$$
+
+$$(C)$$ $$\text{CH}_3\text{OH}$$ forms stronger attractions with water because it can both donate and accept hydrogen bonds through its $$\text{O-H}$$ group. $$\text{CH}_2\text{O}$$ can accept hydrogen bonds at oxygen, but it cannot donate hydrogen bonds.
+
+</div>

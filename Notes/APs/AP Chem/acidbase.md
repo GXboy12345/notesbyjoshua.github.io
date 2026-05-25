@@ -237,8 +237,8 @@ In a **titration**, a solution of known concentration (**titrant**) is added fro
 
 Titration curve shape:
 
-- Strong acid / strong base: equivalence near $$\text{pH} = 7$$ at $$25\,^\circ\text{C}$$, steep vertical jump.  
-- Weak acid / strong base: equivalence $$\text{pH} > 7$$ (conjugate base hydrolysis).  
+- Strong acid / strong base: equivalence near $$\text{pH} = 7$$ at $$25\,^\circ\text{C}$$, steep vertical jump.
+- Weak acid / strong base: equivalence $$\text{pH} > 7$$ (conjugate base hydrolysis).
 - Weak base / strong acid: equivalence $$\text{pH} < 7$$ (conjugate acid).
 
 At the **half-equivalence point** of a weak acid titrated with strong base, $$[\text{HA}] \approx [\text{A}^-]$$ and $$\text{pH} \approx \text{p}K_a$$ (buffer maximum in that sense). Polyprotic acids show multiple equivalence steps and multiple near-plateau regions corresponding to each $$\text{p}K_a$$.
@@ -281,10 +281,10 @@ The **common ion effect** is the suppression of ionization of a weak electrolyte
 
 ## Working checklist
 
-1. Identify strong vs weak; write the correct net ionic chemistry.  
-2. Use $$K_w$$, $$K_a$$, and $$K_b$$ at a consistent temperature; link conjugates with $$K_a K_b = K_w$$.  
-3. Use **ICE** tables for weak acids/bases; watch dilution and the **common ion effect**.  
-4. Buffers: **Henderson–Hasselbalch equation** or full equilibrium when assumptions fail.  
+1. Identify strong vs weak; write the correct net ionic chemistry.
+2. Use $$K_w$$, $$K_a$$, and $$K_b$$ at a consistent temperature; link conjugates with $$K_a K_b = K_w$$.
+3. Use **ICE** tables for weak acids/bases; watch dilution and the **common ion effect**.
+4. Buffers: **Henderson–Hasselbalch equation** or full equilibrium when assumptions fail.
 5. Titrations: stoichiometry first, then equilibrium at the **equivalence point** or **half-equivalence point** for $$\text{p}K_a$$.
 
 ---
@@ -298,3 +298,119 @@ The **common ion effect** is the suppression of ionization of a weak electrolyte
 | $$\text{H}_2\text{SO}_4$$ (first $$\text{H}^+$$ only) | |
 
 $$\text{HF}$$ is weak; $$\text{HSO}_4^-$$ is a weak acid.
+
+---
+
+## Practice
+
+### MCQ
+
+1. What is the $$\text{pH}$$ of a $$1.0\times10^{-3}\ M$$ solution of $$\text{HCl}$$ at $$25^\circ\text{C}$$?
+
+   (A) $$1.00$$<br>
+   (B) $$3.00$$<br>
+   (C) $$7.00$$<br>
+   (D) $$11.00$$
+
+2. A buffer contains equal concentrations of $$\text{HF}$$ and $$\text{F}^-$$. If $$K_a$$ for $$\text{HF}$$ is $$6.8\times10^{-4}$$, what is the $$\text{pH}$$ of the buffer?
+
+   (A) $$1.68$$<br>
+   (B) $$3.17$$<br>
+   (C) $$7.00$$<br>
+   (D) $$10.83$$
+
+### FRQ
+
+3. A $$0.100\ M$$ solution of acetic acid, $$\text{HC}_2\text{H}_3\text{O}_2$$, has $$K_a=1.8\times10^{-5}$$.
+
+   $$(A)$$ Write the acid-ionization equation.
+
+   $$(B)$$ Calculate $$[\text{H}_3\text{O}^+]$$ using the small-$$x$$ approximation.
+
+   $$(C)$$ Calculate the $$\text{pH}$$.
+
+   $$(D)$$ Explain what happens to the percent ionization if sodium acetate is added.
+
+---
+
+## Solutions
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$\text{HCl}$$ is a strong acid, so
+
+$$
+[\text{H}_3\text{O}^+]=1.0\times10^{-3}\ M.
+$$
+
+Thus
+
+$$
+\text{pH}=-\log(1.0\times10^{-3})=3.00.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+When $$[\text{HF}]=[\text{F}^-]$$, the Henderson-Hasselbalch equation gives
+
+$$
+\text{pH}=\text{p}K_a.
+$$
+
+$$
+\text{p}K_a=-\log(6.8\times10^{-4})=3.17.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+$$(A)$$
+
+$$
+\text{HC}_2\text{H}_3\text{O}_2(aq)+\text{H}_2\text{O}(l)\rightleftharpoons \text{H}_3\text{O}^+(aq)+\text{C}_2\text{H}_3\text{O}_2^-(aq)
+$$
+
+$$(B)$$ Let $$x=[\text{H}_3\text{O}^+]$$ at equilibrium. Then
+
+$$
+K_a=\frac{x^2}{0.100-x}.
+$$
+
+Using the small-$$x$$ approximation,
+
+$$
+1.8\times10^{-5}=\frac{x^2}{0.100}.
+$$
+
+Thus
+
+$$
+x=\sqrt{(1.8\times10^{-5})(0.100)}=1.34\times10^{-3}\ M.
+$$
+
+$$(C)$$
+
+$$
+\text{pH}=-\log(1.34\times10^{-3})=2.87.
+$$
+
+$$(D)$$ Sodium acetate adds the common ion $$\text{C}_2\text{H}_3\text{O}_2^-$$, shifting the acid ionization left. The percent ionization decreases.
+
+</div>

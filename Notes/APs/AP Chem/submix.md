@@ -84,7 +84,7 @@ The main crystalline types behave differently in simple tests, so a short flowch
 
 ## Separating mixtures
 
-**Chromatography** separates components by differential affinity for a mobile phase and a stationary phase based on their differing polarity. It is typically done on cellulose or silica based paper (both polar) and involves dipping the bottom of the paper in a solvent (that is both polar and nonpolar) which allows the components to separate. 
+**Chromatography** separates components by differential affinity for a mobile phase and a stationary phase based on their differing polarity. It is typically done on cellulose or silica based paper (both polar) and involves dipping the bottom of the paper in a solvent (that is both polar and nonpolar) which allows the components to separate.
 
 The **retention factor** is
 
@@ -120,10 +120,10 @@ $$
 KE_{avg} = \frac{3}{2}RT.
 $$
 
-Per molecule, the equation becomes 
+Per molecule, the equation becomes
 $$
 KE_{avg} = \frac{3}{2} k_B T
-$$ 
+$$
 
 with Boltzmann’s constant $$k_B = 1.38 \times 10^{-23} \text{ J/K}$$. Temperature in this model is proportional to the mean kinetic energy of random motion. In addition, if you are solving for velocity, the average RMS (root mean square, one way to taking an average) speed of the molcules is:
 
@@ -156,9 +156,9 @@ $$
 
 There are many gas laws that are useful for the AP exam (Remember to **ALWAYS** use Kelvin!):
 
-- **Boyle’s law**: $$P_1 V_1 = P_2 V_2$$ (or equivalently $$P \propto \frac{1}{V}$$) at fixed $$n$$ and $$T$$. 
-- **Charles’s law**: $$\frac{V_1}{T_1} = \frac{V_2}{T_2}$$ (or equivalently $$V \propto T$$) at fixed $$n, P$$ (use Kelvin for $$T$$). 
-- **Gay-Lussac’s law**: $$\frac{P_1}{T_1} = \frac{P_2}{T_2}$$ (or equivalently $$P \propto T$$) at fixed $$n$$ and $$V$$. 
+- **Boyle’s law**: $$P_1 V_1 = P_2 V_2$$ (or equivalently $$P \propto \frac{1}{V}$$) at fixed $$n$$ and $$T$$.
+- **Charles’s law**: $$\frac{V_1}{T_1} = \frac{V_2}{T_2}$$ (or equivalently $$V \propto T$$) at fixed $$n, P$$ (use Kelvin for $$T$$).
+- **Gay-Lussac’s law**: $$\frac{P_1}{T_1} = \frac{P_2}{T_2}$$ (or equivalently $$P \propto T$$) at fixed $$n$$ and $$V$$.
 - **Avogadro’s law**: $$\frac{V_1}{n_1} = \frac{V_2}{n_2}$$ (or equivalently $$V \propto n$$) at fixed $$P$$ and $$T$$.
 
 The combined gas laws can merge to form the **Ideal Gas Law (IGL)**:
@@ -321,3 +321,101 @@ A = -\log_{10}(T)
 $$,
 
 but transmittance rarely shows up on the AP exam. Beer's law is very applicable for measuring equilibrium/kinetics, since absorbance is directly proportional to concentration. When doing colorimetry, always calibrate beforehand and set the wavelength to the wavelength that is closest to the OPPOSITE of the color of the solution to get maximum absorbance.
+
+---
+
+## Practice
+
+### MCQ
+
+1. Which substance is expected to have the highest boiling point?
+
+   (A) $$\text{CH}_4$$<br>
+   (B) $$\text{CH}_3\text{CH}_3$$<br>
+   (C) $$\text{CH}_3\text{OH}$$<br>
+   (D) $$\text{CH}_3\text{OCH}_3$$
+
+2. A solution is prepared by dissolving $$0.250\ \text{mol}$$ of $$\text{NaCl}$$ in enough water to make $$0.500\ \text{L}$$ of solution. Assuming complete dissociation, what is the approximate total particle concentration?
+
+   (A) $$0.250\ M$$<br>
+   (B) $$0.500\ M$$<br>
+   (C) $$1.00\ M$$<br>
+   (D) $$2.00\ M$$
+
+### FRQ
+
+3. A student measures the absorbance of several solutions of $$\text{Cu}^{2+}$$ at the same wavelength and path length.
+
+   $$(A)$$ Explain why absorbance can be used to determine concentration.
+
+   $$(B)$$ A solution has absorbance $$0.420$$. A calibration line has equation $$A=15.0c$$, where $$c$$ is in $$\text{mol/L}$$. Calculate the concentration.
+
+   $$(C)$$ Explain why the wavelength should be chosen near the color most strongly absorbed by the solution.
+
+---
+
+## Solutions
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$\text{CH}_3\text{OH}$$ can form hydrogen bonds because it has an O-H bond. The other choices rely mainly on London dispersion forces or dipole-dipole attractions.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+The formal concentration of $$\text{NaCl}$$ is
+
+$$
+\frac{0.250\ \text{mol}}{0.500\ \text{L}}=0.500\ M.
+$$
+
+Since $$\text{NaCl}$$ dissociates into two ions, the total particle concentration is approximately
+
+$$
+2(0.500\ M)=1.00\ M.
+$$
+
+So the answer is
+
+$$
+\boxed{\text{C}}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+$$(A)$$ Beer-Lambert law gives
+
+$$
+A=\varepsilon lc.
+$$
+
+If $$\varepsilon$$ and $$l$$ are constant, absorbance is directly proportional to concentration.
+
+$$(B)$$ Substitute into the calibration equation:
+
+$$
+0.420=15.0c.
+$$
+
+Thus
+
+$$
+c=\frac{0.420}{15.0}=0.0280\ \text{mol/L}.
+$$
+
+$$(C)$$ Choosing a strongly absorbed wavelength gives a larger absorbance change for a given concentration change, which makes the measurement more sensitive.
+
+</div>

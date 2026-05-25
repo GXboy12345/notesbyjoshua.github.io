@@ -537,3 +537,117 @@ Since this unit is very equation-heavy, below is a list of all important equatio
 | Nernst at $$25^\circ\text{C}$$             | $$E_{\text{cell}} = E^\circ_{\text{cell}} - \frac{0.0592}{n}\log Q$$                                                     |
 | Charge                                     | $$q = nF = It$$                                                                                                          |
 | Faraday's law mass form                    | $$m = \frac{MIt}{nF}$$                                                                                                   |
+
+---
+
+## Practice
+
+### MCQ
+
+1. For a spontaneous galvanic cell under standard conditions, which statement is correct?
+
+   (A) $$E^\circ_{\text{cell}}<0$$ and $$\Delta G^\circ<0$$<br>
+   (B) $$E^\circ_{\text{cell}}>0$$ and $$\Delta G^\circ<0$$<br>
+   (C) $$E^\circ_{\text{cell}}>0$$ and $$\Delta G^\circ>0$$<br>
+   (D) $$E^\circ_{\text{cell}}=0$$ and $$\Delta G^\circ=0$$
+
+2. Which change always increases the entropy of the system?
+
+   (A) $$\text{H}_2\text{O}(g)\rightarrow\text{H}_2\text{O}(l)$$<br>
+   (B) $$\text{NaCl}(aq)\rightarrow\text{NaCl}(s)$$<br>
+   (C) $$\text{CO}_2(s)\rightarrow\text{CO}_2(g)$$<br>
+   (D) $$2\text{NO}_2(g)\rightarrow\text{N}_2\text{O}_4(g)$$
+
+### FRQ
+
+3. A galvanic cell is based on the reaction
+
+$$
+\text{Zn}(s)+\text{Cu}^{2+}(aq)\rightarrow\text{Zn}^{2+}(aq)+\text{Cu}(s).
+$$
+
+Use $$E^\circ_{\text{red}}(\text{Cu}^{2+}/\text{Cu})=+0.34\ \text{V}$$ and $$E^\circ_{\text{red}}(\text{Zn}^{2+}/\text{Zn})=-0.76\ \text{V}$$.
+
+   $$(A)$$ Identify the anode and cathode.
+
+   $$(B)$$ Calculate $$E^\circ_{\text{cell}}$$.
+
+   $$(C)$$ Calculate $$\Delta G^\circ$$ for the reaction.
+
+   $$(D)$$ Explain the direction of electron flow in the external circuit.
+
+---
+
+## Solutions
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+For a spontaneous galvanic cell,
+
+$$
+\Delta G^\circ=-nFE^\circ_{\text{cell}}.
+$$
+
+Spontaneous means $$\Delta G^\circ<0$$, which requires $$E^\circ_{\text{cell}}>0$$.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+Sublimation changes a solid directly into a gas. Gas particles have many more accessible microstates than particles in a solid.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+$$(A)$$ Zinc is oxidized:
+
+$$
+\text{Zn}(s)\rightarrow\text{Zn}^{2+}(aq)+2e^-,
+$$
+
+so zinc is the anode. Copper(II) is reduced at the cathode.
+
+$$(B)$$
+
+$$
+E^\circ_{\text{cell}}=E^\circ_{\text{cathode}}-E^\circ_{\text{anode}}
+$$
+
+$$
+E^\circ_{\text{cell}}=0.34-(-0.76)=1.10\ \text{V}.
+$$
+
+$$(C)$$ Here $$n=2$$.
+
+$$
+\Delta G^\circ=-nFE^\circ_{\text{cell}}
+$$
+
+$$
+\Delta G^\circ=-(2)(96485)(1.10)=-2.12\times10^5\ \text{J/mol rxn}.
+$$
+
+So
+
+$$
+\boxed{\Delta G^\circ=-212\ \text{kJ/mol rxn}}.
+$$
+
+$$(D)$$ Electrons are produced at the zinc anode and consumed at the copper cathode, so electrons flow from Zn to Cu through the external circuit.
+
+</div>

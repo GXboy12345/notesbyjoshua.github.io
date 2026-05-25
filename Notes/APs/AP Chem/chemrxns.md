@@ -29,16 +29,16 @@ If an element is a component of the reaction **ALONE**, they are written in thei
 
 ### Balancing by inspection (non-redox and simple cases)
 
-1. **Balance** elements that appear in only one reactant and one product first (often metals or central atoms).  
-2. Treat **unchanged polyatomic ions** (such as $$\text{NO}_3^-$$ or $$\text{SO}_4^{2-}$$) as a unit if they appear intact on both sides (Make sure to include them in brackets, otherwise they do not count as polyatomic ions).  
-3. Balance **hydrogen** and **oxygen** last when they appear in several compounds (common in combustion and acid–base).  
+1. **Balance** elements that appear in only one reactant and one product first (often metals or central atoms).
+2. Treat **unchanged polyatomic ions** (such as $$\text{NO}_3^-$$ or $$\text{SO}_4^{2-}$$) as a unit if they appear intact on both sides (Make sure to include them in brackets, otherwise they do not count as polyatomic ions).
+3. Balance **hydrogen** and **oxygen** last when they appear in several compounds (common in combustion and acid–base).
 4. If you temporarily need a **fractional** coefficient to balance an element (e.g. $$\frac{1}{2}\text{O}_2$$), **multiply the entire equation** by the denominator so all coefficients are integers.
 
 The balanced equation conserves **mass** (atom counts). For **ionic** reactions in solution, you may also write:
 
 - **Molecular equation** — Molecular formulas are formulas as written in the bottle/usually stated in the problem (e.g. $$\text{AgNO}_3(aq) + \text{NaCl}(aq)$$)
 
-- **Total ionic equation** — You treat strong electrolytes as **separated ions**, while solids, liquids, weak electrolytes, and gases usually **undissociated** (Check solubility rules below for electrolytes; strong electrolytes are soluble in water)  
+- **Total ionic equation** — You treat strong electrolytes as **separated ions**, while solids, liquids, weak electrolytes, and gases usually **undissociated** (Check solubility rules below for electrolytes; strong electrolytes are soluble in water)
 
 - **Net ionic equation** — Write the total ionic equation but cancel **spectator ions** that do not change (Basically anything that can cancel on both sides) and only species that actually react
 
@@ -144,15 +144,15 @@ A **half-reaction** shows only the oxidation or only the reduction part of an el
 
 **Acidic solutions** (common AP setup):
 
-1. Split the net ionic transformation into **oxidation** and **reduction** halves.  
+1. Split the net ionic transformation into **oxidation** and **reduction** halves.
 
-2. Balance all atoms **except** O and H.  
+2. Balance all atoms **except** O and H.
 
-3. Balance **O** with $$\text{H}_2\text{O}$$.  
+3. Balance **O** with $$\text{H}_2\text{O}$$.
 
-4. Balance **H** with $$\text{H}^+$$.  
+4. Balance **H** with $$\text{H}^+$$.
 
-5. Balance **charge** with $$e^-$$ on the correct side.  
+5. Balance **charge** with $$e^-$$ on the correct side.
 
 6. Equalize electrons; add the halves; simplify.
 
@@ -217,3 +217,113 @@ A **colloid** contains dispersed particles larger than single molecules but smal
 
 - The **Tyndall effect** is the scattering of visible light by those particles, a practical way to distinguish many colloids from true solutions. For example, milk is a colloid because it scatters light, one reason why it appears white
 - **Coagulation** (heating, adding electrolyte, or mixing) can collapse the dispersion so particles aggregate and settle, just like how milk clumps can settle when milk isn't properly refrigerated
+
+---
+
+## Practice
+
+### MCQ
+
+1. What volume of $$0.200\ M\ \text{NaOH}$$ is required to neutralize $$25.0\ \text{mL}$$ of $$0.100\ M\ \text{H}_2\text{SO}_4$$?
+
+   (A) $$12.5\ \text{mL}$$<br>
+   (B) $$25.0\ \text{mL}$$<br>
+   (C) $$50.0\ \text{mL}$$<br>
+   (D) $$100.\ \text{mL}$$
+
+2. Which net ionic equation represents the precipitation reaction between aqueous $$\text{AgNO}_3$$ and aqueous $$\text{NaCl}$$?
+
+   (A) $$\text{Ag}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{AgCl}(s)$$<br>
+   (B) $$\text{Na}^+(aq)+\text{NO}_3^-(aq)\rightarrow\text{NaNO}_3(s)$$<br>
+   (C) $$\text{Ag}^+(aq)+\text{NO}_3^-(aq)\rightarrow\text{AgNO}_3(s)$$<br>
+   (D) $$\text{Na}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{NaCl}(s)$$
+
+### FRQ
+
+3. A $$2.50\ \text{g}$$ sample of impure $$\text{CaCO}_3$$ reacts with excess $$\text{HCl}$$ according to
+
+$$
+\text{CaCO}_3(s)+2\text{HCl}(aq)\rightarrow \text{CaCl}_2(aq)+\text{CO}_2(g)+\text{H}_2\text{O}(l).
+$$
+
+The reaction produces $$0.0200\ \text{mol}$$ of $$\text{CO}_2$$.
+
+   $$(A)$$ Calculate the moles of $$\text{CaCO}_3$$ that reacted.
+
+   $$(B)$$ Calculate the mass of $$\text{CaCO}_3$$ in the sample.
+
+   $$(C)$$ Calculate the percent by mass of $$\text{CaCO}_3$$ in the impure sample.
+
+---
+
+## Solutions
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+Moles of acid are
+
+$$
+(0.0250\ \text{L})(0.100\ M)=0.00250\ \text{mol H}_2\text{SO}_4.
+$$
+
+Each mole of $$\text{H}_2\text{SO}_4$$ requires $$2$$ moles of $$\text{NaOH}$$, so
+
+$$
+n_{\text{NaOH}}=0.00500\ \text{mol}.
+$$
+
+The required volume is
+
+$$
+V=\frac{0.00500}{0.200}=0.0250\ \text{L}=25.0\ \text{mL}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+Nitrates and sodium salts remain soluble, while $$\text{AgCl}$$ is insoluble. The spectator ions are $$\text{Na}^+$$ and $$\text{NO}_3^-$$.
+
+$$
+\boxed{\text{Ag}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{AgCl}(s)}
+$$
+
+So the answer is
+
+$$
+\boxed{\text{A}}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+$$(A)$$ The balanced equation has a $$1:1$$ mole ratio between $$\text{CaCO}_3$$ and $$\text{CO}_2$$, so
+
+$$
+\boxed{0.0200\ \text{mol CaCO}_3}.
+$$
+
+$$(B)$$ Using $$100.09\ \text{g/mol}$$ for $$\text{CaCO}_3$$,
+
+$$
+(0.0200\ \text{mol})(100.09\ \text{g/mol})=2.00\ \text{g}.
+$$
+
+$$(C)$$ The mass percent is
+
+$$
+\frac{2.00\ \text{g}}{2.50\ \text{g}}\times 100\%=80.0\%.
+$$
+
+</div>

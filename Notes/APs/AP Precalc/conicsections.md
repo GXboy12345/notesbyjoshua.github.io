@@ -363,6 +363,8 @@ $$
 e=\frac{c}{a}=\frac{\sqrt5}{3}.
 $$
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/ellipsegraph1.png' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
+
 </div>
 
 ### Directrices of an ellipse
@@ -456,7 +458,7 @@ Eccentricity: $$\displaystyle e = \frac{c}{a} > 1$$.
 
 The conjugate hyperbola swaps the roles of the terms (e.g. $$\frac{y^{2}}{a^{2}} - \frac{x^{2}}{b^{2}} = 1$$ vs $$\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 1$$) and shares the same asymptote rectangle but different vertices and branches.
 
-**ADD IMAGE HERE**
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/hyperbolapic.jpg' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
 
 ### Graphing a hyperbola
 
@@ -551,7 +553,7 @@ $$
 e=\frac ca=\frac{\sqrt{13}}{3}.
 $$
 
-**ADD IMAGE HERE**
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/hyperbolagraph1.png' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
 
 </div>
 
@@ -599,7 +601,7 @@ $$
 \frac ae<a<c.
 $$
 
-**ADD IMAGE HERE**
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/hyperboladir.jpg' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -676,8 +678,6 @@ For vertical conics, replace $$x=\pm\frac ae$$ with
 $$
 y=\pm\frac ae.
 $$
-
-**ADD IMAGE HERE**
 
 <div class="theorem-box" markdown="1">
 
@@ -832,19 +832,17 @@ r=\frac{ed}{1-e\sin\theta} & y=-d
 \end{array}
 $$
 
-**ADD IMAGE HERE**
-
-Reading the graph:
+For different types of $$e$$:
 
 - $$e = 1$$: one unbounded branch (parabola opening toward the directrix side that makes the denominator able to go to $$0$$).
-- $$e < 1$$: bounded curve (ellipse).
-- $$e > 1$$: two branches (hyperbola); values of $$\theta$$ that make $$1 + e\cos\theta = 0$$ (or the corresponding denominator in your chosen form) are asymptotic directions (no finite points).
+- $$e < 1$$: bounded curve (ellipse), with a focus at the origin (which focus depends on the sign of $$d$$).
+- $$e > 1$$: two branches (hyperbola); values of $$\theta$$ that make $$1 + e\cos\theta = 0$$ (or the corresponding denominator in your chosen form) are asymptotic directions (no finite points). The branch closest to the origin depends on the sign of $$d$$.
 
 Always check your course’s exact convention for $$p$$ and the sign in the denominator so your formulas match the textbook’s figure of the focus and directrix.
 
 <div class="theorem-box" markdown="1">
 
-**Proof (polar conic with directrix $$x=d$$).** Put the focus at the pole and let the directrix be
+**Proof (Polar conic formula).** Put the focus at the pole and let the directrix be
 
 $$
 x=d.
@@ -1021,7 +1019,7 @@ $$
 
 These angles give the asymptotic directions of the hyperbola.
 
-**ADD IMAGE HERE**
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/hyperbolagraph2.png' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
 
 </div>
 
@@ -1037,7 +1035,7 @@ This is why polar equations with a focus at the pole are often more natural than
 
 ## Practice
 
-1. Complete the square for $$4x^{2}+9y^{2}-24x+36y+36=0$$. Write the equation in standard form and give the center, vertices, co-vertices, foci, eccentricity, and major/minor axis lengths.
+1. Complete the square for $$4x^{2}+9y^{2}-24x+36y+36=0$$. Write the equation in standard form and give the center, vertices, co-vertices, foci, eccentricity, and major/minor axis lengths. Graph the conic.
 2. Find the equation of the parabola whose focus is $$(5,-2)$$ and whose directrix is $$x=-1$$. Give the vertex, value of $$p$$, axis of symmetry, and latus rectum endpoints.
 3. Find all lines with slope $$-2$$ that are tangent to the parabola $$(x-1)^{2}=8(y+3)$$.
 4. An ellipse has foci $$(1,4)$$ and $$(1,-2)$$ and passes through $$(5,1)$$. Find its standard-form equation and its eccentricity.
@@ -1100,6 +1098,8 @@ You have a camera that takes three snapshots of a moving particle at equal time 
 
 ## Solutions
 
+<div class="theorem-box" markdown="1">
+
 ### Solution 1
 
 Complete the square:
@@ -1146,6 +1146,14 @@ $$
 
 with center $$\boxed{(3,-2)}$$, vertices $$\boxed{(0,-2),(6,-2)}$$, co-vertices $$\boxed{(3,-4),(3,0)}$$, foci $$\boxed{(3-\sqrt{5},-2),(3+\sqrt{5},-2)}$$, eccentricity $$\boxed{\frac{\sqrt{5}}{3}}$$, major axis length $$\boxed{6}$$, and minor axis length $$\boxed{4}$$.
 
+The graph of the conic is displayed below:
+
+**ADD IMAGE**
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 2
 
 The focus is $$(5,-2)$$ and the directrix is $$x=-1$$, so the parabola opens horizontally. The vertex is halfway between the focus and directrix along the horizontal axis:
@@ -1177,6 +1185,10 @@ The axis of symmetry is $$\boxed{y=-2}$$. The latus rectum is vertical through t
 $$
 \boxed{(5,4)\text{ and }(5,-8)}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 3
 
@@ -1232,6 +1244,10 @@ $$
 \boxed{y=-2x-9}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 4
 
 The foci $$(1,4)$$ and $$(1,-2)$$ have midpoint
@@ -1275,6 +1291,10 @@ The eccentricity is
 $$
 \boxed{e=\frac{c}{a}=\frac{3}{5}}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 5
 
@@ -1342,6 +1362,10 @@ $$
 \boxed{PF_{\text{right}}=4\quad\text{and}\quad PF_{\text{left}}=8}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 6
 
 Substitute $$y=mx+3$$ into
@@ -1397,6 +1421,10 @@ Thus
 $$
 \boxed{m=\pm\frac{\sqrt{5}}{3}}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 7
 
@@ -1462,6 +1490,10 @@ $$
 \boxed{y-3=\pm\frac{2}{3}(x+2)}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 8
 
 A horizontal hyperbola centered at $$(2,-1)$$ has form
@@ -1507,6 +1539,10 @@ Thus the equation is
 $$
 \boxed{\frac{(x-2)^{2}}{16}-\frac{(y+1)^{2}}{36}=1}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 9
 
@@ -1584,6 +1620,10 @@ $$
 \boxed{\left(\pm\frac{4\sqrt{10}}{5},\,\pm\frac{3\sqrt{15}}{5}\right)}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 10
 
 The focus is $$(0,0)$$ and the directrix is $$x=-6$$. For a point $$(x,y)$$ on the conic,
@@ -1647,6 +1687,10 @@ $$
 $$
 
 Since $$0<e<1$$, this conic is an ellipse.
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 11
 
@@ -1734,6 +1778,10 @@ $$
 \boxed{(0,0)\text{ and }\left(\frac{20}{3},0\right)}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 12
 
 Rewrite
@@ -1776,6 +1824,10 @@ $$
 
 At those angles, $$r$$ is not finite. Geometrically, they give the asymptotic directions of the hyperbola.
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 13
 
 A circle tangent to both axes in Quadrant I has center $$(r,r)$$ and radius $$r$$. Since the center lies on
@@ -1815,6 +1867,10 @@ Since $$r>0$$,
 $$
 \boxed{r=\frac{15}{\sqrt{34}}=\frac{15\sqrt{34}}{34}}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 14
 
@@ -1868,6 +1924,10 @@ $$
 \boxed{(-2,3)}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 15
 
 The parabola is
@@ -1917,6 +1977,10 @@ Therefore
 $$
 \boxed{y_Ay_B=-4p^{2}}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 16
 
@@ -2251,3 +2315,5 @@ B=\frac{4}{2\sqrt2}=\sqrt2\ \mathrm{m}.
 $$
 
 Note that the answer may be different depending on how you define the asymptote angle, so always match your work instead of necessarily matching solutions.
+
+</div>

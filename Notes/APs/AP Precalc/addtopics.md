@@ -534,6 +534,8 @@ $$
 
 ## Solutions
 
+<div class="theorem-box" markdown="1">
+
 ### Solution 1
 
 Since the denominator has a repeated linear factor $$(x-1)^{3}$$ and a distinct linear factor $$(x+2)$$, use
@@ -562,6 +564,10 @@ $$
 \boxed{\frac{3x+5}{(x-1)^{3}(x+2)} = -\frac{1}{27(x-1)} + \frac{1}{9(x-1)^{2}} + \frac{8}{3(x-1)^{3}} + \frac{1}{27(x+2)}}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 2
 
 Divide $$2x^{3}-x^{2}+3$$ by $$x^{2}-1$$:
@@ -588,6 +594,10 @@ $$
 \boxed{\frac{2x^{3}-x^{2}+3}{x^{2}-1}=2x-1+\frac{2}{x-1}}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 3
 
 Factor: $$x^{3}-x^{2} = x^{2}(x-1)$$. Then
@@ -597,6 +607,10 @@ $$
 $$
 
 for unknown constants $$A,B,C$$. (Denominator has a repeated linear factor $$x^{2}$$ and a simple factor $$x-1$$.)
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 4
 
@@ -678,6 +692,10 @@ $$
 
 with $$S_{0}=0$$.
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 5
 
 **Base case**: $$n=1$$: $$8^{2}-3^{2}=64-9=55$$, divisible by $$55$$.
@@ -723,6 +741,10 @@ Thus $$55 \mid 8^{2(k+1)} - 3^{2(k+1)}$$. By induction,
 $$
 \boxed{55 \mid 8^{2n} - 3^{2n} \text{ for all integers } n \ge 1}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 6
 
@@ -803,6 +825,10 @@ $$
 \boxed{2^{n}\ge n^{3} \text{ for all integers } n\ge 10}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 7
 
 Use the binomial theorem with $$a=3x$$, $$b=2y$$, and $$n=5$$:
@@ -826,6 +852,10 @@ Thus
 $$
 \boxed{(3x+2y)^5=243x^5+810x^4y+1080x^3y^2+720x^2y^3+240xy^4+32y^5}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 8
 
@@ -859,6 +889,10 @@ $$
 \boxed{126720}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 9
 
 $$
@@ -888,6 +922,10 @@ Every term in the sum has a factor of $$8$$ because $$k\ge 1$$. Therefore the en
 $$
 \boxed{8\mid 9^{n}-1 \text{ for every integer } n\ge 1}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 10
 
@@ -939,6 +977,10 @@ $$
 \boxed{d=\frac{5}{2}\quad\text{and the geometric terms are }5,10,20}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 11
 
 Arithmetic: Since $$1,x,y,z$$ is arithmetic, let the common difference be $$d$$. Then
@@ -979,6 +1021,10 @@ $$
 \boxed{x+y+z+p+q=22+43+64+4+16=149}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 12
 
 The terms of the sum form an arithmetic series. The first term occurs when $$i=5$$:
@@ -1011,6 +1057,10 @@ $$
 \boxed{14928}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 13
 
 This is a finite geometric series with first term $$192$$, common ratio $$2$$, and $$7$$ terms:
@@ -1028,6 +1078,10 @@ Since $$2^{7}=128$$, the answer is $$192\cdot127$$ which is
 $$
 \boxed{24384}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 14
 
@@ -1060,6 +1114,10 @@ which is an integer and satisfies $$675<720<768$$. The sum of the digits of $$76
 $$
 \boxed{7+6+8=21}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 15
 
@@ -1124,6 +1182,10 @@ So
 $$
 \boxed{\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1)=5^{n-1}(3n+5)}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 16
 
@@ -1303,3 +1365,5 @@ Matching coefficients of $$x^n$$ gives
 $$
 \boxed{F_n=\frac{\alpha^n-\beta^n}{\sqrt5}}.
 $$
+
+</div>

@@ -41,13 +41,13 @@ Unit 1 establishes the vocabulary and models used everywhere else in chemistry: 
 
 The **periodic table** arranges elements by increasing **atomic number** $$Z$$. Horizontal rows are **periods**; vertical columns are **groups** (or families). Groups may be labeled $$1$$–$$18$$ or with Roman numerals and letters in older notation. Several families have traditional names that appear frequency:
 
-- **Alkali metals** (group 1, excluding hydrogen)  
-- **Alkaline earth metals** (group 2)  
-- **Transition metals** (groups 3–12)  
-- **Pnictogens** (group 15)  
-- **Chalcogens** (group 16)  
-- **Halogens** (group 17)  
-- **Noble gases** (group 18)  
+- **Alkali metals** (group 1, excluding hydrogen)
+- **Alkaline earth metals** (group 2)
+- **Transition metals** (groups 3–12)
+- **Pnictogens** (group 15)
+- **Chalcogens** (group 16)
+- **Halogens** (group 17)
+- **Noble gases** (group 18)
 
 Below the main block, the **lanthanides** and **actinides** are the **inner transition metals** (often called **rare-earth metals** in informal usage for the lanthanides).
 
@@ -115,7 +115,7 @@ and you round $$n$$ to the nearest integer when the data allows it (subject to m
 
 When a problem gives **mass percentages** (or masses of elements in a sample), treat the sample as a sample of *$$100\ \text{g}$$* so each element’s mass in grams equals its *percent* numerically.
 
-1. Convert each element’s mass to moles using its molar mass.  
+1. Convert each element’s mass to moles using its molar mass.
 
 2. Divide *every* mole amount by the *smallest* mole amount among the elements.
 
@@ -175,11 +175,11 @@ An **oxidation number** (oxidation state) is a formal bookkeeping charge assigne
 
 Useful conventions include:
 
-- Any element in its elemental form (e.g. $$\text{O}_2$$, $$\text{Na}$$) has oxidation number $$0$$.  
-- A monatomic ion matches its charge (e.g. $$\text{Na}^+$$ is $$+1$$).  
-- Oxygen is usually $$-2$$ except in peroxides such as $$\text{H}_2\text{O}_2$$ ($$-1$$ for O) and in compounds with fluorine.  
-- Hydrogen is usually $$+1$$ except in metal hydrides (e.g. $$\text{NaH}$$), where it is $$-1$$.  
-- Fluorine is $$-1$$ in all compounds. Other halogens are $$-1$$ unless bonded to a more electronegative element (such as oxygen).  
+- Any element in its elemental form (e.g. $$\text{O}_2$$, $$\text{Na}$$) has oxidation number $$0$$.
+- A monatomic ion matches its charge (e.g. $$\text{Na}^+$$ is $$+1$$).
+- Oxygen is usually $$-2$$ except in peroxides such as $$\text{H}_2\text{O}_2$$ ($$-1$$ for O) and in compounds with fluorine.
+- Hydrogen is usually $$+1$$ except in metal hydrides (e.g. $$\text{NaH}$$), where it is $$-1$$.
+- Fluorine is $$-1$$ in all compounds. Other halogens are $$-1$$ unless bonded to a more electronegative element (such as oxygen).
 
 The rule of thumb is that you always assign the most electronegative atom first in terms of oxidation states.
 
@@ -193,10 +193,10 @@ The **principal quantum number** $$n$$ is a positive integer ($$n = 1, 2, 3, \ld
 
 The **azimuthal** (or **angular momentum**) quantum number $$l$$ runs from $$0$$ to $$n - 1$$ and labels subshell shape:
 
-- $$l = 0$$ → s orbital  
-- $$l = 1$$ → p orbital  
-- $$l = 2$$ → d orbital  
-- $$l = 3$$ → f orbital  
+- $$l = 0$$ → s orbital
+- $$l = 1$$ → p orbital
+- $$l = 2$$ → d orbital
+- $$l = 3$$ → f orbital
 
 The **magnetic quantum number** $$m_l$$ takes integer values from $$-l$$ to $$+l$$ and distinguishes *orientations* of a subshell in space (e.g. $$p_x$$ and $$p_y$$)
 
@@ -260,7 +260,7 @@ In the **photoelectric effect**, photons eject electrons from a metal surface on
 
 $$
 K_{\max} = h\nu - \Phi,
-$$ 
+$$
 
 but for all purposes, memorizing this equation is not necessary for the AP Chemistry exam. It's just important to know that increasing *intensity* at fixed frequency increases the number of ejected electrons, not their maximum *kinetic energy*.
 
@@ -351,3 +351,95 @@ U = k \frac{Q_1 Q_2}{r}.
 $$
 
 These expressions reappear when you interpret **lattice energy**, **bond** formation, and **ionic** attraction in [Unit 2]({{ '/notes/ap/chem/compounds/' | relative_url }}).
+
+---
+
+## Practice
+
+### MCQ
+
+1. A neutral atom has the electron configuration $$1s^2 2s^2 2p^6 3s^2 3p^4$$. Which statement is correct?
+
+   (A) The atom is in group 4 and forms $$4+$$ ions most often.<br>
+   (B) The atom is in group 16 and has six valence electrons.<br>
+   (C) The atom is a noble gas because the $$3p$$ subshell is occupied.<br>
+   (D) The atom has four valence electrons because the last exponent is $$4$$.
+
+2. Which set of particles is arranged in order of increasing radius?
+
+   (A) $$\text{Cl}^- < \text{S}^{2-} < \text{K}^+$$<br>
+   (B) $$\text{K}^+ < \text{Cl}^- < \text{S}^{2-}$$<br>
+   (C) $$\text{S}^{2-} < \text{Cl}^- < \text{K}^+$$<br>
+   (D) $$\text{Cl}^- < \text{K}^+ < \text{S}^{2-}$$
+
+### FRQ
+
+3. A sample of chlorine contains $$75.78\%$$ $$^{35}\text{Cl}$$ atoms and $$24.22\%$$ $$^{37}\text{Cl}$$ atoms.
+
+   $$(A)$$ Calculate the average atomic mass of chlorine.
+
+   $$(B)$$ Explain why the average atomic mass is closer to $$35$$ than to $$37$$.
+
+   $$(C)$$ A PES spectrum for chlorine shows peaks from core electrons and valence electrons. Explain why core-electron peaks appear at higher binding energy than valence-electron peaks.
+
+---
+
+## Solutions
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+The highest principal energy level is $$n=3$$, and the atom has
+
+$$
+3s^2 3p^4
+$$
+
+as its valence-shell configuration. That is $$6$$ valence electrons, which places the atom in group $$16$$.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+The ions $$\text{K}^+$$, $$\text{Cl}^-$$, and $$\text{S}^{2-}$$ are isoelectronic, each with $$18$$ electrons. In an isoelectronic series, radius decreases as nuclear charge increases. Potassium has the most protons, so $$\text{K}^+$$ is smallest; sulfur has the fewest, so $$\text{S}^{2-}$$ is largest.
+
+$$
+\boxed{\text{K}^+ < \text{Cl}^- < \text{S}^{2-}}
+$$
+
+So the answer is
+
+$$
+\boxed{\text{B}}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+$$(A)$$ Use a weighted average:
+
+$$
+(0.7578)(35)+(0.2422)(37)=35.4844.
+$$
+
+The average atomic mass is
+
+$$
+\boxed{35.48\ \text{amu}}.
+$$
+
+$$(B)$$ The average is closer to $$35$$ because the $$^{35}\text{Cl}$$ isotope is much more abundant than $$^{37}\text{Cl}$$.
+
+$$(C)$$ Core electrons are closer to the nucleus and experience a larger effective nuclear attraction than valence electrons. More energy is required to remove them, so their PES peaks appear at higher binding energy.
+
+</div>

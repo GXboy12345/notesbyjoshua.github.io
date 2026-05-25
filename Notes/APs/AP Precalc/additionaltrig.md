@@ -2072,11 +2072,7 @@ $$
 =\frac{1-1}{1-\omega}=0.
 $$
 
-The product of the $$n$$th roots of unity is
-
-$$
-(-1)^{n+1}
-$$.
+Additionally, the product of the $$n$$th roots of unity is $$(-1)^{n+1}$$.
 
 <div class="theorem-box" markdown="1">
 
@@ -2198,6 +2194,8 @@ $$(F)$$ Explain why Bretschneider's formula turns into Brahmagupta's formula whe
 
 ## Solutions
 
+<div class="theorem-box" markdown="1">
+
 ### Solution 1
 
 By the Law of Sines,
@@ -2232,6 +2230,10 @@ $$
 
 Therefore, there are **two possible triangles**.
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 2
 
 The plane-to-ship distance is $$5120$$ ft, and the angle of depression to the ship is $$17^\circ$$. So the plane's height is
@@ -2258,6 +2260,10 @@ $$
 4896.28-3362.19\approx 1534.09\text{ ft}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 3
 
 Place town $$A$$ at $$(0,0)$$ and town $$B$$ at $$(1.4,0)$$. The bearing $$S22^\circ E$$ from $$A$$ points down and right, while $$S43^\circ W$$ from $$B$$ points down and left.
@@ -2273,6 +2279,10 @@ Therefore,
 $$
 AS\approx 1.13\text{ miles},\qquad BS\approx 1.43\text{ miles}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 4
 
@@ -2313,6 +2323,10 @@ Thus,
 $$
 \sin^2\left(\frac C2\right)=\frac{(s-a)(s-b)}{ab}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 5
 
@@ -2367,6 +2381,10 @@ $$
 =\left\langle \frac{-7}{\sqrt{65}},\frac{4}{\sqrt{65}}\right\rangle.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 6
 
 Let east be positive $$x$$ and north be positive $$y$$. A heading of $$40^\circ$$ east of north at $$120$$ mph has velocity
@@ -2408,6 +2426,10 @@ $$
 
 west of the intended heading.
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 7
 
 The force components are
@@ -2435,6 +2457,10 @@ The direction angle is approximately
 $$
 274.9^\circ.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 8
 
@@ -2506,6 +2532,10 @@ $$
 d(t)=\sqrt{(2\cos t-\sin(2t))^2+36\sin^2t}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 9
 
 Since
@@ -2556,6 +2586,10 @@ $$
 (3,6).
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 10
 
 From
@@ -2596,6 +2630,10 @@ $$
 
 For small positive $$t$$, $$y=-2\sin t$$ is negative, so the curve moves downward from $$(4,0)$$. Therefore, the ellipse is traced **clockwise**.
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 11
 
 This is an Archimedean spiral:
@@ -2607,6 +2645,10 @@ $$
 As $$\theta$$ increases from $$-4\pi$$ to $$4\pi$$, $$r$$ increases from $$-8$$ to $$8$$. Negative $$r$$ values are plotted in the opposite direction from the angle $$\theta$$.
 
 **ADD IMAGE HERE**
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 12
 
@@ -2663,6 +2705,10 @@ $$
 $$
 
 intersection points.
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 13
 
@@ -2728,6 +2774,10 @@ $$
 P_1P_2\cdots P_8=-4096.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 14
 
 For part (A), for
@@ -2790,6 +2840,10 @@ $$
 z_1z_2=(2\sqrt3-2)+(2\sqrt3+2)i.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 15
 
 Write the complex number as
@@ -2825,6 +2879,10 @@ In rectangular form, these are
 $$
 \sqrt3+i,\quad -1+\sqrt3i,\quad -\sqrt3-i,\quad 1-\sqrt3i.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 16
 
@@ -3141,3 +3199,5 @@ K^2=(s-a)(s-b)(s-c)(s-d),
 $$
 
 which is Brahmagupta's formula.
+
+</div>

@@ -795,7 +795,12 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below (this i
 8. The graph of $$y=f(x)$$ has domain $$[-4,6]$$ and range $$[-2,5]$$. Find the domain and range of $$g(x)=-3f(\frac{x-2}{x+1})+7$$.
 9. Find $$f^{-1}(3)$$ given that $$f(x)=\frac{3x+1}{2x+f(x)}$$.
 10. Let $$h(x)=\sqrt{4-\lvert x-1 \rvert}.$$ Find the domain and range of $$h$$, and describe the transformations from $$y=\sqrt{x}$$ as clearly as possible.
-11. (Bonus, Cauchy's Functional Equation)
+11. Let $$f(x)=\sqrt{2x+5}$$ and $$g(x)=\frac{1}{x-3}$$. Find formulas and domains for $$(f\circ g)(x)$$ and $$(g\circ f)(x)$$.
+12. Let $$f(x)=\lvert x-2\rvert+1$$. If the domain is restricted to $$[2,\infty)$$ and the codomain is $$[1,\infty)$$, determine whether $$f$$ is bijective and find $$f^{-1}(x)$$. Then explain what goes wrong if the domain is all real numbers.
+13. Let $$f(x)=\begin{cases}2x+a, & x<1,\\x^2+b, & 1\le x<3,\\cx-1, & x\ge 3.\end{cases}$$ Find $$a$$, $$b$$, and $$c$$ so that $$f$$ is continuous everywhere and $$f(0)=5$$.
+14. Suppose $$f$$ is an odd function with domain $$[-5,5]$$, range $$[-3,3]$$, and $$f(2)=-1$$. Define $$g(x)=2f(x-1)-4$$. Find the domain and range of $$g$$, and find $$g(3)$$ and $$g(-1)$$.
+15. Suppose $$f:A\to B$$ and $$g:B\to C$$. Prove that if $$f$$ and $$g$$ are both injective, then $$g\circ f$$ is injective. Also prove that if $$g\circ f$$ is surjective onto $$C$$, then $$g$$ must be surjective onto $$C$$.
+16. (Bonus, Cauchy's Functional Equation)
 
    Consider a function $$\mathbb{Q} \longrightarrow \mathbb{Q}$$ (basically taking rational inputs and giving rational outputs) such that $$f(x+y)=f(x)+f(y)$$ (basically for any two rational numbers, this equation holds true for $$f(x)$$).
 
@@ -805,11 +810,13 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below (this i
 
    (C) Prove that $$f(\frac{x}{n}) = \frac{f(x)}{n}$$.
 
-   (D) Determine all such functions $$f(x)$$ that sastisfies Cauchy's Functional Equation. Remember you not only need to find all such solutions, but prove that each one is a valid solution to the equation.
+   (D) Determine all such functions $$f(x)$$ that satisfy Cauchy's Functional Equation. Remember you not only need to find all such solutions, but prove that each one is a valid solution to the equation.
 
    (E) The solution in part (D) is the only solution for the rationals, but there exist infinitely more solutions for the reals! Why can't your proof in steps (A) - (D) extend to real numbers?
 
 ## Solutions
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 1
 
@@ -846,6 +853,10 @@ For $$t>0$$, the outputs cover $$[0,\infty)$$. For $$t<0$$, the outputs cover $$
 $$
 \boxed{\text{range}=(-\infty,\infty)}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 2
 
@@ -890,6 +901,10 @@ Therefore
 $$
 \boxed{a=3,\qquad b=-5,\qquad c=45}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 3
 
@@ -968,6 +983,10 @@ This simplifies to $$x^2\le 4$$, so both branches have domain
 $$
 \boxed{[-2,2]}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 4
 
@@ -1048,6 +1067,10 @@ $$
 
 each with domain $$[-1,\infty)$$.
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 5
 
 Start with
@@ -1092,6 +1115,10 @@ $$
 \boxed{[3,\infty)}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 6
 
 On $$[-2,\infty)$$, the parabola starts at its vertex and increases. Therefore it passes the horizontal line test, so it is injective.
@@ -1115,6 +1142,10 @@ Since $$f$$ is both injective and surjective,
 $$
 \boxed{f\text{ is bijective}}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 7
 
@@ -1151,6 +1182,10 @@ $$
 =\frac{\frac{-2h}{(x+h-1)(x-1)}}{h}
 =\boxed{\frac{-2}{(x+h-1)(x-1)}}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 8
 
@@ -1213,6 +1248,10 @@ $$
 \boxed{\text{the range is not determined by the given data}}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 9
 
 We want $$f^{-1}(3)$$, meaning we want the input $$x$$ for which
@@ -1252,6 +1291,10 @@ So
 $$
 \boxed{f^{-1}(3)=-\frac83}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 10
 
@@ -1309,7 +1352,352 @@ $$
 
 The graph is symmetric about $$x=1$$, has endpoints $$(-3,0)$$ and $$(5,0)$$, and reaches its maximum at $$(1,2)$$.
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 11
+
+First,
+
+$$
+(f\circ g)(x)=f(g(x))
+=\sqrt{2\left(\frac{1}{x-3}\right)+5}
+=\sqrt{\frac{2}{x-3}+5}.
+$$
+
+Combine the expression under the radical:
+
+$$
+\frac{2}{x-3}+5
+=\frac{2+5x-15}{x-3}
+=\frac{5x-13}{x-3}.
+$$
+
+So
+
+$$
+(f\circ g)(x)=\sqrt{\frac{5x-13}{x-3}}.
+$$
+
+For the domain, require $$x\ne 3$$ and
+
+$$
+\frac{5x-13}{x-3}\ge 0.
+$$
+
+The critical values are $$x=\frac{13}{5}$$ and $$x=3$$. A sign chart gives
+
+$$
+\boxed{\text{domain of }f\circ g=\left(-\infty,\frac{13}{5}\right]\cup(3,\infty)}.
+$$
+
+Now
+
+$$
+(g\circ f)(x)=g(f(x))
+=\frac{1}{\sqrt{2x+5}-3}.
+$$
+
+For the domain, require
+
+$$
+2x+5\ge 0
+$$
+
+and also
+
+$$
+\sqrt{2x+5}-3\ne 0.
+$$
+
+The first condition gives $$x\ge -\frac52$$. The second condition gives
+
+$$
+\sqrt{2x+5}\ne 3
+\quad\Longrightarrow\quad
+2x+5\ne 9
+\quad\Longrightarrow\quad
+x\ne 2.
+$$
+
+Therefore
+
+$$
+\boxed{(g\circ f)(x)=\frac{1}{\sqrt{2x+5}-3}}
+$$
+
+with
+
+$$
+\boxed{\text{domain of }g\circ f=\left[-\frac52,\infty\right)\setminus\{2\}}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 12
+
+On the restricted domain $$[2,\infty)$$,
+
+$$
+f(x)=\lvert x-2\rvert+1=x-2+1=x-1.
+$$
+
+This function is increasing on $$[2,\infty)$$, so it is injective.
+
+Also, if $$x\ge 2$$, then
+
+$$
+f(x)=x-1\ge 1.
+$$
+
+Every output $$y\ge 1$$ is reached by choosing $$x=y+1$$, which is at least $$2$$. Therefore $$f$$ is surjective onto $$[1,\infty)$$.
+
+So $$f:[2,\infty)\to[1,\infty)$$ is bijective.
+
+To find the inverse, write
+
+$$
+y=x-1.
+$$
+
+Then
+
+$$
+x=y+1.
+$$
+
+Thus
+
+$$
+\boxed{f^{-1}(x)=x+1}
+$$
+
+with domain $$[1,\infty)$$ and range $$[2,\infty)$$.
+
+If the domain is all real numbers, the function is not injective. For example,
+
+$$
+f(1)=2
+\qquad\text{and}\qquad
+f(3)=2.
+$$
+
+Since two different inputs give the same output, the function does not have an inverse function on all of $$\mathbb{R}$$.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 13
+
+Since $$f(0)=5$$ and $$0<1$$, use the first piece:
+
+$$
+f(0)=2(0)+a=a.
+$$
+
+Thus
+
+$$
+a=5.
+$$
+
+For continuity at $$x=1$$, the left-hand value must match the value from the middle piece:
+
+$$
+2(1)+a=1^2+b.
+$$
+
+Substitute $$a=5$$:
+
+$$
+2+5=1+b.
+$$
+
+So
+
+$$
+b=6.
+$$
+
+For continuity at $$x=3$$, the value from the middle piece must match the value from the last piece:
+
+$$
+3^2+b=3c-1.
+$$
+
+Substitute $$b=6$$:
+
+$$
+9+6=3c-1.
+$$
+
+Then
+
+$$
+16=3c,
+$$
+
+so
+
+$$
+c=\frac{16}{3}.
+$$
+
+Therefore
+
+$$
+\boxed{a=5,\qquad b=6,\qquad c=\frac{16}{3}}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 14
+
+The expression $$f(x-1)$$ requires
+
+$$
+x-1\in[-5,5].
+$$
+
+So
+
+$$
+-5\le x-1\le 5.
+$$
+
+Add $$1$$ throughout:
+
+$$
+-4\le x\le 6.
+$$
+
+Thus
+
+$$
+\boxed{\text{domain of }g=[-4,6]}.
+$$
+
+Since $$f$$ has range $$[-3,3]$$, the expression $$2f(x-1)$$ has range
+
+$$
+[-6,6].
+$$
+
+Subtracting $$4$$ gives
+
+$$
+\boxed{\text{range of }g=[-10,2]}.
+$$
+
+Now
+
+$$
+g(3)=2f(3-1)-4=2f(2)-4.
+$$
+
+Since $$f(2)=-1$$,
+
+$$
+g(3)=2(-1)-4=-6.
+$$
+
+So
+
+$$
+\boxed{g(3)=-6}.
+$$
+
+Also,
+
+$$
+g(-1)=2f(-1-1)-4=2f(-2)-4.
+$$
+
+Because $$f$$ is odd,
+
+$$
+f(-2)=-f(2)=1.
+$$
+
+Therefore
+
+$$
+g(-1)=2(1)-4=-2.
+$$
+
+So
+
+$$
+\boxed{g(-1)=-2}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 15
+
+First suppose $$f$$ and $$g$$ are both injective. To prove that $$g\circ f$$ is injective, start by assuming two inputs give the same output:
+
+$$
+(g\circ f)(a)=(g\circ f)(b).
+$$
+
+This means
+
+$$
+g(f(a))=g(f(b)).
+$$
+
+Since $$g$$ is injective,
+
+$$
+f(a)=f(b).
+$$
+
+Since $$f$$ is injective,
+
+$$
+a=b.
+$$
+
+Therefore
+
+$$
+\boxed{g\circ f\text{ is injective}}.
+$$
+
+Now suppose $$g\circ f$$ is surjective onto $$C$$. This means that for every $$c\in C$$, there is some $$a\in A$$ such that
+
+$$
+(g\circ f)(a)=c.
+$$
+
+Equivalently,
+
+$$
+g(f(a))=c.
+$$
+
+But $$f(a)$$ is an element of $$B$$. So for every $$c\in C$$, we have found an element of $$B$$, namely $$f(a)$$, that maps to $$c$$ under $$g$$.
+
+Therefore
+
+$$
+\boxed{g\text{ is surjective onto }C}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 16
 
 We are given
 
@@ -1414,3 +1802,5 @@ f(x+y)=c(x+y)=cx+cy=f(x)+f(y).
 $$
 
 For part (E), the proof works over $$\mathbb{Q}$$ because every rational number is a rational multiple of $$1$$. It does not extend to all real numbers because not every real number can be built from $$1$$ using only integer multiplication and division. Over $$\mathbb{R}$$, there are many wild additive functions if no conditions like continuity, monotonicity, or boundedness are required.
+
+</div>

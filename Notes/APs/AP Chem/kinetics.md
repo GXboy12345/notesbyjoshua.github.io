@@ -241,3 +241,117 @@ A **catalyst** provides an alternative pathway with lower activation energy. It 
 ## Kinetics vs equilibrium (preview)
 
 For a reversible elementary reaction, forward and reverse rates balance at equilibrium, linking rate constants to an equilibrium constant in simple cases. The full story belongs with [equilibrium]({{ '/notes/ap/chem/equilibrium/' | relative_url }}); here the essential point is that kinetics answers “how fast” while equilibrium answers “how far” under constant conditions.
+
+---
+
+## Practice
+
+### MCQ
+
+1. For the reaction $$A+B\rightarrow C$$, the initial-rate data below are collected.
+
+| Trial | $$[A]$$ | $$[B]$$ | Initial rate |
+|-------|---------|---------|--------------|
+| 1 | $$0.10\ M$$ | $$0.10\ M$$ | $$2.0\times10^{-3}\ M/s$$ |
+| 2 | $$0.20\ M$$ | $$0.10\ M$$ | $$8.0\times10^{-3}\ M/s$$ |
+| 3 | $$0.20\ M$$ | $$0.20\ M$$ | $$8.0\times10^{-3}\ M/s$$ |
+
+What is the rate law?
+
+   (A) $$\text{rate}=k[A][B]$$<br>
+   (B) $$\text{rate}=k[A]^2$$<br>
+   (C) $$\text{rate}=k[A]^2[B]$$<br>
+   (D) $$\text{rate}=k[B]^2$$
+
+2. A catalyst increases the rate of a reaction by
+
+   (A) increasing $$\Delta G^\circ$$<br>
+   (B) lowering the activation energy<br>
+   (C) increasing the equilibrium constant<br>
+   (D) increasing the enthalpy change of the reaction
+
+### FRQ
+
+3. A first-order decomposition has rate constant $$k=0.0300\ \text{s}^{-1}$$.
+
+   $$(A)$$ Calculate the half-life.
+
+   $$(B)$$ If the initial concentration is $$0.800\ M$$, calculate the concentration after $$60.0\ \text{s}$$.
+
+   $$(C)$$ Explain how the slope of a graph of $$\ln[A]$$ versus time is related to $$k$$.
+
+---
+
+## Solutions
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+Compare trials 1 and 2. Doubling $$[A]$$ while holding $$[B]$$ constant makes the rate four times larger, so the reaction is second order in $$A$$.
+
+Compare trials 2 and 3. Doubling $$[B]$$ while holding $$[A]$$ constant does not change the rate, so the reaction is zero order in $$B$$.
+
+$$
+\boxed{\text{rate}=k[A]^2}
+$$
+
+So the answer is
+
+$$
+\boxed{\text{B}}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+A catalyst provides an alternate pathway with lower activation energy. It does not change $$\Delta G^\circ$$, $$\Delta H$$, or $$K$$.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+$$(A)$$ For a first-order reaction,
+
+$$
+t_{1/2}=\frac{0.693}{k}.
+$$
+
+Thus
+
+$$
+t_{1/2}=\frac{0.693}{0.0300}=23.1\ \text{s}.
+$$
+
+$$(B)$$ Use the integrated rate law:
+
+$$
+\ln[A]_t=\ln[A]_0-kt.
+$$
+
+Equivalently,
+
+$$
+[A]_t=[A]_0e^{-kt}=0.800e^{-(0.0300)(60.0)}.
+$$
+
+$$
+[A]_t=0.132\ M.
+$$
+
+$$(C)$$ For a first-order reaction, a graph of $$\ln[A]$$ versus time is linear with slope
+
+$$
+\boxed{-k}.
+$$
+
+</div>
