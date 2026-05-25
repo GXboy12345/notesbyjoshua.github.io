@@ -211,15 +211,37 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
    (C) $$\text{MgO}$$<br>
    (D) $$\text{MgCl}_2$$
 
+3. Which species has a tetrahedral molecular geometry?
+
+   (A) $$\text{CO}_2$$<br>
+   (B) $$\text{NH}_3$$<br>
+   (C) $$\text{CH}_4$$<br>
+   (D) $$\text{BF}_3$$
+
+4. In a nitrate ion, $$\text{NO}_3^-$$, resonance means that
+
+   (A) the atoms repeatedly switch positions.<br>
+   (B) one N-O bond is permanently double while the other two are permanently single.<br>
+   (C) the actual ion has three equivalent N-O bonds with bond order between single and double.<br>
+   (D) the ion violates conservation of charge.
+
 ### FRQ
 
-3. Consider the molecules $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
+5. Consider the molecules $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
 
    $$(A)$$ Draw a reasonable Lewis structure for each molecule.
 
    $$(B)$$ Identify the hybridization of the carbon atom in each molecule.
 
    $$(C)$$ Explain which molecule can form stronger intermolecular attractions with water.
+
+6. The 2026 AP Chemistry exam asked students about chromate resonance and VSEPR geometry. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
+
+   $$(A)$$ Predict the molecular geometry around chromium in $$\text{CrO}_4^{2-}$$.
+
+   $$(B)$$ Explain why multiple resonance structures can be drawn for $$\text{CrO}_4^{2-}$$.
+
+   $$(C)$$ Explain why the four Cr-O bonds are expected to be equivalent in the resonance hybrid.
 
 ---
 
@@ -253,6 +275,30 @@ $$
 
 ### Solution 3
 
+$$\text{CH}_4$$ has four bonding domains and no lone pairs on the central atom, so its molecular geometry is tetrahedral.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+Resonance structures are different valid Lewis structures with the same atom connectivity but different electron placement. In nitrate, the real ion is a resonance hybrid with equivalent N-O bonds.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
+
 $$(A)$$ In $$\text{CH}_2\text{O}$$, carbon is bonded to two H atoms and double-bonded to O. In $$\text{CH}_3\text{OH}$$, carbon is bonded to three H atoms and single-bonded to O, while O is bonded to H and has two lone pairs.
 
 $$(B)$$ The carbon in $$\text{CH}_2\text{O}$$ has three electron domains, so it is
@@ -268,5 +314,21 @@ $$
 $$
 
 $$(C)$$ $$\text{CH}_3\text{OH}$$ forms stronger attractions with water because it can both donate and accept hydrogen bonds through its $$\text{O-H}$$ group. $$\text{CH}_2\text{O}$$ can accept hydrogen bonds at oxygen, but it cannot donate hydrogen bonds.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+$$(A)$$ The chromium has four bonding regions around it, so the geometry is
+
+$$
+\boxed{\text{tetrahedral}}.
+$$
+
+$$(B)$$ The double-bond character can be placed between chromium and different oxygen atoms while keeping the same atom connectivity and total number of valence electrons.
+
+$$(C)$$ The resonance hybrid averages the valid resonance structures. Since no single resonance structure fully describes the ion, the Cr-O bonds have the same average bond order and are equivalent.
 
 </div>

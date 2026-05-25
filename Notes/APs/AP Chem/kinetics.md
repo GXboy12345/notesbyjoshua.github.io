@@ -270,15 +270,37 @@ What is the rate law?
    (C) increasing the equilibrium constant<br>
    (D) increasing the enthalpy change of the reaction
 
+3. For a first-order reaction, which plot should be linear?
+
+   (A) $$[A]$$ versus time<br>
+   (B) $$\ln[A]$$ versus time<br>
+   (C) $$1/[A]$$ versus time<br>
+   (D) rate versus $$1/T$$
+
+4. If the rate law is $$\text{rate}=k[A]^2[B]$$, what happens to the rate when $$[A]$$ is doubled and $$[B]$$ is held constant?
+
+   (A) It doubles.<br>
+   (B) It triples.<br>
+   (C) It quadruples.<br>
+   (D) It stays the same.
+
 ### FRQ
 
-3. A first-order decomposition has rate constant $$k=0.0300\ \text{s}^{-1}$$.
+5. A first-order decomposition has rate constant $$k=0.0300\ \text{s}^{-1}$$.
 
    $$(A)$$ Calculate the half-life.
 
    $$(B)$$ If the initial concentration is $$0.800\ M$$, calculate the concentration after $$60.0\ \text{s}$$.
 
    $$(C)$$ Explain how the slope of a graph of $$\ln[A]$$ versus time is related to $$k$$.
+
+6. The 2026 AP Chemistry exam included a kinetics question using concentration-time data and a graph of natural log of concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
+
+   $$(A)$$ Explain how concentration-time data can support that a reaction is first order in a reactant.
+
+   $$(B)$$ If a plot of $$\ln[A]$$ versus time has slope $$-0.0150\ \text{s}^{-1}$$, identify $$k$$.
+
+   $$(C)$$ Calculate the half-life for the reaction.
 
 ---
 
@@ -320,6 +342,40 @@ $$
 
 ### Solution 3
 
+For a first-order reaction,
+
+$$
+\ln[A]_t=-kt+\ln[A]_0,
+$$
+
+so $$\ln[A]$$ versus time is linear.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+The rate depends on $$[A]^2$$. Doubling $$[A]$$ multiplies the rate by
+
+$$
+2^2=4.
+$$
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
+
 $$(A)$$ For a first-order reaction,
 
 $$
@@ -352,6 +408,26 @@ $$(C)$$ For a first-order reaction, a graph of $$\ln[A]$$ versus time is linear 
 
 $$
 \boxed{-k}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+$$(A)$$ If a plot of $$\ln[A]$$ versus time is linear, the data support a first-order relationship in $$A$$. Equivalently, the concentration should decrease by the same fraction over equal time intervals.
+
+$$(B)$$ For a first-order reaction, the slope is $$-k$$, so
+
+$$
+k=0.0150\ \text{s}^{-1}.
+$$
+
+$$(C)$$
+
+$$
+t_{1/2}=\frac{0.693}{k}=\frac{0.693}{0.0150}=46.2\ \text{s}.
 $$
 
 </div>

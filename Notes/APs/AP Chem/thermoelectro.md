@@ -558,9 +558,23 @@ Since this unit is very equation-heavy, below is a list of all important equatio
    (C) $$\text{CO}_2(s)\rightarrow\text{CO}_2(g)$$<br>
    (D) $$2\text{NO}_2(g)\rightarrow\text{N}_2\text{O}_4(g)$$
 
+3. A reaction has $$\Delta H^\circ>0$$ and $$\Delta S^\circ>0$$. The reaction is most likely thermodynamically favorable at
+
+   (A) low temperatures only.<br>
+   (B) high temperatures only.<br>
+   (C) all temperatures.<br>
+   (D) no temperatures.
+
+4. In an electrolytic cell, oxidation occurs at the
+
+   (A) anode.<br>
+   (B) cathode.<br>
+   (C) salt bridge.<br>
+   (D) voltmeter.
+
 ### FRQ
 
-3. A galvanic cell is based on the reaction
+5. A galvanic cell is based on the reaction
 
 $$
 \text{Zn}(s)+\text{Cu}^{2+}(aq)\rightarrow\text{Zn}^{2+}(aq)+\text{Cu}(s).
@@ -575,6 +589,14 @@ Use $$E^\circ_{\text{red}}(\text{Cu}^{2+}/\text{Cu})=+0.34\ \text{V}$$ and $$E^\
    $$(C)$$ Calculate $$\Delta G^\circ$$ for the reaction.
 
    $$(D)$$ Explain the direction of electron flow in the external circuit.
+
+6. The 2024 AP Chemistry exam included electroplating and nonspontaneous electrochemistry in a sterling silver context. (Adapted from College Board, [2024 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
+
+   $$(A)$$ Explain why an electrolytic plating process requires an external power source.
+
+   $$(B)$$ Calculate the time required to plate $$1.00\ \text{g}$$ of $$\text{Cu}(s)$$ from $$\text{Cu}^{2+}$$ using a current of $$2.00\ \text{A}$$.
+
+   $$(C)$$ Identify whether reduction or oxidation occurs at the object being plated.
 
 ---
 
@@ -614,6 +636,36 @@ $$
 
 ### Solution 3
 
+Use
+
+$$
+\Delta G^\circ=\Delta H^\circ-T\Delta S^\circ.
+$$
+
+When both $$\Delta H^\circ$$ and $$\Delta S^\circ$$ are positive, high temperature makes the $$-T\Delta S^\circ$$ term large and negative.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+Oxidation always occurs at the anode, in both galvanic and electrolytic cells.
+
+$$
+\boxed{\text{A}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
+
 $$(A)$$ Zinc is oxidized:
 
 $$
@@ -649,5 +701,39 @@ $$
 $$
 
 $$(D)$$ Electrons are produced at the zinc anode and consumed at the copper cathode, so electrons flow from Zn to Cu through the external circuit.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+$$(A)$$ Electroplating is nonspontaneous as written, so an external power source is needed to drive electron flow and force reduction of metal ions onto the object.
+
+$$(B)$$ Moles of copper plated:
+
+$$
+n_{\text{Cu}}=\frac{1.00\ \text{g}}{63.55\ \text{g/mol}}=0.0157\ \text{mol}.
+$$
+
+For $$\text{Cu}^{2+}+2e^-\rightarrow\text{Cu}(s)$$,
+
+$$
+n_{e^-}=2(0.0157)=0.0315\ \text{mol e}^-.
+$$
+
+Charge required:
+
+$$
+q=nF=(0.0315)(96485)=3.04\times10^3\ \text{C}.
+$$
+
+Since $$q=It$$,
+
+$$
+t=\frac{3.04\times10^3\ \text{C}}{2.00\ \text{C/s}}=1.52\times10^3\ \text{s}.
+$$
+
+$$(C)$$ Metal ions gain electrons and become solid metal on the object, so reduction occurs at the object being plated.
 
 </div>

@@ -319,9 +319,23 @@ This unit’s equilibrium constant logic is the same machinery you will reuse fo
    (C) shift the equilibrium toward products<br>
    (D) leave the equilibrium composition unchanged
 
+3. If $$Q>K$$ for a reaction mixture, the reaction will proceed
+
+   (A) toward products until equilibrium is reached.<br>
+   (B) toward reactants until equilibrium is reached.<br>
+   (C) in neither direction because it is already at equilibrium.<br>
+   (D) only if a catalyst is added.
+
+4. Which species is omitted from the equilibrium expression for $$\text{CaCO}_3(s)\rightleftharpoons\text{CaO}(s)+\text{CO}_2(g)$$?
+
+   (A) $$\text{CO}_2(g)$$ only<br>
+   (B) $$\text{CaCO}_3(s)$$ and $$\text{CaO}(s)$$<br>
+   (C) $$\text{CaO}(s)$$ and $$\text{CO}_2(g)$$<br>
+   (D) all species
+
 ### FRQ
 
-3. At a certain temperature, $$K_c=4.00$$ for
+5. At a certain temperature, $$K_c=4.00$$ for
 
 $$
 \text{A}(g)\rightleftharpoons2\text{B}(g).
@@ -334,6 +348,14 @@ A sealed container initially has $$0.600\ M$$ $$\text{A}$$ and no $$\text{B}$$.
    $$(B)$$ Set up an ICE table using $$x$$ for the amount of $$\text{A}$$ consumed.
 
    $$(C)$$ Calculate the equilibrium concentrations of $$\text{A}$$ and $$\text{B}$$.
+
+6. The 2024 AP Chemistry exam included an equilibrium particle-diagram question for $$\text{H}_2(g)+\text{I}_2(g)\rightleftharpoons2\text{HI}(g)$$. (Adapted from College Board, [2024 AP Chemistry FRQ 5](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
+
+   $$(A)$$ Write the expression for $$Q$$.
+
+   $$(B)$$ If $$[\text{H}_2]=0.20\ M$$, $$[\text{I}_2]=0.10\ M$$, and $$[\text{HI}]=0.30\ M$$, calculate $$Q$$.
+
+   $$(C)$$ If $$K=50$$, predict the direction the system shifts.
 
 ---
 
@@ -370,6 +392,30 @@ $$
 <div class="theorem-box" markdown="1">
 
 ### Solution 3
+
+If $$Q>K$$, the mixture has too much product relative to equilibrium, so it shifts toward reactants.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+Pure solids are omitted from equilibrium expressions, so both solids are omitted.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
 
 $$(A)$$
 
@@ -420,5 +466,25 @@ and
 $$
 [\text{B}]_{\text{eq}}=2(0.421)=0.842\ M.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+$$(A)$$
+
+$$
+Q=\frac{[\text{HI}]^2}{[\text{H}_2][\text{I}_2]}.
+$$
+
+$$(B)$$
+
+$$
+Q=\frac{(0.30)^2}{(0.20)(0.10)}=\frac{0.090}{0.020}=4.5.
+$$
+
+$$(C)$$ Since $$Q<K$$, the system has too little product relative to equilibrium. It shifts toward products, forming more $$\text{HI}$$.
 
 </div>

@@ -319,9 +319,23 @@ $$\text{HF}$$ is weak; $$\text{HSO}_4^-$$ is a weak acid.
    (C) $$7.00$$<br>
    (D) $$10.83$$
 
+3. Which solution has the greatest $$\text{pH}$$?
+
+   (A) $$0.10\ M\ \text{HCl}$$<br>
+   (B) $$0.10\ M\ \text{HC}_2\text{H}_3\text{O}_2$$<br>
+   (C) $$0.10\ M\ \text{NaCl}$$<br>
+   (D) $$0.10\ M\ \text{NaOH}$$
+
+4. At the half-equivalence point in a weak acid-strong base titration,
+
+   (A) $$\text{pH}=\text{p}K_a$$.<br>
+   (B) $$\text{pH}=7.00$$ for every weak acid.<br>
+   (C) all weak acid has been converted to conjugate base.<br>
+   (D) $$[\text{H}_3\text{O}^+]=[\text{OH}^-]$$.
+
 ### FRQ
 
-3. A $$0.100\ M$$ solution of acetic acid, $$\text{HC}_2\text{H}_3\text{O}_2$$, has $$K_a=1.8\times10^{-5}$$.
+5. A $$0.100\ M$$ solution of acetic acid, $$\text{HC}_2\text{H}_3\text{O}_2$$, has $$K_a=1.8\times10^{-5}$$.
 
    $$(A)$$ Write the acid-ionization equation.
 
@@ -330,6 +344,14 @@ $$\text{HF}$$ is weak; $$\text{HSO}_4^-$$ is a weak acid.
    $$(C)$$ Calculate the $$\text{pH}$$.
 
    $$(D)$$ Explain what happens to the percent ionization if sodium acetate is added.
+
+6. The 2026 AP Chemistry exam included a nitrous acid titration and indicator question. (Adapted from College Board, [2026 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
+
+   $$(A)$$ Explain why the equivalence point of a weak acid-strong base titration has $$\text{pH}>7$$.
+
+   $$(B)$$ A $$35.0\ \text{mL}$$ sample of $$\text{HNO}_2$$ is titrated to equivalence with $$21.0\ \text{mL}$$ of $$0.160\ M\ \text{NaOH}$$. Calculate the molarity of $$\text{HNO}_2$$.
+
+   $$(C)$$ Explain why an indicator should change color near the steep part of the titration curve.
 
 ---
 
@@ -381,6 +403,34 @@ $$
 
 ### Solution 3
 
+$$\text{NaOH}$$ is a strong base, so it produces the greatest $$[\text{OH}^-]$$ and therefore the greatest $$\text{pH}$$.
+
+$$
+\boxed{\text{D}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+At the half-equivalence point, $$[\text{HA}]=[\text{A}^-]$$. Henderson-Hasselbalch becomes
+
+$$
+\text{pH}=\text{p}K_a+\log(1)=\text{p}K_a.
+$$
+
+$$
+\boxed{\text{A}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
+
 $$(A)$$
 
 $$
@@ -412,5 +462,31 @@ $$
 $$
 
 $$(D)$$ Sodium acetate adds the common ion $$\text{C}_2\text{H}_3\text{O}_2^-$$, shifting the acid ionization left. The percent ionization decreases.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+$$(A)$$ At equivalence, the weak acid has been converted mostly into its conjugate base. The conjugate base reacts with water to produce $$\text{OH}^-$$, so the solution is basic.
+
+$$(B)$$ At equivalence,
+
+$$
+n_{\text{HNO}_2}=n_{\text{NaOH}}.
+$$
+
+$$
+n_{\text{NaOH}}=(0.0210\ \text{L})(0.160\ M)=0.00336\ \text{mol}.
+$$
+
+Thus
+
+$$
+M_{\text{HNO}_2}=\frac{0.00336\ \text{mol}}{0.0350\ \text{L}}=0.0960\ M.
+$$
+
+$$(C)$$ The steep part of the titration curve is where a tiny volume change causes a large pH change, so the color change most closely marks the equivalence point.
 
 </div>

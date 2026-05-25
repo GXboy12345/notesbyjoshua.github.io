@@ -238,9 +238,23 @@ A **colloid** contains dispersed particles larger than single molecules but smal
    (C) $$\text{Ag}^+(aq)+\text{NO}_3^-(aq)\rightarrow\text{AgNO}_3(s)$$<br>
    (D) $$\text{Na}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{NaCl}(s)$$
 
+3. In the reaction $$\text{Zn}(s)+\text{Cu}^{2+}(aq)\rightarrow\text{Zn}^{2+}(aq)+\text{Cu}(s)$$, which species is oxidized?
+
+   (A) $$\text{Zn}(s)$$<br>
+   (B) $$\text{Cu}^{2+}(aq)$$<br>
+   (C) $$\text{Zn}^{2+}(aq)$$<br>
+   (D) $$\text{Cu}(s)$$
+
+4. Which observation gives the strongest evidence that a precipitation reaction occurred?
+
+   (A) The solution remains clear and colorless.<br>
+   (B) A solid appears after two aqueous solutions are mixed.<br>
+   (C) The total volume of solution increases.<br>
+   (D) The beaker is made of glass.
+
 ### FRQ
 
-3. A $$2.50\ \text{g}$$ sample of impure $$\text{CaCO}_3$$ reacts with excess $$\text{HCl}$$ according to
+5. A $$2.50\ \text{g}$$ sample of impure $$\text{CaCO}_3$$ reacts with excess $$\text{HCl}$$ according to
 
 $$
 \text{CaCO}_3(s)+2\text{HCl}(aq)\rightarrow \text{CaCl}_2(aq)+\text{CO}_2(g)+\text{H}_2\text{O}(l).
@@ -253,6 +267,14 @@ The reaction produces $$0.0200\ \text{mol}$$ of $$\text{CO}_2$$.
    $$(B)$$ Calculate the mass of $$\text{CaCO}_3$$ in the sample.
 
    $$(C)$$ Calculate the percent by mass of $$\text{CaCO}_3$$ in the impure sample.
+
+6. A released AP Chemistry question asked students to identify a limiting reactant from experimental data. (Adapted from College Board, [2024 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
+
+   $$(A)$$ In a trial, $$0.0300\ \text{mol}$$ of $$\text{Al}$$ reacts with $$0.0200\ \text{mol}$$ of $$\text{Cl}_2$$ according to $$2\text{Al}+3\text{Cl}_2\rightarrow2\text{AlCl}_3$$. Identify the limiting reactant.
+
+   $$(B)$$ Calculate the theoretical moles of $$\text{AlCl}_3$$ produced.
+
+   $$(C)$$ Explain why the excess reactant remains after the limiting reactant is consumed.
 
 ---
 
@@ -308,6 +330,30 @@ $$
 
 ### Solution 3
 
+Zinc goes from oxidation number $$0$$ in $$\text{Zn}(s)$$ to $$+2$$ in $$\text{Zn}^{2+}$$, so it loses electrons and is oxidized.
+
+$$
+\boxed{\text{A}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+A precipitate is an insoluble solid that forms from ions in solution.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
+
 $$(A)$$ The balanced equation has a $$1:1$$ mole ratio between $$\text{CaCO}_3$$ and $$\text{CO}_2$$, so
 
 $$
@@ -325,5 +371,27 @@ $$(C)$$ The mass percent is
 $$
 \frac{2.00\ \text{g}}{2.50\ \text{g}}\times 100\%=80.0\%.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+$$(A)$$ Compare how much $$\text{Cl}_2$$ is needed for the available Al:
+
+$$
+0.0300\ \text{mol Al}\times\frac{3\ \text{mol Cl}_2}{2\ \text{mol Al}}=0.0450\ \text{mol Cl}_2.
+$$
+
+Only $$0.0200\ \text{mol Cl}_2$$ is available, so $$\text{Cl}_2$$ is limiting.
+
+$$(B)$$ Use the limiting reactant:
+
+$$
+0.0200\ \text{mol Cl}_2\times\frac{2\ \text{mol AlCl}_3}{3\ \text{mol Cl}_2}=0.0133\ \text{mol AlCl}_3.
+$$
+
+$$(C)$$ The balanced reaction requires fixed mole ratios. Once $$\text{Cl}_2$$ is used up, no more $$\text{AlCl}_3$$ can form, even though some Al remains.
 
 </div>

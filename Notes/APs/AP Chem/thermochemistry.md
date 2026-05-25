@@ -174,9 +174,23 @@ Higher $$T$$ increases vapor pressure; stronger IMFs tend to lower vapor pressur
    (C) $$5.02\times10^3\ \text{J}$$<br>
    (D) $$1.17\times10^4\ \text{J}$$
 
+3. Which process is endothermic?
+
+   (A) Freezing water<br>
+   (B) Condensing steam<br>
+   (C) Burning methane<br>
+   (D) Vaporizing liquid water
+
+4. In a coffee-cup calorimeter, the solution temperature increases. What is true about the reaction occurring in the solution?
+
+   (A) The reaction releases heat to the solution.<br>
+   (B) The reaction absorbs heat from the solution.<br>
+   (C) The reaction has no enthalpy change.<br>
+   (D) The reaction must have $$\Delta S<0$$.
+
 ### FRQ
 
-3. A reaction is represented by
+5. A reaction is represented by
 
 $$
 2\text{H}_2(g)+\text{O}_2(g)\rightarrow2\text{H}_2\text{O}(l)
@@ -189,6 +203,14 @@ with $$\Delta H^\circ_{\text{rxn}}=-572\ \text{kJ}$$ for the reaction as written
    $$(B)$$ Calculate the enthalpy change when $$4.00\ \text{mol}$$ of $$\text{H}_2(g)$$ reacts completely.
 
    $$(C)$$ Explain why breaking bonds is endothermic even when the overall reaction is exothermic.
+
+6. The 2026 AP Chemistry exam included a sodium oxide thermochemistry problem using formation enthalpy and limiting reactants. (Adapted from College Board, [2026 AP Chemistry FRQ 7](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
+
+   $$(A)$$ For $$4\text{Na}(s)+\text{O}_2(g)\rightarrow2\text{Na}_2\text{O}(s)$$ with $$\Delta H^\circ_{\text{rxn}}=-828\ \text{kJ}$$, calculate $$\Delta H_f^\circ$$ for $$\text{Na}_2\text{O}(s)$$.
+
+   $$(B)$$ If $$2.00\ \text{mol}$$ Na reacts completely with excess oxygen, calculate the heat released.
+
+   $$(C)$$ Explain why elements in their standard states have $$\Delta H_f^\circ=0$$.
 
 ---
 
@@ -232,6 +254,30 @@ $$
 
 ### Solution 3
 
+Vaporization requires energy to overcome intermolecular attractions in the liquid.
+
+$$
+\boxed{\text{D}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+If the solution temperature increases, the solution absorbed heat. The reaction released that heat, so the reaction is exothermic.
+
+$$
+\boxed{\text{A}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
+
 $$(A)$$ The reaction forms $$2$$ moles of water, so for $$1.00$$ mole:
 
 $$
@@ -245,5 +291,27 @@ $$
 $$
 
 $$(C)$$ Energy must be added to separate bonded atoms, so bond breaking is endothermic. The overall reaction is exothermic because forming the O-H bonds in water releases more energy than was required to break the H-H and O=O bonds.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+$$(A)$$ The reaction forms $$2$$ moles of $$\text{Na}_2\text{O}(s)$$, so
+
+$$
+\Delta H_f^\circ=\frac{-828\ \text{kJ}}{2}=-414\ \text{kJ/mol}.
+$$
+
+$$(B)$$ The reaction releases $$828\ \text{kJ}$$ per $$4$$ moles Na.
+
+$$
+2.00\ \text{mol Na}\times\frac{-828\ \text{kJ}}{4.00\ \text{mol Na}}=-414\ \text{kJ}.
+$$
+
+So $$414\ \text{kJ}$$ of heat is released.
+
+$$(C)$$ Formation enthalpy measures formation from elements in their standard states. An element already in its standard state requires no formation reaction, so its assigned value is zero.
 
 </div>
