@@ -1125,162 +1125,178 @@ $$
 
 1. Solve the system using Gaussian elimination:
 
-   $$
-   \begin{cases}
-   2x-y+3z=9\\
-   x+2y-z=2\\
-   3x+y+z=8
-   \end{cases}
-   $$
+    $$
+    \begin{cases}
+    2x-y+3z=9\\
+    x+2y-z=2\\
+    3x+y+z=8
+    \end{cases}
+    $$
 
 2. Solve the system and classify it as having one solution, no solution, or infinitely many solutions:
 
-   $$
-   \begin{cases}
-   x+2y-z=4\\
-   2x+4y-2z=8\\
-   3x-y+z=1
-   \end{cases}
-   $$
+    $$
+    \begin{cases}
+    x+2y-z=4\\
+    2x+4y-2z=8\\
+    3x-y+z=1
+    \end{cases}
+    $$
 
 3. Find all values of $$k$$ for which the system has no unique solution:
 
-   $$
-   \begin{cases}
-   kx+2y=6\\
-   8x+ky=12
-   \end{cases}
-   $$
+    $$
+    \begin{cases}
+    kx+2y=6\\
+    8x+ky=12
+    \end{cases}
+    $$
 
-   For each such value of $$k$$, determine whether the system has no solution or infinitely many solutions.
+    For each such value of $$k$$, determine whether the system has no solution or infinitely many solutions.
 
 4. Let
 
-   $$
-   A=\begin{bmatrix}2&-1\\3&4\end{bmatrix},
-   \qquad
-   B=\begin{bmatrix}0&5\\-2&1\end{bmatrix}.
-   $$
+    $$
+    A=\begin{bmatrix}2&-1\\3&4\end{bmatrix},
+    \qquad
+    B=\begin{bmatrix}0&5\\-2&1\end{bmatrix}.
+    $$
 
-   Compute $$2A-3B$$, $$AB$$, and $$BA$$.
+    Compute $$2A-3B$$, $$AB$$, and $$BA$$.
 
 5. Let
 
-   $$
-   A=\begin{bmatrix}1&2\\0&3\end{bmatrix},
-   \qquad
-   B=\begin{bmatrix}a&b\\c&d\end{bmatrix}.
-   $$
+    $$
+    A=\begin{bmatrix}1&2\\0&3\end{bmatrix},
+    \qquad
+    B=\begin{bmatrix}a&b\\c&d\end{bmatrix}.
+    $$
 
-   Find all matrices $$B$$ such that $$AB=BA$$.
+    Find all matrices $$B$$ such that $$AB=BA$$.
 
 6. Find $$A^{-1}$$, if it exists, and use it to solve $$AX=B$$:
 
-   $$
-   A=\begin{bmatrix}4&7\\2&5\end{bmatrix},
-   \qquad
-   B=\begin{bmatrix}1\\-3\end{bmatrix}.
-   $$
+    $$
+    A=\begin{bmatrix}4&7\\2&5\end{bmatrix},
+    \qquad
+    B=\begin{bmatrix}1\\-3\end{bmatrix}.
+    $$
 
 7. Find the inverse of
 
-   $$
-   A=\begin{bmatrix}
-   1&2&0\\
-   0&1&3\\
-   0&0&2
-   \end{bmatrix}.
-   $$
+    $$
+    A=\begin{bmatrix}
+    1&2&0\\
+    0&1&3\\
+    0&0&2
+    \end{bmatrix}.
+    $$
 
 8. Find all values of $$t$$ for which the matrix is singular:
 
-   $$
-   A=\begin{bmatrix}
-   t&1&0\\
-   2&t&1\\
-   0&3&t
-   \end{bmatrix}.
-   $$
+    $$
+    A=\begin{bmatrix}
+    t&1&0\\
+    2&t&1\\
+    0&3&t
+    \end{bmatrix}.
+    $$
 
 9. Use Cramer's Rule to solve:
 
-   $$
-   \begin{cases}
-   3x-2y=11\\
-   5x+4y=7
-   \end{cases}
-   $$
+    $$
+    \begin{cases}
+    3x-2y=11\\
+    5x+4y=7
+    \end{cases}
+    $$
 
 10. A quadratic function $$f(x)=ax^2+bx+c$$ passes through $$(-1,6)$$, $$(2,3)$$, and $$(4,15)$$. Use a system of equations to find $$a,b,c$$.
 
 11. Solve the nonlinear system:
 
-   $$
-   \begin{cases}
-   x^2+y^2=25\\
-   x-y=1
-   \end{cases}
-   $$
+    $$
+    \begin{cases}
+    x^2+y^2=25\\
+    x-y=1
+    \end{cases}
+    $$
 
 12. Solve the nonlinear system:
 
-   $$
-   \begin{cases}
-   xy=12\\
-   x+y=8
-   \end{cases}
-   $$
+    $$
+    \begin{cases}
+    xy=12\\
+    x+y=8
+    \end{cases}
+    $$
 
 13. Find the vertices and area of the region satisfying
 
-   $$
-   \begin{cases}
-   x\ge 0\\
-   y\ge 0\\
-   x+2y\le 8\\
-   3x+y\le 9
-   \end{cases}
-   $$
+    $$
+    \begin{cases}
+    x\ge 0\\
+    y\ge 0\\
+    x+2y\le 8\\
+    3x+y\le 9
+    \end{cases}
+    $$
 
 14. A matrix transformation sends the point $$(x,y)$$ to
 
-   $$
-   \begin{bmatrix}
-   x'\\
-   y'
-   \end{bmatrix}
-   =
-   \begin{bmatrix}
-   2&-1\\
-   1&1
-   \end{bmatrix}
-   \begin{bmatrix}
-   x\\
-   y
-   \end{bmatrix}.
-   $$
+    $$
+    \begin{bmatrix}
+    x'\\
+    y'
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    2&-1\\
+    1&1
+    \end{bmatrix}
+    \begin{bmatrix}
+    x\\
+    y
+    \end{bmatrix}.
+    $$
 
-   Find the original point $$(x,y)$$ that maps to $$(7,5)$$. Then find the image of the line $$y=2x+1$$ under this transformation.
+    Find the original point $$(x,y)$$ that maps to $$(7,5)$$. Then find the image of the line $$y=2x+1$$ under this transformation.
 
 15. A small economy has two sectors: food and tools. Producing one unit of food requires $$0.20$$ units of food and $$0.10$$ units of tools. Producing one unit of tools requires $$0.30$$ units of food and $$0.20$$ units of tools. External demand is $$110$$ units of food and $$80$$ units of tools. Let $$F$$ and $$T$$ be the total production levels. Set up and solve the matrix equation for $$F$$ and $$T$$.
 
-16. **Extension (Cayley-Hamilton for $$2\times 2$$ matrices).** Let
+16. **Extension (Cayley-Hamilton and Matrix Powers).** Let
 
-   $$
-   A=\begin{bmatrix}a&b\\c&d\end{bmatrix},
-   \qquad
-   \operatorname{tr}(A)=a+d,
-   \qquad
-   \det(A)=ad-bc.
-   $$
+    $$
+    A=\begin{bmatrix}a&b\\c&d\end{bmatrix},
+    \qquad
+    \operatorname{tr}(A)=a+d,
+    \qquad
+    \det(A)=ad-bc.
+    $$
 
-   Prove that
+    $$(A)$$ Prove the Cayley-Hamilton identity
 
-   $$
-   A^2-\operatorname{tr}(A)A+\det(A)I=0.
-   $$
+    $$
+    A^2-\operatorname{tr}(A)A+\det(A)I=0.
+    $$
 
-   Then use this identity to derive the inverse formula for $$A$$ when $$\det(A)\ne 0$$.
+    $$(B)$$ Use part $$(A)$$ to derive the inverse formula for $$A$$ when $$\det(A)\ne 0$$.
+
+    $$(C)$$ Explain why every power $$A^n$$ for $$n\ge 2$$ can be rewritten in the form
+
+    $$
+    A^n=\alpha_n A+\beta_n I
+    $$
+
+    for some constants $$\alpha_n$$ and $$\beta_n$$.
+
+    $$(D)$$ Let
+
+    $$
+    M=\begin{bmatrix}2&1\\1&1\end{bmatrix}.
+    $$
+
+    Use part $$(C)$$ to compute $$M^6$$ without multiplying six matrices directly.
 
 ---
 
@@ -2399,7 +2415,7 @@ $$
 
 ### Solution 16
 
-Compute $$A^2$$:
+Part $$(A)$$. Compute $$A^2$$:
 
 $$
 A^2=
@@ -2486,7 +2502,7 @@ $$
 \boxed{A^2-\operatorname{tr}(A)A+\det(A)I=0}.
 $$
 
-Now suppose $$\det(A)\ne 0$$. Rearrange the identity:
+Part $$(B)$$. Now suppose $$\det(A)\ne 0$$. Rearrange the identity:
 
 $$
 A^2-\operatorname{tr}(A)A=-\det(A)I.
@@ -2541,6 +2557,150 @@ A^{-1}
 \begin{bmatrix}
 d&-b\\
 -c&a
+\end{bmatrix}
+}.
+$$
+
+Part $$(C)$$. From part $$(A)$$,
+
+$$
+A^2=\operatorname{tr}(A)A-\det(A)I.
+$$
+
+This already writes $$A^2$$ as a linear combination of $$A$$ and $$I$$.
+
+Now multiply both sides by $$A$$:
+
+$$
+A^3=\operatorname{tr}(A)A^2-\det(A)A.
+$$
+
+Since $$A^2$$ is already a combination of $$A$$ and $$I$$, this means $$A^3$$ is also a combination of $$A$$ and $$I$$.
+
+More generally, multiply the Cayley-Hamilton identity by $$A^{n-2}$$:
+
+$$
+A^n-\operatorname{tr}(A)A^{n-1}+\det(A)A^{n-2}=0.
+$$
+
+So
+
+$$
+A^n=\operatorname{tr}(A)A^{n-1}-\det(A)A^{n-2}.
+$$
+
+If $$A^{n-1}$$ and $$A^{n-2}$$ are both combinations of $$A$$ and $$I$$, then $$A^n$$ is too. Therefore every power $$A^n$$ with $$n\ge 2$$ can be written as
+
+$$
+\boxed{A^n=\alpha_n A+\beta_n I}.
+$$
+
+Part $$(D)$$. For
+
+$$
+M=\begin{bmatrix}2&1\\1&1\end{bmatrix},
+$$
+
+the trace is
+
+$$
+\operatorname{tr}(M)=3,
+$$
+
+and the determinant is
+
+$$
+\det(M)=2(1)-1(1)=1.
+$$
+
+So Cayley-Hamilton gives
+
+$$
+M^2-3M+I=0,
+$$
+
+or
+
+$$
+M^2=3M-I.
+$$
+
+Use the recurrence
+
+$$
+M^n=3M^{n-1}-M^{n-2}.
+$$
+
+Start:
+
+$$
+M^0=I,\qquad M^1=M.
+$$
+
+Then
+
+$$
+M^2=3M-I.
+$$
+
+Next,
+
+$$
+M^3=3M^2-M=3(3M-I)-M=8M-3I.
+$$
+
+Then
+
+$$
+M^4=3M^3-M^2=3(8M-3I)-(3M-I)=21M-8I.
+$$
+
+Next,
+
+$$
+M^5=3M^4-M^3=3(21M-8I)-(8M-3I)=55M-21I.
+$$
+
+Finally,
+
+$$
+M^6=3M^5-M^4=3(55M-21I)-(21M-8I)=144M-55I.
+$$
+
+Now substitute the matrix $$M$$:
+
+$$
+M^6=
+144
+\begin{bmatrix}
+2&1\\
+1&1
+\end{bmatrix}
+-55
+\begin{bmatrix}
+1&0\\
+0&1
+\end{bmatrix}.
+$$
+
+Thus
+
+$$
+M^6=
+\begin{bmatrix}
+288&144\\
+144&144
+\end{bmatrix}
+-
+\begin{bmatrix}
+55&0\\
+0&55
+\end{bmatrix}
+=
+\boxed{
+\begin{bmatrix}
+233&144\\
+144&89
 \end{bmatrix}
 }.
 $$
