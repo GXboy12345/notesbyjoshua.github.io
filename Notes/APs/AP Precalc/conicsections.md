@@ -629,6 +629,20 @@ where $$PF$$ is the distance from $$P$$ to $$F$$ and $$d(P,\ell)$$ is the perpen
 
 For parabolas, this matches the equal-distance definition to focus and directrix. For ellipses and hyperbolas, the same relation holds once focus and directrix are chosen consistently (a second focus appears from symmetry in the standard pictures).
 
+The focus-directrix definition is useful because it gives one unified way to describe all three major conics. Instead of memorizing ellipse, parabola, and hyperbola as completely separate objects, you can think of them as different responses to the same rule:
+
+$$
+\text{distance to focus}=e(\text{distance to directrix}).
+$$
+
+The number $$e$$ controls how strongly the point is pulled toward the focus compared with the directrix.
+
+- If $$e=1$$, the point must stay equally far from the focus and directrix, producing a parabola.
+- If $$0<e<1$$, the point is closer to the focus than the directrix distance would be, which creates a bounded curve: an ellipse.
+- If $$e>1$$, the focus distance is larger than the directrix distance, which creates an unbounded curve: a hyperbola.
+
+For ellipses and hyperbolas, there are two foci and two directrices. Each focus pairs with the directrix on the same side of the center. For a horizontal ellipse, the right focus pairs with the right directrix and the left focus pairs with the left directrix. The same idea works for a horizontal hyperbola.
+
 ### Standard focus-directrix facts
 
 The focus-directrix definition can be written as a ratio:
@@ -644,6 +658,8 @@ For an ellipse or hyperbola centered at the origin with a horizontal major/trans
 $$
 e=\frac ca.
 $$
+
+This is the same eccentricity from the standard equations. The value of $$c$$ measures how far each focus is from the center, and $$a$$ measures how far each vertex is from the center. So eccentricity compares the focus distance to the vertex distance.
 
 For an ellipse,
 
@@ -678,6 +694,158 @@ For vertical conics, replace $$x=\pm\frac ae$$ with
 $$
 y=\pm\frac ae.
 $$
+
+It is often helpful to rewrite the directrix location as
+
+$$
+\frac ae=\frac{a^2}{c},
+$$
+
+since $$e=\frac ca$$. Thus:
+
+| Conic orientation | Foci | Directrices |
+|---|---|---|
+| Horizontal ellipse | $$(h\pm c,k)$$ | $$x=h\pm \dfrac{a^2}{c}$$ |
+| Vertical ellipse | $$(h,k\pm c)$$ | $$y=k\pm \dfrac{a^2}{c}$$ |
+| Horizontal hyperbola | $$(h\pm c,k)$$ | $$x=h\pm \dfrac{a^2}{c}$$ |
+| Vertical hyperbola | $$(h,k\pm c)$$ | $$y=k\pm \dfrac{a^2}{c}$$ |
+
+The formula is the same, but the location feels different:
+
+- for ellipses, $$c<a$$, so $$\dfrac{a^2}{c}>a$$ and the directrices are outside the ellipse;
+- for hyperbolas, $$c>a$$, so $$\dfrac{a^2}{c}<a$$ and the directrices lie between the vertices.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the directrices of
+
+$$
+\frac{(y+1)^2}{25}-\frac{(x-2)^2}{9}=1.
+$$
+
+This is a vertical hyperbola with center
+
+$$
+(h,k)=(2,-1).
+$$
+
+Since the positive term is the $$y$$ term,
+
+$$
+a^2=25,\qquad b^2=9.
+$$
+
+For a hyperbola,
+
+$$
+c^2=a^2+b^2=25+9=34,
+$$
+
+so
+
+$$
+c=\sqrt{34}.
+$$
+
+The directrices are vertical-orientation directrices:
+
+$$
+y=k\pm\frac{a^2}{c}.
+$$
+
+Therefore
+
+$$
+\boxed{y=-1\pm\frac{25}{\sqrt{34}}}.
+$$
+
+</div>
+
+### From focus-directrix data to an equation
+
+When a problem gives a focus, a directrix, and eccentricity, start from the definition instead of trying to guess the standard form immediately.
+
+1. Write the distance from $$(x,y)$$ to the focus.
+2. Write the perpendicular distance from $$(x,y)$$ to the directrix.
+3. Set $$PF=e\,d(P,\ell)$$.
+4. Square both sides and simplify.
+5. Complete the square if needed.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the conic with focus $$(0,0)$$, directrix $$x=4$$, and eccentricity $$e=\frac12$$.
+
+For a point $$P=(x,y)$$, the distance to the focus is
+
+$$
+PF=\sqrt{x^2+y^2}.
+$$
+
+The distance to the directrix $$x=4$$ is
+
+$$
+d(P,\ell)=|x-4|.
+$$
+
+For points on the side of the directrix containing the focus, this is $$4-x$$. Since $$e=\frac12$$,
+
+$$
+\sqrt{x^2+y^2}=\frac12(4-x).
+$$
+
+Square both sides:
+
+$$
+x^2+y^2=\frac14(4-x)^2.
+$$
+
+Multiply by $$4$$:
+
+$$
+4x^2+4y^2=x^2-8x+16.
+$$
+
+Rearrange:
+
+$$
+3x^2+8x+4y^2=16.
+$$
+
+Complete the square in $$x$$:
+
+$$
+3\left(x^2+\frac83x\right)+4y^2=16.
+$$
+
+Since
+
+$$
+x^2+\frac83x=\left(x+\frac43\right)^2-\frac{16}{9},
+$$
+
+we get
+
+$$
+3\left(x+\frac43\right)^2-\frac{16}{3}+4y^2=16.
+$$
+
+Thus
+
+$$
+3\left(x+\frac43\right)^2+4y^2=\frac{64}{3}.
+$$
+
+Divide by $$\frac{64}{3}$$:
+
+$$
+\boxed{
+\frac{\left(x+\frac43\right)^2}{\frac{64}{9}}+\frac{y^2}{\frac{16}{3}}=1
+}.
+$$
+
+Since $$0<e<1$$, it makes sense that the result is an ellipse.
+
+</div>
 
 <div class="theorem-box" markdown="1">
 
@@ -813,6 +981,10 @@ $$
 r=\frac{ed}{1\pm e\sin\theta}.
 $$
 
+Polar form is especially natural for conics because the pole can be placed at a focus. In rectangular form, the center is usually the most convenient reference point. In polar form, a focus is usually the most convenient reference point.
+
+The numerator $$ed$$ is sometimes called the **semi-latus rectum** of the conic. It is often written as $$p$$ or $$\ell$$ in other texts. To avoid confusing it with the parabola parameter $$p$$ from earlier, we will usually keep it as $$ed$$ here.
+
 Here:
 
 - $$e$$ is the eccentricity.
@@ -832,6 +1004,18 @@ r=\frac{ed}{1-e\sin\theta} & y=-d
 \end{array}
 $$
 
+The trig function tells the orientation:
+
+- $$\cos\theta$$ means the directrix is vertical, since $$x=r\cos\theta$$.
+- $$\sin\theta$$ means the directrix is horizontal, since $$y=r\sin\theta$$.
+
+The sign tells which side the directrix is on:
+
+- $$1+e\cos\theta$$ pairs with $$x=d$$,
+- $$1-e\cos\theta$$ pairs with $$x=-d$$,
+- $$1+e\sin\theta$$ pairs with $$y=d$$,
+- $$1-e\sin\theta$$ pairs with $$y=-d$$.
+
 For different types of $$e$$:
 
 - $$e = 1$$: one unbounded branch (parabola opening toward the directrix side that makes the denominator able to go to $$0$$).
@@ -839,6 +1023,96 @@ For different types of $$e$$:
 - $$e > 1$$: two branches (hyperbola); values of $$\theta$$ that make $$1 + e\cos\theta = 0$$ (or the corresponding denominator in your chosen form) are asymptotic directions (no finite points). The branch closest to the origin depends on the sign of $$d$$.
 
 Always check your course’s exact convention for $$p$$ and the sign in the denominator so your formulas match the textbook’s figure of the focus and directrix.
+
+### Important polar values
+
+For equations involving $$\cos\theta$$, the easiest points to check are usually along the polar axis:
+
+$$
+\theta=0,\qquad \theta=\pi.
+$$
+
+For
+
+$$
+r=\frac{ed}{1+e\cos\theta},
+$$
+
+these give
+
+$$
+r(0)=\frac{ed}{1+e},
+\qquad
+r(\pi)=\frac{ed}{1-e}.
+$$
+
+If $$0<e<1$$, both values are finite and positive, so they give the two vertices of the ellipse on the horizontal axis. If $$e=1$$, then $$r(\pi)$$ is undefined, which matches the unbounded side of a parabola. If $$e>1$$, the denominator can become zero for some angle, which produces asymptotic directions for a hyperbola.
+
+For equations involving $$\sin\theta$$, check
+
+$$
+\theta=\frac{\pi}{2},\qquad \theta=\frac{3\pi}{2}.
+$$
+
+These are the positive and negative vertical directions.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the eccentricity, directrix, and vertices of
+
+$$
+r=\frac{6}{1+\frac12\cos\theta}.
+$$
+
+This is already in the form
+
+$$
+r=\frac{ed}{1+e\cos\theta}.
+$$
+
+Thus
+
+$$
+e=\frac12.
+$$
+
+Since $$0<e<1$$, the conic is an ellipse. The numerator is $$ed=6$$, so
+
+$$
+d=\frac{6}{1/2}=12.
+$$
+
+Because the denominator is $$1+e\cos\theta$$, the directrix is
+
+$$
+\boxed{x=12}.
+$$
+
+To find the horizontal vertices, use $$\theta=0$$ and $$\theta=\pi$$:
+
+$$
+r(0)=\frac{6}{1+\frac12}=4,
+$$
+
+and
+
+$$
+r(\pi)=\frac{6}{1-\frac12}=12.
+$$
+
+So the vertices in polar form are
+
+$$
+\boxed{(4,0)\text{ and }(12,\pi)}.
+$$
+
+In rectangular coordinates, these points are
+
+$$
+\boxed{(4,0)\text{ and }(-12,0)}.
+$$
+
+</div>
 
 <div class="theorem-box" markdown="1">
 
@@ -915,6 +1189,21 @@ To identify a polar conic:
 3. Use $$e$$ to classify the conic.
 4. Use the numerator $$ed$$ to find $$d$$.
 5. Use the sign and trig function to locate the directrix.
+6. Plug in axis angles to locate useful vertices.
+
+Be careful when the denominator is not already normalized. For example,
+
+$$
+r=\frac{12}{4+2\sin\theta}
+$$
+
+should first be rewritten as
+
+$$
+r=\frac{3}{1+\frac12\sin\theta}.
+$$
+
+So $$e=\frac12$$, not $$2$$.
 
 <div class="theorem-box" markdown="1">
 
@@ -962,6 +1251,84 @@ the directrix is
 $$
 x=-d=-10.
 $$
+
+</div>
+
+### Converting polar conics to rectangular form
+
+Sometimes it is useful to convert a polar conic into rectangular form. Use
+
+$$
+x=r\cos\theta,\qquad y=r\sin\theta,\qquad r^2=x^2+y^2.
+$$
+
+The basic strategy is:
+
+1. Multiply both sides by the denominator.
+2. Replace $$r\cos\theta$$ with $$x$$ or $$r\sin\theta$$ with $$y$$.
+3. Isolate the remaining $$r$$ term.
+4. Square both sides if needed.
+5. Complete the square.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Convert
+
+$$
+r=\frac{4}{1-\cos\theta}
+$$
+
+to rectangular form.
+
+Multiply both sides by the denominator:
+
+$$
+r(1-\cos\theta)=4.
+$$
+
+Distribute:
+
+$$
+r-r\cos\theta=4.
+$$
+
+Since $$r\cos\theta=x$$,
+
+$$
+r-x=4.
+$$
+
+Thus
+
+$$
+r=x+4.
+$$
+
+Now square both sides:
+
+$$
+r^2=(x+4)^2.
+$$
+
+Use $$r^2=x^2+y^2$$:
+
+$$
+x^2+y^2=x^2+8x+16.
+$$
+
+Cancel $$x^2$$:
+
+$$
+y^2=8x+16=8(x+2).
+$$
+
+So
+
+$$
+\boxed{y^2=8(x+2)}.
+$$
+
+This is a parabola, which matches $$e=1$$ from the original polar equation.
 
 </div>
 
