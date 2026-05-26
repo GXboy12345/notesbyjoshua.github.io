@@ -21,6 +21,7 @@ nav_order: 6
 - [Unit 6 & 7: Trigonometric Functions]({{ '/notes/ap/precalc/trigfunc/' | relative_url }})
 - [Unit 8 & 9: Graphs and Analytics of Trig Functions]({{ '/notes/ap/precalc/graphanalyticaltrig/' | relative_url }})
 - [Unit 10: Additional Topics in Trigonometry (Triangle Laws, Parametric, Polar, and Vectors)]({{ '/notes/ap/precalc/additionaltrig/' | relative_url }})
+- [Unit 11: Matrices and Systems]({{ '/notes/ap/precalc/matrices/' | relative_url }})
 - [Unit 12: Conic Sections]({{ '/notes/ap/precalc/conicsections/' | relative_url }})
 - [Unit 13 & 14: Additional Topics in Algebra]({{ '/notes/ap/precalc/addtopics/' | relative_url }})
 
