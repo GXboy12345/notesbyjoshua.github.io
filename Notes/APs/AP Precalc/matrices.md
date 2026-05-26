@@ -22,6 +22,16 @@ A **system of equations** asks for the values of the variables that make every e
 
 The same idea extends to larger linear systems: the solution set can be one point, no points, or infinitely many points.
 
+Geometrically, each equation describes a set of points. In two variables, each linear equation is a line, so solving a system means finding where the lines overlap. In three variables, each linear equation is usually a plane, so solving a system means finding where the planes overlap.
+
+For a system in three variables:
+
+- one solution means the planes meet at one point,
+- no solution means the planes never all meet in one common place,
+- infinitely many solutions usually means the planes overlap along a line or plane.
+
+Algebraically, every method in this unit is trying to answer the same question: can we isolate the variables without changing the set of points that satisfies all the equations?
+
 ### Substitution and elimination
 
 The two basic algebraic methods are:
@@ -78,6 +88,17 @@ $$
 
 A **matrix** is a rectangular array of numbers. The numbers inside the matrix are called **entries** or **elements**.
 
+Matrices are useful because linear systems have a lot of repeated structure. In a system like
+
+$$
+\begin{cases}
+2x-y+4z=7\\
+3x+5y-z=1
+\end{cases}
+$$
+
+the variable names $$x,y,z$$ and the plus signs do not change much. The important changing information is the coefficients and constants. A matrix strips the system down to that information so the algebra becomes cleaner.
+
 For example,
 
 $$
@@ -97,6 +118,20 @@ $$
 ### Coefficient and augmented matrices
 
 For a linear system, the **coefficient matrix** stores the coefficients of the variables. The **augmented matrix** also includes the constants on the right side.
+
+The order of the columns matters. If the columns are arranged as $$x,y,z$$, then every row must follow that same order. Missing variables get coefficient $$0$$. For example, $$3x+z=5$$ becomes
+
+$$
+3x+0y+z=5,
+$$
+
+so its coefficient row is
+
+$$
+\begin{bmatrix}
+3 & 0 & 1
+\end{bmatrix}.
+$$
 
 For
 
@@ -136,7 +171,29 @@ The vertical bar is only a visual separator. It reminds you where the equals sig
 
 ## Gaussian Elimination
 
-Gaussian elimination rewrites a system into an easier equivalent system using row operations.
+Gaussian elimination is a systematic version of elimination. The main idea is to use one equation to remove a variable from the equations below it, then repeat with the next variable.
+
+The reason this works is that each row in an augmented matrix is just one equation. If you replace an equation with a combination of equations that has the same information, the solution set stays the same.
+
+For example, suppose a solution satisfies both
+
+$$
+E_1:\quad x+y=5
+$$
+
+and
+
+$$
+E_2:\quad 2x-y=4.
+$$
+
+Then that same solution must also satisfy
+
+$$
+E_2-2E_1:\quad (2x-y)-2(x+y)=4-2(5).
+$$
+
+This new equation is not random. It is built from equations the solution already satisfies, so it does not throw away any valid solutions. Gaussian elimination keeps doing this kind of replacement until the system is easy to read.
 
 ### Elementary row operations
 
@@ -148,7 +205,9 @@ The allowed row operations are:
 
 These operations do not change the solution set of the corresponding linear system.
 
-The goal is usually to create **row echelon form**:
+### The shape we want
+
+The goal is usually to create **row echelon form**, which has a staircase of zeros:
 
 $$
 \left[
@@ -161,6 +220,130 @@ $$
 $$
 
 where the leading nonzero entries move down and to the right. Then use **back substitution**.
+
+Why is this shape useful? Because the bottom equation has only one variable, the row above it has two variables, and the row above that has three variables. So you solve from the bottom upward.
+
+For example, the matrix
+
+$$
+\left[
+\begin{array}{ccc|c}
+1 & 2 & -1 & 4\\
+0 & 3 & 5 & 21\\
+0 & 0 & 2 & 6
+\end{array}
+\right]
+$$
+
+means
+
+$$
+\begin{cases}
+x+2y-z=4\\
+3y+5z=21\\
+2z=6
+\end{cases}
+$$
+
+The last equation gives $$z=3$$. Then the second equation gives
+
+$$
+3y+5(3)=21,
+$$
+
+so $$y=2$$. Then the first equation gives
+
+$$
+x+2(2)-3=4,
+$$
+
+so $$x=3$$.
+
+That is the whole purpose of Gaussian elimination: create a system where this bottom-up solving is possible.
+
+### Pivots
+
+A **pivot** is the entry you use to eliminate the numbers below it. In a typical $$3\times 3$$ system, the first pivot is in the $$x$$-column. You use it to turn the entries below it into zeros:
+
+$$
+\left[
+\begin{array}{ccc|c}
+\boxed{\star} & \star & \star & \star\\
+\star & \star & \star & \star\\
+\star & \star & \star & \star
+\end{array}
+\right]
+\quad\Longrightarrow\quad
+\left[
+\begin{array}{ccc|c}
+\boxed{\star} & \star & \star & \star\\
+0 & \star & \star & \star\\
+0 & \star & \star & \star
+\end{array}
+\right].
+$$
+
+Then the second pivot is in the $$y$$-column. Use it to eliminate below it:
+
+$$
+\left[
+\begin{array}{ccc|c}
+\star & \star & \star & \star\\
+0 & \boxed{\star} & \star & \star\\
+0 & \star & \star & \star
+\end{array}
+\right]
+\quad\Longrightarrow\quad
+\left[
+\begin{array}{ccc|c}
+\star & \star & \star & \star\\
+0 & \boxed{\star} & \star & \star\\
+0 & 0 & \star & \star
+\end{array}
+\right].
+$$
+
+It is often nice to make pivots equal to $$1$$, but it is not required. The only thing a pivot cannot be is $$0$$. If the entry where you want a pivot is $$0$$, swap rows if possible.
+
+### How to eliminate an entry
+
+Suppose the pivot is $$1$$ and the entry below it is $$4$$:
+
+$$
+\begin{bmatrix}
+1 & \cdots\\
+4 & \cdots
+\end{bmatrix}.
+$$
+
+To turn the $$4$$ into $$0$$, replace the second row with
+
+$$
+R_2\leftarrow R_2-4R_1.
+$$
+
+If the pivot is $$2$$ and the entry below it is $$6$$:
+
+$$
+\begin{bmatrix}
+2 & \cdots\\
+6 & \cdots
+\end{bmatrix},
+$$
+
+then use
+
+$$
+R_2\leftarrow R_2-3R_1,
+$$
+
+because $$6-3(2)=0$$.
+
+In general, you choose the multiple that makes
+
+$$
+\text{entry below pivot}-(\text{multiple})(\text{pivot})=0.
+$$
 
 <div class="theorem-box" markdown="1">
 
@@ -186,13 +369,21 @@ $$
 \right].
 $$
 
-Eliminate below the first pivot:
+The first pivot is the $$1$$ in the top-left corner. Use it to eliminate the $$x$$-terms below it.
+
+For row $$2$$, the entry below the pivot is $$2$$, so subtract $$2$$ times row $$1$$:
 
 $$
-R_2\leftarrow R_2-2R_1,\qquad R_3\leftarrow R_3-R_1
+R_2\leftarrow R_2-2R_1.
 $$
 
-so
+For row $$3$$, the entry below the pivot is $$1$$, so subtract $$1$$ times row $$1$$:
+
+$$
+R_3\leftarrow R_3-R_1.
+$$
+
+This gives
 
 $$
 \left[
@@ -204,7 +395,7 @@ $$
 \right].
 $$
 
-Swap rows $$2$$ and $$3$$, then eliminate below the second pivot:
+Now we need a pivot in the second column. The entry $$1$$ in row $$3$$ is easier to use than the entry $$-3$$ in row $$2$$, so swap rows $$2$$ and $$3$$:
 
 $$
 \left[
@@ -214,7 +405,23 @@ $$
 0 & -3 & -1 & -9
 \end{array}
 \right]
-\quad\Longrightarrow\quad
+$$
+
+Now use the second pivot, which is $$1$$, to eliminate the $$-3$$ below it. Since
+
+$$
+-3+3(1)=0,
+$$
+
+use
+
+$$
+R_3\leftarrow R_3+3R_2.
+$$
+
+Then
+
+$$
 \left[
 \begin{array}{ccc|c}
 1 & 1 & 1 & 6\\
@@ -224,7 +431,29 @@ $$
 \right].
 $$
 
-The last row gives $$z=3$$. The second row gives
+Now the matrix is in row echelon form. Translate it back into equations:
+
+$$
+\begin{cases}
+x+y+z=6\\
+y-2z=-4\\
+-7z=-21
+\end{cases}
+$$
+
+Back substitution starts at the bottom. The last row gives
+
+$$
+-7z=-21,
+$$
+
+so
+
+$$
+z=3.
+$$
+
+The second row gives
 
 $$
 y-2z=-4 \quad\Longrightarrow\quad y=2.
@@ -280,6 +509,8 @@ means one equation became redundant. If at least one variable is free, the syste
 
 ## Matrix Operations
 
+Matrix operations are designed to preserve the rectangular structure of the data. The rules may feel more restrictive than ordinary arithmetic, but each restriction is there because the entries have positions. You can only combine entries when their positions match, and matrix multiplication has to respect row-column relationships.
+
 ### Equality
 
 Two matrices are equal only if they have the same size and all corresponding entries are equal.
@@ -287,6 +518,8 @@ Two matrices are equal only if they have the same size and all corresponding ent
 ### Addition and subtraction
 
 You can add or subtract matrices only when they have the same size:
+
+This is because addition is done position-by-position. The top-left entries combine, the top-right entries combine, and so on. If the matrices have different sizes, some entries do not have partners.
 
 $$
 \begin{bmatrix}
@@ -309,6 +542,8 @@ $$
 
 To multiply a matrix by a scalar, multiply every entry by that scalar:
 
+Scalar multiplication stretches every entry by the same factor. If the matrix represents data, every data value is being scaled. If the matrix represents equations, multiplying a row by a scalar is the same idea as multiplying both sides of an equation by that scalar.
+
 $$
 -2
 \begin{bmatrix}
@@ -325,6 +560,10 @@ $$
 ### Matrix multiplication
 
 The product $$AB$$ is defined only when the number of columns of $$A$$ equals the number of rows of $$B$$.
+
+Matrix multiplication is not entry-by-entry multiplication. It is built around dot products. The rows of the first matrix interact with the columns of the second matrix.
+
+One reason this rule matters is that matrices often represent transformations or systems of linear combinations. Multiplying matrices combines those actions. If $$A$$ changes one vector and $$B$$ changes another, then $$AB$$ represents doing one action after the other. Order matters, which is why $$AB$$ and $$BA$$ can be different.
 
 If $$A$$ is $$m\times n$$ and $$B$$ is $$n\times p$$, then $$AB$$ is $$m\times p$$.
 
@@ -365,6 +604,8 @@ in general. Sometimes one product is defined and the other is not.
 
 A **square matrix** has the same number of rows and columns. The identity matrix is the matrix version of the number $$1$$.
 
+The identity matrix is important because it does nothing when you multiply by it. It is the matrix version of leaving something unchanged. This gives us a way to talk about "undoing" a matrix.
+
 For $$2\times 2$$ matrices,
 
 $$
@@ -388,6 +629,10 @@ AA^{-1}=A^{-1}A=I,
 $$
 
 then $$A^{-1}$$ is the **inverse** of $$A$$. A matrix with an inverse is **invertible** or **nonsingular**. A matrix without an inverse is **singular**.
+
+Think of $$A^{-1}$$ as the operation that reverses $$A$$. If multiplying by $$A$$ mixes the variables together, multiplying by $$A^{-1}$$ unmixes them. This is why inverses can solve systems: the coefficient matrix mixes the variables into the constants, and the inverse recovers the original variables.
+
+Not every square matrix can be undone. Some matrices collapse information. For example, if two equations are really multiples of the same equation, they do not contain enough independent information to recover a unique solution.
 
 ### Inverse of a 2 by 2 matrix
 
@@ -569,7 +814,28 @@ $$
 
 ## Determinants and Cramer's Rule
 
-The determinant is a number attached to a square matrix. For a $$2\times 2$$ matrix,
+The determinant is a number attached to a square matrix. At first it may look like a random formula, but its job is very important: it tells us whether the matrix has enough independent information to be invertible.
+
+For a $$2\times 2$$ coefficient matrix
+
+$$
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix},
+$$
+
+the two rows correspond to the coefficient patterns in two equations:
+
+$$
+ax+by=\text{constant},
+\qquad
+cx+dy=\text{constant}.
+$$
+
+If the two rows point in genuinely different directions, the equations usually give two independent pieces of information and the system has one solution. If one row is a multiple of the other, the equations are parallel or identical, so the system either has no solution or infinitely many solutions.
+
+The determinant detects this. For a $$2\times 2$$ matrix,
 
 $$
 \det
@@ -580,7 +846,45 @@ c & d
 =ad-bc.
 $$
 
-For a $$3\times 3$$ matrix, one useful expansion is along the first row:
+If $$ad-bc=0$$, the rows or columns are dependent in the sense that one direction has collapsed into another. The matrix is singular and has no inverse. If $$ad-bc\ne 0$$, the matrix is invertible.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Compare the determinants:
+
+$$
+A=
+\begin{bmatrix}
+1 & 2\\
+3 & 6
+\end{bmatrix},
+\qquad
+B=
+\begin{bmatrix}
+1 & 2\\
+3 & 5
+\end{bmatrix}.
+$$
+
+For $$A$$,
+
+$$
+\det(A)=1(6)-2(3)=0.
+$$
+
+The second row is $$3$$ times the first row, so the two rows do not give independent information.
+
+For $$B$$,
+
+$$
+\det(B)=1(5)-2(3)=-1.
+$$
+
+This is nonzero, so $$B$$ is invertible and a system with coefficient matrix $$B$$ has exactly one solution.
+
+</div>
+
+For a $$3\times 3$$ matrix, one useful expansion is along the first row. Each entry in the first row gets multiplied by the determinant of the $$2\times 2$$ matrix left behind after deleting that entry's row and column:
 
 $$
 \det
@@ -595,7 +899,13 @@ $$
 
 If $$\det(A)\ne 0$$, then $$A$$ is invertible and the system $$AX=B$$ has exactly one solution.
 
+The determinant also has a geometric meaning. In two dimensions, the absolute value of the determinant gives the area scale factor of the matrix transformation. If the determinant is $$0$$, area gets flattened to zero, meaning the transformation collapses the plane onto a line or point. That collapse is exactly why the matrix cannot be undone.
+
 ### Cramer's Rule for 2 by 2 systems
+
+Cramer's Rule is a determinant-based way to solve a system. It is not usually the fastest method for large systems, but it is useful because it shows how determinants encode the solution.
+
+The denominator determinant $$D$$ measures whether the coefficient matrix is invertible. The numerator determinants $$D_x$$ and $$D_y$$ replace one coefficient column at a time with the constants. This isolates how much of the solution belongs to each variable.
 
 For
 
@@ -698,6 +1008,10 @@ $$
 
 A **nonlinear system** has at least one equation that is not linear. The solutions are still points that satisfy every equation at once, but the graphs may intersect in more than one point.
 
+Linear systems are predictable: two lines can meet once, never meet, or be the same line. Nonlinear systems are more flexible because curves can bend back and meet each other multiple times. A line and a circle can intersect twice, once, or not at all. Two circles can also intersect twice, once, or not at all.
+
+The goal is still the same: find all ordered pairs that satisfy every equation. The difference is that the algebra often produces quadratics or higher-degree equations, so there may be multiple solutions.
+
 Common strategies:
 
 - Use substitution when one equation is easy to solve for one variable.
@@ -758,6 +1072,10 @@ $$
 ## Systems of Inequalities
 
 A system of inequalities asks for the region that satisfies every inequality at the same time.
+
+Equations usually describe boundaries: lines, circles, parabolas, and so on. Inequalities describe regions on one side of those boundaries. A system of inequalities asks where all the shaded regions overlap.
+
+For example, $$y>2x+1$$ means all points above the line $$y=2x+1$$. The line itself is not included because the inequality is strict. In contrast, $$y\ge 2x+1$$ includes the line.
 
 To graph a linear inequality:
 
