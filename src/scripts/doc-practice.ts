@@ -290,19 +290,12 @@ function bindDocumentHandlers() {
         practiceDebug('choice', { status: 'bad-value', raw: choice.dataset.choice ?? null });
         return;
       }
-      syncChoiceUi(mcq, value);
-      practiceDebug('choice', { status: 'selected', value, id: mcq.dataset.mcqId ?? null });
+      submitPick(mcq, value);
+      practiceDebug('choice', { status: 'submitted', value, id: mcq.dataset.mcqId ?? null });
       return;
     }
 
-    if (target.closest('[data-mcq-check]')) {
-      const mcq = mcqRoot(target);
-      if (mcq) runCheck(mcq);
-      else practiceDebug('check', { status: 'no-mcq-root' });
-      return;
-    }
-
-    if (target.closest('[data-mcq-show-solution], [data-mcq-skip]')) {
+    if (target.closest('[data-mcq-show-solution]')) {
       const mcq = mcqRoot(target);
       if (mcq) runMcqReveal(mcq);
       else practiceDebug('reveal', { status: 'no-mcq-root' });
