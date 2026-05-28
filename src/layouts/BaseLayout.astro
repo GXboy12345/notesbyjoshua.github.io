@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import 'katex/dist/katex.min.css';
+import { ClientRouter } from 'astro:transitions';
 import FontPreload from '../components/FontPreload.astro';
 import ThemeScript from '../components/ThemeScript.astro';
 import SiteHeader from '../components/SiteHeader.astro';
@@ -23,6 +24,7 @@ const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Jo
     <FontPreload />
     <meta name="description" content={description} />
     <title>{fullTitle}</title>
+    <ClientRouter />
     <link rel="icon" type="image/jpeg" href={p('/assets/Images/favicon.jpeg')} />
     <ThemeScript />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-868QCS9DJP"></script>

@@ -1,6 +1,6 @@
 import type { DocEntry } from './resolve-doc';
 import { routePath } from './routes';
-import { p } from './paths';
+import { p, pathActive } from './paths';
 
 export type TreeNode = {
   label: string;
@@ -11,8 +11,40 @@ export type TreeNode = {
 
 type InternalNode = TreeNode & { _k: string };
 
+const SEGMENT_LABELS: Record<string, string> = {
+  aps: 'AP',
+  APs: 'AP',
+  'ap-calc': 'AP Calculus',
+  'ap-chem': 'AP Chemistry',
+  'ap-stats': 'AP Statistics',
+  'ap-precalc': 'AP Precalc',
+  'ap-physics-c-mechanics': 'AP Physics C: Mechanics',
+  'ap-physics-c-em': 'AP Physics C: E&M',
+  fma: 'F=ma',
+  usapho: 'USAPhO',
+  physics: 'Physics',
+  math: 'Math',
+  notes: 'Notes',
+};
+
+function humanizeSegment(raw: string): string {
+  const segment = raw.replace(/\.md$/i, '');
+  const known = SEGMENT_LABELS[segment] ?? SEGMENT_LABELS[segment.toLowerCase()];
+  if (known) return known;
+  if (/[\s_]/.test(segment) || /[A-Z].*[A-Z]/.test(segment)) return segment.replace(/_/g, ' ');
+
+  return segment
+    .replace(/-/g, ' ')
+    .replace(/\b(ap|c|em|ab|bc)\b/gi, (word) => word.toUpperCase())
+    .replace(/\bfma\b/gi, 'F=ma')
+    .replace(/\b\w+/g, (word) => {
+      if (word === 'AP' || word === 'F=ma' || word === 'USAPhO') return word;
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    });
+}
+
 function leafTitle(entry: DocEntry, fallback: string): string {
-  return entry.data.title ?? fallback.replace(/\.md$/, '');
+  return entry.data.title ?? humanizeSegment(fallback);
 }
 
 function insert(root: InternalNode[], parts: string[], entry: DocEntry) {
@@ -24,7 +56,7 @@ function insert(root: InternalNode[], parts: string[], entry: DocEntry) {
     let node = level.find((n) => n._k === key);
     if (!node) {
       node = {
-        label: part.replace(/\.md$/i, ''),
+        label: humanizeSegment(part),
         children: [],
         _k: key,
       };
@@ -37,6 +69,16 @@ function insert(root: InternalNode[], parts: string[], entry: DocEntry) {
     }
     level = node.children as InternalNode[];
   }
+}
+
+export function treeContainsActive(node: TreeNode, current: string): boolean {
+  if (node.path && pathActive(current, node.path)) return true;
+  return node.children.some((child) => treeContainsActive(child, current));
+}
+
+export function branchIsOpen(node: TreeNode, current: string, depth: number): boolean {
+  if (depth < 1) return true;
+  return treeContainsActive(node, current);
 }
 
 export function buildNotesTree(entries: DocEntry[]): TreeNode[] {
@@ -53,12 +95,5 @@ export function buildNotesTree(entries: DocEntry[]): TreeNode[] {
   };
   sortNodes(children);
 
-  return [
-    {
-      label: 'All notes',
-      path: '/Notes/notes/',
-      href: p('/Notes/notes/'),
-      children: children as TreeNode[],
-    },
-  ];
+  return children as TreeNode[];
 }

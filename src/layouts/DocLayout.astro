@@ -17,7 +17,7 @@ const { title, description, headings = [], math = false } = Astro.props;
 <BaseLayout title={title} description={description}>
   <div class="layout-doc">
     <DocSidebar current={Astro.url.pathname} />
-    <main class="doc-main">
+    <main class="doc-main" transition:animate="fade">
       <article class="prose">
         <slot />
       </article>

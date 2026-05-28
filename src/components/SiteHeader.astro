@@ -10,7 +10,7 @@ interface Props {
 const { current = Astro.url.pathname } = Astro.props;
 ---
 
-<header class="site-header">
+<header class="site-header" transition:persist="site-header">
   <a class="brand" href={p('/')}>Notes by <span>Joshua</span></a>
   <nav class="header-nav" aria-label="Primary">
     {
@@ -23,17 +23,25 @@ const { current = Astro.url.pathname } = Astro.props;
   </nav>
   <div class="header-actions">
     <ThemeToggle />
-    <button type="button" class="btn menu-toggle" aria-expanded="false" aria-controls="doc-sidebar">
+    <button
+      type="button"
+      class="btn menu-toggle"
+      hidden
+      aria-expanded="false"
+      aria-controls="doc-sidebar"
+    >
       Menu
     </button>
   </div>
 </header>
 
 <script>
-  const toggle = document.querySelector('.menu-toggle');
-  const sidebar = document.getElementById('doc-sidebar');
-  toggle?.addEventListener('click', () => {
-    const open = sidebar?.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  import { initSidebar, syncSidebarActive } from '../scripts/sidebar.ts';
+
+  initSidebar();
+  syncSidebarActive();
+  document.addEventListener('astro:page-load', () => {
+    initSidebar();
+    syncSidebarActive();
   });
 </script>

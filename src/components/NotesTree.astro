@@ -1,5 +1,5 @@
 ---
-import type { TreeNode } from '../lib/notes-tree';
+import { branchIsOpen, type TreeNode } from '../lib/notes-tree';
 import { pathActive } from '../lib/paths';
 
 interface Props {
@@ -16,7 +16,7 @@ const { nodes, current, depth = 0 } = Astro.props;
     nodes.map((node) => (
       <li class="notes-tree-item">
         {node.children.length > 0 ? (
-          <details open={depth < 2}>
+          <details open={branchIsOpen(node, current, depth)}>
             <summary class="tree-summary">
               <span class="tree-caret" aria-hidden="true" />
               {node.href && node.path ? (
@@ -31,7 +31,9 @@ const { nodes, current, depth = 0 } = Astro.props;
                 <span class="tree-label">{node.label}</span>
               )}
             </summary>
-            <Astro.self nodes={node.children} current={current} depth={depth + 1} />
+            <div class="tree-children">
+              <Astro.self nodes={node.children} current={current} depth={depth + 1} />
+            </div>
           </details>
         ) : node.href && node.path ? (
           <a

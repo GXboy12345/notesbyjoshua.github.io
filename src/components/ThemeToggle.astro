@@ -18,6 +18,12 @@
     try {
       localStorage.setItem(k, next);
     } catch (_) {}
+    icon?.classList.add('theme-icon--spin');
+    icon?.addEventListener(
+      'animationend',
+      () => icon?.classList.remove('theme-icon--spin'),
+      { once: true },
+    );
     sync();
   });
 
