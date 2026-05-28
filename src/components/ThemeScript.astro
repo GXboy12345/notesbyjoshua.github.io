@@ -1,12 +1,16 @@
 <script is:inline>
   (function () {
     var k = 'notes-site-theme';
-    try {
-      var t = localStorage.getItem(k);
-      if (t !== 'dark' && t !== 'light') t = 'light';
-      document.documentElement.setAttribute('data-theme', t);
-    } catch (e) {
-      document.documentElement.setAttribute('data-theme', 'light');
+    function apply() {
+      try {
+        var t = localStorage.getItem(k);
+        if (t !== 'dark' && t !== 'light') t = 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
     }
+    apply();
+    document.addEventListener('astro:page-load', apply);
   })();
 </script>

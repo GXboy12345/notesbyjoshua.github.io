@@ -1,4 +1,17 @@
-import { pathActiveFromPathname } from '../lib/paths';
+import { pathActiveFromPathname, pathsRelated } from '../lib/paths';
+
+function norm(pathname: string): string {
+  return pathname.endsWith('/') ? pathname : `${pathname}/`;
+}
+
+function linkScore(current: string, linkPath: string, inTree: boolean): number {
+  const cur = norm(current);
+  const link = norm(linkPath);
+  if (cur === link) return 10_000 + (inTree ? 1_000 : 0);
+  if (cur.startsWith(link)) return link.length + (inTree ? 1_000 : 0);
+  if (link.startsWith(cur)) return cur.length + (inTree ? 500 : 0);
+  return -1;
+}
 
 /** Re-apply active states after ClientRouter navigation (`transition:persist` freezes SSR attrs). */
 export function syncSidebarActive() {
@@ -9,13 +22,14 @@ export function syncSidebarActive() {
   const links = [...sidebar.querySelectorAll<HTMLAnchorElement>('a[href]')];
 
   let best: HTMLAnchorElement | null = null;
-  let bestLen = -1;
+  let bestScore = -1;
 
   for (const link of links) {
     const linkPath = new URL(link.href, window.location.origin).pathname;
-    if (!pathActiveFromPathname(current, linkPath)) continue;
-    if (linkPath.length > bestLen) {
-      bestLen = linkPath.length;
+    const inTree = Boolean(link.closest('.notes-tree'));
+    const score = linkScore(current, linkPath, inTree);
+    if (score > bestScore) {
+      bestScore = score;
       best = link;
     }
   }
@@ -25,20 +39,16 @@ export function syncSidebarActive() {
   }
   best?.setAttribute('aria-current', 'page');
 
-  syncTreeOpenToActive(sidebar);
+  syncTreeOpenToActive(sidebar, current);
 }
 
-function syncTreeOpenToActive(sidebar: HTMLElement) {
-  sidebar.querySelectorAll('details').forEach((details) => {
-    details.removeAttribute('open');
+function syncTreeOpenToActive(sidebar: HTMLElement, current: string) {
+  sidebar.querySelectorAll<HTMLDetailsElement>('.notes-tree details').forEach((details) => {
+    const links = details.querySelectorAll<HTMLAnchorElement>('a[href]');
+    const open = [...links].some((link) => {
+      const linkPath = new URL(link.href, window.location.origin).pathname;
+      return pathsRelated(current, linkPath);
+    });
+    details.open = open;
   });
-
-  const active = sidebar.querySelector('a[aria-current="page"]');
-  if (!active) return;
-
-  let node: Element | null = active;
-  while (node && node !== sidebar) {
-    if (node instanceof HTMLDetailsElement) node.open = true;
-    node = node.parentElement;
-  }
 }

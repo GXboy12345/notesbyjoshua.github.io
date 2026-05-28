@@ -1,6 +1,7 @@
 ---
 import { mainNav } from '../data/navigation';
 import { p, pathActive } from '../lib/paths';
+import HeaderSearch from './HeaderSearch.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
@@ -22,6 +23,7 @@ const { current = Astro.url.pathname } = Astro.props;
     }
   </nav>
   <div class="header-actions">
+    <HeaderSearch />
     <ThemeToggle />
   </div>
 </header>

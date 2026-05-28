@@ -1,31 +1,33 @@
-<button type="button" class="btn theme-toggle" aria-label="Toggle color theme">
-  <span class="theme-icon" data-light="☀" data-dark="☾">☀</span>
+---
+---
+
+<button type="button" class="theme-dial" data-theme-toggle aria-label="Toggle color theme">
+  <span class="theme-dial-track" aria-hidden="true">
+    <span class="theme-dial-sky"></span>
+    <span class="theme-dial-sun"></span>
+    <span class="theme-dial-moon"></span>
+    <span class="theme-dial-knob"></span>
+  </span>
 </button>
 
 <script>
-  const k = 'notes-site-theme';
-  const btn = document.querySelector('.theme-toggle');
-  const icon = btn?.querySelector('.theme-icon');
+  import { initTheme, toggleTheme } from '../scripts/theme.ts';
 
-  function sync() {
-    const t = document.documentElement.getAttribute('data-theme') || 'light';
-    if (icon) icon.textContent = t === 'dark' ? '☾' : '☀';
+  function bindThemeToggle() {
+    initTheme();
+
+    const btn = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+    if (!btn || btn.dataset.themeToggleBound === '1') return;
+    btn.dataset.themeToggleBound = '1';
+
+    btn.addEventListener('click', () => {
+      toggleTheme();
+      btn.classList.remove('theme-dial--pulse');
+      void btn.offsetWidth;
+      btn.classList.add('theme-dial--pulse');
+    });
   }
 
-  btn?.addEventListener('click', () => {
-    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    try {
-      localStorage.setItem(k, next);
-    } catch (_) {}
-    icon?.classList.add('theme-icon--spin');
-    icon?.addEventListener(
-      'animationend',
-      () => icon?.classList.remove('theme-icon--spin'),
-      { once: true },
-    );
-    sync();
-  });
-
-  sync();
+  bindThemeToggle();
+  document.addEventListener('astro:page-load', bindThemeToggle);
 </script>

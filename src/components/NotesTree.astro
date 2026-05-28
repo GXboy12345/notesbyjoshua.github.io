@@ -1,6 +1,6 @@
 ---
 import { branchIsOpen, type TreeNode } from '../lib/notes-tree';
-import { pathActive } from '../lib/paths';
+import { pathExact } from '../lib/paths';
 
 interface Props {
   nodes: TreeNode[];
@@ -23,7 +23,7 @@ const { nodes, current, depth = 0 } = Astro.props;
                 <a
                   class="tree-link tree-link--branch"
                   href={node.href}
-                  aria-current={pathActive(current, node.path) ? 'page' : undefined}
+                  aria-current={pathExact(current, node.path) ? 'page' : undefined}
                   data-tree-nav
                 >
                   {node.label}
@@ -40,7 +40,7 @@ const { nodes, current, depth = 0 } = Astro.props;
           <a
             class="tree-link tree-link--leaf"
             href={node.href}
-            aria-current={pathActive(current, node.path) ? 'page' : undefined}
+            aria-current={pathExact(current, node.path) ? 'page' : undefined}
           >
             {node.label}
           </a>

@@ -1,0 +1,35 @@
+---
+---
+
+<div class="header-search" data-site-search>
+  <label class="visually-hidden" for="site-search">Search notes</label>
+  <span class="header-search-wrap">
+    <svg class="header-search-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle>
+      <path d="M20 20l-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+    <input
+      id="site-search"
+      class="header-search-input"
+      type="search"
+      name="q"
+      placeholder="Search notes"
+      autocomplete="off"
+      spellcheck="false"
+      aria-expanded="false"
+      aria-controls="site-search-results"
+      aria-autocomplete="list"
+    />
+  </span>
+  <div id="site-search-results" class="header-search-panel" hidden>
+    <p class="header-search-status" aria-live="polite" aria-atomic="true"></p>
+    <ul class="header-search-results"></ul>
+  </div>
+</div>
+
+<script>
+  import { bindSiteSearch } from '../scripts/site-search.ts';
+
+  bindSiteSearch();
+  document.addEventListener('astro:page-load', bindSiteSearch);
+</script>

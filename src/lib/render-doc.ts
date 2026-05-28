@@ -98,8 +98,58 @@ export function headingsFromMarkdown(md: string) {
   return out;
 }
 
+const MATH_TOKEN = '\uE000';
+const MATH_END = '\uE001';
+
+/** Keep $…$ / $$…$$ out of marked so `\{` / `\}` are not unescaped. */
+function protectMath(md: string): { text: string; slots: string[] } {
+  const slots: string[] = [];
+  let out = '';
+  let i = 0;
+
+  while (i < md.length) {
+    if (md.startsWith('$$', i)) {
+      const end = md.indexOf('$$', i + 2);
+      if (end !== -1) {
+        slots.push(md.slice(i, end + 2));
+        out += `${MATH_TOKEN}MATH${slots.length - 1}${MATH_END}`;
+        i = end + 2;
+        continue;
+      }
+    }
+
+    if (md[i] === '$' && md[i + 1] !== '$') {
+      let j = i + 1;
+      while (j < md.length) {
+        if (md[j] === '\\') {
+          j += 2;
+          continue;
+        }
+        if (md[j] === '$') break;
+        j += 1;
+      }
+      if (j < md.length && md[j] === '$') {
+        slots.push(md.slice(i, j + 1));
+        out += `${MATH_TOKEN}MATH${slots.length - 1}${MATH_END}`;
+        i = j + 1;
+        continue;
+      }
+    }
+
+    out += md[i];
+    i += 1;
+  }
+
+  return { text: out, slots };
+}
+
+function restoreMath(html: string, slots: string[]): string {
+  return html.replace(new RegExp(`${MATH_TOKEN}MATH(\\d+)${MATH_END}`, 'g'), (_, idx) => slots[Number(idx)] ?? '');
+}
+
 export function renderDocHtml(md: string): string {
   const slugCounts = new Map<string, number>();
+  const { text, slots } = protectMath(md);
   const parser = new Marked({
     renderer: {
       heading({ tokens, depth }) {
@@ -111,5 +161,6 @@ export function renderDocHtml(md: string): string {
     },
   });
 
-  return parser.parse(md, { async: false }) as string;
+  const html = parser.parse(text, { async: false }) as string;
+  return restoreMath(html, slots);
 }

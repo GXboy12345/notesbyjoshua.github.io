@@ -1,6 +1,6 @@
 import type { DocEntry } from './resolve-doc';
 import { routePath, routeSlug } from './routes';
-import { p, pathActive } from './paths';
+import { p, pathsRelated } from './paths';
 
 export type TreeNode = {
   label: string;
@@ -131,7 +131,7 @@ function mergeBranchHubs(nodes: InternalNode[]) {
 }
 
 export function treeContainsActive(node: TreeNode, current: string): boolean {
-  if (node.path && pathActive(current, node.path)) return true;
+  if (node.path && pathsRelated(current, node.path)) return true;
   return node.children.some((child) => treeContainsActive(child, current));
 }
 

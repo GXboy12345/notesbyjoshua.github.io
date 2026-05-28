@@ -33,3 +33,12 @@ export function pathActiveFromPathname(currentPathname: string, linkPathname: st
   if (link === home) return cur === home;
   return cur === link || cur.startsWith(link);
 }
+
+/** Current page is this route, a child of it, or a parent hub (e.g. on `/notes/math/` vs `/notes/math/limits/`). */
+export function pathsRelated(current: string, target: string): boolean {
+  return pathActive(current, target) || pathActive(target, current);
+}
+
+export function pathExact(current: string, target: string): boolean {
+  return normCurrent(current) === normTarget(target);
+}
