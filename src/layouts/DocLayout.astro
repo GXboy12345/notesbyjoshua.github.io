@@ -30,17 +30,15 @@ const { title, description, headings = [], math = false, interactive = false } =
   {math && <MathRender />}
   {
     interactive && (
-      <script>
-        import { initDocPractice } from '../scripts/doc-practice.ts';
-        import { initDocLightbox } from '../scripts/doc-lightbox.ts';
+      <>
+        <script>
+          import { initDocPractice } from '../scripts/doc-practice.ts';
+          import { initDocLightbox } from '../scripts/doc-lightbox.ts';
 
-        initDocPractice();
-        initDocLightbox();
-        document.addEventListener('astro:page-load', () => {
           initDocPractice();
           initDocLightbox();
-        });
-      </script>
+        </script>
+      </>
     )
   }
 </BaseLayout>

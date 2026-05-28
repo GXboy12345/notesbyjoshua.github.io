@@ -53,6 +53,7 @@ export function renderMarkdownToHtml(rawMd: string): { html: string; headings: D
   const tree = markdownParser.parse(md) as Root;
   applyStripOrphanFences(tree);
   applyDirectives(tree);
+  applyStripOrphanFences(tree);
   applyHeadingIds(tree);
   const headings = headingsFromMdast(tree);
   return { html: mdastTreeToHtml(tree), headings };

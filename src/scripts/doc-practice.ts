@@ -1,6 +1,6 @@
 import renderMathInElement from 'katex/contrib/auto-render';
 
-const BOUND = 'practiceBound';
+const DELEGATED = 'practiceDelegated';
 const CHOICE = /^[A-D]$/;
 
 const katexOpts = {
@@ -26,18 +26,23 @@ function normalizeChoice(value: string | null | undefined): string | null {
   return CHOICE.test(letter) ? letter : null;
 }
 
+function mcqRoot(el: HTMLElement): HTMLElement | null {
+  return el.closest<HTMLElement>('[data-mcq]');
+}
+
+function frqRoot(el: HTMLElement): HTMLElement | null {
+  return el.closest<HTMLElement>('[data-frq]');
+}
+
 function choiceElements(mcq: HTMLElement): HTMLElement[] {
-  return [...mcq.querySelectorAll<HTMLElement>('[data-choice]')];
+  return [...mcq.querySelectorAll<HTMLElement>('.mcq-choices [data-choice]')];
 }
 
 function selectedChoice(mcq: HTMLElement): string | null {
-  const input = mcq.querySelector<HTMLInputElement>('[data-choice]:checked');
-  if (input) return normalizeChoice(input.dataset.choice ?? input.value);
-
-  const pressed = mcq.querySelector<HTMLElement>('[data-choice][aria-pressed="true"]');
+  const pressed = mcq.querySelector<HTMLElement>('.mcq-choices [data-choice][aria-pressed="true"]');
   if (pressed) return normalizeChoice(pressed.dataset.choice);
 
-  const marked = mcq.querySelector<HTMLElement>('[data-choice][data-selected="true"]');
+  const marked = mcq.querySelector<HTMLElement>('.mcq-choices [data-choice][data-selected="true"]');
   if (marked) return normalizeChoice(marked.dataset.choice);
 
   return null;
@@ -47,10 +52,6 @@ function syncChoiceUi(mcq: HTMLElement, letter: string | null) {
   for (const el of choiceElements(mcq)) {
     const value = normalizeChoice(el.dataset.choice);
     const on = letter !== null && value === letter;
-    if (el instanceof HTMLInputElement) {
-      el.checked = on;
-      continue;
-    }
     el.setAttribute('aria-pressed', on ? 'true' : 'false');
     el.dataset.selected = on ? 'true' : 'false';
   }
@@ -58,25 +59,16 @@ function syncChoiceUi(mcq: HTMLElement, letter: string | null) {
 
 function setChoicesDisabled(mcq: HTMLElement, disabled: boolean) {
   for (const el of choiceElements(mcq)) {
-    if (el instanceof HTMLInputElement || el instanceof HTMLButtonElement) {
+    if (el instanceof HTMLButtonElement) {
       el.disabled = disabled;
     }
     el.setAttribute('aria-disabled', disabled ? 'true' : 'false');
   }
 }
 
-function feedbackEl(mcq: HTMLElement, kind: 'correct' | 'incorrect'): HTMLElement | null {
-  return (
-    mcq.querySelector<HTMLElement>(`[data-feedback="${kind}"]`) ??
-    mcq.querySelector<HTMLElement>(`[data-feedback-${kind}]`)
-  );
-}
-
 function setFeedback(mcq: HTMLElement, kind: 'correct' | 'incorrect' | null) {
-  for (const node of mcq.querySelectorAll<HTMLElement>('[data-feedback], [data-feedback-correct], [data-feedback-incorrect]')) {
-    const tag =
-      node.dataset.feedback ??
-      (node.hasAttribute('data-feedback-correct') ? 'correct' : node.hasAttribute('data-feedback-incorrect') ? 'incorrect' : '');
+  for (const node of mcq.querySelectorAll<HTMLElement>('[data-feedback]')) {
+    const tag = node.dataset.feedback;
     if (tag !== 'correct' && tag !== 'incorrect') continue;
     node.hidden = kind === null || tag !== kind;
   }
@@ -116,103 +108,124 @@ function markAnsweredChoices(mcq: HTMLElement, correct: string) {
   }
 }
 
-function bindMcq(mcq: HTMLElement) {
-  if (mcq.dataset[BOUND] === '1') return;
-  mcq.dataset[BOUND] = '1';
-
+function prepareMcq(mcq: HTMLElement) {
   const correct = normalizeChoice(mcq.dataset.correct);
   if (!correct) return;
 
   hideSolutions(mcq);
   mcq.dataset.practicePhase = 'idle';
 
-  const checkBtn = mcq.querySelector<HTMLButtonElement>('[data-mcq-check]');
-  const showBtn = mcq.querySelector<HTMLButtonElement>('[data-mcq-show-solution]');
-  const skipBtn = mcq.querySelector<HTMLButtonElement>('[data-mcq-skip]');
-
-  const runCheck = () => {
-    if ((mcq.dataset.practicePhase as McqPhase) !== 'idle') return;
-
-    const picked = selectedChoice(mcq);
-    if (!picked) return;
-
-    const isCorrect = picked === correct;
-    mcq.dataset.practicePhase = 'answered';
-    mcq.classList.toggle('mcq--correct', isCorrect);
-    mcq.classList.toggle('mcq--incorrect', !isCorrect);
-    setFeedback(mcq, isCorrect ? 'correct' : 'incorrect');
-    markAnsweredChoices(mcq, correct);
-    setChoicesDisabled(mcq, true);
-    checkBtn && (checkBtn.disabled = true);
-  };
-
-  const runReveal = () => {
-    revealSolutions(mcq);
-    setChoicesDisabled(mcq, true);
-    if (checkBtn) checkBtn.disabled = true;
-    if (showBtn) showBtn.disabled = true;
-    if (skipBtn) skipBtn.disabled = true;
-  };
-
   for (const el of choiceElements(mcq)) {
     const value = normalizeChoice(el.dataset.choice);
     if (!value) continue;
-
-    if (el instanceof HTMLInputElement) {
-      el.addEventListener('change', () => {
-        if ((mcq.dataset.practicePhase as McqPhase) !== 'idle') return;
-        syncChoiceUi(mcq, el.checked ? value : null);
-      });
-      continue;
-    }
-
-    el.setAttribute('role', el.getAttribute('role') ?? 'radio');
+    el.setAttribute('role', 'radio');
     if (!el.hasAttribute('tabindex')) el.tabIndex = 0;
-    el.addEventListener('click', () => {
-      if ((mcq.dataset.practicePhase as McqPhase) !== 'idle') return;
-      syncChoiceUi(mcq, value);
-    });
-    el.addEventListener('keydown', (event) => {
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      event.preventDefault();
-      el.click();
-    });
   }
-
-  checkBtn?.addEventListener('click', runCheck);
-  showBtn?.addEventListener('click', runReveal);
-  skipBtn?.addEventListener('click', runReveal);
 }
 
-function bindFrq(frq: HTMLElement) {
-  if (frq.dataset[BOUND] === '1') return;
-  frq.dataset[BOUND] = '1';
-
+function prepareFrq(frq: HTMLElement) {
   hideSolutions(frq);
   frq.dataset.practicePhase = 'idle';
+}
 
-  const revealBtn =
-    frq.querySelector<HTMLButtonElement>('[data-frq-reveal]') ??
-    frq.querySelector<HTMLButtonElement>('[data-frq-show-solution]');
+function runCheck(mcq: HTMLElement) {
+  if ((mcq.dataset.practicePhase as McqPhase) !== 'idle') return;
 
-  revealBtn?.addEventListener('click', () => {
-    revealSolutions(frq);
-    revealBtn.disabled = true;
-  });
+  const correct = normalizeChoice(mcq.dataset.correct);
+  if (!correct) return;
+
+  const picked = selectedChoice(mcq);
+  if (!picked) return;
+
+  const isCorrect = picked === correct;
+  mcq.dataset.practicePhase = 'answered';
+  mcq.classList.toggle('mcq--correct', isCorrect);
+  mcq.classList.toggle('mcq--incorrect', !isCorrect);
+  setFeedback(mcq, isCorrect ? 'correct' : 'incorrect');
+  markAnsweredChoices(mcq, correct);
+  setChoicesDisabled(mcq, true);
+
+  const checkBtn = mcq.querySelector<HTMLButtonElement>('[data-mcq-check]');
+  if (checkBtn) checkBtn.disabled = true;
+}
+
+function runMcqReveal(mcq: HTMLElement) {
+  revealSolutions(mcq);
+  setChoicesDisabled(mcq, true);
+  for (const btn of mcq.querySelectorAll<HTMLButtonElement>(
+    '[data-mcq-check], [data-mcq-show-solution], [data-mcq-skip]',
+  )) {
+    btn.disabled = true;
+  }
 }
 
 function renderPracticeMath(prose: HTMLElement) {
-  for (const block of prose.querySelectorAll<HTMLElement>('[data-mcq], [data-frq]')) {
-    renderMathInElement(block, katexOpts);
+  const targets = prose.querySelectorAll<HTMLElement>(
+    '.mcq-stem, .mcq-solution, .frq-parts, .frq-solution',
+  );
+  for (const el of targets) {
+    if (el.querySelector('.katex')) continue;
+    renderMathInElement(el, katexOpts);
   }
+}
+
+function bindDelegatedHandlers(prose: HTMLElement) {
+  if (prose.dataset[DELEGATED] === '1') return;
+  prose.dataset[DELEGATED] = '1';
+
+  prose.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+
+    const choice = target.closest<HTMLElement>('[data-choice]');
+    if (choice) {
+      const mcq = mcqRoot(choice);
+      if (!mcq || (mcq.dataset.practicePhase as McqPhase) !== 'idle') return;
+      const value = normalizeChoice(choice.dataset.choice);
+      if (!value) return;
+      syncChoiceUi(mcq, value);
+      return;
+    }
+
+    if (target.closest('[data-mcq-check]')) {
+      const mcq = mcqRoot(target);
+      if (mcq) runCheck(mcq);
+      return;
+    }
+
+    if (target.closest('[data-mcq-show-solution], [data-mcq-skip]')) {
+      const mcq = mcqRoot(target);
+      if (mcq) runMcqReveal(mcq);
+      return;
+    }
+
+    if (target.closest('[data-frq-reveal], [data-frq-show-solution]')) {
+      const frq = frqRoot(target);
+      if (!frq) return;
+      revealSolutions(frq);
+      const btn = frq.querySelector<HTMLButtonElement>('[data-frq-reveal], [data-frq-show-solution]');
+      if (btn) btn.disabled = true;
+    }
+  });
+
+  prose.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    const choice = target.closest<HTMLElement>('[data-choice]');
+    if (!choice) return;
+    event.preventDefault();
+    choice.click();
+  });
 }
 
 function bindAll() {
   const prose = proseRoot();
   if (!prose) return;
 
-  prose.querySelectorAll<HTMLElement>('[data-mcq]').forEach(bindMcq);
-  prose.querySelectorAll<HTMLElement>('[data-frq]').forEach(bindFrq);
+  bindDelegatedHandlers(prose);
+  prose.querySelectorAll<HTMLElement>('[data-mcq]').forEach(prepareMcq);
+  prose.querySelectorAll<HTMLElement>('[data-frq]').forEach(prepareFrq);
   renderPracticeMath(prose);
 }
 

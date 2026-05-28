@@ -74,6 +74,20 @@ function escapeHtml(s: string): string {
     .replace(/"/g, '&quot;');
 }
 
+function isOrphanFenceParagraph(node: BlockContent): boolean {
+  if (node.type !== 'paragraph') return false;
+  const lines = toString(node)
+    .trim()
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+  return lines.length > 0 && lines.every((line) => /^:::+\s*$/.test(line));
+}
+
+function withoutOrphanFenceParagraphs(nodes: BlockContent[]): BlockContent[] {
+  return nodes.filter((node) => !isOrphanFenceParagraph(node));
+}
+
 function isChoiceList(node: BlockContent): node is List {
   if (node.type !== 'list') return false;
   if (node.ordered) return false;
@@ -175,7 +189,8 @@ function processLeaf(leaf: LeafDirective, renderFragment: FragmentRenderer) {
   }
 
   if (name === 'practice') {
-    replace(`<div class="practice-set" data-practice>${renderFragment(dir.children as BlockContent[])}</div>`);
+    const body = withoutOrphanFenceParagraphs(dir.children as BlockContent[]);
+    replace(`<div class="practice-set" data-practice>${renderFragment(body)}</div>`);
     return;
   }
 

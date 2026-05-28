@@ -9,8 +9,12 @@ export function remarkStripOrphanFences() {
       if (!parent || index === undefined) return;
       if (node.type !== 'paragraph') return;
 
-      const text = toString(node).trim();
-      if (!/^:::+\s*$/.test(text)) return;
+      const lines = toString(node)
+        .trim()
+        .split(/\n+/)
+        .map((line) => line.trim())
+        .filter(Boolean);
+      if (!lines.length || !lines.every((line) => /^:::+\s*$/.test(line))) return;
 
       (parent as Parent).children.splice(index, 1);
       return index;
