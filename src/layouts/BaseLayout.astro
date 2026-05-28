@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import 'katex/dist/katex.min.css';
+import FontPreload from '../components/FontPreload.astro';
 import ThemeScript from '../components/ThemeScript.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import { p } from '../lib/paths';
@@ -19,6 +20,7 @@ const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Jo
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <FontPreload />
     <meta name="description" content={description} />
     <title>{fullTitle}</title>
     <link rel="icon" type="image/jpeg" href={p('/assets/Images/favicon.jpeg')} />

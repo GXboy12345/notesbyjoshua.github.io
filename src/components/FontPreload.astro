@@ -1,0 +1,9 @@
+---
+import { fontPreloads } from '../lib/font-urls';
+---
+
+{
+  fontPreloads.map((href) => (
+    <link rel="preload" href={href} as="font" type="font/ttf" crossorigin="anonymous" />
+  ))
+}
