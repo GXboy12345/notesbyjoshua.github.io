@@ -13,7 +13,6 @@ type ReferenceSheetPayload = {
 };
 
 let payloadPromise: Promise<ReferenceSheetPayload> | null = null;
-let drawerBound = false;
 let activeSheet: ReferenceSheetItem | null = null;
 
 function loadPayload(): Promise<ReferenceSheetPayload> {
@@ -77,11 +76,12 @@ function openDrawer(sheet: ReferenceSheetItem) {
 }
 
 function bindDrawer() {
-  if (drawerBound) return;
-  drawerBound = true;
-
   const dialog = getDrawer();
   if (!dialog) return;
+  // Guard on the element itself so a freshly-replaced <dialog> after navigation
+  // always gets bound, while the same element is never double-bound.
+  if (dialog.dataset.bound === '1') return;
+  dialog.dataset.bound = '1';
 
   dialog.addEventListener('click', (e) => {
     const t = e.target as HTMLElement;

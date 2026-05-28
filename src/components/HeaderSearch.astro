@@ -16,14 +16,15 @@
       placeholder="Search notes"
       autocomplete="off"
       spellcheck="false"
+      role="combobox"
       aria-expanded="false"
-      aria-controls="site-search-results"
+      aria-controls="site-search-listbox"
       aria-autocomplete="list"
     />
   </span>
   <div id="site-search-results" class="header-search-panel" hidden>
     <p class="header-search-status" aria-live="polite" aria-atomic="true"></p>
-    <ul class="header-search-results"></ul>
+    <ul id="site-search-listbox" class="header-search-results" role="listbox"></ul>
   </div>
 </div>
 

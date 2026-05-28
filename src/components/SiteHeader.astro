@@ -28,3 +28,24 @@ const { current = Astro.url.pathname } = Astro.props;
     <ThemeToggle />
   </div>
 </header>
+
+<script>
+  import { pathActiveFromPathname } from '../lib/paths';
+
+  function syncHeaderActive() {
+    const nav = document.querySelector<HTMLElement>('.site-header .header-nav');
+    if (!nav) return;
+    const current = window.location.pathname;
+    nav.querySelectorAll<HTMLAnchorElement>('a[href]').forEach((link) => {
+      const linkPath = new URL(link.href, window.location.origin).pathname;
+      if (pathActiveFromPathname(current, linkPath)) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  syncHeaderActive();
+  document.addEventListener('astro:page-load', syncHeaderActive);
+</script>

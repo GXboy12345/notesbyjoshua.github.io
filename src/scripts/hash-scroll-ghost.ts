@@ -4,7 +4,21 @@ export type GhostBlurOptions = {
   sampleCount?: number;
   maxStreakPx?: number;
   minVisibleStreakPx?: number;
+  /** 0–1; scales trail length, sample count, and opacity. */
+  blurStrength?: number;
 };
+
+/** Exponential 0–1 blur weight from jump distance; short hops stay nearly sharp. */
+export function blurStrengthFromJumpDistance(
+  distancePx: number,
+  refPx = 850,
+  curvature = 2,
+): number {
+  if (distancePx <= 0) return 0;
+  const t = Math.min(1, distancePx / refPx);
+  if (t <= 0) return 0;
+  return Math.expm1(curvature * t) / Math.expm1(curvature);
+}
 
 export type GhostBlurController = {
   update(scrollTop: number, streakPx: number, direction: -1 | 1): void;
@@ -18,6 +32,14 @@ function isDocumentScroller(root: HTMLElement): boolean {
 export function getRootScrollTop(root: HTMLElement): number {
   if (isDocumentScroller(root)) return window.scrollY || document.documentElement.scrollTop || 0;
   return root.scrollTop;
+}
+
+export function getMaxScrollTop(root: HTMLElement): number {
+  if (isDocumentScroller(root)) {
+    const el = document.documentElement;
+    return Math.max(0, el.scrollHeight - el.clientHeight);
+  }
+  return Math.max(0, root.scrollHeight - root.clientHeight);
 }
 
 export function setRootScrollTop(root: HTMLElement, y: number) {
@@ -48,6 +70,10 @@ function stripDuplicateIds(node: HTMLElement) {
   });
 }
 
+function clamp01(n: number) {
+  return Math.max(0, Math.min(1, n));
+}
+
 export function createScrollGhostBlur(
   root: HTMLElement,
   article: HTMLElement,
@@ -55,9 +81,13 @@ export function createScrollGhostBlur(
 ): GhostBlurController | null {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return null;
 
-  const sampleCount = Math.max(3, Math.min(7, options.sampleCount ?? 7));
-  const maxStreakPx = options.maxStreakPx ?? 44;
-  const minVisibleStreakPx = options.minVisibleStreakPx ?? 2;
+  const blurStrength = clamp01(options.blurStrength ?? 1);
+  const sampleCount = Math.max(
+    3,
+    Math.min(7, options.sampleCount ?? Math.round(3 + blurStrength * 4)),
+  );
+  const maxStreakPx = options.maxStreakPx ?? 3 + blurStrength * 67;
+  const minVisibleStreakPx = options.minVisibleStreakPx ?? 1.5;
 
   const overlay = document.createElement('div');
   overlay.className = 'hash-scroll-ghost-overlay';
@@ -147,7 +177,9 @@ export function createScrollGhostBlur(
       const sampleScrollTop = scrollTop - direction * streakPx * t;
       const y = articleTopInScrollContent - sampleScrollTop;
       const opacity =
-        activeSamples === 1 ? 1 : Math.min(0.72, (weights[i] / weightSum) * 1.65);
+        activeSamples === 1
+          ? 1
+          : Math.min(0.72, (weights[i] / weightSum) * 1.65) * (0.3 + 0.7 * blurStrength);
 
       sample.style.transform = `translate3d(0, ${Math.round(y * 1000) / 1000}px, 0)`;
       sample.style.opacity = String(opacity);

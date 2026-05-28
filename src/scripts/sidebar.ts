@@ -39,28 +39,27 @@ function restoreDesktopSidebar() {
   setDesktopCollapsed(collapsed, true);
 }
 
+function allToggles(): HTMLButtonElement[] {
+  return [...document.querySelectorAll<HTMLButtonElement>('.sidebar-toggle')];
+}
+
 export function initSidebar() {
-  const toggles = [...document.querySelectorAll<HTMLButtonElement>('.sidebar-toggle')];
   const sidebar = document.getElementById('doc-sidebar');
   const backdrop = document.getElementById('sidebar-backdrop');
+  const toggles = allToggles();
 
   if (!toggles.length || !sidebar) return;
 
   restoreDesktopSidebar();
 
-  if (sidebar.dataset.navBound === '1') {
-    restoreDesktopSidebar();
-    syncToggleState(toggles, sidebar);
-    return;
-  }
-  sidebar.dataset.navBound = '1';
-
+  // closeMobile/openMobile re-query toggles each call so they always hit fresh
+  // FAB DOM (FAB lives outside transition:persist scope and is replaced on nav).
   const closeMobile = () => {
     sidebar.classList.remove('open');
     backdrop?.classList.remove('visible');
     backdrop?.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('sidebar-open');
-    syncToggleState(toggles, sidebar);
+    syncToggleState(allToggles(), sidebar);
   };
 
   const openMobile = () => {
@@ -68,22 +67,31 @@ export function initSidebar() {
     backdrop?.classList.add('visible');
     backdrop?.setAttribute('aria-hidden', 'false');
     document.body.classList.add('sidebar-open');
-    syncToggleState(toggles, sidebar);
+    syncToggleState(allToggles(), sidebar);
   };
 
   const onToggleClick = () => {
     if (isDesktop()) {
       setDesktopCollapsed(!isDesktopCollapsed());
-      syncToggleState(toggles, sidebar);
+      syncToggleState(allToggles(), sidebar);
       return;
     }
     if (sidebar.classList.contains('open')) closeMobile();
     else openMobile();
   };
 
+  // Always re-bind toggle clicks — FAB is outside the persisted aside and
+  // becomes fresh DOM on every navigation, losing its prior listener.
   for (const toggle of toggles) {
     toggle.addEventListener('click', onToggleClick);
   }
+
+  // Document-level listeners only need to be registered once.
+  if (sidebar.dataset.navBound === '1') {
+    syncToggleState(toggles, sidebar);
+    return;
+  }
+  sidebar.dataset.navBound = '1';
 
   backdrop?.addEventListener('click', closeMobile);
 
@@ -98,7 +106,7 @@ export function initSidebar() {
       if (isDesktop()) {
         if (isDesktopCollapsed()) return;
         setDesktopCollapsed(true);
-        syncToggleState(toggles, sidebar);
+        syncToggleState(allToggles(), sidebar);
       } else {
         closeMobile();
       }
@@ -112,7 +120,7 @@ export function initSidebar() {
   window.matchMedia('(min-width: 1100px)').addEventListener('change', () => {
     closeMobile();
     restoreDesktopSidebar();
-    syncToggleState(toggles, sidebar);
+    syncToggleState(allToggles(), sidebar);
   });
 
   syncToggleState(toggles, sidebar);

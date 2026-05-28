@@ -3449,6 +3449,16 @@ body.lightbox-open {
   }
 }
 
+/* Default VT backdrop is black; opacity crossfades read as a dark flash without this. */
+::view-transition {
+  background-color: var(--bg);
+}
+
+::view-transition-group(root),
+::view-transition-group(*) {
+  background-color: var(--bg);
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
   background: var(--bg);
@@ -3465,6 +3475,31 @@ body.lightbox-open {
 html.theme-swapping,
 html.theme-swapping * {
   transition-duration: 0s !important;
+}
+
+/* Astro injects plus-lighter on scoped fades; it darkens over the VT backdrop during nav. */
+@keyframes astroFadeIn {
+  from {
+    opacity: 0;
+    mix-blend-mode: normal;
+  }
+
+  to {
+    opacity: 1;
+    mix-blend-mode: normal;
+  }
+}
+
+@keyframes astroFadeOut {
+  from {
+    opacity: 1;
+    mix-blend-mode: normal;
+  }
+
+  to {
+    opacity: 0;
+    mix-blend-mode: normal;
+  }
 }
 
 @keyframes page-fade-out {

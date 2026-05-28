@@ -1,5 +1,7 @@
 import {
+  blurStrengthFromJumpDistance,
   createScrollGhostBlur,
+  getMaxScrollTop,
   getRootScrollTop,
   setRootScrollTop,
   type GhostBlurController,
@@ -68,38 +70,48 @@ function animateScrollTo(root: HTMLElement, targetY: number, focusTarget?: HTMLE
   if (animFrame) cancelAnimationFrame(animFrame);
   destroyGhost();
 
+  const maxY = getMaxScrollTop(root);
+  const clampedTargetY = clamp(targetY, 0, maxY);
   const startY = getRootScrollTop(root);
-  const delta = targetY - startY;
+  const delta = clampedTargetY - startY;
   if (Math.abs(delta) < 2) {
-    setRootScrollTop(root, targetY);
+    setRootScrollTop(root, clampedTargetY);
     if (focusTarget) focusHashTarget(focusTarget);
     return;
   }
 
-  const article = getScrollArticle(root);
-  activeGhost = article ? createScrollGhostBlur(root, article) : null;
+  const jumpDistance = Math.abs(delta);
+  const blurStrength = blurStrengthFromJumpDistance(jumpDistance);
 
-  const duration = Math.min(720, Math.max(380, Math.abs(delta) * 0.48));
-  const distancePeak = clamp(Math.abs(delta) * 0.045, 18, 44);
+  const article = getScrollArticle(root);
+  activeGhost =
+    article && blurStrength >= 0.03
+      ? createScrollGhostBlur(root, article, { blurStrength })
+      : null;
+
+  const duration = Math.min(720, Math.max(380, jumpDistance * 0.48));
+  const distancePeak = blurStrength * 70;
   const t0 = performance.now();
   let lastY = startY;
   let lastT = t0;
 
   const frame = (now: number) => {
     const t = Math.min(1, (now - t0) / duration);
-    const y = startY + delta * EASE_OUT(t);
+    const intendedY = startY + delta * EASE_OUT(t);
+    const y = clamp(intendedY, 0, maxY);
     setRootScrollTop(root, y);
+    const actualY = getRootScrollTop(root);
 
     const dt = Math.max(1, now - lastT);
-    const dy = y - lastY;
+    const dy = actualY - lastY;
     const direction: -1 | 1 = dy < 0 ? -1 : 1;
     const velocity = Math.abs(dy) / dt;
     const envelope = Math.sin(Math.PI * t);
-    const streak = clamp(velocity * 22, 0, distancePeak) * envelope;
+    const streak = clamp(velocity * 22 * blurStrength, 0, distancePeak) * envelope;
 
-    activeGhost?.update(y, streak, direction);
+    activeGhost?.update(actualY, streak, direction);
 
-    lastY = y;
+    lastY = actualY;
     lastT = now;
 
     if (t < 1) {
@@ -108,7 +120,7 @@ function animateScrollTo(root: HTMLElement, targetY: number, focusTarget?: HTMLE
     }
 
     animFrame = 0;
-    setRootScrollTop(root, targetY);
+    setRootScrollTop(root, clampedTargetY);
     destroyGhost();
     if (focusTarget) focusHashTarget(focusTarget);
   };
@@ -121,7 +133,7 @@ export function scrollToHashTarget(
   behavior: ScrollBehavior = prefersReducedMotion() ? 'auto' : 'smooth',
 ) {
   const root = getScrollRoot();
-  const y = scrollYForElement(root, target);
+  const y = clamp(scrollYForElement(root, target), 0, getMaxScrollTop(root));
 
   if (behavior === 'auto' || prefersReducedMotion()) {
     if (animFrame) cancelAnimationFrame(animFrame);

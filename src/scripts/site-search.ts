@@ -54,6 +54,7 @@ export function initSiteSearch(root: HTMLElement) {
   const setOpen = (open: boolean) => {
     panel.hidden = !open;
     input.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (!open) input.removeAttribute('aria-activedescendant');
   };
 
   const render = (keepActive = false) => {
@@ -89,12 +90,18 @@ export function initSiteSearch(root: HTMLElement) {
       const a = document.createElement('a');
       a.className = 'header-search-hit';
       a.href = p(hit.url);
+      a.role = 'option';
       a.dataset.index = String(i);
-      if (i === active) a.id = 'header-search-active';
+      if (i === active) {
+        a.id = 'header-search-active';
+        input.setAttribute('aria-activedescendant', a.id);
+      }
       a.innerHTML = `<span class="header-search-hit-title">${highlight(hit.title, q)}</span><span class="header-search-hit-excerpt">${highlight(hit.excerpt, q)}</span>`;
       li.append(a);
       list.append(li);
     }
+
+    if (active < 0) input.removeAttribute('aria-activedescendant');
   };
 
   const goActive = () => {
