@@ -2,20 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Contributor from '../components/about/Contributor.astro';
 import TechStack from '../components/about/TechStack.astro';
-import { contributors, techStack, upstreamRepo } from '../data/credits';
+import { contributors, creditsLead, techStack, upstreamRepo } from '../data/credits';
 ---
 
-<BaseLayout
-  title="Credits"
-  description="Authors, maintainers, and technology behind Notes by Joshua."
->
+<BaseLayout title="Credits" description="Authors, maintainers, and technology behind Notes by Joshua.">
   <main class="credits-page" transition:animate="fade">
     <header class="credits-header">
       <h1>Credits</h1>
-      <p class="credits-lead">
-        Notes by Joshua is a study site for AP, math, and physics. Content is by Joshua; the
-        Astro frontend and deployment are maintained on a fork.
-      </p>
+      <p class="credits-lead">{creditsLead}</p>
     </header>
 
     <section class="credits-section" aria-labelledby="people-heading">

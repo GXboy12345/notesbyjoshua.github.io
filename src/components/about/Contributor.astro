@@ -8,6 +8,7 @@ export type ContributorLink = {
 };
 
 interface Props {
+  id?: string;
   name: string;
   role: string;
   bio: string;
@@ -15,14 +16,14 @@ interface Props {
   variant?: 'author' | 'maintainer';
 }
 
-const { name, role, bio, links = [], variant = 'author' } = Astro.props;
+const { id, name, role, bio, links = [], variant = 'author' } = Astro.props;
 
 function linkHref(href: string): string {
   return href.startsWith('http') ? href : p(href);
 }
 ---
 
-<article class={`contributor contributor--${variant}`}>
+<article id={id} class={`contributor contributor--${variant}`}>
   <header class="contributor-head">
     <h2 class="contributor-name">{name}</h2>
     <p class="contributor-role">{role}</p>

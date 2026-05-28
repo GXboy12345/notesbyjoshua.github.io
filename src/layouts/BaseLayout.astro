@@ -6,7 +6,6 @@ import FontPreload from '../components/FontPreload.astro';
 import ThemeScript from '../components/ThemeScript.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import ReferenceSheetDrawer from '../components/ReferenceSheetDrawer.astro';
-import { footerNav } from '../data/navigation';
 import { p } from '../lib/paths';
 
 interface Props {
@@ -48,15 +47,9 @@ const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Jo
       <slot />
       <footer class="site-footer">
         <p>
-          Study notes by Joshua · <a href="https://github.com/notesbyjoshua">GitHub</a>
-          {
-            footerNav.map((item) => (
-              <>
-                {' · '}
-                <a href={p(item.href)}>{item.label}</a>
-              </>
-            ))
-          }
+          <a href={p('/about/')}>Notes by Joshua</a>
+          {' | '}
+          Site Design Garret Morberg-Nguyen, 2026
         </p>
       </footer>
     </div>

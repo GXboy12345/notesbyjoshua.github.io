@@ -1,17 +1,53 @@
-export const profile = {
-  intro: "Hi, I'm Joshua. This site is where I document what I learn.",
+import { frontendAuthor, notesAuthor } from './site-attribution';
+
+// ─── Types (re-exported for credits.ts) ───────────────────────────────────────
+
+export type ContributorLink = {
+  label: string;
+  href: string;
+  external?: boolean;
 };
 
-export const mission =
+export type ContributorData = {
+  name: string;
+  role: string;
+  bio: string;
+  variant: 'author' | 'maintainer';
+  links?: ContributorLink[];
+};
+
+// ─── Credits page contributor objects (not used on About page directly) ───────
+
+export const joshuaContributor: ContributorData = {
+  name: notesAuthor.name,
+  role: 'Notes author',
+  variant: 'author',
+  bio: 'Writes and maintains the study notes, practice problems, and course coverage on this site.',
+  links: [
+    { label: 'GitHub', href: notesAuthor.github, external: true },
+    { label: 'Email', href: 'mailto:joshuabie2010@gmail.com', external: true },
+  ],
+};
+
+export const garretContributor: ContributorData = {
+  name: frontendAuthor.name,
+  role: 'Frontend & site',
+  variant: 'maintainer',
+  bio: 'Built the Astro migration: routing, KaTeX math, interactive practice, GitHub Actions deploy, and site tooling.',
+  links: [
+    { label: 'GitHub', href: frontendAuthor.github, external: true },
+    { label: 'LinkedIn', href: frontendAuthor.linkedin, external: true },
+  ],
+};
+
+// ─── Joshua ───────────────────────────────────────────────────────────────────
+
+export const joshuaMission =
   'To spread knowledge throughout the community and help the people who need it.';
 
-export const experience = {
+export const joshuaExperience = {
   lead: 'I have done extensive work and studying in math and physics, as well as the other AP classes on this website.',
-  qualifications: [
-    'AIME and USAJMO',
-    'USAPhO',
-    'USNCO (national exam)',
-  ],
+  qualifications: ['AIME and USAJMO', 'USAPhO', 'USNCO (national exam)'],
   closing:
     'I hope that you guys can also benefit from my study guides which I use to prepare for these!',
 };
@@ -25,7 +61,7 @@ export type Plug = {
   external?: boolean;
 };
 
-export const plugs: Plug[] = [
+export const joshuaPlugs: Plug[] = [
   {
     id: 'peer-tutoring',
     title: 'Peer Tutoring',
@@ -55,8 +91,40 @@ export const plugs: Plug[] = [
   },
 ];
 
-export const aboutHeadings = [
-  { depth: 2, slug: 'my-mission', text: 'My Mission' },
-  { depth: 2, slug: 'my-experience', text: 'My Experience' },
-  { depth: 2, slug: 'shameless-plugs', text: 'Shameless Plugs' },
+// ─── Garret ───────────────────────────────────────────────────────────────────
+
+export const garretIntro =
+  "Hi, I'm Garret. I built this site's frontend. Don't make the notes, though, lol.";
+
+export type GarretThing = {
+  name: string;
+  note: string;
+  href?: string;
+  external?: boolean;
+};
+
+export const garretThings: GarretThing[] = [
+  {
+    name: 'Joy Market',
+    note: 'food-rescue site for a school club. They rescue groceries and get them to people who need them.',
+    href: 'https://joy-market.org/',
+    external: true,
+  },
+  {
+    name: 'Language Connect',
+    note: 'free language-tutoring site for another club. HW students tutoring K–12 learners.',
+  },
+  {
+    name: 'Project Vector',
+    note: "computer-vision scouting system for my robotics team. Watches match footage and scores each robot automatically. It's private but we won some awards.",
+  },
+  {
+    name: 'This site',
+    note: "you're on it.",
+  },
+];
+
+export const garretLinks = [
+  { label: 'GitHub', href: frontendAuthor.github },
+  { label: 'LinkedIn', href: frontendAuthor.linkedin },
 ];

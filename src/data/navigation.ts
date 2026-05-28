@@ -15,7 +15,7 @@ export const mainNav: NavItem[] = [
 ];
 
 /** Secondary links—footer, not primary nav. */
-export const footerNav: NavItem[] = [{ label: 'Credits', href: '/credits/' }];
+export const footerNav: NavItem[] = [];
 
 export const subjectHubs = [
   {

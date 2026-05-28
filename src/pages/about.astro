@@ -1,38 +1,78 @@
 ---
-import DocLayout from '../layouts/DocLayout.astro';
-import ProfileCard from '../components/about/ProfileCard.astro';
-import CredentialList from '../components/about/CredentialList.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import PlugGrid from '../components/about/PlugGrid.astro';
 import {
-  aboutHeadings,
-  experience,
-  mission,
-  plugs,
-  profile,
+  garretIntro,
+  garretLinks,
+  joshuaMission,
+  joshuaPlugs,
 } from '../data/about';
 ---
 
-<DocLayout title="About" headings={aboutHeadings}>
-  <div class="about-page">
-    <ProfileCard intro={profile.intro} />
+<BaseLayout
+  title="About"
+  description="Joshua writes the study notes; Garret built the Astro site."
+>
+  <div class="about-root" transition:animate="fade">
+    <div class="about-split">
 
-    <section class="about-section" aria-labelledby="my-mission">
-      <h2 id="my-mission">My Mission</h2>
-      <p class="about-mission">{mission}</p>
-    </section>
+      <!-- ── Joshua ─────────────────────────────────────────── -->
+      <section class="about-col about-col--joshua" aria-labelledby="joshua-name">
 
-    <section class="about-section" aria-labelledby="my-experience">
-      <h2 id="my-experience">My Experience</h2>
-      <CredentialList
-        lead={experience.lead}
-        qualifications={experience.qualifications}
-        closing={experience.closing}
-      />
-    </section>
+        <div class="about-col-head">
+          <h1 id="joshua-name" class="about-col-name">Joshua</h1>
+          <span class="about-col-role">Notes</span>
+        </div>
 
-    <section class="about-section" aria-labelledby="shameless-plugs">
-      <h2 id="shameless-plugs">Shameless Plugs :P</h2>
-      <PlugGrid plugs={plugs} />
-    </section>
+        <p class="about-col-intro">
+          Hi, I&apos;m Joshua. This site is where I document what I learn.
+        </p>
+
+        <div class="about-col-block">
+          <h2 class="about-block-title">Mission</h2>
+          <p class="about-prose">{joshuaMission}</p>
+        </div>
+
+        <div class="about-col-block">
+          <h2 class="about-block-title">My Experience</h2>
+          <p class="about-prose">
+            I have done extensive work and studying in math and physics, as well as the other AP
+            classes on this website. In terms of competition wise, I have qualified for the AIME
+            and USAJMO, the USAPhO, and the USNCO (national exam) as well. I hope that you guys
+            can also benefit from my study guides which I use to prepare for these!
+          </p>
+        </div>
+
+        <div class="about-col-block">
+          <h2 class="about-block-title">Shameless Plugs :P</h2>
+          <PlugGrid plugs={joshuaPlugs} />
+        </div>
+
+      </section>
+
+      <!-- ── Garret ─────────────────────────────────────────── -->
+      <section id="garret" class="about-col about-col--garret" aria-labelledby="garret-name">
+
+        <div class="about-col-head">
+          <h1 id="garret-name" class="about-col-name">Garret</h1>
+          <span class="about-col-role">Site</span>
+        </div>
+
+        <p class="about-col-intro">{garretIntro}</p>
+
+        <div class="about-col-block">
+          <h2 class="about-block-title">Find me</h2>
+          <ul class="about-find-links">
+            {garretLinks.map((l) => (
+              <li>
+                <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </section>
+
+    </div>
   </div>
-</DocLayout>
+</BaseLayout>

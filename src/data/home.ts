@@ -194,7 +194,7 @@ export const siteLinks: SiteLink[] = [
   },
   {
     title: 'About',
-    desc: 'Who writes these notes.',
+    desc: 'Joshua on the notes; Garret on the site.',
     href: '/about/',
   },
 ];
