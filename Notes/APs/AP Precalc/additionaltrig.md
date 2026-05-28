@@ -8,6 +8,10 @@ permalink: /notes/ap/precalc/additionaltrig/
 
 # Unit 10: Additional Topics in Trigonometry (Triangle Laws, Parametric, Polar, and Vectors)
 
+:::summary{title="Unit overview"}
+This unit covers the Law of Sines and Cosines, vectors, polar coordinates, complex numbers in polar form, and De Moivre's Theorem.
+:::
+
 ---
 
 ## Laws of Sines and Cosines
@@ -29,7 +33,13 @@ $$
 K=\frac12ab\sin C=\frac12bc\sin A=\frac12ac\sin B.
 $$
 
-:::theorem
+:::key{name="Law of Sines"}
+$$
+\frac{\sin A}{a}=\frac{\sin B}{b}=\frac{\sin C}{c}.
+$$
+:::
+
+:::theorem{name="Proof (Area formula)"}
 **Proof (Area formula)** Drop an altitude from angle $$B$$ to side $$AC$$. This splits the triangle into two right triangles.
 
 Since side $$c$$ is adjacent to angle $$A$$ and the altitude is opposite angle $$A$$,
@@ -63,7 +73,7 @@ K=\frac12ab\sin C=\frac12ac\sin B.
 $$
 :::
 
-:::theorem
+:::theorem{name="Proof (Law of Sines)"}
 **Proof (Law of Sines).** Since the area of the same triangle can be written three ways,
 
 $$
@@ -81,13 +91,15 @@ This is the Law of Sines.
 
 The Law of Sines also has an extended version, which is not particularly important for AP Precalculus.
 
-:::theorem
+:::theorem{name="Extension"}
 **Extension.** Prove the extended Law of Sines: $$\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}=2R.$$
 :::
 
 ### The SSA case
 
+:::warning
 The SSA case is called the **ambiguous case** because the given information may create no triangle, one triangle, or two triangles.
+:::
 
 Suppose angle $$A$$ is known, and sides $$a$$ and $$b$$ are known, where $$a$$ is opposite $$A$$. Let
 
@@ -115,7 +127,7 @@ $$
 
 so a possible second angle may need to be checked.
 
-:::example
+:::example{title="Suppose $$A=45^\circ$$, $$a=12$$, and $$b=15$$. Find the possible values for angle $$B$..."}
 Suppose $$A=45^\circ$$, $$a=12$$, and $$b=15$$. Find the possible values for angle $$B$$ (opposite to side $$b$$).
 
 First find the height:
@@ -190,7 +202,7 @@ $$
 \cos A=\frac{b^2+c^2-a^2}{2bc}.
 $$
 
-:::theorem
+:::theorem{name="Proof (Law of Cosines)"}
 **Proof (Law of Cosines).** Place the triangle on the coordinate plane so that angle $$A$$ is at the origin and side $$b$$ lies on the positive $$x$$-axis.
 
 Then the endpoint of side $$b$$ is
@@ -236,7 +248,7 @@ a^2=b^2+c^2-2bc\cos A.
 $$
 :::
 
-:::example
+:::example{title="If $$b=7$$, $$c=10$$, and $$A=60^\circ$$, find side $$a$$."}
 If $$b=7$$, $$c=10$$, and $$A=60^\circ$$, find side $$a$$.
 
 By Law of Cosines,
@@ -296,7 +308,7 @@ $$
 \mathbf v=\langle \lvert \mathbf v \rvert \cos\theta, \lvert \mathbf v \rvert\sin\theta\rangle.
 $$
 
-:::theorem
+:::theorem{name="Proof (Component Definition)"}
 **Proof (Component Definition).** Draw a vector $$\mathbf v$$ with direction angle $$\theta$$. Its horizontal and vertical components form a right triangle whose hypotenuse is $$\lvert \mathbf v \rvert$$.
 
 By right triangle trigonometry,
@@ -344,7 +356,7 @@ $$
 
 but the quadrant of the vector must be considered.
 
-:::example
+:::example{title="A force has magnitude $$6.34$$ Newtons and direction angle $$175^\circ$$. Find the corr..."}
 A force has magnitude $$6.34$$ Newtons and direction angle $$175^\circ$$. Find the corresponding force vector.
 
 The components of the vector are
@@ -509,7 +521,7 @@ $$
 
 The dot product is a method of multiplication of two vectors, and always returns a *scalar*. Another form of vector multiplication is the cross product, which will not be taught here.
 
-:::theorem
+:::theorem{name="Proof (Dot product formula)"}
 **Proof (Dot product formula).** Let
 
 $$
@@ -589,7 +601,7 @@ $$
 \operatorname{proj}_{\mathbf B}\mathbf A=\frac{\mathbf A\cdot \mathbf B}{\lvert \mathbf B \rvert^2}\mathbf B.
 $$
 
-:::example
+:::example{title="Find the angle between"}
 Find the angle between
 
 $$
@@ -664,7 +676,7 @@ Substituting this into the equation for $$y$$ gives a rectangular equation relat
 
 The rectangular equation may not show the full behavior of the parametric curve, because the parameter can restrict the domain or determine the direction of travel. Always indicate the allowed domain for $$t$$.
 
-:::example
+:::example{title="Consider"}
 Consider
 
 $$
@@ -744,7 +756,7 @@ For trig parametrizations, there are many simple steps to eliminate the paramete
 2. Use a version of the Pythagoren Identity (e.g. $$\cos^2 t + \sin^2 t = 1$$) to combine the two equations
 3. State any domain restrictions on the graph and indicate orientation/direction.
 
-:::example
+:::example{title="For"}
 For
 
 $$
@@ -823,7 +835,7 @@ $$
 
 A negative value of $$r$$ means the point is plotted in the direction opposite the angle $$\theta$$.
 
-:::example
+:::example{title="Find two points that are the same point as $$\left(4,\frac{\pi}{3}\right)$$."}
 Find two points that are the same point as $$\left(4,\frac{\pi}{3}\right)$$.
 
 The polar points
@@ -873,7 +885,7 @@ $$
 
 and choose $$\theta$$ based on the quadrant of the point.
 
-:::theorem
+:::theorem{name="Proof (Conversion formulas)"}
 **Proof (Conversion formulas).** Prove the conversion formulas above.
 
 A polar point $$(r,\theta)$$ forms a right triangle with horizontal leg $$x$$, vertical leg $$y$$, and hypotenuse $$r$$.
@@ -909,7 +921,7 @@ $$
 $$
 :::
 
-:::example
+:::example{title="Convert"}
 Convert
 
 $$
@@ -965,7 +977,7 @@ $$
 r\sin\theta=y.
 $$
 
-:::example
+:::example{title="Convert"}
 Convert
 
 $$
@@ -1028,7 +1040,7 @@ $$
 
 This comes from the Law of Cosines.
 
-:::theorem
+:::theorem{name="Proof (Distance formula in polar)"}
 **Proof (Distance formula in polar).** Draw the two polar points from the pole. Their distances from the pole are $$r_1$$ and $$r_2$$.
 
 The angle between the two segments is
@@ -1060,7 +1072,7 @@ $$
 
 This is the polar distance formula applied to a moving point $$(r,\theta)$$ and a fixed center $$(r_0,\theta_0)$$.
 
-:::theorem
+:::theorem{name="Proof (Circle equation in polar)"}
 **Proof (Circle equation in polar).** A point $$(r,\theta)$$ is on a circle with center $$(r_0,\theta_0)$$ and radius $$a$$ exactly when its distance from the center is $$a$$.
 
 Using the polar distance formula,
@@ -1092,7 +1104,7 @@ $$
 
 where $$(d,\alpha)$$ is the polar point on the line closest to the pole.
 
-:::theorem
+:::theorem{name="Proof (Polar line equation)"}
 **Proof (Polar line equation).** Let $$(d,\alpha)$$ be the point on the line closest to the pole. The segment from the pole to this point is perpendicular to the line.
 
 For any point $$(r,\theta)$$ on the line, draw the triangle formed by the pole, $$(d,\alpha)$$, and $$(r,\theta)$$.
@@ -1116,7 +1128,7 @@ d=r\cos(\theta-\alpha).
 $$
 :::
 
-:::example
+:::example{title="A line is tangent to the circle"}
 A line is tangent to the circle
 
 $$
@@ -1171,7 +1183,7 @@ $$
 
 creates a spiral. As $$\theta$$ increases, $$r$$ changes, so the point moves farther from or closer to the pole.
 
-:::example
+:::example{title="Graph $$r=\frac{\theta}{\pi},$$"}
 Graph $$r=\frac{\theta}{\pi},$$
 
 The radius grows as $$\theta$$ grows:
@@ -1190,6 +1202,8 @@ A graph (with the helper graph) of the function is shown below:
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/polargraph1.png)
+:::
+
 :::
 
 ### Cardioids and limacons
@@ -1232,7 +1246,7 @@ A list of all the limacons are shown below (note that a circle is technically a 
 ![parent functions](/assets/APs/AP%20Precalc/limacon.png)
 :::
 
-:::example
+:::example{title="Graph $$r=2+4\cos\theta.$$"}
 Graph $$r=2+4\cos\theta.$$
 
 Here $$a=2$$ and $$b=4$$. Since
@@ -1249,6 +1263,8 @@ A graph (with the helper graph) of the function is shown below:
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/polargraph2.png)
+:::
+
 :::
 
 ### Rose curves
@@ -1278,7 +1294,7 @@ $$
 
 The value $$\lvert a \rvert$$ controls the length of each petal.
 
-:::theorem
+:::theorem{name="Proof (Rose petal count formula)"}
 **Proof (Rose petal count formula).** The helper graph
 
 $$
@@ -1296,7 +1312,7 @@ For odd $$n$$, the negative radius portions trace the same petals that the posit
 For even $$n$$, the negative radius portions trace new petals, so there are $$2n$$ petals total.
 :::
 
-:::example
+:::example{title="Draw the rose curve $$r=4\sin(3\theta)$$."}
 Draw the rose curve $$r=4\sin(3\theta)$$.
 
 For this curve, the value of $$n$$ is $$2$$, which is odd. Therefore, the rose curve has $$3$$ petals, and each petal has length $$2$$.
@@ -1307,6 +1323,8 @@ A graph (with the helper graph) of the function is shown below:
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/polargraph3.png)
+:::
+
 :::
 
 ### Lemniscates
@@ -1325,7 +1343,7 @@ $$
 
 Because $$r^2$$ cannot be negative, only angles that make the right side nonnegative appear on the graph.
 
-:::example
+:::example{title="Graph $$r^2=9\sin(2\theta)$$."}
 Graph $$r^2=9\sin(2\theta)$$.
 
 For this graph, the maximum value of $$r^2$$ is $$9$$, so the maximum value of $$r$$ is $$3$$.
@@ -1338,6 +1356,8 @@ A graph (with the helper graph) of the function is shown below:
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/polargraph4.png)
+:::
+
 :::
 
 ---
@@ -1436,7 +1456,7 @@ $$
 
 To divide complex numbers, multiply the numerator and denominator by the conjugate of the denominator, kind of like rationalizing the denominator.
 
-:::example
+:::example{title="Simplify"}
 Simplify
 
 $$
@@ -1555,7 +1575,7 @@ In words, when dividing, divide the moduli and subtract the angles.
 
 These two operations show why polar form for complex numbers is sometimes preferred.
 
-:::theorem
+:::theorem{name="Proof (Polar multiplication formula)"}
 **Proof (Polar multiplication formula).** Multiply directly:
 
 $$
@@ -1593,11 +1613,11 @@ z_1z_2=r_1r_2\left(\cos(\alpha+\beta)+i\sin(\alpha+\beta)\right).
 $$
 :::
 
-:::theorem
+:::theorem{name="Extension — Derive the division formula for two complex numbers."}
 **Extension.** Derive the division formula for two complex numbers.
 :::
 
-:::example
+:::example{title="Multiply"}
 Multiply
 
 $$
@@ -1667,7 +1687,7 @@ $$
 
 These are the same rules as polar form, just written more compactly.
 
-:::example
+:::example{title="Write"}
 Write
 
 $$
@@ -1695,7 +1715,7 @@ z=2\sqrt2 e^{i3\pi/4}.
 $$
 :::
 
-:::example
+:::example{title="Write"}
 Write
 
 $$
@@ -1739,7 +1759,7 @@ $$
 
 This is **De Moivre's Theorem**.
 
-:::theorem
+:::theorem{name="Proof (De Moivre's Theorem)"}
 **Proof (De Moivre's Theorem).** Multiplying complex numbers in polar form multiplies their moduli and adds their angles.
 
 If
@@ -1769,7 +1789,7 @@ $$
 which is De Moivre's Theorem. To reverse De Moivre's Theorem (e.g. solve for roots of a complex number), just swap $$n$$ for $$\frac{1}{n}$$.
 :::
 
-:::example
+:::example{title="Find"}
 Find
 
 $$
@@ -1841,7 +1861,7 @@ $$
 
 This is just a classic example of De Moivre's Theorem.
 
-:::example
+:::example{title="Find the cube roots of $$8$$."}
 Find the cube roots of $$8$$.
 
 Write
@@ -1935,7 +1955,7 @@ For example:
 - The $$4$$th roots of unity form a square.
 - The $$5$$th roots of unity form a regular pentagon.
 
-:::example
+:::example{title="Find the fourth roots of unity."}
 Find the fourth roots of unity.
 
 Use
@@ -2012,7 +2032,7 @@ $$
 
 Additionally, the product of the $$n$$th roots of unity is $$(-1)^{n+1}$$.
 
-:::theorem
+:::theorem{name="Extension"}
 **Extension.** Prove that the product of the $$n$$ roots of unity is $$(-1)^{n+1}$$. (Hint: Use dot product!)
 :::
 

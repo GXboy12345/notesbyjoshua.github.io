@@ -8,6 +8,10 @@ permalink: /notes/ap/precalc/matrices/
 
 # Unit 11: Matrices and Systems
 
+:::summary{title="Unit overview"}
+This unit covers solving linear systems by substitution, elimination, and matrices—including row operations, inverses, determinants, and Cramer's Rule.
+:::
+
 ---
 
 ## Systems of Linear Equations
@@ -39,7 +43,7 @@ The two basic algebraic methods are:
 - **Substitution**: solve one equation for one variable, then substitute into the other equations.
 - **Elimination**: add multiples of equations together until one variable disappears.
 
-:::example
+:::example{title="Solve"}
 Solve
 
 $$
@@ -343,7 +347,7 @@ $$
 \text{entry below pivot}-(\text{multiple})(\text{pivot})=0.
 $$
 
-:::example
+:::example{title="Solve"}
 Solve
 
 $$
@@ -662,7 +666,7 @@ $$
 
 If $$ad-bc=0$$, then the inverse does not exist.
 
-:::example
+:::example{title="Find the inverse of"}
 Find the inverse of
 
 $$
@@ -713,7 +717,7 @@ $$
 X=A^{-1}B.
 $$
 
-:::example
+:::example{title="Solve"}
 Solve
 
 $$
@@ -840,7 +844,7 @@ $$
 
 If $$ad-bc=0$$, the rows or columns are dependent in the sense that one direction has collapsed into another. The matrix is singular and has no inverse. If $$ad-bc\ne 0$$, the matrix is invertible.
 
-:::example
+:::example{title="Compare the determinants:"}
 Compare the determinants:
 
 $$
@@ -918,9 +922,11 @@ $$
 
 If $$D\ne 0$$, then
 
+:::key{name="Cramer's Rule (2 × 2)"}
 $$
 x=\frac{D_x}{D},\qquad y=\frac{D_y}{D},
 $$
+:::
 
 where
 
@@ -938,7 +944,7 @@ a_2 & c_2
 \end{vmatrix}.
 $$
 
-:::example
+:::example{title="Solve"}
 Solve
 
 $$
@@ -1006,7 +1012,7 @@ Common strategies:
 - Use elimination when the nonlinear terms can be canceled.
 - Check all answers, especially after squaring or multiplying by expressions involving variables.
 
-:::example
+:::example{title="Solve"}
 Solve
 
 $$
@@ -1071,7 +1077,7 @@ To graph a linear inequality:
 4. Shade the side that satisfies the inequality.
 5. Repeat for every inequality; the solution is the overlap.
 
-:::example
+:::example{title="Describe the solution region:"}
 Describe the solution region:
 
 $$

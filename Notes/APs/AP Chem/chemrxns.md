@@ -29,10 +29,12 @@ If an element is a component of the reaction **ALONE**, they are written in thei
 
 ### Balancing by inspection (non-redox and simple cases)
 
+:::tip
 1. **Balance** elements that appear in only one reactant and one product first (often metals or central atoms).
 2. Treat **unchanged polyatomic ions** (such as $$\text{NO}_3^-$$ or $$\text{SO}_4^{2-}$$) as a unit if they appear intact on both sides (Make sure to include them in brackets, otherwise they do not count as polyatomic ions).
 3. Balance **hydrogen** and **oxygen** last when they appear in several compounds (common in combustion and acid–base).
 4. If you temporarily need a **fractional** coefficient to balance an element (e.g. $$\frac{1}{2}\text{O}_2$$), **multiply the entire equation** by the denominator so all coefficients are integers.
+:::
 
 The balanced equation conserves **mass** (atom counts). For **ionic** reactions in solution, you may also write:
 
@@ -41,6 +43,10 @@ The balanced equation conserves **mass** (atom counts). For **ionic** reactions 
 - **Total ionic equation**—You treat strong electrolytes as **separated ions**, while solids, liquids, weak electrolytes, and gases usually **undissociated** (Check solubility rules below for electrolytes; strong electrolytes are soluble in water)
 
 - **Net ionic equation**—Write the total ionic equation but cancel **spectator ions** that do not change (Basically anything that can cancel on both sides) and only species that actually react
+
+:::note
+Spectator ions appear unchanged on both sides of the total ionic equation and are omitted from the net ionic equation.
+:::
 
 **Redox** reactions in acidic or basic solution often needs the *half-reaction method* (below) because oxidation numbers change and **electron** and **charge** balance are not handled by atom counting alone.
 
@@ -56,7 +62,11 @@ $$
 
 If one combination is insoluble (in the example above it is $$CB$$), it forms a **precipitate**, a solid that may appear as cloudiness, flecks, or a settled solid at the bottom of the vessel. Different precipitates will have different colors, which may be useful in determining the contents of the reaction. If all ionic products remain soluble (aqueous), no net reaction occurs.
 
-You predict precipitates with **solubility rules**, which are very important to memorize. These rules are general AP-level shortcuts; a few exceptions exist, and exact solubility is handled later with $$K_{sp}$$.
+These rules are general AP-level shortcuts; a few exceptions exist, and exact solubility is handled later with $$K_{sp}$$.
+
+:::exam
+You predict precipitates with **solubility rules**, which are very important to memorize.
+:::
 
 | Usually soluble | Important exceptions |
 | --- | --- |
@@ -82,9 +92,11 @@ $$
 
 **Neutralization** between a strong acid and strong base yields water and an ionic salt:
 
+:::key{name="Neutralization"}
 $$
 \text{acid} + \text{base} \longrightarrow \text{salt} + \text{H}_2\text{O}.
 $$
+:::
 
 Such proton-transfer reactions are often rapid because water is a very stable product. This is a special form of a double-displacement reaction
 
@@ -126,6 +138,10 @@ As usual, you should balance coefficients to make a balanced equation.
 
 In **single-displacement**, an element in its standard state replaces ions of another element in solution (or in a melt). For metals (and hydrogen in acid), activity order decides whether reaction occurs: a metal higher in the **activity series** reduces the cation of a metal below it. Hydrogen’s position marks which metals react with dilute acid to liberate $$\text{H}_2$$.
 
+:::exam
+Memorize the metal activity series and halogen reactivity order for AP prediction questions.
+:::
+
 :::figure{width=480}
 ![Metal Activity Series](/assets/APs/AP%20Chem/chemrxns/metalAS.png)
 :::
@@ -136,7 +152,11 @@ For halogens, a more reactive halogen displaces the halide ion of a less reactiv
 
 ## Oxidation–reduction (redox)
 
-**Redox** reactions transfer electrons between species. **Oxidation** is loss of electrons (increase in **oxidation number**); **reduction** is gain of electrons (decrease in oxidation number). A very helpful mnemonic is **OIL RIG**: **O**xidation **I**s **L**osing, **R**eduction **I**s **G**aining.
+**Redox** reactions transfer electrons between species. **Oxidation** is loss of electrons (increase in **oxidation number**); **reduction** is gain of electrons (decrease in oxidation number).
+
+:::tip
+**OIL RIG**: **O**xidation **I**s **L**osing, **R**eduction **I**s **G**aining.
+:::
 
 The **reducing agent** is the one being oxidized, and the **oxidizing agent** is the one being reduced. Assigning oxidation states to every atom in a formula is the standard bookkeeping method (refer to [Unit 1]({{ '/notes/ap/chem/atomicstrucprop/' | relative_url }})). Many combustion, single-displacement, and electrochemical processes are redox; they are often slower in the lab than simple precipitation or strong acid–strong base neutralization because covalent bonds must break and form in the elemental or molecular reactants.
 
@@ -146,6 +166,7 @@ A **half-reaction** shows only the oxidation or only the reduction part of an el
 
 **Acidic solutions** (common AP setup):
 
+:::theorem{name="Balancing redox half-reactions (acidic)"}
 1. Split the net ionic transformation into **oxidation** and **reduction** halves.
 
 2. Balance all atoms **except** O and H.
@@ -157,6 +178,7 @@ A **half-reaction** shows only the oxidation or only the reduction part of an el
 5. Balance **charge** with $$e^-$$ on the correct side.
 
 6. Equalize electrons; add the halves; simplify.
+:::
 
 **Basic solution:** either balance as in acid and then add $$\text{OH}^-$$ to **both sides** in pairs that neutralize $$\text{H}^+$$ as water, or balance using $$\text{H}_2\text{O}$$ and $$\text{OH}^-$$ from the start. The final combined equation should contain **no free $$\text{H}^+$$** if the medium is strongly basic.
 
@@ -190,9 +212,11 @@ Temperature: the effect on solid solubility depends on the sign of enthalpy of s
 
 **Molality** $$m$$ is moles of solute per kilogram of solvent (not kilogram of solution):
 
+:::key{name="Molality"}
 $$
 m = \frac{\text{moles of solute}}{\text{kilograms of solvent}}.
 $$
+:::
 
 It is temperature-independent in the sense that it uses mass of solvent, not volume of solution.
 
@@ -209,7 +233,9 @@ $$
 \text{ppb} = \frac{\text{mass of solute}}{\text{mass of sample}} \times 10^9.
 $$
 
+:::warning
 Do not equate $$\text{ppm}$$ to “$$mass \% \times 10^6$$”; use the fraction definition above (for example, $$1\%$$ corresponds to $$10^4$$ ppm).
+:::
 
 **Normality** $$N$$ (still seen in some labs) is equivalents of reacting species per liter of solution: for acid–base, one equivalent of acid is one mole of $$\text{H}^+$$ donated per mole of formula (so $$\text{H}_2\text{SO}_4$$ can be $$2N$$ when both protons count in that context). On the AP exam, molarity and stoichiometry from the balanced equation are usually enough.
 
@@ -356,6 +382,9 @@ $$\text{Ba}^{2+}$$ and $$\text{SO}_4^{2-}$$ form $$\text{BaSO}_4(s)$$, which is 
 $$
 \boxed{\text{B}}
 $$
+:::
+:::
+
 ### FRQ
 
 :::frq{id=chem-chemrxns-frq-7}
@@ -425,5 +454,6 @@ $$
 The mole ratio comes from the balanced equation: $$3$$ moles of $$\text{Cl}_2$$ produce $$2$$ moles of $$\text{AlCl}_3$$.
 
 $$(C)$$ The balanced reaction requires fixed mole ratios. Once $$\text{Cl}_2$$ is used up, no more $$\text{AlCl}_3$$ can form, even though some Al remains. The excess reactant remains because there are no longer enough particles of the limiting reactant available to collide and react in the required stoichiometric ratio.
+:::
 :::
 :::

@@ -8,3 +8,6 @@ permalink: /notes/physics/condcap/
 ---
 
 # Conductors and Capacitors
+
+:::under-construction
+:::

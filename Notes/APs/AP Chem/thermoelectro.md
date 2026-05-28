@@ -24,9 +24,11 @@ A process is **thermodynamically favored** when it is spontaneous under the stat
 
 The **Second Law of Thermodynamics** says that for any spontaneous process, the entropy of the universe increases:
 
+:::theorem{name="Second law (entropy)"}
 $$
 \Delta S_{\text{universe}} > 0.
 $$
+:::
 
 - **Entropy** $$S$$ is a measure of *energy dispersal* and the number of possible microscopic arrangements available to a system. A common shorthand is "chaos," but the more precise AP idea is that higher entropy means more accessible **microstates**.
 - **Microstates** are the *possible arrangements of particles and energy* that produce the same macroscopic state. More particles, more volume, more freedom of motion, and more possible energy distributions usually mean more microstates and therefore higher entropy.
@@ -49,9 +51,11 @@ Use this sign test:
 
 Heat leaving the system increases surrounding entropy; heat entering the system decreases surrounding entropy. At constant pressure and temperature, the surroundings contribution is often written as
 
+:::key{name="Surroundings entropy"}
 $$
 \Delta S_{\text{surroundings}} = -\frac{\Delta H_{\text{system}}}{T}.
 $$
+:::
 
 This equation explains why exothermic reactions often help spontaneity: if $$\Delta H_{\text{system}} < 0$$, then $$\Delta S_{\text{surroundings}} > 0$$.
 
@@ -88,19 +92,23 @@ Some reactions look counterintuitive if you only inspect the system. For example
 
 The **Third Law of Thermodynamics** says that a perfect crystal at $$0\ \text{K}$$ has entropy equal to zero:
 
+:::theorem{name="Third law of thermodynamics"}
 $$
 S = 0 \quad \text{for a perfect crystal at } 0\ \text{K}.
 $$
+:::
 
 Unlike standard enthalpies of formation, standard molar entropies are not usually zero for elements at $$298\ \text{K}$$. Real substances have motion and energy distributions above absolute zero, so they have positive entropy.
 
 For a reaction,
 
+:::key{name="Standard reaction entropy"}
 $$
 \Delta S^\circ_{\text{rxn}} = \sum n_p S^\circ_{\text{products}} - \sum n_r S^\circ_{\text{reactants}},
 $$
 
 where $$n_p$$ and $$n_r$$ are the stoichiometric coefficients of products and reactants. Entropy is commonly tabulated in $$\text{J}/(\text{mol}\cdot\text{K})$$, not $$\text{kJ}/(\text{mol}\cdot\text{K})$$, so unit conversion matters when combining entropy with enthalpy or Gibbs free energy.
+:::
 
 ---
 
@@ -108,6 +116,7 @@ where $$n_p$$ and $$n_r$$ are the stoichiometric coefficients of products and re
 
 **Gibbs free energy** $$G$$ is the thermodynamic quantity that predicts *maximum useful non-expansion work* at constant temperature and pressure. For a reaction,
 
+:::key{name="Gibbs free energy"}
 $$
 \Delta G = \Delta H - T\Delta S.
 $$
@@ -117,8 +126,7 @@ Here $$T$$ must be in Kelvin. If $$\Delta H$$ is in $$\text{kJ/mol}$$, then $$T\
 $$
 1\ \text{kJ} = 1000\ \text{J}.
 $$
-
-
+:::
 
 The sign of $$\Delta G$$ determines thermodynamic favorability:
 
@@ -214,10 +222,12 @@ This is how many biological and industrial processes drive unfavorable steps: th
 1. **Oxidation**: loss of electrons.
 2. **Reduction**: gain of electrons.
 
+:::tip
 Remember:
 
 - **ANOX**: oxidation occurs at the anode.
 - **REDCAT**: reduction occurs at the cathode.
+:::
 
 Electrons flow through the external wire from anode to cathode. Ions move through the solution or salt bridge to maintain charge balance.
 
@@ -264,9 +274,11 @@ $$
 
 For a redox reaction,
 
+:::key{name="Cell potential"}
 $$
 \Delta G = -nFE_{\text{cell}}.
 $$
+:::
 
 Important sign connection:
 
@@ -308,6 +320,7 @@ $$
 
 where both values are read from a reduction potential table. The cathode usually has the more positive reduction potential.
 
+:::warning
 Do not change the sign of the tabulated anode value before using the subtraction form. If instead you write
 
 $$
@@ -315,6 +328,7 @@ E^\circ_{\text{cell}} = E^\circ_{\text{red}} + E^\circ_{\text{ox}},
 $$
 
 then you must reverse the anode half-reaction and change its sign.
+:::
 
 Simply stated, you can think of a high cell potential as a river with a lot of electrons, where the more electrons you have the higher the river is. Thus, this river will flow from high to low, just like how electrons will flow from high reduction potential to a low cell potential.
 
@@ -344,9 +358,11 @@ This describes a cell where zinc is oxidized at the anode and copper ions are re
 
 The **Nernst equation** relates cell potential to *nonstandard concentrations or pressures*:
 
+:::theorem{name="Nernst equation"}
 $$
 E_{\text{cell}} = E^\circ_{\text{cell}} - \frac{RT}{nF}\ln Q.
 $$
+:::
 
 At $$25^\circ\text{C}$$, this becomes
 
@@ -411,6 +427,10 @@ An **electrolytic cell** uses *external electrical energy* to drive a nonspontan
 
 Oxidation still occurs at the anode and reduction still occurs at the cathode. The sign of the electrodes changes compared with galvanic cells:
 
+:::warning
+In an electrolytic cell, the anode is positive and the cathode is negative—the opposite of a galvanic cell.
+:::
+
 | Cell type    | Anode    | Cathode  | Spontaneity                            |
 | ------------ | -------- | -------- | -------------------------------------- |
 | Galvanic     | Negative | Positive | Spontaneous                            |
@@ -474,6 +494,7 @@ In aqueous electrolysis, water can compete with dissolved ions. Whether water or
 
 **Faraday's law** says that the amount of substance produced or consumed at an electrode is *directly proportional to the total charge passed through the cell*.
 
+:::key{name="Faraday's law (electrolysis)"}
 Use this unit pathway:
 
 $$
@@ -501,6 +522,7 @@ $$
 $$
 
 So $$n = 2$$ in the mass equation.
+:::
 
 ---
 
@@ -666,6 +688,9 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
+:::
+
 ### FRQ
 
 :::frq{id=chem-thermoelectro-frq-7}
@@ -775,5 +800,6 @@ $$
 This is about $$25.3\ \text{min}$$ if converted to minutes.
 
 $$(C)$$ Metal ions gain electrons and become solid metal on the object, so reduction occurs at the object being plated. The object being plated acts as the cathode in the electrolytic cell.
+:::
 :::
 :::

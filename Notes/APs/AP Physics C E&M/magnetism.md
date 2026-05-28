@@ -8,3 +8,6 @@ permalink: /notes/physics/magnetism/
 ---
 
 # Magnetic Fields and Electromagnetism
+
+:::under-construction
+:::

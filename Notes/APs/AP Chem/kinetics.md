@@ -16,9 +16,11 @@ permalink: /notes/ap/chem/kinetics/
 
 **Collision theory** requires that molecules actually collide, that a collision carries at least the **activation energy** $$E_a$$, and that the partners meet with a geometry that allows the relevant bonds to rearrange. A compact way to think about rate is that it scales with three factors:
 
+:::key{name="Collision theory"}
 $$
 \text{rate} \propto N \times f_E \times f_O.
 $$
+:::
 
 Here $$N$$ is roughly the number of collisions per unit time (collision frequency), $$f_E$$ is the fraction of collisions with enough energy to surmount the barrier, and $$f_O$$ is the fraction with favorable orientation (sometimes folded into a steric factor in $$A$$).
 
@@ -44,9 +46,11 @@ $$
 
 a common convention ties all species to one rate expression:
 
+:::key{name="Reaction rate"}
 $$
 \text{rate} = -\frac{1}{a}\frac{d[\text{A}]}{dt} = -\frac{1}{b}\frac{d[\text{B}]}{dt} = +\frac{1}{c}\frac{d[\text{C}]}{dt} = +\frac{1}{d}\frac{d[\text{D}]}{dt}.
 $$
+:::
 
 The negative sign on reactants makes rate a positive quantity as written. Note that $$d$$ represents the derivative, or the measure of the rate of change. If you watch one species by itself, the sign of $$d[\text{X}]/dt$$ tells you whether it is being used up (negative for a reactant whose concentration falls) or formed (positive for a product). The stoichiometric factors convert those individual slopes into a single rate for the whole reaction.
 
@@ -58,21 +62,29 @@ In lab data you often measure average rate over an interval (slope of a chord on
 
 Experiment determines how rate depends on concentration. The differential rate law (or simply **rate law**) has the form
 
+:::key{name="Rate law"}
 $$
 \text{rate} = k[\text{A}]^m[\text{B}]^n[\text{C}]^p \cdots
 $$
+:::
 
-Here $$k$$ is the **rate constant** (units depend on overall order), and $$m, n, p, \ldots$$ are the orders with respect to each reactant. Those exponents are *not* taken from the balanced equation unless the reaction is a single **elementary step** (see mechanisms below). Overall reaction order is the sum $$m + n + p + \cdots$$.
+Here $$k$$ is the **rate constant** (units depend on overall order), and $$m, n, p, \ldots$$ are the orders with respect to each reactant.
+
+:::warning
+Those exponents are *not* taken from the balanced equation unless the reaction is a single **elementary step** (see mechanisms below). Overall reaction order is the sum $$m + n + p + \cdots$$.
+:::
 
 Important distinction: at fixed temperature (and without changing catalyst), $$k$$ does not depend on concentrations or, for gases, on pressure as a separate knob—concentration enters only through the powers $$[\text{A}]^m$$ etc. Changing pressure in a gas-phase system often changes concentrations and therefore rate, but it does not change $$k$$ itself. Temperature and catalysts change $$k$$.
 
 The **method of initial rates** compares initial rates while varying one reactant’s initial concentration at a time. Holding other concentrations fixed, if doubling $$[\text{A}]$$ multiplies the initial rate by $$2^m$$, $$m$$ is the order of $$A$$. More generally, for two trials where only $$[\text{A}]$$ changes,
 
+:::tip
 $$
 m = \frac{\ln(\text{rate}_1 / \text{rate}_2)}{\ln([\text{A}]_1 / [\text{A}]_2)},
 $$
 
 with nearest-integer order a common simplification on exams when data are clean. Repeat for each reactant, then substitute any one run’s data to solve for $$k$$.
+:::
 
 Units of $$k$$ follow from $$\text{rate}$$ in $$\text{M/s}$$ (molarity per second) and the concentration powers. Examples for a single reactant $$\text{A}$$:
 
@@ -88,6 +100,7 @@ Note that rate always has the units of $$\frac{M}{s}$$ and concentration always 
 
 Integrating the differential law links concentration to time. Let $$[\text{A}]_0$$ be the initial concentration of the species tracked in the simplified one-reactant forms below.
 
+:::key{name="Integrated rate laws"}
 Zeroth order:
 
 $$
@@ -111,8 +124,11 @@ $$
 $$
 
 A plot of $$1/[\text{A}]$$ versus $$t$$ is linear with slope $$k$$.
+:::
 
 Which graph is linear is a standard way to infer order from concentration–time data. **Half-life** $$t_{1/2}$$ is the time for $$[\text{A}]$$ to drop to half its initial value:
+
+:::key{name="Half-life"}
 
 $$
 \text{zero:}\quad t_{1/2} = \frac{[\text{A}]_0}{2k}
@@ -127,6 +143,7 @@ $$
 $$
 
 For zero order, half-life **shrinks** as $$[\text{A}]_0$$ decreases. For first order (including many nuclear decay kinetics), $$t_{1/2}$$ is constant throughout the reaction—independent of $$[\text{A}]_0$$. For second order, half-life **grows** as $$[\text{A}]_0$$ decreases.
+:::
 
 ---
 
@@ -134,9 +151,11 @@ For zero order, half-life **shrinks** as $$[\text{A}]_0$$ decreases. For first o
 
 The **Arrhenius equation** relates the rate constant to temperature:
 
+:::theorem{name="Arrhenius equation"}
 $$
 k = A e^{-E_a/(RT)}.
 $$
+:::
 
 $$A$$ is the pre-exponential factor (collision frequency and orientation factors); $$R = 8.314 \text{ J/(mol}\cdot\text{K)}$$ when $$E_a$$ is in $$\text{J/mol}$$; $$T$$ is kelvin.
 
@@ -164,7 +183,9 @@ A **reaction mechanism** proposes a sequence of such steps. Species produced in 
 
 The **rate-determining step** (RDS) is the slowest step; it has the highest activation energy in the sequence and usually controls the observed rate law. If the first step is slow, its elementary law often appears directly in the experimental rate law (exponents from that step’s stoichiometry). Steps after the RDS do not change the concentration dependence of the rate law (they only consume intermediates as they leak out of the bottleneck).
 
+:::note
 If the experimental rate law does not match the stoichiometry of the overall equation, you infer multiple steps and a slow step that controls rate.
+:::
 
 ---
 
@@ -222,9 +243,11 @@ Catalyst poisoning occurs when another species binds strongly to active sites an
 
 A **reaction coordinate** diagram plots energy versus progress from reactants to products. If reactants lie higher in energy than products, the net reaction is exothermic ($$\Delta H < 0$$ in the usual convention); if products lie higher, it is endothermic ($$\Delta H > 0$$). Forward and reverse activation energies $$E_{a,\text{fwd}}$$ and $$E_{a,\text{rev}}$$ are measured from each side up to the transition state. For a simple one-step profile,
 
+:::theorem{name="Activation energy and enthalpy"}
 $$
 E_{a,\text{fwd}} - E_{a,\text{rev}} = \Delta H.
 $$
+:::
 
 A catalyst lowers $$E_{a,\text{fwd}}$$ and $$E_{a,\text{rev}}$$ by about the same amount (same pathway lowering for forward and reverse), so it speeds approach to equilibrium but does not change $$\Delta H$$ or the equilibrium constant at fixed $$T$$.
 

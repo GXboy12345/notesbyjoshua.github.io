@@ -20,7 +20,7 @@ Olympiad-style summation problems usually fall into a few categories:
 
 However, one idea that resonates through all three categories is **swapping the order of summation**.
 
-:::theorem
+:::theorem{name="Swapping the Order of Summation"}
 **Theorem 1.1 (Swapping the Order of Summation).** Let $$f(a,b)$$ be a function. Then
 
 $$
@@ -42,17 +42,20 @@ $$
 
 These are the most direct summation techniques, and they appear most often in AMC/AIME problems.
 
+:::tip
 Common moves:
 
 - Look for **telescoping**.
 - Use **partial fractions** when denominators factor.
 - Try to **factor the whole sum**, especially when the summand separates into pieces.
 - Rewrite the expression as a **double sum**, then switch the order.
+:::
 
 ### Telescoping and Partial Fractions
 
 Often, when you have a polynomial in the denominator, it is easier to split it via partial fractions. Visit **placeholder, but precalc** for more information on partial fractions. Most of the time, if given an infinite sum, most terms should cancel or simplify in some sort.
 
+:::example{title="Stanford 2011"}
 **Example 2.1 (Stanford 2011).** Evaluate
 
 $$
@@ -84,9 +87,11 @@ $$
 = 12 + \frac92
 = \frac{33}{2}.
 $$
+:::
 
 ### Swapping the Order of Summation
 
+:::example{title="Fixed points in random permutations"}
 **Example 2.2.** A random permutation of $$\{1,2,\dots,n\}$$ has expected value $$1$$ for its number of fixed points.
 
 The clean way to see this is not to count fixed points row by row over all permutations, but column by column. For each position, exactly $$(n-1)!$$ permutations fix that position, so the total number of fixed points over all $$n!$$ permutations is
@@ -100,13 +105,16 @@ Dividing by $$n!$$ gives the average:
 $$
 \frac{n(n-1)!}{n!} = 1.
 $$
+:::
 
+:::example{title="Linearity of Expectation"}
 **Example 2.3 (Linearity of Expectation).** If $$X$$ and $$Y$$ are random variables, then
 
 $$
 \mathbb E[X+Y] = \mathbb E[X] + \mathbb E[Y].
-$$
+:::
 
+:::proof{of="Linearity of Expectation"}
 **Proof.** Assume for simplicity that $$X$$ and $$Y$$ take nonnegative integer values. Then
 
 $$
@@ -147,8 +155,9 @@ $$
 $$
 
 This is philosophically a double-summation argument.
+:::
 
-:::theorem
+:::theorem{name="Lemma 2.4"}
 **Lemma 2.4.** For every positive integer $$n$$,
 
 $$
@@ -156,8 +165,11 @@ $$
 $$
 :::
 
+:::note
 Note that $$\varphi$$ is Euler's totient function, look more in the **number theory** section (replace).
+:::
 
+:::proof{of="Lemma 2.4"}
 **Proof idea.** Look at the fractions
 
 $$
@@ -165,7 +177,9 @@ $$
 $$
 
 After reducing them, exactly $$\varphi(d)$$ of them have denominator $$d$$ for each divisor $$d \mid n$$. Since there are $$n$$ fractions total, the sum of those counts is $$n$$.
+:::
 
+:::example{title="AMSP 2011 NT3 Exam"}
 **Example 2.5 (AMSP 2011 NT3 Exam).** Prove that
 
 $$
@@ -198,11 +212,13 @@ By Lemma 2.4 the inner sum is just $$m$$, so
 $$
 \sum_{m=1}^n m = \frac{n(n+1)}{2}.
 $$
+:::
 
 ### Roots of Unity Filters
 
 Suppose we want to keep only terms with index divisible by $$3$$ in a binomial sum. The basic idea is to build an indicator function using roots of unity.
 
+:::example{title="Roots of unity filter"}
 **Example 2.6.** Compute
 
 $$
@@ -246,6 +262,7 @@ $$
 = \frac13 \left[2^{1000} + \omega + \omega^2\right]
 = \frac13 \left(2^{1000}-1\right).
 $$
+:::
 
 ### Problems
 
@@ -287,7 +304,7 @@ $$
 
 When working modulo a prime $$p$$, many ordinary summation tricks still work, but now the finite nature of $$\mathbb F_p$$ creates extra symmetry.
 
-:::theorem
+:::theorem{name="Fermat's Little Theorem"}
 **Lemma 3.1 (Fermat's Little Theorem).** If $$p$$ is prime and $$\gcd(a,p)=1$$, then
 
 $$
@@ -295,6 +312,7 @@ a^{p-1} \equiv 1 \pmod p.
 $$
 :::
 
+:::proof{of="Fermat's Little Theorem"}
 **Proof idea.** Multiplication by $$a$$ permutes the nonzero residue classes modulo $$p$$, so
 
 $$
@@ -302,8 +320,9 @@ a^{p-1}(p-1)! \equiv (p-1)! \pmod p.
 $$
 
 Cancel $$ (p-1)! $$.
+:::
 
-:::theorem
+:::theorem{name="Wilson's Theorem"}
 **Lemma 3.2 (Wilson's Theorem).** For any prime $$p$$,
 
 $$
@@ -311,9 +330,11 @@ $$
 $$
 :::
 
+:::note
 **Exercise 3.3.** Prove Wilson's theorem if you have not already seen it.
+:::
 
-:::theorem
+:::theorem{name="Sums of Powers Modulo p"}
 **Lemma 3.4 (Sums of Powers Modulo $$p$$).** Let $$p$$ be prime and let $$m$$ be an integer. Then
 
 $$
@@ -325,6 +346,7 @@ $$
 $$
 :::
 
+:::proof{of="Lemma 3.4"}
 **Proof sketch.** If $$g$$ is a primitive root modulo $$p$$, then
 
 $$
@@ -333,7 +355,9 @@ $$
 $$
 
 This is a geometric series. If $$p-1 \nmid m$$ then the denominator is nonzero modulo $$p$$ while the numerator vanishes.
+:::
 
+:::example{title="Wolstenholme's Theorem"}
 **Example 3.5 (Wolstenholme's Theorem).** If $$p>3$$ is prime, then
 
 $$
@@ -372,8 +396,9 @@ $$
 $$
 
 which vanishes by Lemma 3.4.
+:::
 
-:::theorem
+:::theorem{name="Harmonic Modulo p Trick"}
 **Lemma 3.6 (Harmonic Modulo $$p$$ Trick).** For $$k=1,2,\dots,p-1$$,
 
 $$
@@ -417,11 +442,14 @@ This section puts that kind of divisor sum into a larger framework.
 
 ### Multiplicative Functions
 
+:::theorem{name="Definition 4.1"}
 **Definition 4.1.** An arithmetic function is a function $$f:\mathbb N \to \mathbb C$$.
 
 - It is **multiplicative** if $$f(mn)=f(m)f(n)$$ whenever $$\gcd(m,n)=1$$.
 - It is **completely multiplicative** if $$f(mn)=f(m)f(n)$$ for all positive integers $$m,n$$.
+:::
 
+:::example{title="Completely multiplicative functions"}
 **Example 4.2.** Completely multiplicative functions include:
 
 - The identity function $$\operatorname{id}(n)=n$$.
@@ -434,7 +462,9 @@ This section puts that kind of divisor sum into a larger framework.
   \end{cases}
   $$
 - The constant function $$1(n)=1$$.
+:::
 
+:::example{title="Multiplicative functions"}
 **Example 4.3.** Multiplicative but not completely multiplicative functions include:
 
 - Euler's totient function $$\varphi$$.
@@ -448,6 +478,7 @@ This section puts that kind of divisor sum into a larger framework.
   $$
 - The divisor sum function $$\sigma(n)$$.
 - The divisor counting function $$\tau(n)$$.
+:::
 
 For multiplicative functions, it is enough to know the values on prime powers.
 
@@ -465,6 +496,7 @@ $$
 (f*g)(n) = \sum_{de=n} f(d)g(e).
 $$
 
+:::example{title="Dirichlet convolution identities"}
 **Example 4.4.** Verify the following:
 
 - $$1*1=\tau$$
@@ -480,9 +512,13 @@ Useful properties:
 - $$*$$ distributes over addition.
 - The identity element is $$\delta$$.
 - The convolution of multiplicative functions is multiplicative.
+:::
 
+:::note
 **Exercise 4.5.** Prove that the convolution of multiplicative functions is multiplicative.
+:::
 
+:::example{title="φ * 1 = id"}
 **Example 4.6.** Reinterpret
 
 $$
@@ -500,8 +536,9 @@ Both sides are multiplicative, so it is enough to check prime powers:
 $$
 1 + (p-1) + (p^2-p) + \cdots + (p^e-p^{e-1}) = p^e.
 $$
+:::
 
-:::theorem
+:::theorem{name="Lemma 4.7"}
 **Lemma 4.7.** The Möbius function is the inverse of $$1$$ under Dirichlet convolution:
 
 $$
@@ -509,11 +546,13 @@ $$
 $$
 :::
 
+:::note
 **Exercise 4.8.** Prove this by checking prime powers.
+:::
 
 ### Möbius Inversion
 
-:::theorem
+:::theorem{name="Möbius Inversion Formula"}
 **Theorem 4.9 (Möbius Inversion Formula).** Let $$f$$ and $$g$$ be arithmetic functions. Then
 
 $$
@@ -525,12 +564,15 @@ $$
 Equivalently, if $$g=f*1$$ then $$f=g*\mu$$.
 :::
 
+:::proof{of="Möbius Inversion Formula"}
 **Proof.** If $$g=f*1$$, then
 
 $$
 g*\mu = (f*1)*\mu = f*(1*\mu) = f*\delta = f.
 $$
+:::
 
+:::example{title="IMO Shortlist 1989"}
 **Example 4.10 (IMO Shortlist 1989).** Define $$\{a_n\}_{n \ge 1}$$ by
 
 $$
@@ -546,6 +588,7 @@ a_n = \sum_{d \mid n} \mu(n/d)\,2^d.
 $$
 
 From there, factor $$n$$ into prime powers and finish with divisibility arguments.
+:::
 
 ### Problems
 
@@ -677,6 +720,7 @@ $$
 
 ## Hints
 
+:::tip
 - **2.7** Telescope. The answer is $$\frac32$$.
 - **2.8** Use contradiction and the intermediate value theorem. Expand the geometric series and switch the order.
 - **2.9** The answer is $$\frac{17}{21}$$. Try Ravi substitution.
@@ -692,6 +736,7 @@ $$
 - **6.3** Partial fractions and Lemma 3.6.
 - **6.9** The answer is $$\frac{100}{9801}$$. Switch the order, telescope the inverted binomial coefficients, then telescope again.
 - **6.10** The answer is $$\frac{11}{7}$$. Use a two-variable generating function.
+:::
 
 ## References
 

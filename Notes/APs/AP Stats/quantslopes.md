@@ -14,6 +14,7 @@ This unit extends linear regression from [Unit 2]({{ '/notes/ap/stats/bivardata/
 
 ## Population Regression Model
 
+:::theorem{name="Population regression model"}
 For a population, the linear regression model is
 
 $$
@@ -25,6 +26,7 @@ Here:
 - $$\alpha$$ is the population intercept.
 - $$\beta$$ is the population slope.
 - $$\epsilon$$ is random error around the line.
+:::
 
 The sample least-squares line is
 
@@ -42,11 +44,13 @@ The parameter of interest in AP Statistics is usually $$\beta$$, the true slope 
 
 Use the acronym **LINER**:
 
+:::tip
 1. **Linear**: scatterplot and residual plot show an approximately linear relationship.
 2. **Independent**: observations are independent; if sampling without replacement, check the 10% Condition.
 3. **Normal**: residuals are approximately normally distributed for each value of $$x$$.
 4. **Equal variance**: vertical spread of residuals is roughly constant across $$x$$.
 5. **Random**: data come from a random sample or randomized experiment.
+:::
 
 :::figure{width=480}
 ![Regression residual plots placeholder](/assets/APs/AP%20Stats/quantslopes/regression-residuals.png)
@@ -60,22 +64,27 @@ The standard error of the slope is written $$SE_b$$. Technology usually reports 
 
 Conceptually, $$SE_b$$ measures how much the sample slope $$b$$ would vary from sample to sample. Smaller residual scatter and more spread in the explanatory variable make the slope estimate more precise.
 
+:::key{name="Residual standard deviation"}
 The residual standard deviation is often written $$s$$:
 
 $$
 s = \sqrt{\frac{\sum (y_i-\hat{y}_i)^2}{n-2}}.
 $$
+:::
 
+:::key{name="Degrees of freedom"}
 The degrees of freedom for regression inference are
 
 $$
 df = n-2.
 $$
+:::
 
 ---
 
 ## Confidence Interval For Slope
 
+:::theorem{name="Confidence interval for slope"}
 A confidence interval for the true slope $$\beta$$ is
 
 $$
@@ -87,15 +96,19 @@ Use
 $$
 df=n-2.
 $$
+:::
 
+:::note
 Interpretation: "We are ___% confident that the true slope of the population regression line relating [x-context] to [y-context] is between ___ and ___ [y-units per x-unit]."
 
 If the interval contains 0, then 0 is a plausible true slope at that confidence level. If it does not contain 0, there is evidence of a linear relationship.
+:::
 
 ---
 
 ## t-Test For Slope
 
+:::theorem{name="t-test for slope"}
 The usual hypotheses are
 
 $$
@@ -119,6 +132,7 @@ with
 $$
 df=n-2.
 $$
+:::
 
 A small p-value gives evidence that the true slope is not 0 in the direction of the alternative.
 
@@ -136,25 +150,32 @@ Technology output often includes:
 - $$s$$, the standard deviation of residuals.
 - $$R^2$$, the percent of variability in $$y$$ explained by the linear relationship with $$x$$.
 
+:::warning
 Remember: $$R^2$$ is descriptive, while the p-value for slope is inferential. A small p-value does not prove causation, especially with observational data.
+:::
 
 ---
 
 ## Residual Plots And Diagnostics
 
+:::tip
 Before inference, check:
 
 - Scatterplot of $$y$$ versus $$x$$ for form and outliers.
 - Residual plot for randomness around 0.
 - Residual plot for equal spread.
 - Normal probability plot or histogram of residuals for approximate normality.
+:::
 
+:::warning
 Curvature suggests the linear model is wrong. Fanning suggests unequal variance. Outliers or high-leverage points can strongly affect the slope and p-value.
+:::
 
 ---
 
 ## Calculator Notes
 
+:::tip
 Common calculator tool:
 
 - `LinRegTTest`: tests slope and gives regression output.
@@ -166,11 +187,13 @@ b \pm t^*SE_b
 $$
 
 from the regression output.
+:::
 
 ---
 
 ## Working Checklist
 
+:::summary{title="Working checklist"}
 1. Identify the explanatory variable $$x$$ and response variable $$y$$.
 2. State the parameter $$\beta$$ in context.
 3. Check LINER conditions using plots and study design.
@@ -178,6 +201,7 @@ from the regression output.
 5. Compute the confidence interval or t-test for slope.
 6. Interpret slope in units of $$y$$ per one unit of $$x$$.
 7. Avoid causal language unless the data come from a randomized experiment.
+:::
 
 ---
 

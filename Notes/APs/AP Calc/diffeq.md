@@ -16,6 +16,7 @@ Differential equations describe how a quantity changes rather than giving the qu
 
 A differential equation relates a function and its derivatives.
 
+:::example{title="dy/dx = 3x²"}
 Example:
 
 $$
@@ -29,6 +30,7 @@ y = x^3 + C.
 $$
 
 If an initial condition is given, such as $$y(1)=5$$, you solve for the constant to get the particular solution.
+:::
 
 ---
 
@@ -36,19 +38,24 @@ If an initial condition is given, such as $$y(1)=5$$, you solve for the constant
 
 A slope field shows small line segments representing $$dy/dx$$ at many points.
 
+:::tip
 To analyze a slope field:
 
 - look for where slopes are zero,
 - look for where slopes are positive/negative,
 - identify equilibrium solutions,
 - sketch a solution curve that follows the segment directions.
+:::
 
-> [Image Placeholder: slope field with equilibrium solution and sample integral curves]
+:::note
+[Image Placeholder: slope field with equilibrium solution and sample integral curves]
+:::
 
 ---
 
 ## Euler's method
 
+:::key{name="Euler's method"}
 Starting from $$(x_0,y_0)$$ with step size $$h$$:
 
 $$
@@ -60,11 +67,13 @@ where
 $$
 \frac{dy}{dx} = f(x,y).
 $$
+:::
 
 ---
 
 ## Separable differential equations
 
+:::theorem{name="Separable differential equations"}
 If
 
 $$
@@ -78,6 +87,7 @@ $$
 $$
 
 and integrate both sides.
+:::
 
 ---
 
@@ -85,6 +95,7 @@ and integrate both sides.
 
 If the rate of change is proportional to the amount present:
 
+:::key{name="Exponential growth and decay"}
 $$
 \frac{dy}{dt} = ky
 $$
@@ -94,6 +105,7 @@ then
 $$
 y = Ce^{kt}.
 $$
+:::
 
 ---
 
@@ -101,11 +113,13 @@ $$
 
 The logistic model is
 
+:::key{name="Logistic differential equation"}
 $$
 \frac{dy}{dt} = ky\left(1-\frac{y}{L}\right)
 $$
 
 where $$L$$ is the carrying capacity.
+:::
 
 Behavior:
 
@@ -117,19 +131,24 @@ Behavior:
 
 ## Equilibrium solutions and stability
 
+:::theorem{name="Equilibrium solutions and stability"}
 Equilibrium solutions are constant solutions where $$dy/dx = 0$$.
 
 Stability:
 
 - stable if nearby solutions move toward it,
 - unstable if nearby solutions move away.
+:::
 
+:::tip
 For autonomous equations $$dy/dx = f(y)$$, a sign chart on $$f(y)$$ is an efficient way to classify equilibria.
+:::
 
 ---
 
 ## Second derivative from a differential equation
 
+:::theorem{name="Second derivative from a differential equation"}
 If
 
 $$
@@ -149,6 +168,7 @@ $$
 =
 \frac{d}{dx}[f(x,y)].
 $$
+:::
 
 This helps determine concavity of solution curves.
 
@@ -156,7 +176,9 @@ This helps determine concavity of solution curves.
 
 ## Common mistakes
 
+:::warning
 - Separating variables incorrectly.
 - Forgetting the constant of integration.
 - Solving for the constant before using the initial condition carefully.
 - Sketching slope-field solutions that cross each other or violate the displayed slope directions.
+:::

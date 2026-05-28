@@ -21,7 +21,12 @@ permalink: /notes/physics/usapho/
 
 ## Practice Problems
 
+:::under-construction
+:::
+
 ---
 
 ## Resources
 
+:::under-construction
+:::

@@ -8,20 +8,28 @@ permalink: /notes/ap/stats/samplingdistr/
 
 # Unit 5: Sampling Distributions
 
+:::summary{title="Unit overview"}
 This unit explains why statistics from random samples vary and how that variation becomes predictable. A **sampling distribution** is the distribution of a statistic over many possible random samples of the same size from the same population. It is the bridge between descriptive statistics and inference.
+:::
 
 ---
 
 ## Parameters, Statistics, And Sampling Variability
 
+:::key{name="Parameter vs statistic"}
 A **parameter** is a number that describes a population, such as $$p$$, $$\mu$$, or $$\sigma$$. A **statistic** is a number computed from a sample, such as $$\hat{p}$$, $$\bar{x}$$, or $$s$$.
+:::
 
+:::key{name="Sampling variability"}
 Samples vary, so statistics vary. This is called **sampling variability**. A good statistic is usually:
 
 - **Unbiased**: its sampling distribution is centered at the true parameter.
 - **Low variability**: its values do not jump wildly from sample to sample.
+:::
 
+:::tip
 Larger random samples usually reduce variability, but they do not fix bias caused by bad sampling design.
+:::
 
 :::figure{width=480}
 ![Sampling distribution placeholder](/assets/APs/AP%20Stats/samplingdistr/sampling-distribution.png)
@@ -31,13 +39,17 @@ Larger random samples usually reduce variability, but they do not fix bias cause
 
 ## Shape, Center, And Spread
 
+:::key{name="Shape, center, and spread"}
 When describing a sampling distribution, use the same language as distributions in Unit 1:
 
 - **Shape**: normal, skewed, approximately symmetric, etc.
 - **Center**: mean of the statistic.
 - **Spread**: standard deviation of the statistic, often called the **standard error**.
+:::
 
+:::note
 For inference, normal or approximately normal sampling distributions are especially useful because they let us calculate probabilities, confidence intervals, and p-values.
+:::
 
 ---
 
@@ -45,12 +57,15 @@ For inference, normal or approximately normal sampling distributions are especia
 
 For a categorical variable with true population proportion $$p$$, the sample proportion is
 
+:::key{name="Sample proportion"}
 $$
 \hat{p} = \frac{x}{n},
 $$
+:::
 
 where $$x$$ is the number of successes in a sample of size $$n$$.
 
+:::theorem{name="Mean and SD of p-hat"}
 If observations are independent, then
 
 $$
@@ -62,7 +77,9 @@ and
 $$
 \sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}.
 $$
+:::
 
+:::warning
 The sampling distribution of $$\hat{p}$$ is approximately normal when the **Large Counts Condition** is met:
 
 $$
@@ -76,13 +93,17 @@ n \le 0.10N.
 $$
 
 This makes observations close enough to independent when sampling from a finite population.
+:::
 
 ---
 
 ## Sampling Distribution Of A Sample Mean
 
+:::key{name="Sample mean"}
 For a quantitative variable with population mean $$\mu$$ and standard deviation $$\sigma$$, the sample mean is $$\bar{x}$$.
+:::
 
+:::theorem{name="Mean and SD of x-bar"}
 If observations are independent, then
 
 $$
@@ -94,19 +115,25 @@ and
 $$
 \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}.
 $$
+:::
 
+:::note
 The quantity $$\sigma_{\bar{x}}$$ is the **standard deviation of the sample mean**. When $$\sigma$$ is unknown, later inference units estimate it with
 
 $$
 SE_{\bar{x}} = \frac{s}{\sqrt{n}}.
 $$
+:::
 
 ---
 
 ## Central Limit Theorem
 
+:::theorem{name="Central Limit Theorem"}
 The **Central Limit Theorem** says that when $$n$$ is large, the sampling distribution of $$\bar{x}$$ is approximately normal, even if the population distribution is not normal, as long as observations are independent and the population is not extremely pathological.
+:::
 
+:::tip
 Rule of thumb:
 
 $$
@@ -114,8 +141,11 @@ n \ge 30
 $$
 
 is often enough for mild or moderate skew. If the population is strongly skewed or has extreme outliers, a larger sample may be needed.
+:::
 
+:::note
 If the population itself is normal, then the sampling distribution of $$\bar{x}$$ is normal for any sample size $$n$$.
+:::
 
 :::figure{width=480}
 ![Central Limit Theorem placeholder](/assets/APs/AP%20Stats/samplingdistr/central-limit-theorem.png)
@@ -125,6 +155,7 @@ If the population itself is normal, then the sampling distribution of $$\bar{x}$
 
 ## Normal Distributions
 
+:::theorem{name="Normal model and z-scores"}
 A **normal distribution** is a symmetric, bell-shaped distribution described by its mean $$\mu$$ and standard deviation $$\sigma$$:
 
 $$
@@ -148,14 +179,17 @@ For sample proportions,
 $$
 z = \frac{\hat{p} - p}{\sqrt{p(1-p)/n}}.
 $$
+:::
 
 ### Empirical Rule
 
+:::key{name="Empirical Rule"}
 For a normal distribution:
 
 - About $$68\%$$ of observations are within $$1$$ standard deviation of the mean.
 - About $$95\%$$ are within $$2$$ standard deviations.
 - About $$99.7\%$$ are within $$3$$ standard deviations.
+:::
 
 :::figure{width=480}
 ![Normal curve placeholder](/assets/APs/AP%20Stats/samplingdistr/normal-curve.png)
@@ -165,6 +199,7 @@ For a normal distribution:
 
 ## Combining Independent Random Variables
 
+:::theorem{name="Combining independent random variables"}
 For independent random variables $$X$$ and $$Y$$:
 
 $$
@@ -184,9 +219,13 @@ $$
 $$
 \sigma^2_{X-Y} = \sigma_X^2 + \sigma_Y^2.
 $$
+:::
 
+:::warning
 Standard deviations do not add directly. Add variances first, then take the square root.
+:::
 
+:::theorem{name="Linear transformations"}
 For linear transformations,
 
 $$
@@ -198,15 +237,19 @@ and
 $$
 \sigma_{a+bX} = |b|\sigma_X.
 $$
+:::
 
 ---
 
 ## Binomial And Geometric Distributions
 
+:::note
 These probability models connect Unit 4 probability to sampling distributions and inference.
+:::
 
 ### Binomial Distribution
 
+:::theorem{name="Binomial distribution"}
 A **binomial distribution** counts successes in a fixed number of independent trials. Conditions:
 
 1. Binary outcomes: success or failure.
@@ -225,9 +268,11 @@ The mean and standard deviation are
 $$
 \mu_X = np, \qquad \sigma_X = \sqrt{np(1-p)}.
 $$
+:::
 
 ### Geometric Distribution
 
+:::theorem{name="Geometric distribution"}
 A **geometric distribution** counts the number of trials until the first success. Conditions are the same as binomial except there is no fixed number of trials.
 
 If $$X \sim \operatorname{Geometric}(p)$$, then
@@ -241,22 +286,26 @@ The mean is
 $$
 \mu_X = \frac{1}{p}.
 $$
+:::
 
 ---
 
 ## Working Checklist
 
+:::summary{title="Working checklist"}
 1. Identify the statistic: $$\hat{p}$$, $$\bar{x}$$, a difference, or another statistic.
 2. State the parameter the statistic estimates.
 3. Check randomness and independence.
 4. Check normality conditions if using a normal approximation.
 5. Use the correct mean and standard deviation/standard error.
 6. Standardize with a z-score when needed.
+:::
 
 ---
 
 ## Key Equations
 
+:::key{name="Key equations"}
 | Idea | Equation |
 | --- | --- |
 | Sample proportion | $$\hat{p} = x/n$$ |
@@ -267,3 +316,4 @@ $$
 | z-score | $$z = (x-\mu)/\sigma$$ |
 | Binomial probability | $$P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}$$ |
 | Geometric probability | $$P(X=k)=(1-p)^{k-1}p$$ |
+:::

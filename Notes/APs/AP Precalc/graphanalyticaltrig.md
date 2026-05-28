@@ -8,6 +8,10 @@ permalink: /notes/ap/precalc/graphanalyticaltrig/
 
 # Unit 8 & 9: Graphs and Analytics of Trig Functions
 
+:::summary{title="Unit overview"}
+This unit covers graphing sinusoids, solving trigonometric equations, and the angle-addition, double-angle, and sum-to-product identities.
+:::
+
 ---
 
 ## Graphs of sine and cosine
@@ -102,12 +106,14 @@ $$
 
 The constants control the shape of the graph:
 
+:::key{name="Sinusoid parameters"}
 - $$\lvert A \rvert$$ is the **amplitude**.
 - If $$A<0$$, the graph is reflected over the $$x$$-axis.
 - $$\frac{2\pi}{\lvert B \rvert}$$ is the **period**.
 - $$C$$ is the **phase shift**.
 - $$D$$ is the **vertical shift**, so the midline is $$y=D$$.
 - The range is $$[D-\lvert A \rvert,D+ \lvert A \rvert]$$.
+:::
 
 If the function is written as
 
@@ -160,7 +166,7 @@ $$
 =\frac{\pi}{6}.
 $$
 
-:::example
+:::example{title="Find the amplitude, period, phase shift, midline, range, and key-point increment for $$..."}
 Find the amplitude, period, phase shift, midline, range, and key-point increment for $$y=-2\cos\left(3\left(x-\frac{\pi}{4}\right)\right)+1.$$ Then graph the function.
 
 Here
@@ -209,6 +215,8 @@ A graph with many key points is shown below:
 ![parent functions](/assets/APs/AP%20Precalc/triggraph6.png)
 :::
 
+:::
+
 ---
 
 ## Solving with sine and cosine graphs
@@ -239,7 +247,7 @@ $$
 x=\text{solution}+2\pi k,\qquad k\in\mathbb Z.
 $$
 
-:::example
+:::example{title="Solve on $$[0,4\pi)$$: $$\sin x=\frac12.$$"}
 Solve on $$[0,4\pi)$$: $$\sin x=\frac12.$$
 
 The reference angle is
@@ -313,7 +321,7 @@ $$
 
 The distance from the center point to each neighboring vertical asymptote is one half of the period.
 
-:::example
+:::example{title="Graph $$y=3\tan\left(2\left(x+\frac{\pi}{8}\right)\right)-4,$$ and list all important f..."}
 Graph $$y=3\tan\left(2\left(x+\frac{\pi}{8}\right)\right)-4,$$ and list all important features.
 
 the period is
@@ -354,6 +362,8 @@ A graph with many key points is shown below:
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/triggraph7.png)
+:::
+
 :::
 
 ### Cotangent
@@ -472,7 +482,7 @@ $$
 
 The angle addition and subtraction formulas let us rewrite trig functions of sums and differences of angles.
 
-:::theorem
+:::theorem{name="Proof (Angle addition formulas)"}
 **Proof (Angle addition formulas).** Let two points on the unit circle be
 
 $$
@@ -544,7 +554,7 @@ $$
 \tan(A-B)=\frac{\tan A-\tan B}{1+\tan A\tan B}
 $$
 
-:::theorem
+:::theorem{name="Proof (Tangent addition formula)"}
 **Proof (Tangent addition formula).** Use the fact that tangent is sine divided by cosine: $$\tan(A+B)=\frac{\sin(A+B)}{\cos(A+B)}$$ to prove the tangent addition formula.
 
 Substitute the addition formulas:
@@ -574,7 +584,7 @@ The subtraction formula follows the same way using $$\sin(A-B)$$ and $$\cos(A-B)
 
 These formulas are especially useful for finding exact trig values for angles that can be written as sums or differences of special angles, such as $$75^\circ=45^\circ+30^\circ$$.
 
-:::example
+:::example{title="Find the exact value of $$\sin 75^\circ$$."}
 Find the exact value of $$\sin 75^\circ$$.
 
 Rewrite the angle as a sum of special angles:
@@ -607,7 +617,7 @@ $$
 
 Double-angle formulas are the addition formulas with the same angle used twice.
 
-:::theorem
+:::theorem{name="Proof"}
 **Proof.** Start with the angle addition formula for sine:
 
 $$
@@ -693,7 +703,7 @@ $$
 
 These are useful when rewriting expressions with powers of sine or cosine. Later we will learn De Moivre's Theorem to generalize power formulas.
 
-:::theorem
+:::theorem{name="Proof (Power reduction formulas)"}
 **Proof (Power reduction formulas).** Prove the two power reduction formulas.
 
 Use the cosine double-angle identities:
@@ -753,11 +763,11 @@ $$
 \tan\left(\frac{\theta}{2}\right)=\frac{1-\cos\theta}{\sin\theta}.
 $$
 
-:::theorem
+:::theorem{name="Extension"}
 **Extension.** Prove the tangent half angle identity. As a bonus, try to solve it geometrically!
 :::
 
-:::example
+:::example{title="Find the exact value of $$\sin 105^\circ$$."}
 Find the exact value of $$\sin 105^\circ$$.
 
 Since
@@ -837,7 +847,7 @@ $$
 
 These formulas are useful for simplifying expressions and for rewriting functions in a graphable form.
 
-:::theorem
+:::theorem{name="Proof (Sum-to-product/Product-to-sum formulas)"}
 **Proof (Sum-to-product/Product-to-sum formulas).** Prove the formulas above.
 
 Add the cosine addition and subtraction formulas:
@@ -879,7 +889,7 @@ $$
 The other product-to-sum formulas come from adding or subtracting the sine addition and subtraction formulas and is left as an exercise to the reader.
 :::
 
-:::example
+:::example{title="Rewrite"}
 Rewrite
 
 $$
@@ -927,7 +937,7 @@ A general strategy is:
 5. Check for extraneous solutions if the work involved squaring, dividing by a variable expression, or using reciprocal functions.
 
 
-:::example
+:::example{title="Solve exactly on $$[0,2\pi)$$:"}
 Solve exactly on $$[0,2\pi)$$:
 
 $$
@@ -1118,7 +1128,7 @@ $$
 
 draw a triangle or use an identity and always inverse trig functions represent angles. If $$\theta=\cos^{-1}x$$, then $$\cos\theta=x$$ and $$\theta$$ is in $$[0,\pi]$$. The sign of the final answer should match the quadrant allowed by the inverse trig function.
 
-:::example
+:::example{title="Evaluate exactly:"}
 Evaluate exactly:
 
 $$

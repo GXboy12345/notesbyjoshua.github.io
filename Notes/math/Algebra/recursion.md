@@ -46,12 +46,14 @@ $$
 a_n=9a_{n-2}.
 $$
 
+:::tip
 In contest math, we often do not need a closed form. Usually it is enough to:
 
 - define a sequence clearly,
 - find a recurrence,
 - compute initial values,
 - build a short table until we reach the term we want.
+:::
 
 ## Recursive Counting
 
@@ -59,6 +61,7 @@ Recursion becomes especially useful when direct counting is messy but a "last mo
 
 ### Staircase Problem
 
+:::example{title="Staircase problem"}
 **Example 2.1.** Fred wants to climb a $$10$$-step staircase. He can climb either $$1$$ or $$2$$ steps at a time. In how many ways can he climb the staircase?
 
 **Solution.** Instead of counting only the $$10$$-step case, define
@@ -97,9 +100,11 @@ a_{10}=89.
 $$
 
 This is the Fibonacci recurrence in disguise, which appears constantly in AMC and AIME counting problems.
+:::
 
 ### Spacy Subsets
 
+:::example{title="2007 AMC 12 — spacy subsets"}
 **Example 3.1 (2007 AMC 12).** Call a set of integers **spacy** if it contains no more than one out of any three consecutive integers. How many subsets of $$\{1,2,3,\dots,12\}$$, including the empty set, are spacy?
 
 **Solution.** Let
@@ -146,9 +151,11 @@ So the answer is
 $$
 129.
 $$
+:::
 
 ### Tower of Cubes
 
+:::example{title="AIME 2006 — tower of cubes"}
 **Example 3.2 (AIME 2006).** A collection of eight cubes consists of one cube with edge length $$k$$ for each integer $$k$$ from $$1$$ to $$8$$. A tower is built using all eight cubes, and the cube immediately on top of a cube with edge length $$k$$ must have edge length at most $$k+2$$. How many towers can be constructed?
 
 **Solution.** Define
@@ -182,13 +189,17 @@ Then
 $$
 a_8 = 3^6 \cdot a_2 = 3^6 \cdot 2 = 1458.
 $$
+:::
 
+:::tip
 This is a good reminder that some recurrences only become valid after the first few terms; here the relation is not meant to be applied at $$n=2$$ itself.
+:::
 
 ## Catalan Numbers
 
 Catalan numbers arise in many recursive counting problems where a structure splits naturally into a left part and a right part.
 
+:::example{title="Dyck paths"}
 **Example 4.1.** How many paths are there from $$(0,0)$$ to $$(n,n)$$ using only right and up steps, such that the path never goes above the line $$y=x$$?
 
 Let
@@ -212,8 +223,9 @@ C_n = C_0C_{n-1}+C_1C_{n-2}+\cdots+C_{n-1}C_0
 $$
 
 For example, when $$n=3$$, there are $$5$$ such paths.
+:::
 
-:::theorem
+:::theorem{name="Catalan Numbers"}
 **Theorem 4.2 (Catalan Numbers).** The $$n$$th Catalan number has explicit formula
 
 $$
@@ -225,6 +237,7 @@ We will not prove the closed form here, but it is one of the most important coun
 
 ### Balanced Brackets
 
+:::example{title="Balanced brackets"}
 **Example 4.3.** How many ways are there to arrange $$n$$ open brackets and $$n$$ closed brackets so that, reading from left to right, the number of closed brackets never exceeds the number of open brackets?
 
 **Solution.** This is a Catalan-number problem.
@@ -241,6 +254,7 @@ So the answer is simply
 $$
 C_n=\frac{1}{n+1}\binom{2n}{n}.
 $$
+:::
 
 ## Practice Problems
 
@@ -268,13 +282,16 @@ $$
 
 That lets us turn a whole sequence into one algebraic object. This is useful because:
 
+:::tip
 - $$A(x)$$ may have a nice closed form.
 - The coefficients of $$A(x)$$ encode the entire sequence.
 - Recurrence relations often turn into algebraic equations in $$A(x)$$.
 - Once you get a rational expression for $$A(x)$$, partial fractions can recover a closed form.
+:::
 
 ### Toy Applications
 
+:::example{title="Binomial sum equals 2^n"}
 **Example 5.1.** Show that
 
 $$
@@ -288,7 +305,9 @@ A(x)=\sum_{n \ge 0} a_nx^n=\sum_{n \ge 0}\binom{1000}{n}x^n=(1+x)^{1000}.
 $$
 
 Plugging in $$x=1$$ gives the identity immediately.
+:::
 
+:::example{title="Weighted binomial sum"}
 **Example 5.2.** Compute
 
 $$
@@ -306,12 +325,15 @@ Now set $$x=1$$:
 $$
 \sum_{n \ge 0} n\binom{1000}{n}=1000\cdot 2^{999}.
 $$
+:::
 
+:::note
 **Exercise 5.3.** Compute
 
 $$
 \sum_{n \ge 0} n^2\binom{1000}{n}.
 $$
+:::
 
 ### Linear Recurrences
 
@@ -327,7 +349,7 @@ $$
 2,1,3,4,7,11,18,29,\dots
 $$
 
-:::theorem
+:::theorem{name="Closed Form for Lucas Numbers"}
 **Theorem 5.4 (Closed Form for Lucas Numbers).** Let
 
 $$
@@ -343,6 +365,7 @@ L_n=\alpha^n+\beta^n.
 $$
 :::
 
+:::proof{of="Closed Form for Lucas Numbers"}
 **Proof.** Consider the generating function
 
 $$
@@ -401,7 +424,9 @@ Matching coefficients yields
 $$
 L_n=\alpha^n+\beta^n.
 $$
+:::
 
+:::note
 **Exercise 5.5.** Derive Binet's formula for Fibonacci numbers:
 
 $$
@@ -413,6 +438,7 @@ As an intermediate step, show that the Fibonacci generating function is
 $$
 \frac{x}{1-x-x^2}.
 $$
+:::
 
 ### Common Generating Functions
 
@@ -430,7 +456,7 @@ $$
 
 The next result gives many more useful expansions.
 
-:::theorem
+:::theorem{name="Generalized Binomial Theorem"}
 **Theorem 5.6 (Generalized Binomial Theorem).** For any real number $$r$$,
 
 $$
@@ -444,6 +470,7 @@ $$
 $$
 :::
 
+:::proof{of="Generalized Binomial Theorem"}
 **Proof sketch.** Write
 
 $$
@@ -455,6 +482,7 @@ and differentiate enough times to isolate the coefficient you want. For example,
 $$
 a_3=\frac{r(r-1)(r-2)}{3!}.
 $$
+:::
 
 Important consequences:
 
@@ -498,6 +526,7 @@ For quick reference:
 | $$ \dfrac{1-\sqrt{1-4x}}{2x} $$ | $$ \displaystyle \sum_{k \ge 0} C_kx^k $$ |
 | $$ e^x $$ | $$ \displaystyle \sum_{k \ge 0}\frac{x^k}{k!} $$ |
 
+:::example{title="HMMT 2007 Combinatorics #9"}
 **Example 5.8 (HMMT 2007 Combinatorics #9).** Let $$S$$ be the set of triples $$(i,j,k)$$ of positive integers satisfying $$i+j+k=17$$. Compute
 
 $$
@@ -527,9 +556,11 @@ So we need the coefficient of $$x^{14}$$ in $$\frac{1}{(1-x)^6}$$, which is
 $$
 \binom{19}{5}.
 $$
+:::
 
 ### Snake Oil Method
 
+:::tip
 The "Snake Oil" method is a systematic way to evaluate a sum depending on a free variable. Suppose
 
 $$
@@ -550,7 +581,9 @@ A(x)=\sum_k \sum_{n \ge 0} F(k,n)x^n.
 $$
 
 If the inner sums become recognizable generating functions, the problem becomes much easier.
+:::
 
+:::example{title="Snake Oil — binomial sum"}
 **Example 5.9.** For $$n \ge 0$$, compute
 
 $$
@@ -606,7 +639,9 @@ so
 $$
 \sum_{k \ge 0}\binom{n+k}{2k}2^{n-k}=\frac13+\frac23\cdot 4^n.
 $$
+:::
 
+:::example{title="Snake Oil — Fibonacci identity"}
 **Example 5.10.** For $$n \ge 0$$, compute
 
 $$
@@ -635,8 +670,11 @@ $$
 $$
 
 This is the Fibonacci generating function, so the sum equals $$F_{n+1}$$.
+:::
 
+:::tip
 If the free variable appears in many places at once, Snake Oil often works better after you first generalize the identity.
+:::
 
 ### Problems
 

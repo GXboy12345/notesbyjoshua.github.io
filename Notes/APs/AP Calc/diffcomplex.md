@@ -14,12 +14,15 @@ This unit is where derivatives become flexible. Instead of only differentiating 
 
 ## Chain rule
 
+:::theorem
 If $$y = f(g(x))$$, then
 
 $$
 \frac{dy}{dx} = f'(g(x))g'(x).
 $$
+:::
 
+:::example
 Examples:
 
 $$
@@ -29,6 +32,7 @@ $$
 $$
 \frac{d}{dx} \sin(x^2) = \cos(x^2)(2x)
 $$
+:::
 
 ---
 
@@ -36,6 +40,7 @@ $$
 
 When a curve is defined by an equation relating $$x$$ and $$y$$, differentiate both sides with respect to $$x$$ and remember that $$y$$ depends on $$x$$.
 
+:::example
 Example:
 
 $$
@@ -53,6 +58,7 @@ so
 $$
 \frac{dy}{dx} = -\frac{x}{y}.
 $$
+:::
 
 > [Image Placeholder: circle with tangent line showing slope found implicitly]
 
@@ -60,6 +66,7 @@ $$
 
 ## Derivatives of inverse functions
 
+:::theorem
 If $$f$$ is differentiable and invertible with $$f'(a) \ne 0$$, then
 
 $$
@@ -73,11 +80,13 @@ Equivalent formula:
 $$
 (f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}.
 $$
+:::
 
 ---
 
 ## Derivatives of inverse trig functions
 
+:::theorem
 $$
 \frac{d}{dx}(\arcsin x) = \frac{1}{\sqrt{1-x^2}}
 $$
@@ -96,6 +105,7 @@ $$
 \frac{d}{dx}\arcsin(u) = \frac{u'}{\sqrt{1-u^2}}, \qquad
 \frac{d}{dx}\arctan(u) = \frac{u'}{1+u^2}.
 $$
+:::
 
 ---
 
@@ -103,6 +113,7 @@ $$
 
 Useful rules:
 
+:::theorem
 $$
 \frac{d}{dx} e^{u(x)} = e^{u(x)}u'(x)
 $$
@@ -110,9 +121,11 @@ $$
 $$
 \frac{d}{dx} \ln(\lvert u(x) \rvert) = \frac{u'(x)}{u(x)}
 $$
+:::
 
 Logarithmic differentiation is especially helpful when powers and products are mixed or when both base and exponent contain variables.
 
+:::example
 Example:
 
 If
@@ -132,11 +145,13 @@ and differentiating gives
 $$
 y' = x^x(\ln x + 1).
 $$
+:::
 
 ---
 
 ## Related rates
 
+:::tip
 Strategy:
 
 1. Draw and label a diagram.
@@ -144,6 +159,7 @@ Strategy:
 3. Differentiate implicitly with respect to time.
 4. Substitute the requested instant.
 5. Keep units consistent.
+:::
 
 > [Image Placeholder: ladder against wall with changing x and y distances]
 
@@ -151,6 +167,7 @@ Strategy:
 
 ## Advanced chain-rule patterns
 
+:::note
 You should be comfortable stacking rules:
 
 - product + chain,
@@ -158,11 +175,13 @@ You should be comfortable stacking rules:
 - trig + chain,
 - inverse trig + chain,
 - exponential/log + chain.
+:::
 
 ---
 
 ## Parametric preview
 
+:::note
 Later, if
 
 $$
@@ -176,12 +195,15 @@ $$
 $$
 
 when $$dx/dt \ne 0$$. This is the parametric analogue of the chain rule.
+:::
 
 ---
 
 ## Common mistakes
 
+:::warning
 - Forgetting to multiply by the derivative of the inside.
 - Treating $$y$$ as a constant during implicit differentiation.
 - Dropping the factor $$dy/dx$$.
 - Using inverse notation incorrectly: $$\sin^{-1}x$$ means $$\arcsin x$$, not $$1/\sin x$$.
+:::

@@ -8,3 +8,6 @@ permalink: /notes/physics/eminduction/
 ---
 
 # Electromagnetic Induction
+
+:::under-construction
+:::

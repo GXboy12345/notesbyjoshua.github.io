@@ -14,11 +14,13 @@ Integration reverses differentiation and measures accumulation. It ties together
 
 ## Antiderivatives
 
+:::theorem
 An antiderivative of $$f$$ is any function $$F$$ such that
 
 $$
 F'(x) = f(x).
 $$
+:::
 
 Examples:
 
@@ -61,12 +63,15 @@ Important choices:
 - midpoint sum,
 - trapezoidal approximation.
 
-> [Image Placeholder: left, right, midpoint, and trapezoidal approximations on one graph]
+<!-- :::figure{width=480}
+![Left, right, midpoint, and trapezoidal approximations on one graph]()
+::: -->
 
 ---
 
 ## Definite integral
 
+:::theorem
 The definite integral is the limit of Riemann sums:
 
 $$
@@ -74,6 +79,7 @@ $$
 =
 \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*)\Delta x.
 $$
+:::
 
 Interpretations:
 
@@ -85,6 +91,7 @@ Interpretations:
 
 ## Fundamental Theorem of Calculus
 
+:::theorem{name="Fundamental Theorem of Calculus"}
 If $$F'(x)=f(x)$$, then
 
 $$
@@ -104,11 +111,13 @@ g'(x) = f(x)
 $$
 
 when $$f$$ is continuous.
+:::
 
 ---
 
 ## Integrals with variable limits
 
+:::theorem
 If
 
 $$
@@ -120,11 +129,13 @@ then
 $$
 G'(x) = f(v(x))v'(x) - f(u(x))u'(x).
 $$
+:::
 
 ---
 
 ## u-substitution
 
+:::theorem
 If part of the integrand is the derivative of another part, let
 
 $$
@@ -136,6 +147,7 @@ Then
 $$
 \int f(g(x))g'(x)\,dx = \int f(u)\,du.
 $$
+:::
 
 ---
 
@@ -143,9 +155,11 @@ $$
 
 On $$[a,b]$$:
 
+:::key{name="Average value of a function"}
 $$
 f_{\text{avg}} = \frac{1}{b-a}\int_a^b f(x)\,dx.
 $$
+:::
 
 ---
 
@@ -176,16 +190,20 @@ If exact antiderivatives are unavailable, use:
 
 Trapezoidal rule with equal spacing $$\Delta x$$:
 
+:::key{name="Trapezoidal rule"}
 $$
 \int_a^b f(x)\,dx \approx \frac{\Delta x}{2}
 \left[y_0 + 2y_1 + 2y_2 + \cdots + 2y_{n-1} + y_n\right].
 $$
+:::
 
 ---
 
 ## Common mistakes
 
+:::warning
 - Forgetting $$+C$$ on indefinite integrals.
 - Using area language when the integral is negative and really means net signed accumulation.
 - Dropping the chain-rule factor in reverse when using substitution.
 - Confusing $$\int_a^b f(x)\,dx$$ with ordinary multiplication.
+:::

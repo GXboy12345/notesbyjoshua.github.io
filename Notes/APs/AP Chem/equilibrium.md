@@ -33,11 +33,15 @@ $$
 
 the **equilibrium constant** in terms of concentration is
 
+:::key{name="Equilibrium constant"}
 $$
 K_c = \frac{[\text{C}]^l [\text{D}]^m}{[\text{A}]^j [\text{B}]^k},
 $$
 
-where each $$[]$$ is the equilibrium molarity raised to the power of the **stoichiometric coefficient**. Only **aqueous** solutes or gases appear in $$K_c$$, since the concentrations of pure solids/liquids do not change, and therefore are always assumed to be 1. In addition, $$K_c$$ will not change unless temperature changes, so $$K_c$$ is only **temperature-dependent**.
+where each $$[]$$ is the equilibrium molarity raised to the power of the **stoichiometric coefficient**.
+:::
+
+Only **aqueous** solutes or gases appear in $$K_c$$, since the concentrations of pure solids/liquids do not change, and therefore are always assumed to be 1. In addition, $$K_c$$ will not change unless temperature changes, so $$K_c$$ is only **temperature-dependent**.
 
 On the AP exam, $$K$$ is treated as a dimensionless ratio by implicitly comparing each concentration to a **standard reference** (standard state). Regardless, you should still use the same algebraic form when you set up problems.
 
@@ -45,10 +49,12 @@ On the AP exam, $$K$$ is treated as a dimensionless ratio by implicitly comparin
 
 **Orders of magnitude** help you judge extent (at a given temperature):
 
+:::tip
 - If $$K_c$$ is very large (e.g. $$K_c \gg 1$$, sometimes textbook thresholds like $$K_c > 10^{10}$$), the **forward** reaction is **product-favored** at equilibrium—substantial conversion to products. This usually means that the forward reaction is approximately an **irreversible** reaction
 - If $$K_c$$ is very small (e.g. $$K_c \ll 1$$, sometimes $$K_c < 10^{-10}$$), the mixture stays **reactant-heavy**, meaning that the reaction basically did not start at all.
 
 These cutoffs are rules of thumb; what matters is comparing $$Q$$ to $$K$$ and interpreting $$K$$ relative to $$1$$.
+:::
 
 ### Manipulating $$K$$ for related equations
 
@@ -83,11 +89,13 @@ $$
 
 Only gaseous species appear (since aqueous solutions and pure solids/liquids do not have partial pressures). From the ideal gas law, $$P = (\text{n/V})RT = MRT$$ for a gas (M = molarity). The standard relationship is
 
+:::key{name="K_p and K_c"}
 $$
 K_p = K_c (RT)^{\Delta n_{\text{gas}}},
 $$
 
 where $$\Delta n_{\text{gas}}$$ is difference between the amount of moles of products and reactants (from the balanced equation), and $$R$$ must be **consistent** with the pressure units used (e.g. $$R = 0.0821\ \text{L·atm/(mol·K)}$$ when $$P$$ is in atm).
+:::
 
 ---
 
@@ -107,11 +115,15 @@ $$
 - If $$Q > K$$, the ratio is **too large**; the system shifts **left** (toward reactants).
 - If $$Q = K$$, the system is **at equilibrium**.
 
+:::tip
 A useful trick is to line up $$K$$ and $$Q$$ alphabetically (so $$K$$ on the left and $$Q$$ on the right), and whatever direction the sign goes (e.g. < (less than) goes left) is the direction the reaction goes.
+:::
 
 The same logic applies to $$Q_p$$ and $$K_p$$ for gases.
 
+:::note
 A **catalyst** speeds both forward and reverse rates equally, so it **does not change** $$K$$ or the equilibrium position - it only shortens the time needed to reach equilibrium.
+:::
 
 ---
 
@@ -119,6 +131,7 @@ A **catalyst** speeds both forward and reverse rates equally, so it **does not c
 
 The link between standard Gibbs free energy change and the equilibrium constant (same temperature) is
 
+:::key{name="Gibbs free energy and K"}
 $$
 \Delta G^\circ = -RT \ln K,
 $$
@@ -138,6 +151,7 @@ $$
 $$
 
 At equilibrium, $$Q = K$$ and $$\Delta G = 0$$, which recovers $$\Delta G^\circ = -RT \ln K$$. Here $$R$$ is the gas constant ($$8.314\ \text{J/(mol·K)}$$ when using joules), and $$T$$ is kelvin.
+:::
 
 ### The van’t Hoff equation
 
@@ -145,9 +159,11 @@ Le Châtelier’s principle says that $$K$$ changes with *temperature* only, and
 
 If $$K_1$$ and $$K_2$$ are equilibrium constants (*same* kind: both $$K_c$$ or both $$K_p$$, matching how the reaction is written) at absolute temperatures $$T_1$$ and $$T_2$$, then
 
+:::theorem{name="van't Hoff equation"}
 $$
 \ln\frac{K_2}{K_1} = -\frac{\Delta H^\circ}{R}\left(\frac{1}{T_2}-\frac{1}{T_1}\right) = \frac{\Delta H^\circ}{R}\left(\frac{1}{T_1}-\frac{1}{T_2}\right).
 $$
+:::
 
 Here $$\Delta H^\circ$$ is the *standard enthalpy change* for the reaction as written (see [Unit 6: Thermochemistry]({{ '/notes/ap/chem/thermochemistry/' | relative_url }})). Use $$R = 8.314\ \text{J/(mol·K)}$$ when $$\Delta H^\circ$$ is in **joules per mole** of reaction as written.
 
@@ -165,7 +181,9 @@ which shows that sensitivity of $$\ln K$$ to temperature is *larger* when $$\Del
 
 ## Le Châtelier’s principle
 
+:::theorem{name="Le Châtelier's principle"}
 **Le Châtelier’s principle** is a qualitative rule: if a **stress** disturbs an equilibrium, the system shifts in the direction that **partially counteracts** the stress (new equilibrium is established; $$K$$ is unchanged unless **temperature** changes).
+:::
 
 Typical stresses:
 
@@ -194,10 +212,12 @@ Since $$K$$ depends on $$T$$, **do not** treat temperature like a simple concent
 
 **Rules and tips:**
 
+:::tip
 - Omit **pure solids** and **pure liquids** from the table if they do not define the solution volume.
 - If a reactant is **limiting**, one species may be **consumed completely** before equilibrium in a sequential sense; still check whether the reaction can **proceed in reverse** from that state (ICE applies to the equilibrium stage you model).
 - **Small $$K$$** (product-poor): equilibrium lies left; $$x$$ may be negligible compared to initial concentrations—**verify** with the **5% rule** (or exact quadratic) when your course allows.
 - **Large $$K$$:** equilibrium lies right; sometimes you assume **complete** reaction first, then **back-react** a small amount.
+:::
 
 :::figure{width=480}
 ![ICE Table](/assets/APs/AP%20Chem/equilibrium/icetable.png)
@@ -215,11 +235,15 @@ $$
 
 The **solubility product** is
 
+:::key{name="K_sp"}
 $$
 K_{sp} = [\text{A}^{a+}]^m [\text{B}^{b-}]^l.
 $$
 
-The solid (precipitate) does **not** appear in $$K_{sp}$$. This is equivalent to $$K_c$$ but for a dissolution.
+The solid (precipitate) does **not** appear in $$K_{sp}$$.
+:::
+
+This is equivalent to $$K_c$$ but for a dissolution.
 
 ### Setting up ICE tables for $$K_{sp}$$
 
@@ -276,11 +300,13 @@ $$
 
 with
 
+:::key{name="Formation constant"}
 $$
 K_f = \frac{[\text{ML}_x^{n+}]}{[\text{M}^{n+}][\text{L}]^x},
 $$
 
 matching the form of $$K_c$$ for that net reaction (charges and stoichiometry depend on the specific complex). A **larger** $$K_f$$ means the complex is **more stable** (more product-favored at equilibrium). If ligand is in large excess and $$K_f$$ is large, it is often reasonable to assume **complete** formation for stoichiometry purposes—check problem assumptions.
+:::
 
 The **dissociation** constant $$K_d$$ for breaking the complex apart is the **reciprocal** of $$K_f$$ for the same net forward/back pairing:
 
@@ -417,6 +443,9 @@ For an exothermic reaction, heat behaves like a product. Adding heat shifts the 
 $$
 \boxed{\text{B}}
 $$
+:::
+:::
+
 ### FRQ
 
 :::frq{id=chem-equilibrium-frq-7}
@@ -522,5 +551,6 @@ $$(C)$$ Since $$Q<K$$, the system has too little product relative to equilibrium
 <div class="placeholder-box" markdown="1">
 
 **Image placeholder:** Particle diagram for $$\text{H}_2+\text{I}_2\rightleftharpoons2\text{HI}$$ showing the mixture shifting toward more $$\text{HI}$$.
+:::
 :::
 :::

@@ -14,13 +14,19 @@ Unit 1 establishes the vocabulary and models used everywhere else in chemistry: 
 
 ## Significant figures
 
-**Significant figures** are the digits in a measurement that carry meaning—every digit we are entitled to report given how well we know the quantity. They matter whenever you round a calculated result so it does not pretend to be more precise than the data that produced it. On the AP exam they appear mainly in lab-style questions; in research they are non-negotiable.
+**Significant figures** are the digits in a measurement that carry meaning—every digit we are entitled to report given how well we know the quantity. They matter whenever you round a calculated result so it does not pretend to be more precise than the data that produced it.
+
+:::exam
+On the AP exam they appear mainly in lab-style questions; in research they are non-negotiable.
+:::
 
 - Nonzero digits are always significant.
 - **Leading zeros** (as in $$0.0045$$) are not significant; they only locate the decimal point. **Captive zeros** between nonzero digits are significant (e.g. $$1.05$$ has three significant figures).
 - **Trailing zeros** require care: if a decimal point is shown, trailing zeros are significant ($$12.0$$ has three); if there is no decimal, trailing zeros do not ocunt towards significant figures.
 - **Exact numbers** (such as a counted dozen eggs or a defined conversion within a system) have effectively unlimited significant figures and do not limit your result.
-- For addition and subtraction, round the result to the same number of *decimal places* as the term with the fewest. For multiplication and division, round to the same number of *significant figures* as the factor with the fewest.
+:::warning
+For **addition and subtraction**, round the result to the same number of *decimal places* as the term with the fewest. For **multiplication and division**, round to the same number of *significant figures* as the factor with the fewest. **Trailing zeros** without a decimal point are not significant; with a decimal point, they are.
+:::
 
 ---
 
@@ -65,7 +71,13 @@ where $$N$$ is the neutron count. Isotopes of the same element share $$Z$$ but d
 
 ## Ions
 
-An **ion** is an atom or group of atoms with a net electric charge from gain or loss of electrons. A **cation** is positive (fewer electrons than protons); an **anion** is negative (more electrons than protons). A good way to remember this is that cats are always positive so CATions are positively charged! **Metals** tend to form cations and **nonmetals** tend to form anions. In addition, many **transition metals** exhibit variable charge in compounds because several oxidation states are comparably stable (mentioned later in more detail) due to the availability of their $$d$$ orbital (mentioned later as well).
+An **ion** is an atom or group of atoms with a net electric charge from gain or loss of electrons. A **cation** is positive (fewer electrons than protons); an **anion** is negative (more electrons than protons).
+
+:::tip
+Cats are always positive—**CAT**ions are positively charged.
+:::
+
+**Metals** tend to form cations and **nonmetals** tend to form anions. In addition, many **transition metals** exhibit variable charge in compounds because several oxidation states are comparably stable (mentioned later in more detail) due to the availability of their $$d$$ orbital (mentioned later as well).
 
 ### Polyatomic ions
 
@@ -81,11 +93,15 @@ An **ion** is an atom or group of atoms with a net electric charge from gain or 
 
 - The **mole** is the chemist’s unit of counting: one mole contains **Avogadro’s number** (sometimes denoted as $$N_A$$) of specified entities (atoms, molecules, ions, formula units, etc.):
 
+:::key{name="Avogadro's number"}
 $$
 1 \text{ mol} = 6.022 \times 10^{23} \text{ entities}
 $$
+:::
 
+:::tip
 If you are ever confused by moles and molar conversions, just replace "moles" with "dozens" and think about it that way.
+:::
 
 The **molar mass** of an element is the mass of one mole of its atoms, numerically equal (in $$\text{g/mol}$$) to the **average atomic mass** listed on the periodic table. For a **compound**, add the molar masses of all atoms in the formula to obtain the compound’s molar mass.
 
@@ -109,9 +125,11 @@ $$
 
 The **empirical formula mass** is the molar mass of the empirical formula as written. If you know the molar mass of the compound (from experiment, such as mass spectrometry, or from the problem), then
 
+:::key{name="Empirical to molecular formula"}
 $$
 n = \frac{M_{\text{compound}}}{M_{\text{empirical}}},
 $$
+:::
 
 and you round $$n$$ to the nearest integer when the data allows it (subject to measurement uncertainty).
 
@@ -119,13 +137,17 @@ and you round $$n$$ to the nearest integer when the data allows it (subject to m
 
 When a problem gives **mass percentages** (or masses of elements in a sample), treat the sample as a sample of *$$100\ \text{g}$$* so each element’s mass in grams equals its *percent* numerically.
 
+:::tip
 1. Convert each element’s mass to moles using its molar mass.
 
 2. Divide *every* mole amount by the *smallest* mole amount among the elements.
 
 3. If ratios are not whole numbers within reasonable rounding, multiply all subscripts by a small integer ($$2$$, $$3$$, $$\ldots$$) to clear fractions (e.g. $$1 : 1 : 1.33$$ $$\rightarrow$$ multiply by $$3$$). If you see a ratio that is very hard to convert to integers, you likely did something wrong.
 
-That yields the empirical formula. **Combustion analysis** problems follow the same logic: measured masses of $$\text{CO}_2$$ and $$\text{H}_2\text{O}$$ produced fix the carbon and hydrogen in the original sample; any oxygen is often obtained by difference from the original sample mass if the compound contains only C, H, and O.
+That yields the empirical formula.
+:::
+
+**Combustion analysis** problems follow the same logic: measured masses of $$\text{CO}_2$$ and $$\text{H}_2\text{O}$$ produced fix the carbon and hydrogen in the original sample; any oxygen is often obtained by difference from the original sample mass if the compound contains only C, H, and O.
 
 ---
 
@@ -143,6 +165,7 @@ That yields the empirical formula. **Combustion analysis** problems follow the s
 
 In laboratory work, **theoretical yield** is the amount of product predicted from stoichiometry assuming complete conversion. **Actual yield** is what you isolate. **Percent yield** measures how much of the theoretical amount you obtained:
 
+:::key{name="Percent yield and error"}
 $$
 \% \text{ yield} = \frac{\text{actual yield}}{\text{theoretical yield}} \times 100\%
 $$
@@ -158,8 +181,11 @@ $$
 $$
 \text{efficiency} = \frac{\text{useful energy output}}{\text{energy input}} \times 100\%
 $$
+:::
 
-Do not confuse percent yield (a mass or mole recovery for a reaction) with thermodynamic efficiency (an energy ratio). Use percent error when judging how far a measurement sits from a reference value.
+:::warning
+Do not confuse **percent yield** (a mass or mole recovery for a reaction) with **thermodynamic efficiency** (an energy ratio). Use percent error when judging how far a measurement sits from a reference value.
+:::
 
 ---
 
@@ -167,9 +193,11 @@ Do not confuse percent yield (a mass or mole recovery for a reaction) with therm
 
 **Molarity** ($$M$$) expresses concentration as moles of solute per liter of solution:
 
+:::key{name="Molarity"}
 $$
 M = \frac{\text{moles of solute}}{\text{liters of solution}} = \frac{\text{mol}}{L}
 $$
+:::
 
 Because volume changes with temperature, molarity is *temperature-dependent*. It depends on the amount of solute per volume of solution, not on the total mass of the solution by itself.
 
@@ -208,17 +236,21 @@ The **magnetic quantum number** $$m_l$$ takes integer values from $$-l$$ to $$+l
 
 The **spin quantum number** $$m_s$$ is $$+\frac{1}{2}$$ or $$-\frac{1}{2}$$ for the two **spin** states of a single electron.
 
+:::theorem{name="Electron configuration rules"}
 The **Pauli exclusion principle** states that no two electrons in the same atom may share the same set of four quantum numbers, so at most two electrons occupy any one atomic orbital, and they must have *opposite spin*.
 
 The **Aufbau principle** directs you to fill orbitals in order of increasing energy. The familiar $$n s$$, $$(n-1) d$$, $$(n-2) f$$ crossing is why the periodic table has its shape. Exceptions (e.g. chromium $$\text{Cr}$$, copper $$\text{Cu}$$, and several heavier transition metals) reflect especially stable $$d^5$$ or $$d^{10}$$ arrangements; those same stability patterns contribute to variable metal oxidation states in compounds.
 
 **Hund’s rule** favors placing electrons singly in degenerate orbitals of a subshell before pairing, with *parallel spins* where possible, to reduce *electron–electron repulsion*.
+:::
 
 **Heisenberg’s uncertainty principle** limits how sharply *position* and *momentum* can be known simultaneously for a quantum particle: a conceptual foundation for why we speak in terms of orbitals (probability distributions) rather than classical orbits. It states that:
 
+:::theorem{name="Heisenberg uncertainty principle"}
 $$
 \Delta x \Delta p \ge \frac{h}{4\pi}
 $$,
+:::
 
 meaning that the uncertainty in position and momentum are always above some constant, implying that both cannot be known at a time. This is why we have electron clouds instead of set orbits.
 
@@ -244,11 +276,15 @@ where $$c \approx 3.00 \times 10^8 \text{ m/s}$$ is the *speed of light* in vacu
 
 Physicist Max Planck related photon energy to frequency through **Planck's constant**:
 
+:::key{name="Photon energy"}
 $$
 E = h\nu = \frac{hc}{\lambda},
 $$
 
-with Planck’s constant $$h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s}$$. Essentially, Max Planck discovered that energy came in packets called **quanta**. which explains **atomic spectra** and **line colors** in **flame tests** and discharge tubes: each transition corresponds to a specific $$\Delta E$$ and therefore a characteristic photon energy. The release of light is caused by an electron moving to a lower energy state, which the absorbance of light is  caused by an electron moving to a higher energy state.
+with Planck’s constant $$h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s}$$.
+:::
+
+Essentially, Max Planck discovered that energy came in packets called **quanta**. which explains **atomic spectra** and **line colors** in **flame tests** and discharge tubes: each transition corresponds to a specific $$\Delta E$$ and therefore a characteristic photon energy. The release of light is caused by an electron moving to a lower energy state, which the absorbance of light is  caused by an electron moving to a higher energy state.
 
 Physicist Louis de Broglie associated a wavelength with any particle of momentum $$p$$:
 
@@ -268,7 +304,9 @@ $$
 K_{\max} = h\nu - \Phi,
 $$
 
-but for all purposes, memorizing this equation is not necessary for the AP Chemistry exam. It's just important to know that increasing *intensity* at fixed frequency increases the number of ejected electrons, not their maximum *kinetic energy*.
+:::exam
+Memorizing $$K_{\max} = h\nu - \Phi$$ is not required on the AP exam. Know that increasing *intensity* at fixed frequency increases the number of ejected electrons, not their maximum *kinetic energy*.
+:::
 
 **Photoelectron spectroscopy** (**PES**) measures how much energy must be supplied to remove electrons from subshells in atoms or molecules. Peaks appear at **binding energies** characteristic of each orbital type; relative peak areas (after accounting for ionization cross sections) reflect electron counts in those subshells. An example problem is shown below, feel free to try it out!
 
@@ -276,7 +314,9 @@ but for all purposes, memorizing this equation is not necessary for the AP Chemi
 ![PES chart](/assets/APs/AP%20Chem/atomicstrucprop/PES.png)
 :::
 
+:::note
 An important thing to note is that a PES graph shifted to the right indicates less nuclear charge, since it takes less energy to take away those electrons.
+:::
 
 ---
 
@@ -316,9 +356,11 @@ because s orbitals *penetrate* closer to the nucleus and experience less **shiel
 
 **Effective nuclear charge** $$Z_{\text{eff}}$$ is the net positive charge experienced by an electron in a many-electron atom after shielding. A simple textbook form is
 
+:::key{name="Effective nuclear charge"}
 $$
 Z_{\text{eff}} = Z - S,
 $$
+:::
 
 where $$S$$ is a **shielding constant** summarizing electron–electron repulsion. **Slater’s rules** and more advanced models give numerical estimates; qualitatively, $$S$$ grows as you add *inner shells*, so going *down a group* increases shielding even though $$Z$$ increases. On the AP exam, this equation will not be tested in full but it is good to know that shielding decreases effective nuclear charge.
 
@@ -338,7 +380,9 @@ meaning s electrons “see” more of the nucleus and are stabilized relative to
 
 **Atomic radius** gauges the size of the **electron cloud** (often defined by metallic or covalent radii in different contexts). **Metallic character** is the tendency to lose electrons and behave as a metal (cations); **nonmetallic character** is the tendency to gain or share electrons with nonmetals (anions).
 
+:::tip
 Broad patterns: **atomic radius** increases *down a group* (new shells, more shielding) and decreases *across a period* (rising $$Z_{\text{eff}}$$). **Ionization energy** and **electron affinity** (for representative elements) generally show opposite *horizontal* trends to radius. **Metallic character** decreases across a period and increases down a group. Exceptions, such as the **ionization energy** dip at boron or the **electron affinity** anomaly for nitrogen, appear when subshell structure or pairing changes the cost of removing or adding an electron.
+:::
 
 :::figure{width=480}
 ![Periodic Trends](/assets/APs/AP%20Chem/atomicstrucprop/periodictrends.png)
@@ -350,6 +394,7 @@ Broad patterns: **atomic radius** increases *down a group* (new shells, more shi
 
 **Electrostatics** describes forces and *potential energies* between charges at rest. The **Coulomb force** between two point charges is
 
+:::key{name="Coulomb's law"}
 $$
 F = k \frac{Q_1 Q_2}{r^2},
 $$
@@ -361,6 +406,7 @@ The **electric potential energy** of the pair is
 $$
 U = k \frac{Q_1 Q_2}{r}.
 $$
+:::
 
 These expressions reappear when you interpret **lattice energy**, **bond** formation, and **ionic** attraction in [Unit 2]({{ '/notes/ap/chem/compounds/' | relative_url }}).
 
@@ -488,6 +534,9 @@ For a given $$n$$, the value of $$l$$ must be an integer from $$0$$ to $$n-1$$. 
 $$
 \boxed{\text{C}}
 $$
+:::
+:::
+
 ### FRQ
 
 :::frq{id=chem-atomicstrucprop-frq-7}
@@ -542,4 +591,6 @@ Silver also has more inner electrons, which increases shielding. The greater dis
 
 $$(C)$$ Silver has more protons than copper, which by itself would increase attraction. But the valence electrons in silver are also farther from the nucleus and more shielded. Radius depends on the balance of nuclear charge, shielding, and distance, not nuclear charge alone. On the AP exam, a complete explanation should explicitly compare both the attractive force from the nucleus and the distance/shielding effect.
 :::
+:::
+
 :::

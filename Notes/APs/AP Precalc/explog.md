@@ -8,6 +8,10 @@ permalink: /notes/ap/precalc/explog/
 
 # Unit 5: Exponential & Logarithmic Functions
 
+:::summary{title="Unit overview"}
+This unit covers exponential growth and decay, the number $$e$$, logarithms as inverses of exponentials, and solving exponential and logarithmic equations.
+:::
+
 ---
 
 ## Exponential functions
@@ -110,7 +114,7 @@ $$
 
 A good idea is to always plot a couple of integer points to start with.
 
-:::example
+:::example{title="Graph the function and give the domain and range of"}
 Graph the function and give the domain and range of
 
 $$
@@ -143,6 +147,8 @@ The graph is shown below (Note that the scale is a bit off, the dashed line is t
 ![parent functions](/assets/APs/AP%20Precalc/expgraph1.png)
 :::
 
+:::
+
 ---
 
 ## The natural exponential function
@@ -161,7 +167,7 @@ $$
 
 Numerically, as $$x$$ gets very large, the expression gets closer and closer to $$e$$. After plugging in larger and larger values of $$x$$, you find that $$e\approx 2.71828$$. In addition, the instantaneous rate of change of $$y=e^x$$ is equal to itself! We will demonstrate this below:
 
-:::example
+:::example{title="Approximate the rate of change of $$e^x$$ for smaller and smaller intervals."}
 Approximate the rate of change of $$e^x$$ for smaller and smaller intervals.
 
 Rhe average rate of change on $$[1,1.1]$$ is
@@ -205,7 +211,7 @@ $$
 
 These are pronounced "cinch" and "cosh." They behave somewhat like trigonometric functions, but they are built from exponentials.
 
-:::example
+:::example{title="Show that"}
 Show that
 
 $$
@@ -301,7 +307,7 @@ has:
 
 Note that this is the opposite of the exponent function, which is expected since they are inverses! Accordingly, the graph of $$y=\log_b x$$ is the reflection of $$y=b^x$$ across the line $$y=x$$.
 
-:::example
+:::example{title="Evaluate each logarithm."}
 Evaluate each logarithm.
 
 $$
@@ -432,6 +438,7 @@ $$
 
 for some valid base $$a$$. It is often convenient on the calculator to change to base $$10$$ or base $$e$$.
 
+:::warning
 These rules only apply when every logarithm is defined. For example, do not split
 
 $$
@@ -439,8 +446,9 @@ $$
 $$
 
 as $$\ln a+\ln b$$. There is no sum rule for logarithms.
+:::
 
-:::example
+:::example{title="Rewrite as a single logarithm with coefficient $$1$$:"}
 Rewrite as a single logarithm with coefficient $$1$$:
 
 $$
@@ -490,7 +498,7 @@ $$
 so actually $$x>4$$.
 :::
 
-:::example
+:::example{title="Expand:"}
 Expand:
 
 $$
@@ -517,7 +525,7 @@ $$
 $$
 :::
 
-:::example
+:::example{title="Simplify"}
 Simplify
 
 $$
@@ -553,11 +561,13 @@ There are three common strategies:
 2. If the bases do not match, take logs of both sides.
 3. If logs are involved, rewrite as exponentials or combine logs first.
 
+:::exam{topic="Logarithmic equations"}
 Always check domain restrictions when logarithms appear.
+:::
 
 ### Exponential equations
 
-:::example
+:::example{title="Solve"}
 Solve
 
 $$
@@ -607,7 +617,7 @@ and find their intersection.
 
 Some exponential equations become quadratics after substitution.
 
-:::example
+:::example{title="Solve"}
 Solve
 
 $$
@@ -655,7 +665,7 @@ $$
 
 When solving logarithmic equations or inequalities, first impose the domain. Every logarithm input must be positive.
 
-:::example
+:::example{title="Solve"}
 Solve
 
 $$

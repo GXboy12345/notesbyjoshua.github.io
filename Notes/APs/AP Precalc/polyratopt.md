@@ -8,6 +8,10 @@ permalink: /notes/ap/precalc/polyratopt/
 
 # Unit 4 & 13: Polynomial & Rational Functions and Applications to Optimization
 
+:::summary{title="Unit overview"}
+This unit covers polynomial and rational function behavior, zero-finding, asymptotes, and optimization problems built from single-variable models.
+:::
+
 ---
 
 ## Basic polynomial families
@@ -34,7 +38,7 @@ $$
 m=-\frac{A}{B}.
 $$
 
-:::example
+:::example{title="Find a linear function $$f$$ such that $$f(2)=1$$ and the graph of $$y=f(x)$$ is perpen..."}
 Find a linear function $$f$$ such that $$f(2)=1$$ and the graph of $$y=f(x)$$ is perpendicular to the graph of $$6x-3y=2$$.
 
 First put the given line in slope-intercept form:
@@ -79,7 +83,7 @@ Its graph is a parabola.
 
 Sometimes it is useful to complete the square on a quadratic to see some of its properties.
 
-:::example
+:::example{title="Find the vertex of the quadratic $$ax^2+bx+c$$."}
 Find the vertex of the quadratic $$ax^2+bx+c$$.
 
 The vertex (minimum/maximum depending on the shape) of the quadratic occurs at
@@ -126,7 +130,11 @@ $$
 y=\sqrt{f(x)}
 $$
 
-is minimized at $$x=\frac12$$ because the square-root function is increasing, so the smallest legal value of $$f(x)$$ gives the smallest value of $$\sqrt{f(x)}$$. However, you have to be careful and always double-check your work for domain shifts or restrictions, since a function like $$\sqrt{(x-2.5)^2-5}$$ does not have a minimum at $$x=2.5$$ since it is not in the domain! In this case, the minimum are always the zeroes of the quadratic.
+is minimized at $$x=\frac12$$ because the square-root function is increasing, so the smallest legal value of $$f(x)$$ gives the smallest value of $$\sqrt{f(x)}$$.
+
+:::warning
+However, you have to be careful and always double-check your work for domain shifts or restrictions, since a function like $$\sqrt{(x-2.5)^2-5}$$ does not have a minimum at $$x=2.5$$ since it is not in the domain! In this case, the minimum are always the zeroes of the quadratic.
+:::
 
 ---
 
@@ -232,7 +240,7 @@ $$
 
 In general, a polynomial of degree $$n$$ has at most $$n-1$$ turning points. This does not mean it must have $$n-1$$ turning points; it is only an upper bound.
 
-:::example
+:::example{title="Suppose $$P(x)=2x^{4}+5x^{3}-38x^{2}+28x+24$$ and we are given that $$P(2)=0$$ with a m..."}
 Suppose $$P(x)=2x^{4}+5x^{3}-38x^{2}+28x+24$$ and we are given that $$P(2)=0$$ with a multiplicity of 2. Graph the polynomial.
 
 Since $$P(2)=0$$, $$x-2$$ is a factor. Synthetic division by $$2$$ gives:
@@ -301,11 +309,13 @@ $$
 
 The **Factor Theorem** is the most important special case:
 
+:::key{name="Factor Theorem"}
 $$
 x-m \text{ is a factor of } f(x)
 \quad\Longleftrightarrow\quad
 f(m)=0.
 $$
+:::
 
 So these statements all mean the same thing:
 
@@ -318,6 +328,7 @@ So these statements all mean the same thing:
 
 The **Rational Root Theorem** helps list possible rational zeros. The Rational Root Theorem states that:
 
+:::key{name="Rational Root Theorem"}
 If
 
 $$
@@ -331,6 +342,7 @@ p\mid a_0
 \qquad\text{and}\qquad
 q\mid a_n.
 $$
+:::
 
 So possible rational zeros are
 
@@ -338,7 +350,7 @@ $$
 \pm\frac{\text{factor of constant term}}{\text{factor of leading coefficient}}.
 $$
 
-:::example
+:::example{title="Find the possible rational zeros of $$f(x)=2x^{4}-x^{3}+7x^{2}+3x-3.$$"}
 Find the possible rational zeros of $$f(x)=2x^{4}-x^{3}+7x^{2}+3x-3.$$
 
 Here the constant term is $$-3$$ and the leading coefficient is $$2$$. Thus
@@ -466,7 +478,7 @@ When solving out rational polynomials, always factor first. If a factor cancels,
 
 If a denominator factor does not cancel, it creates a **vertical asymptote**, where the values approach $$\pm \infinity$$.
 
-:::example
+:::example{title="Find the vertical asymptotes and holes of$$R(x)=\frac{(x-2)(x+1)}{(x-2)(x-3)}.$$"}
 Find the vertical asymptotes and holes of$$R(x)=\frac{(x-2)(x+1)}{(x-2)(x-3)}.$$
 
 The original denominator is zero at $$x=2$$ and $$x=3$$. After canceling,
@@ -505,7 +517,7 @@ a **horizontal asymptote** is the value of which $$y$$ approaches as $$x$$ appro
 - If numerator degree is exactly one bigger, there is a slant asymptote from polynomial division.
 - If numerator degree is more than one bigger, there is a polynomial asymptote from polynomial division.
 
-:::theorem
+:::theorem{name="Horizontal and slant asymptotes"}
 Below are two common examples of rational polynomials and their horizontal asymptotes.
 
 **Example (Horizontal asymptote).** Find the horizontal/slant asymptote of $$\frac{2x+3}{x-1}$$.
@@ -560,7 +572,9 @@ To graph a rational function:
 6. Find horizontal, slant, or polynomial asymptotes.
 7. Use sign charts and test points to place branches.
 
+:::exam{topic="Rational function graphs"}
 When graphing, always list out these key features! They will make graphing the rational function much easier to do.
+:::
 
 ---
 
@@ -578,7 +592,7 @@ The usual workflow is:
 6. Find the maximum or minimum using algebra, graphing, or a calculator.
 7. Answer the original question with units and in context.
 
-:::theorem
+:::theorem{name="largest rectangle with fixed perimeter"}
 **Example (largest rectangle with fixed perimeter).**
 
 What is the largest possible area of a rectangle with perimeter $$80\text{ cm}$$?
@@ -620,7 +634,7 @@ $$
 $$
 :::
 
-:::theorem
+:::theorem{name="maximizing a rational model"}
 **Example (maximizing a rational model).**
 
 Suppose the efficiency of a machine after $$x$$ hours is modeled by

@@ -8,6 +8,10 @@ permalink: /notes/ap/precalc/conicsections/
 
 # Unit 12: Conic Sections
 
+:::summary{title="Unit overview"}
+This unit covers parabolas, ellipses, hyperbolas, and the focus-directrix definition of conics in rectangular and polar form.
+:::
+
 ---
 
 ## Introduction to conics
@@ -62,7 +66,7 @@ $$
 
 The quantity $$\lvert 4p\rvert$$ controls how “wide” the parabola is: larger $$\lvert p\rvert$$ means a more gradual curve.
 
-:::theorem
+:::theorem{name="Proof (Standard equation of a vertical parabola)"}
 **Proof (Standard equation of a vertical parabola).** Suppose the vertex is $$(h,k)$$, the focus is $$(h,k+p)$$, and the directrix is
 
 $$
@@ -152,7 +156,7 @@ $$
 ![parent functions](/assets/APs/AP%20Precalc/parabolastuff.jpg)
 :::
 
-:::example
+:::example{title="For"}
 For
 
 $$
@@ -178,7 +182,7 @@ Here $$h=0$$, $$k=0$$, and $$4p=16$$, so $$p=4$$. Therefore:
 
 For a parabola, any ray starting from the focus and reflecting off of the surface of the parabola will always be perpendicular to the latus rectum (the converse is true as well)! This makes parabolas especially useful for things like flashlights and mirrors.
 
-:::theorem
+:::theorem{name="Extension"}
 **Extension.** Prove the theorem stated above is true. One theorem you make find useful is the Law of Reflection: A ray reflecting off the surface will have the same angle of reflection as angle of incidence.
 :::
 
@@ -222,7 +226,7 @@ $$
 
 If the denominators are equal ($$a = b$$), the ellipse is a circle of radius $$a$$.
 
-:::theorem
+:::theorem{name="Proof (Standard equation of an ellipse, horizontal major axis)"}
 **Proof (Standard equation of an ellipse, horizontal major axis).** Place the foci on the $$x$$-axis at $$F_{1} = (-c,0)$$ and $$F_{2} = (c,0)$$ with $$0 < c < a$$. The ellipse is the set of points $$P = (x,y)$$ such that the sum of distances to the foci is the constant $$2a$$:
 
 $$
@@ -291,7 +295,7 @@ $$
 
 This is why $$a$$ is the semi-major axis.
 
-:::example
+:::example{title="Graph and identify the key features of"}
 Graph and identify the key features of
 
 $$
@@ -360,6 +364,8 @@ $$
 
 :::figure{width=480}
 ![Ellipse](/assets/APs/AP%20Precalc/ellipsegraph1.png)
+:::
+
 :::
 
 ### Directrices of an ellipse
@@ -494,7 +500,7 @@ $$
 \pm\frac ab.
 $$
 
-:::example
+:::example{title="Graph and identify the key features of"}
 Graph and identify the key features of
 
 $$
@@ -555,6 +561,8 @@ $$
 ![Ellipse](/assets/APs/AP%20Precalc/hyperbolagraph1.png)
 :::
 
+:::
+
 ### Directrices of a hyperbola
 
 For a horizontal hyperbola centered at the origin,
@@ -603,7 +611,7 @@ $$
 ![Ellipse](/assets/APs/AP%20Precalc/hyperboladir.jpg)
 :::
 
-:::theorem
+:::theorem{name="Extension"}
 **Extension.** Prove the standard formula for a hyperbola. This procedure should be similar to the procedure for deriving the equation for an ellipse.
 :::
 
@@ -713,7 +721,7 @@ The formula is the same, but the location feels different:
 - for ellipses, $$c<a$$, so $$\dfrac{a^2}{c}>a$$ and the directrices are outside the ellipse;
 - for hyperbolas, $$c>a$$, so $$\dfrac{a^2}{c}<a$$ and the directrices lie between the vertices.
 
-:::example
+:::example{title="Find the directrices of"}
 Find the directrices of
 
 $$
@@ -767,7 +775,7 @@ When a problem gives a focus, a directrix, and eccentricity, start from the defi
 4. Square both sides and simplify.
 5. Complete the square if needed.
 
-:::example
+:::example{title="Find the conic with focus $$(0,0)$$, directrix $$x=4$$, and eccentricity $$e=\frac12$$."}
 Find the conic with focus $$(0,0)$$, directrix $$x=4$$, and eccentricity $$e=\frac12$$.
 
 For a point $$P=(x,y)$$, the distance to the focus is
@@ -841,7 +849,7 @@ $$
 Since $$0<e<1$$, it makes sense that the result is an ellipse.
 :::
 
-:::example
+:::example{title="Find the foci, eccentricity, and directrices of"}
 Find the foci, eccentricity, and directrices of
 
 $$
@@ -893,7 +901,7 @@ x=\pm\frac ae
 $$
 :::
 
-:::theorem
+:::theorem{name="Proof (Focus-directrix property)"}
 **Proof (Focus-directrix property).** We show that in rectangular coordinates the locus $$PF = e\,d(P,\ell)$$ is always a parabola, ellipse, or hyperbola according to $$e$$. Take $$e > 0$$ and place the focus at the origin and the directrix as the vertical line $$x = -d$$ with $$d > 0$$, so the focus lies to the right of the directrix. For any point $$P = (x,y)$$ on the same side of the directrix as the focus (so that the foot of the perpendicular has $$x$$-coordinate $$-d$$ and $$x > -d$$), the perpendicular distance is
 
 $$
@@ -1046,7 +1054,7 @@ $$
 
 These are the positive and negative vertical directions.
 
-:::example
+:::example{title="Find the eccentricity, directrix, and vertices of"}
 Find the eccentricity, directrix, and vertices of
 
 $$
@@ -1102,7 +1110,7 @@ $$
 $$
 :::
 
-:::theorem
+:::theorem{name="Proof (Polar conic formula)"}
 **Proof (Polar conic formula).** Put the focus at the pole and let the directrix be
 
 $$
@@ -1191,7 +1199,7 @@ $$
 
 So $$e=\frac12$$, not $$2$$.
 
-:::example
+:::example{title="Identify the conic:"}
 Identify the conic:
 
 $$
@@ -1254,7 +1262,7 @@ The basic strategy is:
 4. Square both sides if needed.
 5. Complete the square.
 
-:::example
+:::example{title="Convert"}
 Convert
 
 $$
@@ -1314,7 +1322,7 @@ $$
 This is a parabola, which matches $$e=1$$ from the original polar equation.
 :::
 
-:::example
+:::example{title="Identify the conic:"}
 Identify the conic:
 
 $$
@@ -1369,6 +1377,8 @@ These angles give the asymptotic directions of the hyperbola.
 
 :::figure{width=480}
 ![Ellipse](/assets/APs/AP%20Precalc/hyperbolagraph2.png)
+:::
+
 :::
 
 ### Polar conics and orbits

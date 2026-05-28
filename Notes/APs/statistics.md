@@ -10,7 +10,9 @@ nav_order: 3
 
 AP Statistics is about collecting data carefully, exploring patterns, and using probability to make justified conclusions from samples. The course moves from descriptive summaries to study design, probability models, sampling distributions, and formal inference.
 
+:::exam
 For AP free-response problems, the calculation is usually only part of the answer. You also need to identify the parameter, check conditions, show correct notation, and write conclusions in context.
+:::
 
 ---
 
@@ -34,11 +36,77 @@ For AP free-response problems, the calculation is usually only part of the answe
 
 ---
 
-## Practice Problems
+## Practice
 
-- Practice released AP Statistics free-response questions from College Board.
-- For inference units, write every solution in the full structure: parameter, hypotheses or interval, conditions, calculation, conclusion.
-- For calculator-heavy procedures, still show the name of the procedure and the inputs.
+:::tip
+Practice released AP Statistics free-response questions from College Board.
+:::
+
+:::tip
+For inference units, write every solution in the full structure: parameter, hypotheses or interval, conditions, calculation, conclusion.
+:::
+
+:::tip
+For calculator-heavy procedures, still show the name of the procedure and the inputs.
+:::
+
+### MCQ
+
+:::practice
+:::mcq{id=stats-statistics-1 correct=C}
+1. Which element belongs in a complete AP Statistics inference write-up?
+
+- [ ] Only the calculator output
+- [ ] Only the conclusion sentence
+- [ ] Parameter, conditions, calculation, and conclusion in context
+- [ ] The formula sheet copied without interpretation
+
+:::solution
+AP Statistics inference responses need the full reasoning chain: identify the parameter, verify conditions, show the calculation with correct notation, and state the conclusion in context.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+
+:::mcq{id=stats-statistics-2 correct=B}
+2. A student runs a calculator procedure for a one-sample $$t$$-interval but does not name the procedure or list the inputs. What is the best critique?
+
+- [ ] The work is complete because the interval appeared on the screen.
+- [ ] The procedure name and inputs should still be stated clearly.
+- [ ] Calculator procedures never need to be named on AP Statistics FRQs.
+- [ ] Only the final interval bounds matter; setup is optional.
+
+:::solution
+Even when a calculator does the arithmetic, AP readers expect you to name the procedure and identify what you entered (sample statistics, $$n$$, confidence level, and similar inputs).
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+### FRQ
+
+:::frq{id=stats-statistics-frq-3}
+3. A student is preparing for the AP Statistics exam.
+
+   $$(A)$$ State one reason released College Board free-response questions are useful practice.
+
+   $$(B)$$ List the five parts of a typical inference solution named in these hub notes.
+
+   $$(C)$$ Explain why naming a calculator procedure matters even when the calculator prints the result.
+
+:::solution
+$$(A)$$ Released FRQs show the exact style of prompts, rubric expectations, and multi-part reasoning AP Statistics uses on the exam.
+
+$$(B)$$ Parameter, hypotheses or interval, conditions, calculation, conclusion.
+
+$$(C)$$ Naming the procedure shows you chose the correct method and entered the correct summary statistics; the calculator output alone does not demonstrate that reasoning to the reader.
+:::
+:::
+:::
 
 ---
 

@@ -26,11 +26,21 @@ $$
 
 Oppositely charged ions ($$Q_1 Q_2 < 0$$) lower their energy as $$r$$ decreases, which is why a **crystal lattice** of alternating cations and anions is stable. **Lattice energy** trends (larger charges, smaller ions) follow from this same inverse dependence on $$r$$ and linear dependence on the product of charges.
 
+:::tip
+Larger ion charges and smaller ionic radii both increase lattice energy magnitude.
+:::
+
+:::note
 A standard example is sodium chloride: chlorine accepts an electron to form $$\text{Cl}^-$$, and sodium becomes $$\text{Na}^+$$. The compound is held together by attraction between those ions, not by shared pairs in the sense of a covalent bond. However, counterintuitively, the ionic bond is the strongest type of bond.
+:::
 
 ### Covalent bonding
 
-A **covalent bond** forms between atoms that are both relatively electronegative, typically two **nonmetals**, when they share one or more pairs of valence electrons. Neither atom fully owns the electrons; instead, both nuclei are attracted to the same shared density. **Bond polarity** appears when the two atoms differ in **electronegativity**: the shared pair is pulled toward the more electronegative atom, giving partial charges ($$\delta^+$$ and $$\delta^-$$) even though the bond is still covalent. Usually, the cutoff for a bond being polar is a absolute difference of electronegativity above 0.5, and for an ionic bond it is usually 2.0.
+A **covalent bond** forms between atoms that are both relatively electronegative, typically two **nonmetals**, when they share one or more pairs of valence electrons. Neither atom fully owns the electrons; instead, both nuclei are attracted to the same shared density. **Bond polarity** appears when the two atoms differ in **electronegativity**: the shared pair is pulled toward the more electronegative atom, giving partial charges ($$\delta^+$$ and $$\delta^-$$) even though the bond is still covalent.
+
+:::tip
+Usually, the cutoff for a bond being polar is a absolute difference of electronegativity above 0.5, and for an ionic bond it is usually 2.0.
+:::
 
 Compared with ionic lattices, individual covalent bonds are often discussed in terms of **bond energy** (the energy required to break one mole of that bond in the gas phase, for a defined process). **Triple bonds** are generally stronger and shorter than **double bonds**, which are stronger and shorter than **single bonds** between the same elements.
 
@@ -66,7 +76,9 @@ Organic chemistry is the study of compounds built around carbon frameworks. Many
 
 ### The octet rule
 
+:::theorem{name="Octet rule"}
 The **octet rule** says that in many compounds, atoms are most stable when they are surrounded by eight valence electrons (four pairs), matching the noble gas configuration of the noble gas in the same period. Hydrogen and helium are exceptions in the strict sense: hydrogen/helium aim for two electrons (a **duet**), not eight.
+:::
 
 Some **period 2** elements (notably *boron*, *beryllium*, and *aluminum* in compounds such as $$\text{BF}_3$$) may be **electron-deficient**, with fewer than eight valence electrons on the central atom in a Lewis structure that still matches experiment. Specifically, they aim to have twice the number of valence electrons they currently have in their shell.
 
@@ -76,6 +88,7 @@ When drawing, always ask whether the central atom is allowed to expand or must r
 
 ### Formal charge
 
+:::key{name="Formal charge"}
 **Formal charge** is a bookkeeping tool for a single Lewis structure. It assigns each valence electron in the structure either to an atom or to a bond. For an atom,
 
 $$
@@ -83,6 +96,7 @@ $$
 $$
 
 Structures that minimize formal charge (and place negative formal charge on more electronegative atoms when a choice exists) are generally preferred as major contributors in a resonance hybrid.
+:::
 
 ### Resonance
 
@@ -92,6 +106,7 @@ For resonance to be meaningful, the alternative structures must involve the *sam
 
 ### Constructing Lewis structures
 
+:::tip
 A practical algorithm:
 
 1. Count total **valence electrons** (adjust for charge on **ions**).
@@ -101,12 +116,17 @@ A practical algorithm:
 5. If several arrangements remain, favor the one with **formal charges** closest to zero.
 6. Indicate **resonance** with double-headed arrows between structures.
 7. Put **brackets** around the compound if it has a charge.
+:::
 
 ---
 
 ## VSEPR theory
 
 **Valence-shell electron-pair repulsion (VSEPR)** theory explains **electron-domain geometry** and **molecular shape** by assuming that both bonding pairs and lone pairs around a central atom repel one another. The arrangement that maximizes separation *minimizes repulsion* (thus minimizes the amount of energy needed to hold the molecules) and thus corresponds to observed geometry. A double bond or triple bond counts as one electron domain toward the steric number, just like a single bond or a lone pair.
+
+:::note
+Lone pairs occupy more space than bonding pairs, so they compress bond angles below the ideal electron-domain geometry.
+:::
 
 Typical pairings of steric number and lone pairs give names such as **linear**, **trigonal planar**, **tetrahedral**, **trigonal bipyramidal**, and **octahedral** for the electron-domain geometry; lone pairs then influence the **molecular geometry** (for example, **bent** instead of **trigonal planar** when one lone pair sits on a central atom with three domains).
 
@@ -131,6 +151,10 @@ Atomic orbitals on a bonded atom can mix to form **hybrid orbitals** that are co
 A **sigma bond** ($$\sigma$$) has electron density concentrated along the *internuclear axis*; it arises from head-on overlap of hybrid or atomic orbitals. A **pi bond** ($$\pi$$) forms from *side-by-side* overlap of unhybridized $$p$$ orbitals above and below the sigma framework. A single bond is one $$\sigma$$; a double bond is one $$\sigma$$ plus one $$\pi$$; a triple bond is one $$\sigma$$ plus two $$\pi$$.
 
 **Bond order** is half the difference between bonding and antibonding electrons in **molecular orbital** theory, but in Lewis terms it is simply the average number of bonding electron pairs between two atoms across resonance structures. **Bond length** decreases and **bond strength** increases as bond order increases between the same two elements.
+
+:::key{name="Bond order (Lewis)"}
+For a bond between two atoms, bond order is the average number of bonding pairs between them across valid resonance structures.
+:::
 
 ---
 
@@ -181,6 +205,7 @@ Then step 5 (lattice formation from ions) has $$\Delta H = -U_{\text{lattice}}$$
 
 Because the overall enthalpy change from $$\text{M}(s) + \tfrac{1}{2}\text{X}_2(g)$$ to $$\text{MX}(s)$$ is $$\Delta H_f^\circ$$,
 
+:::theorem{name="Born–Haber cycle (1:1 salt)"}
 $$
 \Delta H_f^\circ(\text{MX},\,s) = \Delta H_{\text{sub}} + \text{IE} + \frac{1}{2}D_{\text{X–X}} + \Delta H_{\text{ea}} - U_{\text{lattice}}.
 $$
@@ -190,6 +215,7 @@ Rearranging isolates the lattice term:
 $$
 U_{\text{lattice}} = \Delta H_{\text{sub}} + \text{IE} + \frac{1}{2}D_{\text{X–X}} + \Delta H_{\text{ea}} - \Delta H_f^\circ.
 $$
+:::
 
 For salts with other stoichiometries (e.g. $$\text{MgCl}_2$$, $$\text{Na}_2\text{O}$$), use the correct multiple of atomization, all required ionization steps, the appropriate nonmetal atomization (e.g. $$\tfrac{1}{2}\text{O}_2$$), and electron-gain steps that match the anion charge (second-electron addition to oxygen is very endothermic; the huge lattice energy of oxides is what makes the overall formation from elements favorable). The cycle is still closed: the sum of steps along one route equals the sum along any other route between the same two **thermodynamic states**.
 
@@ -305,6 +331,9 @@ The H-F bond has the largest electronegativity difference among the choices, so 
 $$
 \boxed{\text{C}}
 $$
+:::
+:::
+
 ### FRQ
 
 :::frq{id=chem-compounds-frq-7}
@@ -344,5 +373,6 @@ $$
 $$(B)$$ The double-bond character can be placed between chromium and different oxygen atoms while keeping the same atom connectivity and total number of valence electrons. These drawings differ only in electron placement, not in which atoms are bonded to which, so they are resonance structures rather than different compounds.
 
 $$(C)$$ The resonance hybrid averages the valid resonance structures. Since no single resonance structure fully describes the ion, the Cr-O bonds have the same average bond order and are equivalent. A good particle-level explanation is that the extra electron density is delocalized over the Cr-O bonding framework rather than locked into one permanent double bond.
+:::
 :::
 :::

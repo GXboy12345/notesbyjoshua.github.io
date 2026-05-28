@@ -9,3 +9,6 @@ permalink: /notes/physics/relativity/
 # Relativity
 
 E = mc^scared lol
+
+:::under-construction
+:::

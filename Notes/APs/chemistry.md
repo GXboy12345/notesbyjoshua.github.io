@@ -42,22 +42,44 @@ AP free-response questions often reward clear particle-level explanations, corre
 
 ### MCQ
 
+:::practice
+:::mcq{id=chem-chemistry-1 correct=B}
 1. A student calculates $$Q<K$$ for a reversible reaction. Which statement is correct?
 
-   (A) The reaction shifts toward reactants.<br>
-   (B) The reaction shifts toward products.<br>
-   (C) The reaction is at equilibrium.<br>
-   (D) The value of $$K$$ must decrease.
+- [ ] The reaction shifts toward reactants.
+- [ ] The reaction shifts toward products.
+- [ ] The reaction is at equilibrium.
+- [ ] The value of $$K$$ must decrease.
 
+:::solution
+If $$Q<K$$, the mixture has too few products compared with the equilibrium ratio. The reaction proceeds forward to form more products.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-chemistry-2 correct=B}
 2. Which statement is most useful when writing an AP Chemistry FRQ explanation?
 
-   (A) A rule should be stated without evidence.<br>
-   (B) Particle-level reasoning should connect to the equation or data.<br>
-   (C) Calculations do not need units if the setup is correct.<br>
-   (D) Equilibrium and kinetics always answer the same question.
+- [ ] A rule should be stated without evidence.
+- [ ] Particle-level reasoning should connect to the equation or data.
+- [ ] Calculations do not need units if the setup is correct.
+- [ ] Equilibrium and kinetics always answer the same question.
+
+:::solution
+Strong AP Chemistry explanations connect the particle-level model to the evidence, equation, graph, or calculation in the problem.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
 
 ### FRQ
 
+:::frq{id=chem-chemistry-frq-3}
 3. A student is reviewing for the AP Chemistry exam.
 
    $$(A)$$ Explain the difference between what kinetics predicts and what equilibrium predicts.
@@ -66,42 +88,14 @@ AP free-response questions often reward clear particle-level explanations, corre
 
    $$(C)$$ Explain why balanced equations are necessary before doing stoichiometry.
 
----
-
-## Solutions
-
-### MCQ
-
-:::theorem
-### Solution 1
-
-If $$Q<K$$, the mixture has too few products compared with the equilibrium ratio. The reaction proceeds forward to form more products.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 2
-
-Strong AP Chemistry explanations connect the particle-level model to the evidence, equation, graph, or calculation in the problem.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-### FRQ
-
-:::theorem
-### Solution 1
-
+:::solution
 $$(A)$$ Kinetics predicts how fast a reaction occurs and what factors affect rate. Equilibrium predicts the relative amounts of reactants and products after the forward and reverse processes balance.
 
 $$(B)$$ One useful check is to inspect units, sign, and magnitude. For example, an equilibrium concentration should not be negative, and a thermodynamics calculation should have a sign that matches the stated spontaneity.
 
 $$(C)$$ Balanced equations give the mole ratios between reactants and products. Without those ratios, the stoichiometric conversion from one substance to another is not chemically meaningful.
+:::
+:::
 :::
 
 ---

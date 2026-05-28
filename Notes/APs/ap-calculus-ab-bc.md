@@ -8,7 +8,9 @@ nav_order: 1
 
 # AP Calculus AB/BC
 
+:::note
 **Note**: If you are only looking for AP Calculus AB prep, do NOT look at the files/sections labeled "BC-only".
+:::
 
 ---
 
@@ -27,9 +29,13 @@ nav_order: 1
 
 ---
 
-## Practice Problems
+## Practice
 
-- Practice? Never heard of it.
+:::practice
+:::tip
+Practice? Never heard of it.
+:::
+:::
 
 ---
 

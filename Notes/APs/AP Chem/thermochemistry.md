@@ -28,17 +28,21 @@ Energy is the capacity to do work or transfer heat. The total energy of an isola
 
 For a pure substance with nearly constant **specific heat capacity** $$c$$,
 
+:::key{name="Heat capacity"}
 $$
 q = mc\Delta T,
 $$
 
-where $$m$$ is mass and $$\Delta T$$ is temperature change. For water near room temperature, $$c \approx 4.18 \text{ J/(g}\cdot^\circ\text{C)}$$ (often $$4.184$$ in tables). A coffee-cup calorimeter at constant pressure approximates $$q_{\text{reaction}} \approx -\left(m_{\text{solution}}c_{\text{solution}}\Delta T + C_{\text{cal}}\Delta T\right)$$ for the reaction inside, where $$C_{\text{cal}}$$ is the **calorimeter constant** (energy per kelvin for the apparatus), which is like a calibration/error term because calorimeters aren't perfect insulators. Matching system and surroundings gives
+where $$m$$ is mass and $$\Delta T$$ is temperature change.
+
+For water near room temperature, $$c \approx 4.18 \text{ J/(g}\cdot^\circ\text{C)}$$ (often $$4.184$$ in tables). A coffee-cup calorimeter at constant pressure approximates $$q_{\text{reaction}} \approx -\left(m_{\text{solution}}c_{\text{solution}}\Delta T + C_{\text{cal}}\Delta T\right)$$ for the reaction inside, where $$C_{\text{cal}}$$ is the **calorimeter constant** (energy per kelvin for the apparatus), which is like a calibration/error term because calorimeters aren't perfect insulators. Matching system and surroundings gives
 
 $$
 q_{\text{sys}} = -q_{\text{surr}}
 $$
 
 when no other work or losses matter (Conservation of energy/matter).
+:::
 
 ---
 
@@ -52,9 +56,11 @@ $$
 
 for work done on the system (AP-style). **Internal energy** change obeys the **First Law of Thermodynamics**:
 
+:::theorem{name="First law of thermodynamics"}
 $$
 \Delta U = q + W.
 $$
+:::
 
 At constant volume (isochoric processes), $$\Delta V = 0$$ so $$W = 0$$ and $$\Delta U = q$$.
 
@@ -98,7 +104,9 @@ In an **exothermic** reaction, the system evolves so that heat flows out to the 
 
 In an **endothermic** reaction, the system draws heat in: $$\Delta H > 0$$, $$q_{\text{sys}} > 0$$, and $$q_{\text{surr}} < 0$$.
 
+:::warning
 Always label whether $$q$$ refers to system or surroundings when you compare signs across textbooks.
+:::
 
 ### State functions and path
 
@@ -112,17 +120,21 @@ Enthalpy is a state function. **State functions** depend only on initial and fin
 
 For any reaction,
 
+:::key{name="Standard enthalpy of formation"}
 $$
 \Delta H_{\text{rxn}}^\circ = \sum \nu\,\Delta H_f^\circ(\text{products}) - \sum \nu\,\Delta H_f^\circ(\text{reactants}),
 $$
 
 where $$\nu$$ are stoichiometric coefficients. Thermochemical equations can be scaled; $$\Delta H$$ scales with the mole amounts written in the equation.
+:::
 
 ---
 
 ## Hess’s law
 
+:::theorem{name="Hess's law"}
 **Hess’s law** states that $$\Delta H$$ for an overall process is the sum of $$\Delta H$$ values for steps that add up to the same net reaction—because $$H$$ is a state function. Reverse a step → flip the sign of $$\Delta H$$. Multiply a step by a factor → multiply $$\Delta H$$ by the same factor.
+:::
 
 ---
 
@@ -130,11 +142,13 @@ where $$\nu$$ are stoichiometric coefficients. Thermochemical equations can be s
 
 **Bond enthalpy** (or bond energy) is the energy required to break one mole of a bond in the gas phase (averaged over similar molecules for tabulated values). For gas-phase estimates,
 
+:::key{name="Bond enthalpy estimate"}
 $$
 \Delta H_{\text{rxn}} \approx \sum D(\text{bonds broken}) - \sum D(\text{bonds formed}),
 $$
 
 using positive bond energies for each bond listed. This ignores liquids, solvents, and exact environments, so it is less accurate than calorimetry or formation cycles.
+:::
 
 ---
 
@@ -152,7 +166,11 @@ $$
 \ln\left(\frac{P_2}{P_1}\right) = -\frac{\Delta H_{\text{vap}}}{R}\left(\frac{1}{T_2} - \frac{1}{T_1}\right).
 $$
 
-Higher $$T$$ increases vapor pressure; stronger IMFs tend to lower vapor pressure at a given $$T$$ (see [Unit 3]({{ '/notes/ap/chem/submix/' | relative_url }})). This formula will likely not appear on the AP test, but is good to know
+Higher $$T$$ increases vapor pressure; stronger IMFs tend to lower vapor pressure at a given $$T$$ (see [Unit 3]({{ '/notes/ap/chem/submix/' | relative_url }})).
+
+:::exam
+This formula will likely not appear on the AP test, but is good to know
+:::
 
 ---
 
@@ -278,6 +296,9 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
+:::
+
 ### FRQ
 
 :::frq{id=chem-thermochemistry-frq-7}
@@ -339,5 +360,6 @@ $$
 So $$414\ \text{kJ}$$ of heat is released.
 
 $$(C)$$ Formation enthalpy measures formation from elements in their standard states. An element already in its standard state requires no formation reaction, so its assigned value is zero. This is a reference convention that lets formation enthalpies be added and subtracted consistently in Hess's law calculations.
+:::
 :::
 :::

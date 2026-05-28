@@ -8,6 +8,10 @@ permalink: /notes/ap/precalc/trigfunc/
 
 # Unit 6 & 7: Trigonometric Functions
 
+:::summary{title="Unit overview"}
+This unit covers angle measure, the unit circle, right-triangle trigonometry, and the six trigonometric functions and their identities.
+:::
+
 ---
 
 ## Angles definitions
@@ -44,11 +48,19 @@ $$
 180^\circ=\pi\text{ radians}.
 $$
 
-:::theorem
+:::key{name="Degree-radian conversion"}
+$$
+360^\circ=2\pi\text{ radians},
+\qquad
+180^\circ=\pi\text{ radians}.
+$$
+:::
+
+:::theorem{name="Extension"}
 **Extension.** The radian is a unitless measure, meaning that it is not arbitrarily set. Why is there always $$2\pi$$ radians in a circle?
 :::
 
-:::example
+:::example{title="Convert $$225^\circ$$ to radians."}
 Convert $$225^\circ$$ to radians.
 
 Multiply by $$\frac{\pi}{180}$$:
@@ -66,7 +78,7 @@ $$
 $$
 :::
 
-:::example
+:::example{title="Convert $$-\frac{4\pi}{3}$$ radians to degrees."}
 Convert $$-\frac{4\pi}{3}$$ radians to degrees.
 
 Multiply by $$\frac{180}{\pi}$$:
@@ -131,7 +143,7 @@ $$
 
 The angle $$\theta$$ must be measured in radians. On your calculator, if you go to **MODE**, you can switch from degrees to radians.
 
-:::example
+:::example{title="Find the arc length of a circle of radius $$3$$ meters subtended by a central angle of ..."}
 Find the arc length of a circle of radius $$3$$ meters subtended by a central angle of $$120^\circ$$.
 
 First convert the angle to radians:
@@ -153,7 +165,7 @@ $$
 $$
 :::
 
-:::example
+:::example{title="Find the radius of a circle whose arc length is $$6$$ meters and whose central angle is..."}
 Find the radius of a circle whose arc length is $$6$$ meters and whose central angle is $$\frac14$$ radian.
 
 Use
@@ -189,7 +201,7 @@ $$
 A=\frac{\theta}{2\pi}\cdot \pi r^2=\frac12r^2\theta.
 $$
 
-:::example
+:::example{title="Find the area of a sector with radius $$6$$ and central angle $$\frac{5\pi}{6}$$."}
 Find the area of a sector with radius $$6$$ and central angle $$\frac{5\pi}{6}$$.
 
 Use the sector area formula:
@@ -242,7 +254,7 @@ $$
 
 Again, angular speed must be measured in radians per unit time.
 
-:::example
+:::example{title="A wheel rotates at $$15$$ revolutions per second. The radius of the wheel is $$20$$ cm...."}
 A wheel rotates at $$15$$ revolutions per second. The radius of the wheel is $$20$$ cm. Find the angular speed in radians per second and the linear speed of a point on the edge of the wheel.
 
 One revolution is $$2\pi$$ radians, so
@@ -317,7 +329,7 @@ $$.
 
 The three functions are called cosecant, secant, and cotangent, respectively. To memorize, remember that you have to add co- to any trig function without a co- and do not add one otherwise.
 
-:::example
+:::example{title="A right triangle has legs $$6$$ and $$2$$. Find the six trigonometric functions for the..."}
 A right triangle has legs $$6$$ and $$2$$. Find the six trigonometric functions for the acute angle opposite the side of length $$6$$.
 
 First find the hypotenuse:
@@ -389,7 +401,7 @@ $$
 \sin 37^\circ=\cos 53^\circ.
 $$
 
-:::theorem
+:::theorem{name="Extension — Prove the six theorems above."}
 **Extension.** Prove the six theorems above.
 :::
 
@@ -533,7 +545,7 @@ For common quadrant angles:
 
 The reference angle gives the magnitude of the trig value. The quadrant gives the sign.
 
-:::example
+:::example{title="Evaluate $$\cos 315^\circ$$."}
 Evaluate $$\cos 315^\circ$$.
 
 The angle $$315^\circ$$ is in Quadrant IV. Its reference angle is
@@ -555,7 +567,7 @@ $$
 $$
 :::
 
-:::example
+:::example{title="Evaluate $$\sin\left(\frac{4\pi}{3}\right)$$."}
 Evaluate $$\sin\left(\frac{4\pi}{3}\right)$$.
 
 The angle $$\frac{4\pi}{3}$$ is in Quadrant III. Its reference angle is
@@ -720,7 +732,7 @@ $$
 
 If one trig value is known, the Pythagorean identity and the quadrant can determine the others.
 
-:::example
+:::example{title="Suppose $$90^\circ<\beta<180^\circ$$ and $$\sin\beta=\frac14$$. Find $$\cos\beta$$ and ..."}
 Suppose $$90^\circ<\beta<180^\circ$$ and $$\sin\beta=\frac14$$. Find $$\cos\beta$$ and $$\tan\beta$$.
 
 Since $$\beta$$ is in Quadrant II, cosine is negative and tangent is negative.
@@ -781,7 +793,7 @@ To prove a trigonometric identity, work on one side of the equation and transfor
 - factor,
 - multiply by a conjugate when useful.
 
-:::example
+:::example{title="Prove that"}
 Prove that
 
 $$
@@ -830,7 +842,7 @@ $$
 $$
 :::
 
-:::example
+:::example{title="Prove that"}
 Prove that
 
 $$
@@ -931,7 +943,7 @@ $$
 \tan(\theta+\pi k)=\tan\theta.
 $$
 
-:::example
+:::example{title="If $$\sin t=\frac23$$, find $$\sin(-t)$$."}
 If $$\sin t=\frac23$$, find $$\sin(-t)$$.
 
 Since sine is odd,
@@ -1009,7 +1021,7 @@ $$
 
 Graphs and the unit circle both help solve equations like $$\sin x=0.75$$ or $$\cos x=-0.35$$ on an interval.
 
-:::example
+:::example{title="Solve $$\sin x=0.75$$ on $$[0,2\pi)$$."}
 Solve $$\sin x=0.75$$ on $$[0,2\pi)$$.
 
 The calculator gives the first solution
@@ -1031,7 +1043,7 @@ x\approx0.848\quad\text{or}\quad x\approx2.294.
 $$
 :::
 
-:::example
+:::example{title="Solve $$\cos x=-0.35$$ on $$[0,2\pi)$$."}
 Solve $$\cos x=-0.35$$ on $$[0,2\pi)$$.
 
 Cosine is negative in Quadrants II and III. The calculator gives

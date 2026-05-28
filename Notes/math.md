@@ -8,7 +8,9 @@ permalink: /notes/math/
 
 # Math Notes (Work in progress)
 
+:::note
 Here you will find notes for AP Precalculus, Calculus AB/BC, and Competition Math. Note that competition math will not include calculus, but is still good to know calculus to excel at competition math.
+:::
 
 ---
 
@@ -30,7 +32,7 @@ Through my years of preparing for AMC 10/12, AIME, and USAJMO, here are some imp
 
 ---
 
-### Algebra
+:::summary{title="Algebra"}
 
 - Polynomials
 - Newton's Sums
@@ -39,33 +41,41 @@ Through my years of preparing for AMC 10/12, AIME, and USAJMO, here are some imp
 - Functional equations
 - Recursion
 
+:::
+
 ---
 
-### Geometry
+:::summary{title="Geometry"}
 
 - Circles
 - Inversion
 - Homothety
 
+:::
+
 ---
 
-### Number Theory
+:::summary{title="Number Theory"}
 
 - Fermat's Little Theorem
 - Wilson's Theorem
 - Lifting the Exponent (LTE) Lemma
 - Fermat's Christmas Theorem
 
+:::
+
 ---
 
-### Combinatorics
+:::summary{title="Combinatorics"}
 
 - Expected Value
 
+:::
+
 ---
 
-### Proof-writing
+:::summary{title="Proof-writing"}
 
 - How to write your proofs!
 
----
+:::

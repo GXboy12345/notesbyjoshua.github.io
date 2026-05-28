@@ -8,6 +8,10 @@ permalink: /notes/ap/precalc/addtopics/
 
 # Unit 13 & 14: Additional Topics in Algebra
 
+:::summary{title="Unit overview"}
+This unit covers partial fractions, mathematical induction, sequences and series, and the binomial theorem.
+:::
+
 ---
 
 ## Introduction to Partial Fractions
@@ -29,7 +33,7 @@ Factor $$D(x)$$ into linear and irreducible quadratic factors over $$\mathbb{R}$
 
 **Solve for coefficients**: multiply through by the LCD and equate coefficients, or substitute convenient $$x$$ values plus compare powers of $$x$$. Note that for all polynomials with a degree of 3 or higher can be factored into the form $$ax^2+bx+c$$ for some $$a$$, $$b$$, and $$c$$. To solve out, you can do a partial fraction-style solving for the coefficients.
 
-:::example
+:::example{title="Decompose"}
 Decompose
 
 $$
@@ -140,7 +144,7 @@ Common induction proof types:
 - **Product/factorial statements**: write the $$k+1$$ case in terms of the $$k$$ case, often using $$(k+1)!=(k+1)k!$$.
 - **Inequalities**: use the inductive hypothesis to get a lower or upper bound, then show that bound is strong enough for the next case.
 
-:::example
+:::example{title="Prove that for every integer $$n \ge 1$$,"}
 Prove that for every integer $$n \ge 1$$,
 
 $$
@@ -226,9 +230,11 @@ $$
 
 Then you still have to finish the job by showing the new expression is at least $$B_{k+1}$$.
 
+:::warning
 The most common mistake is stopping too early. It is not enough to use the induction hypothesis; you must land on the exact inequality for $$k+1$$.
+:::
 
-:::theorem
+:::theorem{name="Inequality induction"}
 **Example (Inequality induction).** Prove that
 
 $$
@@ -323,7 +329,7 @@ where $$\displaystyle \binom{n}{k} = \frac{n!}{k!(n-k)!}$$ (read as “$$n$$ cho
 - Symmetry: $$\binom{n}{k}=\binom{n}{n-k}$$
 - Specific term: the term containing $$a^r b^{n-r}$$ has coefficient $$\binom{n}{r}$$ (fix exponents so they sum to $$n$$)
 
-:::theorem
+:::theorem{name="Proof (Sum of Pascal's Triangle and Binomial Theorem)"}
 **Proof (Sum of Pascal's Triangle and Binomial Theorem).** We will prove that the sum of the $$n$$th row of Pascal's Triangle is equal to $$2^{n}$$. Suppose we have the polynomial $$(1+x)^{n}$$. By the binomial theorem,
 
 $$
@@ -377,7 +383,7 @@ $$
 \sum_{i=1}^{n} a_i = \frac{n}{2}\bigl(a_1 + a_n\bigr) = \frac{n}{2}\bigl(2a_1 + (n-1)d\bigr)
 $$
 
-:::theorem
+:::theorem{name="Proof (finite arithmetic series)"}
 **Proof (finite arithmetic series).** Let $$S_n = \sum_{i=1}^{n} a_i$$ with $$a_i = a_1 + (i-1)d$$. Write the sum twice, forwards and backwards:
 
 $$
@@ -405,7 +411,7 @@ $$
 
 (Index shifts change exponents: always identify first term, ratio, and number of terms)
 
-:::theorem
+:::theorem{name="Proof (finite geometric series, $$r \ne 1$$)"}
 **Proof (finite geometric series, $$r \ne 1$$).** Let
 
 $$
@@ -457,7 +463,7 @@ A rule $$a_n = f(a_{n-1},\ldots)$$ plus initial conditions defines the sequence.
 
 If $$b_k = u_{k+1}-u_k$$, then $$\sum_{k=m}^{n} b_k = u_{n+1}-u_m$$. Partial fractions often produce telescopes. Telescoping is usually done to cancel all the intermediate terms except for the first and last terms.
 
-:::example
+:::example{title="Find"}
 Find
 
 $$
@@ -531,7 +537,7 @@ $$
 
 For polynomials, the leading term controls the end behavior. Lower-degree terms become insignificant compared to the highest-degree term.
 
-:::example
+:::example{title="Evaluate"}
 Evaluate
 
 $$
@@ -561,7 +567,7 @@ For rational functions, compare the degrees of the numerator and denominator:
 | numerator degree = denominator degree | limit is ratio of leading coefficients |
 | numerator degree > denominator degree | no finite horizontal asymptote; use division or leading terms |
 
-:::example
+:::example{title="Evaluate"}
 Evaluate
 
 $$
@@ -608,7 +614,7 @@ or the same is true as $$x\to-\infty$$.
 
 For rational functions with numerator degree exactly one more than denominator degree, polynomial long division usually reveals the oblique asymptote.
 
-:::example
+:::example{title="Find the oblique asymptote of"}
 Find the oblique asymptote of
 
 $$

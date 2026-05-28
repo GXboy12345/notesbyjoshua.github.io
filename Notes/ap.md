@@ -22,19 +22,27 @@ These notes will roughly follow a AP curriculum but might have some extra stuff 
 
 - ### [AP Physics C Mechanics hub]({{ '/notes/ap/ap-physics-c-mechanics/' | relative_url }})
 
-> **Prerequisite:**
-> AP Calculus AB/BC
+:::note
+**Prerequisite:**
+AP Calculus AB/BC
+:::
 
-> **Note:**
-> If you are looking for AP Physics 1 material, use the AP Physics C Mechanics notes but ignore all parts with calculus. For the unit not covered in AP Physics C Mech (Fluids), check out the respective sections in the physics portal (under the F=ma section)
+:::note
+**Note:**
+If you are looking for AP Physics 1 material, use the AP Physics C Mechanics notes but ignore all parts with calculus. For the unit not covered in AP Physics C Mech (Fluids), check out the respective sections in the physics portal (under the F=ma section)
+:::
 
 - ### [AP Physics C E&M hub]({{ '/notes/ap/ap-physics-c-em/' | relative_url }})
 
->**Prerequisite:**
-> AP Calculus AB/BC, AP Physics 1 or AP Physics C Mechanics
+:::note
+**Prerequisite:**
+AP Calculus AB/BC, AP Physics 1 or AP Physics C Mechanics
+:::
 
-> **Note:**
-> If you are looking for AP Physics 2 material, use the AP Physics C E&M notes but ignore all parts with calculus. For the units not covered in AP Physics C E&M (Thermo, Waves, Optics, Modern/Nuclear Physics), check out the respective sections in the physics portal (under the USAPhO section). Note that some of the notes in that section will be too challenging for a AP Physics 2 course.
+:::note
+**Note:**
+If you are looking for AP Physics 2 material, use the AP Physics C E&M notes but ignore all parts with calculus. For the units not covered in AP Physics C E&M (Thermo, Waves, Optics, Modern/Nuclear Physics), check out the respective sections in the physics portal (under the USAPhO section). Note that some of the notes in that section will be too challenging for a AP Physics 2 course.
+:::
 
 - ### [AP Precalculus hub]({{ '/notes/ap/precalculus/' | relative_url }})
 

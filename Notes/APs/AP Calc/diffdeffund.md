@@ -14,6 +14,7 @@ Differentiation measures instantaneous change. Conceptually, the derivative is t
 
 ## Definition of the derivative
 
+:::theorem{name="Definition of the derivative"}
 The derivative of $$f$$ at $$x$$ is
 
 $$
@@ -32,26 +33,34 @@ Interpretations:
 - slope of the tangent line,
 - limit of secant slopes,
 - local sensitivity of output to input.
+:::
 
-> [Image Placeholder: secant lines approaching a tangent line]
+:::note
+[Image Placeholder: secant lines approaching a tangent line]
+:::
 
 ---
 
 ## Differentiability vs continuity
 
+:::theorem{name="Differentiability implies continuity"}
 If $$f$$ is differentiable at $$a$$, then $$f$$ is continuous at $$a$$.
+:::
 
 The converse is false. A function can be continuous but not differentiable because of:
 
+:::warning
 - corner,
 - cusp,
 - vertical tangent,
 - discontinuity.
+:::
 
 ---
 
 ## Basic derivative rules
 
+:::theorem{name="Basic derivative rules"}
 For constants $$c$$ and differentiable functions $$f,g$$:
 
 $$
@@ -81,11 +90,13 @@ $$
 $$
 
 for $$g(x) \ne 0$$.
+:::
 
 ---
 
 ## Derivatives of common functions
 
+:::theorem{name="Derivatives of common functions"}
 $$
 \frac{d}{dx}(\sin x) = \cos x
 $$
@@ -109,11 +120,13 @@ $$
 $$
 \frac{d}{dx}(\ln x) = \frac{1}{x}
 $$
+:::
 
 ---
 
 ## Tangent and normal lines
 
+:::theorem{name="Tangent and normal lines"}
 At $$x=a$$:
 
 - tangent slope is $$f'(a)$$,
@@ -124,6 +137,7 @@ y - f(a) = f'(a)(x-a),
 $$
 
 - normal slope is $$-1/f'(a)$$ when $$f'(a) \ne 0$$.
+:::
 
 ---
 
@@ -131,10 +145,12 @@ $$
 
 The second derivative $$f''(x)$$ measures the rate of change of the first derivative.
 
+:::note
 Interpretations:
 
 - concavity in pure math,
 - acceleration in motion when $$f$$ is position.
+:::
 
 You may also see $$f^{(n)}(x)$$ for the $$n$$th derivative.
 
@@ -144,6 +160,7 @@ You may also see $$f^{(n)}(x)$$ for the $$n$$th derivative.
 
 If $$s(t)$$ is position, then:
 
+:::theorem{name="Motion along a line"}
 $$
 v(t) = s'(t)
 $$
@@ -151,20 +168,25 @@ $$
 $$
 a(t) = v'(t) = s''(t)
 $$
+:::
 
 Velocity includes sign and direction; speed is $$\lvert v(t) \rvert$$.
 
+:::tip
 When velocity and acceleration have the same sign, speed is increasing. When signs differ, speed is decreasing.
+:::
 
 ---
 
 ## Local linearity and linearization preview
 
+:::theorem{name="Linearization"}
 Near $$x=a$$,
 
 $$
 f(x) \approx f(a) + f'(a)(x-a).
 $$
+:::
 
 This linearization is a first-order approximation and becomes useful for estimation and error analysis later.
 
@@ -174,6 +196,7 @@ This linearization is a first-order approximation and becomes useful for estimat
 
 If you only have values of $$f$$, use the difference quotient for an approximate derivative:
 
+:::tip
 $$
 f'(a) \approx \frac{f(a+h)-f(a)}{h}
 $$
@@ -183,12 +206,15 @@ or a symmetric estimate:
 $$
 f'(a) \approx \frac{f(a+h)-f(a-h)}{2h}.
 $$
+:::
 
 ---
 
 ## Common mistakes
 
+:::warning
 - Confusing the derivative at a point with the derivative function.
 - Forgetting the product rule and differentiating term-by-term incorrectly.
 - Using the quotient rule with the wrong sign in the numerator.
 - Treating speed and velocity as the same thing.
+:::

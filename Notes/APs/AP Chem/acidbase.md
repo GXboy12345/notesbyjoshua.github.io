@@ -30,7 +30,11 @@ the species $$\text{A}^-$$ is the **conjugate base** of $$\text{HA}$$, and $$\te
 
 ### Lewis Theory
 
-A **Lewis acid** accepts an electron pair; a **Lewis base** donates an electron pair. This picture includes reactions without proton transfer (e.g. $$\text{BF}_3$$ with $$\text{NH}_3$$) and matches how metal ions bind ligands in [Unit 7]({{ '/notes/ap/chem/equilibrium/' | relative_url }}) complex-ion formation. This is usually not covered on the AP exam.
+A **Lewis acid** accepts an electron pair; a **Lewis base** donates an electron pair. This picture includes reactions without proton transfer (e.g. $$\text{BF}_3$$ with $$\text{NH}_3$$) and matches how metal ions bind ligands in [Unit 7]({{ '/notes/ap/chem/equilibrium/' | relative_url }}) complex-ion formation.
+
+:::note
+This is usually not covered on the AP exam.
+:::
 
 ---
 
@@ -54,9 +58,11 @@ Acid-base reactions favor formation of the **weaker acid** and **weaker base**. 
 
 ## Strong acids and strong bases
 
+:::exam
 Common strong acids (memorize for AP): $$\text{HCl}$$, $$\text{HBr}$$, $$\text{HI}$$ (hydrohalic acids), $$\text{HNO}_3$$, $$\text{HClO}_4$$, $$\text{HClO}_3$$, and $$\text{H}_2\text{SO}_4$$ (oxoacids)for the first proton only (the second proton is weak in the dilute-solution sense: $$\text{HSO}_4^-$$ is a weak acid). A notable exception to hydrohalic trend is that $$\text{HF}$$ is weak.
 
 Strong bases are the group 1 hydroxides ($$\text{LiOH}$$, $$\text{NaOH}$$, $$\text{KOH}$$, …) and the heavier group 2 hydroxides commonly used in lab ($$\text{Ca(OH)}_2$$, $$\text{Sr(OH)}_2$$, $$\text{Ba(OH)}_2$$). $$\text{Mg(OH)}_2$$ is only slightly soluble but what dissolves is essentially fully dissociated.
+:::
 
 For a strong acid at moderate concentration, $$[\text{H}_3\text{O}^+] \approx$$ the analytical concentration of the acid (if one proton per formula unit). For a strong diprotic acid such as $$\text{H}_2\text{SO}_4$$, treat the first step as complete and the second with $$K_{a2}$$ if the problem requires it.
 
@@ -66,6 +72,7 @@ For a strong acid at moderate concentration, $$[\text{H}_3\text{O}^+] \approx$$ 
 
 For a weak monoprotic acid $$\text{HA}$$,
 
+:::key{name="K_a"}
 $$
 K_a = \frac{[\text{H}_3\text{O}^+][\text{A}^-]}{[\text{HA}]},
 $$
@@ -77,6 +84,7 @@ $$
 $$
 
 Smaller $$\text{p}K_a$$ means a stronger acid (larger $$K_a$$).
+:::
 
 ---
 
@@ -100,11 +108,13 @@ ICE setup parallels weak acids, but you solve for $$[\text{OH}^-]$$ and then fin
 
 For a conjugate pair $$\text{HA}/\text{A}^-$$ in water at a given temperature,
 
+:::key{name="K_a, K_b, and K_w"}
 $$
 K_a \times K_b = K_w,
 $$
 
 where $$K_b$$ refers to $$\text{A}^-$$ acting as a base toward water. Similarly $$\text{p}K_a + \text{p}K_b = \text{p}K_w$$ (at $$25\,^\circ\text{C}$$, $$\text{p}K_w = 14.00$$ when $$K_w = 1.0 \times 10^{-14}$$).
+:::
 
 **Autoionization** of water:
 
@@ -118,9 +128,11 @@ At $$25\,^\circ\text{C}$$, $$K_w = 1.0 \times 10^{-14}$$; $$K_w$$ depends on tem
 
 ## pH and pOH
 
+:::key{name="pH and pOH"}
 $$
 \text{pH} = -\log[\text{H}_3\text{O}^+], \qquad \text{pOH} = -\log[\text{OH}^-], \qquad \text{pH} + \text{pOH} = \text{p}K_w.
 $$
+:::
 
 Neutral water at $$25\,^\circ\text{C}$$ has $$\text{pH} = 7.00$$ because $$[\text{H}_3\text{O}^+] = [\text{OH}^-]$$. $$\text{pH} < 7$$ is acidic and $$\text{pH} > 7$$ is basic at that temperature; at other temperatures, neutral pH shifts slightly because $$K_w$$ changes.
 
@@ -134,11 +146,13 @@ $$
 
 ### Choosing a pH calculation method
 
+:::tip
 1. **Strong acid or strong base only**: use stoichiometric dissociation first, then pH/pOH.
 2. **Weak acid or weak base only**: write $$K_a$$ or $$K_b$$ and use an ICE table.
 3. **Mixture with strong acid/base reaction**: do limiting-reactant stoichiometry first; then decide what remains.
 4. **Weak acid + conjugate base** or **weak base + conjugate acid**: use buffer logic.
 5. **At a titration equivalence point**: identify the salt left behind and analyze its hydrolysis.
+:::
 
 ---
 
@@ -146,11 +160,13 @@ $$
 
 **Percent ionization** (or **percent dissociation** for a weak acid) is
 
+:::key{name="Percent ionization"}
 $$
 \%\ \text{ionization} = \frac{[\text{H}_3\text{O}^+]_{\text{eq}}}{[\text{HA}]_{\text{initial}}} \times 100\%,
 $$
 
 using the initial analytical concentration of $$\text{HA}$$ in the denominator. For a weak base, an analogous expression uses $$[\text{OH}^-]_{\text{eq}}/[\text{B}]_{\text{initial}}$$. Adding common-ion $$\text{A}^-$$ or $$\text{BH}^+$$ suppresses ionization (**Le Châtelier’s principle**), lowering percent ionization.
+:::
 
 ---
 
@@ -203,17 +219,21 @@ $$
 
 A **buffer** resists pH change when modest amounts of strong acid or strong base are added. It contains a weak acid and its conjugate base in comparable amounts (or a weak base + conjugate acid). The **Henderson–Hasselbalch equation** (same assumptions as the small-change approximation from equilibrium) is
 
+:::theorem{name="Henderson-Hasselbalch"}
 $$
 \text{pH} = \text{p}K_a + \log\left(\frac{[\text{A}^-]}{[\text{HA}]}\right),
 $$
 
 with concentrations evaluated after any same-volume mixing (or use moles in the ratio if volume is common to both). The equation is most reliable when both species are present and neither concentration is extremely small.
+:::
 
 **Buffer capacity** increases with total concentration of buffer components. When $$[\text{HA}] = [\text{A}^-]$$, $$\text{pH} = \text{p}K_a$$ and the system can absorb equal challenge from added acid or base in a symmetric sense (maximum buffering range is often quoted near $$\text{p}K_a \pm 1$$).
 
 ### Buffer stoichiometry before equilibrium
 
+:::tip
 When a strong acid or strong base is added to a buffer, do the neutralization reaction **before** using Henderson-Hasselbalch.
+:::
 
 Added strong acid consumes conjugate base:
 
@@ -433,6 +453,9 @@ A buffer contains a weak acid and its conjugate base, or a weak base and its con
 $$
 \boxed{\text{C}}
 $$
+:::
+:::
+
 ### FRQ
 
 :::frq{id=chem-acidbase-frq-7}
@@ -529,4 +552,6 @@ $$(C)$$ The steep part of the titration curve is where a tiny volume change caus
 
 **Image placeholder:** Weak acid-strong base titration curve with equivalence point above $$\text{pH}=7$$ and an indicator transition range near the steep region.
 :::
+:::
+
 :::

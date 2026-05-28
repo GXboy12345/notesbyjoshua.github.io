@@ -8,15 +8,25 @@ permalink: /notes/ap/stats/probandrand/
 
 # Unit 4: Probability, Random Variables, and Probability Distributions
 
+:::summary{title="Unit overview"}
 **Probability** is a number between 0 and 1 that quantifies how likely an **event** is. In AP Statistics you usually interpret it as **long-run relative frequency**: repeat a random process many times, and the fraction of times the event occurs stabilizes near its probability. The rules below describe how to combine and update probabilities in a **sample space** of possible outcomes.
+:::
 
 ---
 
 ## Sample space and experiments
 
-- A **random phenomenon** or **probability experiment** is a process with outcomes that vary from trial to trial in a way that cannot be predicted with certainty in advance, but whose possible outcomes are known.
-- The sample space, denoted $$S$$, is the set of all possible outcomes of that experiment. An event is any subset of the sample space (a collection of one or more outcomes). The letter $$S$$ is standard notation; individual outcomes are often written as simple labels or ordered pairs when the experiment has multiple stages.
-- A **tree diagram** lists stages of an experiment as branches. Multiply along a path to get the probability of that path when stages are suitably independent or conditional probabilities are marked on branches; add paths that represent the same event. Tree diagrams keep ordered outcomes visible and help avoid double-counting when the experiment is multistep.
+:::key{name="Random phenomenon or probability experiment"}
+A **random phenomenon** or **probability experiment** is a process with outcomes that vary from trial to trial in a way that cannot be predicted with certainty in advance, but whose possible outcomes are known.
+:::
+
+:::key{name="Sample space and event"}
+The sample space, denoted $$S$$, is the set of all possible outcomes of that experiment. An event is any subset of the sample space (a collection of one or more outcomes). The letter $$S$$ is standard notation; individual outcomes are often written as simple labels or ordered pairs when the experiment has multiple stages.
+:::
+
+:::tip
+A **tree diagram** lists stages of an experiment as branches. Multiply along a path to get the probability of that path when stages are suitably independent or conditional probabilities are marked on branches; add paths that represent the same event. Tree diagrams keep ordered outcomes visible and help avoid double-counting when the experiment is multistep.
+:::
 
 :::figure{width=480}
 ![Probability tree diagram placeholder](/assets/APs/AP%20Stats/probandrand/tree-diagram.png)
@@ -26,6 +36,7 @@ permalink: /notes/ap/stats/probandrand/
 
 ## Basic rules of probability
 
+:::theorem{name="Basic rules of probability"}
 - **Rule 1 (bounds)**: For any event $$A$$,
 
 $$
@@ -39,24 +50,32 @@ $$
 $$
 \text{Odds in favor of } A = \frac{P(A)}{P(A')}
 $$
+:::
 
+:::note
 Odds are a ratio, not a probability; you can recover probabilities from odds with a little algebra when needed.
+:::
 
 ---
 
 ## Events: complement, disjoint, union, intersection
 
+:::theorem{name="Events: complement, disjoint, union, intersection"}
 - The **complement** of an event $$A$$ is the event that $$A$$ does not occur. It includes every outcome in $$S$$ that is not in $$A$$. Notation includes $$A'$$ and $$A^C$$.
 - **Disjoint** events (also called **mutually exclusive** events) cannot both occur on the same trial: they share no outcomes, so $$P(A \cap B) = 0$$ when $$A$$ and $$B$$ are disjoint.
 - The **union** $$A \cup B$$ is “$$A$$ or $$B$$ or both”—at least one of the two events happens.
 - The **intersection** $$A \cap B$$ is “$$A$$ and $$B$$ both” happen.
-- **Conditional probability** “$$A$$ given $$B$$” restricts attention to outcomes where $$B$$ occurred. The notation is
+:::
+
+:::key{name="Conditional probability"}
+**Conditional probability** “$$A$$ given $$B$$” restricts attention to outcomes where $$B$$ occurred. The notation is
 
 $$
 A \mid B
 $$
 
 read as “$$A$$ given $$B$$.”
+:::
 
 Two events are **independent** if knowing whether one occurred does not change the probability of the other (formalized below).
 
@@ -64,12 +83,15 @@ Two events are **independent** if knowing whether one occurred does not change t
 
 ## More probability rules
 
+:::theorem{name="Complement rule"}
 **Complement rule:**
 
 $$
 P(A') = 1 - P(A)
 $$
+:::
 
+:::theorem{name="General addition rule"}
 **General addition rule (union):**
 
 $$
@@ -77,7 +99,9 @@ P(A \cup B) = P(A) + P(B) - P(A \cap B)
 $$
 
 If $$A$$ and $$B$$ are disjoint, then $$P(A \cap B) = 0$$ and the rule reduces to $$P(A \cup B) = P(A) + P(B)$$.
+:::
 
+:::theorem{name="General multiplication rule"}
 **General multiplication rule (intersection):**
 
 $$
@@ -91,7 +115,9 @@ P(A \mid B) = \frac{P(A \cap B)}{P(B)}
 $$
 
 provided $$P(B) > 0$$.
+:::
 
+:::theorem{name="Independence"}
 **Independence** (equivalent formulations for events with positive probability):
 
 $$
@@ -105,21 +131,26 @@ P(A \cap B) = P(A)\,P(B)
 $$
 
 If that product rule fails, the events are **dependent**.
+:::
 
 ---
 
 ## Random variables and probability distributions
 
+:::key{name="Random variable"}
 A **random variable** assigns a numerical value to each outcome of a random experiment. Customarily we use capital letters such as $$X$$ or $$Y$$ for the variable and lowercase $$x$$ for a possible value it might take.
 
 - A **discrete random variable** takes a **finite** or **countably infinite** set of values (counts, “number of successes,” and so on).
 - A **continuous random variable** takes values in an interval (time, weight, distance). Probabilities for continuous models are assigned to intervals using density and area ideas in later work; this unit focuses on the discrete case.
+:::
 
 ---
 
 ## Discrete probability distributions
 
+:::key{name="Discrete probability distribution"}
 A **discrete probability distribution** lists every possible value $$x_i$$ of $$X$$ together with its probability $$P(x_i)$$ (or $$P(X = x_i)$$). The list may appear as a table, a formula, or a probability histogram.
+:::
 
 Let $$X$$ take values $$x_1, x_2, \ldots, x_n$$ with probabilities $$P(x_1), P(x_2), \ldots, P(x_n)$$. The pairing
 
@@ -127,6 +158,7 @@ $$
 \{(x_1, P(x_1)), (x_2, P(x_2)), \ldots, (x_n, P(x_n))\}
 $$
 
+:::theorem{name="Valid probability distribution"}
 is a valid probability distribution if
 
 $$
@@ -140,6 +172,7 @@ $$
 $$
 
 The first condition keeps each entry a legitimate probability; the second says exactly one of the listed values occurs (for a complete list of possibilities).
+:::
 
 ---
 
@@ -147,21 +180,29 @@ The first condition keeps each entry a legitimate probability; the second says e
 
 The **expected value** $$E(X)$$ of a discrete random variable $$X$$ is also called its mean and denoted $$\mu_X$$ when emphasis is on the distribution. It is the probability-weighted average of the possible values:
 
+:::key{name="Expected value"}
 $$
 \mu = E(X) = \sum_{i=1}^{n} x_i\, P(x_i)
 $$
+:::
 
+:::note
 That number is a center of the distribution, but it need not be a value $$X$$ can actually take.
+:::
 
 ### Bonus!
 
 Surprisingly, expected value is an additive property. The **linearity of expectation** states that:
 
+:::theorem{name="Linearity of expectation"}
 $$
 E(X_1 + X_2 + ... + X_n) = E(X_1) + E(X_2) + ... + E(X_n)
 $$
+:::
 
+:::note
 This property is useful in games, insurance, and counting problems because it does not require the random variables to be independent. Variance rules, however, do require independence in the simple forms used in AP Statistics.
+:::
 
 ---
 
@@ -169,11 +210,13 @@ This property is useful in games, insurance, and counting problems because it do
 
 The **variance** $$\sigma^2$$ (or $$\operatorname{Var}(X)$$) measures spread around the mean as a probability-weighted average of squared deviations:
 
+:::key{name="Variance and standard deviation"}
 $$
 \sigma^2 = \sum_{i=1}^{n} (x_i - \mu)^2\, P(x_i)
 $$
 
 The **standard deviation** is $$\sigma = \sqrt{\sigma^2}$$, returned to the original units of $$X$$.
+:::
 
 ---
 
@@ -181,9 +224,11 @@ The **standard deviation** is $$\sigma = \sqrt{\sigma^2}$$, returned to the orig
 
 A **combination** counts how many ways you can choose $$r$$ objects from $$n$$ distinct objects when order does not matter. The symbol is the **binomial coefficient** $$\binom{n}{r}$$, read “$$n$$ choose $$r$$”:
 
+:::key{name="Binomial coefficient"}
 $$
 \binom{n}{r} = \frac{n!}{r!\,(n-r)!}
 $$
+:::
 
 This expression appears in the **binomial probability model** (fixed $$n$$ independent trials, same success probability $$p$$, count successes, described in [Unit 5]({{ '/notes/ap/stats/samplingdistr/' | relative_url }})) and in many counting-based probability problems on the exam.
 
@@ -191,17 +236,21 @@ This expression appears in the **binomial probability model** (fixed $$n$$ indep
 
 ## Binomial and geometric models
 
+:::theorem{name="Binomial random variable"}
 A **binomial random variable** counts successes in a fixed number of independent trials with the same success probability. If $$X \sim \operatorname{Binomial}(n,p)$$, then
 
 $$
 P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}.
 $$
+:::
 
+:::theorem{name="Geometric random variable"}
 A **geometric random variable** counts trials until the first success. If $$X \sim \operatorname{Geometric}(p)$$, then
 
 $$
 P(X=k)=(1-p)^{k-1}p.
 $$
+:::
 
 :::figure{width=480}
 ![Binomial and geometric distributions placeholder](/assets/APs/AP%20Stats/probandrand/binomial-geometric.png)

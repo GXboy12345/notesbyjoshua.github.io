@@ -18,7 +18,12 @@ permalink: /notes/physics/f-ma/
 
 ## Practice Problems
 
+:::under-construction
+:::
+
 ---
 
 ## Resources
 
+:::under-construction
+:::

@@ -22,9 +22,13 @@ nav_order: 4
 
 ---
 
-## Practice Problems
+## Practice
 
-- Practice lol
+:::practice
+:::tip
+Practice lol
+:::
+:::
 
 ---
 

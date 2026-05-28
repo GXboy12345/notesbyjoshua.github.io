@@ -8,6 +8,10 @@ permalink: /notes/ap/precalc/fundeqineq/
 
 # Unit 1 & 2: Fundamentals, Equations, and Inequalities
 
+:::summary{title="Unit overview"}
+This unit covers number sets, coordinate geometry, equation-solving (linear through radical), inequalities, and symmetry— the algebraic foundation for the rest of AP Precalculus.
+:::
+
 ## Definitions
 
 Before we solve anything, we need a shared language for the kinds of numbers that can show up. These sets are nested: every natural number is an integer, every integer is rational, and every rational number is real.
@@ -67,6 +71,16 @@ M=\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right).
 $$
 
 These formulas are very useful later on for analytic geometry.
+
+:::key{name="Distance and midpoint"}
+For points $$A(x_1,y_1)$$ and $$B(x_2,y_2)$$,
+
+$$
+d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2},
+\qquad
+M=\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right).
+$$
+:::
 
 ### Graphing lines
 
@@ -135,7 +149,7 @@ $$
 
 The basic idea is to get the equation into a form where the zero-product property, square roots, or the quadratic formula can finish the job.
 
-:::theorem
+:::theorem{name="problem solving techniques (Quadratics)"}
 **Examples of problem solving techniques (Quadratics).**
 
 Factoring is the fastest method when it works:
@@ -173,9 +187,11 @@ so $$x=-1$$ or $$x=-5$$.
 
 The quadratic formula works for every quadratic, but often times it is very inefficient to use compared to the techniques shown above. The solutions to any quadratic come in the form of:
 
+:::key{name="Quadratic formula"}
 $$
 x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
+:::
 
 The discriminant $$b^2-4ac$$ tells you how many real roots the equation has:
 
@@ -189,7 +205,7 @@ $$
 r_1+r_2=-\frac{b}{a},\qquad r_1r_2=\frac{c}{a}.
 $$
 
-:::theorem
+:::theorem{name="Proof (Quadratic formula)"}
 **Proof (Quadratic formula).** Let the quadratic be in the form of
 
 $$
@@ -256,7 +272,9 @@ The usual strategy is:
 3. Solve the resulting equation.
 4. Check that no answer violates the restrictions.
 
+:::warning
 Do not multiply by something like $$x-3$$ without remembering that $$x=3$$ was never allowed. That is how extraneous answers sneak in.
+:::
 
 ### Polynomial equations
 
@@ -520,7 +538,11 @@ has critical numbers $$-3$$ and $$1$$. The squared factor is never negative and 
 
 Typical form: $$\dfrac{P(x)}{Q(x)} > 0$$, $$\ge 0$$, $$< 0$$, or $$\le 0$$ (strict vs non-strict matters at zeros of the denominator).
 
+:::warning
 The method is similar to polynomial inequalities, with one major warning: denominator zeros are never allowed.
+
+Do not multiply both sides by the denominator unless you already know its sign. If the denominator could be positive or negative, multiplying by it may or may not reverse the inequality, which is exactly the problem the sign chart avoids.
+:::
 
 The safest process is:
 
@@ -530,10 +552,6 @@ The safest process is:
 4. Test signs on each interval.
 5. Include numerator zeros only if the inequality allows equality.
 6. Never include denominator zeros.
-
-Do not multiply both sides by the denominator unless you already know its sign. If the denominator could be positive or negative, multiplying by it may or may not reverse the inequality, which is exactly the problem the sign chart avoids.
-
----
 
 ### Radical inequalities
 
@@ -612,7 +630,7 @@ $$
 
 which simplifies back to $$y=x^3$$.
 
-:::theorem
+:::theorem{name="Extension"}
 **Extension.** If a graph has both $$x$$-axis and $$y$$-axis symmetry, does it necessarily have origin symmetry? If a graph has origin symmetry, does it necessarily have $$x$$-axis and $$y$$-axis symmetry?
 :::
 

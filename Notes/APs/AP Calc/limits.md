@@ -14,6 +14,7 @@ Limits are the language of calculus. They describe how a function behaves near a
 
 ## What a limit means
 
+:::theorem{name="Limit"}
 We write
 
 $$
@@ -21,6 +22,7 @@ $$
 $$
 
 if we can make $$f(x)$$ as close to $$L$$ as we want by taking $$x$$ sufficiently close to $$a$$, with $$x \ne a$$.
+:::
 
 This is about nearby behavior, not direct substitution. It is possible for:
 
@@ -32,6 +34,7 @@ This is about nearby behavior, not direct substitution. It is possible for:
 
 ## Limit laws
 
+:::theorem{name="Limit laws"}
 If $$\lim_{x \to a} f(x) = L$$ and $$\lim_{x \to a} g(x) = M$$, then:
 
 $$
@@ -49,8 +52,11 @@ $$
 $$
 \lim_{x \to a} [f(x)]^n = L^n
 $$
+:::
 
+:::key
 For polynomials and rational functions, direct substitution works whenever the denominator is nonzero.
+:::
 
 ---
 
@@ -64,18 +70,23 @@ $$
 
 If the left-hand and right-hand limits disagree, the limit does not exist.
 
+:::warning
 Common reasons a limit fails to exist:
 
 - jump discontinuity,
 - vertical asymptote with unbounded behavior,
 - oscillation, such as $$\sin(1/x)$$ near $$x = 0$$.
+:::
 
-> [Image Placeholder: left-hand vs right-hand limit examples, including a jump discontinuity]
+:::note
+[Image Placeholder: left-hand vs right-hand limit examples, including a jump discontinuity]
+:::
 
 ---
 
 ## Squeeze Theorem
 
+:::theorem{name="Squeeze Theorem"}
 If
 
 $$
@@ -93,7 +104,9 @@ then
 $$
 \lim_{x \to a} f(x) = L.
 $$
+:::
 
+:::example{title="x sin(1/x)"}
 For example:
 
 $$
@@ -111,16 +124,19 @@ implies
 $$
 \lim_{x \to 0} x\sin(1/x) = 0.
 $$
+:::
 
 ---
 
 ## Continuity
 
+:::theorem{name="Continuity"}
 A function is continuous at $$x = a$$ if:
 
 1. $$f(a)$$ exists.
 2. $$\lim_{x \to a} f(x)$$ exists.
 3. $$\lim_{x \to a} f(x) = f(a)$$.
+:::
 
 Types of discontinuities:
 
@@ -145,7 +161,9 @@ If $$f$$ is continuous on $$[a,b]$$ and $$N$$ lies between $$f(a)$$ and $$f(b)$$
 
 This theorem does not tell you how many such points there are, only that at least one exists.
 
-> [Image Placeholder: continuous curve crossing a horizontal line to illustrate IVT]
+:::note
+[Image Placeholder: continuous curve crossing a horizontal line to illustrate IVT]
+:::
 
 ---
 
@@ -225,6 +243,7 @@ is the average rate of change, or slope of the secant line. The derivative will 
 - Use common denominators.
 - Extract dominant powers for end behavior.
 
+:::example{title="Rationalizing at x = 4"}
 Example:
 
 $$
@@ -233,6 +252,7 @@ $$
 \lim_{x \to 4} \frac{1}{\sqrt{x} + 2}
 = \frac14
 $$
+:::
 
 ---
 

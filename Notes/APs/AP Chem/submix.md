@@ -26,7 +26,9 @@ Polar molecules possess a permanent dipole moment, since the more electronegativ
 
 ### Hydrogen bonding
 
+:::tip
 **Hydrogen bonding** is an especially strong dipole–dipole interaction (often treated as its own category) when hydrogen is bonded to F, O, or N: small, very electronegative atoms that leave a highly exposed proton. It explains the anomalously high boiling points of $$\text{H}_2\text{O}$$, alcohols ( $$\text{-OH}$$ ), and amines in appropriate contexts, since they all include hydrogen bonds.
+:::
 
 ### Ion–dipole interactions
 
@@ -68,6 +70,7 @@ Chemists often classify solids by the particles at lattice sites and the forces 
 
 The main crystalline types behave differently in simple tests, so a short flowchart can narrow down the classification. Real samples can blur categories, so it is important to do many tests as backups.
 
+:::tip
 1. **Heating in a test tube**: Look first for **condensation** near the cool top of the tube. Water driven off from a crystal can indicate a **hydrated ionic** solid (often you are done after also checking conductivity in water). If there is no such hint and the sample **melts** at modest temperature, it is likely a **molecular** or **metallic** solid; test **electrical conductivity** on the **solid** (and again if you have a melt): **metallic** solids conduct; **molecular** solids do not. Many **ionic** salts do not melt cleanly over a burner, they may sit unchanged or **decompose**, so “does not melt” is not enough to prove molecular.
 
 2. **Solid conductivity**: If the solid conducts electricity, it is **metallic** (or **graphite**, a special **network** solid). If it does not conduct and you already know it melts easily, treat it as **molecular** and go to tests 4–5.
@@ -79,6 +82,7 @@ The main crystalline types behave differently in simple tests, so a short flowch
 5. **Hexane solubility (confirmation for molecular solids)**: **Hexane** is **nonpolar**. If the solid **dissolves** in hexane, it behaves like a **nonpolar** species (**nonpolar molecular**). If it **does not** dissolve in hexane but **did** dissolve in water, that matches **polar molecular**. If it dissolves in neither, reconsider **ionic** (if it never dissolved), **network** covalent, or a very high–molar-mass molecular solid.
 
 **Caveat:** **Covalent network** solids are easy to confuse with **nonpolar molecular** solids in water/hexane tests alone: hardness, melting behavior, and structure from other evidence matter.
+:::
 
 ---
 
@@ -118,9 +122,11 @@ Kinetic molecular theory sets down some assumptions for an ideal gas:
 4. The gas molecules move around in **constant, random motion**
 5. For one mole of a **monatomic** ideal gas, average translational kinetic energy (per mole) is
 
+:::key{name="Average kinetic energy"}
 $$
 KE_{avg} = \frac{3}{2}RT.
 $$
+:::
 
 Per molecule, the equation becomes
 $$
@@ -158,6 +164,10 @@ $$
 
 There are many gas laws that are useful for the AP exam (Remember to **ALWAYS** use Kelvin!):
 
+:::warning
+Use **Kelvin** for all gas-law temperature calculations.
+:::
+
 - **Boyle’s law**: $$P_1 V_1 = P_2 V_2$$ (or equivalently $$P \propto \frac{1}{V}$$) at fixed $$n$$ and $$T$$.
 - **Charles’s law**: $$\frac{V_1}{T_1} = \frac{V_2}{T_2}$$ (or equivalently $$V \propto T$$) at fixed $$n, P$$ (use Kelvin for $$T$$).
 - **Gay-Lussac’s law**: $$\frac{P_1}{T_1} = \frac{P_2}{T_2}$$ (or equivalently $$P \propto T$$) at fixed $$n$$ and $$V$$.
@@ -165,9 +175,11 @@ There are many gas laws that are useful for the AP exam (Remember to **ALWAYS** 
 
 The combined gas laws can merge to form the **Ideal Gas Law (IGL)**:
 
+:::key{name="Ideal gas law"}
 $$
 PV = nRT.
 $$
+:::
 
 Use a value of $$R$$ whose pressure and volume units match the problem:
 
@@ -200,6 +212,7 @@ when density is measured directly. These are just $$PV=nRT$$ with $$n=m/M$$ and 
 
 **Dalton’s law** of partial pressures: for a mixture of ideal gases,
 
+:::key{name="Dalton's law"}
 $$
 P_{\text{total}} = \sum P_i, \qquad P_i = x_i P_{\text{total}},
 $$
@@ -209,6 +222,7 @@ where $$x_i$$ is the mole fraction of gas $$i$$. When collecting a gas over wate
 $$
 P_{\text{total}} = P_{\text{gas}} + P_{\text{H}_2\text{O}}.
 $$
+:::
 
 ---
 
@@ -216,11 +230,13 @@ $$
 
 **Diffusion** is mixing driven by random molecular motion, while **effusion** is escape through a small opening. **Graham’s law** compares rates for gases at the same temperature:
 
+:::theorem{name="Graham's law"}
 $$
 \frac{\text{rate}_1}{\text{rate}_2} = \sqrt{\frac{M_2}{M_1}},
 $$
 
 where $$M$$ is molar mass. Graham's Law basically states that lighter molecules move faster on average and effuse faster.
+:::
 
 ---
 
@@ -256,6 +272,7 @@ which equals $$1$$ for an ideal gas (by Ideal Gas Law). $$Z < 1$$ often reflects
 
 **Colligative properties** depend on the concentration of solute particles, not on their chemical identity. When you dissolve a solid into a liquid, it increases the IMFs/interactions between the molecules. Resulting in the following formulas (Use **molality** $$m$$ (moles solute per kilogram solvent) in the standard formulas):
 
+:::key{name="Colligative properties"}
 Boiling point elevation:
 
 $$
@@ -269,6 +286,7 @@ $$
 $$
 
 $$K_b$$ and $$K_f$$ are solvent constants. The **van’t Hoff factor** $$i$$ is the moles of dissolved particles produced per mole of formula units added (for molecular solids $$i = 1$$). Although this is not always the case, for ionic solids, you can assume that $$i$$ is the number of ions that result after one molecule of the solid dissolves.
+:::
 
 ---
 
@@ -276,6 +294,7 @@ $$K_b$$ and $$K_f$$ are solvent constants. The **van’t Hoff factor** $$i$$ is 
 
 All liquids tend to evaporate, since their energy can be mapped to a Maxwell-Boltzmann distribution. The pressure generated by the evaporation is called vapor pressure. **Raoult’s law** for a nonvolatile solute states that:
 
+:::key{name="Raoult's law"}
 $$
 P_{\text{solution}} = x_{\text{solvent}}\, P^\circ_{\text{solvent}},
 $$
@@ -287,14 +306,17 @@ P_{\text{total}} = x_A P^\circ_A + x_B P^\circ_B
 $$
 
 when the mixture is ideal. *Positive deviations* from Raoult’s law mean weaker attractions between unlike molecules than the average of like–like interactions; *negative deviations* mean stronger attractions between unlike partners.
+:::
 
 **Henry’s law** relates gas solubility in a liquid to partial pressure:
 
+:::key{name="Henry's law"}
 $$
 C = k_H P,
 $$
 
 with $$k_H$$ a constant for a given solute–solvent pair at fixed $$T$$.
+:::
 
 ---
 
@@ -302,11 +324,17 @@ with $$k_H$$ a constant for a given solute–solvent pair at fixed $$T$$.
 
 For dilute solutions, **osmotic pressure** $$\Pi$$ obeys
 
+:::key{name="Osmotic pressure"}
 $$
 \Pi = i M R T,
 $$
 
-with $$M$$ in $$\text{mol/L}$$ and $$R$$ matched to the units of $$\Pi$$ (commonly $$0.0821 \text{ L}\cdot\text{atm}/(\text{mol}\cdot\text{K})$$ when $$\Pi$$ is in atm). Osmosis is net flow of solvent through a semipermeable membrane toward higher solute concentration. Note that this will likely not appear on the AP Chemistry exam.
+with $$M$$ in $$\text{mol/L}$$ and $$R$$ matched to the units of $$\Pi$$ (commonly $$0.0821 \text{ L}\cdot\text{atm}/(\text{mol}\cdot\text{K})$$ when $$\Pi$$ is in atm). Osmosis is net flow of solvent through a semipermeable membrane toward higher solute concentration.
+:::
+
+:::exam
+Note that this will likely not appear on the AP Chemistry exam.
+:::
 
 ---
 
@@ -314,6 +342,7 @@ with $$M$$ in $$\text{mol/L}$$ and $$R$$ matched to the units of $$\Pi$$ (common
 
 **Spectrophotometry**/**colorimetry** uses the **Beer–Lambert Law** (Or alternatively **Beer's Law**): absorbance is proportional to concentration for a fixed path length:
 
+:::key{name="Beer-Lambert law"}
 $$
 A = \varepsilon l c,
 $$
@@ -324,7 +353,12 @@ $$
 A = -\log_{10}(T)
 $$,
 
-but transmittance rarely shows up on the AP exam. Beer's law is very applicable for measuring equilibrium/kinetics, since absorbance is directly proportional to concentration. When doing colorimetry, always calibrate beforehand and set the wavelength to the wavelength that is closest to the OPPOSITE of the color of the solution to get maximum absorbance.
+but transmittance rarely shows up on the AP exam. Beer's law is very applicable for measuring equilibrium/kinetics, since absorbance is directly proportional to concentration.
+:::
+
+:::tip
+When doing colorimetry, always calibrate beforehand and set the wavelength to the wavelength that is closest to the OPPOSITE of the color of the solution to get maximum absorbance.
+:::
 
 ---
 
@@ -444,6 +478,9 @@ Boiling-point elevation depends on total dissolved particle concentration. $$\te
 $$
 \boxed{\text{C}}
 $$
+:::
+:::
+
 ### FRQ
 
 :::frq{id=chem-submix-frq-7}
@@ -509,5 +546,6 @@ $$(C)$$ The $$0.040\ M$$ solution has twice the concentration, so an equal-volum
 <div class="placeholder-box" markdown="1">
 
 **Image placeholder:** Equal-volume particle diagrams showing the $$0.040\ M$$ solution with twice as many colored ions as the $$0.020\ M$$ solution.
+:::
 :::
 :::

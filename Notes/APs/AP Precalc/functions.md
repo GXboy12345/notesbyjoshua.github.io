@@ -8,6 +8,10 @@ permalink: /notes/ap/precalc/functions/
 
 # Unit 3: Functions
 
+:::summary{title="Unit overview"}
+This unit covers function notation, domain and range, transformations, composition, inverses, and piecewise functions—the core language of AP Precalculus modeling.
+:::
+
 ---
 
 ## Definition of a Function
@@ -40,12 +44,14 @@ $$
 
 ### Finding Domains
 
+:::warning
 Most domain work comes from asking what operations are legal.
 
 - Denominators cannot be $$0$$.
 - Even roots (e.g. square roots) require the inside expression to be nonnegative.
 - Logarithms require the input to be positive.
 - Contextual functions like parametrics may have extra restrictions, such as time $$t\ge 0$$ or length $$x>0$$.
+:::
 
 Always keep track of domain restrictions, and the legal domain is everything that is not part of the domain restriction.
 
@@ -60,8 +66,7 @@ The range is often harder than the domain because it asks what output values are
 - finding the inverse function's domain
 - using known parent-function behavior and transformations
 
-<div class="theorem-box" markdown="1">
-
+:::example{title="Domain and range of g(x)"}
 **Example.** Find the domain and range of
 
 $$
@@ -143,7 +148,7 @@ Therefore $$-1<y<1$$. The value $$y=0$$ occurs at $$x=-4$$ and $$x=0$$, while $$
 $$
 range=(-1,1).
 $$
-</div>
+:::
 
 ---
 
@@ -163,7 +168,9 @@ Six parent functions are especially useful to recognize:
 
 Knowing these shapes makes it much easier to sketch transformed functions quickly, and later we will talk about transformations so that most types of problems can be quickly visualized. A chart is shown below, with many of the functions appearing later (exponential, logarithmic, and trig).
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/parfunc.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/parfunc.png)
+:::
 
 ---
 
@@ -228,8 +235,7 @@ $$
 
 The $$\pm$$ is a warning that the relation may split into two separate function branches.
 
-<div class="theorem-box" markdown="1">
-
+:::example{title="Explicit forms of an implicit relation"}
 **Example.** Find the explicit forms for the relation
 
 $$
@@ -316,7 +322,7 @@ $$
 
 So the original relation is not one function of $$x$$. It is made from multiple explicit branches, with the outer $$\pm$$ giving the top and bottom halves.
 
-</div>
+:::
 
 ---
 
@@ -337,8 +343,7 @@ $$
 
 This measures the average rate of change from $$x$$ to $$x+h$$.
 
-<div class="theorem-box" markdown="1">
-
+:::example{title="Average rate of change of f(x) = 2x² − x + 1"}
 **Example.** Let
 
 $$
@@ -388,7 +393,7 @@ $$
 
 If $$h$$ becomes very small, this approaches $$4x-1$$, which equals to the functions derivative (a calculus topic).
 
-</div>
+:::
 
 ---
 
@@ -525,8 +530,7 @@ $$
 
 Composition is not usually commutative, so $$f(g(x))$$ and $$g(f(x))$$ are usually different.
 
-<div class="theorem-box" markdown="1">
-
+:::example{title="Composition f ∘ g with domain restrictions"}
 **Example.** Let
 
 $$
@@ -554,7 +558,7 @@ $$
 \text{domain}=[0,2)\cup(2,\infty).
 $$
 
-</div>
+:::
 
 For
 
@@ -642,6 +646,7 @@ $$
 
 So $$f$$ and $$g$$ are inverses.
 
+:::warning
 The notation $$f^{-1}(x)$$ means "the inverse function of $$f$$." It does **not** mean reciprocal. In other words,
 
 $$
@@ -649,12 +654,11 @@ f^{-1}(x)\ne \frac{1}{f(x)}
 $$
 
 in general. The expression $$x^{-1}$$ means $$1/x$$, but $$f^{-1}$$ means an inverse function. Sometimes you will see the inverse written as $$fp$$, but this can be confused with the derivative notation (used in calculus) and is seldom used.
+:::
 
-<div class="theorem-box" markdown="1">
-
+:::theorem{name="Extension"}
 **Extension.** Prove that the graph of $$f(x)$$ and $$f^{-1}(x)$$ are reflections of each other over the line $$y=x$$.
-
-</div>
+:::
 
 ---
 
@@ -667,10 +671,11 @@ To find the inverse of a function:
 3. Solve for $$y$$.
 4. Replace $$y$$ with $$f^{-1}(x)$$.
 
+:::note
 It is very improtant to note that the domain of $$f$$ becomes the range of $$f^{-1}$$, and the range of $$f$$ becomes the domain of $$f^{-1}$$.
+:::
 
-<div class="theorem-box" markdown="1">
-
+:::example{title="Inverse of a rational function"}
 **Example.** Find the inverse of
 
 $$
@@ -717,7 +722,7 @@ $$
 f^{-1}(x)=\frac{4x+1}{3x-2}.
 $$
 
-</div>
+:::
 
 ---
 
@@ -779,7 +784,9 @@ Domain restrictions are how we choose one branch when a relation would otherwise
 
 A quick map of bijectivity, surjectivity, and injectivity is shown below (this image only works well in light mode):
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/BIS.png' | relative_url }}" alt="BIS" loading="lazy" decoding="async" />
+:::figure{width=480}
+![BIS](/assets/APs/AP%20Precalc/BIS.png)
+:::
 
 ---
 

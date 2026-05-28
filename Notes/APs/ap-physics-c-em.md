@@ -21,9 +21,13 @@ nav_order: 5
 
 ---
 
-## Practice Problems
+## Practice
 
-- Bum bum bum sahur
+:::practice
+:::tip
+Bum bum bum sahur
+:::
+:::
 
 ---
 
