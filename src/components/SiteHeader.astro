@@ -1,5 +1,7 @@
 ---
 import { mainNav } from '../data/navigation';
+import { p, pathActive } from '../lib/paths';
+import HeaderSearch from './HeaderSearch.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
@@ -9,30 +11,19 @@ interface Props {
 const { current = Astro.url.pathname } = Astro.props;
 ---
 
-<header class="site-header">
-  <a class="brand" href="/">Notes by <span>Joshua</span></a>
+<header class="site-header" transition:persist="site-header">
+  <a class="brand" href={p('/')}>Notes by <span>Joshua</span></a>
   <nav class="header-nav" aria-label="Primary">
     {
       mainNav.map((item) => (
-        <a href={item.href} aria-current={current === item.href || current.startsWith(item.href.replace(/\/$/, '') + '/') ? 'page' : undefined}>
+        <a href={p(item.href)} aria-current={pathActive(current, item.href) ? 'page' : undefined}>
           {item.label}
         </a>
       ))
     }
   </nav>
   <div class="header-actions">
+    <HeaderSearch />
     <ThemeToggle />
-    <button type="button" class="btn menu-toggle" aria-expanded="false" aria-controls="doc-sidebar">
-      Menu
-    </button>
   </div>
 </header>
-
-<script>
-  const toggle = document.querySelector('.menu-toggle');
-  const sidebar = document.getElementById('doc-sidebar');
-  toggle?.addEventListener('click', () => {
-    const open = sidebar?.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-</script>

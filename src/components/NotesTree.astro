@@ -1,0 +1,53 @@
+---
+import { branchIsOpen, type TreeNode } from '../lib/notes-tree';
+import { pathExact } from '../lib/paths';
+
+interface Props {
+  nodes: TreeNode[];
+  current: string;
+  depth?: number;
+}
+
+const { nodes, current, depth = 0 } = Astro.props;
+---
+
+<ul class="notes-tree" data-depth={depth}>
+  {
+    nodes.map((node) => (
+      <li class="notes-tree-item">
+        {node.children.length > 0 ? (
+          <details open={branchIsOpen(node, current, depth)}>
+            <summary class="tree-summary">
+              <span class="tree-caret" aria-hidden="true" />
+              {node.href && node.path ? (
+                <a
+                  class="tree-link tree-link--branch"
+                  href={node.href}
+                  aria-current={pathExact(current, node.path) ? 'page' : undefined}
+                  data-tree-nav
+                >
+                  {node.label}
+                </a>
+              ) : (
+                <span class="tree-label">{node.label}</span>
+              )}
+            </summary>
+            <div class="tree-children">
+              <Astro.self nodes={node.children} current={current} depth={depth + 1} />
+            </div>
+          </details>
+        ) : node.href && node.path ? (
+          <a
+            class="tree-link tree-link--leaf"
+            href={node.href}
+            aria-current={pathExact(current, node.path) ? 'page' : undefined}
+          >
+            {node.label}
+          </a>
+        ) : (
+          <span class="tree-label tree-link--leaf">{node.label}</span>
+        )}
+      </li>
+    ))
+  }
+</ul>

@@ -2,24 +2,27 @@
 import BaseLayout from './BaseLayout.astro';
 import DocSidebar from '../components/DocSidebar.astro';
 import TableOfContents from '../components/TableOfContents.astro';
+import MathRender from '../components/MathRender.astro';
 
 interface Props {
   title: string;
   description?: string;
   headings?: { depth: number; slug: string; text: string }[];
+  math?: boolean;
 }
 
-const { title, description, headings = [] } = Astro.props;
+const { title, description, headings = [], math = false } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
   <div class="layout-doc">
     <DocSidebar current={Astro.url.pathname} />
-    <main class="doc-main">
+    <main class="doc-main" transition:animate="fade">
       <article class="prose">
         <slot />
       </article>
     </main>
     <TableOfContents headings={headings} />
   </div>
+  {math && <MathRender />}
 </BaseLayout>

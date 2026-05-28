@@ -1,25 +1,50 @@
-<button type="button" class="btn theme-toggle" aria-label="Toggle color theme">
-  <span class="theme-icon" data-light="☀" data-dark="☾">☀</span>
+---
+---
+
+<button
+  type="button"
+  class="theme-switch"
+  data-theme-toggle
+  aria-label="Toggle color theme"
+  aria-pressed="false"
+>
+  <span class="theme-switch__track" aria-hidden="true">
+    <span class="theme-switch__sky theme-switch__sky--day"></span>
+    <span class="theme-switch__sky theme-switch__sky--night"></span>
+    <span class="theme-switch__stars" aria-hidden="true"></span>
+    <span class="theme-switch__eclipse"></span>
+  </span>
 </button>
 
 <script>
-  const k = 'notes-site-theme';
-  const btn = document.querySelector('.theme-toggle');
-  const icon = btn?.querySelector('.theme-icon');
+  import { currentTheme, initTheme, toggleTheme } from '../scripts/theme.ts';
 
-  function sync() {
-    const t = document.documentElement.getAttribute('data-theme') || 'light';
-    if (icon) icon.textContent = t === 'dark' ? '☾' : '☀';
+  function syncThemeSwitch(btn: HTMLButtonElement) {
+    const dark = currentTheme() === 'dark';
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+    btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
   }
 
-  btn?.addEventListener('click', () => {
-    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    try {
-      localStorage.setItem(k, next);
-    } catch (_) {}
-    sync();
-  });
+  function bindThemeToggle() {
+    initTheme();
 
-  sync();
+    const btn = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+    if (!btn || btn.dataset.themeToggleBound === '1') return;
+    btn.dataset.themeToggleBound = '1';
+
+    syncThemeSwitch(btn);
+
+    btn.addEventListener('click', () => {
+      toggleTheme();
+      syncThemeSwitch(btn);
+      btn.classList.remove('theme-switch--snap');
+      void btn.offsetWidth;
+      btn.classList.add('theme-switch--snap');
+    });
+
+    document.addEventListener('astro:page-load', () => syncThemeSwitch(btn));
+  }
+
+  bindThemeToggle();
+  document.addEventListener('astro:page-load', bindThemeToggle);
 </script>

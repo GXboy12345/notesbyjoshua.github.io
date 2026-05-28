@@ -1,8 +1,11 @@
 ---
 import '../styles/global.css';
 import 'katex/dist/katex.min.css';
+import { ClientRouter } from 'astro:transitions';
+import FontPreload from '../components/FontPreload.astro';
 import ThemeScript from '../components/ThemeScript.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import { p } from '../lib/paths';
 
 interface Props {
   title?: string;
@@ -17,11 +20,13 @@ const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Jo
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <ThemeScript />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <FontPreload />
     <meta name="description" content={description} />
     <title>{fullTitle}</title>
-    <link rel="icon" type="image/jpeg" href="/assets/Images/favicon.jpeg" />
-    <ThemeScript />
+    <ClientRouter />
+    <link rel="icon" type="image/jpeg" href={p('/assets/Images/favicon.jpeg')} />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-868QCS9DJP"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -40,5 +45,13 @@ const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Jo
         <p>Study notes by Joshua · <a href="https://github.com/notesbyjoshua">GitHub</a></p>
       </footer>
     </div>
+    <script>
+      import { initHashScroll, scrollToCurrentHash } from '../scripts/hash-scroll.ts';
+
+      initHashScroll();
+      document.addEventListener('astro:page-load', () => {
+        scrollToCurrentHash();
+      });
+    </script>
   </body>
 </html>

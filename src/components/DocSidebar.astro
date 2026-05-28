@@ -1,25 +1,141 @@
 ---
-import { mainNav } from '../data/navigation';
+import { mainNav, subjectHubs } from '../data/navigation';
+import { p, pathActive } from '../lib/paths';
+import { allDocEntries } from '../lib/resolve-doc';
+import { buildNotesTree } from '../lib/notes-tree';
+import NotesTree from './NotesTree.astro';
 
 interface Props {
   current?: string;
 }
 
 const { current = Astro.url.pathname } = Astro.props;
+const notesTree = buildNotesTree(await allDocEntries());
 ---
 
-<aside id="doc-sidebar" class="doc-sidebar" aria-label="Section navigation">
-  <nav>
-    {
-      mainNav.map((item) => (
-        <a href={item.href} aria-current={current === item.href ? 'page' : undefined}>
-          {item.label}
-        </a>
-      ))
-    }
-  </nav>
-  <p class="nav-section">Subjects</p>
-  <a href="/notes/ap/" aria-current={current.startsWith('/notes/ap') ? 'page' : undefined}>AP</a>
-  <a href="/notes/math/" aria-current={current.startsWith('/notes/math') ? 'page' : undefined}>Math</a>
-  <a href="/notes/physics/" aria-current={current.startsWith('/notes/physics') ? 'page' : undefined}>Physics</a>
-</aside>
+<div class="doc-sidebar-shell">
+<div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
+<div class="doc-sidebar-column">
+  <button
+    type="button"
+    class="sidebar-toggle sidebar-toggle--fab"
+    aria-expanded="false"
+    aria-controls="sidebar-inner"
+    aria-label="Open notes menu"
+  >
+    <svg class="sidebar-toggle-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M5 5v14"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        opacity="0.55"></path>
+      <path
+        d="M9 6l6 6-6 6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </button>
+
+  <div class="doc-sidebar-host">
+  <aside
+    id="doc-sidebar"
+    class="doc-sidebar"
+    aria-label="Section navigation"
+    transition:persist="doc-sidebar"
+  >
+    <div class="sidebar-toolbar">
+      <span class="sidebar-toolbar-label">Notes</span>
+      <button
+        type="button"
+        class="sidebar-toggle sidebar-toggle--toolbar"
+        aria-expanded="true"
+        aria-controls="sidebar-inner"
+        aria-label="Collapse notes sidebar"
+      >
+        <svg class="sidebar-toggle-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M15 6l-6 6 6 6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M19 5v14"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            opacity="0.55"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="sidebar-inner" class="sidebar-inner">
+      <nav class="sidebar-primary" aria-label="Primary">
+        {
+          mainNav.map((item) => (
+            <a
+              class="sidebar-primary-link"
+              href={p(item.href)}
+              aria-current={pathActive(current, item.href) ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <nav class="sidebar-hubs" aria-label="Subject hubs">
+        {
+          subjectHubs.map((hub) => (
+            <a
+              class="sidebar-hub"
+              href={p(hub.href)}
+              data-tone={hub.tone}
+              aria-current={pathActive(current, hub.href) ? 'page' : undefined}
+            >
+              {hub.title}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="sidebar-divider" role="separator"></div>
+
+      <p class="nav-section sidebar-section-label">Notes library</p>
+
+      <div class="sidebar-tree-scroll">
+        <NotesTree nodes={notesTree} current={current} />
+      </div>
+    </div>
+  </aside>
+  </div>
+</div>
+</div>
+
+<script>
+  import { initSidebar, syncSidebarActive } from '../scripts/sidebar.ts';
+
+  document.addEventListener(
+    'click',
+    (e) => {
+      const link = (e.target as Element).closest('[data-tree-nav]');
+      if (link) e.stopPropagation();
+    },
+    true,
+  );
+
+  initSidebar();
+  syncSidebarActive();
+  document.addEventListener('astro:page-load', () => {
+    initSidebar();
+    syncSidebarActive();
+  });
+</script>
