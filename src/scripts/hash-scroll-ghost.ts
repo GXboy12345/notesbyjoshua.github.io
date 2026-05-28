@@ -1,3 +1,5 @@
+import { stripDuplicateIds } from './dom-clone-utils.ts';
+
 const SAMPLE_WEIGHTS = [0.34, 0.23, 0.16, 0.11, 0.075, 0.05, 0.035, 0.025, 0.018];
 
 export type GhostBlurOptions = {
@@ -61,13 +63,6 @@ function getArticleTopInScrollContent(root: HTMLElement, article: HTMLElement): 
   const rootRect = getRootRect(root);
   const articleRect = article.getBoundingClientRect();
   return articleRect.top - rootRect.top + getRootScrollTop(root);
-}
-
-function stripDuplicateIds(node: HTMLElement) {
-  if (node.hasAttribute('id')) node.removeAttribute('id');
-  node.querySelectorAll<HTMLElement>('[id]').forEach((el) => {
-    el.removeAttribute('id');
-  });
 }
 
 function clamp01(n: number) {

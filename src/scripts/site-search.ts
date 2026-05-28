@@ -1,10 +1,8 @@
 import type { SearchHit } from '../lib/search-types';
-import {
-  HEADER_RESULT_LIMIT,
-  headerSearchOptions,
-} from '../lib/search-config';
+import { HEADER_RESULT_LIMIT } from '../lib/search-config';
 import {
   highlight,
+  preloadSearchIndex,
   querySearch,
   searchPageUrl,
 } from '../lib/search-client';
@@ -48,7 +46,7 @@ export function initSiteSearch(root: HTMLElement) {
       return;
     }
 
-    const result = await querySearch(q, HEADER_RESULT_LIMIT, headerSearchOptions);
+    const result = await querySearch(q, HEADER_RESULT_LIMIT, 'header');
     if (token !== renderToken) return;
 
     hits = result.hits;
@@ -108,7 +106,9 @@ export function initSiteSearch(root: HTMLElement) {
   input.addEventListener('input', () => {
     void render();
   });
+  input.addEventListener('pointerenter', preloadSearchIndex, { once: true });
   input.addEventListener('focus', () => {
+    preloadSearchIndex();
     if (input.value.trim()) void render();
   });
 

@@ -1,5 +1,5 @@
 import MiniSearch from 'minisearch';
-import type { SearchOptions } from 'minisearch';
+import type { SearchMode } from './search-config';
 import { p } from './paths';
 import { countMatches, loadSearchEngine, searchIndex } from './search-query';
 import type { SearchHit, SearchIndexPayload } from './search-types';
@@ -19,16 +19,20 @@ export function loadSearchEngineClient(): Promise<MiniSearch | null> {
   return enginePromise;
 }
 
+export function preloadSearchIndex(): void {
+  void loadSearchEngineClient();
+}
+
 export async function querySearch(
   query: string,
   limit: number,
-  options?: SearchOptions,
+  mode: SearchMode,
 ): Promise<{ engine: MiniSearch | null; hits: SearchHit[]; total: number }> {
   const engine = await loadSearchEngineClient();
   if (!engine) return { engine: null, hits: [], total: 0 };
 
-  const hits = searchIndex(engine, query, limit, options);
-  const total = countMatches(engine, query, options);
+  const hits = searchIndex(engine, query, limit, mode);
+  const total = countMatches(engine, query, mode);
   return { engine, hits, total };
 }
 

@@ -10,6 +10,15 @@ export type SearchRecord = {
   math: string;
 };
 
+export type SearchSnippetBlock = {
+  kind: 'title' | 'heading' | 'label' | 'body' | 'math';
+  heading?: string;
+  anchor?: string;
+  text: string;
+  displayMath?: string;
+  normalizedMath?: string;
+};
+
 export type SearchHit = {
   id: string;
   title: string;
@@ -23,4 +32,5 @@ export type SearchIndexPayload = {
   version: number;
   documentCount: number;
   index: Record<string, unknown>;
+  snippets: Record<string, SearchSnippetBlock[]>;
 };

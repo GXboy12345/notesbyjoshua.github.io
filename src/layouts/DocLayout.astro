@@ -23,6 +23,9 @@ const { title, description, headings = [], math = false, interactive = false, no
   <div class="layout-doc">
     <DocSidebar current={Astro.url.pathname} />
     <main class="doc-main" transition:animate="fade">
+      <div class="doc-main__canvas-wrap" aria-hidden="true">
+        <canvas class="doc-main__canvas"></canvas>
+      </div>
       <article class="prose">
         <slot />
       </article>

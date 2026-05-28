@@ -4,7 +4,7 @@ import { allDocEntries } from './resolve-doc';
 import { readDocSource } from './render-doc';
 import { routePath, routeSlug } from './routes';
 import { miniSearchOptions, SEARCH_INDEX_VERSION } from './search-config';
-import type { SearchIndexPayload, SearchRecord } from './search-types';
+import type { SearchIndexPayload, SearchRecord, SearchSnippetBlock } from './search-types';
 
 const COLLECTION_LABELS: Record<string, string> = {
   notes: 'Notes',
@@ -15,13 +15,37 @@ const COLLECTION_LABELS: Record<string, string> = {
   siteFeedback: 'Feedback',
 };
 
+const MAX_MATH_SNIPPETS = 12;
+const MAX_LABEL_SNIPPETS = 20;
+
 function collectionLabel(collection: string): string {
   return COLLECTION_LABELS[collection] ?? collection;
+}
+
+function compactSnippets(blocks: SearchSnippetBlock[]): SearchSnippetBlock[] {
+  const out: SearchSnippetBlock[] = [];
+  let mathCount = 0;
+  let labelCount = 0;
+
+  for (const block of blocks) {
+    if (block.kind === 'math') {
+      if (mathCount >= MAX_MATH_SNIPPETS) continue;
+      mathCount += 1;
+    }
+    if (block.kind === 'label') {
+      if (labelCount >= MAX_LABEL_SNIPPETS) continue;
+      labelCount += 1;
+    }
+    out.push(block);
+  }
+
+  return out;
 }
 
 export async function buildSearchIndex(): Promise<SearchIndexPayload> {
   const entries = await allDocEntries();
   const documents: SearchRecord[] = [];
+  const snippets: Record<string, SearchSnippetBlock[]> = {};
 
   for (const entry of entries) {
     const slug = routeSlug(entry);
@@ -46,6 +70,11 @@ export async function buildSearchIndex(): Promise<SearchIndexPayload> {
       body: extracted.body,
       math: extracted.math,
     });
+
+    snippets[slug] = compactSnippets([
+      { kind: 'title', text: title },
+      ...extracted.snippetBlocks,
+    ]);
   }
 
   documents.sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: 'base' }));
@@ -57,5 +86,6 @@ export async function buildSearchIndex(): Promise<SearchIndexPayload> {
     version: SEARCH_INDEX_VERSION,
     documentCount: documents.length,
     index: miniSearch.toJSON(),
+    snippets,
   };
 }

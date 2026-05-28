@@ -5,19 +5,37 @@ interface Props {
 
 const { headings } = Astro.props;
 const items = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
+const headingJson = JSON.stringify(
+  items.map((h) => ({ depth: h.depth, slug: h.slug, text: h.text })),
+);
 ---
 
 {
   items.length > 0 && (
-    <aside class="doc-toc" aria-label="On this page">
-      <p class="nav-section">On this page</p>
-      <ul>
+    <nav
+      class="doc-toc"
+      aria-label="On this page"
+      data-doc-toc
+      data-headings={headingJson}
+    >
+      <p class="nav-section toc-title" data-toc-title>On this page</p>
+
+      <ul class="toc-list" data-toc-list>
         {items.map((h) => (
-          <li style={`padding-left: ${(h.depth - 2) * 0.75}rem`}>
+          <li class={`toc-item toc-depth-${h.depth}`} style={`padding-left: ${(h.depth - 2) * 0.75}rem`}>
             <a href={`#${h.slug}`}>{h.text}</a>
           </li>
         ))}
       </ul>
-    </aside>
+
+      <div class="doc-minimap" data-doc-minimap hidden aria-hidden="true" aria-label="Document minimap">
+        <div class="doc-minimap__preview" data-minimap-preview>
+          <div class="doc-minimap__scaled doc-minimap__scaled--blur" data-minimap-blur></div>
+          <div class="doc-minimap__scaled doc-minimap__scaled--sharp" data-minimap-sharp></div>
+          <div class="doc-minimap__viewport" data-minimap-viewport></div>
+          <div class="doc-minimap__labels" data-minimap-labels></div>
+        </div>
+      </div>
+    </nav>
   )
 }

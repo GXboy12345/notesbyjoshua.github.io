@@ -6,52 +6,12 @@ import remarkMath from 'remark-math';
 import remarkParse from 'remark-parse';
 import { unified } from 'unified';
 import { visit } from 'unist-util-visit';
+import { latexToSearchText } from './latex-search-text';
 import { preprocessMarkdown } from './markdown-preprocess';
 import { CALLOUT_DEFAULT_LABELS, CALLOUT_FIELD_SPECS } from './markdown/callout-fields';
 import { convertLegacyHtmlToDirectives } from './markdown/legacy-html';
-
-const GREEK: Record<string, string> = {
-  alpha: 'alpha',
-  beta: 'beta',
-  gamma: 'gamma',
-  delta: 'delta',
-  epsilon: 'epsilon',
-  varepsilon: 'epsilon',
-  zeta: 'zeta',
-  eta: 'eta',
-  theta: 'theta',
-  vartheta: 'theta',
-  iota: 'iota',
-  kappa: 'kappa',
-  lambda: 'lambda',
-  mu: 'mu',
-  nu: 'nu',
-  xi: 'xi',
-  pi: 'pi',
-  varpi: 'pi',
-  rho: 'rho',
-  varrho: 'rho',
-  sigma: 'sigma',
-  varsigma: 'sigma',
-  tau: 'tau',
-  upsilon: 'upsilon',
-  phi: 'phi',
-  varphi: 'phi',
-  chi: 'chi',
-  psi: 'psi',
-  omega: 'omega',
-  Gamma: 'gamma',
-  Delta: 'delta',
-  Theta: 'theta',
-  Lambda: 'lambda',
-  Xi: 'xi',
-  Pi: 'pi',
-  Sigma: 'sigma',
-  Upsilon: 'upsilon',
-  Phi: 'phi',
-  Psi: 'psi',
-  Omega: 'omega',
-};
+import { assignHeadingSlug, resetSlugCounts } from './markdown/slugify';
+import type { SearchSnippetBlock } from './search-types';
 
 const markdownParser = unified()
   .use(remarkParse)
@@ -59,21 +19,16 @@ const markdownParser = unified()
   .use(remarkDirective)
   .use(remarkMath);
 
+const SNIPPET_BODY_MAX = 200;
+
 function normalizeWhitespace(value: string): string {
   return value.replace(/\s+/g, ' ').trim();
 }
 
-/** Turn LaTeX into extra searchable tokens (e.g. `\sigma` → `sigma`). */
-function latexToSearchTokens(latex: string): string {
-  const withGreek = latex.replace(/\\([A-Za-z]+)/g, (_, cmd: string) => {
-    return GREEK[cmd] ?? cmd;
-  });
-  return normalizeWhitespace(
-    withGreek
-      .replace(/[{}^_\\$]/g, ' ')
-      .replace(/[^\w\s+-]/g, ' ')
-      .replace(/\s+/g, ' '),
-  );
+function truncate(text: string, max = SNIPPET_BODY_MAX): string {
+  const plain = normalizeWhitespace(text);
+  if (plain.length <= max) return plain;
+  return `${plain.slice(0, max).trimEnd()}…`;
 }
 
 function directiveLabels(node: ContainerDirective): string[] {
@@ -104,38 +59,76 @@ function directiveLabels(node: ContainerDirective): string[] {
   return parts;
 }
 
+function directiveSnippetText(node: ContainerDirective): string {
+  const labels = directiveLabels(node);
+  const body = truncate(toString(node));
+  if (labels.length && body) return `${labels.join(' — ')}: ${body}`;
+  if (labels.length) return labels.join(' — ');
+  return body;
+}
+
 export type ExtractedSearchText = {
   body: string;
   math: string;
   labels: string;
   headings: string;
+  snippetBlocks: SearchSnippetBlock[];
 };
 
 export function extractSearchText(rawMd: string): ExtractedSearchText {
   const md = convertLegacyHtmlToDirectives(preprocessMarkdown(rawMd));
+  resetSlugCounts();
   const tree = markdownParser.parse(md) as Root;
 
   const mathParts: string[] = [];
   const labelParts: string[] = [];
   const headingParts: string[] = [];
+  const snippetBlocks: SearchSnippetBlock[] = [];
+
+  let currentHeading = '';
+  let currentAnchor = '';
 
   visit(tree, (node) => {
-    if (node.type === 'inlineMath' || node.type === 'math') {
-      const latex = node.value.trim();
-      if (!latex) return;
-      mathParts.push(latex);
-      mathParts.push(latexToSearchTokens(latex));
+    if (node.type === 'heading') {
+      const text = toString(node).trim();
+      if (!text) return;
+      headingParts.push(text);
+      currentHeading = text;
+      currentAnchor = assignHeadingSlug(text);
+      snippetBlocks.push({
+        kind: 'heading',
+        heading: text,
+        anchor: currentAnchor,
+        text,
+      });
       return;
     }
 
-    if (node.type === 'heading') {
-      const text = toString(node).trim();
-      if (text) headingParts.push(text);
+    if (node.type === 'inlineMath' || node.type === 'math') {
+      const latex = node.value.trim();
+      if (!latex) return;
+      const normalized = latexToSearchText(latex);
+      mathParts.push(normalized);
+      snippetBlocks.push({
+        kind: 'math',
+        heading: currentHeading || undefined,
+        anchor: currentAnchor || undefined,
+        text: currentHeading ? `${currentHeading} formula` : 'Formula match',
+        displayMath: latex,
+        normalizedMath: normalized,
+      });
       return;
     }
 
     if (node.type === 'containerDirective' || node.type === 'leafDirective') {
-      labelParts.push(...directiveLabels(node as ContainerDirective));
+      const dir = node as ContainerDirective;
+      labelParts.push(...directiveLabels(dir));
+      snippetBlocks.push({
+        kind: 'label',
+        heading: currentHeading || undefined,
+        anchor: currentAnchor || undefined,
+        text: directiveSnippetText(dir),
+      });
     }
   });
 
@@ -146,6 +139,7 @@ export function extractSearchText(rawMd: string): ExtractedSearchText {
     math: normalizeWhitespace(mathParts.join(' ')),
     labels: normalizeWhitespace(labelParts.join(' ')),
     headings: normalizeWhitespace(headingParts.join(' ')),
+    snippetBlocks,
   };
 }
 

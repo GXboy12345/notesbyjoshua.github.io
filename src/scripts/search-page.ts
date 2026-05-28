@@ -1,9 +1,7 @@
-import {
-  PAGE_RESULT_LIMIT,
-  pageSearchOptions,
-} from '../lib/search-config';
+import { PAGE_RESULT_LIMIT } from '../lib/search-config';
 import {
   highlight,
+  preloadSearchIndex,
   querySearch,
   searchPageUrl,
 } from '../lib/search-client';
@@ -48,7 +46,7 @@ export function initSearchPage(root: HTMLElement) {
     }
 
     status.textContent = 'Searching…';
-    const { engine, hits, total } = await querySearch(q, PAGE_RESULT_LIMIT, pageSearchOptions);
+    const { engine, hits, total } = await querySearch(q, PAGE_RESULT_LIMIT, 'landing');
     if (token !== renderToken) return;
 
     if (!engine) {
@@ -91,6 +89,9 @@ export function initSearchPage(root: HTMLElement) {
   });
 
   void render();
+
+  input.addEventListener('pointerenter', preloadSearchIndex, { once: true });
+  input.addEventListener('focus', preloadSearchIndex);
 }
 
 export function bindSearchPage() {

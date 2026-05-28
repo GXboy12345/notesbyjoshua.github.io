@@ -22,7 +22,7 @@
     "fix:fences": "node scripts/fix-orphan-fences.mjs --write",
     "fix:mcq-fences": "node scripts/fix-mcq-closing-fences.mjs --write",
     "fix:solutions": "node scripts/strip-duplicate-solutions.mjs --write",
-    "fix:inline-frq": "node scripts/inline-frq-solutions.mjs --write",
+    "search:diag": "npm run build && node --experimental-strip-types scripts/search-diagnostics.ts",
     "fix:solutions-stubs": "node scripts/remove-solutions-stubs.mjs --write"
   },
   "dependencies": {
