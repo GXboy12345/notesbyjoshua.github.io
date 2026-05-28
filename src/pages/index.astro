@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeApCourses from '../components/HomeApCourses.astro';
+import HomeJumpNav from '../components/HomeJumpNav.astro';
+import HomeSiteLinks from '../components/HomeSiteLinks.astro';
 import { p } from '../lib/paths';
 import {
-  apCourses,
   intro,
   mathGroups,
-  pageSections,
   physicsGroups,
   release,
-  siteLinks,
   statusLabel,
   updates,
 } from '../data/home';
@@ -32,62 +32,10 @@ import {
       </div>
     </header>
 
-    <nav class="home-jump" aria-label="On this page">
-      <span class="home-jump-label">On this page</span>
-      <ul>
-        {
-          pageSections.map((section) => (
-            <li>
-              <a href={`#${section.id}`}>{section.label}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+    <HomeJumpNav />
 
     <main id="home-main" class="home-main" transition:animate="fade">
-      <section class="home-section" id="ap-courses" aria-labelledby="ap-heading">
-        <div class="home-section-head">
-          <h2 id="ap-heading">AP courses</h2>
-        </div>
-
-        <label class="home-search" for="ap-filter">
-          <span class="visually-hidden">Filter AP courses</span>
-          <input
-            id="ap-filter"
-            type="search"
-            placeholder="Search courses"
-            autocomplete="off"
-            spellcheck="false"
-          />
-        </label>
-        <p class="home-filter-status visually-hidden" id="ap-filter-status" aria-live="polite" aria-atomic="true"></p>
-
-        <ul class="home-ap-list" id="ap-list">
-          {
-            apCourses.map((course) => (
-              <li
-                class="home-ap-item"
-                data-search={course.course.toLowerCase()}
-                data-status={course.status}
-              >
-                <a class="home-ap-link" href={p(course.href)}>
-                  <span class="home-ap-name">{course.course}</span>
-                  <span class="home-ap-units">{course.units}</span>
-                  <span class={`home-ap-status home-ap-status--${course.status}`}>
-                    {statusLabel[course.status]}
-                  </span>
-                  {course.detail && <span class="home-ap-detail">{course.detail}</span>}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-
-        <p class="home-section-foot">
-          <a href={p('/notes/ap/')}>Open the AP hub</a>
-        </p>
-      </section>
+      <HomeApCourses />
 
       <section class="home-section" id="math" aria-labelledby="math-heading">
         <div class="home-section-head">
@@ -173,24 +121,7 @@ import {
         </p>
       </section>
 
-      <section class="home-section" id="site" aria-labelledby="site-heading">
-        <div class="home-section-head">
-          <h2 id="site-heading">Site links</h2>
-        </div>
-
-        <ul class="home-site-grid">
-          {
-            siteLinks.map((link) => (
-              <li>
-                <a class="home-site-card" href={p(link.href)}>
-                  <span class="home-site-title">{link.title}</span>
-                  <span class="home-site-desc">{link.desc}</span>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
+      <HomeSiteLinks />
 
       <section class="home-section home-section--updates" id="updates" aria-labelledby="updates-heading">
         <div class="home-section-head">
@@ -210,45 +141,3 @@ import {
     </main>
   </div>
 </BaseLayout>
-
-<script>
-  const input = document.getElementById('ap-filter') as HTMLInputElement | null;
-  const list = document.getElementById('ap-list');
-  const status = document.getElementById('ap-filter-status');
-  if (input && list && status) {
-    const items = [...list.querySelectorAll<HTMLElement>('.home-ap-item')];
-    const total = items.length;
-
-    const filter = () => {
-      const q = input.value.trim().toLowerCase();
-      let visible = 0;
-      items.forEach((item) => {
-        const match = !q || item.dataset.search?.includes(q);
-        item.hidden = !match;
-        if (match) visible += 1;
-      });
-      status.textContent =
-        q === ''
-          ? ''
-          : visible === 0
-            ? 'No matching courses'
-            : `${visible} of ${total} courses`;
-    };
-
-    input.addEventListener('input', filter);
-  }
-</script>
-
-<style is:global>
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-</style>

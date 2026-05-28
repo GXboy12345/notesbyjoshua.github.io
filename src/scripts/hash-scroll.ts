@@ -1,37 +1,40 @@
+import {
+  createScrollGhostBlur,
+  getRootScrollTop,
+  setRootScrollTop,
+  type GhostBlurController,
+} from './hash-scroll-ghost.ts';
+
 const EASE_OUT = (t: number) => 1 - (1 - t) ** 3;
 
 let animFrame = 0;
+let listenersBound = false;
+let activeGhost: GhostBlurController | null = null;
 
 function prefersReducedMotion(): boolean {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
+function clamp(n: number, lo: number, hi: number) {
+  return Math.max(lo, Math.min(hi, n));
+}
+
 function getScrollRoot(): HTMLElement {
   const docMain = document.querySelector<HTMLElement>('.doc-main');
-  if (docMain) {
+  if (docMain && window.matchMedia('(min-width: 1100px)').matches) {
     const { overflowY } = getComputedStyle(docMain);
     if (overflowY === 'auto' || overflowY === 'scroll' || overflowY === 'overlay') return docMain;
   }
   return document.documentElement;
 }
 
-function getScrollTop(root: HTMLElement): number {
-  return root === document.documentElement ? window.scrollY : root.scrollTop;
-}
-
-function setScrollTop(root: HTMLElement, y: number) {
-  if (root === document.documentElement) window.scrollTo(0, y);
-  else root.scrollTop = y;
-}
-
-function blurLayer(root: HTMLElement): HTMLElement | null {
+function getScrollArticle(root: HTMLElement): HTMLElement | null {
   if (root.classList.contains('doc-main')) {
-    return root.querySelector<HTMLElement>('.prose');
+    return root.querySelector<HTMLElement>('article.prose');
   }
   return (
-    document.querySelector<HTMLElement>('.doc-main .prose') ??
-    document.querySelector<HTMLElement>('.home-main') ??
-    document.querySelector<HTMLElement>('main')
+    document.querySelector<HTMLElement>('.doc-main article.prose') ??
+    document.querySelector<HTMLElement>('article.prose')
   );
 }
 
@@ -47,34 +50,37 @@ function scrollYForElement(root: HTMLElement, el: HTMLElement): number {
   return Math.max(0, root.scrollTop + (elRect.top - rootRect.top) - margin);
 }
 
-function endScrollFx(root: HTMLElement, layer: HTMLElement | null) {
-  root.classList.remove('hash-scroll-active');
-  layer?.classList.remove('hash-scroll-blur');
-  root.style.removeProperty('--hash-scroll-blur');
+function destroyGhost() {
+  activeGhost?.destroy();
+  activeGhost = null;
 }
 
-function clearScrollFx() {
-  document.querySelectorAll<HTMLElement>('.hash-scroll-active').forEach((root) => {
-    endScrollFx(root, blurLayer(root));
-  });
+function focusHashTarget(target: HTMLElement) {
+  const hadTabIndex = target.hasAttribute('tabindex');
+  if (!hadTabIndex) target.setAttribute('tabindex', '-1');
+  target.focus({ preventScroll: true });
+  if (!hadTabIndex) {
+    target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true });
+  }
 }
 
-function animateScrollTo(root: HTMLElement, targetY: number) {
+function animateScrollTo(root: HTMLElement, targetY: number, focusTarget?: HTMLElement) {
   if (animFrame) cancelAnimationFrame(animFrame);
-  clearScrollFx();
+  destroyGhost();
 
-  const startY = getScrollTop(root);
+  const startY = getRootScrollTop(root);
   const delta = targetY - startY;
   if (Math.abs(delta) < 2) {
-    setScrollTop(root, targetY);
+    setRootScrollTop(root, targetY);
+    if (focusTarget) focusHashTarget(focusTarget);
     return;
   }
 
-  const layer = blurLayer(root);
-  root.classList.add('hash-scroll-active');
-  layer?.classList.add('hash-scroll-blur');
+  const article = getScrollArticle(root);
+  activeGhost = article ? createScrollGhostBlur(root, article) : null;
 
-  const duration = Math.min(920, Math.max(340, Math.abs(delta) * 0.5));
+  const duration = Math.min(720, Math.max(380, Math.abs(delta) * 0.48));
+  const distancePeak = clamp(Math.abs(delta) * 0.045, 18, 44);
   const t0 = performance.now();
   let lastY = startY;
   let lastT = t0;
@@ -82,12 +88,16 @@ function animateScrollTo(root: HTMLElement, targetY: number) {
   const frame = (now: number) => {
     const t = Math.min(1, (now - t0) / duration);
     const y = startY + delta * EASE_OUT(t);
-    setScrollTop(root, y);
+    setRootScrollTop(root, y);
 
-    const dt = Math.max(8, now - lastT);
-    const velocity = Math.abs(y - lastY) / dt;
-    const blur = Math.min(3.25, velocity * 0.14);
-    root.style.setProperty('--hash-scroll-blur', `${blur.toFixed(2)}px`);
+    const dt = Math.max(1, now - lastT);
+    const dy = y - lastY;
+    const direction: -1 | 1 = dy < 0 ? -1 : 1;
+    const velocity = Math.abs(dy) / dt;
+    const envelope = Math.sin(Math.PI * t);
+    const streak = clamp(velocity * 22, 0, distancePeak) * envelope;
+
+    activeGhost?.update(y, streak, direction);
 
     lastY = y;
     lastT = now;
@@ -98,8 +108,9 @@ function animateScrollTo(root: HTMLElement, targetY: number) {
     }
 
     animFrame = 0;
-    setScrollTop(root, targetY);
-    endScrollFx(root, layer);
+    setRootScrollTop(root, targetY);
+    destroyGhost();
+    if (focusTarget) focusHashTarget(focusTarget);
   };
 
   animFrame = requestAnimationFrame(frame);
@@ -114,15 +125,19 @@ export function scrollToHashTarget(
 
   if (behavior === 'auto' || prefersReducedMotion()) {
     if (animFrame) cancelAnimationFrame(animFrame);
-    endScrollFx(root, blurLayer(root));
-    setScrollTop(root, y);
+    destroyGhost();
+    setRootScrollTop(root, y);
     return;
   }
 
-  animateScrollTo(root, y);
+  animateScrollTo(root, y, target);
 }
 
-/** Scroll to the current URL hash after navigation (ClientRouter does not always). */
+function isSameDocument(url: URL): boolean {
+  const here = new URL(window.location.href);
+  return url.pathname === here.pathname && url.search === here.search;
+}
+
 export function scrollToCurrentHash(behavior?: ScrollBehavior) {
   const raw = window.location.hash;
   if (!raw || raw === '#') return;
@@ -134,22 +149,48 @@ export function scrollToCurrentHash(behavior?: ScrollBehavior) {
   scrollToHashTarget(target, behavior ?? (prefersReducedMotion() ? 'auto' : 'smooth'));
 }
 
-export function initHashScroll() {
-  scrollToCurrentHash();
-
-  document.addEventListener('click', (event) => {
-    const link = (event.target as Element | null)?.closest<HTMLAnchorElement>('a[href*="#"]');
-    if (!link) return;
-
-    const url = new URL(link.href, window.location.origin);
-    if (url.pathname !== window.location.pathname || !url.hash || url.hash === '#') return;
-
-    const id = decodeURIComponent(url.hash.slice(1));
-    const target = document.getElementById(id);
-    if (!target) return;
-
-    event.preventDefault();
-    history.pushState({}, '', `${url.pathname}${url.search}${url.hash}`);
-    scrollToHashTarget(target);
+function queueScrollToCurrentHash() {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => scrollToCurrentHash());
   });
+}
+
+function onHashLinkClick(event: MouseEvent) {
+  if (event.defaultPrevented) return;
+  if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+  const link = (event.target as Element | null)?.closest<HTMLAnchorElement>('a[href*="#"]');
+  if (!link || link.target === '_blank' || link.hasAttribute('download')) return;
+
+  const url = new URL(link.href, window.location.href);
+  if (!isSameDocument(url) || !url.hash || url.hash === '#') return;
+
+  const id = decodeURIComponent(url.hash.slice(1));
+  const target = document.getElementById(id);
+  if (!target) return;
+
+  event.preventDefault();
+  event.stopPropagation();
+
+  const next = `${url.pathname}${url.search}${url.hash}`;
+  if (`${window.location.pathname}${window.location.search}${window.location.hash}` !== next) {
+    history.pushState(history.state, '', next);
+  }
+
+  scrollToHashTarget(target);
+}
+
+function onHashChange() {
+  queueScrollToCurrentHash();
+}
+
+export function initHashScroll() {
+  destroyGhost();
+  if (!listenersBound) {
+    listenersBound = true;
+    document.addEventListener('click', onHashLinkClick, { capture: true });
+    window.addEventListener('hashchange', onHashChange);
+    document.addEventListener('astro:before-preparation', destroyGhost);
+  }
+  queueScrollToCurrentHash();
 }

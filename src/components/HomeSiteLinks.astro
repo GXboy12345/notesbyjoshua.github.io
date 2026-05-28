@@ -1,0 +1,123 @@
+---
+import { p } from '../lib/paths';
+import { siteLinks } from '../data/home';
+
+type SiteIcon = 'notes' | 'guide' | 'practice' | 'resources' | 'feedback' | 'about';
+
+const iconByHref: Record<string, SiteIcon> = {
+  '/Notes/notes/': 'notes',
+  '/how-to-use-these-notes/': 'guide',
+  '/practiceproblems/practice/': 'practice',
+  '/Resources/resources/': 'resources',
+  '/feedback/': 'feedback',
+  '/about/': 'about',
+};
+---
+
+<section class="home-section home-section--site" id="site" aria-labelledby="site-heading">
+  <div class="home-site-panel">
+    <div class="home-site-panel-top">
+      <h2 id="site-heading">Site links</h2>
+      <p class="home-site-meta">
+        <span>{siteLinks.length}</span> destinations
+      </p>
+    </div>
+
+    <ul class="home-site-grid">
+      {
+        siteLinks.map((link) => {
+          const icon = iconByHref[link.href] ?? 'notes';
+          return (
+            <li>
+              <a class="home-site-card" href={p(link.href)}>
+                <span class={`home-site-card-icon home-site-card-icon--${icon}`} aria-hidden="true">
+                  {icon === 'notes' && (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M6 4h9l3 3v13H6V4z"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                        stroke-linejoin="round"></path>
+                      <path d="M15 4v4h4" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"></path>
+                      <path d="M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"></path>
+                    </svg>
+                  )}
+                  {icon === 'guide' && (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.75"></circle>
+                      <path
+                        d="M12 10v5M12 8h.01"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                        stroke-linecap="round"></path>
+                    </svg>
+                  )}
+                  {icon === 'practice' && (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M4 20l5-9 4 4 7-11"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                      <path d="M15 5h4v4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  )}
+                  {icon === 'resources' && (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M10 6H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                        stroke-linejoin="round"></path>
+                      <path
+                        d="M14 4h6v6M10 14 20 4"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  )}
+                  {icon === 'feedback' && (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M5 6h14v9H9l-4 3V6z"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                        stroke-linejoin="round"></path>
+                      <path d="M8 10h8M8 13h5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"></path>
+                    </svg>
+                  )}
+                  {icon === 'about' && (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="8" r="3.25" stroke="currentColor" stroke-width="1.75"></circle>
+                      <path
+                        d="M6 19c0-3.3 2.7-6 6-6s6 2.7 6 6"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                        stroke-linecap="round"></path>
+                    </svg>
+                  )}
+                </span>
+                <span class="home-site-card-body">
+                  <span class="home-site-title">{link.title}</span>
+                  <span class="home-site-desc">{link.desc}</span>
+                </span>
+                <span class="home-site-card-arrow" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M5 12h14M13 6l6 6-6 6"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</section>

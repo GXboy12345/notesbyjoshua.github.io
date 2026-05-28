@@ -46,11 +46,11 @@ const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Jo
       </footer>
     </div>
     <script>
-      import { initHashScroll, scrollToCurrentHash } from '../scripts/hash-scroll.ts';
+      import { initHashScroll } from '../scripts/hash-scroll.ts';
 
       initHashScroll();
       document.addEventListener('astro:page-load', () => {
-        scrollToCurrentHash();
+        initHashScroll();
       });
     </script>
   </body>

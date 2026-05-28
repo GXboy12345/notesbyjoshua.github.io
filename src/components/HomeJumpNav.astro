@@ -1,0 +1,16 @@
+---
+import { pageSections } from '../data/home';
+---
+
+<nav class="home-jump" aria-label="On this page">
+  <span class="home-jump-label">On this page</span>
+  <ul>
+    {
+      pageSections.map((section) => (
+        <li>
+          <a href={`#${section.id}`}>{section.label}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
