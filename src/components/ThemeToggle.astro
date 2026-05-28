@@ -1,17 +1,51 @@
 ---
 ---
 
-<button type="button" class="theme-dial" data-theme-toggle aria-label="Toggle color theme">
-  <span class="theme-dial-track" aria-hidden="true">
-    <span class="theme-dial-sky"></span>
-    <span class="theme-dial-sun"></span>
-    <span class="theme-dial-moon"></span>
-    <span class="theme-dial-knob"></span>
+<button
+  type="button"
+  class="theme-switch"
+  data-theme-toggle
+  aria-label="Toggle color theme"
+  aria-pressed="false"
+>
+  <span class="theme-switch__track" aria-hidden="true">
+    <span class="theme-switch__sky theme-switch__sky--day"></span>
+    <span class="theme-switch__sky theme-switch__sky--night"></span>
+    <span class="theme-switch__stars" aria-hidden="true"></span>
+    <span class="theme-switch__celestial theme-switch__sun">
+      <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.25" fill="currentColor"></circle>
+        <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M12 2.5v3.25"></path>
+          <path d="M12 18.25v3.25"></path>
+          <path d="M4.22 4.22l2.3 2.3"></path>
+          <path d="M17.48 17.48l2.3 2.3"></path>
+          <path d="M2.5 12h3.25"></path>
+          <path d="M18.25 12h3.25"></path>
+          <path d="M4.22 19.78l2.3-2.3"></path>
+          <path d="M17.48 6.52l2.3-2.3"></path>
+        </g>
+      </svg>
+    </span>
+    <span class="theme-switch__celestial theme-switch__moon">
+      <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M21 14.5A8.5 8.5 0 0 1 9.5 3 10 10 0 1 0 21 14.5Z"
+          fill="currentColor"></path>
+      </svg>
+    </span>
+    <span class="theme-switch__eclipse"></span>
   </span>
 </button>
 
 <script>
-  import { initTheme, toggleTheme } from '../scripts/theme.ts';
+  import { currentTheme, initTheme, toggleTheme } from '../scripts/theme.ts';
+
+  function syncThemeSwitch(btn: HTMLButtonElement) {
+    const dark = currentTheme() === 'dark';
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+    btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
 
   function bindThemeToggle() {
     initTheme();
@@ -20,12 +54,17 @@
     if (!btn || btn.dataset.themeToggleBound === '1') return;
     btn.dataset.themeToggleBound = '1';
 
+    syncThemeSwitch(btn);
+
     btn.addEventListener('click', () => {
       toggleTheme();
-      btn.classList.remove('theme-dial--pulse');
+      syncThemeSwitch(btn);
+      btn.classList.remove('theme-switch--snap');
       void btn.offsetWidth;
-      btn.classList.add('theme-dial--pulse');
+      btn.classList.add('theme-switch--snap');
     });
+
+    document.addEventListener('astro:page-load', () => syncThemeSwitch(btn));
   }
 
   bindThemeToggle();

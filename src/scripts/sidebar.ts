@@ -57,9 +57,9 @@ async function animateDesktopSidebar(open: boolean) {
     persistCollapsed(true);
   } finally {
     animating = false;
-    const toggle = document.querySelector<HTMLButtonElement>('.sidebar-toggle');
+    const toggles = [...document.querySelectorAll<HTMLButtonElement>('.sidebar-toggle')];
     const sidebar = document.getElementById('doc-sidebar');
-    if (toggle && sidebar) syncToggleState(toggle, sidebar);
+    if (toggles.length && sidebar) syncToggleState(toggles, sidebar);
   }
 }
 
@@ -83,17 +83,17 @@ function restoreDesktopSidebar() {
 }
 
 export function initSidebar() {
-  const toggle = document.querySelector<HTMLButtonElement>('.sidebar-toggle');
+  const toggles = [...document.querySelectorAll<HTMLButtonElement>('.sidebar-toggle')];
   const sidebar = document.getElementById('doc-sidebar');
   const backdrop = document.getElementById('sidebar-backdrop');
 
-  if (!toggle || !sidebar) return;
+  if (!toggles.length || !sidebar) return;
 
   restoreDesktopSidebar();
 
   if (sidebar.dataset.navBound === '1') {
     restoreDesktopSidebar();
-    syncToggleState(toggle, sidebar);
+    syncToggleState(toggles, sidebar);
     return;
   }
   sidebar.dataset.navBound = '1';
@@ -103,7 +103,7 @@ export function initSidebar() {
     backdrop?.classList.remove('visible');
     backdrop?.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('sidebar-open');
-    syncToggleState(toggle, sidebar);
+    syncToggleState(toggles, sidebar);
   };
 
   const openMobile = () => {
@@ -111,20 +111,26 @@ export function initSidebar() {
     backdrop?.classList.add('visible');
     backdrop?.setAttribute('aria-hidden', 'false');
     document.body.classList.add('sidebar-open');
-    syncToggleState(toggle, sidebar);
+    syncToggleState(toggles, sidebar);
   };
 
-  toggle.addEventListener('click', () => {
+  const onToggleClick = () => {
     if (isDesktop()) {
       const willExpand = isDesktopCollapsed();
-      toggle.dataset.state = willExpand ? 'open' : 'closed';
-      toggle.setAttribute('aria-expanded', willExpand ? 'true' : 'false');
+      for (const toggle of toggles) {
+        toggle.dataset.state = willExpand ? 'open' : 'closed';
+        toggle.setAttribute('aria-expanded', willExpand ? 'true' : 'false');
+      }
       setDesktopCollapsed(!willExpand);
       return;
     }
     if (sidebar.classList.contains('open')) closeMobile();
     else openMobile();
-  });
+  };
+
+  for (const toggle of toggles) {
+    toggle.addEventListener('click', onToggleClick);
+  }
 
   backdrop?.addEventListener('click', closeMobile);
 
@@ -139,7 +145,7 @@ export function initSidebar() {
       if (isDesktop()) {
         if (isDesktopCollapsed()) return;
         setDesktopCollapsed(true);
-        syncToggleState(toggle, sidebar);
+        syncToggleState(toggles, sidebar);
       } else {
         closeMobile();
       }
@@ -153,26 +159,41 @@ export function initSidebar() {
   window.matchMedia('(min-width: 1100px)').addEventListener('change', () => {
     closeMobile();
     restoreDesktopSidebar();
-    syncToggleState(toggle, sidebar);
+    syncToggleState(toggles, sidebar);
   });
 
-  syncToggleState(toggle, sidebar);
+  syncToggleState(toggles, sidebar);
 }
 
-function syncToggleState(toggle: HTMLButtonElement, sidebar: HTMLElement) {
+function syncToggleState(toggles: HTMLButtonElement[], sidebar: HTMLElement) {
   const expanded = isDesktop() ? !isDesktopCollapsed() : sidebar.classList.contains('open');
-  toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-  toggle.dataset.state = expanded ? 'open' : 'closed';
-  toggle.setAttribute(
-    'aria-label',
-    isDesktop()
-      ? expanded
-        ? 'Collapse notes sidebar'
-        : 'Expand notes sidebar'
-      : expanded
-        ? 'Close notes menu'
-        : 'Open notes menu',
-  );
+
+  for (const toggle of toggles) {
+    toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    toggle.dataset.state = expanded ? 'open' : 'closed';
+
+    const text = toggle.querySelector('.sidebar-toggle-text');
+    if (text) {
+      text.textContent = isDesktop()
+        ? expanded
+          ? 'Hide panel'
+          : 'Show panel'
+        : expanded
+          ? 'Close'
+          : 'Notes';
+    }
+
+    toggle.setAttribute(
+      'aria-label',
+      isDesktop()
+        ? expanded
+          ? 'Collapse notes sidebar'
+          : 'Expand notes sidebar'
+        : expanded
+          ? 'Close notes menu'
+          : 'Open notes menu',
+    );
+  }
 }
 
 export { syncSidebarActive } from './sidebar-active.ts';

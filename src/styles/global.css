@@ -330,120 +330,216 @@ img {
   background: color-mix(in srgb, var(--accent-soft) 90%, var(--accent));
 }
 
-.theme-dial {
+.theme-switch {
   flex-shrink: 0;
-  padding: 0;
+  padding: 0.15rem;
   border: 0;
+  border-radius: 999px;
   background: transparent;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.theme-dial-track {
+.theme-switch:focus-visible .theme-switch__track {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.theme-switch__track {
   position: relative;
   display: block;
-  width: 3.35rem;
-  height: 1.85rem;
+  width: 4rem;
+  height: 2.15rem;
   border-radius: 999px;
-  border: 1px solid var(--border);
+  border: 1px solid color-mix(in srgb, var(--border) 88%, var(--fg));
   overflow: hidden;
-  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--fg) 6%, transparent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, #fff 22%, transparent),
+    inset 0 -1px 3px color-mix(in srgb, #000 12%, transparent),
+    0 4px 14px color-mix(in srgb, var(--fg) 10%, transparent);
+  transition: box-shadow var(--motion-base) var(--ease-out), border-color var(--motion-base) var(--ease-out);
 }
 
-.theme-dial-sky {
+.theme-switch:hover .theme-switch__track {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, #fff 28%, transparent),
+    0 6px 20px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.theme-switch__sky {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    #8ec5ff 0%,
-    #e8f2ff 48%,
-    #1a2233 52%,
-    #0b1020 100%
-  );
-  background-size: 220% 100%;
-  background-position: 0% 50%;
-  transition: background-position var(--motion-slow) var(--ease-out);
+  transition: opacity var(--motion-slow) var(--ease-out);
 }
 
-[data-theme='dark'] .theme-dial-sky {
-  background-position: 100% 50%;
+.theme-switch__sky--day {
+  background:
+    radial-gradient(ellipse 90% 70% at 18% 88%, color-mix(in srgb, #ffb347 55%, transparent), transparent 58%),
+    linear-gradient(168deg, #4da3ff 0%, #9fd4ff 38%, #dff3ff 72%, #fff4d6 100%);
+  opacity: 1;
 }
 
-.theme-dial-sun,
-.theme-dial-moon {
+.theme-switch__sky--night {
+  background:
+    radial-gradient(ellipse 55% 45% at 78% 22%, #4a3f8a 0%, transparent 62%),
+    linear-gradient(168deg, #0c0820 0%, #1e1448 42%, #2a1f5e 68%, #0a1024 100%);
+  opacity: 0;
+}
+
+[data-theme='dark'] .theme-switch__sky--day {
+  opacity: 0;
+}
+
+[data-theme='dark'] .theme-switch__sky--night {
+  opacity: 1;
+}
+
+.theme-switch__stars {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-image:
+    radial-gradient(1.2px 1.2px at 14% 38%, #fff 50%, transparent),
+    radial-gradient(1px 1px at 26% 68%, #fff 50%, transparent),
+    radial-gradient(1.4px 1.4px at 42% 28%, #fff 50%, transparent),
+    radial-gradient(1px 1px at 58% 58%, #fff 50%, transparent),
+    radial-gradient(1.2px 1.2px at 72% 34%, #fff 50%, transparent),
+    radial-gradient(0.9px 0.9px at 84% 72%, #fff 50%, transparent),
+    radial-gradient(1px 1px at 36% 48%, color-mix(in srgb, #c8d8ff 80%, #fff) 50%, transparent);
+  transition: opacity var(--motion-slow) var(--ease-out);
+}
+
+[data-theme='dark'] .theme-switch__stars {
+  opacity: 0.92;
+}
+
+.theme-switch__celestial {
   position: absolute;
   top: 50%;
-  width: 0.72rem;
-  height: 0.72rem;
-  border-radius: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 1.1rem;
+  height: 1.1rem;
   transform: translateY(-50%);
-  transition: opacity var(--motion-base) var(--ease-out), transform var(--motion-base) var(--ease-out);
+  transition:
+    opacity var(--motion-base) var(--ease-out),
+    transform var(--motion-slow) var(--ease-out),
+    filter var(--motion-base) var(--ease-out);
 }
 
-.theme-dial-sun {
-  left: 0.55rem;
-  background: radial-gradient(circle at 35% 35%, #fff7c2, #ffb703 68%, #f08c00);
-  box-shadow: 0 0 0.35rem color-mix(in srgb, #ffb703 70%, transparent);
+.theme-switch__sun {
+  left: 0.5rem;
+  color: #f59b0a;
+  filter: drop-shadow(0 0 4px color-mix(in srgb, #ffb703 75%, transparent));
 }
 
-.theme-dial-moon {
-  right: 0.55rem;
-  background: radial-gradient(circle at 35% 35%, #f4f7ff, #c7d2e8 55%, #8fa3c7);
-  box-shadow: inset -0.14rem -0.08rem 0 0 color-mix(in srgb, #6d7f9d 55%, transparent);
+.theme-switch__moon {
+  right: 0.48rem;
+  color: #eef2ff;
+  filter: drop-shadow(0 0 5px color-mix(in srgb, #a8b8ff 65%, transparent));
 }
 
-[data-theme='dark'] .theme-dial-sun {
-  opacity: 0.35;
-  transform: translateY(-50%) scale(0.82);
+[data-theme='dark'] .theme-switch__sun {
+  opacity: 0.2;
+  transform: translateY(-50%) scale(0.75) rotate(-18deg);
+  filter: none;
 }
 
-[data-theme='dark'] .theme-dial-moon {
+[data-theme='dark'] .theme-switch__moon {
   opacity: 1;
   transform: translateY(-50%) scale(1);
 }
 
-:not([data-theme='dark']) .theme-dial-moon {
-  opacity: 0.35;
-  transform: translateY(-50%) scale(0.82);
+:not([data-theme='dark']) .theme-switch__moon {
+  opacity: 0.22;
+  transform: translateY(-50%) scale(0.75) rotate(12deg);
+  filter: none;
 }
 
-.theme-dial-knob {
+.theme-switch__eclipse {
   position: absolute;
   top: 50%;
-  left: 0.28rem;
-  width: 1.25rem;
-  height: 1.25rem;
+  left: 0.2rem;
+  z-index: 3;
+  width: 1.62rem;
+  height: 1.62rem;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--bg-elevated) 92%, #fff);
-  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
-  box-shadow: 0 2px 8px rgba(20, 24, 32, 0.18);
-  transform: translate(0, -50%);
-  transition: transform var(--motion-slow) var(--ease-out), box-shadow var(--motion-base) var(--ease-out);
+  background:
+    radial-gradient(circle at 32% 28%, #fffef6 0%, #f5ebe0 38%, #dcc9b5 100%);
+  border: 1px solid color-mix(in srgb, #fff 40%, #c4b5a5);
+  box-shadow:
+    0 3px 12px color-mix(in srgb, #1a2233 28%, transparent),
+    inset -3px -3px 6px color-mix(in srgb, #000 8%, transparent),
+    inset 2px 2px 5px color-mix(in srgb, #fff 55%, transparent);
+  transform: translateY(-50%);
+  transition:
+    transform var(--motion-slow) cubic-bezier(0.34, 1.2, 0.64, 1),
+    background var(--motion-slow) var(--ease-out),
+    box-shadow var(--motion-base) var(--ease-out);
 }
 
-[data-theme='dark'] .theme-dial-knob {
-  transform: translate(1.5rem, -50%);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+[data-theme='dark'] .theme-switch__eclipse {
+  transform: translate(1.78rem, -50%);
+  background:
+    radial-gradient(circle at 32% 28%, #fafbff 0%, #d8e2f8 42%, #9eb0d4 100%);
+  border-color: color-mix(in srgb, #fff 35%, #8fa8d4);
+  box-shadow:
+    0 3px 14px rgba(0, 0, 0, 0.45),
+    0 0 16px color-mix(in srgb, #8ab4ff 45%, transparent),
+    inset -2px -2px 5px color-mix(in srgb, #000 12%, transparent),
+    inset 2px 2px 4px color-mix(in srgb, #fff 50%, transparent);
 }
 
-.theme-dial:hover .theme-dial-knob {
-  box-shadow: 0 3px 12px rgba(20, 24, 32, 0.22);
+.theme-switch:hover .theme-switch__eclipse {
+  box-shadow:
+    0 4px 16px color-mix(in srgb, #1a2233 32%, transparent),
+    inset -3px -3px 6px color-mix(in srgb, #000 8%, transparent),
+    inset 2px 2px 5px color-mix(in srgb, #fff 55%, transparent);
 }
 
-.theme-dial--pulse .theme-dial-track {
-  animation: theme-dial-pulse var(--motion-base) var(--ease-out);
+[data-theme='dark'] .theme-switch:hover .theme-switch__eclipse {
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.5),
+    0 0 20px color-mix(in srgb, #8ab4ff 55%, transparent),
+    inset -2px -2px 5px color-mix(in srgb, #000 12%, transparent),
+    inset 2px 2px 4px color-mix(in srgb, #fff 50%, transparent);
 }
 
-@keyframes theme-dial-pulse {
+.theme-switch--snap .theme-switch__track {
+  animation: theme-switch-snap 0.42s var(--ease-out);
+}
+
+.theme-switch--snap .theme-switch__eclipse {
+  animation: theme-switch-orbit 0.42s var(--ease-out);
+}
+
+@keyframes theme-switch-snap {
   0% {
     transform: scale(1);
   }
 
-  45% {
-    transform: scale(1.04);
+  38% {
+    transform: scale(1.07);
   }
 
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes theme-switch-orbit {
+  0% {
+    filter: brightness(1);
+  }
+
+  40% {
+    filter: brightness(1.12);
+  }
+
+  100% {
+    filter: brightness(1);
   }
 }
 
@@ -650,7 +746,7 @@ img {
   gap: 0.5rem;
   flex-shrink: 0;
   min-height: 2.75rem;
-  padding: 0.55rem 3rem 0.55rem 0.85rem;
+  padding: 0.55rem 0.85rem;
   border-bottom: 1px solid var(--border);
   background: color-mix(in srgb, var(--bg-elevated) 96%, transparent);
 }
@@ -667,29 +763,30 @@ img {
 }
 
 .sidebar-toggle {
-  position: absolute;
-  top: 0.55rem;
-  right: 0.65rem;
-  z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
   flex-shrink: 0;
-  width: 2rem;
-  height: 2rem;
-  padding: 0;
+  min-height: 2rem;
+  padding: 0.3rem 0.55rem;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--bg);
   color: var(--muted);
   cursor: pointer;
-  transition: color var(--motion-fast) var(--ease-out),
+  font-family: var(--font-meta);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    color var(--motion-fast) var(--ease-out),
     border-color var(--motion-fast) var(--ease-out),
     background-color var(--motion-fast) var(--ease-out),
     transform var(--motion-fast) var(--ease-out),
-    top var(--motion-sidebar) var(--ease-out),
-    right var(--motion-sidebar) var(--ease-out),
-    left var(--motion-sidebar) var(--ease-out);
+    padding var(--motion-sidebar) var(--ease-out);
 }
 
 .sidebar-toggle:hover {
@@ -699,73 +796,64 @@ img {
   transform: translateY(-1px);
 }
 
-@media (min-width: 1100px) {
-  .layout-doc.sidebar-collapsed .sidebar-toggle:hover {
-    transform: translateX(-50%) translateY(-1px);
-  }
-}
-
 .sidebar-toggle:active {
   transform: translateY(0);
 }
 
 .sidebar-toggle-icon {
   display: block;
-  width: 0.55rem;
-  height: 0.55rem;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(135deg);
-  margin-left: 0.12rem;
+  flex-shrink: 0;
   transition: transform var(--motion-sidebar) var(--ease-out);
 }
 
 .sidebar-toggle[data-state='closed'] .sidebar-toggle-icon {
-  transform: rotate(-45deg);
-  margin-left: -0.08rem;
+  transform: rotate(180deg);
+}
+
+.sidebar-toggle--fab {
+  display: none;
 }
 
 @media (max-width: 1099px) {
-  .doc-sidebar-host .sidebar-toggle {
+  .sidebar-toggle--fab {
+    display: inline-flex;
     position: fixed;
     left: 0.65rem;
-    right: auto;
     top: calc(var(--header-height) + 0.65rem);
     z-index: 31;
     box-shadow: var(--shadow);
   }
 
-  .doc-sidebar.open ~ .sidebar-toggle {
-    position: absolute;
-    left: auto;
-    right: 0.65rem;
-    top: 0.55rem;
-    box-shadow: none;
+  .doc-sidebar.open ~ .sidebar-toggle--fab {
+    display: none;
   }
 }
 
 @media (min-width: 1100px) {
+  .sidebar-toggle--fab {
+    display: none !important;
+  }
+
   .layout-doc.sidebar-collapsed .sidebar-toolbar {
     justify-content: center;
     padding-inline: 0.35rem;
   }
 
-  .layout-doc.sidebar-collapsed .sidebar-toggle {
+  .layout-doc.sidebar-collapsed .sidebar-toggle--toolbar {
+    min-width: 2.1rem;
+    padding-inline: 0.4rem;
+  }
+
+  .layout-doc.sidebar-collapsed .sidebar-toggle-text {
     position: absolute;
-    left: 50%;
-    right: auto;
-    top: 0.55rem;
-    transform: translateX(-50%);
-    width: 2.1rem;
-    height: 2.1rem;
-  }
-
-  .layout-doc.sidebar-collapsed .sidebar-toggle:hover {
-    transform: translateX(-50%) translateY(-1px);
-  }
-
-  .layout-doc.sidebar-collapsed .sidebar-toggle:active {
-    transform: translateX(-50%) translateY(0);
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 }
 
@@ -1964,11 +2052,12 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .theme-dial-sky,
-  .theme-dial-knob,
-  .theme-dial-sun,
-  .theme-dial-moon,
-  .theme-dial--pulse .theme-dial-track {
+  .theme-switch__sky,
+  .theme-switch__stars,
+  .theme-switch__celestial,
+  .theme-switch__eclipse,
+  .theme-switch--snap .theme-switch__track,
+  .theme-switch--snap .theme-switch__eclipse {
     transition: none;
     animation: none;
   }
