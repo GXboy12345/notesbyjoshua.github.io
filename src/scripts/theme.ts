@@ -12,6 +12,7 @@ export function readStoredTheme(): SiteTheme {
 
 export function applyTheme(theme: SiteTheme) {
   document.documentElement.setAttribute('data-theme', theme);
+  document.documentElement.style.colorScheme = theme;
 }
 
 export function persistTheme(theme: SiteTheme) {

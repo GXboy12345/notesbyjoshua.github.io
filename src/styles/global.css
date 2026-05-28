@@ -115,6 +115,8 @@
 html {
   scroll-behavior: auto;
   overscroll-behavior: none;
+  background: var(--bg);
+  color: var(--fg);
 }
 
 body {
@@ -1994,12 +1996,22 @@ img {
   }
 }
 
+::view-transition-old(root),
+::view-transition-new(root) {
+  background: var(--bg);
+}
+
 ::view-transition-old(root) {
   animation: page-fade-out var(--motion-fast) var(--ease-out) both;
 }
 
 ::view-transition-new(root) {
   animation: page-fade-in var(--motion-base) var(--ease-out) both;
+}
+
+html.theme-swapping,
+html.theme-swapping * {
+  transition-duration: 0s !important;
 }
 
 @keyframes page-fade-out {

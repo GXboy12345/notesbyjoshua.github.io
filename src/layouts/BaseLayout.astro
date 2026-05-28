@@ -20,13 +20,13 @@ const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Jo
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <ThemeScript />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <FontPreload />
     <meta name="description" content={description} />
     <title>{fullTitle}</title>
     <ClientRouter />
     <link rel="icon" type="image/jpeg" href={p('/assets/Images/favicon.jpeg')} />
-    <ThemeScript />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-868QCS9DJP"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];

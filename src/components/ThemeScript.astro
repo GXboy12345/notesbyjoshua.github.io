@@ -1,16 +1,50 @@
+<style is:inline>
+  html {
+    background: #f6f4ef;
+    color: #141820;
+  }
+
+  html[data-theme='dark'] {
+    background: #0f1218;
+    color: #e8ecf4;
+  }
+</style>
+
 <script is:inline>
   (function () {
     var k = 'notes-site-theme';
-    function apply() {
+
+    function read() {
       try {
         var t = localStorage.getItem(k);
         if (t !== 'dark' && t !== 'light') t = 'light';
-        document.documentElement.setAttribute('data-theme', t);
+        return t;
       } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'light');
+        return 'light';
       }
     }
-    apply();
-    document.addEventListener('astro:page-load', apply);
+
+    function applyTo(doc) {
+      var root = doc.documentElement;
+      var t = read();
+      root.setAttribute('data-theme', t);
+      root.style.colorScheme = t;
+    }
+
+    applyTo(document);
+
+    document.addEventListener('astro:before-swap', function (event) {
+      applyTo(event.newDocument);
+      document.documentElement.classList.add('theme-swapping');
+    });
+
+    document.addEventListener('astro:after-swap', function () {
+      applyTo(document);
+      document.documentElement.classList.remove('theme-swapping');
+    });
+
+    document.addEventListener('astro:page-load', function () {
+      applyTo(document);
+    });
   })();
 </script>
