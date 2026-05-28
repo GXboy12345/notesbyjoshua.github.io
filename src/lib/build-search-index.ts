@@ -1,36 +1,27 @@
+import MiniSearch from 'minisearch';
+import { extractSearchText, excerptFromBody } from './extract-search-text';
 import { allDocEntries } from './resolve-doc';
 import { readDocSource } from './render-doc';
 import { routePath, routeSlug } from './routes';
-import type { SearchRecord } from './search-types';
+import { miniSearchOptions, SEARCH_INDEX_VERSION } from './search-config';
+import type { SearchIndexPayload, SearchRecord } from './search-types';
 
-function stripMarkdown(src: string): string {
-  return src
-    .replace(/<!--[\s\S]*?-->/g, ' ')
-    .replace(/```[\s\S]*?```/g, ' ')
-    .replace(/\$\$[\s\S]*?\$\$/g, ' ')
-    .replace(/\$[^$\n]+?\$/g, ' ')
-    .replace(/\{%[\s\S]*?%\}/g, ' ')
-    .replace(/\{\{[\s\S]*?\}\}/g, ' ')
-    .replace(/^:::[^\n]*$/gm, ' ')
-    .replace(/^:::\s*$/gm, ' ')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/!\[[^\]]*\]\([^)]+\)/g, ' ')
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-    .replace(/^\s*-\s*\[[ xX]\]\s*/gm, ' ')
-    .replace(/[#*_>`~|]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+const COLLECTION_LABELS: Record<string, string> = {
+  notes: 'Notes',
+  pages: 'Pages',
+  siteBlog: 'Blog',
+  practice: 'Practice',
+  siteResources: 'Resources',
+  siteFeedback: 'Feedback',
+};
+
+function collectionLabel(collection: string): string {
+  return COLLECTION_LABELS[collection] ?? collection;
 }
 
-function excerpt(body: string, max = 160): string {
-  const plain = stripMarkdown(body);
-  if (plain.length <= max) return plain;
-  return `${plain.slice(0, max).trimEnd()}…`;
-}
-
-export async function buildSearchIndex(): Promise<SearchRecord[]> {
+export async function buildSearchIndex(): Promise<SearchIndexPayload> {
   const entries = await allDocEntries();
-  const records: SearchRecord[] = [];
+  const documents: SearchRecord[] = [];
 
   for (const entry of entries) {
     const slug = routeSlug(entry);
@@ -42,15 +33,29 @@ export async function buildSearchIndex(): Promise<SearchRecord[]> {
       slug.split('/').pop()?.replace(/-/g, ' ') ??
       slug;
 
-    const plain = stripMarkdown(body);
-    records.push({
+    const extracted = extractSearchText(body);
+
+    documents.push({
+      id: slug,
       title,
       url: routePath(entry),
-      excerpt: excerpt(body),
-      text: `${title} ${plain}`.toLowerCase(),
+      excerpt: excerptFromBody(extracted.body),
+      collection: collectionLabel(entry.collection),
+      headings: extracted.headings,
+      labels: extracted.labels,
+      body: extracted.body,
+      math: extracted.math,
     });
   }
 
-  records.sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: 'base' }));
-  return records;
+  documents.sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: 'base' }));
+
+  const miniSearch = new MiniSearch(miniSearchOptions);
+  miniSearch.addAll(documents);
+
+  return {
+    version: SEARCH_INDEX_VERSION,
+    documentCount: documents.length,
+    index: miniSearch.toJSON(),
+  };
 }

@@ -1,6 +1,16 @@
-import type { SearchHit, SearchRecord } from './search-types';
+import MiniSearch from 'minisearch';
+import type { SearchOptions } from 'minisearch';
+import { miniSearchOptions } from './search-config';
+import type { SearchHit, SearchIndexPayload } from './search-types';
 
-function snippet(text: string, terms: string[], radius = 56): string {
+function snippet(text: string, query: string, radius = 56): string {
+  const terms = query
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(Boolean);
+  if (!terms.length) return text.slice(0, radius * 2);
+
   const lower = text.toLowerCase();
   let idx = -1;
   for (const term of terms) {
@@ -8,34 +18,52 @@ function snippet(text: string, terms: string[], radius = 56): string {
     if (at !== -1 && (idx === -1 || at < idx)) idx = at;
   }
   if (idx === -1) return text.slice(0, radius * 2);
+
   const start = Math.max(0, idx - radius);
   const end = Math.min(text.length, idx + radius);
   const chunk = text.slice(start, end).trim();
   return start > 0 ? `…${chunk}` : chunk;
 }
 
-export function searchIndex(records: SearchRecord[], rawQuery: string, limit = 8): SearchHit[] {
-  const q = rawQuery.trim().toLowerCase();
+export function loadSearchEngine(payload: SearchIndexPayload): MiniSearch {
+  const json =
+    typeof payload.index === 'string' ? payload.index : JSON.stringify(payload.index);
+  return MiniSearch.loadJSON(json, miniSearchOptions);
+}
+
+export function searchIndex(
+  engine: MiniSearch,
+  rawQuery: string,
+  limit: number,
+  options?: SearchOptions,
+): SearchHit[] {
+  const q = rawQuery.trim();
   if (!q) return [];
 
-  const terms = q.split(/\s+/).filter(Boolean);
-  const hits: SearchHit[] = [];
+  const results = engine.search(q, {
+    ...miniSearchOptions.searchOptions,
+    ...options,
+  });
 
-  for (const doc of records) {
-    const title = doc.title.toLowerCase();
-    let score = 0;
-    for (const term of terms) {
-      if (title.includes(term)) score += 12;
-      if (doc.text.includes(term)) score += 2;
-    }
-    if (score === 0) continue;
-    hits.push({
-      ...doc,
-      score,
-      excerpt: snippet(doc.excerpt, terms),
-    });
-  }
+  return results.slice(0, limit).map((result) => ({
+    id: String(result.id),
+    title: String(result.title),
+    url: String(result.url),
+    excerpt: snippet(String(result.excerpt ?? ''), q),
+    collection: String(result.collection ?? ''),
+    score: result.score,
+  }));
+}
 
-  hits.sort((a, b) => b.score - a.score || a.title.localeCompare(b.title));
-  return hits.slice(0, limit);
+export function countMatches(
+  engine: MiniSearch,
+  rawQuery: string,
+  options?: SearchOptions,
+): number {
+  const q = rawQuery.trim();
+  if (!q) return 0;
+  return engine.search(q, {
+    ...miniSearchOptions.searchOptions,
+    ...options,
+  }).length;
 }

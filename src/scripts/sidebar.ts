@@ -80,9 +80,11 @@ export function initSidebar() {
     else openMobile();
   };
 
-  // Always re-bind toggle clicks — FAB is outside the persisted aside and
-  // becomes fresh DOM on every navigation, losing its prior listener.
+  // Bind once per toggle node. Toolbar toggle persists across view transitions;
+  // duplicate listeners make collapse fire twice and appear broken.
   for (const toggle of toggles) {
+    if (toggle.dataset.sidebarToggleBound === '1') continue;
+    toggle.dataset.sidebarToggleBound = '1';
     toggle.addEventListener('click', onToggleClick);
   }
 

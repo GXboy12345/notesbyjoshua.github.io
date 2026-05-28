@@ -76,10 +76,16 @@
   --motion-sidebar: 340ms;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --canvas-bg: var(--bg-elevated);
+  --canvas-dot: color-mix(in srgb, var(--fg) 22%, transparent);
+  --canvas-dot-size: 1.25px;
+  --canvas-dot-spacing: 20px;
+  --canvas-parallax-rate: 0.58;
 }
 
 [data-theme='dark'] {
   color-scheme: dark;
+  --canvas-dot: color-mix(in srgb, var(--fg) 15%, transparent);
   --bg: #0f1218;
   --bg-elevated: #171b24;
   --fg: #e8ecf4;
@@ -476,7 +482,152 @@ body.ref-sheet-open {
   color: var(--muted);
 }
 
+.header-search-footer {
+  border-top: 1px solid var(--border);
+  padding: 0.35rem 0.45rem 0.4rem;
+}
+
+.header-search-more {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.header-search-more:hover,
+.header-search-more:focus-visible {
+  text-decoration: underline;
+}
+
 .header-search-hit mark {
+  padding: 0 0.1em;
+  border-radius: 3px;
+  color: inherit;
+  background: color-mix(in srgb, var(--accent-soft) 90%, var(--accent));
+}
+
+.search-page {
+  padding: 1.5rem 1rem 3rem;
+}
+
+.search-page-inner {
+  width: min(48rem, 100%);
+  margin: 0 auto;
+}
+
+.search-page-header h1 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.search-page-lede {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+}
+
+.search-page-form {
+  margin-bottom: 0.85rem;
+}
+
+.search-page-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.65rem;
+  background: var(--surface);
+}
+
+.search-page-input-wrap:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-soft) 80%, transparent);
+}
+
+.search-page-icon {
+  flex-shrink: 0;
+  color: var(--muted);
+}
+
+.search-page-input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.search-page-input:focus {
+  outline: none;
+}
+
+.search-page-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.search-page-status {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.search-page-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.search-page-hit-link {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 0.65rem;
+  background: var(--surface);
+  text-decoration: none;
+  color: inherit;
+}
+
+.search-page-hit-link:hover,
+.search-page-hit-link:focus-visible {
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  background: color-mix(in srgb, var(--accent-soft) 35%, var(--surface));
+  outline: none;
+}
+
+.search-page-hit-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem 0.65rem;
+}
+
+.search-page-hit-title {
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.search-page-hit-collection {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.search-page-hit-excerpt {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.search-page-hit mark {
   padding: 0 0.1em;
   border-radius: 3px;
   color: inherit;
@@ -1131,9 +1282,44 @@ body.ref-sheet-open {
 }
 
 .doc-main {
+  position: relative;
+  isolation: isolate;
   padding: 1.5rem 1.25rem 3rem;
   max-width: 100%;
   min-width: 0;
+  overflow: clip;
+}
+
+.doc-main__canvas-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.doc-main__canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-color: var(--canvas-bg);
+  background-image: radial-gradient(
+    circle,
+    var(--canvas-dot) var(--canvas-dot-size),
+    transparent var(--canvas-dot-size)
+  );
+  background-size: var(--canvas-dot-spacing) var(--canvas-dot-spacing);
+  will-change: transform;
+}
+
+.doc-main .prose {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-read);
+  width: 100%;
+  margin-inline: auto;
 }
 
 @media (min-width: 1100px) {
@@ -1141,16 +1327,16 @@ body.ref-sheet-open {
     height: 100%;
     max-height: 100%;
     min-height: 0;
-    overflow-y: auto;
     overflow-x: hidden;
+    overflow-y: auto;
     overscroll-behavior: contain;
   }
 }
 
-.doc-main .prose {
-  max-width: var(--max-read);
-  width: 100%;
-  margin-inline: auto;
+@media (prefers-reduced-motion: reduce) {
+  .doc-main__canvas {
+    will-change: auto;
+  }
 }
 
 .doc-toc {

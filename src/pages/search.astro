@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { p } from '../lib/paths';
+
+const initialQuery = Astro.url.searchParams.get('q')?.trim() ?? '';
+---
+
+<BaseLayout
+  title="Search"
+  description="Search notes, practice problems, callouts, and math across Notes by Joshua."
+>
+  <main class="search-page" data-search-page data-initial-query={initialQuery}>
+    <div class="search-page-inner">
+      <header class="search-page-header">
+        <h1>Search</h1>
+        <p class="search-page-lede">Full-text search across notes, callouts, MCQs, and LaTeX.</p>
+      </header>
+
+      <form class="search-page-form" role="search" action={p('search/')} method="get">
+        <label class="visually-hidden" for="search-page-query">Search query</label>
+        <div class="search-page-input-wrap">
+          <svg class="search-page-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle>
+            <path d="M20 20l-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+          <input
+            id="search-page-query"
+            class="search-page-input"
+            type="search"
+            name="q"
+            value={initialQuery}
+            placeholder="Search notes, topics, equations…"
+            autocomplete="off"
+            spellcheck="false"
+            autofocus
+          />
+        </div>
+      </form>
+
+      <p class="search-page-status" aria-live="polite" aria-atomic="true">
+        {initialQuery ? 'Searching…' : 'Search notes, callouts, math, and embedded components.'}
+      </p>
+
+      <ul class="search-page-results" aria-label="Search results"></ul>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  import { bindSearchPage } from '../scripts/search-page.ts';
+
+  bindSearchPage();
+  document.addEventListener('astro:page-load', bindSearchPage);
+</script>
