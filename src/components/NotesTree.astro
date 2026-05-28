@@ -21,9 +21,10 @@ const { nodes, current, depth = 0 } = Astro.props;
               <span class="tree-caret" aria-hidden="true" />
               {node.href && node.path ? (
                 <a
-                  class="tree-link"
+                  class="tree-link tree-link--branch"
                   href={node.href}
                   aria-current={pathActive(current, node.path) ? 'page' : undefined}
+                  data-tree-nav
                 >
                   {node.label}
                 </a>
