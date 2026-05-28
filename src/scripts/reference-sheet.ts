@@ -1,4 +1,4 @@
-import renderMathInElement from 'katex/contrib/auto-render';
+import { renderKatexIn } from '../lib/katex-client';
 import { p } from '../lib/paths';
 
 type ReferenceSheetItem = {
@@ -10,17 +10,6 @@ type ReferenceSheetItem = {
 
 type ReferenceSheetPayload = {
   sheets: ReferenceSheetItem[];
-};
-
-const katexOpts = {
-  delimiters: [
-    { left: '$$', right: '$$', display: true },
-    { left: '\\[', right: '\\]', display: true },
-    { left: '\\(', right: '\\)', display: false },
-    { left: '$', right: '$', display: false },
-  ],
-  throwOnError: false,
-  strict: false,
 };
 
 let payloadPromise: Promise<ReferenceSheetPayload> | null = null;
@@ -68,7 +57,7 @@ function closeDrawer() {
 
 function renderMath(body: HTMLElement | null) {
   if (!body) return;
-  renderMathInElement(body, katexOpts);
+  renderKatexIn(body);
 }
 
 function openDrawer(sheet: ReferenceSheetItem) {

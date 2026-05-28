@@ -231,12 +231,11 @@ function processLeaf(leaf: LeafDirective, renderFragment: FragmentRenderer) {
 <div class="mcq-stem">${stemHtml}</div>
 <ul class="mcq-choices">${choicesHtml}</ul>
 <div class="mcq-actions">
-<button type="button" data-mcq-check>Check</button>
 <button type="button" data-mcq-show-solution>Show solution</button>
-<button type="button" data-mcq-skip>Skip</button>
 </div>
 <p class="mcq-feedback" data-feedback="correct" hidden>Correct.</p>
-<p class="mcq-feedback" data-feedback="incorrect" hidden>Not quite — try again or show the solution.</p>
+<p class="mcq-feedback" data-feedback="retry" hidden>Not quite—try again.</p>
+<p class="mcq-feedback" data-feedback="exhausted" hidden>Out of attempts—solution below.</p>
 <div class="mcq-solution" data-solution hidden>${solutionHtml}</div>
 </div>`,
     );

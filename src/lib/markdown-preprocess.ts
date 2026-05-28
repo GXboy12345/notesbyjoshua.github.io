@@ -30,6 +30,15 @@ function isMathBlockBody(lines: string[]): boolean {
   return nonEmpty.every(isMathLine);
 }
 
+/** Closing display-math line: `$$` optionally followed by punctuation only. */
+function parseDisplayMathClose(line: string): { closes: boolean; suffix: string } {
+  const trimmed = line.trim();
+  if (trimmed === '$$') return { closes: true, suffix: '' };
+  const match = /^(\$\$)([\s,;:.\-—–]*)$/.exec(trimmed);
+  if (match) return { closes: true, suffix: match[2] ?? '' };
+  return { closes: false, suffix: '' };
+}
+
 /**
  * Notes use $$…$$ for both inline and display math. KaTeX auto-render treats $$ as
  * display-only, so inline uses must become $...$ while block equations stay as $$.
@@ -52,13 +61,20 @@ export function normalizeMathDelimiters(src: string): string {
     if (lines[i].trim() === '$$') {
       const bodyLines: string[] = [];
       let j = i + 1;
-      while (j < lines.length && lines[j].trim() !== '$$') {
+      let suffix = '';
+      while (j < lines.length) {
+        const close = parseDisplayMathClose(lines[j]);
+        if (close.closes) {
+          suffix = close.suffix;
+          break;
+        }
         bodyLines.push(lines[j]);
         j++;
       }
-      if (j < lines.length && lines[j].trim() === '$$' && isMathBlockBody(bodyLines)) {
+      if (j < lines.length && isMathBlockBody(bodyLines)) {
         const body = bodyLines.join('\n').replace(/\s*\n\s*/g, ' ').trim();
         out.push(stash(body));
+        if (suffix) out.push(suffix);
         i = j + 1;
         continue;
       }
@@ -69,8 +85,11 @@ export function normalizeMathDelimiters(src: string): string {
 
   let normalized = out.join('\n');
 
-  // Single-line display: a line containing only $$ … $$
-  normalized = normalized.replace(/^[ \t]*\$\$([^$\n]+?)\$\$[ \t]*$/gm, (_, body) => stash(body));
+  // Single-line display: a line containing only $$ … $$ with optional trailing punctuation.
+  normalized = normalized.replace(
+    /^[ \t]*\$\$([^$\n]+?)\$\$([\s,;:.\-—–]*)[ \t]*$/gm,
+    (_, body, suffix) => `${stash(body)}${suffix ?? ''}`,
+  );
 
   // Remaining $$ … $$ is inline math in running text.
   normalized = normalized.replace(/\$\$([^$\n]+?)\$\$/g, (_, body) => `$${body.trim()}$`);

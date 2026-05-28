@@ -14,4 +14,9 @@ export default defineConfig({
   base,
   trailingSlash: 'always',
   integrations: [mdx(), sitemap()],
+  vite: {
+    optimizeDeps: {
+      include: ['katex/contrib/auto-render'],
+    },
+  },
 });

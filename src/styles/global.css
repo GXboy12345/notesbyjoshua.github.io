@@ -1838,12 +1838,16 @@ html[data-cram-mode] .prose .callout--example > details.callout__details:not([op
 }
 
 .prose .mcq.mcq--incorrect .mcq-feedback,
-.prose .mcq.is-incorrect .mcq-feedback {
+.prose .mcq.is-incorrect .mcq-feedback,
+.prose .mcq-feedback[data-feedback='retry'],
+.prose .mcq-feedback[data-feedback='exhausted'] {
   color: #a83820;
 }
 
 [data-theme='dark'] .prose .mcq.mcq--incorrect .mcq-feedback,
-[data-theme='dark'] .prose .mcq.is-incorrect .mcq-feedback {
+[data-theme='dark'] .prose .mcq.is-incorrect .mcq-feedback,
+[data-theme='dark'] .prose .mcq-feedback[data-feedback='retry'],
+[data-theme='dark'] .prose .mcq-feedback[data-feedback='exhausted'] {
   color: #f0a890;
 }
 

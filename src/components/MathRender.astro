@@ -1,22 +1,11 @@
 ---
 ---
 <script>
-  import renderMathInElement from 'katex/contrib/auto-render';
-
-  const opts = {
-    delimiters: [
-      { left: '$$', right: '$$', display: true },
-      { left: '\\[', right: '\\]', display: true },
-      { left: '\\(', right: '\\)', display: false },
-      { left: '$', right: '$', display: false },
-    ],
-    throwOnError: false,
-    strict: false,
-  };
+  import { renderKatexIn } from '../lib/katex-client';
 
   function run() {
-    const el = document.querySelector('.doc-main .prose');
-    if (el) renderMathInElement(el, opts);
+    const el = document.querySelector('.doc-main article.prose');
+    if (el instanceof HTMLElement) renderKatexIn(el);
   }
 
   run();
