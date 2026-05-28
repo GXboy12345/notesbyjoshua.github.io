@@ -110,7 +110,7 @@ College Board often tests ICE tables with a small initial change.
 | `:::placeholder` | Missing figure or diagram stub | — |
 | `:::note` | Asides and conventions | — |
 | `:::exam` | "On the test" / CB alignment | `topic=` exam focus |
-| `:::key` | One formula or rule to memorize | `name=` formula name |
+| `:::key` | Key fact, formula, or rule to highlight | `name=` label |
 | `:::summary` | Section recap | `title=` summary title |
 
 Legacy `<div class="theorem-box" markdown="1">` still renders during migration; prefer directives for new content.

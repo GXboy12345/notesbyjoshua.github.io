@@ -360,7 +360,11 @@ $$
 Oxidation at anode; reduction at cathode.
 
 :::figure{width=480}
-![Electrochemistry](/assets/APs/AP%20Chem/cheatsheet/electrochem-summary.png)
+![Galvanic cell](/assets/APs/AP%20Chem/thermoelectro/galvaniccell.jpg)
+:::
+
+:::figure{width=480}
+![Electrolytic cell](/assets/APs/AP%20Chem/thermoelectro/electrolyticcell.png)
 :::
 
 :::

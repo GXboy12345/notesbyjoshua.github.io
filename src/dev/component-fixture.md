@@ -55,7 +55,7 @@ First order: $$t_{1/2} = \frac{0.693}{k}$$
 :::
 
 :::key
-Unnamed key formula—default label only.
+Unnamed key info—default label only.
 :::
 
 ### Exam (`topic`)

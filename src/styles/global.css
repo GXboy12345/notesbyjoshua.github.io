@@ -262,6 +262,7 @@ img {
   border-radius: 999px;
   background: var(--bg);
   color: var(--fg);
+  font-family: var(--font-ui);
   font-size: 0.8125rem;
   font-weight: 600;
   white-space: nowrap;
@@ -1976,7 +1977,7 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
   margin-inline: auto;
   height: auto;
   max-width: 100%;
-  border-radius: calc(var(--radius) - 4px);
+  border-radius: 0;
   border: 1px solid var(--border);
   background: var(--bg-elevated);
 }
@@ -2419,7 +2420,7 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
   width: auto;
   height: auto;
   margin: 0 auto;
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: 0;
   box-shadow: var(--shadow);
   background: var(--bg-elevated);
 }
