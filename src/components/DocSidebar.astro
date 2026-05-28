@@ -13,9 +13,10 @@ const { current = Astro.url.pathname } = Astro.props;
 const notesTree = buildNotesTree(await allDocEntries());
 ---
 
+<div class="doc-sidebar-shell">
 <div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
 
-<div class="doc-sidebar-host">
+<div class="doc-sidebar-column">
   <button
     type="button"
     class="sidebar-toggle sidebar-toggle--fab"
@@ -25,15 +26,23 @@ const notesTree = buildNotesTree(await allDocEntries());
   >
     <svg class="sidebar-toggle-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
       <path
-        d="M4 6h16M4 12h16M4 18h10"
+        d="M5 5v14"
         fill="none"
         stroke="currentColor"
         stroke-width="2"
-        stroke-linecap="round"></path>
+        stroke-linecap="round"
+        opacity="0.55"></path>
+      <path
+        d="M9 6l6 6-6 6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
     </svg>
-    <span class="sidebar-toggle-text">Notes</span>
   </button>
 
+  <div class="doc-sidebar-host">
   <aside
     id="doc-sidebar"
     class="doc-sidebar"
@@ -65,7 +74,6 @@ const notesTree = buildNotesTree(await allDocEntries());
             stroke-linecap="round"
             opacity="0.55"></path>
         </svg>
-        <span class="sidebar-toggle-text">Hide panel</span>
       </button>
     </div>
 
@@ -108,6 +116,8 @@ const notesTree = buildNotesTree(await allDocEntries());
       </div>
     </div>
   </aside>
+  </div>
+</div>
 </div>
 
 <script>
