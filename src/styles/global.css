@@ -78,9 +78,9 @@
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --canvas-bg: var(--bg-elevated);
   --canvas-dot: color-mix(in srgb, var(--fg) 22%, transparent);
-  --canvas-dot-size: 1.25px;
-  --canvas-dot-spacing: 20px;
-  --canvas-parallax-rate: 0.58;
+  --canvas-dot-size: 1.5px;
+  --canvas-dot-spacing: 28px;
+  --canvas-parallax-rate: 0.25;
 }
 
 [data-theme='dark'] {
@@ -1282,28 +1282,9 @@ body.ref-sheet-open {
 }
 
 .doc-main {
-  position: relative;
-  isolation: isolate;
   padding: 1.5rem 1.25rem 3rem;
   max-width: 100%;
   min-width: 0;
-  overflow: clip;
-}
-
-.doc-main__canvas-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.doc-main__canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
   background-color: var(--canvas-bg);
   background-image: radial-gradient(
     circle,
@@ -1311,12 +1292,11 @@ body.ref-sheet-open {
     transparent var(--canvas-dot-size)
   );
   background-size: var(--canvas-dot-spacing) var(--canvas-dot-spacing);
-  will-change: transform;
+  background-attachment: local;
+  background-position-y: var(--canvas-bg-offset, 0px);
 }
 
 .doc-main .prose {
-  position: relative;
-  z-index: 1;
   max-width: var(--max-read);
   width: 100%;
   margin-inline: auto;
@@ -1330,12 +1310,6 @@ body.ref-sheet-open {
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior: contain;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .doc-main__canvas {
-    will-change: auto;
   }
 }
 

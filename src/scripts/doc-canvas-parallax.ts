@@ -2,14 +2,9 @@ const DESKTOP_QUERY = '(min-width: 1100px)';
 
 type ParallaxController = {
   destroy: () => void;
-  refresh: () => void;
 };
 
 let active: ParallaxController | null = null;
-
-function clamp(n: number, lo: number, hi: number) {
-  return Math.max(lo, Math.min(hi, n));
-}
 
 function prefersReducedMotion(): boolean {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -19,7 +14,7 @@ function getParallaxRate(docMain: HTMLElement): number {
   if (prefersReducedMotion()) return 0;
   const raw = getComputedStyle(docMain).getPropertyValue('--canvas-parallax-rate').trim();
   const rate = Number.parseFloat(raw);
-  return Number.isFinite(rate) ? clamp(rate, 0, 1) : 0.58;
+  return Number.isFinite(rate) ? Math.max(0, Math.min(1, rate)) : 0.25;
 }
 
 function getScrollRoot(docMain: HTMLElement): HTMLElement {
@@ -32,46 +27,30 @@ function getScrollRoot(docMain: HTMLElement): HTMLElement {
   return document.documentElement;
 }
 
-function headerHeight(): number {
-  const raw = getComputedStyle(document.documentElement).getPropertyValue('--header-height').trim();
-  const value = Number.parseFloat(raw);
-  return Number.isFinite(value) ? value : 52;
-}
-
-function getLocalScroll(root: HTMLElement, docMain: HTMLElement): number {
+function getScrollTop(root: HTMLElement): number {
   if (root === document.documentElement) {
-    const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
-    const start = docMain.offsetTop - headerHeight();
-    const max = Math.max(0, docMain.offsetHeight - window.innerHeight);
-    return clamp(scrollY - start, 0, max);
+    return window.scrollY || document.documentElement.scrollTop || 0;
   }
   return root.scrollTop;
 }
 
-function getMaxLocalScroll(root: HTMLElement, docMain: HTMLElement): number {
-  if (root === document.documentElement) {
-    return Math.max(0, docMain.offsetHeight - window.innerHeight);
-  }
-  return Math.max(0, root.scrollHeight - root.clientHeight);
-}
-
-function bindParallax(docMain: HTMLElement, canvas: HTMLElement): ParallaxController {
-  let rate = getParallaxRate(docMain);
+function bindParallax(docMain: HTMLElement): ParallaxController {
   let root = getScrollRoot(docMain);
   let raf = 0;
 
+  // Background is painted with background-attachment: local, meaning it scrolls
+  // 1:1 with content by default. We offset it by -(scrollTop * (1 - rate)) to
+  // slow it down: at rate 0.58, the pattern moves 42% slower than the text.
   const apply = () => {
-    rate = getParallaxRate(docMain);
     root = getScrollRoot(docMain);
-
-    const maxScroll = getMaxLocalScroll(root, docMain);
-    const parallaxSpan = maxScroll * rate;
-    const viewportHeight = docMain.clientHeight;
-    // Extra height is parallax slack only; wrap clips to the reading pane / content box.
-    canvas.style.height =
-      rate === 0 ? '100%' : `${viewportHeight + parallaxSpan}px`;
-    canvas.style.transform =
-      rate === 0 ? 'none' : `translate3d(0, ${getLocalScroll(root, docMain) * rate}px, 0)`;
+    const rate = getParallaxRate(docMain);
+    if (rate === 0) {
+      docMain.style.removeProperty('--canvas-bg-offset');
+      return;
+    }
+    const scrollTop = getScrollTop(root);
+    const offset = scrollTop * (1 - rate);
+    docMain.style.setProperty('--canvas-bg-offset', `${offset}px`);
   };
 
   const schedule = () => {
@@ -89,8 +68,7 @@ function bindParallax(docMain: HTMLElement, canvas: HTMLElement): ParallaxContro
   window.addEventListener('resize', onResize, { passive: true });
 
   const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const onMotionChange = () => schedule();
-  motionQuery.addEventListener('change', onMotionChange);
+  motionQuery.addEventListener('change', () => schedule());
 
   const desktopQuery = window.matchMedia(DESKTOP_QUERY);
   const onDesktopChange = () => {
@@ -101,27 +79,15 @@ function bindParallax(docMain: HTMLElement, canvas: HTMLElement): ParallaxContro
   };
   desktopQuery.addEventListener('change', onDesktopChange);
 
-  const resizeObserver =
-    typeof ResizeObserver !== 'undefined'
-      ? new ResizeObserver(() => schedule())
-      : null;
-  resizeObserver?.observe(docMain);
-  const prose = docMain.querySelector('article.prose');
-  if (prose) resizeObserver?.observe(prose);
-
   apply();
 
   return {
-    refresh: schedule,
     destroy: () => {
       if (raf) cancelAnimationFrame(raf);
       root.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onResize);
-      motionQuery.removeEventListener('change', onMotionChange);
       desktopQuery.removeEventListener('change', onDesktopChange);
-      resizeObserver?.disconnect();
-      canvas.style.height = '';
-      canvas.style.transform = '';
+      docMain.style.removeProperty('--canvas-bg-offset');
     },
   };
 }
@@ -131,10 +97,9 @@ export function initDocCanvasParallax() {
   active = null;
 
   const docMain = document.querySelector<HTMLElement>('.doc-main');
-  const canvas = docMain?.querySelector<HTMLElement>('.doc-main__canvas');
-  if (!docMain || !canvas) return;
+  if (!docMain) return;
 
-  active = bindParallax(docMain, canvas);
+  active = bindParallax(docMain);
 }
 
 let pageLoadBound = false;
