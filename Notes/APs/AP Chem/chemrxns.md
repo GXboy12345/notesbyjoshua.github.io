@@ -29,16 +29,16 @@ If an element is a component of the reaction **ALONE**, they are written in thei
 
 ### Balancing by inspection (non-redox and simple cases)
 
-1. **Balance** elements that appear in only one reactant and one product first (often metals or central atoms).  
-2. Treat **unchanged polyatomic ions** (such as $$\text{NO}_3^-$$ or $$\text{SO}_4^{2-}$$) as a unit if they appear intact on both sides (Make sure to include them in brackets, otherwise they do not count as polyatomic ions).  
-3. Balance **hydrogen** and **oxygen** last when they appear in several compounds (common in combustion and acid–base).  
+1. **Balance** elements that appear in only one reactant and one product first (often metals or central atoms).
+2. Treat **unchanged polyatomic ions** (such as $$\text{NO}_3^-$$ or $$\text{SO}_4^{2-}$$) as a unit if they appear intact on both sides (Make sure to include them in brackets, otherwise they do not count as polyatomic ions).
+3. Balance **hydrogen** and **oxygen** last when they appear in several compounds (common in combustion and acid–base).
 4. If you temporarily need a **fractional** coefficient to balance an element (e.g. $$\frac{1}{2}\text{O}_2$$), **multiply the entire equation** by the denominator so all coefficients are integers.
 
 The balanced equation conserves **mass** (atom counts). For **ionic** reactions in solution, you may also write:
 
 - **Molecular equation** — Molecular formulas are formulas as written in the bottle/usually stated in the problem (e.g. $$\text{AgNO}_3(aq) + \text{NaCl}(aq)$$)
 
-- **Total ionic equation** — You treat strong electrolytes as **separated ions**, while solids, liquids, weak electrolytes, and gases usually **undissociated** (Check solubility rules below for electrolytes; strong electrolytes are soluble in water)  
+- **Total ionic equation** — You treat strong electrolytes as **separated ions**, while solids, liquids, weak electrolytes, and gases usually **undissociated** (Check solubility rules below for electrolytes; strong electrolytes are soluble in water)
 
 - **Net ionic equation** — Write the total ionic equation but cancel **spectator ions** that do not change (Basically anything that can cancel on both sides) and only species that actually react
 
@@ -144,15 +144,15 @@ A **half-reaction** shows only the oxidation or only the reduction part of an el
 
 **Acidic solutions** (common AP setup):
 
-1. Split the net ionic transformation into **oxidation** and **reduction** halves.  
+1. Split the net ionic transformation into **oxidation** and **reduction** halves.
 
-2. Balance all atoms **except** O and H.  
+2. Balance all atoms **except** O and H.
 
-3. Balance **O** with $$\text{H}_2\text{O}$$.  
+3. Balance **O** with $$\text{H}_2\text{O}$$.
 
-4. Balance **H** with $$\text{H}^+$$.  
+4. Balance **H** with $$\text{H}^+$$.
 
-5. Balance **charge** with $$e^-$$ on the correct side.  
+5. Balance **charge** with $$e^-$$ on the correct side.
 
 6. Equalize electrons; add the halves; simplify.
 
@@ -217,3 +217,235 @@ A **colloid** contains dispersed particles larger than single molecules but smal
 
 - The **Tyndall effect** is the scattering of visible light by those particles, a practical way to distinguish many colloids from true solutions. For example, milk is a colloid because it scatters light, one reason why it appears white
 - **Coagulation** (heating, adding electrolyte, or mixing) can collapse the dispersion so particles aggregate and settle, just like how milk clumps can settle when milk isn't properly refrigerated
+
+---
+
+## Practice
+
+### MCQ
+
+1. What volume of $$0.200\ M\ \text{NaOH}$$ is required to neutralize $$25.0\ \text{mL}$$ of $$0.100\ M\ \text{H}_2\text{SO}_4$$?
+
+   (A) $$12.5\ \text{mL}$$<br>
+   (B) $$25.0\ \text{mL}$$<br>
+   (C) $$50.0\ \text{mL}$$<br>
+   (D) $$100.\ \text{mL}$$
+
+2. Which net ionic equation represents the precipitation reaction between aqueous $$\text{AgNO}_3$$ and aqueous $$\text{NaCl}$$?
+
+   (A) $$\text{Ag}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{AgCl}(s)$$<br>
+   (B) $$\text{Na}^+(aq)+\text{NO}_3^-(aq)\rightarrow\text{NaNO}_3(s)$$<br>
+   (C) $$\text{Ag}^+(aq)+\text{NO}_3^-(aq)\rightarrow\text{AgNO}_3(s)$$<br>
+   (D) $$\text{Na}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{NaCl}(s)$$
+
+3. In the reaction $$\text{Zn}(s)+\text{Cu}^{2+}(aq)\rightarrow\text{Zn}^{2+}(aq)+\text{Cu}(s)$$, which species is oxidized?
+
+   (A) $$\text{Zn}(s)$$<br>
+   (B) $$\text{Cu}^{2+}(aq)$$<br>
+   (C) $$\text{Zn}^{2+}(aq)$$<br>
+   (D) $$\text{Cu}(s)$$
+
+4. Which observation gives the strongest evidence that a precipitation reaction occurred?
+
+   (A) The solution remains clear and colorless.<br>
+   (B) A solid appears after two aqueous solutions are mixed.<br>
+   (C) The total volume of solution increases.<br>
+   (D) The beaker is made of glass.
+
+5. What is the oxidation number of sulfur in $$\text{SO}_4^{2-}$$?
+
+   (A) $$+2$$<br>
+   (B) $$+4$$<br>
+   (C) $$+6$$<br>
+   (D) $$-2$$
+
+6. Which pair of aqueous solutions will produce a precipitate when mixed?
+
+   (A) $$\text{NaNO}_3$$ and $$\text{KCl}$$<br>
+   (B) $$\text{BaCl}_2$$ and $$\text{Na}_2\text{SO}_4$$<br>
+   (C) $$\text{KNO}_3$$ and $$\text{NaC}_2\text{H}_3\text{O}_2$$<br>
+   (D) $$\text{NH}_4\text{Cl}$$ and $$\text{NaNO}_3$$
+
+### FRQ
+
+7. A $$2.50\ \text{g}$$ sample of impure $$\text{CaCO}_3$$ reacts with excess $$\text{HCl}$$ according to
+
+$$
+\text{CaCO}_3(s)+2\text{HCl}(aq)\rightarrow \text{CaCl}_2(aq)+\text{CO}_2(g)+\text{H}_2\text{O}(l).
+$$
+
+The reaction produces $$0.0200\ \text{mol}$$ of $$\text{CO}_2$$.
+
+   $$(A)$$ Calculate the moles of $$\text{CaCO}_3$$ that reacted.
+
+   $$(B)$$ Calculate the mass of $$\text{CaCO}_3$$ in the sample.
+
+   $$(C)$$ Calculate the percent by mass of $$\text{CaCO}_3$$ in the impure sample.
+
+8. A released AP Chemistry question asked students to identify a limiting reactant from experimental data. (Adapted from College Board, [2024 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
+
+   $$(A)$$ In a trial, $$0.0300\ \text{mol}$$ of $$\text{Al}$$ reacts with $$0.0200\ \text{mol}$$ of $$\text{Cl}_2$$ according to $$2\text{Al}+3\text{Cl}_2\rightarrow2\text{AlCl}_3$$. Identify the limiting reactant.
+
+   $$(B)$$ Calculate the theoretical moles of $$\text{AlCl}_3$$ produced.
+
+   $$(C)$$ Explain why the excess reactant remains after the limiting reactant is consumed.
+
+---
+
+## Solutions
+
+### MCQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+Moles of acid are
+
+$$
+(0.0250\ \text{L})(0.100\ M)=0.00250\ \text{mol H}_2\text{SO}_4.
+$$
+
+Each mole of $$\text{H}_2\text{SO}_4$$ requires $$2$$ moles of $$\text{NaOH}$$, so
+
+$$
+n_{\text{NaOH}}=0.00500\ \text{mol}.
+$$
+
+The required volume is
+
+$$
+V=\frac{0.00500}{0.200}=0.0250\ \text{L}=25.0\ \text{mL}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+Nitrates and sodium salts remain soluble, while $$\text{AgCl}$$ is insoluble. The spectator ions are $$\text{Na}^+$$ and $$\text{NO}_3^-$$.
+
+$$
+\boxed{\text{Ag}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{AgCl}(s)}
+$$
+
+So the answer is
+
+$$
+\boxed{\text{A}}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+Zinc goes from oxidation number $$0$$ in $$\text{Zn}(s)$$ to $$+2$$ in $$\text{Zn}^{2+}$$, so it loses electrons and is oxidized.
+
+$$
+\boxed{\text{A}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+A precipitate is an insoluble solid that forms from ions in solution.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
+
+Oxygen is usually $$-2$$. Let sulfur be $$x$$:
+
+$$
+x+4(-2)=-2.
+$$
+
+So $$x=+6$$.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+$$\text{Ba}^{2+}$$ and $$\text{SO}_4^{2-}$$ form $$\text{BaSO}_4(s)$$, which is insoluble.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$(A)$$ The balanced equation has a $$1:1$$ mole ratio between $$\text{CaCO}_3$$ and $$\text{CO}_2$$. The problem says the acid is in excess, so all of the carbonate that can react is converted to products, and the moles of $$\text{CO}_2$$ produced directly equal the moles of $$\text{CaCO}_3$$ that reacted:
+
+$$
+\boxed{0.0200\ \text{mol CaCO}_3}.
+$$
+
+$$(B)$$ Using $$100.09\ \text{g/mol}$$ for $$\text{CaCO}_3$$,
+
+$$
+(0.0200\ \text{mol})(100.09\ \text{g/mol})=2.00\ \text{g}.
+$$
+
+The answer has three significant figures because the measured amount of $$\text{CO}_2$$ is given as $$0.0200\ \text{mol}$$.
+
+$$(C)$$ The mass percent is
+
+$$
+\frac{2.00\ \text{g}}{2.50\ \text{g}}\times 100\%=80.0\%.
+$$
+
+This means $$80.0\%$$ of the impure sample was reactive $$\text{CaCO}_3$$, and the remaining $$20.0\%$$ was impurity that did not produce $$\text{CO}_2$$.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+$$(A)$$ Compare how much $$\text{Cl}_2$$ is needed for the available Al:
+
+$$
+0.0300\ \text{mol Al}\times\frac{3\ \text{mol Cl}_2}{2\ \text{mol Al}}=0.0450\ \text{mol Cl}_2.
+$$
+
+Only $$0.0200\ \text{mol Cl}_2$$ is available, which is less than the $$0.0450\ \text{mol Cl}_2$$ required to consume all of the aluminum. Therefore, $$\text{Cl}_2$$ is the limiting reactant.
+
+$$(B)$$ Use the limiting reactant:
+
+$$
+0.0200\ \text{mol Cl}_2\times\frac{2\ \text{mol AlCl}_3}{3\ \text{mol Cl}_2}=0.0133\ \text{mol AlCl}_3.
+$$
+
+The mole ratio comes from the balanced equation: $$3$$ moles of $$\text{Cl}_2$$ produce $$2$$ moles of $$\text{AlCl}_3$$.
+
+$$(C)$$ The balanced reaction requires fixed mole ratios. Once $$\text{Cl}_2$$ is used up, no more $$\text{AlCl}_3$$ can form, even though some Al remains. The excess reactant remains because there are no longer enough particles of the limiting reactant available to collide and react in the required stoichiometric ratio.
+
+</div>

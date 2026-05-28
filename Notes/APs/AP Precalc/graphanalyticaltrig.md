@@ -1255,6 +1255,8 @@ are connected to repeated half-angle identities.
 
 ## Solutions
 
+<div class="theorem-box" markdown="1">
+
 ### Solution 1
 
 The function is
@@ -1341,6 +1343,10 @@ A graph with many key points is shown below:
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 2
 
 The maximum is $$7$$ and the minimum is $$-1$$. The midline is the average:
@@ -1400,6 +1406,10 @@ $$
 A graph with many key points is shown below:
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph2.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 3
 
@@ -1499,6 +1509,10 @@ A graph with many key points is shown below:
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph3.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 4
 
 The function is
@@ -1585,6 +1599,10 @@ A graph with many key points is shown below:
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph4.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 5
 
 Let
@@ -1648,6 +1666,10 @@ The graph of $$y=2\sin^2x-\sin x-1$$ crosses the $$x$$-axis exactly at those val
 A graph with many key points is shown below:
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph5.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 6
 
@@ -1714,6 +1736,10 @@ $$
 \frac{31\pi}{12},\frac{35\pi}{12},\frac{43\pi}{12},\frac{47\pi}{12}}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 7
 
 The equation is
@@ -1770,6 +1796,10 @@ the solutions on $$[0,2\pi)$$ are
 $$
 \boxed{x=\frac{\pi}{12},\frac{5\pi}{12},\frac{13\pi}{12},\frac{17\pi}{12}}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 8
 
@@ -1848,6 +1878,10 @@ $$
 \boxed{\tan105^\circ=-2-\sqrt3}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 9
 
 Start with the left-hand side:
@@ -1890,6 +1924,10 @@ Thus
 $$
 \boxed{\frac{\sin(x+y)+\sin(x-y)}{\cos(x+y)+\cos(x-y)}=\tan x}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 10
 
@@ -1966,6 +2004,10 @@ shows that zeros occur whenever either factor is zero. A sketch should mark the 
 
 **ADD IMAGE OF GRAPH**
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 11
 
 Let
@@ -2041,6 +2083,10 @@ $$
 \boxed{\frac{253}{260}}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 12
 
 We need count solutions to
@@ -2106,6 +2152,10 @@ Therefore there is exactly one solution in each of the five pieces.
 $$
 \boxed{5}
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 13
 
@@ -2174,6 +2224,10 @@ $$
 \qquad
 \boxed{\tan\left(\frac{\theta}{2}\right)=2}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 14
 
@@ -2334,6 +2388,10 @@ $$
 \boxed{p+q=107}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 15
 
 The high tide is $$11$$ feet and the low tide is $$3$$ feet. The midline is
@@ -2433,6 +2491,10 @@ $$
 $$
 
 **ADD IMAGE OF GRAPH**
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 16
 
@@ -2590,3 +2652,5 @@ $$
 \frac{\sqrt{2+\sqrt{2+\sqrt2}}}{2}\cdots
 }.
 $$
+
+</div>

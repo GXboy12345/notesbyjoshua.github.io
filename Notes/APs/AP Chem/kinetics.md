@@ -241,3 +241,249 @@ A **catalyst** provides an alternative pathway with lower activation energy. It 
 ## Kinetics vs equilibrium (preview)
 
 For a reversible elementary reaction, forward and reverse rates balance at equilibrium, linking rate constants to an equilibrium constant in simple cases. The full story belongs with [equilibrium]({{ '/notes/ap/chem/equilibrium/' | relative_url }}); here the essential point is that kinetics answers “how fast” while equilibrium answers “how far” under constant conditions.
+
+---
+
+## Practice
+
+### MCQ
+
+1. For the reaction $$A+B\rightarrow C$$, the initial-rate data below are collected.
+
+| Trial | $$[A]$$ | $$[B]$$ | Initial rate |
+|-------|---------|---------|--------------|
+| 1 | $$0.10\ M$$ | $$0.10\ M$$ | $$2.0\times10^{-3}\ M/s$$ |
+| 2 | $$0.20\ M$$ | $$0.10\ M$$ | $$8.0\times10^{-3}\ M/s$$ |
+| 3 | $$0.20\ M$$ | $$0.20\ M$$ | $$8.0\times10^{-3}\ M/s$$ |
+
+What is the rate law?
+
+   (A) $$\text{rate}=k[A][B]$$<br>
+   (B) $$\text{rate}=k[A]^2$$<br>
+   (C) $$\text{rate}=k[A]^2[B]$$<br>
+   (D) $$\text{rate}=k[B]^2$$
+
+2. A catalyst increases the rate of a reaction by
+
+   (A) increasing $$\Delta G^\circ$$<br>
+   (B) lowering the activation energy<br>
+   (C) increasing the equilibrium constant<br>
+   (D) increasing the enthalpy change of the reaction
+
+3. For a first-order reaction, which plot should be linear?
+
+   (A) $$[A]$$ versus time<br>
+   (B) $$\ln[A]$$ versus time<br>
+   (C) $$1/[A]$$ versus time<br>
+   (D) rate versus $$1/T$$
+
+4. If the rate law is $$\text{rate}=k[A]^2[B]$$, what happens to the rate when $$[A]$$ is doubled and $$[B]$$ is held constant?
+
+   (A) It doubles.<br>
+   (B) It triples.<br>
+   (C) It quadruples.<br>
+   (D) It stays the same.
+
+5. A reaction has a rate law $$\text{rate}=k[A]$$. What are the units of $$k$$ if rate is measured in $$M/s$$?
+
+   (A) $$M^{-1}s^{-1}$$<br>
+   (B) $$s^{-1}$$<br>
+   (C) $$M/s$$<br>
+   (D) $$M^2/s$$
+
+6. Increasing temperature usually increases reaction rate because
+
+   (A) the activation energy becomes zero.<br>
+   (B) more collisions have energy greater than or equal to $$E_a$$.<br>
+   (C) the equilibrium constant must become larger.<br>
+   (D) the reaction mechanism cannot change.
+
+### FRQ
+
+7. A first-order decomposition has rate constant $$k=0.0300\ \text{s}^{-1}$$.
+
+   $$(A)$$ Calculate the half-life.
+
+   $$(B)$$ If the initial concentration is $$0.800\ M$$, calculate the concentration after $$60.0\ \text{s}$$.
+
+   $$(C)$$ Explain how the slope of a graph of $$\ln[A]$$ versus time is related to $$k$$.
+
+8. The 2026 AP Chemistry exam included a kinetics question using concentration-time data and a graph of natural log of concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
+
+   $$(A)$$ Explain how concentration-time data can support that a reaction is first order in a reactant.
+
+   $$(B)$$ If a plot of $$\ln[A]$$ versus time has slope $$-0.0150\ \text{s}^{-1}$$, identify $$k$$.
+
+   $$(C)$$ Calculate the half-life for the reaction.
+
+---
+
+## Solutions
+
+### MCQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+Compare trials 1 and 2. Doubling $$[A]$$ while holding $$[B]$$ constant makes the rate four times larger, so the reaction is second order in $$A$$.
+
+Compare trials 2 and 3. Doubling $$[B]$$ while holding $$[A]$$ constant does not change the rate, so the reaction is zero order in $$B$$.
+
+$$
+\boxed{\text{rate}=k[A]^2}
+$$
+
+So the answer is
+
+$$
+\boxed{\text{B}}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+A catalyst provides an alternate pathway with lower activation energy. It does not change $$\Delta G^\circ$$, $$\Delta H$$, or $$K$$.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+For a first-order reaction,
+
+$$
+\ln[A]_t=-kt+\ln[A]_0,
+$$
+
+so $$\ln[A]$$ versus time is linear.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+The rate depends on $$[A]^2$$. Doubling $$[A]$$ multiplies the rate by
+
+$$
+2^2=4.
+$$
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
+
+For $$\text{rate}=k[A]$$,
+
+$$
+k=\frac{M/s}{M}=s^{-1}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+At higher temperature, particles have greater kinetic energy on average, so a larger fraction of collisions can overcome the activation energy.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$(A)$$ For a first-order reaction,
+
+$$
+t_{1/2}=\frac{0.693}{k}.
+$$
+
+Thus
+
+$$
+t_{1/2}=\frac{0.693}{0.0300}=23.1\ \text{s}.
+$$
+
+The units are seconds because the rate constant has units of $$\text{s}^{-1}$$ for a first-order reaction.
+
+$$(B)$$ Use the integrated rate law:
+
+$$
+\ln[A]_t=\ln[A]_0-kt.
+$$
+
+Equivalently,
+
+$$
+[A]_t=[A]_0e^{-kt}=0.800e^{-(0.0300)(60.0)}.
+$$
+
+$$
+[A]_t=0.132\ M.
+$$
+
+This is less than the initial $$0.800\ M$$, which is reasonable because the reactant is decomposing over time.
+
+$$(C)$$ For a first-order reaction, a graph of $$\ln[A]$$ versus time is linear with slope
+
+$$
+\boxed{-k}.
+$$
+
+The negative slope shows that $$[A]$$ decreases as time increases. The magnitude of the slope gives the rate constant, so a steeper negative line means a faster first-order reaction.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+$$(A)$$ If a plot of $$\ln[A]$$ versus time is linear, the data support a first-order relationship in $$A$$. Equivalently, the concentration should decrease by the same fraction over equal time intervals. A plot of $$[A]$$ versus time or $$1/[A]$$ versus time would be used to test zero-order or second-order behavior, so the linear graph identifies the order.
+
+$$(B)$$ For a first-order reaction, the slope is $$-k$$, so
+
+$$
+k=0.0150\ \text{s}^{-1}.
+$$
+
+The sign of $$k$$ is positive; the negative sign belongs to the slope because the concentration is decreasing.
+
+$$(C)$$
+
+$$
+t_{1/2}=\frac{0.693}{k}=\frac{0.693}{0.0150}=46.2\ \text{s}.
+$$
+
+For a first-order reaction, this half-life is constant, meaning every $$46.2\ \text{s}$$ the concentration is cut in half regardless of the starting concentration.
+
+</div>

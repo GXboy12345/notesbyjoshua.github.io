@@ -153,3 +153,217 @@ $$
 $$
 
 Higher $$T$$ increases vapor pressure; stronger IMFs tend to lower vapor pressure at a given $$T$$ (see [Unit 3]({{ '/notes/ap/chem/submix/' | relative_url }})). This formula will likely not appear on the AP test, but is good to know
+
+---
+
+## Practice
+
+### MCQ
+
+1. A reaction has $$\Delta H=-85\ \text{kJ/mol}$$. Which statement is correct?
+
+   (A) The reaction absorbs heat from the surroundings.<br>
+   (B) The products have greater enthalpy than the reactants.<br>
+   (C) The reaction is exothermic.<br>
+   (D) The reaction must be spontaneous at all temperatures.
+
+2. A $$50.0\ \text{g}$$ sample of water is warmed from $$22.0^\circ\text{C}$$ to $$28.0^\circ\text{C}$$. Using $$c=4.184\ \text{J/(g}\cdot^\circ\text{C)}$$, how much heat is absorbed by the water?
+
+   (A) $$1.26\times10^2\ \text{J}$$<br>
+   (B) $$1.26\times10^3\ \text{J}$$<br>
+   (C) $$5.02\times10^3\ \text{J}$$<br>
+   (D) $$1.17\times10^4\ \text{J}$$
+
+3. Which process is endothermic?
+
+   (A) Freezing water<br>
+   (B) Condensing steam<br>
+   (C) Burning methane<br>
+   (D) Vaporizing liquid water
+
+4. In a coffee-cup calorimeter, the solution temperature increases. What is true about the reaction occurring in the solution?
+
+   (A) The reaction releases heat to the solution.<br>
+   (B) The reaction absorbs heat from the solution.<br>
+   (C) The reaction has no enthalpy change.<br>
+   (D) The reaction must have $$\Delta S<0$$.
+
+5. Which equation correctly represents Hess's law?
+
+   (A) $$q=mc\Delta T$$<br>
+   (B) $$\Delta H_{\text{rxn}}=\sum \Delta H_{\text{steps}}$$<br>
+   (C) $$PV=nRT$$<br>
+   (D) $$K=\frac{[\text{products}]}{[\text{reactants}]}$$
+
+6. If bonds broken require $$650\ \text{kJ}$$ and bonds formed release $$900\ \text{kJ}$$, what is the approximate $$\Delta H_{\text{rxn}}$$?
+
+   (A) $$+250\ \text{kJ}$$<br>
+   (B) $$-250\ \text{kJ}$$<br>
+   (C) $$+1550\ \text{kJ}$$<br>
+   (D) $$-1550\ \text{kJ}$$
+
+### FRQ
+
+7. A reaction is represented by
+
+$$
+2\text{H}_2(g)+\text{O}_2(g)\rightarrow2\text{H}_2\text{O}(l)
+$$
+
+with $$\Delta H^\circ_{\text{rxn}}=-572\ \text{kJ}$$ for the reaction as written.
+
+   $$(A)$$ Calculate the enthalpy change for forming $$1.00\ \text{mol}$$ of $$\text{H}_2\text{O}(l)$$.
+
+   $$(B)$$ Calculate the enthalpy change when $$4.00\ \text{mol}$$ of $$\text{H}_2(g)$$ reacts completely.
+
+   $$(C)$$ Explain why breaking bonds is endothermic even when the overall reaction is exothermic.
+
+8. The 2026 AP Chemistry exam included a sodium oxide thermochemistry problem using formation enthalpy and limiting reactants. (Adapted from College Board, [2026 AP Chemistry FRQ 7](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
+
+   $$(A)$$ For $$4\text{Na}(s)+\text{O}_2(g)\rightarrow2\text{Na}_2\text{O}(s)$$ with $$\Delta H^\circ_{\text{rxn}}=-828\ \text{kJ}$$, calculate $$\Delta H_f^\circ$$ for $$\text{Na}_2\text{O}(s)$$.
+
+   $$(B)$$ If $$2.00\ \text{mol}$$ Na reacts completely with excess oxygen, calculate the heat released.
+
+   $$(C)$$ Explain why elements in their standard states have $$\Delta H_f^\circ=0$$.
+
+---
+
+## Solutions
+
+### MCQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+A negative $$\Delta H$$ means heat is released by the system. The reaction is exothermic.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+Use
+
+$$
+q=mc\Delta T.
+$$
+
+Here $$\Delta T=6.0^\circ\text{C}$$, so
+
+$$
+q=(50.0)(4.184)(6.0)=1.26\times10^3\ \text{J}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+Vaporization requires energy to overcome intermolecular attractions in the liquid.
+
+$$
+\boxed{\text{D}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+If the solution temperature increases, the solution absorbed heat. The reaction released that heat, so the reaction is exothermic.
+
+$$
+\boxed{\text{A}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
+
+Hess's law says enthalpy is a state function, so the enthalpy change for an overall reaction equals the sum of the enthalpy changes for the steps.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+Use
+
+$$
+\Delta H_{\text{rxn}}\approx \sum D(\text{broken})-\sum D(\text{formed}).
+$$
+
+$$
+\Delta H_{\text{rxn}}=650-900=-250\ \text{kJ}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$(A)$$ The reaction forms $$2$$ moles of water, so the enthalpy change must be divided by $$2$$ to find the value per mole of water:
+
+$$
+\frac{-572\ \text{kJ}}{2}=-286\ \text{kJ}.
+$$
+
+The negative sign means heat is released when water forms from hydrogen and oxygen.
+
+$$(B)$$ The reaction as written consumes $$2$$ moles of $$\text{H}_2$$. Consuming $$4.00$$ moles doubles the reaction, so the enthalpy change also doubles:
+
+$$
+2(-572\ \text{kJ})=-1144\ \text{kJ}.
+$$
+
+$$(C)$$ Energy must be added to separate bonded atoms, so bond breaking is endothermic. The overall reaction is exothermic because forming the O-H bonds in water releases more energy than was required to break the H-H and O=O bonds. In bond-enthalpy language, $$\Delta H_{\text{rxn}}$$ is negative because the energy released by bonds formed is greater than the energy absorbed by bonds broken.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+$$(A)$$ The reaction forms $$2$$ moles of $$\text{Na}_2\text{O}(s)$$ from elements in their standard states, so the reaction enthalpy is twice the molar enthalpy of formation:
+
+$$
+\Delta H_f^\circ=\frac{-828\ \text{kJ}}{2}=-414\ \text{kJ/mol}.
+$$
+
+$$(B)$$ The reaction releases $$828\ \text{kJ}$$ per $$4$$ moles Na.
+
+$$
+2.00\ \text{mol Na}\times\frac{-828\ \text{kJ}}{4.00\ \text{mol Na}}=-414\ \text{kJ}.
+$$
+
+So $$414\ \text{kJ}$$ of heat is released.
+
+$$(C)$$ Formation enthalpy measures formation from elements in their standard states. An element already in its standard state requires no formation reaction, so its assigned value is zero. This is a reference convention that lets formation enthalpies be added and subtracted consistently in Hess's law calculations.
+
+</div>
