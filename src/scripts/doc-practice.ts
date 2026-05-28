@@ -7,6 +7,9 @@ import {
 
 const DELEGATED = 'practiceDelegated';
 const CHOICE = /^[A-F]$/;
+const GRADER_URL =
+  import.meta.env.PUBLIC_FRQ_GRADER_URL ?? 'http://127.0.0.1:8787/grade-frq';
+const ANON_ID_KEY = 'notes_frq_anon_id';
 
 type McqPhase = 'idle' | 'answered' | 'revealed';
 type McqFeedback = 'correct' | 'retry' | 'exhausted';
@@ -239,6 +242,229 @@ function prepareMcq(mcq: HTMLElement) {
 function prepareFrq(frq: HTMLElement) {
   hideSolutions(frq);
   frq.dataset.practicePhase = 'idle';
+  const output = frq.querySelector<HTMLElement>('[data-frq-grade-output]');
+  if (output) {
+    output.hidden = true;
+    output.textContent = '';
+    output.classList.remove('is-error', 'is-loading');
+  }
+  const gradeBtn = frq.querySelector<HTMLButtonElement>('[data-frq-grade]');
+  if (gradeBtn) gradeBtn.disabled = false;
+}
+
+function graderPagePath(): string {
+  const base = import.meta.env.BASE_URL ?? '/';
+  let path = location.pathname;
+  if (base !== '/' && base !== '') {
+    const prefix = base.endsWith('/') ? base.slice(0, -1) : base;
+    if (path.startsWith(prefix)) {
+      path = path.slice(prefix.length) || '/';
+    }
+  }
+  return path.endsWith('/') ? path : `${path}/`;
+}
+
+function getAnonUserId(): string {
+  try {
+    let value = localStorage.getItem(ANON_ID_KEY);
+    if (!value) {
+      value = `anon_${crypto.randomUUID()}`;
+      localStorage.setItem(ANON_ID_KEY, value);
+    }
+    return value;
+  } catch {
+    return 'anon_ephemeral';
+  }
+}
+
+function escapeHtml(s: string): string {
+  return s.replace(/[&<>"']/g, (c) => {
+    const map: Record<string, string> = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+    };
+    return map[c] ?? c;
+  });
+}
+
+type GradePart = {
+  partId?: string;
+  score?: number;
+  maxScore?: number;
+  verdict?: string;
+  feedback?: string;
+  missing?: string[];
+  strengths?: string[];
+};
+
+type GradeResponse = {
+  totalScore?: number;
+  maxScore?: number;
+  overallFeedback?: string;
+  nextStep?: string;
+  parts?: GradePart[];
+  error?: string;
+  retryAfter?: number;
+};
+
+function verdictClass(verdict: string | undefined): string {
+  switch (verdict) {
+    case 'correct':
+    case 'mostly_correct':
+      return 'frq-grade-part--good';
+    case 'partial':
+      return 'frq-grade-part--partial';
+    case 'incorrect':
+      return 'frq-grade-part--bad';
+    default:
+      return '';
+  }
+}
+
+function verdictLabel(verdict: string | undefined): string {
+  switch (verdict) {
+    case 'correct':
+      return 'Correct';
+    case 'mostly_correct':
+      return 'Mostly correct';
+    case 'partial':
+      return 'Partial credit';
+    case 'incorrect':
+      return 'Incorrect';
+    case 'unclear':
+      return 'Unclear';
+    default:
+      return verdict ? verdict.replace(/_/g, ' ') : '';
+  }
+}
+
+function renderGrade(data: GradeResponse): string {
+  const parts = Array.isArray(data.parts) ? data.parts : [];
+  const total = data.totalScore ?? '—';
+  const max = data.maxScore ?? '—';
+  const summary = data.overallFeedback
+    ? `<section class="frq-grade-summary">
+<h4 class="frq-grade-summary__title">Coach summary</h4>
+<p class="frq-grade-overall">${escapeHtml(data.overallFeedback)}</p>
+</section>`
+    : '';
+  const nextStep = data.nextStep
+    ? `<p class="frq-grade-next"><strong>Next step:</strong> ${escapeHtml(data.nextStep)}</p>`
+    : '';
+  const partsHtml = parts
+    .map((p) => {
+      const cls = verdictClass(p.verdict);
+      const label = verdictLabel(p.verdict);
+      const verdictHtml = label
+        ? `<p class="frq-grade-verdict">${escapeHtml(label)}</p>`
+        : '';
+      const missing =
+        Array.isArray(p.missing) && p.missing.length
+          ? `<ul class="frq-grade-missing">${p.missing.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
+          : '';
+      const strengths =
+        Array.isArray(p.strengths) && p.strengths.length
+          ? `<ul class="frq-grade-strengths">${p.strengths.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
+          : '';
+      const missingBlock = missing
+        ? `<div class="frq-grade-block"><strong>Still missing</strong>${missing}</div>`
+        : '';
+      const strengthsBlock = strengths
+        ? `<div class="frq-grade-block"><strong>What you did well</strong>${strengthsBlock}</div>`
+        : '';
+      const feedback = String(p.feedback ?? '').trim();
+      return `<section class="frq-grade-part ${cls}">
+<h4 class="frq-grade-part__title">Part ${escapeHtml(String(p.partId ?? '?'))} · ${escapeHtml(String(p.score ?? '?'))}/${escapeHtml(String(p.maxScore ?? '?'))}</h4>
+${verdictHtml}
+<p class="frq-grade-part__feedback">${escapeHtml(feedback)}</p>
+${missingBlock}
+${strengthsBlock}
+</section>`;
+    })
+    .join('');
+  return `<div class="frq-grade-result__inner">
+<p class="frq-grade-score"><strong>Score:</strong> ${escapeHtml(String(total))}/${escapeHtml(String(max))}</p>
+${summary}
+${partsHtml}
+${nextStep}
+</div>`;
+}
+
+async function gradeFrq(frq: HTMLElement) {
+  const frqId = frq.dataset.frqId;
+  const textarea = frq.querySelector<HTMLTextAreaElement>('[data-frq-answer]');
+  const output = frq.querySelector<HTMLElement>('[data-frq-grade-output]');
+  const gradeBtn = frq.querySelector<HTMLButtonElement>('[data-frq-grade]');
+
+  if (!frqId || !textarea || !output) {
+    practiceDebug('frq-grade', { status: 'missing-elements', frqId: frqId ?? null });
+    return;
+  }
+
+  const answer = textarea.value.trim();
+  if (!answer) {
+    output.hidden = false;
+    output.classList.add('is-error');
+    output.classList.remove('is-loading');
+    output.textContent = 'Write an answer before grading.';
+    return;
+  }
+
+  output.hidden = false;
+  output.classList.add('is-loading');
+  output.classList.remove('is-error');
+  output.textContent = 'Grading…';
+  if (gradeBtn) gradeBtn.disabled = true;
+
+  practiceDebug('frq-grade', { status: 'request', frqId, url: GRADER_URL });
+
+  try {
+    const res = await fetch(GRADER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        frqId,
+        pagePath: graderPagePath(),
+        studentAnswer: textarea.value,
+        anonUserId: getAnonUserId(),
+      }),
+    });
+
+    let data: GradeResponse = {};
+    try {
+      data = (await res.json()) as GradeResponse;
+    } catch {
+      data = {};
+    }
+
+    if (!res.ok) {
+      output.classList.remove('is-loading');
+      output.classList.add('is-error');
+      output.textContent =
+        typeof data.retryAfter === 'number' && data.retryAfter > 0
+          ? `Grader is rate-limited. Try again in ${data.retryAfter}s.`
+          : 'Grader is temporarily unavailable.';
+      practiceDebug('frq-grade', { status: 'error', http: res.status, data });
+      return;
+    }
+
+    output.classList.remove('is-loading', 'is-error');
+    output.innerHTML = renderGrade(data);
+    practiceDebug('frq-grade', { status: 'ok', frqId, totalScore: data.totalScore ?? null });
+  } catch (err) {
+    output.classList.remove('is-loading');
+    output.classList.add('is-error');
+    output.textContent = 'Could not reach the grader. Is the worker running locally?';
+    practiceDebug('frq-grade', {
+      status: 'network-error',
+      message: err instanceof Error ? err.message : String(err),
+    });
+  } finally {
+    if (gradeBtn) gradeBtn.disabled = false;
+  }
 }
 
 function runMcqReveal(mcq: HTMLElement) {
@@ -299,6 +525,12 @@ function bindDocumentHandlers() {
       const mcq = mcqRoot(target);
       if (mcq) runMcqReveal(mcq);
       else practiceDebug('reveal', { status: 'no-mcq-root' });
+      return;
+    }
+
+    if (target.closest('[data-frq-grade]')) {
+      const frq = frqRoot(target);
+      if (frq) void gradeFrq(frq);
       return;
     }
 

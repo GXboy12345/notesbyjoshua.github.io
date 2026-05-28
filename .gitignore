@@ -3,4 +3,6 @@ dist/
 .astro/
 .env
 .env.local
+worker/.dev.vars
+worker/src/frq-manifest.json
 .DS_Store

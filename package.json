@@ -5,8 +5,13 @@
   "scripts": {
     "dev": "astro dev",
     "dev:clean": "rm -rf node_modules/.vite && astro dev",
+    "prebuild": "node scripts/build-frq-manifest.mjs",
     "build": "astro build",
     "preview": "astro preview",
+    "frq:manifest": "node scripts/build-frq-manifest.mjs",
+    "worker:dev": "node scripts/build-frq-manifest.mjs && wrangler dev --config worker/wrangler.toml",
+    "worker:deploy": "node scripts/build-frq-manifest.mjs && wrangler deploy --config worker/wrangler.toml",
+    "worker:secret": "wrangler secret put OPENROUTER_API_KEY --config worker/wrangler.toml",
     "lint:notes": "node scripts/lint-notes.mjs",
     "note:new": "node scripts/note-new.mjs",
     "codemod:theorem": "node scripts/codemod-theorem-box.mjs --write",
@@ -40,5 +45,8 @@
     "sharp": "^0.34.2",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.14.0"
   }
 }

@@ -31,6 +31,7 @@ jobs:
           else
             echo "ASTRO_BASE=/notesbyjoshua.github.io/" >> "$GITHUB_ENV"
             echo "ASTRO_SITE=https://gxboy12345.github.io/notesbyjoshua.github.io" >> "$GITHUB_ENV"
+            echo "PUBLIC_FRQ_GRADER_URL=https://notes-frq-grader.garretmorbergnguyen.workers.dev/grade-frq" >> "$GITHUB_ENV"
           fi
       - run: npm ci
       - run: npm run build

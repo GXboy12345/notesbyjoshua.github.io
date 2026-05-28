@@ -259,10 +259,17 @@ function processLeaf(leaf: LeafDirective, renderFragment: FragmentRenderer) {
     const bodyHtml = renderFragment(bodyNodes);
     const solutionHtml = renderFragment(solutionNodes);
 
+    const answerId = id ? `frq-answer-${escapeHtml(id)}` : undefined;
     replace(
       `<div class="frq" data-frq${id ? ` data-frq-id="${escapeHtml(id)}"` : ''}>
 <div class="frq-parts">${bodyHtml}</div>
-<div class="frq-actions"><button type="button" data-frq-reveal>Show solution</button></div>
+<label class="frq-answer-label"${answerId ? ` for="${answerId}"` : ''}>Your answer</label>
+<textarea class="frq-answer" data-frq-answer${answerId ? ` id="${answerId}"` : ''} rows="6" placeholder="Write your answer for all parts…"></textarea>
+<div class="frq-actions">
+<button type="button" class="btn btn-primary" data-frq-grade>Grade answer</button>
+<button type="button" class="btn" data-frq-reveal>Show solution</button>
+</div>
+<div class="frq-grade-result" data-frq-grade-output hidden></div>
 <div class="frq-solution" data-solution hidden>${solutionHtml}</div>
 </div>`,
     );

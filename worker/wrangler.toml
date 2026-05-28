@@ -1,0 +1,9 @@
+name = "notes-frq-grader"
+main = "src/index.ts"
+compatibility_date = "2024-11-01"
+
+[vars]
+OPENROUTER_SITE_URL = "https://gxboy12345.github.io/notesbyjoshua.github.io/"
+OPENROUTER_APP_TITLE = "Notes by Joshua FRQ Grader"
+ALLOWED_ORIGINS = "http://localhost:4321,https://gxboy12345.github.io,https://notesbyjoshua.github.io"
+MANIFEST_URL = "https://gxboy12345.github.io/notesbyjoshua.github.io/generated/frq-manifest.json"
