@@ -278,12 +278,9 @@ $$
 $$
 \boxed{\text{B}}
 $$
-:::
-:::
-:::
-
 ### FRQ
 
+:::frq{id=chem-thermochemistry-frq-7}
 7. A reaction is represented by
 
 $$
@@ -298,103 +295,7 @@ with $$\Delta H^\circ_{\text{rxn}}=-572\ \text{kJ}$$ for the reaction as written
 
    $$(C)$$ Explain why breaking bonds is endothermic even when the overall reaction is exothermic.
 
-8. The 2026 AP Chemistry exam included a sodium oxide thermochemistry problem using formation enthalpy and limiting reactants. (Adapted from College Board, [2026 AP Chemistry FRQ 7](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
-
-   $$(A)$$ For $$4\text{Na}(s)+\text{O}_2(g)\rightarrow2\text{Na}_2\text{O}(s)$$ with $$\Delta H^\circ_{\text{rxn}}=-828\ \text{kJ}$$, calculate $$\Delta H_f^\circ$$ for $$\text{Na}_2\text{O}(s)$$.
-
-   $$(B)$$ If $$2.00\ \text{mol}$$ Na reacts completely with excess oxygen, calculate the heat released.
-
-   $$(C)$$ Explain why elements in their standard states have $$\Delta H_f^\circ=0$$.
-
----
-
-## Solutions
-
-### MCQ
-
-:::theorem
-### Solution 1
-
-A negative $$\Delta H$$ means heat is released by the system. The reaction is exothermic.
-
-$$
-\boxed{\text{C}}
-$$
-:::
-
-:::theorem
-### Solution 2
-
-Use
-
-$$
-q=mc\Delta T.
-$$
-
-Here $$\Delta T=6.0^\circ\text{C}$$, so
-
-$$
-q=(50.0)(4.184)(6.0)=1.26\times10^3\ \text{J}.
-$$
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 3
-
-Vaporization requires energy to overcome intermolecular attractions in the liquid.
-
-$$
-\boxed{\text{D}}
-$$
-:::
-
-:::theorem
-### Solution 4
-
-If the solution temperature increases, the solution absorbed heat. The reaction released that heat, so the reaction is exothermic.
-
-$$
-\boxed{\text{A}}
-$$
-:::
-
-:::theorem
-### Solution 5
-
-Hess's law says enthalpy is a state function, so the enthalpy change for an overall reaction equals the sum of the enthalpy changes for the steps.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 6
-
-Use
-
-$$
-\Delta H_{\text{rxn}}\approx \sum D(\text{broken})-\sum D(\text{formed}).
-$$
-
-$$
-\Delta H_{\text{rxn}}=650-900=-250\ \text{kJ}.
-$$
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-### FRQ
-
-:::theorem
-### Solution 1
-
+:::solution
 $$(A)$$ The reaction forms $$2$$ moles of water, so the enthalpy change must be divided by $$2$$ to find the value per mole of water:
 
 $$
@@ -411,10 +312,18 @@ $$
 
 $$(C)$$ Energy must be added to separate bonded atoms, so bond breaking is endothermic. The overall reaction is exothermic because forming the O-H bonds in water releases more energy than was required to break the H-H and O=O bonds. In bond-enthalpy language, $$\Delta H_{\text{rxn}}$$ is negative because the energy released by bonds formed is greater than the energy absorbed by bonds broken.
 :::
+:::
 
-:::theorem
-### Solution 2
+:::frq{id=chem-thermochemistry-frq-8}
+8. The 2026 AP Chemistry exam included a sodium oxide thermochemistry problem using formation enthalpy and limiting reactants. (Adapted from College Board, [2026 AP Chemistry FRQ 7](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
+   $$(A)$$ For $$4\text{Na}(s)+\text{O}_2(g)\rightarrow2\text{Na}_2\text{O}(s)$$ with $$\Delta H^\circ_{\text{rxn}}=-828\ \text{kJ}$$, calculate $$\Delta H_f^\circ$$ for $$\text{Na}_2\text{O}(s)$$.
+
+   $$(B)$$ If $$2.00\ \text{mol}$$ Na reacts completely with excess oxygen, calculate the heat released.
+
+   $$(C)$$ Explain why elements in their standard states have $$\Delta H_f^\circ=0$$.
+
+:::solution
 $$(A)$$ The reaction forms $$2$$ moles of $$\text{Na}_2\text{O}(s)$$ from elements in their standard states, so the reaction enthalpy is twice the molar enthalpy of formation:
 
 $$
@@ -430,4 +339,5 @@ $$
 So $$414\ \text{kJ}$$ of heat is released.
 
 $$(C)$$ Formation enthalpy measures formation from elements in their standard states. An element already in its standard state requires no formation reaction, so its assigned value is zero. This is a reference convention that lets formation enthalpies be added and subtracted consistently in Hess's law calculations.
+:::
 :::

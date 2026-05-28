@@ -384,6 +384,7 @@ $$
 
 ### FRQ
 
+:::frq{id=chem-kinetics-frq-7}
 7. A first-order decomposition has rate constant $$k=0.0300\ \text{s}^{-1}$$.
 
    $$(A)$$ Calculate the half-life.
@@ -392,107 +393,7 @@ $$
 
    $$(C)$$ Explain how the slope of a graph of $$\ln[A]$$ versus time is related to $$k$$.
 
-8. The 2026 AP Chemistry exam included a kinetics question using concentration-time data and a graph of natural log of concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
-
-   $$(A)$$ Explain how concentration-time data can support that a reaction is first order in a reactant.
-
-   $$(B)$$ If a plot of $$\ln[A]$$ versus time has slope $$-0.0150\ \text{s}^{-1}$$, identify $$k$$.
-
-   $$(C)$$ Calculate the half-life for the reaction.
-
----
-
-## Solutions
-
-### MCQ
-
-:::theorem
-### Solution 1
-
-Compare trials 1 and 2. Doubling $$[A]$$ while holding $$[B]$$ constant makes the rate four times larger, so the reaction is second order in $$A$$.
-
-Compare trials 2 and 3. Doubling $$[B]$$ while holding $$[A]$$ constant does not change the rate, so the reaction is zero order in $$B$$.
-
-$$
-\boxed{\text{rate}=k[A]^2}
-$$
-
-So the answer is
-
-$$
-\boxed{\text{B}}.
-$$
-:::
-
-:::theorem
-### Solution 2
-
-A catalyst provides an alternate pathway with lower activation energy. It does not change $$\Delta G^\circ$$, $$\Delta H$$, or $$K$$.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 3
-
-For a first-order reaction,
-
-$$
-\ln[A]_t=-kt+\ln[A]_0,
-$$
-
-so $$\ln[A]$$ versus time is linear.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 4
-
-The rate depends on $$[A]^2$$. Doubling $$[A]$$ multiplies the rate by
-
-$$
-2^2=4.
-$$
-
-$$
-\boxed{\text{C}}
-$$
-:::
-
-:::theorem
-### Solution 5
-
-For $$\text{rate}=k[A]$$,
-
-$$
-k=\frac{M/s}{M}=s^{-1}.
-$$
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 6
-
-At higher temperature, particles have greater kinetic energy on average, so a larger fraction of collisions can overcome the activation energy.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-### FRQ
-
-:::theorem
-### Solution 1
-
+:::solution
 $$(A)$$ For a first-order reaction,
 
 $$
@@ -533,10 +434,18 @@ $$
 
 The negative slope shows that $$[A]$$ decreases as time increases. The magnitude of the slope gives the rate constant, so a steeper negative line means a faster first-order reaction.
 :::
+:::
 
-:::theorem
-### Solution 2
+:::frq{id=chem-kinetics-frq-8}
+8. The 2026 AP Chemistry exam included a kinetics question using concentration-time data and a graph of natural log of concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
+   $$(A)$$ Explain how concentration-time data can support that a reaction is first order in a reactant.
+
+   $$(B)$$ If a plot of $$\ln[A]$$ versus time has slope $$-0.0150\ \text{s}^{-1}$$, identify $$k$$.
+
+   $$(C)$$ Calculate the half-life for the reaction.
+
+:::solution
 $$(A)$$ If a plot of $$\ln[A]$$ versus time is linear, the data support a first-order relationship in $$A$$. Equivalently, the concentration should decrease by the same fraction over equal time intervals. A plot of $$[A]$$ versus time or $$1/[A]$$ versus time would be used to test zero-order or second-order behavior, so the linear graph identifies the order.
 
 $$(B)$$ For a first-order reaction, the slope is $$-k$$, so
@@ -554,4 +463,5 @@ t_{1/2}=\frac{0.693}{k}=\frac{0.693}{0.0150}=46.2\ \text{s}.
 $$
 
 For a first-order reaction, this half-life is constant, meaning every $$46.2\ \text{s}$$ the concentration is cut in half regardless of the starting concentration.
+:::
 :::

@@ -187,15 +187,7 @@ function parseLegacyBlock(text) {
 
 function formatFrq(slug, num, stem, solutionBody) {
   const id = `precalc-${slug}-${num}`;
-  return [
-    `:::frq{id=${id}}`,
-    stem,
-    '',
-    ':::solution',
-    solutionBody,
-    ':::',
-    ':::',
-  ].join('\n');
+  return [`:::frq{id=${id}}`, stem, '', ':::solution', solutionBody, ':::'].join('\n');
 }
 
 function rebuildFrqFromParsed(item, slug, solutions) {
@@ -268,7 +260,7 @@ function transformSource(src, fileSlug, limit) {
 
   const parts = ['## Practice', ''];
   if (converted.length > 0) {
-    parts.push(':::practice', converted.join('\n\n'), ':::', '');
+    parts.push(':::practice', converted.join('\n\n'), '');
   }
   if (legacy.length > 0) {
     parts.push(legacy.map((i) => i.stem).join('\n'), '');

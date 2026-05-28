@@ -11,6 +11,7 @@ import { unified } from 'unified';
 import { preprocessMarkdown } from '../markdown-preprocess';
 import { convertLegacyHtmlToDirectives } from './legacy-html';
 import { remarkDirectives } from './remark-directives';
+import { remarkStripOrphanFences } from './remark-strip-orphan-fences';
 import { headingsFromMdast, remarkHeadingIds, type DocHeading } from './remark-heading-ids';
 import { resetSlugCounts } from './slugify';
 
@@ -41,6 +42,7 @@ const markdownParser = unified()
   .use(remarkDirective)
   .use(remarkMath);
 
+const applyStripOrphanFences = remarkStripOrphanFences();
 const applyDirectives = remarkDirectives(mdastFragmentToHtml);
 const applyHeadingIds = remarkHeadingIds();
 
@@ -49,6 +51,7 @@ export function renderMarkdownToHtml(rawMd: string): { html: string; headings: D
   resetSlugCounts();
 
   const tree = markdownParser.parse(md) as Root;
+  applyStripOrphanFences(tree);
   applyDirectives(tree);
   applyHeadingIds(tree);
   const headings = headingsFromMdast(tree);

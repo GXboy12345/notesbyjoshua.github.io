@@ -12,7 +12,12 @@
     "codemod:figure": "node scripts/codemod-figure.mjs --write",
     "codemod:chem-mcq": "node scripts/codemod-chem-mcq.mjs --write",
     "codemod:precalc-practice": "node scripts/codemod-precalc-practice.mjs",
-    "codemod:all": "node scripts/codemod-theorem-box.mjs --write && node scripts/codemod-figure.mjs --write && node scripts/codemod-chem-mcq.mjs --write"
+    "codemod:all": "node scripts/codemod-theorem-box.mjs --write && node scripts/codemod-figure.mjs --write && node scripts/codemod-chem-mcq.mjs --write",
+    "fix:fences": "node scripts/fix-orphan-fences.mjs --write",
+    "fix:mcq-fences": "node scripts/fix-mcq-closing-fences.mjs --write",
+    "fix:solutions": "node scripts/strip-duplicate-solutions.mjs --write",
+    "fix:inline-frq": "node scripts/inline-frq-solutions.mjs --write",
+    "fix:solutions-stubs": "node scripts/remove-solutions-stubs.mjs --write"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

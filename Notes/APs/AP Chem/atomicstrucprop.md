@@ -488,12 +488,9 @@ For a given $$n$$, the value of $$l$$ must be an integer from $$0$$ to $$n-1$$. 
 $$
 \boxed{\text{C}}
 $$
-:::
-:::
-:::
-
 ### FRQ
 
+:::frq{id=chem-atomicstrucprop-frq-7}
 7. A sample of chlorine contains $$75.78\%$$ $$^{35}\text{Cl}$$ atoms and $$24.22\%$$ $$^{37}\text{Cl}$$ atoms.
 
    $$(A)$$ Calculate the average atomic mass of chlorine.
@@ -502,103 +499,7 @@ $$
 
    $$(C)$$ A PES spectrum for chlorine shows peaks from core electrons and valence electrons. Explain why core-electron peaks appear at higher binding energy than valence-electron peaks.
 
-8. Sterling silver contains silver and copper. In a released AP Chemistry question, students compared atomic radii using Coulomb's law. (Adapted from College Board, [2024 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
-
-   $$(A)$$ Identify which atom has the larger atomic radius: $$\text{Ag}$$ or $$\text{Cu}$$.
-
-   $$(B)$$ Use shell structure and Coulomb's law to justify your answer.
-
-   $$(C)$$ Explain why comparing only nuclear charge is not enough to predict the radius in this case.
-
----
-
-## Solutions
-
-### MCQ
-
-:::theorem
-### Solution 1
-
-The highest principal energy level is $$n=3$$, and the atom has
-
-$$
-3s^2 3p^4
-$$
-
-as its valence-shell configuration. That is $$6$$ valence electrons, which places the atom in group $$16$$.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 2
-
-The ions $$\text{K}^+$$, $$\text{Cl}^-$$, and $$\text{S}^{2-}$$ are isoelectronic, each with $$18$$ electrons. In an isoelectronic series, radius decreases as nuclear charge increases. Potassium has the most protons, so $$\text{K}^+$$ is smallest; sulfur has the fewest, so $$\text{S}^{2-}$$ is largest.
-
-$$
-\boxed{\text{K}^+ < \text{Cl}^- < \text{S}^{2-}}
-$$
-
-So the answer is
-
-$$
-\boxed{\text{B}}.
-$$
-:::
-
-:::theorem
-### Solution 3
-
-Photon energy is
-
-$$
-E=\frac{hc}{\lambda}.
-$$
-
-Energy is inversely proportional to wavelength, so the shortest wavelength has the greatest energy.
-
-$$
-\boxed{\text{C}}
-$$
-:::
-
-:::theorem
-### Solution 4
-
-Across a period, protons are added to the nucleus while electrons are added to the same principal energy level. Shielding does not increase enough to cancel the increased nuclear attraction, so $$Z_{\text{eff}}$$ increases.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 5
-
-After the neon core, $$3s^2 3p^1$$ gives three valence electrons in the third period. That is aluminum.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 6
-
-For a given $$n$$, the value of $$l$$ must be an integer from $$0$$ to $$n-1$$. If $$n=3$$, then $$l=3$$ is not allowed.
-
-$$
-\boxed{\text{C}}
-$$
-:::
-
-### FRQ
-
-:::theorem
-### Solution 1
-
+:::solution
 $$(A)$$ Use a weighted average:
 
 $$
@@ -617,10 +518,18 @@ $$(B)$$ The average is closer to $$35$$ because the $$^{35}\text{Cl}$$ isotope i
 
 $$(C)$$ Core electrons are closer to the nucleus and experience a larger effective nuclear attraction than valence electrons. They are also less shielded by other electrons. Because the attraction between the nucleus and a core electron is stronger, more energy is required to remove a core electron from the atom. Therefore, core-electron peaks appear at higher binding energy on a PES spectrum than valence-electron peaks.
 :::
+:::
 
-:::theorem
-### Solution 2
+:::frq{id=chem-atomicstrucprop-frq-8}
+8. Sterling silver contains silver and copper. In a released AP Chemistry question, students compared atomic radii using Coulomb's law. (Adapted from College Board, [2024 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
 
+   $$(A)$$ Identify which atom has the larger atomic radius: $$\text{Ag}$$ or $$\text{Cu}$$.
+
+   $$(B)$$ Use shell structure and Coulomb's law to justify your answer.
+
+   $$(C)$$ Explain why comparing only nuclear charge is not enough to predict the radius in this case.
+
+:::solution
 $$(A)$$ $$\text{Ag}$$ has the larger atomic radius.
 
 $$(B)$$ Silver's valence electrons occupy a higher principal energy level than copper's valence electrons. Copper is in period 4, while silver is in period 5, so the outer electrons in silver are farther from the nucleus. By Coulomb's law, attraction decreases as distance increases:
@@ -632,4 +541,5 @@ $$
 Silver also has more inner electrons, which increases shielding. The greater distance and shielding make the attraction between the nucleus and valence electrons weaker, so the atomic radius is larger.
 
 $$(C)$$ Silver has more protons than copper, which by itself would increase attraction. But the valence electrons in silver are also farther from the nucleus and more shielded. Radius depends on the balance of nuclear charge, shielding, and distance, not nuclear charge alone. On the AP exam, a complete explanation should explicitly compare both the attractive force from the nucleus and the distance/shielding effect.
+:::
 :::

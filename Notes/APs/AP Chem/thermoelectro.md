@@ -666,12 +666,9 @@ $$
 $$
 \boxed{\text{B}}
 $$
-:::
-:::
-:::
-
 ### FRQ
 
+:::frq{id=chem-thermoelectro-frq-7}
 7. A galvanic cell is based on the reaction
 
 $$
@@ -688,107 +685,7 @@ Use $$E^\circ_{\text{red}}(\text{Cu}^{2+}/\text{Cu})=+0.34\ \text{V}$$ and $$E^\
 
    $$(D)$$ Explain the direction of electron flow in the external circuit.
 
-8. The 2024 AP Chemistry exam included electroplating and nonspontaneous electrochemistry in a sterling silver context. (Adapted from College Board, [2024 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
-
-   $$(A)$$ Explain why an electrolytic plating process requires an external power source.
-
-   $$(B)$$ Calculate the time required to plate $$1.00\ \text{g}$$ of $$\text{Cu}(s)$$ from $$\text{Cu}^{2+}$$ using a current of $$2.00\ \text{A}$$.
-
-   $$(C)$$ Identify whether reduction or oxidation occurs at the object being plated.
-
----
-
-## Solutions
-
-### MCQ
-
-:::theorem
-### Solution 1
-
-For a spontaneous galvanic cell,
-
-$$
-\Delta G^\circ=-nFE^\circ_{\text{cell}}.
-$$
-
-Spontaneous means $$\Delta G^\circ<0$$, which requires $$E^\circ_{\text{cell}}>0$$.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 2
-
-Sublimation changes a solid directly into a gas. Gas particles have many more accessible microstates than particles in a solid.
-
-$$
-\boxed{\text{C}}
-$$
-:::
-
-:::theorem
-### Solution 3
-
-Use
-
-$$
-\Delta G^\circ=\Delta H^\circ-T\Delta S^\circ.
-$$
-
-When both $$\Delta H^\circ$$ and $$\Delta S^\circ$$ are positive, high temperature makes the $$-T\Delta S^\circ$$ term large and negative.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 4
-
-Oxidation always occurs at the anode, in both galvanic and electrolytic cells.
-
-$$
-\boxed{\text{A}}
-$$
-:::
-
-:::theorem
-### Solution 5
-
-Since
-
-$$
-\Delta G^\circ=-RT\ln K,
-$$
-
-a negative $$\Delta G^\circ$$ means $$\ln K>0$$, so $$K>1$$.
-
-$$
-\boxed{\text{C}}
-$$
-:::
-
-:::theorem
-### Solution 6
-
-For $$\text{Ag}^+ + e^- \rightarrow \text{Ag}(s)$$, $$1.00\ \text{mol}$$ of electrons plates $$1.00\ \text{mol}$$ of Ag.
-
-$$
-1.00\ \text{mol Ag}\times107.9\ \text{g/mol}=107.9\ \text{g}.
-$$
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-### FRQ
-
-:::theorem
-### Solution 1
-
+:::solution
 $$(A)$$ Zinc is oxidized:
 
 $$
@@ -837,12 +734,18 @@ $$(D)$$ Electrons are produced at the zinc anode and consumed at the copper cath
 
 **Image placeholder:** Galvanic cell diagram with Zn anode, Cu cathode, electron flow from Zn to Cu, and ion flow through the salt bridge.
 :::
+:::
 
-</div>
+:::frq{id=chem-thermoelectro-frq-8}
+8. The 2024 AP Chemistry exam included electroplating and nonspontaneous electrochemistry in a sterling silver context. (Adapted from College Board, [2024 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
 
-:::theorem
-### Solution 2
+   $$(A)$$ Explain why an electrolytic plating process requires an external power source.
 
+   $$(B)$$ Calculate the time required to plate $$1.00\ \text{g}$$ of $$\text{Cu}(s)$$ from $$\text{Cu}^{2+}$$ using a current of $$2.00\ \text{A}$$.
+
+   $$(C)$$ Identify whether reduction or oxidation occurs at the object being plated.
+
+:::solution
 $$(A)$$ Electroplating is nonspontaneous as written, so an external power source is needed to drive electron flow and force reduction of metal ions onto the object. In other words, electrical energy is used to make a thermodynamically unfavorable redox process occur.
 
 $$(B)$$ Moles of copper plated:
@@ -872,4 +775,5 @@ $$
 This is about $$25.3\ \text{min}$$ if converted to minutes.
 
 $$(C)$$ Metal ions gain electrons and become solid metal on the object, so reduction occurs at the object being plated. The object being plated acts as the cathode in the electrolytic cell.
+:::
 :::

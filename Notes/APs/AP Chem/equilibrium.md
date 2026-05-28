@@ -417,12 +417,9 @@ For an exothermic reaction, heat behaves like a product. Adding heat shifts the 
 $$
 \boxed{\text{B}}
 $$
-:::
-:::
-:::
-
 ### FRQ
 
+:::frq{id=chem-equilibrium-frq-7}
 7. At a certain temperature, $$K_c=4.00$$ for
 
 $$
@@ -437,93 +434,7 @@ A sealed container initially has $$0.600\ M$$ $$\text{A}$$ and no $$\text{B}$$.
 
    $$(C)$$ Calculate the equilibrium concentrations of $$\text{A}$$ and $$\text{B}$$.
 
-8. The 2024 AP Chemistry exam included an equilibrium particle-diagram question for $$\text{H}_2(g)+\text{I}_2(g)\rightleftharpoons2\text{HI}(g)$$. (Adapted from College Board, [2024 AP Chemistry FRQ 5](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
-
-   $$(A)$$ Write the expression for $$Q$$.
-
-   $$(B)$$ If $$[\text{H}_2]=0.20\ M$$, $$[\text{I}_2]=0.10\ M$$, and $$[\text{HI}]=0.30\ M$$, calculate $$Q$$.
-
-   $$(C)$$ If $$K=50$$, predict the direction the system shifts.
-
----
-
-## Solutions
-
-### MCQ
-
-:::theorem
-### Solution 1
-
-Gas and aqueous equilibrium expressions use concentrations raised to stoichiometric coefficients:
-
-$$
-K_c=\frac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}.
-$$
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 2
-
-A catalyst speeds both forward and reverse reactions. It helps the system reach equilibrium faster, but it does not change $$K$$ or the equilibrium composition.
-
-$$
-\boxed{\text{D}}
-$$
-:::
-
-:::theorem
-### Solution 3
-
-If $$Q>K$$, the mixture has too much product relative to equilibrium, so it shifts toward reactants.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 4
-
-Pure solids are omitted from equilibrium expressions, so both solids are omitted.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 5
-
-Pure solids are omitted from equilibrium expressions, so
-
-$$
-K_{sp}=[\text{Ag}^+][\text{Cl}^-].
-$$
-
-$$
-\boxed{\text{A}}
-$$
-:::
-
-:::theorem
-### Solution 6
-
-For an exothermic reaction, heat behaves like a product. Adding heat shifts the equilibrium toward reactants.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-### FRQ
-
-:::theorem
-### Solution 1
-
+:::solution
 $$(A)$$
 
 $$
@@ -580,10 +491,18 @@ $$
 
 The negative root is rejected because it would make no physical sense for the reaction progress variable in this setup. Both equilibrium concentrations are positive, which is a useful check.
 :::
+:::
 
-:::theorem
-### Solution 2
+:::frq{id=chem-equilibrium-frq-8}
+8. The 2024 AP Chemistry exam included an equilibrium particle-diagram question for $$\text{H}_2(g)+\text{I}_2(g)\rightleftharpoons2\text{HI}(g)$$. (Adapted from College Board, [2024 AP Chemistry FRQ 5](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
 
+   $$(A)$$ Write the expression for $$Q$$.
+
+   $$(B)$$ If $$[\text{H}_2]=0.20\ M$$, $$[\text{I}_2]=0.10\ M$$, and $$[\text{HI}]=0.30\ M$$, calculate $$Q$$.
+
+   $$(C)$$ If $$K=50$$, predict the direction the system shifts.
+
+:::solution
 $$(A)$$
 
 $$
@@ -604,5 +523,4 @@ $$(C)$$ Since $$Q<K$$, the system has too little product relative to equilibrium
 
 **Image placeholder:** Particle diagram for $$\text{H}_2+\text{I}_2\rightleftharpoons2\text{HI}$$ showing the mixture shifting toward more $$\text{HI}$$.
 :::
-
-</div>
+:::

@@ -433,12 +433,9 @@ A buffer contains a weak acid and its conjugate base, or a weak base and its con
 $$
 \boxed{\text{C}}
 $$
-:::
-:::
-:::
-
 ### FRQ
 
+:::frq{id=chem-acidbase-frq-7}
 7. A $$0.100\ M$$ solution of acetic acid, $$\text{HC}_2\text{H}_3\text{O}_2$$, has $$K_a=1.8\times10^{-5}$$.
 
    $$(A)$$ Write the acid-ionization equation.
@@ -449,107 +446,7 @@ $$
 
    $$(D)$$ Explain what happens to the percent ionization if sodium acetate is added.
 
-8. The 2026 AP Chemistry exam included a nitrous acid titration and indicator question. (Adapted from College Board, [2026 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
-
-   $$(A)$$ Explain why the equivalence point of a weak acid-strong base titration has $$\text{pH}>7$$.
-
-   $$(B)$$ A $$35.0\ \text{mL}$$ sample of $$\text{HNO}_2$$ is titrated to equivalence with $$21.0\ \text{mL}$$ of $$0.160\ M\ \text{NaOH}$$. Calculate the molarity of $$\text{HNO}_2$$.
-
-   $$(C)$$ Explain why an indicator should change color near the steep part of the titration curve.
-
----
-
-## Solutions
-
-### MCQ
-
-:::theorem
-### Solution 1
-
-$$\text{HCl}$$ is a strong acid, so
-
-$$
-[\text{H}_3\text{O}^+]=1.0\times10^{-3}\ M.
-$$
-
-Thus
-
-$$
-\text{pH}=-\log(1.0\times10^{-3})=3.00.
-$$
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 2
-
-When $$[\text{HF}]=[\text{F}^-]$$, the Henderson-Hasselbalch equation gives
-
-$$
-\text{pH}=\text{p}K_a.
-$$
-
-$$
-\text{p}K_a=-\log(6.8\times10^{-4})=3.17.
-$$
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 3
-
-$$\text{NaOH}$$ is a strong base, so it produces the greatest $$[\text{OH}^-]$$ and therefore the greatest $$\text{pH}$$.
-
-$$
-\boxed{\text{D}}
-$$
-:::
-
-:::theorem
-### Solution 4
-
-At the half-equivalence point, $$[\text{HA}]=[\text{A}^-]$$. Henderson-Hasselbalch becomes
-
-$$
-\text{pH}=\text{p}K_a+\log(1)=\text{p}K_a.
-$$
-
-$$
-\boxed{\text{A}}
-$$
-:::
-
-:::theorem
-### Solution 5
-
-A conjugate base is formed by removing one proton. Removing $$\text{H}^+$$ from $$\text{H}_2\text{PO}_4^-$$ gives $$\text{HPO}_4^{2-}$$.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 6
-
-A buffer contains a weak acid and its conjugate base, or a weak base and its conjugate acid. $$\text{HF}$$ and $$\text{F}^-$$ form a buffer pair.
-
-$$
-\boxed{\text{C}}
-$$
-:::
-
-### FRQ
-
-:::theorem
-### Solution 1
-
+:::solution
 $$(A)$$
 
 $$
@@ -590,10 +487,18 @@ $$
 
 $$(D)$$ Sodium acetate adds the common ion $$\text{C}_2\text{H}_3\text{O}_2^-$$, shifting the acid ionization left. Since less acetic acid ionizes, $$[\text{H}_3\text{O}^+]$$ decreases and the percent ionization decreases. This is the common-ion effect.
 :::
+:::
 
-:::theorem
-### Solution 2
+:::frq{id=chem-acidbase-frq-8}
+8. The 2026 AP Chemistry exam included a nitrous acid titration and indicator question. (Adapted from College Board, [2026 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
+   $$(A)$$ Explain why the equivalence point of a weak acid-strong base titration has $$\text{pH}>7$$.
+
+   $$(B)$$ A $$35.0\ \text{mL}$$ sample of $$\text{HNO}_2$$ is titrated to equivalence with $$21.0\ \text{mL}$$ of $$0.160\ M\ \text{NaOH}$$. Calculate the molarity of $$\text{HNO}_2$$.
+
+   $$(C)$$ Explain why an indicator should change color near the steep part of the titration curve.
+
+:::solution
 $$(A)$$ At equivalence, the weak acid has been converted mostly into its conjugate base. The conjugate base reacts with water to produce $$\text{OH}^-$$:
 
 $$
@@ -624,5 +529,4 @@ $$(C)$$ The steep part of the titration curve is where a tiny volume change caus
 
 **Image placeholder:** Weak acid-strong base titration curve with equivalence point above $$\text{pH}=7$$ and an indicator transition range near the steep region.
 :::
-
-</div>
+:::

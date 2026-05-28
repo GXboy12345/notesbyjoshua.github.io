@@ -1,4 +1,4 @@
-import type { BlockContent, ContainerDirective, List, ListItem, Parent, PhrasingContent, Root } from 'mdast';
+import type { BlockContent, ContainerDirective, List, ListItem, Parent, Root } from 'mdast';
 import { toString } from 'mdast-util-to-string';
 import { visit } from 'unist-util-visit';
 
@@ -12,6 +12,7 @@ const CALLOUT_NAMES = new Set([
   'exam',
   'key',
   'summary',
+  'solution',
   'placeholder',
 ]);
 
@@ -58,6 +59,7 @@ function defaultLabel(name: string): string {
     exam: 'On the exam',
     key: 'Key formula',
     summary: 'Summary',
+    solution: 'Solution',
     placeholder: 'Coming soon',
   };
   const text = labels[name] ?? name;
@@ -74,47 +76,39 @@ function escapeHtml(s: string): string {
 
 function isChoiceList(node: BlockContent): node is List {
   if (node.type !== 'list') return false;
+  if (node.ordered) return false;
   return node.children.length > 0 && node.children.length <= 6;
 }
 
-function extractChoices(list: List): { letter: string; html: string }[] {
+function choiceHtml(item: ListItem, renderFragment: FragmentRenderer): string {
+  const html = renderFragment(item.children as BlockContent[]);
+  return html
+    .replace(/^\[[ xX]\]\s*/i, '')
+    .replace(/^<p>\[[ xX]\]\s*/i, '<p>')
+    .replace(/^<p>([\s\S]*)<\/p>\s*$/i, '$1')
+    .trim();
+}
+
+function extractChoices(list: List, renderFragment: FragmentRenderer): { letter: string; html: string }[] {
   return list.children.map((item, idx) => {
     const letter = CHOICE_LETTERS[idx] ?? String(idx + 1);
-    const inner = listItemHtml(item);
-    return { letter, html: inner };
+    return { letter, html: choiceHtml(item, renderFragment) };
   });
-}
-
-function listItemHtml(item: ListItem): string {
-  const parts: string[] = [];
-  for (const child of item.children) {
-    if (child.type === 'paragraph') {
-      parts.push(inlineToHtml(child.children));
-    } else if (child.type === 'text') {
-      parts.push(escapeHtml(child.value));
-    }
-  }
-  return parts.join(' ').replace(/^\[[ xX]\]\s*/, '');
-}
-
-function inlineToHtml(nodes: PhrasingContent[]): string {
-  return nodes
-    .map((n) => {
-      if (n.type === 'text') return escapeHtml(n.value);
-      if (n.type === 'inlineCode') return `<code>${escapeHtml(n.value)}</code>`;
-      if (n.type === 'strong') return `<strong>${inlineToHtml(n.children)}</strong>`;
-      if (n.type === 'emphasis') return `<em>${inlineToHtml(n.children)}</em>`;
-      if (n.type === 'inlineMath') return `$${n.value}$`;
-      return toString(n);
-    })
-    .join('');
 }
 
 function hasNestedDirective(dir: ContainerDirective): boolean {
   for (const child of dir.children ?? []) {
-    if (child.type === 'containerDirective') return true;
+    if (child.type !== 'containerDirective') continue;
+    const childName = (child as ContainerDirective).name;
+    if ((dir.name === 'mcq' || dir.name === 'frq') && childName === 'solution') continue;
+    return true;
   }
   return false;
+}
+
+function parentDirective(parent: Parent): ContainerDirective | null {
+  if (parent.type === 'containerDirective') return parent as ContainerDirective;
+  return null;
 }
 
 function findLeafDirective(tree: Root): LeafDirective | null {
@@ -123,6 +117,10 @@ function findLeafDirective(tree: Root): LeafDirective | null {
     if (leaf) return;
     if (!parent || index === undefined) return;
     const dir = node as ContainerDirective;
+    const parentDir = parentDirective(parent);
+    if (dir.name === 'solution' && parentDir && (parentDir.name === 'mcq' || parentDir.name === 'frq')) {
+      return;
+    }
     if (hasNestedDirective(dir)) return;
     leaf = { parent, index, dir };
   });
@@ -203,7 +201,7 @@ function processLeaf(leaf: LeafDirective, renderFragment: FragmentRenderer) {
     }
 
     const stemHtml = renderFragment(stemNodes);
-    const choices = choiceList ? extractChoices(choiceList) : [];
+    const choices = choiceList ? extractChoices(choiceList, renderFragment) : [];
     const choicesHtml = choices
       .map(
         ({ letter, html }) =>
@@ -257,11 +255,6 @@ function processLeaf(leaf: LeafDirective, renderFragment: FragmentRenderer) {
     return;
   }
 
-  if (name === 'solution') {
-    replace(
-      `<div class="mcq-solution-block" data-solution hidden>${renderFragment(dir.children as BlockContent[])}</div>`,
-    );
-  }
 }
 
 export function remarkDirectives(renderFragment: FragmentRenderer) {

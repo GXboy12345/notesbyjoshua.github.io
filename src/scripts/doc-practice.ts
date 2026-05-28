@@ -1,5 +1,18 @@
+import renderMathInElement from 'katex/contrib/auto-render';
+
 const BOUND = 'practiceBound';
 const CHOICE = /^[A-D]$/;
+
+const katexOpts = {
+  delimiters: [
+    { left: '$$', right: '$$', display: true },
+    { left: '\\[', right: '\\]', display: true },
+    { left: '\\(', right: '\\)', display: false },
+    { left: '$', right: '$', display: false },
+  ],
+  throwOnError: false,
+  strict: false,
+};
 
 type McqPhase = 'idle' | 'answered' | 'revealed';
 
@@ -74,14 +87,20 @@ function solutionBlocks(root: HTMLElement): HTMLElement[] {
 }
 
 function revealSolutions(root: HTMLElement) {
-  for (const block of solutionBlocks(root)) block.hidden = false;
+  for (const block of solutionBlocks(root)) {
+    block.hidden = false;
+    block.classList.add('is-revealed');
+  }
   root.classList.add('practice-revealed');
   root.dataset.practicePhase = 'revealed';
 }
 
 function hideSolutions(root: HTMLElement) {
   for (const block of solutionBlocks(root)) {
-    if (!block.hasAttribute('data-keep-visible')) block.hidden = true;
+    if (!block.hasAttribute('data-keep-visible')) {
+      block.hidden = true;
+      block.classList.remove('is-revealed');
+    }
   }
 }
 
@@ -182,12 +201,19 @@ function bindFrq(frq: HTMLElement) {
   });
 }
 
+function renderPracticeMath(prose: HTMLElement) {
+  for (const block of prose.querySelectorAll<HTMLElement>('[data-mcq], [data-frq]')) {
+    renderMathInElement(block, katexOpts);
+  }
+}
+
 function bindAll() {
   const prose = proseRoot();
   if (!prose) return;
 
   prose.querySelectorAll<HTMLElement>('[data-mcq]').forEach(bindMcq);
   prose.querySelectorAll<HTMLElement>('[data-frq]').forEach(bindFrq);
+  renderPracticeMath(prose);
 }
 
 let pageLoadBound = false;

@@ -444,12 +444,9 @@ Boiling-point elevation depends on total dissolved particle concentration. $$\te
 $$
 \boxed{\text{C}}
 $$
-:::
-:::
-:::
-
 ### FRQ
 
+:::frq{id=chem-submix-frq-7}
 7. A student measures the absorbance of several solutions of $$\text{Cu}^{2+}$$ at the same wavelength and path length.
 
    $$(A)$$ Explain why absorbance can be used to determine concentration.
@@ -458,97 +455,7 @@ $$
 
    $$(C)$$ Explain why the wavelength should be chosen near the color most strongly absorbed by the solution.
 
-8. The 2026 AP Chemistry exam included a spectrophotometry particle-diagram question about absorbance and ion concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 6](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
-
-   $$(A)$$ Explain why a solution with greater concentration of colored ions has greater absorbance at a fixed wavelength.
-
-   $$(B)$$ If a calibration curve has equation $$A=4.00c$$ and an unknown solution has $$A=0.120$$, calculate $$c$$.
-
-   $$(C)$$ In a particle diagram of equal volume, how should the number of colored ions compare between a $$0.020\ M$$ solution and a $$0.040\ M$$ solution?
-
----
-
-## Solutions
-
-### MCQ
-
-:::theorem
-### Solution 1
-
-$$\text{CH}_3\text{OH}$$ can form hydrogen bonds because it has an O-H bond. The other choices rely mainly on London dispersion forces or dipole-dipole attractions.
-
-$$
-\boxed{\text{C}}
-$$
-:::
-
-:::theorem
-### Solution 2
-
-The formal concentration of $$\text{NaCl}$$ is
-
-$$
-\frac{0.250\ \text{mol}}{0.500\ \text{L}}=0.500\ M.
-$$
-
-Since $$\text{NaCl}$$ dissociates into two ions, the total particle concentration is approximately
-
-$$
-2(0.500\ M)=1.00\ M.
-$$
-
-So the answer is
-
-$$
-\boxed{\text{C}}.
-$$
-:::
-
-:::theorem
-### Solution 3
-
-Ethanol and water are both polar and can hydrogen bond with each other, so they mix well.
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-:::theorem
-### Solution 4
-
-Henry's law says gas solubility increases as the partial pressure of the gas above the liquid increases.
-
-$$
-\boxed{\text{A}}
-$$
-:::
-
-:::theorem
-### Solution 5
-
-Gases behave most ideally at low pressure and high temperature, especially when particles have weak intermolecular forces. Helium fits best.
-
-$$
-\boxed{\text{C}}
-$$
-:::
-
-:::theorem
-### Solution 6
-
-Boiling-point elevation depends on total dissolved particle concentration. $$\text{CaCl}_2$$ produces about three ions per formula unit, the largest value among the choices.
-
-$$
-\boxed{\text{C}}
-$$
-:::
-
-### FRQ
-
-:::theorem
-### Solution 1
-
+:::solution
 $$(A)$$ Beer-Lambert law gives
 
 $$
@@ -571,10 +478,18 @@ $$
 
 $$(C)$$ Choosing a strongly absorbed wavelength gives a larger absorbance change for a given concentration change, which makes the measurement more sensitive. If the wavelength is poorly absorbed, the absorbance values may be too small and close together, making it harder to distinguish concentrations accurately.
 :::
+:::
 
-:::theorem
-### Solution 2
+:::frq{id=chem-submix-frq-8}
+8. The 2026 AP Chemistry exam included a spectrophotometry particle-diagram question about absorbance and ion concentration. (Adapted from College Board, [2026 AP Chemistry FRQ 6](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
 
+   $$(A)$$ Explain why a solution with greater concentration of colored ions has greater absorbance at a fixed wavelength.
+
+   $$(B)$$ If a calibration curve has equation $$A=4.00c$$ and an unknown solution has $$A=0.120$$, calculate $$c$$.
+
+   $$(C)$$ In a particle diagram of equal volume, how should the number of colored ions compare between a $$0.020\ M$$ solution and a $$0.040\ M$$ solution?
+
+:::solution
 $$(A)$$ More colored ions means more particles are available to absorb photons at that wavelength. For fixed path length, Beer-Lambert law says absorbance is proportional to concentration.
 
 $$(B)$$
@@ -595,5 +510,4 @@ $$(C)$$ The $$0.040\ M$$ solution has twice the concentration, so an equal-volum
 
 **Image placeholder:** Equal-volume particle diagrams showing the $$0.040\ M$$ solution with twice as many colored ions as the $$0.020\ M$$ solution.
 :::
-
-</div>
+:::

@@ -205,13 +205,7 @@ function formatMcq(slug, num, stem, choices, solutionBody, correct) {
     stem,
   ];
   if (choiceLines) lines.push('', choiceLines);
-  lines.push(
-    '',
-    ':::solution',
-    solutionBody,
-    ':::',
-    ':::',
-  );
+  lines.push('', ':::solution', solutionBody, ':::', ':::');
   return lines.join('\n');
 }
 
