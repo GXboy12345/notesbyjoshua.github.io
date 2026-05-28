@@ -17,7 +17,6 @@ Differential equations describe how a quantity changes rather than giving the qu
 A differential equation relates a function and its derivatives.
 
 :::example{title="dy/dx = 3x²"}
-Example:
 
 $$
 \frac{dy}{dx} = 3x^2
@@ -47,7 +46,7 @@ To analyze a slope field:
 - sketch a solution curve that follows the segment directions.
 :::
 
-:::note
+:::placeholder
 [Image Placeholder: slope field with equilibrium solution and sample integral curves]
 :::
 
@@ -174,9 +173,7 @@ This helps determine concavity of solution curves.
 
 ---
 
-## Common mistakes
-
-:::warning
+:::mistakes
 - Separating variables incorrectly.
 - Forgetting the constant of integration.
 - Solving for the constant before using the initial condition carefully.

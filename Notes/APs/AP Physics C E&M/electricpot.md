@@ -4,12 +4,12 @@ title: Electric Potential
 nav_title: "Unit 2: Electric Potential"
 parent: AP Physics C E&M
 nav_order: 2
-permalink: /notes/physics/electricpot/
+permalink: /notes/ap/ap-physics-c-em/electricpot/
 ---
 
 # Electric Potential
 
-Where [Unit 1]({{ '/notes/physics/electrostatics/' | relative_url }}) emphasized electric field and force, this unit uses **electric potential** and **electric potential energy**: scalar quantities that often simplify multi-charge problems and connect directly to work and circuits. The electrostatic field is **conservative**, so potential is well-defined: path does not matter, only endpoints.
+Where [Unit 1]({{ '/notes/ap/ap-physics-c-em/electrostatics/' | relative_url }}) emphasized electric field and force, this unit uses **electric potential** and **electric potential energy**: scalar quantities that often simplify multi-charge problems and connect directly to work and circuits. The electrostatic field is **conservative**, so potential is well-defined: path does not matter, only endpoints.
 
 ---
 

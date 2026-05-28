@@ -181,10 +181,10 @@ $$
 - $$\mu_{\hat{p}} = p$$
 - $$\sigma_{\hat{p}} = \sqrt{\dfrac{p(1-p)}{n}}$$
 
-### Conditions
-
+:::conditions
 - **$$np \ge 10$$** and **$$n(1-p) \ge 10$$** for Normal approximation to $$\hat{p}$$.
 - **$$n \ge 30$$** often cited for $$\bar{x}$$, but prefer context + shape of population when $$n$$ is small.
+:::
 :::
 
 ---
@@ -241,11 +241,11 @@ $$
 z = \dfrac{(\hat{p}_1-\hat{p}_2)-0}{\sqrt{\hat{p}_c(1-\hat{p}_c)\left(\dfrac{1}{n_1}+\dfrac{1}{n_2}\right)}}
 $$
 
-### Conditions (short checklist)
-
+:::conditions
 - **Random** assignment or random sampling (as appropriate).
 - **10%**: $$n \le 0.10\,N$$ when sampling without replacement (each group if two-sample).
 - **Large counts**: successes & failures $$\ge 10$$ **each** (for each group or for one-sample use $$np_0$$ and $$n(1-p_0)$$ when checking Normal approximation).
+:::
 
 :::warning
 **Wrong SE**: pooled vs unpooled proportions; forgetting $$\sqrt{n}$$ in denominator.
@@ -269,10 +269,10 @@ $$
 
 - Typically **unpooled**: $$\text{SE} = \sqrt{\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}}$$ ; **df** use calculator/wizard or conservative approximate methods per course.
 
-### Conditions
-
+:::conditions
 - **Random** + **10%** if sampling without replacement.
 - **Normality / $$n$$**: if $$n$$ small, need roughly symmetric data without strong skew/outliers; CLT helps when $$n$$ is large.
+:::
 :::
 
 ---
@@ -296,10 +296,10 @@ $$
 - **Homogeneity**: same distribution across populations / treatment groups.
 - **Independence / association**: one sample classified two ways.
 
-### Conditions
-
+:::conditions
 - **Random** counts / random assignment as appropriate.
 - **Large expected counts**: commonly **all expected $$\ge 5$$** (some contexts use a stricter rule).
+:::
 
 :::warning
 **Chi-square**: wrong $$\text{df}$$ or wrong “expected count” formula.
@@ -323,12 +323,12 @@ $$
 t = \frac{b - \beta_1}{\text{SE}_b}, \quad \text{df} = n-2
 $$
 
-### Conditions (LINE / PLUS-style memory hook)
-
+:::conditions
 - **Linear** relationship (check scatterplot + residual plot).
 - **Independent** observations (random / 10%).
 - **Normal** residuals roughly (especially for small $$n$$).
 - **Equal spread** of residuals across $$x$$.
+:::
 :::
 
 ---
@@ -349,38 +349,15 @@ $$
 
 ---
 
-## Most Common AP Statistics Mistakes
-
-:::warning
-**Parameter vs statistic**: mixing $$\mu$$ and $$\bar{x}$$, or $$p$$ and $$\hat{p}$$, in conclusions.
-:::
-
-:::warning
-**Correlation ≠ causation**; confounding in observational studies.
-:::
-
-:::warning
-**Wrong SE**: pooled vs unpooled proportions; forgetting $$\sqrt{n}$$ in denominator.
-:::
-
-:::warning
-**Hypotheses about $$\hat{p}$$ or $$\bar{x}$$** instead of $$p$$ or $$\mu$$.
-:::
-
-:::warning
-**“Accept $$H_0$$”** language—say **fail to reject $$H_0$$**.
-:::
-
-:::warning
-**$$P$$-value definition**: mis-stating as $$P(H_0 \text{ true})$$.
-:::
-
-:::warning
-**Conditions skipped** or checked as “met” without linking to the study’s randomness and sample size.
-:::
-
-:::warning
-**Chi-square**: wrong $$\text{df}$$ or wrong “expected count” formula.
+:::mistakes
+- **Parameter vs statistic**: mixing $$\mu$$ and $$\bar{x}$$, or $$p$$ and $$\hat{p}$$, in conclusions.
+- **Correlation ≠ causation**; confounding in observational studies.
+- **Wrong SE**: pooled vs unpooled proportions; forgetting $$\sqrt{n}$$ in denominator.
+- **Hypotheses about $$\hat{p}$$ or $$\bar{x}$$** instead of $$p$$ or $$\mu$$.
+- **“Accept $$H_0$$”** language—say **fail to reject $$H_0$$**.
+- **$$P$$-value definition**: mis-stating as $$P(H_0 \text{ true})$$.
+- **Conditions skipped** or checked as “met” without linking to the study’s randomness and sample size.
+- **Chi-square**: wrong $$\text{df}$$ or wrong “expected count” formula.
 :::
 
 ---

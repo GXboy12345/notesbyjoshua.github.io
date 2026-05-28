@@ -1322,8 +1322,8 @@ body.ref-sheet-open {
 
 .prose .katex-display {
   margin: 1rem 0;
-  overflow-x: auto;
-  overflow-y: visible;
+  overflow: visible;
+  padding-block: 0.12em;
 }
 
 .prose .katex {
@@ -1483,8 +1483,6 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 
 .prose .theorem-box .katex-display {
   margin: 0.65rem 0;
-  overflow-x: auto;
-  overflow-y: visible;
 }
 
 /* ——— Note components (callouts, figures, practice, chrome) ——— */
@@ -1631,8 +1629,6 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 
 .prose .callout__body .katex-display {
   margin: 0.65rem 0;
-  overflow-x: auto;
-  overflow-y: visible;
 }
 
 .prose .callout__body .katex-display > .katex {
@@ -1720,6 +1716,73 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 [data-theme='dark'] .prose .callout--mistakes {
   --callout-accent: #e8a060;
   --callout-label: #f0b878;
+}
+
+.prose .callout--checklist {
+  --callout-accent: #2a5f8f;
+  --callout-label: #2a5f8f;
+  --callout-rail-height: 4px;
+  --callout-rail: var(--callout-rail-hot),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--callout-accent) 70%, transparent) 0 4px,
+      transparent 4px 8px
+    );
+}
+
+[data-theme='dark'] .prose .callout--checklist {
+  --callout-accent: #6ea8d8;
+  --callout-label: #8ec0e8;
+}
+
+.prose .callout--conditions {
+  --callout-accent: #4a5a9a;
+  --callout-label: #4a5a9a;
+  --callout-rail-height: 4px;
+  --callout-rail: linear-gradient(
+    90deg,
+    var(--callout-accent) 0%,
+    color-mix(in srgb, var(--callout-accent) 40%, transparent) 55%,
+    transparent 100%
+  );
+  box-shadow: inset 3px 0 0 color-mix(in srgb, var(--callout-accent) 35%, transparent);
+}
+
+[data-theme='dark'] .prose .callout--conditions {
+  --callout-accent: #94a4e8;
+  --callout-label: #b0bcf0;
+}
+
+.prose .callout--equations {
+  --callout-accent: #7a6018;
+  --callout-label: #7a6018;
+  --callout-rail-height: 4px;
+  --callout-rail: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--callout-accent) 85%, #fff) 0%,
+    var(--callout-accent) 22%,
+    color-mix(in srgb, var(--callout-accent) 35%, transparent) 50%,
+    transparent 100%
+  );
+}
+
+[data-theme='dark'] .prose .callout--equations {
+  --callout-accent: #d4b04a;
+  --callout-label: #e8c86a;
+}
+
+.prose .callout--placeholder {
+  --callout-accent: var(--muted);
+  --callout-label: var(--muted);
+  --callout-rail-height: 0;
+  --callout-rail: none;
+  --callout-surface-wash: none;
+  --callout-bg: color-mix(in srgb, var(--muted) 5%, var(--bg-elevated));
+  border-style: dashed;
+}
+
+.prose .callout--placeholder::before {
+  display: none;
 }
 
 .prose .callout--note {
@@ -2094,8 +2157,7 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 
 .prose .mcq-solution .katex-display,
 .prose [data-solution] .katex-display {
-  overflow-x: auto;
-  overflow-y: visible;
+  margin: 0.65rem 0;
 }
 
 .prose .mcq-solution:not(.is-revealed),
@@ -2627,8 +2689,7 @@ body.lightbox-open {
 }
 
 .katex-display {
-  overflow-x: auto;
-  overflow-y: visible;
+  overflow: visible;
 }
 
 /* ——— Home page ——— */

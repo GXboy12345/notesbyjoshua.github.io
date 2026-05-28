@@ -78,11 +78,19 @@ Rate laws come from mechanism or experiment; order is not always equal to coeffi
 Unnamed summary—default label only.
 :::
 
-### Other callouts (no optional fields)
+### Tip (`title`)
+
+:::tip{title="Strategy"}
+1. Draw and label a diagram.
+2. Write an equation relating the variables.
+3. Differentiate implicitly with respect to time.
+:::
 
 :::tip
-Check units on $$k$$ before picking a integrated law.
+Unnamed tip—default label only.
 :::
+
+### Other callouts (no optional fields)
 
 :::warning
 Do not confuse rate constant units across reaction orders.
@@ -93,12 +101,31 @@ Do not confuse rate constant units across reaction orders.
 - Dropping units on $$k$$ before comparing trials.
 :::
 
+:::checklist
+1. Identify the rate law from initial-rate data.
+2. Integrate the rate law for concentration vs time.
+3. Check units on $$k$$ against reaction order.
+:::
+
+:::conditions
+1. Random sample or random assignment.
+2. Independence: if sampling without replacement, $$n \le 0.10N$$.
+3. Large counts: $$n\hat{p} \ge 10$$ and $$n(1-\hat{p}) \ge 10$$.
+:::
+
+:::equations
+| Idea | Equation |
+| --- | --- |
+| First-order half-life | $$t_{1/2} = \frac{0.693}{k}$$ |
+| Integrated first order | $$\ln[A]_t = \ln[A]_0 - kt$$ |
+:::
+
 :::note
 Collisions must be correctly oriented for a reaction to occur.
 :::
 
 :::placeholder
-Future widget slot—replace when a new directive ships.
+Slope field with equilibrium solution and sample integral curves.
 :::
 
 ---

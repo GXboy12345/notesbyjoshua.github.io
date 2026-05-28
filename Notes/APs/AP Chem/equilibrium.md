@@ -318,14 +318,14 @@ $$
 
 ---
 
-## Working checklist for problems
-
+:::checklist
 1. **Balance** the equation and identify **phase** of each species.
 2. Write $$K_c$$, $$K_p$$, or $$K_{sp}$$ **omitting pure solids/liquids** (and solvent water in dilute aqueous $$K_c$$ unless specified).
 3. Compute **$$Q$$** if asked whether the system shifts; compare to $$K$$.
 4. Use **ICE** for unknown equilibrium concentrations; watch **stoichiometric** multiples of $$x$$.
 5. Remember *temperature* changes $$K$$; *catalyst* does not. For two temperatures, relate $$K_1$$ and $$K_2$$ with the **van’t Hoff equation** if $$\Delta H^\circ$$ is known (or given).
 6. For solubility, track **common ions**, **$$Q_{sp}$$ vs $$K_{sp}$$**, and **complex formation**, which can *increase* solubility by tying up a metal ion (e.g. $$\text{AgCl}$$ dissolving more in ammonia).
+:::
 
 This unit’s equilibrium constant logic is the same machinery you will reuse for **acid–base** ($$K_a$$, $$K_b$$, $$K_w$$) and **buffers** in the next unit—only the chemical reaction and symbols change.
 
@@ -548,9 +548,10 @@ $$
 
 $$(C)$$ Since $$Q<K$$, the system has too little product relative to equilibrium. It shifts toward products, forming more $$\text{HI}$$ and consuming $$\text{H}_2$$ and $$\text{I}_2$$. The value of $$K$$ does not change during the shift because temperature is not changed.
 
-<div class="placeholder-box" markdown="1">
+:::placeholder
+Particle diagram for $$\text{H}_2+\text{I}_2\rightleftharpoons2\text{HI}$$ showing the mixture shifting toward more $$\text{HI}$$.
+:::
 
-**Image placeholder:** Particle diagram for $$\text{H}_2+\text{I}_2\rightleftharpoons2\text{HI}$$ showing the mixture shifting toward more $$\text{HI}$$.
 :::
 :::
 :::

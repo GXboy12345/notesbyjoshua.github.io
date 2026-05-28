@@ -12,6 +12,7 @@ export const CALLOUT_FIELD_SPECS: Partial<Record<string, CalloutFieldSpec>> = {
   key: { attr: 'name', defaultLabel: 'Key formula' },
   exam: { attr: 'topic', defaultLabel: 'On the exam' },
   summary: { attr: 'title', defaultLabel: 'Summary' },
+  tip: { attr: 'title', defaultLabel: 'Tip' },
 };
 
 export const CALLOUT_DEFAULT_LABELS: Record<string, string> = {
@@ -21,12 +22,15 @@ export const CALLOUT_DEFAULT_LABELS: Record<string, string> = {
   tip: 'Tip',
   warning: 'Warning',
   mistakes: 'Common mistakes',
+  checklist: 'Working checklist',
+  conditions: 'Conditions',
+  equations: 'Key equations',
   note: 'Note',
   exam: 'On the exam',
   key: 'Key formula',
   summary: 'Summary',
   solution: 'Solution',
-  placeholder: 'Coming soon',
+  placeholder: 'Image placeholder',
 };
 
 function escapeHtml(s: string): string {

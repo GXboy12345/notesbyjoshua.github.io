@@ -12,13 +12,13 @@ nav_order: 4
 
 ## Units
 
-- [Unit 1: 1D and 2D Kinematics]({{ '/notes/physics/kinematics/' | relative_url }})
-- [Unit 2: Force and Translational Dynamics]({{ '/notes/physics/forces/' | relative_url }})
-- [Unit 3: Work, Energy, and Power]({{ '/notes/physics/work/' | relative_url }})
-- [Unit 4: Linear Momentum and Impulse]({{ '/notes/physics/linearmomentum/' | relative_url }})
-- [Unit 5: Torque and Rotational Dynamics]({{ '/notes/physics/torque/' | relative_url }})
-- [Unit 6: Energy and Momentum of Rotating Systems]({{ '/notes/physics/rotationalmomentum/' | relative_url }})
-- [Unit 7: Oscillations]({{ '/notes/physics/oscillations/' | relative_url }})
+- [Unit 1: 1D and 2D Kinematics]({{ '/notes/ap/ap-physics-c-mechanics/kinematics/' | relative_url }})
+- [Unit 2: Force and Translational Dynamics]({{ '/notes/ap/ap-physics-c-mechanics/forces/' | relative_url }})
+- [Unit 3: Work, Energy, and Power]({{ '/notes/ap/ap-physics-c-mechanics/work/' | relative_url }})
+- [Unit 4: Linear Momentum and Impulse]({{ '/notes/ap/ap-physics-c-mechanics/linearmomentum/' | relative_url }})
+- [Unit 5: Torque and Rotational Dynamics]({{ '/notes/ap/ap-physics-c-mechanics/torque/' | relative_url }})
+- [Unit 6: Energy and Momentum of Rotating Systems]({{ '/notes/ap/ap-physics-c-mechanics/rotationalmomentum/' | relative_url }})
+- [Unit 7: Oscillations]({{ '/notes/ap/ap-physics-c-mechanics/oscillations/' | relative_url }})
 
 ---
 

@@ -44,7 +44,7 @@ The parameter of interest in AP Statistics is usually $$\beta$$, the true slope 
 
 Use the acronym **LINER**:
 
-:::tip
+:::conditions
 1. **Linear**: scatterplot and residual plot show an approximately linear relationship.
 2. **Independent**: observations are independent; if sampling without replacement, check the 10% Condition.
 3. **Normal**: residuals are approximately normally distributed for each value of $$x$$.
@@ -191,9 +191,7 @@ from the regression output.
 
 ---
 
-## Working Checklist
-
-:::summary{title="Working checklist"}
+:::checklist
 1. Identify the explanatory variable $$x$$ and response variable $$y$$.
 2. State the parameter $$\beta$$ in context.
 3. Check LINER conditions using plots and study design.
@@ -205,8 +203,7 @@ from the regression output.
 
 ---
 
-## Key Equations
-
+:::equations
 | Idea | Equation |
 | --- | --- |
 | Population model | $$Y=\alpha+\beta x+\epsilon$$ |
@@ -215,3 +212,4 @@ from the regression output.
 | Confidence interval for slope | $$b\pm t^*SE_b$$ |
 | Test statistic for slope | $$t=(b-0)/SE_b$$ |
 | Degrees of freedom | $$df=n-2$$ |
+:::

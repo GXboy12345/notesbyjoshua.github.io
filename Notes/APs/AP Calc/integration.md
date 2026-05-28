@@ -199,9 +199,7 @@ $$
 
 ---
 
-## Common mistakes
-
-:::warning
+:::mistakes
 - Forgetting $$+C$$ on indefinite integrals.
 - Using area language when the integral is negative and really means net signed accumulation.
 - Dropping the chain-rule factor in reverse when using substitution.

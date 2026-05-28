@@ -4,12 +4,12 @@ title: Force and Translational Dynamics
 nav_title: "Unit 2: Force and Translational Dynamics"
 parent: AP Physics C Mechanics
 nav_order: 2
-permalink: /notes/physics/forces/
+permalink: /notes/ap/ap-physics-c-mechanics/forces/
 ---
 
 # Force and Translational Dynamics
 
-**Dynamics** explains why motion changes. In [Unit 1]({{ '/notes/physics/kinematics/' | relative_url }}), acceleration was treated as a given quantity; in this unit, acceleration comes from the net external force on an object or system. The core model is Newton's second law,
+**Dynamics** explains why motion changes. In [Unit 1]({{ '/notes/ap/ap-physics-c-mechanics/kinematics/' | relative_url }}), acceleration was treated as a given quantity; in this unit, acceleration comes from the net external force on an object or system. The core model is Newton's second law,
 
 $$
 \sum \vec{F} = m\vec{a},
@@ -148,7 +148,7 @@ $$
 \vec{F}_s = -k\vec{x},
 $$
 
-where $$\vec{x}$$ is displacement from equilibrium. The negative sign means the spring force points opposite the displacement. This force appears again in [Unit 7: Oscillations]({{ '/notes/physics/oscillations/' | relative_url }}).
+where $$\vec{x}$$ is displacement from equilibrium. The negative sign means the spring force points opposite the displacement. This force appears again in [Unit 7: Oscillations]({{ '/notes/ap/ap-physics-c-mechanics/oscillations/' | relative_url }}).
 :::
 
 ### Drag and resistive forces
@@ -331,7 +331,7 @@ $$
 \sum \tau = 0.
 $$
 
-Torque is treated in [Unit 5]({{ '/notes/physics/torque/' | relative_url }}), but it is useful to remember that translational equilibrium alone is not enough to prevent rotation.
+Torque is treated in [Unit 5]({{ '/notes/ap/ap-physics-c-mechanics/torque/' | relative_url }}), but it is useful to remember that translational equilibrium alone is not enough to prevent rotation.
 
 ---
 
@@ -360,8 +360,6 @@ There is no special "centripetal force." The phrase describes the net inward for
 :::
 
 :::example{title="Centripetal force sources"}
-Examples:
-
 - A ball on a string: tension can provide the inward force.
 - A car on a flat curve: static friction provides the inward force.
 - A satellite in orbit: gravity provides the inward force.
@@ -498,13 +496,11 @@ $$
 
 Internal forces between particles cancel in pairs by Newton's third law when considering the system as a whole. This is why a person cannot accelerate a closed system's center of mass by pushing only on internal parts.
 
-This idea becomes central in [Unit 4: Linear Momentum and Impulse]({{ '/notes/physics/linearmomentum/' | relative_url }}).
+This idea becomes central in [Unit 4: Linear Momentum and Impulse]({{ '/notes/ap/ap-physics-c-mechanics/linearmomentum/' | relative_url }}).
 
 ---
 
-## Common mistakes
-
-:::warning
+:::mistakes
 1. Treating $$F_N$$ as always equal to $$mg$$.
 2. Setting static friction equal to $$\mu_sF_N$$ when the object is not at the threshold of slipping.
 3. Drawing third-law partner forces on the same free-body diagram.
@@ -516,9 +512,7 @@ This idea becomes central in [Unit 4: Linear Momentum and Impulse]({{ '/notes/ph
 
 ---
 
-## Working checklist
-
-:::tip
+:::checklist
 1. Choose the system carefully.
 2. Draw a clean free-body diagram.
 3. Pick axes that match the geometry or acceleration.
@@ -531,9 +525,7 @@ This idea becomes central in [Unit 4: Linear Momentum and Impulse]({{ '/notes/ph
 
 ---
 
-## Key equations
-
-:::summary{title="Key equations"}
+:::equations
 | Idea | Equation |
 | --- | --- |
 | Newton's second law | $$\sum \vec{F} = m\vec{a}$$ |

@@ -57,7 +57,7 @@ $$
 $$
 :::
 
-:::exam{topic="One-proportion conditions"}
+:::conditions
 1. Random sample or random assignment.
 2. Independence: if sampling without replacement, $$n \le 0.10N$$.
 3. Large counts: $$n\hat{p} \ge 10$$ and $$n(1-\hat{p}) \ge 10$$.
@@ -147,7 +147,7 @@ $$
 Use $$p_0$$ in the standard error because the test assumes the null hypothesis is true.
 :::
 
-:::exam{topic="One-proportion test conditions"}
+:::conditions
 1. Random sample or random assignment.
 2. Independence: if sampling without replacement, $$n \le 0.10N$$.
 3. Large counts using the null value: $$np_0 \ge 10$$ and $$n(1-p_0) \ge 10$$.
@@ -170,7 +170,7 @@ $$
 $$
 :::
 
-:::exam{topic="Two-proportion conditions"}
+:::conditions
 1. Two random samples or random assignment to two groups.
 2. Independence within and between groups.
 3. If sampling without replacement, $$n_1 \le 0.10N_1$$ and $$n_2 \le 0.10N_2$$.
@@ -254,9 +254,7 @@ Calculator output does not replace communication. You still need hypotheses, con
 
 ---
 
-## Working Checklist
-
-:::summary{title="Working checklist"}
+:::checklist
 1. Identify the parameter: $$p$$ or $$p_1-p_2$$.
 2. Choose interval or test.
 3. Check random, independence, and large-count conditions.
@@ -267,9 +265,7 @@ Calculator output does not replace communication. You still need hypotheses, con
 
 ---
 
-## Key Equations
-
-:::key{name="Key equations"}
+:::equations
 | Idea | Equation |
 | --- | --- |
 | One-proportion interval | $$\hat{p}\pm z^*\sqrt{\hat{p}(1-\hat{p})/n}$$ |

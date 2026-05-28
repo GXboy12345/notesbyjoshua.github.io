@@ -305,13 +305,13 @@ The **common ion effect** is the suppression of ionization of a weak electrolyte
 
 ---
 
-## Working checklist
-
+:::checklist
 1. Identify strong vs weak; write the correct net ionic chemistry.
 2. Use $$K_w$$, $$K_a$$, and $$K_b$$ at a consistent temperature; link conjugates with $$K_a K_b = K_w$$.
 3. Use **ICE** tables for weak acids/bases; watch dilution and the **common ion effect**.
 4. Buffers: **Henderson–Hasselbalch equation** or full equilibrium when assumptions fail.
 5. Titrations: stoichiometry first, then equilibrium at the **equivalence point** or **half-equivalence point** for $$\text{p}K_a$$.
+:::
 
 ---
 
@@ -548,10 +548,10 @@ $$
 
 $$(C)$$ The steep part of the titration curve is where a tiny volume change causes a large pH change, so the color change most closely marks the equivalence point. If the indicator changes color far from that steep region, it will signal the endpoint too early or too late and create systematic error.
 
-<div class="placeholder-box" markdown="1">
-
-**Image placeholder:** Weak acid-strong base titration curve with equivalence point above $$\text{pH}=7$$ and an indicator transition range near the steep region.
-:::
+:::placeholder
+Weak acid-strong base titration curve with equivalence point above $$\text{pH}=7$$ and an indicator transition range near the steep region.
 :::
 
+:::
+:::
 :::

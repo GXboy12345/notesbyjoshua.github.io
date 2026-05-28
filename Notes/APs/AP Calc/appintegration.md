@@ -28,7 +28,7 @@ $$
 $$
 :::
 
-:::note
+:::placeholder
 [Image Placeholder: region between two curves with top-minus-bottom and right-minus-left labeling]
 :::
 
@@ -107,7 +107,7 @@ V = \pi \int_a^b \left([R(x)]^2-[r(x)]^2\right)\,dx
 $$
 :::
 
-:::note
+:::placeholder
 [Image Placeholder: disk vs washer setup with labeled radii]
 :::
 
@@ -162,9 +162,7 @@ $$
 
 ---
 
-## Common mistakes
-
-:::warning
+:::mistakes
 - Forgetting to split total distance when velocity changes sign.
 - Using top-minus-bottom when the curves cross inside the interval without splitting.
 - Using wrong radii in washer problems.

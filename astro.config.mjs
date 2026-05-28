@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import { LEGACY_REDIRECTS } from './src/data/legacy-redirects.ts';
 
 const base = process.env.ASTRO_BASE ?? '/';
 const site =
@@ -13,6 +14,7 @@ export default defineConfig({
   site,
   base,
   trailingSlash: 'always',
+  redirects: LEGACY_REDIRECTS,
   integrations: [
     mdx(),
     sitemap({

@@ -23,7 +23,6 @@ $$
 :::
 
 :::example
-Examples:
 
 $$
 \frac{d}{dx} (3x^2+1)^5 = 5(3x^2+1)^4(6x)
@@ -41,7 +40,6 @@ $$
 When a curve is defined by an equation relating $$x$$ and $$y$$, differentiate both sides with respect to $$x$$ and remember that $$y$$ depends on $$x$$.
 
 :::example
-Example:
 
 $$
 x^2 + y^2 = 25
@@ -60,7 +58,9 @@ $$
 $$
 :::
 
-> [Image Placeholder: circle with tangent line showing slope found implicitly]
+:::placeholder
+[Image Placeholder: circle with tangent line showing slope found implicitly]
+:::
 
 ---
 
@@ -126,7 +126,6 @@ $$
 Logarithmic differentiation is especially helpful when powers and products are mixed or when both base and exponent contain variables.
 
 :::example
-Example:
 
 If
 
@@ -151,9 +150,7 @@ $$
 
 ## Related rates
 
-:::tip
-Strategy:
-
+:::tip{title="Strategy"}
 1. Draw and label a diagram.
 2. Write an equation relating the variables.
 3. Differentiate implicitly with respect to time.
@@ -161,7 +158,9 @@ Strategy:
 5. Keep units consistent.
 :::
 
-> [Image Placeholder: ladder against wall with changing x and y distances]
+:::placeholder
+[Image Placeholder: ladder against wall with changing x and y distances]
+:::
 
 ---
 
@@ -199,9 +198,7 @@ when $$dx/dt \ne 0$$. This is the parametric analogue of the chain rule.
 
 ---
 
-## Common mistakes
-
-:::warning
+:::mistakes
 - Forgetting to multiply by the derivative of the inside.
 - Treating $$y$$ as a constant during implicit differentiation.
 - Dropping the factor $$dy/dx$$.

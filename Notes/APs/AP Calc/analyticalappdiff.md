@@ -166,9 +166,7 @@ $$
 
 ---
 
-## Common mistakes
-
-:::warning
+:::mistakes
 - Calling every critical point an extremum.
 - Using the second derivative test when $$f'(c) \ne 0$$.
 - Forgetting endpoints in absolute-extrema problems.

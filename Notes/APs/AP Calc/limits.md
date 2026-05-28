@@ -70,7 +70,7 @@ $$
 
 If the left-hand and right-hand limits disagree, the limit does not exist.
 
-:::warning
+:::mistakes
 Common reasons a limit fails to exist:
 
 - jump discontinuity,
@@ -78,7 +78,7 @@ Common reasons a limit fails to exist:
 - oscillation, such as $$\sin(1/x)$$ near $$x = 0$$.
 :::
 
-:::note
+:::placeholder
 [Image Placeholder: left-hand vs right-hand limit examples, including a jump discontinuity]
 :::
 
@@ -161,7 +161,7 @@ If $$f$$ is continuous on $$[a,b]$$ and $$N$$ lies between $$f(a)$$ and $$f(b)$$
 
 This theorem does not tell you how many such points there are, only that at least one exists.
 
-:::note
+:::placeholder
 [Image Placeholder: continuous curve crossing a horizontal line to illustrate IVT]
 :::
 
@@ -244,7 +244,6 @@ is the average rate of change, or slope of the secant line. The derivative will 
 - Extract dominant powers for end behavior.
 
 :::example{title="Rationalizing at x = 4"}
-Example:
 
 $$
 \lim_{x \to 4} \frac{\sqrt{x} - 2}{x - 4}
@@ -264,9 +263,9 @@ $$
 
 ---
 
-## Common mistakes
-
+:::mistakes
 - Plugging in before checking whether substitution is legal.
 - Claiming a limit does not exist just because the function is undefined at the point.
 - Forgetting that trig limit formulas require radians.
 - Treating vertical asymptotes as automatic DNE without checking one-sided behavior.
+:::

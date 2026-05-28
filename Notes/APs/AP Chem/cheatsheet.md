@@ -367,8 +367,7 @@ Oxidation at anode; reduction at cathode.
 
 ---
 
-## Pitfalls
-
+:::mistakes
 - K in gas/eqm/thermo; not °C
 - No s, l in $K$
 - Rate-law orders from data, not coefficients
@@ -376,3 +375,4 @@ Oxidation at anode; reduction at cathode.
 - Catalyst: no $K$, no $\Delta G^\circ$
 - Bond polarity ≠ molecular polarity
 - Anode/cathode signs flip (galvanic vs electrolytic)
+:::

@@ -103,7 +103,7 @@ Given a graph of a derivative:
 - negative derivative means decreasing,
 - derivative crossing zero may indicate an extremum in the original function.
 
-:::note
+:::placeholder
 [Image Placeholder: contextual graph with slope interpretation at several labeled points]
 :::
 
@@ -180,9 +180,7 @@ At large production levels, these are interpreted as approximate change from one
 
 ---
 
-## Common mistakes
-
-:::warning
+:::mistakes
 - Reporting velocity when the question asks for speed.
 - Giving a derivative without units.
 - Using the wrong variable as the independent variable.

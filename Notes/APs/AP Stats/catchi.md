@@ -60,7 +60,7 @@ Chi-square tests are right-tailed: the p-value is the probability of getting a c
 
 ## Conditions For Chi-Square Tests
 
-:::exam{topic="Chi-square conditions"}
+:::conditions
 Common conditions:
 
 1. Counts come from a random sample, random assignment, or randomized process.
@@ -205,9 +205,7 @@ For two-way tables, store observed counts in a matrix, run the test, and inspect
 
 ---
 
-## Working Checklist
-
-:::summary{title="Working checklist"}
+:::checklist
 1. Identify the test: goodness-of-fit, independence, or homogeneity.
 2. State hypotheses in context.
 3. Calculate expected counts and check conditions.
@@ -219,9 +217,7 @@ For two-way tables, store observed counts in a matrix, run the test, and inspect
 
 ---
 
-## Key Equations
-
-:::key{name="Key equations"}
+:::equations
 | Idea | Equation |
 | --- | --- |
 | Chi-square statistic | $$\chi^2=\sum \frac{(O-E)^2}{E}$$ |

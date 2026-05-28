@@ -240,7 +240,7 @@ There is a radius of convergence $$R$$:
 - endpoints must be checked separately.
 :::
 
-:::note
+:::placeholder
 [Image Placeholder: number line showing center, radius, and endpoint testing]
 :::
 
@@ -302,9 +302,7 @@ For alternating Maclaurin series with decreasing term magnitudes, the truncation
 
 ---
 
-## Common mistakes
-
-:::warning
+:::mistakes
 - Forgetting that $$a_n \to 0$$ is necessary but not sufficient.
 - Using a convergence test whose hypotheses do not apply.
 - Stopping after finding the radius of convergence without testing endpoints.

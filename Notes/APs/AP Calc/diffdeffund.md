@@ -35,7 +35,7 @@ Interpretations:
 - local sensitivity of output to input.
 :::
 
-:::note
+:::placeholder
 [Image Placeholder: secant lines approaching a tangent line]
 :::
 
@@ -210,9 +210,7 @@ $$
 
 ---
 
-## Common mistakes
-
-:::warning
+:::mistakes
 - Confusing the derivative at a point with the derivative function.
 - Forgetting the product rule and differentiating term-by-term incorrectly.
 - Using the quotient rule with the wrong sign in the numerator.

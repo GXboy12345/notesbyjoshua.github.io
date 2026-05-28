@@ -228,9 +228,7 @@ Calculator output should be translated into statistical language: parameter, con
 
 ---
 
-## Working Checklist
-
-:::summary{title="Working checklist"}
+:::checklist
 1. Identify the parameter: $$\mu$$, $$\mu_1-\mu_2$$, or $$\mu_d$$.
 2. Decide whether the samples are independent or paired.
 3. Check random, independence, and normal/large sample conditions.
@@ -241,8 +239,7 @@ Calculator output should be translated into statistical language: parameter, con
 
 ---
 
-## Key Equations
-
+:::equations
 | Idea | Equation |
 | --- | --- |
 | One-sample t interval | $$\bar{x}\pm t^*s/\sqrt{n}$$ |
@@ -251,3 +248,4 @@ Calculator output should be translated into statistical language: parameter, con
 | Two-sample t test | $$t=\frac{(\bar{x}_1-\bar{x}_2)-0}{\sqrt{s_1^2/n_1+s_2^2/n_2}}$$ |
 | Matched pairs interval | $$\bar{d}\pm t^*s_d/\sqrt{n}$$ |
 | Matched pairs test | $$t=(\bar{d}-\mu_{d,0})/(s_d/\sqrt{n})$$ |
+:::

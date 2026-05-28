@@ -50,7 +50,7 @@ $$
 $$
 :::
 
-:::note
+:::placeholder
 [Image Placeholder: parametric curve with tangent vectors and repeated tracing]
 :::
 
@@ -137,7 +137,7 @@ A = \frac12 \int_a^b [r(\theta)]^2\,d\theta.
 $$
 :::
 
-:::note
+:::placeholder
 [Image Placeholder: sector approximation leading to polar area formula]
 :::
 
@@ -187,9 +187,7 @@ gives acceleration.
 
 ---
 
-## Common mistakes
-
-:::warning
+:::mistakes
 - Forgetting that $$dy/dx$$ for parametric or polar curves is a ratio of derivatives.
 - Declaring a vertical tangent whenever the denominator is zero without checking the numerator.
 - Losing track of the interval of parameter values or angles actually tracing the region.

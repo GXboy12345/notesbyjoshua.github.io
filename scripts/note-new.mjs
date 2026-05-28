@@ -39,12 +39,12 @@ const COURSES = {
   'ap-physics-c-mech': {
     dir: 'Notes/APs/AP Physics C Mech',
     parent: 'AP Physics C Mechanics',
-    permalinkPrefix: '/notes/physics',
+    permalinkPrefix: '/notes/ap/ap-physics-c-mechanics',
   },
   'ap-physics-c-em': {
     dir: 'Notes/APs/AP Physics C E&M',
     parent: 'AP Physics C E&M',
-    permalinkPrefix: '/notes/physics',
+    permalinkPrefix: '/notes/ap/ap-physics-c-em',
   },
 };
 

@@ -290,9 +290,7 @@ $$
 
 ---
 
-## Working Checklist
-
-:::summary{title="Working checklist"}
+:::checklist
 1. Identify the statistic: $$\hat{p}$$, $$\bar{x}$$, a difference, or another statistic.
 2. State the parameter the statistic estimates.
 3. Check randomness and independence.
@@ -303,9 +301,7 @@ $$
 
 ---
 
-## Key Equations
-
-:::key{name="Key equations"}
+:::equations
 | Idea | Equation |
 | --- | --- |
 | Sample proportion | $$\hat{p} = x/n$$ |

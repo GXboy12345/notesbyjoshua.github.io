@@ -348,9 +348,10 @@ $$
 :::solution
 $$(A)$$ In $$\text{CH}_2\text{O}$$, carbon is bonded to two H atoms and double-bonded to O. In $$\text{CH}_3\text{OH}$$, carbon is bonded to three H atoms and single-bonded to O, while O is bonded to H and has two lone pairs.
 
-<div class="placeholder-box" markdown="1">
+:::placeholder
+Lewis structures for $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
+:::
 
-**Image placeholder:** Lewis structures for $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
 :::
 :::
 

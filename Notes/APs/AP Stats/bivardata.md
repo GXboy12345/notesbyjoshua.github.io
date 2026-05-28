@@ -216,7 +216,7 @@ Curved patterns mean the relationship is probably nonlinear; a linear model is a
 When a scatterplot shows a nonlinear trend, one strategy is to transform one or both variables so that the new relationship is more nearly linear. You then fit the line to the transformed scale and interpret conclusions in original units when you report results.
 
 :::example{title="Exponential linearization"}
-Example: if \(y\) grows exponentially with \(x\), plotting \(\ln(y)\) against \(x\) may straighten the cloud. Symbolically, if $$y = a e^{kx}$$ in an idealized world, then $$ln(y) = ln(a) + kx$$ is linear in $$x$$.
+If \(y\) grows exponentially with \(x\), plotting \(\ln(y)\) against \(x\) may straighten the cloud. Symbolically, if $$y = a e^{kx}$$ in an idealized world, then $$ln(y) = ln(a) + kx$$ is linear in $$x$$.
 :::
 
 ### Common transformations

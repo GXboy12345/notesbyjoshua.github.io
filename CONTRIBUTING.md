@@ -47,6 +47,11 @@ Find the amplitude and period of $y = 3\sin(2x)$.
 On the exam, write the rate law from the slow step only.
 :::
 
+:::tip{title="Strategy"}
+1. Draw and label a diagram.
+2. Write an equation relating the variables.
+:::
+
 :::warning
 Do not confuse $K$ with $K_p$ when species are in different phases.
 :::
@@ -54,6 +59,28 @@ Do not confuse $K$ with $K_p$ when species are in different phases.
 :::mistakes
 - Using initial concentrations instead of equilibrium values in $K$.
 - Forgetting to omit pure solids and liquids from $K_c$.
+:::
+
+:::checklist
+1. Balance the equation and identify phase of each species.
+2. Write $K_c$ omitting pure solids and liquids.
+3. Build an ICE table when solving for equilibrium concentrations.
+:::
+
+:::conditions
+1. Random sample or random assignment.
+2. Independence: if sampling without replacement, $n \le 0.10N$.
+3. Large counts: $n\hat{p} \ge 10$ and $n(1-\hat{p}) \ge 10$.
+:::
+
+:::equations
+| Idea | Equation |
+| --- | --- |
+| Equilibrium constant | $K_c = \dfrac{[\text{C}]^l [\text{D}]^m}{[\text{A}]^j [\text{B}]^k}$ |
+:::
+
+:::placeholder
+Slope field with equilibrium solution and sample integral curves.
 :::
 
 :::note
@@ -74,9 +101,13 @@ College Board often tests ICE tables with a small initial change.
 | `:::theorem` | Definitions, laws, named results | `name=` theorem name |
 | `:::example` | Worked problems | `title=` example title |
 | `:::proof` | Proofs | `of=` result being proved |
-| `:::tip` | Mnemonics and exam tactics | — |
+| `:::tip` | Mnemonics and exam tactics | `title=` tip title (e.g. strategy name) |
 | `:::warning` | Single trap or caution | — |
 | `:::mistakes` | Collected common-mistakes lists | — |
+| `:::checklist` | Numbered problem-solving steps | — |
+| `:::conditions` | Inference or procedure prerequisites | — |
+| `:::equations` | Reference formula tables | — |
+| `:::placeholder` | Missing figure or diagram stub | — |
 | `:::note` | Asides and conventions | — |
 | `:::exam` | "On the test" / CB alignment | `topic=` exam focus |
 | `:::key` | One formula or rule to memorize | `name=` formula name |
@@ -181,7 +212,16 @@ Do not put `layout:` in the body—only in frontmatter.
 
 ## Sidebar placement
 
-The library tree is built from `permalink` by default. When a source folder's units should appear under a different branch (legacy URLs), add one row to `NOTES_SIDEBAR_MOUNTS` in `src/data/notes-library.ts`. `sourcePrefix` is the Astro collection entry id prefix (lowercase slug, e.g. `aps/ap-calc/`), not the on-disk folder name. Per-file override: `nav_path` in frontmatter.
+The library tree is built from `permalink` by default. **Prefer permalinks that match the nav hierarchy** so units nest under the right hub without extra config:
+
+| Course | Unit permalink pattern |
+| --- | --- |
+| AP Chemistry, Stats, Precalc | `/notes/ap/{course}/{unit}/` |
+| AP Physics C Mechanics / E&M | `/notes/ap/ap-physics-c-mechanics/{unit}/`, `/notes/ap/ap-physics-c-em/{unit}/` |
+| F=ma, USAPhO | `/notes/physics/{unit}/` |
+| AP Calculus (legacy URLs) | `/notes/math/{unit}/` — sidebar mount in `NOTES_SIDEBAR_MOUNTS` until migrated |
+
+When a source folder's units must keep old URLs, add one row to `NOTES_SIDEBAR_MOUNTS` in `src/data/notes-library.ts` and register redirects in `src/data/legacy-redirects.ts`. `sourcePrefix` is the Astro collection entry id prefix (lowercase slug, e.g. `aps/ap-calc/`), not the on-disk folder name. Per-file override: `nav_path` in frontmatter.
 
 ## Local dev
 

@@ -543,9 +543,10 @@ $$
 
 $$(C)$$ The $$0.040\ M$$ solution has twice the concentration, so an equal-volume particle diagram should show twice as many colored ions. The volume of the box must stay the same; only the number of solute particles should change.
 
-<div class="placeholder-box" markdown="1">
+:::placeholder
+Equal-volume particle diagrams showing the $$0.040\ M$$ solution with twice as many colored ions as the $$0.020\ M$$ solution.
+:::
 
-**Image placeholder:** Equal-volume particle diagrams showing the $$0.040\ M$$ solution with twice as many colored ions as the $$0.020\ M$$ solution.
 :::
 :::
 :::

@@ -4,7 +4,7 @@ title: 1D and 2D Kinematics
 nav_title: "Unit 1: 1D and 2D Kinematics"
 parent: AP Physics C Mechanics
 nav_order: 1
-permalink: /notes/physics/kinematics/
+permalink: /notes/ap/ap-physics-c-mechanics/kinematics/
 ---
 
 # 1D and 2D Kinematics
