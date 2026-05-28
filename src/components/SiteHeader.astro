@@ -1,5 +1,6 @@
 ---
 import { mainNav } from '../data/navigation';
+import { p, pathActive } from '../lib/paths';
 import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
@@ -10,11 +11,11 @@ const { current = Astro.url.pathname } = Astro.props;
 ---
 
 <header class="site-header">
-  <a class="brand" href="/">Notes by <span>Joshua</span></a>
+  <a class="brand" href={p('/')}>Notes by <span>Joshua</span></a>
   <nav class="header-nav" aria-label="Primary">
     {
       mainNav.map((item) => (
-        <a href={item.href} aria-current={current === item.href || current.startsWith(item.href.replace(/\/$/, '') + '/') ? 'page' : undefined}>
+        <a href={p(item.href)} aria-current={pathActive(current, item.href) ? 'page' : undefined}>
           {item.label}
         </a>
       ))

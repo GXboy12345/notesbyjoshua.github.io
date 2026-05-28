@@ -1,0 +1,24 @@
+---
+---
+<script>
+  import renderMathInElement from 'katex/contrib/auto-render';
+
+  const opts = {
+    delimiters: [
+      { left: '$$', right: '$$', display: true },
+      { left: '\\[', right: '\\]', display: true },
+      { left: '\\(', right: '\\)', display: false },
+      { left: '$', right: '$', display: false },
+    ],
+    throwOnError: false,
+    strict: false,
+  };
+
+  function run() {
+    const el = document.querySelector('.doc-main .prose');
+    if (el) renderMathInElement(el, opts);
+  }
+
+  run();
+  document.addEventListener('astro:page-load', run);
+</script>

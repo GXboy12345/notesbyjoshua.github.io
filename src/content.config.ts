@@ -22,7 +22,7 @@ export const collections = {
     }),
     schema: fm.extend({ nav_order: z.coerce.number().optional() }),
   }),
-  blog: defineCollection({
+  siteBlog: defineCollection({
     loader: glob({ pattern: '**/*.md', base: './blog' }),
     schema: fm,
   }),
@@ -30,11 +30,11 @@ export const collections = {
     loader: glob({ pattern: '**/*.md', base: './Practice Problems' }),
     schema: fm,
   }),
-  resources: defineCollection({
+  siteResources: defineCollection({
     loader: glob({ pattern: '**/*.md', base: './Resources' }),
     schema: fm,
   }),
-  feedback: defineCollection({
+  siteFeedback: defineCollection({
     loader: glob({ pattern: '**/*.md', base: './feedback' }),
     schema: fm.extend({
       feedback_form_embed_url: z.string().optional(),

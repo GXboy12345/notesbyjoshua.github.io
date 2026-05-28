@@ -1,25 +1,28 @@
 ---
 import { mainNav } from '../data/navigation';
+import { p, pathActive } from '../lib/paths';
+import { allDocEntries } from '../lib/resolve-doc';
+import { buildNotesTree } from '../lib/notes-tree';
+import NotesTree from './NotesTree.astro';
 
 interface Props {
   current?: string;
 }
 
 const { current = Astro.url.pathname } = Astro.props;
+const notesTree = buildNotesTree(await allDocEntries());
 ---
 
 <aside id="doc-sidebar" class="doc-sidebar" aria-label="Section navigation">
-  <nav>
+  <nav class="sidebar-primary">
     {
       mainNav.map((item) => (
-        <a href={item.href} aria-current={current === item.href ? 'page' : undefined}>
+        <a href={p(item.href)} aria-current={pathActive(current, item.href) ? 'page' : undefined}>
           {item.label}
         </a>
       ))
     }
   </nav>
-  <p class="nav-section">Subjects</p>
-  <a href="/notes/ap/" aria-current={current.startsWith('/notes/ap') ? 'page' : undefined}>AP</a>
-  <a href="/notes/math/" aria-current={current.startsWith('/notes/math') ? 'page' : undefined}>Math</a>
-  <a href="/notes/physics/" aria-current={current.startsWith('/notes/physics') ? 'page' : undefined}>Physics</a>
+  <p class="nav-section">Notes library</p>
+  <NotesTree nodes={notesTree} current={current} />
 </aside>

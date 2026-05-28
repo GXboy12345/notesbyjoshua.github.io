@@ -3,6 +3,7 @@ import '../styles/global.css';
 import 'katex/dist/katex.min.css';
 import ThemeScript from '../components/ThemeScript.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import { p } from '../lib/paths';
 
 interface Props {
   title?: string;
@@ -20,7 +21,7 @@ const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Jo
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{fullTitle}</title>
-    <link rel="icon" type="image/jpeg" href="/assets/Images/favicon.jpeg" />
+    <link rel="icon" type="image/jpeg" href={p('/assets/Images/favicon.jpeg')} />
     <ThemeScript />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-868QCS9DJP"></script>
     <script is:inline>

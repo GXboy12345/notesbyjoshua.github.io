@@ -1,68 +1,254 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { subjectHubs } from '../data/navigation';
+import { p } from '../lib/paths';
+import {
+  apCourses,
+  intro,
+  mathGroups,
+  pageSections,
+  physicsGroups,
+  release,
+  siteLinks,
+  statusLabel,
+  updates,
+} from '../data/home';
 ---
 
-<BaseLayout>
-  <section class="hero">
-    <div class="hero-grid">
-      <div>
-        <h1>Free study notes for AP, math, and physics</h1>
-        <p class="hero-lead">
-          Notes by Joshua is in alpha-3: structured units, competition prep, and hub pages for every subject on the site.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="/how-to-use-these-notes/">How to use these notes</a>
-          <a class="btn" href="/notes/ap/">Browse AP notes</a>
-          <a class="btn" href="/feedback/">Feedback</a>
+<BaseLayout
+  title="Notes by Joshua"
+  description="Free AP, math, and physics study notes organized by subject."
+>
+  <a class="home-skip" href="#home-main">Skip to content</a>
+
+  <div class="home">
+    <header class="home-header">
+      <p class="home-release">{release}</p>
+      <h1>Notes by Joshua</h1>
+      <p class="home-intro">{intro}</p>
+      <div class="home-actions">
+        <a class="btn btn-primary" href={p('/Notes/notes/')}>Browse all notes</a>
+        <a class="btn" href={p('/how-to-use-these-notes/')}>How to use these notes</a>
+        <a class="btn" href={p('/feedback/')}>Request a unit</a>
+      </div>
+    </header>
+
+    <nav class="home-jump" aria-label="On this page">
+      <span class="home-jump-label">On this page</span>
+      <ul>
+        {
+          pageSections.map((section) => (
+            <li>
+              <a href={`#${section.id}`}>{section.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <main id="home-main" class="home-main">
+      <section class="home-section" id="ap-courses" aria-labelledby="ap-heading">
+        <div class="home-section-head">
+          <h2 id="ap-heading">AP courses</h2>
         </div>
-      </div>
-      <div class="panel">
-        <h2>News</h2>
-        <ul class="news-list">
-          <li><strong>May 19, 2026</strong> — Alpha-3: AP Precalculus notes added.</li>
-          <li><strong>April 2, 2026</strong> — Alpha-2: AP Chem, Physics C E&amp;M, and Statistics.</li>
-          <li><strong>March 29, 2026</strong> — Alpha-1 launch; more units incoming.</li>
+
+        <label class="home-search" for="ap-filter">
+          <span class="visually-hidden">Filter AP courses</span>
+          <input
+            id="ap-filter"
+            type="search"
+            placeholder="Search courses"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </label>
+        <p class="home-filter-status visually-hidden" id="ap-filter-status" aria-live="polite" aria-atomic="true"></p>
+
+        <ul class="home-ap-list" id="ap-list">
+          {
+            apCourses.map((course) => (
+              <li
+                class="home-ap-item"
+                data-search={course.course.toLowerCase()}
+                data-status={course.status}
+              >
+                <a class="home-ap-link" href={p(course.href)}>
+                  <span class="home-ap-name">{course.course}</span>
+                  <span class="home-ap-units">{course.units}</span>
+                  <span class={`home-ap-status home-ap-status--${course.status}`}>
+                    {statusLabel[course.status]}
+                  </span>
+                  {course.detail && <span class="home-ap-detail">{course.detail}</span>}
+                </a>
+              </li>
+            ))
+          }
         </ul>
-      </div>
-    </div>
-  </section>
 
-  <section class="subject-grid" aria-label="Subjects">
-    {
-      subjectHubs.map((hub) => (
-        <a class="subject-card" href={hub.href} data-tone={hub.tone}>
-          <h3>{hub.title}</h3>
-          <p>{hub.desc}</p>
-        </a>
-      ))
-    }
-    <a class="subject-card" href="/practiceproblems/practice/" data-tone="math">
-      <h3>Practice problems</h3>
-      <p>Exercises paired with units where available</p>
-    </a>
-    <a class="subject-card" href="/Resources/resources/" data-tone="physics">
-      <h3>Resources</h3>
-      <p>External links, books, and tools</p>
-    </a>
-  </section>
+        <p class="home-section-foot">
+          <a href={p('/notes/ap/')}>Open the AP hub</a>
+        </p>
+      </section>
 
-  <section class="hero" style="padding-top: 0">
-    <div class="panel" style="max-width: 72rem; margin: 0 auto">
-      <h2>Available now</h2>
-      <ul>
-        <li>AP Chem units 1–9</li>
-        <li>AP Physics C E&amp;M units 1–2</li>
-        <li>AP Stats units 1–9</li>
-        <li>AP Physics C Mech unit 1</li>
-        <li>AP Precalc units 1–14 (except unit 10)</li>
-      </ul>
-      <h2>In progress</h2>
-      <ul>
-        <li>AP Precalc unit 10</li>
-        <li>AP Calc BC units 1–10</li>
-        <li>AP Physics C E&amp;M units 3–6</li>
-      </ul>
-    </div>
-  </section>
+      <section class="home-section" id="math" aria-labelledby="math-heading">
+        <div class="home-section-head">
+          <h2 id="math-heading">Math</h2>
+        </div>
+
+        <div class="home-groups">
+          {
+            mathGroups.map((group) => (
+              <article class="home-group">
+                <div class="home-group-top">
+                  <h3>
+                    <a href={p(group.href)}>{group.title}</a>
+                  </h3>
+                  {group.status && (
+                    <span class={`home-ap-status home-ap-status--${group.status}`}>
+                      {statusLabel[group.status]}
+                    </span>
+                  )}
+                </div>
+                <p class="home-group-summary">{group.summary}</p>
+                <details class="home-units">
+                  <summary>
+                    {group.units.length} unit{group.units.length === 1 ? '' : 's'}
+                  </summary>
+                  <ul>
+                    {group.units.map((unit) => (
+                      <li>
+                        <a href={p(unit.href)}>{unit.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </article>
+            ))
+          }
+        </div>
+
+        <p class="home-section-foot">
+          <a href={p('/notes/math/')}>Open the math hub</a>
+        </p>
+      </section>
+
+      <section class="home-section" id="physics" aria-labelledby="physics-heading">
+        <div class="home-section-head">
+          <h2 id="physics-heading">Physics</h2>
+        </div>
+
+        <div class="home-groups">
+          {
+            physicsGroups.map((group) => (
+              <article class="home-group">
+                <div class="home-group-top">
+                  <h3>
+                    <a href={p(group.href)}>{group.title}</a>
+                  </h3>
+                  {group.status && (
+                    <span class={`home-ap-status home-ap-status--${group.status}`}>
+                      {statusLabel[group.status]}
+                    </span>
+                  )}
+                </div>
+                <p class="home-group-summary">{group.summary}</p>
+                <details class="home-units">
+                  <summary>
+                    {group.units.length} unit{group.units.length === 1 ? '' : 's'}
+                  </summary>
+                  <ul>
+                    {group.units.map((unit) => (
+                      <li>
+                        <a href={p(unit.href)}>{unit.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </article>
+            ))
+          }
+        </div>
+
+        <p class="home-section-foot">
+          <a href={p('/notes/physics/')}>Open the physics hub</a>
+        </p>
+      </section>
+
+      <section class="home-section" id="site" aria-labelledby="site-heading">
+        <div class="home-section-head">
+          <h2 id="site-heading">Site links</h2>
+        </div>
+
+        <ul class="home-site-grid">
+          {
+            siteLinks.map((link) => (
+              <li>
+                <a class="home-site-card" href={p(link.href)}>
+                  <span class="home-site-title">{link.title}</span>
+                  <span class="home-site-desc">{link.desc}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="home-section home-section--updates" id="updates" aria-labelledby="updates-heading">
+        <div class="home-section-head">
+          <h2 id="updates-heading">Recent updates</h2>
+        </div>
+        <ol class="home-updates">
+          {
+            updates.map((row) => (
+              <li>
+                <time datetime={row.iso}>{row.date}</time>
+                <p>{row.text}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+    </main>
+  </div>
 </BaseLayout>
+
+<script>
+  const input = document.getElementById('ap-filter') as HTMLInputElement | null;
+  const list = document.getElementById('ap-list');
+  const status = document.getElementById('ap-filter-status');
+  if (input && list && status) {
+    const items = [...list.querySelectorAll<HTMLElement>('.home-ap-item')];
+    const total = items.length;
+
+    const filter = () => {
+      const q = input.value.trim().toLowerCase();
+      let visible = 0;
+      items.forEach((item) => {
+        const match = !q || item.dataset.search?.includes(q);
+        item.hidden = !match;
+        if (match) visible += 1;
+      });
+      status.textContent =
+        q === ''
+          ? ''
+          : visible === 0
+            ? 'No matching courses'
+            : `${visible} of ${total} courses`;
+    };
+
+    input.addEventListener('input', filter);
+  }
+</script>
+
+<style is:global>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
