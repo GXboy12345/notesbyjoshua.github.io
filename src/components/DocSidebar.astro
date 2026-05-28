@@ -15,53 +15,71 @@ const notesTree = buildNotesTree(await allDocEntries());
 
 <div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
 
-<aside
-  id="doc-sidebar"
-  class="doc-sidebar"
-  aria-label="Section navigation"
-  transition:persist="doc-sidebar"
->
-  <div class="sidebar-inner">
-    <nav class="sidebar-primary" aria-label="Primary">
-      {
-        mainNav.map((item) => (
-          <a
-            class="sidebar-primary-link"
-            href={p(item.href)}
-            aria-current={pathActive(current, item.href) ? 'page' : undefined}
-          >
-            {item.label}
-          </a>
-        ))
-      }
-    </nav>
-
-    <nav class="sidebar-hubs" aria-label="Subject hubs">
-      {
-        subjectHubs.map((hub) => (
-          <a
-            class="sidebar-hub"
-            href={p(hub.href)}
-            data-tone={hub.tone}
-            aria-current={pathActive(current, hub.href) ? 'page' : undefined}
-          >
-            {hub.title}
-          </a>
-        ))
-      }
-    </nav>
-
-    <div class="sidebar-divider" role="separator"></div>
-
-    <p class="nav-section sidebar-section-label">Notes library</p>
-
-    <div class="sidebar-tree-scroll">
-      <NotesTree nodes={notesTree} current={current} />
+<div class="doc-sidebar-host">
+  <aside
+    id="doc-sidebar"
+    class="doc-sidebar"
+    aria-label="Section navigation"
+    transition:persist="doc-sidebar"
+  >
+    <div class="sidebar-toolbar">
+      <span class="sidebar-toolbar-label">Notes</span>
     </div>
-  </div>
-</aside>
+
+    <div id="sidebar-inner" class="sidebar-inner">
+      <nav class="sidebar-primary" aria-label="Primary">
+        {
+          mainNav.map((item) => (
+            <a
+              class="sidebar-primary-link"
+              href={p(item.href)}
+              aria-current={pathActive(current, item.href) ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <nav class="sidebar-hubs" aria-label="Subject hubs">
+        {
+          subjectHubs.map((hub) => (
+            <a
+              class="sidebar-hub"
+              href={p(hub.href)}
+              data-tone={hub.tone}
+              aria-current={pathActive(current, hub.href) ? 'page' : undefined}
+            >
+              {hub.title}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="sidebar-divider" role="separator"></div>
+
+      <p class="nav-section sidebar-section-label">Notes library</p>
+
+      <div class="sidebar-tree-scroll">
+        <NotesTree nodes={notesTree} current={current} />
+      </div>
+    </div>
+  </aside>
+
+  <button
+    type="button"
+    class="sidebar-toggle"
+    aria-expanded="true"
+    aria-controls="sidebar-inner"
+    aria-label="Toggle notes sidebar"
+  >
+    <span class="sidebar-toggle-icon" aria-hidden="true"></span>
+  </button>
+</div>
 
 <script>
+  import { initSidebar, syncSidebarActive } from '../scripts/sidebar.ts';
+
   document.addEventListener(
     'click',
     (e) => {
@@ -70,4 +88,11 @@ const notesTree = buildNotesTree(await allDocEntries());
     },
     true,
   );
+
+  initSidebar();
+  syncSidebarActive();
+  document.addEventListener('astro:page-load', () => {
+    initSidebar();
+    syncSidebarActive();
+  });
 </script>

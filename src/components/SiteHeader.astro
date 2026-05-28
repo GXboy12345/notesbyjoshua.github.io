@@ -23,26 +23,5 @@ const { current = Astro.url.pathname } = Astro.props;
   </nav>
   <div class="header-actions">
     <ThemeToggle />
-    <button
-      type="button"
-      class="btn menu-toggle"
-      hidden
-      aria-expanded="true"
-      aria-controls="doc-sidebar"
-      aria-label="Toggle notes sidebar"
-    >
-      Sidebar
-    </button>
   </div>
 </header>
-
-<script>
-  import { initSidebar, syncSidebarActive } from '../scripts/sidebar.ts';
-
-  initSidebar();
-  syncSidebarActive();
-  document.addEventListener('astro:page-load', () => {
-    initSidebar();
-    syncSidebarActive();
-  });
-</script>
