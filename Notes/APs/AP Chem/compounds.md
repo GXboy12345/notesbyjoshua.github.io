@@ -157,13 +157,13 @@ The **Born–Haber cycle** is a **Hess’s law** (See more in [Unit 6]({{ '/note
 
 Take a 1:1 alkali halide $$\text{MX}$$, formed from $$\text{M}(s)$$ and $$\tfrac{1}{2}\text{X}_2(g)$$. Imagine the path:
 
-1. **Atomize the metal** (sublimation): $$\text{M}(s) \rightarrow \text{M}(g)$$ with $$\Delta H = \Delta H_{\text{sub}}$$ (usually endothermic).  
+1. **Atomize the metal** (sublimation): $$\text{M}(s) \rightarrow \text{M}(g)$$ with $$\Delta H = \Delta H_{\text{sub}}$$ (usually endothermic).
 
-2. **Ionize the metal**: $$\text{M}(g) \rightarrow \text{M}^+(g) + e^-$$ with $$\Delta H = \text{IE}$$ (endothermic; use the correct successive ionization energies if more than one electron is lost). 
+2. **Ionize the metal**: $$\text{M}(g) \rightarrow \text{M}^+(g) + e^-$$ with $$\Delta H = \text{IE}$$ (endothermic; use the correct successive ionization energies if more than one electron is lost).
 
-3. **Atomize the halogen**: $$\tfrac{1}{2}\text{X}_2(g) \rightarrow \text{X}(g)$$ with $$\Delta H = \tfrac{1}{2}D_{\text{X–X}}$$ (endothermic; half the $$\text{X–X}$$ bond enthalpy).  
+3. **Atomize the halogen**: $$\tfrac{1}{2}\text{X}_2(g) \rightarrow \text{X}(g)$$ with $$\Delta H = \tfrac{1}{2}D_{\text{X–X}}$$ (endothermic; half the $$\text{X–X}$$ bond enthalpy).
 
-4. **Attach an electron to the halogen**: $$\text{X}(g) + e^- \rightarrow \text{X}^-(g)$$ with $$\Delta H = \Delta H_{\text{ea}}$$. For halogens this step is exothermic, so $$\Delta H_{\text{ea}}$$ is negative when reported as an enthalpy change. (If a table lists **electron affinity** with a different sign convention, convert it to $$\Delta H$$ for this step before you add.)  
+4. **Attach an electron to the halogen**: $$\text{X}(g) + e^- \rightarrow \text{X}^-(g)$$ with $$\Delta H = \Delta H_{\text{ea}}$$. For halogens this step is exothermic, so $$\Delta H_{\text{ea}}$$ is negative when reported as an enthalpy change. (If a table lists **electron affinity** with a different sign convention, convert it to $$\Delta H$$ for this step before you add.)
 
 5. **Form the crystal from gas ions**: $$\text{M}^+(g) + \text{X}^-(g) \rightarrow \text{MX}(s)$$. This step is strongly exothermic. Textbooks often define **lattice energy** $$U_{\text{lattice}}$$ as a positive number equal to the endothermic enthalpy of the **reverse** process: one mole of solid separated into isolated gaseous ions:
 
@@ -190,3 +190,193 @@ For salts with other stoichiometries (e.g. $$\text{MgCl}_2$$, $$\text{Na}_2\text
 Qualitatively, larger ion charges and smaller ions (shorter internuclear distances in the lattice) increase $$U_{\text{lattice}}$$, consistent with Coulomb attraction in the lattice and with the trends introduced earlier in this unit. A picture has been added below for illustrative purposes.
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/compounds/bornhaber.gif' | relative_url }}" alt="Born-Haber Cycle" loading="lazy" decoding="async" />
+
+---
+
+## Practice
+
+### MCQ
+
+1. Which molecule is polar?
+
+   (A) $$\text{CO}_2$$<br>
+   (B) $$\text{BF}_3$$<br>
+   (C) $$\text{CH}_4$$<br>
+   (D) $$\text{NH}_3$$
+
+2. Which compound should have the greatest lattice energy magnitude?
+
+   (A) $$\text{NaF}$$<br>
+   (B) $$\text{NaCl}$$<br>
+   (C) $$\text{MgO}$$<br>
+   (D) $$\text{MgCl}_2$$
+
+3. Which species has a tetrahedral molecular geometry?
+
+   (A) $$\text{CO}_2$$<br>
+   (B) $$\text{NH}_3$$<br>
+   (C) $$\text{CH}_4$$<br>
+   (D) $$\text{BF}_3$$
+
+4. In a nitrate ion, $$\text{NO}_3^-$$, resonance means that
+
+   (A) the atoms repeatedly switch positions.<br>
+   (B) one N-O bond is permanently double while the other two are permanently single.<br>
+   (C) the actual ion has three equivalent N-O bonds with bond order between single and double.<br>
+   (D) the ion violates conservation of charge.
+
+5. Which molecule has a bent molecular geometry?
+
+   (A) $$\text{CO}_2$$<br>
+   (B) $$\text{H}_2\text{O}$$<br>
+   (C) $$\text{BF}_3$$<br>
+   (D) $$\text{CH}_4$$
+
+6. Which bond is most polar?
+
+   (A) C-H<br>
+   (B) C-C<br>
+   (C) H-F<br>
+   (D) Cl-Cl
+
+### FRQ
+
+7. Consider the molecules $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
+
+   $$(A)$$ Draw a reasonable Lewis structure for each molecule.
+
+   $$(B)$$ Identify the hybridization of the carbon atom in each molecule.
+
+   $$(C)$$ Explain which molecule can form stronger intermolecular attractions with water.
+
+8. The 2026 AP Chemistry exam asked students about chromate resonance and VSEPR geometry. (Adapted from College Board, [2026 AP Chemistry FRQ 2](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
+
+   $$(A)$$ Predict the molecular geometry around chromium in $$\text{CrO}_4^{2-}$$.
+
+   $$(B)$$ Explain why multiple resonance structures can be drawn for $$\text{CrO}_4^{2-}$$.
+
+   $$(C)$$ Explain why the four Cr-O bonds are expected to be equivalent in the resonance hybrid.
+
+---
+
+## Solutions
+
+### MCQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$\text{NH}_3$$ has three N-H bonds and one lone pair on nitrogen, giving a trigonal pyramidal shape. The bond dipoles do not cancel.
+
+$$
+\boxed{\text{D}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+Lattice energy increases when ion charges are larger and ion radii are smaller. $$\text{MgO}$$ contains $$\text{Mg}^{2+}$$ and $$\text{O}^{2-}$$, so the charge product is larger than in the salts with only $$1+$$ or $$1-$$ ions.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+$$\text{CH}_4$$ has four bonding domains and no lone pairs on the central atom, so its molecular geometry is tetrahedral.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+Resonance structures are different valid Lewis structures with the same atom connectivity but different electron placement. In nitrate, the real ion is a resonance hybrid with equivalent N-O bonds.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
+
+Water has two bonding domains and two lone pairs around oxygen, giving a bent molecular geometry.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+The H-F bond has the largest electronegativity difference among the choices, so it is the most polar.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$(A)$$ In $$\text{CH}_2\text{O}$$, carbon is bonded to two H atoms and double-bonded to O. In $$\text{CH}_3\text{OH}$$, carbon is bonded to three H atoms and single-bonded to O, while O is bonded to H and has two lone pairs.
+
+<div class="placeholder-box" markdown="1">
+
+**Image placeholder:** Lewis structures for $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
+
+</div>
+
+$$(B)$$ The carbon in $$\text{CH}_2\text{O}$$ has three electron domains, so it is
+
+$$
+\boxed{sp^2}.
+$$
+
+The carbon in $$\text{CH}_3\text{OH}$$ has four electron domains, so it is
+
+$$
+\boxed{sp^3}.
+$$
+
+$$(C)$$ $$\text{CH}_3\text{OH}$$ forms stronger attractions with water because it can both donate and accept hydrogen bonds through its $$\text{O-H}$$ group. The O atom has lone pairs that can accept hydrogen bonds, and the H attached to O can be donated into a hydrogen bond with water. $$\text{CH}_2\text{O}$$ can accept hydrogen bonds at oxygen, but it cannot donate hydrogen bonds because its H atoms are bonded to carbon, not to a highly electronegative atom. This gives methanol stronger overall interactions with water.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+$$(A)$$ The chromium has four bonding regions around it, so the electron-domain geometry and molecular geometry are both
+
+$$
+\boxed{\text{tetrahedral}}.
+$$
+
+$$(B)$$ The double-bond character can be placed between chromium and different oxygen atoms while keeping the same atom connectivity and total number of valence electrons. These drawings differ only in electron placement, not in which atoms are bonded to which, so they are resonance structures rather than different compounds.
+
+$$(C)$$ The resonance hybrid averages the valid resonance structures. Since no single resonance structure fully describes the ion, the Cr-O bonds have the same average bond order and are equivalent. A good particle-level explanation is that the extra electron density is delocalized over the Cr-O bonding framework rather than locked into one permanent double bond.
+
+</div>

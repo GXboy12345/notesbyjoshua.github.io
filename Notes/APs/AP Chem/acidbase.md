@@ -237,8 +237,8 @@ In a **titration**, a solution of known concentration (**titrant**) is added fro
 
 Titration curve shape:
 
-- Strong acid / strong base: equivalence near $$\text{pH} = 7$$ at $$25\,^\circ\text{C}$$, steep vertical jump.  
-- Weak acid / strong base: equivalence $$\text{pH} > 7$$ (conjugate base hydrolysis).  
+- Strong acid / strong base: equivalence near $$\text{pH} = 7$$ at $$25\,^\circ\text{C}$$, steep vertical jump.
+- Weak acid / strong base: equivalence $$\text{pH} > 7$$ (conjugate base hydrolysis).
 - Weak base / strong acid: equivalence $$\text{pH} < 7$$ (conjugate acid).
 
 At the **half-equivalence point** of a weak acid titrated with strong base, $$[\text{HA}] \approx [\text{A}^-]$$ and $$\text{pH} \approx \text{p}K_a$$ (buffer maximum in that sense). Polyprotic acids show multiple equivalence steps and multiple near-plateau regions corresponding to each $$\text{p}K_a$$.
@@ -281,10 +281,10 @@ The **common ion effect** is the suppression of ionization of a weak electrolyte
 
 ## Working checklist
 
-1. Identify strong vs weak; write the correct net ionic chemistry.  
-2. Use $$K_w$$, $$K_a$$, and $$K_b$$ at a consistent temperature; link conjugates with $$K_a K_b = K_w$$.  
-3. Use **ICE** tables for weak acids/bases; watch dilution and the **common ion effect**.  
-4. Buffers: **Henderson–Hasselbalch equation** or full equilibrium when assumptions fail.  
+1. Identify strong vs weak; write the correct net ionic chemistry.
+2. Use $$K_w$$, $$K_a$$, and $$K_b$$ at a consistent temperature; link conjugates with $$K_a K_b = K_w$$.
+3. Use **ICE** tables for weak acids/bases; watch dilution and the **common ion effect**.
+4. Buffers: **Henderson–Hasselbalch equation** or full equilibrium when assumptions fail.
 5. Titrations: stoichiometry first, then equilibrium at the **equivalence point** or **half-equivalence point** for $$\text{p}K_a$$.
 
 ---
@@ -298,3 +298,257 @@ The **common ion effect** is the suppression of ionization of a weak electrolyte
 | $$\text{H}_2\text{SO}_4$$ (first $$\text{H}^+$$ only) | |
 
 $$\text{HF}$$ is weak; $$\text{HSO}_4^-$$ is a weak acid.
+
+---
+
+## Practice
+
+### MCQ
+
+1. What is the $$\text{pH}$$ of a $$1.0\times10^{-3}\ M$$ solution of $$\text{HCl}$$ at $$25^\circ\text{C}$$?
+
+   (A) $$1.00$$<br>
+   (B) $$3.00$$<br>
+   (C) $$7.00$$<br>
+   (D) $$11.00$$
+
+2. A buffer contains equal concentrations of $$\text{HF}$$ and $$\text{F}^-$$. If $$K_a$$ for $$\text{HF}$$ is $$6.8\times10^{-4}$$, what is the $$\text{pH}$$ of the buffer?
+
+   (A) $$1.68$$<br>
+   (B) $$3.17$$<br>
+   (C) $$7.00$$<br>
+   (D) $$10.83$$
+
+3. Which solution has the greatest $$\text{pH}$$?
+
+   (A) $$0.10\ M\ \text{HCl}$$<br>
+   (B) $$0.10\ M\ \text{HC}_2\text{H}_3\text{O}_2$$<br>
+   (C) $$0.10\ M\ \text{NaCl}$$<br>
+   (D) $$0.10\ M\ \text{NaOH}$$
+
+4. At the half-equivalence point in a weak acid-strong base titration,
+
+   (A) $$\text{pH}=\text{p}K_a$$.<br>
+   (B) $$\text{pH}=7.00$$ for every weak acid.<br>
+   (C) all weak acid has been converted to conjugate base.<br>
+   (D) $$[\text{H}_3\text{O}^+]=[\text{OH}^-]$$.
+
+5. Which species is the conjugate base of $$\text{H}_2\text{PO}_4^-$$?
+
+   (A) $$\text{H}_3\text{PO}_4$$<br>
+   (B) $$\text{HPO}_4^{2-}$$<br>
+   (C) $$\text{PO}_4^{3-}$$<br>
+   (D) $$\text{OH}^-$$
+
+6. Which mixture is a buffer?
+
+   (A) $$\text{HCl}$$ and $$\text{NaCl}$$<br>
+   (B) $$\text{NaOH}$$ and $$\text{NaCl}$$<br>
+   (C) $$\text{HF}$$ and $$\text{NaF}$$<br>
+   (D) $$\text{HNO}_3$$ and $$\text{NaNO}_3$$
+
+### FRQ
+
+7. A $$0.100\ M$$ solution of acetic acid, $$\text{HC}_2\text{H}_3\text{O}_2$$, has $$K_a=1.8\times10^{-5}$$.
+
+   $$(A)$$ Write the acid-ionization equation.
+
+   $$(B)$$ Calculate $$[\text{H}_3\text{O}^+]$$ using the small-$$x$$ approximation.
+
+   $$(C)$$ Calculate the $$\text{pH}$$.
+
+   $$(D)$$ Explain what happens to the percent ionization if sodium acetate is added.
+
+8. The 2026 AP Chemistry exam included a nitrous acid titration and indicator question. (Adapted from College Board, [2026 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap26-frq-chemistry.pdf).)
+
+   $$(A)$$ Explain why the equivalence point of a weak acid-strong base titration has $$\text{pH}>7$$.
+
+   $$(B)$$ A $$35.0\ \text{mL}$$ sample of $$\text{HNO}_2$$ is titrated to equivalence with $$21.0\ \text{mL}$$ of $$0.160\ M\ \text{NaOH}$$. Calculate the molarity of $$\text{HNO}_2$$.
+
+   $$(C)$$ Explain why an indicator should change color near the steep part of the titration curve.
+
+---
+
+## Solutions
+
+### MCQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$\text{HCl}$$ is a strong acid, so
+
+$$
+[\text{H}_3\text{O}^+]=1.0\times10^{-3}\ M.
+$$
+
+Thus
+
+$$
+\text{pH}=-\log(1.0\times10^{-3})=3.00.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+When $$[\text{HF}]=[\text{F}^-]$$, the Henderson-Hasselbalch equation gives
+
+$$
+\text{pH}=\text{p}K_a.
+$$
+
+$$
+\text{p}K_a=-\log(6.8\times10^{-4})=3.17.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+$$\text{NaOH}$$ is a strong base, so it produces the greatest $$[\text{OH}^-]$$ and therefore the greatest $$\text{pH}$$.
+
+$$
+\boxed{\text{D}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+At the half-equivalence point, $$[\text{HA}]=[\text{A}^-]$$. Henderson-Hasselbalch becomes
+
+$$
+\text{pH}=\text{p}K_a+\log(1)=\text{p}K_a.
+$$
+
+$$
+\boxed{\text{A}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
+
+A conjugate base is formed by removing one proton. Removing $$\text{H}^+$$ from $$\text{H}_2\text{PO}_4^-$$ gives $$\text{HPO}_4^{2-}$$.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+A buffer contains a weak acid and its conjugate base, or a weak base and its conjugate acid. $$\text{HF}$$ and $$\text{F}^-$$ form a buffer pair.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$(A)$$
+
+$$
+\text{HC}_2\text{H}_3\text{O}_2(aq)+\text{H}_2\text{O}(l)\rightleftharpoons \text{H}_3\text{O}^+(aq)+\text{C}_2\text{H}_3\text{O}_2^-(aq)
+$$
+
+Water is included in the chemical equation because it accepts the proton, but liquid water is omitted from the $$K_a$$ expression.
+
+$$(B)$$ Let $$x=[\text{H}_3\text{O}^+]$$ at equilibrium. Then
+
+$$
+K_a=\frac{x^2}{0.100-x}.
+$$
+
+Using the small-$$x$$ approximation,
+
+$$
+1.8\times10^{-5}=\frac{x^2}{0.100}.
+$$
+
+Thus
+
+$$
+x=\sqrt{(1.8\times10^{-5})(0.100)}=1.34\times10^{-3}\ M.
+$$
+
+This value is small compared with $$0.100\ M$$, so the small-$$x$$ approximation is reasonable:
+
+$$
+\frac{1.34\times10^{-3}}{0.100}\times100\%=1.34\%.
+$$
+
+$$(C)$$
+
+$$
+\text{pH}=-\log(1.34\times10^{-3})=2.87.
+$$
+
+$$(D)$$ Sodium acetate adds the common ion $$\text{C}_2\text{H}_3\text{O}_2^-$$, shifting the acid ionization left. Since less acetic acid ionizes, $$[\text{H}_3\text{O}^+]$$ decreases and the percent ionization decreases. This is the common-ion effect.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+$$(A)$$ At equivalence, the weak acid has been converted mostly into its conjugate base. The conjugate base reacts with water to produce $$\text{OH}^-$$:
+
+$$
+\text{NO}_2^-(aq)+\text{H}_2\text{O}(l)\rightleftharpoons\text{HNO}_2(aq)+\text{OH}^-(aq).
+$$
+
+Because $$\text{OH}^-$$ is produced, the solution is basic and the equivalence-point pH is greater than $$7$$.
+
+$$(B)$$ At equivalence,
+
+$$
+n_{\text{HNO}_2}=n_{\text{NaOH}}.
+$$
+
+$$
+n_{\text{NaOH}}=(0.0210\ \text{L})(0.160\ M)=0.00336\ \text{mol}.
+$$
+
+Thus
+
+$$
+M_{\text{HNO}_2}=\frac{0.00336\ \text{mol}}{0.0350\ \text{L}}=0.0960\ M.
+$$
+
+$$(C)$$ The steep part of the titration curve is where a tiny volume change causes a large pH change, so the color change most closely marks the equivalence point. If the indicator changes color far from that steep region, it will signal the endpoint too early or too late and create systematic error.
+
+<div class="placeholder-box" markdown="1">
+
+**Image placeholder:** Weak acid-strong base titration curve with equivalence point above $$\text{pH}=7$$ and an indicator transition range near the steep region.
+
+</div>
+
+</div>

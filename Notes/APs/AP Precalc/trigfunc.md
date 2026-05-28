@@ -1147,6 +1147,8 @@ REMEMBER to always check for multiple solutions using the trig rules!
 
 ## Solutions
 
+<div class="theorem-box" markdown="1">
+
 ### Solution 1
 
 Add multiples of $$2\pi$$ to find a positive coterminal angle:
@@ -1221,6 +1223,10 @@ $$
 \cot\theta=\sqrt3.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 2
 
 For a sector,
@@ -1287,6 +1293,10 @@ $$
 \boxed{A=\frac{24000\pi}{(12+5\pi)^2}\text{ cm}^2}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 3
 
 The wheel rotates at
@@ -1347,6 +1357,10 @@ $$
 \boxed{v=27\pi\text{ cm/sec}}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 4
 
 Wheel A rotates at
@@ -1394,6 +1408,10 @@ Thus
 $$
 \boxed{20\pi\text{ in/sec}}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 5
 
@@ -1448,6 +1466,10 @@ $$
 \qquad
 \boxed{\cos(\theta+\pi)=\frac{15}{17}}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 6
 
@@ -1529,6 +1551,10 @@ $$
 
 Equivalently, $$\theta\approx4.451$$ radians.
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 7
 
 Use coterminal angles:
@@ -1578,6 +1604,10 @@ $$
 \boxed{-2+\frac{4\sqrt3}{3}}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 8
 
 Let
@@ -1624,6 +1654,10 @@ $$
 \boxed{x=\frac{\pi}{2},\frac{7\pi}{6},\frac{11\pi}{6},\frac{5\pi}{2},\frac{19\pi}{6},\frac{23\pi}{6}}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 9
 
 Let
@@ -1665,6 +1699,10 @@ $$
 x=2\pi-\cos^{-1}\left(\frac{\sqrt{11}-\sqrt3}{4}\right)}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 10
 
 We have
@@ -1691,6 +1729,10 @@ $$
 \boxed{x=\frac{\pi}{3},\frac{2\pi}{3},\frac{4\pi}{3},\frac{5\pi}{3},\frac{7\pi}{3},\frac{8\pi}{3}}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 11
 
 The radius of the circle is $$2$$, and $$C$$ is the point on the positive $$x$$-axis at the right edge of the circle. Thus
@@ -1716,6 +1758,10 @@ Therefore
 $$
 \boxed{DC=2\tan\alpha}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 12
 
@@ -1785,6 +1831,10 @@ On $$[0,2\pi)$$, this happens at
 $$
 \boxed{\theta=0,\pi}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 13
 
@@ -1859,6 +1909,10 @@ Therefore,
 $$
 \boxed{1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}=\sin\theta\cos\theta}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 14
 
@@ -1965,6 +2019,10 @@ $$
 \boxed{\sin\theta=AC,\quad \cos\theta=OC,\quad \sec\theta=OD,\quad \csc\theta=OB,\quad \tan\theta=AD,\quad \cot\theta=AB}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 15
 
 Use the substitution
@@ -2039,6 +2097,10 @@ Using a calculator and choosing values of $$x$$ in $$[0,2\pi)$$ gives
 $$
 \boxed{x\approx0.869\quad\text{or}\quad x\approx3.450}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 16
 
@@ -2158,3 +2220,5 @@ To reach $$(1,0)$$, the line must be the $$x$$-axis, which has slope
 $$
 \boxed{m=0}.
 $$
+
+</div>

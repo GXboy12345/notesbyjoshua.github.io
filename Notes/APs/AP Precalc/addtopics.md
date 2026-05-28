@@ -2,7 +2,7 @@
 layout: default
 title: "Unit 13 & 14: Additional Topics in Algebra"
 parent: AP Precalculus
-nav_order: 9
+nav_order: 10
 permalink: /notes/ap/precalc/addtopics/
 ---
 
@@ -499,11 +499,220 @@ $$
 
 ---
 
+## An Introduction to Limits
+
+Limits describe the long-term behavior of a function. In this section, we only care about what happens as $$x$$ becomes very large positive or very large negative.
+
+For example,
+
+$$
+\lim_{x\to\infty}x^2=\infty
+$$
+
+means that $$x^2$$ grows without bound as $$x$$ moves farther and farther to the right. Similarly,
+
+$$
+\lim_{x\to-\infty}x^2=\infty,
+\qquad
+\lim_{x\to-\infty}x^3=-\infty.
+$$
+
+For positive integers $$n$$,
+
+$$
+\lim_{x\to\infty}x^n=\infty.
+$$
+
+As $$x\to-\infty$$,
+
+$$
+\lim_{x\to-\infty}x^n=
+\begin{cases}
+\infty, & n\text{ even}\\
+-\infty, & n\text{ odd}
+\end{cases}
+$$
+
+The reciprocal powers approach zero:
+
+$$
+\lim_{x\to\infty}\frac{1}{x^n}=0,
+\qquad
+\lim_{x\to-\infty}\frac{1}{x^n}=0.
+$$
+
+### Polynomial and rational limits
+
+For polynomials, the leading term controls the end behavior. Lower-degree terms become insignificant compared to the highest-degree term.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Evaluate
+
+$$
+\lim_{x\to\infty}(2x^3+3x^2-5x+1).
+$$
+
+Factor out the highest power:
+
+$$
+2x^3+3x^2-5x+1
+=
+x^3\left(2+\frac{3}{x}-\frac{5}{x^2}+\frac{1}{x^3}\right).
+$$
+
+As $$x\to\infty$$, the parenthesized expression approaches $$2$$, while $$x^3\to\infty$$. Therefore
+
+$$
+\boxed{\lim_{x\to\infty}(2x^3+3x^2-5x+1)=\infty}.
+$$
+
+</div>
+
+For rational functions, compare the degrees of the numerator and denominator:
+
+| Degree comparison | Limit behavior as $$x\to\pm\infty$$ |
+|---|---|
+| numerator degree < denominator degree | limit is $$0$$ |
+| numerator degree = denominator degree | limit is ratio of leading coefficients |
+| numerator degree > denominator degree | no finite horizontal asymptote; use division or leading terms |
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Evaluate
+
+$$
+\lim_{x\to\infty}\frac{4x^2-3x+7}{2x^2+5x-1}.
+$$
+
+Divide numerator and denominator by $$x^2$$:
+
+$$
+\lim_{x\to\infty}
+\frac{4-\frac{3}{x}+\frac{7}{x^2}}{2+\frac{5}{x}-\frac{1}{x^2}}.
+$$
+
+The fractional pieces approach zero, so
+
+$$
+\boxed{
+\lim_{x\to\infty}\frac{4x^2-3x+7}{2x^2+5x-1}=2
+}.
+$$
+
+</div>
+
+### Horizontal and oblique asymptotes
+
+The line $$y=c$$ is a **horizontal asymptote** of $$y=f(x)$$ if
+
+$$
+\lim_{x\to\infty}f(x)=c
+$$
+
+or
+
+$$
+\lim_{x\to-\infty}f(x)=c.
+$$
+
+The line $$y=mx+b$$ is an **oblique asymptote** of $$y=f(x)$$ if
+
+$$
+\lim_{x\to\infty}\bigl(f(x)-(mx+b)\bigr)=0
+$$
+
+or the same is true as $$x\to-\infty$$.
+
+For rational functions with numerator degree exactly one more than denominator degree, polynomial long division usually reveals the oblique asymptote.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the oblique asymptote of
+
+$$
+f(x)=\frac{x^2-3x+4}{x-2}.
+$$
+
+Use polynomial division:
+
+$$
+\frac{x^2-3x+4}{x-2}
+=
+x-1+\frac{2}{x-2}.
+$$
+
+Since
+
+$$
+\lim_{x\to\infty}\frac{2}{x-2}=0
+$$
+
+and also
+
+$$
+\lim_{x\to-\infty}\frac{2}{x-2}=0,
+$$
+
+the oblique asymptote is
+
+$$
+\boxed{y=x-1}.
+$$
+
+</div>
+
+### Exponential, logarithmic, and trig limits
+
+For the exponential function,
+
+$$
+\lim_{x\to\infty}e^x=\infty,
+\qquad
+\lim_{x\to-\infty}e^x=0.
+$$
+
+For the natural logarithm,
+
+$$
+\lim_{x\to\infty}\ln x=\infty.
+$$
+
+Some trigonometric limits exist only because another factor forces the expression to settle down. For example,
+
+$$
+\lim_{x\to\infty}\frac{\cos x}{x}=0.
+$$
+
+This is because
+
+$$
+-1\le \cos x\le 1,
+$$
+
+so for $$x>0$$,
+
+$$
+-\frac{1}{x}\le \frac{\cos x}{x}\le \frac{1}{x}.
+$$
+
+Both outer expressions approach $$0$$, so the middle expression is squeezed to $$0$$ as well.
+
+However,
+
+$$
+\lim_{x\to\infty}\sin x
+$$
+
+does not exist, since $$\sin x$$ keeps oscillating forever instead of approaching one value.
+
+---
+
 ## Practice
 
-1. Decompose $$\dfrac{3x+5}{(x-1)^{3}(x+2)}$$ into partial fractions.
-2. The rational function $$\frac{2x^3-x^2+3}{x^2-1}$$ is improper. Rewrite it using polynomial division in the form $$Q(x)+\dfrac{R(x)}{x^2-1}$$, then set up (you need not solve for constants) the partial-fraction form for $$\dfrac{R(x)}{(x-1)(x+1)}$$ over $$\mathbb{R}$$.
-3. Factor $$x^3-x^2$$ and write the template for decomposing $$\frac{x^2+1}{x^3-x^2}$$ (distinct linear and repeated linear factors only).
+1. Evaluate $$\displaystyle \lim_{x\to\infty}\frac{5x^3-2x+1}{x^3+4x^2-7}$$.
+2. Find the horizontal asymptote, if it exists, of $$\displaystyle f(x)=\frac{3x^2+8x-1}{x^2-5}$$.
+3. Find the oblique asymptote of $$\displaystyle g(x)=\frac{x^2+4x-1}{x+2}$$.
 4. Prove by induction that $$\sum_{k=1}^{n} k^3 = \frac{n^2 (n+1)^2}{4}$$ for all integers $$n \ge 1$$. Extension: This looks like the square of $$1 + 2 + ... + n = \frac{n(n+1)}{2}$$! Prove that this is true (you should not use induction here).
 5. Prove by induction that $$8^{2n} - 3^{2n}$$ is divisible by $$55$$ for all integers $$n \ge 1$$.
 6. Prove by induction that $$2^{n}\ge n^{3}$$ for all integers $$n\ge 10$$.
@@ -534,69 +743,89 @@ $$
 
 ## Solutions
 
+<div class="theorem-box" markdown="1">
+
 ### Solution 1
 
-Since the denominator has a repeated linear factor $$(x-1)^{3}$$ and a distinct linear factor $$(x+2)$$, use
+Divide numerator and denominator by $$x^3$$:
 
 $$
-\frac{3x+5}{(x-1)^{3}(x+2)} = \frac{A}{x-1} + \frac{B}{(x-1)^{2}} + \frac{C}{(x-1)^{3}} + \frac{D}{x+2}.
+\lim_{x\to\infty}\frac{5x^3-2x+1}{x^3+4x^2-7}
+=
+\lim_{x\to\infty}
+\frac{5-\frac{2}{x^2}+\frac{1}{x^3}}{1+\frac{4}{x}-\frac{7}{x^3}}.
 $$
 
-Multiply by $$(x-1)^{3}(x+2)$$:
+As $$x\to\infty$$, every term with $$x$$ in the denominator approaches $$0$$. Therefore
 
 $$
-3x+5 = A(x-1)^{2}(x+2) + B(x-1)(x+2) + C(x+2) + D(x-1)^{3}.
+\boxed{\lim_{x\to\infty}\frac{5x^3-2x+1}{x^3+4x^2-7}=5}.
 $$
 
-Set $$x=-2$$: $$-1 = D(-3)^{3} = -27D$$, so $$\displaystyle D = \frac{1}{27}$$.
+Since the numerator and denominator have the same degree, this is also the ratio of leading coefficients.
 
-Set $$x=1$$: $$8 = C(3)$$, so $$\displaystyle C = \frac{8}{3}$$.
+</div>
 
-Compare $$x^{3}$$ coefficients: $$A + D = 0$$, so $$\displaystyle A = -D = -\frac{1}{27}$$.
-
-Compare $$x^{2}$$ coefficients: the term $$A(x-1)^{2}(x+2)$$ has no $$x^{2}$$ term, $$B(x-1)(x+2)$$ contributes $$Bx^{2}$$, and $$D(x-1)^{3}$$ contributes $$-3Dx^{2}$$. Thus $$B - 3D = 0$$, so $$\displaystyle B = 3D = \frac{1}{9}$$.
-
-Therefore
-
-$$
-\boxed{\frac{3x+5}{(x-1)^{3}(x+2)} = -\frac{1}{27(x-1)} + \frac{1}{9(x-1)^{2}} + \frac{8}{3(x-1)^{3}} + \frac{1}{27(x+2)}}.
-$$
+<div class="theorem-box" markdown="1">
 
 ### Solution 2
 
-Divide $$2x^{3}-x^{2}+3$$ by $$x^{2}-1$$:
+Evaluate the end behavior:
 
 $$
-2x^{3}-x^{2}+3 = (2x-1)(x^{2}-1) + (2x+2),
+\lim_{x\to\infty}\frac{3x^2+8x-1}{x^2-5}
+=
+\lim_{x\to\infty}
+\frac{3+\frac{8}{x}-\frac{1}{x^2}}{1-\frac{5}{x^2}}
+=3.
 $$
 
-so
+Likewise,
 
 $$
-\frac{2x^{3}-x^{2}+3}{x^{2}-1} = 2x - 1 + \frac{2x+2}{x^{2}-1} = 2x - 1 + \frac{2(x+1)}{(x-1)(x+1)} = 2x - 1 + \frac{2}{x-1},
+\lim_{x\to-\infty}\frac{3x^2+8x-1}{x^2-5}=3.
 $$
 
-with $$\deg(2x+2) < 2$$. For the remainder, use
+Therefore the horizontal asymptote is
 
 $$
-\frac{2x+2}{(x-1)(x+1)} = \frac{A}{x-1} + \frac{B}{x+1}.
+\boxed{y=3}.
 $$
 
-The problem only asks for the setup, but solving confirms it: $$2x+2 = A(x+1) + B(x-1)$$. Plug $$x=1$$: $$4=2A$$ so $$A=2$$. Plug $$x=-1$$: $$0=-2B$$ so $$B=0$$. Thus
+</div>
 
-$$
-\boxed{\frac{2x^{3}-x^{2}+3}{x^{2}-1}=2x-1+\frac{2}{x-1}}.
-$$
+<div class="theorem-box" markdown="1">
 
 ### Solution 3
 
-Factor: $$x^{3}-x^{2} = x^{2}(x-1)$$. Then
+Use polynomial division:
 
 $$
-\boxed{\frac{x^{2}+1}{x^{3}-x^{2}} = \frac{x^{2}+1}{x^{2}(x-1)} = \frac{A}{x} + \frac{B}{x^{2}} + \frac{C}{x-1}}
+\frac{x^2+4x-1}{x+2}
+=x+2-\frac{5}{x+2}.
 $$
 
-for unknown constants $$A,B,C$$. (Denominator has a repeated linear factor $$x^{2}$$ and a simple factor $$x-1$$.)
+Since
+
+$$
+\lim_{x\to\infty}\left(-\frac{5}{x+2}\right)=0
+$$
+
+and
+
+$$
+\lim_{x\to-\infty}\left(-\frac{5}{x+2}\right)=0,
+$$
+
+the graph approaches the line
+
+$$
+\boxed{y=x+2}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 4
 
@@ -678,6 +907,10 @@ $$
 
 with $$S_{0}=0$$.
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 5
 
 **Base case**: $$n=1$$: $$8^{2}-3^{2}=64-9=55$$, divisible by $$55$$.
@@ -723,6 +956,10 @@ Thus $$55 \mid 8^{2(k+1)} - 3^{2(k+1)}$$. By induction,
 $$
 \boxed{55 \mid 8^{2n} - 3^{2n} \text{ for all integers } n \ge 1}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 6
 
@@ -803,6 +1040,10 @@ $$
 \boxed{2^{n}\ge n^{3} \text{ for all integers } n\ge 10}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 7
 
 Use the binomial theorem with $$a=3x$$, $$b=2y$$, and $$n=5$$:
@@ -826,6 +1067,10 @@ Thus
 $$
 \boxed{(3x+2y)^5=243x^5+810x^4y+1080x^3y^2+720x^2y^3+240xy^4+32y^5}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 8
 
@@ -859,6 +1104,10 @@ $$
 \boxed{126720}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 9
 
 $$
@@ -888,6 +1137,10 @@ Every term in the sum has a factor of $$8$$ because $$k\ge 1$$. Therefore the en
 $$
 \boxed{8\mid 9^{n}-1 \text{ for every integer } n\ge 1}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 10
 
@@ -939,6 +1192,10 @@ $$
 \boxed{d=\frac{5}{2}\quad\text{and the geometric terms are }5,10,20}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 11
 
 Arithmetic: Since $$1,x,y,z$$ is arithmetic, let the common difference be $$d$$. Then
@@ -979,6 +1236,10 @@ $$
 \boxed{x+y+z+p+q=22+43+64+4+16=149}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 12
 
 The terms of the sum form an arithmetic series. The first term occurs when $$i=5$$:
@@ -1011,6 +1272,10 @@ $$
 \boxed{14928}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 13
 
 This is a finite geometric series with first term $$192$$, common ratio $$2$$, and $$7$$ terms:
@@ -1028,6 +1293,10 @@ Since $$2^{7}=128$$, the answer is $$192\cdot127$$ which is
 $$
 \boxed{24384}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 14
 
@@ -1060,6 +1329,10 @@ which is an integer and satisfies $$675<720<768$$. The sum of the digits of $$76
 $$
 \boxed{7+6+8=21}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 15
 
@@ -1124,6 +1397,10 @@ So
 $$
 \boxed{\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1)=5^{n-1}(3n+5)}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 16
 
@@ -1303,3 +1580,5 @@ Matching coefficients of $$x^n$$ gives
 $$
 \boxed{F_n=\frac{\alpha^n-\beta^n}{\sqrt5}}.
 $$
+
+</div>

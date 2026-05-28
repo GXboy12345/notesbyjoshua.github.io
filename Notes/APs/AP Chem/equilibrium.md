@@ -16,7 +16,7 @@ Unit 7 is about **chemical equilibrium**: the state in a **closed system** where
 
 Most reactions we have looked at previously were **irreversible reactions**, or reactions that can only go one way (forward). A **reversible reaction** can run in both directions (forward and backwards). In a **closed system** (no escape of matter), the forward reaction consumes reactants and forms products, while the reverse reaction does the opposite. **Chemical equilibrium** is reached when the **rate of the forward reaction** equals the **rate of the reverse reaction**. At that point:
 
-- **Concentrations** (or for gases, **partial pressures**) remain **constant** over time (they are **not** necessarily equal to one another)  
+- **Concentrations** (or for gases, **partial pressures**) remain **constant** over time (they are **not** necessarily equal to one another)
 - The system is **dynamic**: molecules still react, but there is **no net** change in amounts. This is different from a **completed** or **irreversible** reaction, where at least one reactant is effectively exhausted and the process does not establish a lasting balance between forward and reverse paths at ordinary conditions.
 
 **Homogeneous** equilibrium means all reacting species are in the same phase (e.g. all gases, or all in one solution). **Heterogeneous** equilibrium includes **pure solids** or **pure liquids** as separate phases; their activities are taken as constant and they are **omitted** from the equilibrium expression (see below).
@@ -52,15 +52,15 @@ These cutoffs are rules of thumb; what matters is comparing $$Q$$ to $$K$$ and i
 
 ### Manipulating $$K$$ for related equations
 
-- **Reverse reaction:**  
+- **Reverse reaction:**
   $$
   K_{c,\text{reverse}} = \frac{1}{K_{c,\text{forward}}}.
   $$
-- **Multiply the whole equation by an integer $$n$$:**  
+- **Multiply the whole equation by an integer $$n$$:**
   $$
   K_c' = (K_c)^n
   $$
-- **Add sequential steps** (all at the same temperature): the overall $$K$$ is the **product** of the step constants:  
+- **Add sequential steps** (all at the same temperature): the overall $$K$$ is the **product** of the step constants:
   $$
   K_{\text{overall}} = K_1 \times K_2 \times \cdots
   $$
@@ -103,8 +103,8 @@ $$
 
 ### Interpreting $$Q_c$$ vs $$K_c$$
 
-- If $$Q < K$$, the ratio of products to reactants is **too small** for equilibrium; the system shifts **right** (toward products).  
-- If $$Q > K$$, the ratio is **too large**; the system shifts **left** (toward reactants).  
+- If $$Q < K$$, the ratio of products to reactants is **too small** for equilibrium; the system shifts **right** (toward products).
+- If $$Q > K$$, the ratio is **too large**; the system shifts **left** (toward reactants).
 - If $$Q = K$$, the system is **at equilibrium**.
 
 A useful trick is to line up $$K$$ and $$Q$$ alphabetically (so $$K$$ on the left and $$Q$$ on the right), and whatever direction the sign goes (e.g. < (less than) goes left) is the direction the reaction goes.
@@ -127,8 +127,8 @@ where $$K$$ is $$K_c$$ or $$K_p$$ according to how the reaction is expressed, an
 
 Qualitative connections (at standard conditions, using $$K$$ relative to $$1$$):
 
-- If $$K > 1$$, then $$\Delta G^\circ < 0$$: the forward reaction is **thermodynamically favorable (spontaneous)** under standard conditions.  
-- If $$K < 1$$, then $$\Delta G^\circ > 0$$: the reverse direction is favored under standard conditions and the forward reaction is **not spontaneous**.  
+- If $$K > 1$$, then $$\Delta G^\circ < 0$$: the forward reaction is **thermodynamically favorable (spontaneous)** under standard conditions.
+- If $$K < 1$$, then $$\Delta G^\circ > 0$$: the reverse direction is favored under standard conditions and the forward reaction is **not spontaneous**.
 - If $$K = 1$$, then $$\Delta G^\circ = 0$$, meaning the reaction is **at equilibrium**.
 
 For *nonstandard* conditions, the reaction quotient enters:
@@ -169,8 +169,8 @@ which shows that sensitivity of $$\ln K$$ to temperature is *larger* when $$\Del
 
 Typical stresses:
 
-- **Concentration:** Adding a **reactant** shifts toward **products**; removing a product does the same. Adding **product** shifts toward **reactants**.  
-- **Pressure (gases):** Reducing volume increases total pressure; the system shifts toward the side with **fewer moles of gas** (if any). Adding an **inert gas** at **constant volume** does **not** change partial pressures of reactants/products—**no** shift. At **constant pressure**, adding inert gas increases volume and can shift the equilibrium; AP questions usually emphasize the constant-volume case.  
+- **Concentration:** Adding a **reactant** shifts toward **products**; removing a product does the same. Adding **product** shifts toward **reactants**.
+- **Pressure (gases):** Reducing volume increases total pressure; the system shifts toward the side with **fewer moles of gas** (if any). Adding an **inert gas** at **constant volume** does **not** change partial pressures of reactants/products—**no** shift. At **constant pressure**, adding inert gas increases volume and can shift the equilibrium; AP questions usually emphasize the constant-volume case.
 - **Temperature:** $$K$$ **changes** with temperature. Treat **heat** as part of the reaction: for an **endothermic** forward reaction ($$\Delta H > 0$$), **raising** $$T$$ favors the **forward** direction (larger $$K$$ if the forward reaction is endothermic). For an **exothermic** forward reaction ($$\Delta H < 0$$), **raising** $$T$$ favors the **reverse** direction (smaller $$K$$). **Cooling** favors the exothermic direction.
 
 Since $$K$$ depends on $$T$$, **do not** treat temperature like a simple concentration stress when you need a **numerical** $$K$$: use the correct $$K$$ for the new temperature if given, compute $$K_2$$ from $$K_1$$ with the **van’t Hoff equation** (previous section), or reason qualitatively from $$\Delta H$$.
@@ -185,16 +185,16 @@ Since $$K$$ depends on $$T$$, **do not** treat temperature like a simple concent
 
 **Setup:**
 
-1. Write a **balanced** equation.  
-2. **Initial** row: given starting concentrations (after any mixing).  
-3. **Change** row: express unknown change as $$x$$ (or a multiple like $$2x$$ from stoichiometry): reactants **lose** ($$-jx$$, etc.) and products **gain** ($$+lx$$, etc.), although you could swap the signs and have the same result. Note that if one side is 0, it can't lose any concentration, so it must have a positive change! 
+1. Write a **balanced** equation.
+2. **Initial** row: given starting concentrations (after any mixing).
+3. **Change** row: express unknown change as $$x$$ (or a multiple like $$2x$$ from stoichiometry): reactants **lose** ($$-jx$$, etc.) and products **gain** ($$+lx$$, etc.), although you could swap the signs and have the same result. Note that if one side is 0, it can't lose any concentration, so it must have a positive change!
 4. **Equilibrium** row: Initial + Change.
 
 **Rules and tips:**
 
-- Omit **pure solids** and **pure liquids** from the table if they do not define the solution volume.  
-- If a reactant is **limiting**, one species may be **consumed completely** before equilibrium in a sequential sense; still check whether the reaction can **proceed in reverse** from that state (ICE applies to the equilibrium stage you model).  
-- **Small $$K$$** (product-poor): equilibrium lies left; $$x$$ may be negligible compared to initial concentrations—**verify** with the **5% rule** (or exact quadratic) when your course allows.  
+- Omit **pure solids** and **pure liquids** from the table if they do not define the solution volume.
+- If a reactant is **limiting**, one species may be **consumed completely** before equilibrium in a sequential sense; still check whether the reaction can **proceed in reverse** from that state (ICE applies to the equilibrium stage you model).
+- **Small $$K$$** (product-poor): equilibrium lies left; $$x$$ may be negligible compared to initial concentrations—**verify** with the **5% rule** (or exact quadratic) when your course allows.
 - **Large $$K$$:** equilibrium lies right; sometimes you assume **complete** reaction first, then **back-react** a small amount.
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/equilibrium/icetable.png' | relative_url }}" alt="ICE Table" loading="lazy" decoding="async" />
@@ -223,8 +223,8 @@ Setting up an ICE table for $$K_{sp}$$ is slightly different from a normal ICE t
 
 **Setup:**
 
-1. Write a **balanced** equation for solubility (remember that the solid is ALWAYS on the left side).  
-2. **Initial** row: given starting concentrations (after any mixing). For the concentration of the solid, just write "solid" in that box.  
+1. Write a **balanced** equation for solubility (remember that the solid is ALWAYS on the left side).
+2. **Initial** row: given starting concentrations (after any mixing). For the concentration of the solid, just write "solid" in that box.
 3. **Change** row: This is the same as a regular ICE table.
 4. **Equilibrium** row: This is the same as a regular ICE table, except write "solid" for initial for the precipitate.
 
@@ -290,11 +290,261 @@ $$
 
 ## Working checklist for problems
 
-1. **Balance** the equation and identify **phase** of each species.  
-2. Write $$K_c$$, $$K_p$$, or $$K_{sp}$$ **omitting pure solids/liquids** (and solvent water in dilute aqueous $$K_c$$ unless specified).  
-3. Compute **$$Q$$** if asked whether the system shifts; compare to $$K$$.  
-4. Use **ICE** for unknown equilibrium concentrations; watch **stoichiometric** multiples of $$x$$.  
+1. **Balance** the equation and identify **phase** of each species.
+2. Write $$K_c$$, $$K_p$$, or $$K_{sp}$$ **omitting pure solids/liquids** (and solvent water in dilute aqueous $$K_c$$ unless specified).
+3. Compute **$$Q$$** if asked whether the system shifts; compare to $$K$$.
+4. Use **ICE** for unknown equilibrium concentrations; watch **stoichiometric** multiples of $$x$$.
 5. Remember *temperature* changes $$K$$; *catalyst* does not. For two temperatures, relate $$K_1$$ and $$K_2$$ with the **van’t Hoff equation** if $$\Delta H^\circ$$ is known (or given).
 6. For solubility, track **common ions**, **$$Q_{sp}$$ vs $$K_{sp}$$**, and **complex formation**, which can *increase* solubility by tying up a metal ion (e.g. $$\text{AgCl}$$ dissolving more in ammonia).
 
 This unit’s equilibrium constant logic is the same machinery you will reuse for **acid–base** ($$K_a$$, $$K_b$$, $$K_w$$) and **buffers** in the next unit—only the chemical reaction and symbols change.
+
+---
+
+## Practice
+
+### MCQ
+
+1. For the reaction $$\text{N}_2(g)+3\text{H}_2(g)\rightleftharpoons2\text{NH}_3(g)$$, which expression is $$K_c$$?
+
+   (A) $$\dfrac{[\text{NH}_3]}{[\text{N}_2][\text{H}_2]}$$<br>
+   (B) $$\dfrac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}$$<br>
+   (C) $$\dfrac{[\text{N}_2][\text{H}_2]^3}{[\text{NH}_3]^2}$$<br>
+   (D) $$\dfrac{2[\text{NH}_3]}{[\text{N}_2]+3[\text{H}_2]}$$
+
+2. For a system at equilibrium, adding a catalyst will
+
+   (A) increase $$K$$<br>
+   (B) decrease $$K$$<br>
+   (C) shift the equilibrium toward products<br>
+   (D) leave the equilibrium composition unchanged
+
+3. If $$Q>K$$ for a reaction mixture, the reaction will proceed
+
+   (A) toward products until equilibrium is reached.<br>
+   (B) toward reactants until equilibrium is reached.<br>
+   (C) in neither direction because it is already at equilibrium.<br>
+   (D) only if a catalyst is added.
+
+4. Which species is omitted from the equilibrium expression for $$\text{CaCO}_3(s)\rightleftharpoons\text{CaO}(s)+\text{CO}_2(g)$$?
+
+   (A) $$\text{CO}_2(g)$$ only<br>
+   (B) $$\text{CaCO}_3(s)$$ and $$\text{CaO}(s)$$<br>
+   (C) $$\text{CaO}(s)$$ and $$\text{CO}_2(g)$$<br>
+   (D) all species
+
+5. For $$\text{AgCl}(s)\rightleftharpoons\text{Ag}^+(aq)+\text{Cl}^-(aq)$$, what is the expression for $$K_{sp}$$?
+
+   (A) $$[\text{Ag}^+][\text{Cl}^-]$$<br>
+   (B) $$\dfrac{[\text{Ag}^+][\text{Cl}^-]}{[\text{AgCl}]}$$<br>
+   (C) $$[\text{AgCl}]$$<br>
+   (D) $$\dfrac{1}{[\text{Ag}^+][\text{Cl}^-]}$$
+
+6. If an exothermic equilibrium reaction is heated, the equilibrium shifts
+
+   (A) toward products.<br>
+   (B) toward reactants.<br>
+   (C) nowhere, because temperature does not affect equilibrium.<br>
+   (D) only if a catalyst is present.
+
+### FRQ
+
+7. At a certain temperature, $$K_c=4.00$$ for
+
+$$
+\text{A}(g)\rightleftharpoons2\text{B}(g).
+$$
+
+A sealed container initially has $$0.600\ M$$ $$\text{A}$$ and no $$\text{B}$$.
+
+   $$(A)$$ Write the equilibrium-constant expression.
+
+   $$(B)$$ Set up an ICE table using $$x$$ for the amount of $$\text{A}$$ consumed.
+
+   $$(C)$$ Calculate the equilibrium concentrations of $$\text{A}$$ and $$\text{B}$$.
+
+8. The 2024 AP Chemistry exam included an equilibrium particle-diagram question for $$\text{H}_2(g)+\text{I}_2(g)\rightleftharpoons2\text{HI}(g)$$. (Adapted from College Board, [2024 AP Chemistry FRQ 5](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
+
+   $$(A)$$ Write the expression for $$Q$$.
+
+   $$(B)$$ If $$[\text{H}_2]=0.20\ M$$, $$[\text{I}_2]=0.10\ M$$, and $$[\text{HI}]=0.30\ M$$, calculate $$Q$$.
+
+   $$(C)$$ If $$K=50$$, predict the direction the system shifts.
+
+---
+
+## Solutions
+
+### MCQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+Gas and aqueous equilibrium expressions use concentrations raised to stoichiometric coefficients:
+
+$$
+K_c=\frac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+A catalyst speeds both forward and reverse reactions. It helps the system reach equilibrium faster, but it does not change $$K$$ or the equilibrium composition.
+
+$$
+\boxed{\text{D}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+If $$Q>K$$, the mixture has too much product relative to equilibrium, so it shifts toward reactants.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+Pure solids are omitted from equilibrium expressions, so both solids are omitted.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
+
+Pure solids are omitted from equilibrium expressions, so
+
+$$
+K_{sp}=[\text{Ag}^+][\text{Cl}^-].
+$$
+
+$$
+\boxed{\text{A}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+For an exothermic reaction, heat behaves like a product. Adding heat shifts the equilibrium toward reactants.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$(A)$$
+
+$$
+K_c=\frac{[\text{B}]^2}{[\text{A}]}.
+$$
+
+The coefficient $$2$$ in front of $$\text{B}$$ becomes the exponent $$2$$ in the equilibrium expression. There are no solids or liquids to omit in this reaction.
+
+$$(B)$$ The ICE setup is
+
+|        | $$\text{A}$$ | $$\text{B}$$ |
+|--------|--------------|--------------|
+| Initial | $$0.600$$ | $$0$$ |
+| Change | $$-x$$ | $$+2x$$ |
+| Equilibrium | $$0.600-x$$ | $$2x$$ |
+
+The $$+2x$$ appears because every mole of $$\text{A}$$ that reacts produces $$2$$ moles of $$\text{B}$$.
+
+$$(C)$$ Substitute into $$K_c$$:
+
+$$
+4.00=\frac{(2x)^2}{0.600-x}.
+$$
+
+So
+
+$$
+4.00=\frac{4x^2}{0.600-x}
+$$
+
+and
+
+$$
+x^2=0.600-x.
+$$
+
+Thus
+
+$$
+x^2+x-0.600=0.
+$$
+
+The positive root is $$x=0.421$$. Therefore,
+
+$$
+[\text{A}]_{\text{eq}}=0.600-0.421=0.179\ M
+$$
+
+and
+
+$$
+[\text{B}]_{\text{eq}}=2(0.421)=0.842\ M.
+$$
+
+The negative root is rejected because it would make no physical sense for the reaction progress variable in this setup. Both equilibrium concentrations are positive, which is a useful check.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+$$(A)$$
+
+$$
+Q=\frac{[\text{HI}]^2}{[\text{H}_2][\text{I}_2]}.
+$$
+
+The coefficient $$2$$ on $$\text{HI}$$ becomes the exponent $$2$$.
+
+$$(B)$$
+
+$$
+Q=\frac{(0.30)^2}{(0.20)(0.10)}=\frac{0.090}{0.020}=4.5.
+$$
+
+$$(C)$$ Since $$Q<K$$, the system has too little product relative to equilibrium. It shifts toward products, forming more $$\text{HI}$$ and consuming $$\text{H}_2$$ and $$\text{I}_2$$. The value of $$K$$ does not change during the shift because temperature is not changed.
+
+<div class="placeholder-box" markdown="1">
+
+**Image placeholder:** Particle diagram for $$\text{H}_2+\text{I}_2\rightleftharpoons2\text{HI}$$ showing the mixture shifting toward more $$\text{HI}$$.
+
+</div>
+
+</div>

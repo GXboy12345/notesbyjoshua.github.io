@@ -789,6 +789,8 @@ If the logarithm base is between $$0$$ and $$1$$, remember that the logarithm is
 
 ## Solutions
 
+<div class="theorem-box" markdown="1">
+
 ### Solution 1
 
 The domain is all real numbers:
@@ -907,6 +909,10 @@ $$
 \boxed{(-\infty,\infty)}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 2
 
 Since the horizontal asymptote is $$y=-1$$ and $$h=1$$, the function has the form
@@ -987,6 +993,10 @@ $$
 \boxed{\text{exponential decay}}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 3
 
 Rewrite everything in terms of $$2^x$$:
@@ -1037,6 +1047,10 @@ $$
 x=\log_2\left(\frac{5-\sqrt{21}}4\right)}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 4
 
 Let
@@ -1081,6 +1095,10 @@ $$
 \boxed{[0,3]}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 5
 
 Take natural logs of both sides:
@@ -1118,6 +1136,10 @@ Therefore
 $$
 \boxed{x=\frac{3\ln 5+\ln 2}{2\ln 5-\ln 2}}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 6
 
@@ -1180,6 +1202,10 @@ $$
 \quad\text{or}\quad
 x=\ln\left(\frac32\right)}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 7
 
@@ -1257,6 +1283,10 @@ $$
 \boxed{x>3}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 8
 
 The expression is
@@ -1319,6 +1349,10 @@ $$
 \boxed{x\ne 0,\qquad 2<y<5}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 9
 
 The domain requires
@@ -1364,6 +1398,10 @@ Intersect this with the domain $$\frac12<x<7$$:
 $$
 \boxed{\left(\frac12,\frac83\right]}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 10
 
@@ -1443,6 +1481,10 @@ Intersect with the logarithm domain:
 $$
 \boxed{\left[\frac{7-\sqrt{37}}2,2\right)\cup\left(3,\frac{7+\sqrt{37}}2\right]}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 11
 
@@ -1580,6 +1622,10 @@ The graph of both functions are shown below (green = inverse function):
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/expgraph2.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 12
 
 The model is
@@ -1675,6 +1721,10 @@ $$
 \boxed{t=\frac52\ln 57}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 13
 
 Let
@@ -1737,6 +1787,10 @@ Therefore
 $$
 \boxed{n=4^4=256}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 14
 
@@ -1882,6 +1936,10 @@ $$
 \boxed{(-\infty,\infty)}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 15
 
 The product is
@@ -1969,6 +2027,10 @@ Therefore the product is
 $$
 \frac{31}{13}\cdot 3=\boxed{\frac{93}{13}}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 16
 
@@ -2133,3 +2195,5 @@ $$
 $$
 
 For part $$(F)$$, the comparison is that both EML and NAND are examples of a very small set of building blocks being powerful enough to generate a much larger system. A NAND gate alone can build NOT, AND, OR, and therefore all Boolean logic circuits. Similarly, the paper claims that EML, together with the constant $$1$$, can be composed into trees that represent the standard elementary functions. In both cases, complicated expressions can be built from repeated uses of one simple operation.
+
+</div>

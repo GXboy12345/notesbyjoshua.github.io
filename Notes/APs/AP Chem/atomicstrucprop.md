@@ -41,13 +41,13 @@ Unit 1 establishes the vocabulary and models used everywhere else in chemistry: 
 
 The **periodic table** arranges elements by increasing **atomic number** $$Z$$. Horizontal rows are **periods**; vertical columns are **groups** (or families). Groups may be labeled $$1$$–$$18$$ or with Roman numerals and letters in older notation. Several families have traditional names that appear frequency:
 
-- **Alkali metals** (group 1, excluding hydrogen)  
-- **Alkaline earth metals** (group 2)  
-- **Transition metals** (groups 3–12)  
-- **Pnictogens** (group 15)  
-- **Chalcogens** (group 16)  
-- **Halogens** (group 17)  
-- **Noble gases** (group 18)  
+- **Alkali metals** (group 1, excluding hydrogen)
+- **Alkaline earth metals** (group 2)
+- **Transition metals** (groups 3–12)
+- **Pnictogens** (group 15)
+- **Chalcogens** (group 16)
+- **Halogens** (group 17)
+- **Noble gases** (group 18)
 
 Below the main block, the **lanthanides** and **actinides** are the **inner transition metals** (often called **rare-earth metals** in informal usage for the lanthanides).
 
@@ -115,7 +115,7 @@ and you round $$n$$ to the nearest integer when the data allows it (subject to m
 
 When a problem gives **mass percentages** (or masses of elements in a sample), treat the sample as a sample of *$$100\ \text{g}$$* so each element’s mass in grams equals its *percent* numerically.
 
-1. Convert each element’s mass to moles using its molar mass.  
+1. Convert each element’s mass to moles using its molar mass.
 
 2. Divide *every* mole amount by the *smallest* mole amount among the elements.
 
@@ -175,11 +175,11 @@ An **oxidation number** (oxidation state) is a formal bookkeeping charge assigne
 
 Useful conventions include:
 
-- Any element in its elemental form (e.g. $$\text{O}_2$$, $$\text{Na}$$) has oxidation number $$0$$.  
-- A monatomic ion matches its charge (e.g. $$\text{Na}^+$$ is $$+1$$).  
-- Oxygen is usually $$-2$$ except in peroxides such as $$\text{H}_2\text{O}_2$$ ($$-1$$ for O) and in compounds with fluorine.  
-- Hydrogen is usually $$+1$$ except in metal hydrides (e.g. $$\text{NaH}$$), where it is $$-1$$.  
-- Fluorine is $$-1$$ in all compounds. Other halogens are $$-1$$ unless bonded to a more electronegative element (such as oxygen).  
+- Any element in its elemental form (e.g. $$\text{O}_2$$, $$\text{Na}$$) has oxidation number $$0$$.
+- A monatomic ion matches its charge (e.g. $$\text{Na}^+$$ is $$+1$$).
+- Oxygen is usually $$-2$$ except in peroxides such as $$\text{H}_2\text{O}_2$$ ($$-1$$ for O) and in compounds with fluorine.
+- Hydrogen is usually $$+1$$ except in metal hydrides (e.g. $$\text{NaH}$$), where it is $$-1$$.
+- Fluorine is $$-1$$ in all compounds. Other halogens are $$-1$$ unless bonded to a more electronegative element (such as oxygen).
 
 The rule of thumb is that you always assign the most electronegative atom first in terms of oxidation states.
 
@@ -193,10 +193,10 @@ The **principal quantum number** $$n$$ is a positive integer ($$n = 1, 2, 3, \ld
 
 The **azimuthal** (or **angular momentum**) quantum number $$l$$ runs from $$0$$ to $$n - 1$$ and labels subshell shape:
 
-- $$l = 0$$ → s orbital  
-- $$l = 1$$ → p orbital  
-- $$l = 2$$ → d orbital  
-- $$l = 3$$ → f orbital  
+- $$l = 0$$ → s orbital
+- $$l = 1$$ → p orbital
+- $$l = 2$$ → d orbital
+- $$l = 3$$ → f orbital
 
 The **magnetic quantum number** $$m_l$$ takes integer values from $$-l$$ to $$+l$$ and distinguishes *orientations* of a subshell in space (e.g. $$p_x$$ and $$p_y$$)
 
@@ -260,7 +260,7 @@ In the **photoelectric effect**, photons eject electrons from a metal surface on
 
 $$
 K_{\max} = h\nu - \Phi,
-$$ 
+$$
 
 but for all purposes, memorizing this equation is not necessary for the AP Chemistry exam. It's just important to know that increasing *intensity* at fixed frequency increases the number of ejected electrons, not their maximum *kinetic energy*.
 
@@ -351,3 +351,209 @@ U = k \frac{Q_1 Q_2}{r}.
 $$
 
 These expressions reappear when you interpret **lattice energy**, **bond** formation, and **ionic** attraction in [Unit 2]({{ '/notes/ap/chem/compounds/' | relative_url }}).
+
+---
+
+## Practice
+
+### MCQ
+
+1. A neutral atom has the electron configuration $$1s^2 2s^2 2p^6 3s^2 3p^4$$. Which statement is correct?
+
+   (A) The atom is in group 4 and forms $$4+$$ ions most often.<br>
+   (B) The atom is in group 16 and has six valence electrons.<br>
+   (C) The atom is a noble gas because the $$3p$$ subshell is occupied.<br>
+   (D) The atom has four valence electrons because the last exponent is $$4$$.
+
+2. Which set of particles is arranged in order of increasing radius?
+
+   (A) $$\text{Cl}^- < \text{S}^{2-} < \text{K}^+$$<br>
+   (B) $$\text{K}^+ < \text{Cl}^- < \text{S}^{2-}$$<br>
+   (C) $$\text{S}^{2-} < \text{Cl}^- < \text{K}^+$$<br>
+   (D) $$\text{Cl}^- < \text{K}^+ < \text{S}^{2-}$$
+
+3. Which photon has the greatest energy?
+
+   (A) A photon with wavelength $$700\ \text{nm}$$<br>
+   (B) A photon with wavelength $$500\ \text{nm}$$<br>
+   (C) A photon with wavelength $$300\ \text{nm}$$<br>
+   (D) A photon with wavelength $$900\ \text{nm}$$
+
+4. Which statement best explains why first ionization energy generally increases from left to right across a period?
+
+   (A) Atomic radius increases, so electrons are easier to remove.<br>
+   (B) Effective nuclear charge increases, so valence electrons are held more strongly.<br>
+   (C) Shielding increases sharply, so valence electrons are held more weakly.<br>
+   (D) The number of occupied principal energy levels increases.
+
+5. Which element has the electron configuration $$[\text{Ne}]3s^2 3p^1$$?
+
+   (A) Mg<br>
+   (B) Al<br>
+   (C) Si<br>
+   (D) P
+
+6. Which set of quantum numbers is not allowed for an electron in an atom?
+
+   (A) $$n=2,\ l=1,\ m_l=0,\ m_s=+\frac12$$<br>
+   (B) $$n=3,\ l=2,\ m_l=-2,\ m_s=-\frac12$$<br>
+   (C) $$n=3,\ l=3,\ m_l=0,\ m_s=+\frac12$$<br>
+   (D) $$n=4,\ l=0,\ m_l=0,\ m_s=-\frac12$$
+
+### FRQ
+
+7. A sample of chlorine contains $$75.78\%$$ $$^{35}\text{Cl}$$ atoms and $$24.22\%$$ $$^{37}\text{Cl}$$ atoms.
+
+   $$(A)$$ Calculate the average atomic mass of chlorine.
+
+   $$(B)$$ Explain why the average atomic mass is closer to $$35$$ than to $$37$$.
+
+   $$(C)$$ A PES spectrum for chlorine shows peaks from core electrons and valence electrons. Explain why core-electron peaks appear at higher binding energy than valence-electron peaks.
+
+8. Sterling silver contains silver and copper. In a released AP Chemistry question, students compared atomic radii using Coulomb's law. (Adapted from College Board, [2024 AP Chemistry FRQ 3](https://apcentral.collegeboard.org/media/pdf/ap24-frq-chemistry.pdf).)
+
+   $$(A)$$ Identify which atom has the larger atomic radius: $$\text{Ag}$$ or $$\text{Cu}$$.
+
+   $$(B)$$ Use shell structure and Coulomb's law to justify your answer.
+
+   $$(C)$$ Explain why comparing only nuclear charge is not enough to predict the radius in this case.
+
+---
+
+## Solutions
+
+### MCQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+The highest principal energy level is $$n=3$$, and the atom has
+
+$$
+3s^2 3p^4
+$$
+
+as its valence-shell configuration. That is $$6$$ valence electrons, which places the atom in group $$16$$.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+The ions $$\text{K}^+$$, $$\text{Cl}^-$$, and $$\text{S}^{2-}$$ are isoelectronic, each with $$18$$ electrons. In an isoelectronic series, radius decreases as nuclear charge increases. Potassium has the most protons, so $$\text{K}^+$$ is smallest; sulfur has the fewest, so $$\text{S}^{2-}$$ is largest.
+
+$$
+\boxed{\text{K}^+ < \text{Cl}^- < \text{S}^{2-}}
+$$
+
+So the answer is
+
+$$
+\boxed{\text{B}}.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 3
+
+Photon energy is
+
+$$
+E=\frac{hc}{\lambda}.
+$$
+
+Energy is inversely proportional to wavelength, so the shortest wavelength has the greatest energy.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 4
+
+Across a period, protons are added to the nucleus while electrons are added to the same principal energy level. Shielding does not increase enough to cancel the increased nuclear attraction, so $$Z_{\text{eff}}$$ increases.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 5
+
+After the neon core, $$3s^2 3p^1$$ gives three valence electrons in the third period. That is aluminum.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 6
+
+For a given $$n$$, the value of $$l$$ must be an integer from $$0$$ to $$n-1$$. If $$n=3$$, then $$l=3$$ is not allowed.
+
+$$
+\boxed{\text{C}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$(A)$$ Use a weighted average:
+
+$$
+(0.7578)(35)+(0.2422)(37)=35.4844.
+$$
+
+The percentages must be written as decimals because each isotope contributes only its fractional abundance to the average.
+
+The average atomic mass is
+
+$$
+\boxed{35.48\ \text{amu}}.
+$$
+
+$$(B)$$ The average is closer to $$35$$ because the $$^{35}\text{Cl}$$ isotope is much more abundant than $$^{37}\text{Cl}$$. In a weighted average, the more abundant isotope pulls the average closer to its mass. Since about three-fourths of the atoms are $$^{35}\text{Cl}$$, the average should sit much nearer $$35$$ than $$37$$, which matches the calculated value.
+
+$$(C)$$ Core electrons are closer to the nucleus and experience a larger effective nuclear attraction than valence electrons. They are also less shielded by other electrons. Because the attraction between the nucleus and a core electron is stronger, more energy is required to remove a core electron from the atom. Therefore, core-electron peaks appear at higher binding energy on a PES spectrum than valence-electron peaks.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+$$(A)$$ $$\text{Ag}$$ has the larger atomic radius.
+
+$$(B)$$ Silver's valence electrons occupy a higher principal energy level than copper's valence electrons. Copper is in period 4, while silver is in period 5, so the outer electrons in silver are farther from the nucleus. By Coulomb's law, attraction decreases as distance increases:
+
+$$
+F\propto \frac{q_1q_2}{r^2}.
+$$
+
+Silver also has more inner electrons, which increases shielding. The greater distance and shielding make the attraction between the nucleus and valence electrons weaker, so the atomic radius is larger.
+
+$$(C)$$ Silver has more protons than copper, which by itself would increase attraction. But the valence electrons in silver are also farther from the nucleus and more shielded. Radius depends on the balance of nuclear charge, shielding, and distance, not nuclear charge alone. On the AP exam, a complete explanation should explicitly compare both the attractive force from the nucleus and the distance/shielding effect.
+
+</div>

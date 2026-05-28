@@ -746,6 +746,8 @@ This method is useful when the equation can be rewritten as a quadratic in the i
 
 ## Solutions
 
+<div class="theorem-box" markdown="1">
+
 ### Solution 1
 
 Let $$f(x)=mx+b$$. Then
@@ -796,6 +798,10 @@ $$
 \boxed{y=-x+14}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 2
 
 Since the zeros are $$-1$$ and $$5$$,
@@ -845,6 +851,10 @@ Since $$a<0$$, this is a maximum. The maximum value is $$18$$ and the range is
 $$
 \boxed{(-\infty,18]}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 3
 
@@ -902,6 +912,10 @@ $$
 \boxed{[0,3\sqrt2]}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 4
 
 The lowest-degree polynomial must have factors
@@ -937,6 +951,10 @@ x\to -\infty \Rightarrow p(x)\to -\infty,
 \qquad
 x\to \infty \Rightarrow p(x)\to \infty.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 5
 
@@ -994,6 +1012,10 @@ This graph is shown below:
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/polygraph1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 6
 
 Because the polynomial has real coefficients, $$3-i$$ must also be a zero. The lowest-degree polynomial has the form
@@ -1025,6 +1047,10 @@ Thus $$a=\dfrac52$$, and
 $$
 \boxed{f(x)=\frac52(x-2)^2(x+1)\bigl((x-3)^2+1\bigr)}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 7
 
@@ -1073,6 +1099,10 @@ $$
 \boxed{P(x)=(x-3)^2\left(x-\frac{-3+\sqrt{17}}{2}\right)\left(x-\frac{-3-\sqrt{17}}{2}\right)}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 8
 
 By the Rational Root Theorem, possible rational zeros are
@@ -1106,6 +1136,10 @@ So the real zeros are
 $$
 \boxed{-3,\ -1,\ 2,\ \frac52}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 9
 
@@ -1147,6 +1181,10 @@ $$
 \boxed{3x-1}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 10
 
 For rational coefficients, conjugate pairs are required:
@@ -1184,6 +1222,10 @@ Expanding:
 $$
 \boxed{x^4-6x^3+11x^2-10x+2}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 11
 
@@ -1265,6 +1307,10 @@ The graph is shown below:
 
 <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/ratgraph1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 12
 
 $$
@@ -1305,6 +1351,10 @@ Therefore the solution is
 $$
 \boxed{(-\infty,-1)\cup(2,4]}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 13
 
@@ -1351,6 +1401,10 @@ The maximum volume is approximately
 $$
 V(3.39)\approx 655.0\text{ in}^3.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 14
 
@@ -1414,6 +1468,10 @@ $$
 \boxed{x=5}.
 $$
 
+</div>
+
+<div class="theorem-box" markdown="1">
+
 ### Solution 15
 
 Let the large rectangle have length $$y$$ and width $$x$$, where the two interior dividers are each parallel to the width. Then the fencing uses four widths and two lengths:
@@ -1457,6 +1515,10 @@ The maximum total area is
 $$
 \boxed{1800\text{ ft}^2}.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
 
 ### Solution 16
 
@@ -1516,3 +1578,5 @@ For part (C), the theorem statement is this: If a polynomial with integer coeffi
 $$
 \boxed{p\mid a_0\quad\text{and}\quad q\mid a_n}.
 $$
+
+</div>

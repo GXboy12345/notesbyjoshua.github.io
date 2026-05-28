@@ -38,11 +38,77 @@ AP free-response questions often reward clear particle-level explanations, corre
 
 ---
 
-## Practice Problems
+## Practice
 
-- Use released AP Chemistry free-response questions from College Board for timed practice.
-- For each unit, write one-page summaries of the equations, particle diagrams, and common traps.
-- After solving a calculation, check whether the sign, units, and magnitude make chemical sense.
+### MCQ
+
+1. A student calculates $$Q<K$$ for a reversible reaction. Which statement is correct?
+
+   (A) The reaction shifts toward reactants.<br>
+   (B) The reaction shifts toward products.<br>
+   (C) The reaction is at equilibrium.<br>
+   (D) The value of $$K$$ must decrease.
+
+2. Which statement is most useful when writing an AP Chemistry FRQ explanation?
+
+   (A) A rule should be stated without evidence.<br>
+   (B) Particle-level reasoning should connect to the equation or data.<br>
+   (C) Calculations do not need units if the setup is correct.<br>
+   (D) Equilibrium and kinetics always answer the same question.
+
+### FRQ
+
+3. A student is reviewing for the AP Chemistry exam.
+
+   $$(A)$$ Explain the difference between what kinetics predicts and what equilibrium predicts.
+
+   $$(B)$$ Describe one way to check whether a numerical chemistry answer is reasonable.
+
+   $$(C)$$ Explain why balanced equations are necessary before doing stoichiometry.
+
+---
+
+## Solutions
+
+### MCQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+If $$Q<K$$, the mixture has too few products compared with the equilibrium ratio. The reaction proceeds forward to form more products.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+### Solution 2
+
+Strong AP Chemistry explanations connect the particle-level model to the evidence, equation, graph, or calculation in the problem.
+
+$$
+\boxed{\text{B}}
+$$
+
+</div>
+
+### FRQ
+
+<div class="theorem-box" markdown="1">
+
+### Solution 1
+
+$$(A)$$ Kinetics predicts how fast a reaction occurs and what factors affect rate. Equilibrium predicts the relative amounts of reactants and products after the forward and reverse processes balance.
+
+$$(B)$$ One useful check is to inspect units, sign, and magnitude. For example, an equilibrium concentration should not be negative, and a thermodynamics calculation should have a sign that matches the stated spontaneity.
+
+$$(C)$$ Balanced equations give the mole ratios between reactants and products. Without those ratios, the stoichiometric conversion from one substance to another is not chemically meaningful.
+
+</div>
 
 ---
 
