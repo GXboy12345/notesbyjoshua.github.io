@@ -13,10 +13,14 @@ const { current = Astro.url.pathname } = Astro.props;
 
 <header class="site-header" transition:persist="site-header">
   <a class="brand" href={p('/')}>Notes by <span>Joshua</span></a>
-  <nav class="header-nav" aria-label="Primary">
+  <nav class="header-nav nav-slider-track" aria-label="Primary">
     {
       mainNav.map((item) => (
-        <a href={p(item.href)} aria-current={pathActive(current, item.href) ? 'page' : undefined}>
+        <a
+          href={p(item.href)}
+          aria-current={pathActive(current, item.href) ? 'page' : undefined}
+          data-nav-active={pathActive(current, item.href) ? '' : undefined}
+        >
           {item.label}
         </a>
       ))
@@ -30,22 +34,16 @@ const { current = Astro.url.pathname } = Astro.props;
 </header>
 
 <script>
-  import { pathActiveFromPathname } from '../lib/paths';
+  import { initNavSlider, syncNavSlider, syncTrackActive } from '../scripts/nav-slider';
 
   function syncHeaderActive() {
     const nav = document.querySelector<HTMLElement>('.site-header .header-nav');
     if (!nav) return;
-    const current = window.location.pathname;
-    nav.querySelectorAll<HTMLAnchorElement>('a[href]').forEach((link) => {
-      const linkPath = new URL(link.href, window.location.origin).pathname;
-      if (pathActiveFromPathname(current, linkPath)) {
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.removeAttribute('aria-current');
-      }
-    });
+    syncTrackActive(nav);
+    syncNavSlider(nav);
   }
 
+  initNavSlider(document.querySelector('.site-header .header-nav'));
   syncHeaderActive();
   document.addEventListener('astro:page-load', syncHeaderActive);
 </script>

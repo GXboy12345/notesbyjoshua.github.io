@@ -78,13 +78,13 @@ const notesTree = buildNotesTree(await allDocEntries());
     </div>
 
     <div id="sidebar-inner" class="sidebar-inner">
-      <nav class="sidebar-primary" aria-label="Primary">
+      <nav class="sidebar-primary nav-slider-track" aria-label="Primary">
         {
           mainNav.map((item) => (
             <a
               class="sidebar-primary-link"
               href={p(item.href)}
-              aria-current={pathActive(current, item.href) ? 'page' : undefined}
+              data-nav-active={pathActive(current, item.href) ? '' : undefined}
             >
               {item.label}
             </a>
@@ -122,6 +122,16 @@ const notesTree = buildNotesTree(await allDocEntries());
 
 <script>
   import { initSidebar, syncSidebarActive } from '../scripts/sidebar.ts';
+  import { initNavSlider, syncNavSlider, syncTrackActive } from '../scripts/nav-slider';
+
+  function syncSidebarNav() {
+    syncSidebarActive();
+    const primary = document.querySelector<HTMLElement>('.sidebar-primary');
+    if (primary) {
+      syncTrackActive(primary);
+      syncNavSlider(primary);
+    }
+  }
 
   document.addEventListener(
     'click',
@@ -132,10 +142,11 @@ const notesTree = buildNotesTree(await allDocEntries());
     true,
   );
 
+  initNavSlider(document.querySelector('.sidebar-primary'));
   initSidebar();
-  syncSidebarActive();
+  syncSidebarNav();
   document.addEventListener('astro:page-load', () => {
     initSidebar();
-    syncSidebarActive();
+    syncSidebarNav();
   });
 </script>
