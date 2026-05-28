@@ -1,0 +1,22 @@
+---
+---
+
+<dialog id="ref-sheet-drawer" class="ref-sheet-drawer" aria-labelledby="ref-sheet-title">
+  <div class="ref-sheet-backdrop" data-ref-sheet-close tabindex="-1" aria-hidden="true"></div>
+  <div class="ref-sheet-panel" role="document">
+    <header class="ref-sheet-header">
+      <h2 id="ref-sheet-title" class="ref-sheet-title"></h2>
+      <button type="button" class="ref-sheet-close" data-ref-sheet-close aria-label="Close cheatsheet">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </header>
+    <div id="ref-sheet-body" class="ref-sheet-body prose"></div>
+  </div>
+</dialog>
+
+<script>
+  import { initReferenceSheet } from '../scripts/reference-sheet.ts';
+
+  initReferenceSheet();
+  document.addEventListener('astro:page-load', initReferenceSheet);
+</script>

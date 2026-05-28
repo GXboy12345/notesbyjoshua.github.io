@@ -1,0 +1,34 @@
+---
+export type TechStackItem = {
+  name: string;
+  detail?: string;
+  href?: string;
+};
+
+interface Props {
+  items: TechStackItem[];
+  title?: string;
+}
+
+const { items, title = 'Tech stack' } = Astro.props;
+---
+
+<section class="tech-stack" aria-labelledby="tech-stack-heading">
+  <h2 id="tech-stack-heading" class="tech-stack-title">{title}</h2>
+  <ul class="tech-stack-list">
+    {
+      items.map((item) => (
+        <li class="tech-stack-item">
+          {item.href ? (
+            <a href={item.href} target="_blank" rel="noopener noreferrer">
+              {item.name}
+            </a>
+          ) : (
+            <span class="tech-stack-name">{item.name}</span>
+          )}
+          {item.detail && <span class="tech-stack-detail">{item.detail}</span>}
+        </li>
+      ))
+    }
+  </ul>
+</section>

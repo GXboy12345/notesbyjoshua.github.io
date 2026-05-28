@@ -28,7 +28,9 @@ $$
 \sigma = \sqrt{2df}.
 $$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/catchi/chi-square-distribution.png' | relative_url }}" alt="Chi-square distribution placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Chi-square distribution placeholder](/assets/APs/AP%20Stats/catchi/chi-square-distribution.png)
+:::
 
 ---
 
@@ -83,7 +85,9 @@ $$
 
 where $$k$$ is the number of categories.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/catchi/goodness-of-fit.png' | relative_url }}" alt="Goodness of fit table placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Goodness of fit table placeholder](/assets/APs/AP%20Stats/catchi/goodness-of-fit.png)
+:::
 
 ---
 

@@ -1,0 +1,38 @@
+---
+import DocLayout from '../layouts/DocLayout.astro';
+import ProfileCard from '../components/about/ProfileCard.astro';
+import CredentialList from '../components/about/CredentialList.astro';
+import PlugGrid from '../components/about/PlugGrid.astro';
+import {
+  aboutHeadings,
+  experience,
+  mission,
+  plugs,
+  profile,
+} from '../data/about';
+---
+
+<DocLayout title="About" headings={aboutHeadings}>
+  <div class="about-page">
+    <ProfileCard intro={profile.intro} />
+
+    <section class="about-section" aria-labelledby="my-mission">
+      <h2 id="my-mission">My Mission</h2>
+      <p class="about-mission">{mission}</p>
+    </section>
+
+    <section class="about-section" aria-labelledby="my-experience">
+      <h2 id="my-experience">My Experience</h2>
+      <CredentialList
+        lead={experience.lead}
+        qualifications={experience.qualifications}
+        closing={experience.closing}
+      />
+    </section>
+
+    <section class="about-section" aria-labelledby="shameless-plugs">
+      <h2 id="shameless-plugs">Shameless Plugs :P</h2>
+      <PlugGrid plugs={plugs} />
+    </section>
+  </div>
+</DocLayout>

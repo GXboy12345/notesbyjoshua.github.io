@@ -58,7 +58,9 @@ A **frequency distribution** lists possible values (or classes) of the variable 
 | Category/bin 2 | $$f_2$$ | $$f_2/n$$ | $$f_1+f_2$$ |
 | Category/bin 3 | $$f_3$$ | $$f_3/n$$ | $$f_1+f_2+f_3$$ |
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/univardata/frequency-displays.png' | relative_url }}" alt="Frequency table and display placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Frequency table and display placeholder](/assets/APs/AP%20Stats/univardata/frequency-displays.png)
+:::
 
 ---
 
@@ -94,7 +96,9 @@ A **stemplot** splits each number into a **stem** (leading digit or digits) and 
 
 A **histogram** groups quantitative data into intervals (bins), then draws bars whose heights show frequency or relative frequency (or density, in more advanced courses). Bars touch to show that the horizontal axis is a continuous scale (even though data are binned). The shape of a histogram (symmetric, skewed, unimodal, bimodal) can tell you a lot about the data (talked about later).
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/univardata/histogram-shapes.png' | relative_url }}" alt="Histogram shapes placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Histogram shapes placeholder](/assets/APs/AP%20Stats/univardata/histogram-shapes.png)
+:::
 
 ### Cumulative relative frequency graphs (ogives)
 
@@ -104,7 +108,9 @@ An **ogive** plots **cumulative relative frequency** (from 0 to 1, or 0% to 100%
 
 A **boxplot** (box-and-whisker plot) summarizes a quantitative variable using quartiles and the median. Draw a box from the first quartile $$Q_1$$ to the **third quartile** $$Q_3$$; draw a line inside the box at the **median**. The **interquartile range** is $$IQR = Q_3 - Q_1$$. “Whiskers” typically extend to the most extreme values within **1.5 × IQR** of the quartiles; points beyond that range are plotted individually as outliers. Boxplots are ideal for comparing several groups on the same scale.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/univardata/boxplot.png' | relative_url }}" alt="Boxplot placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Boxplot placeholder](/assets/APs/AP%20Stats/univardata/boxplot.png)
+:::
 
 ---
 

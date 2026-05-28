@@ -23,7 +23,9 @@ Samples vary, so statistics vary. This is called **sampling variability**. A goo
 
 Larger random samples usually reduce variability, but they do not fix bias caused by bad sampling design.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/samplingdistr/sampling-distribution.png' | relative_url }}" alt="Sampling distribution placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Sampling distribution placeholder](/assets/APs/AP%20Stats/samplingdistr/sampling-distribution.png)
+:::
 
 ---
 
@@ -115,7 +117,9 @@ is often enough for mild or moderate skew. If the population is strongly skewed 
 
 If the population itself is normal, then the sampling distribution of $$\bar{x}$$ is normal for any sample size $$n$$.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/samplingdistr/central-limit-theorem.png' | relative_url }}" alt="Central Limit Theorem placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Central Limit Theorem placeholder](/assets/APs/AP%20Stats/samplingdistr/central-limit-theorem.png)
+:::
 
 ---
 
@@ -153,7 +157,9 @@ For a normal distribution:
 - About $$95\%$$ are within $$2$$ standard deviations.
 - About $$99.7\%$$ are within $$3$$ standard deviations.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/samplingdistr/normal-curve.png' | relative_url }}" alt="Normal curve placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Normal curve placeholder](/assets/APs/AP%20Stats/samplingdistr/normal-curve.png)
+:::
 
 ---
 

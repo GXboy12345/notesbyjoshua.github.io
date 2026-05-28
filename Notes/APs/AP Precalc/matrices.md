@@ -39,9 +39,8 @@ The two basic algebraic methods are:
 - **Substitution**: solve one equation for one variable, then substitute into the other equations.
 - **Elimination**: add multiples of equations together until one variable disappears.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Solve
+:::example
+Solve
 
 $$
 \begin{cases}
@@ -79,8 +78,7 @@ So the solution is
 $$
 \boxed{(2,3)}.
 $$
-
-</div>
+:::
 
 ---
 
@@ -345,9 +343,8 @@ $$
 \text{entry below pivot}-(\text{multiple})(\text{pivot})=0.
 $$
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Solve
+:::example
+Solve
 
 $$
 \begin{cases}
@@ -470,8 +467,7 @@ Thus
 $$
 \boxed{(x,y,z)=(1,2,3)}.
 $$
-
-</div>
+:::
 
 ### Detecting special cases
 
@@ -666,9 +662,8 @@ $$
 
 If $$ad-bc=0$$, then the inverse does not exist.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the inverse of
+:::example
+Find the inverse of
 
 $$
 A=
@@ -702,8 +697,7 @@ A^{-1}
 \end{bmatrix}
 }.
 $$
-
-</div>
+:::
 
 ### Solving systems with inverses
 
@@ -719,9 +713,8 @@ $$
 X=A^{-1}B.
 $$
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Solve
+:::example
+Solve
 
 $$
 \begin{cases}
@@ -781,8 +774,7 @@ So
 $$
 \boxed{(x,y)=(3,1)}.
 $$
-
-</div>
+:::
 
 For larger square matrices, one way to find the inverse is to row-reduce the augmented matrix
 
@@ -848,9 +840,8 @@ $$
 
 If $$ad-bc=0$$, the rows or columns are dependent in the sense that one direction has collapsed into another. The matrix is singular and has no inverse. If $$ad-bc\ne 0$$, the matrix is invertible.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Compare the determinants:
+:::example
+Compare the determinants:
 
 $$
 A=
@@ -881,8 +872,7 @@ $$
 $$
 
 This is nonzero, so $$B$$ is invertible and a system with coefficient matrix $$B$$ has exactly one solution.
-
-</div>
+:::
 
 For a $$3\times 3$$ matrix, one useful expansion is along the first row. Each entry in the first row gets multiplied by the determinant of the $$2\times 2$$ matrix left behind after deleting that entry's row and column:
 
@@ -948,9 +938,8 @@ a_2 & c_2
 \end{vmatrix}.
 $$
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Solve
+:::example
+Solve
 
 $$
 \begin{cases}
@@ -999,8 +988,7 @@ x=\frac{-52}{-14}=\frac{26}{7},
 \qquad
 y=\frac{-34}{-14}=\frac{17}{7}.
 $$
-
-</div>
+:::
 
 ---
 
@@ -1018,9 +1006,8 @@ Common strategies:
 - Use elimination when the nonlinear terms can be canceled.
 - Check all answers, especially after squaring or multiplying by expressions involving variables.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Solve
+:::example
+Solve
 
 $$
 \begin{cases}
@@ -1064,8 +1051,7 @@ Thus $$x=-4$$ or $$x=3$$. Since $$y=x+1$$, the solutions are
 $$
 \boxed{(-4,-3)\text{ and }(3,4)}.
 $$
-
-</div>
+:::
 
 ---
 
@@ -1085,9 +1071,8 @@ To graph a linear inequality:
 4. Shade the side that satisfies the inequality.
 5. Repeat for every inequality; the solution is the overlap.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Describe the solution region:
+:::example
+Describe the solution region:
 
 $$
 \begin{cases}
@@ -1117,14 +1102,14 @@ so
 $$
 3x<6,\qquad x<2.
 $$
-
-</div>
+:::
 ---
 
 ## Practice
 
+:::practice
+:::frq{id=precalc-matrices-1}
 1. Solve the system using Gaussian elimination:
-
     $$
     \begin{cases}
     2x-y+3z=9\\
@@ -1133,8 +1118,113 @@ $$
     \end{cases}
     $$
 
-2. Solve the system and classify it as having one solution, no solution, or infinitely many solutions:
+:::solution
+Start with the augmented matrix:
 
+$$
+\left[
+\begin{array}{ccc|c}
+2&-1&3&9\\
+1&2&-1&2\\
+3&1&1&8
+\end{array}
+\right].
+$$
+
+Swap rows $$1$$ and $$2$$:
+
+$$
+\left[
+\begin{array}{ccc|c}
+1&2&-1&2\\
+2&-1&3&9\\
+3&1&1&8
+\end{array}
+\right].
+$$
+
+Eliminate below the first pivot:
+
+$$
+R_2\leftarrow R_2-2R_1,\qquad R_3\leftarrow R_3-3R_1.
+$$
+
+Then
+
+$$
+\left[
+\begin{array}{ccc|c}
+1&2&-1&2\\
+0&-5&5&5\\
+0&-5&4&2
+\end{array}
+\right].
+$$
+
+Subtract row $$2$$ from row $$3$$:
+
+$$
+\left[
+\begin{array}{ccc|c}
+1&2&-1&2\\
+0&-5&5&5\\
+0&0&-1&-3
+\end{array}
+\right].
+$$
+
+The last row gives
+
+$$
+-z=-3,
+$$
+
+so
+
+$$
+z=3.
+$$
+
+From row $$2$$,
+
+$$
+-5y+5z=5.
+$$
+
+Thus
+
+$$
+-5y+15=5,
+$$
+
+so
+
+$$
+y=2.
+$$
+
+From row $$1$$,
+
+$$
+x+2y-z=2.
+$$
+
+Therefore
+
+$$
+x+4-3=2,
+$$
+
+so $$x=1$$. The solution is
+
+$$
+\boxed{(1,2,3)}.
+$$
+:::
+:::
+
+:::frq{id=precalc-matrices-2}
+2. Solve the system and classify it as having one solution, no solution, or infinitely many solutions:
     $$
     \begin{cases}
     x+2y-z=4\\
@@ -1143,47 +1233,158 @@ $$
     \end{cases}
     $$
 
-3. Find all values of $$k$$ for which the system has no unique solution:
+:::solution
+The second equation is exactly $$2$$ times the first equation, so it does not add new information. Use the first and third equations:
 
+$$
+\begin{cases}
+x+2y-z=4\\
+3x-y+z=1
+\end{cases}
+$$
+
+Let $$z=t$$. Then
+
+$$
+x+2y=4+t
+$$
+
+and
+
+$$
+3x-y=1-t.
+$$
+
+From the first equation,
+
+$$
+x=4+t-2y.
+$$
+
+Substitute:
+
+$$
+3(4+t-2y)-y=1-t.
+$$
+
+Then
+
+$$
+12+3t-7y=1-t,
+$$
+
+so
+
+$$
+7y=11+4t,
+\qquad
+y=\frac{11+4t}{7}.
+$$
+
+Now
+
+$$
+x=4+t-2\left(\frac{11+4t}{7}\right)=\frac{6-t}{7}.
+$$
+
+Thus the system has infinitely many solutions:
+
+$$
+\boxed{(x,y,z)=\left(\frac{6-t}{7},\frac{11+4t}{7},t\right),\quad t\in\mathbb R}.
+$$
+:::
+:::
+
+:::frq{id=precalc-matrices-3}
+3. Find all values of $$k$$ for which the system has no unique solution:
     $$
     \begin{cases}
     kx+2y=6\\
     8x+ky=12
     \end{cases}
     $$
-
     For each such value of $$k$$, determine whether the system has no solution or infinitely many solutions.
 
-4. Let
+:::solution
+The coefficient matrix is
 
+$$
+\begin{bmatrix}
+k&2\\
+8&k
+\end{bmatrix}.
+$$
+
+The system has no unique solution when the determinant is zero:
+
+$$
+k^2-16=0.
+$$
+
+Thus
+
+$$
+k=\pm4.
+$$
+
+If $$k=4$$, the system is
+
+$$
+\begin{cases}
+4x+2y=6\\
+8x+4y=12
+\end{cases}
+$$
+
+and the second equation is $$2$$ times the first. So there are infinitely many solutions.
+
+If $$k=-4$$, the system is
+
+$$
+\begin{cases}
+-4x+2y=6\\
+8x-4y=12
+\end{cases}
+$$
+
+Multiplying the first equation by $$-2$$ gives
+
+$$
+8x-4y=-12,
+$$
+
+which contradicts $$8x-4y=12$$. So there is no solution.
+
+Therefore:
+
+$$
+\boxed{k=4\text{ gives infinitely many solutions, and }k=-4\text{ gives no solution}.}
+$$
+:::
+:::
+:::
+
+4. Let
     $$
     A=\begin{bmatrix}2&-1\\3&4\end{bmatrix},
     \qquad
     B=\begin{bmatrix}0&5\\-2&1\end{bmatrix}.
     $$
-
     Compute $$2A-3B$$, $$AB$$, and $$BA$$.
-
 5. Let
-
     $$
     A=\begin{bmatrix}1&2\\0&3\end{bmatrix},
     \qquad
     B=\begin{bmatrix}a&b\\c&d\end{bmatrix}.
     $$
-
     Find all matrices $$B$$ such that $$AB=BA$$.
-
 6. Find $$A^{-1}$$, if it exists, and use it to solve $$AX=B$$:
-
     $$
     A=\begin{bmatrix}4&7\\2&5\end{bmatrix},
     \qquad
     B=\begin{bmatrix}1\\-3\end{bmatrix}.
     $$
-
 7. Find the inverse of
-
     $$
     A=\begin{bmatrix}
     1&2&0\\
@@ -1191,9 +1392,7 @@ $$
     0&0&2
     \end{bmatrix}.
     $$
-
 8. Find all values of $$t$$ for which the matrix is singular:
-
     $$
     A=\begin{bmatrix}
     t&1&0\\
@@ -1201,38 +1400,29 @@ $$
     0&3&t
     \end{bmatrix}.
     $$
-
 9. Use Cramer's Rule to solve:
-
     $$
     \begin{cases}
     3x-2y=11\\
     5x+4y=7
     \end{cases}
     $$
-
 10. A quadratic function $$f(x)=ax^2+bx+c$$ passes through $$(-1,6)$$, $$(2,3)$$, and $$(4,15)$$. Use a system of equations to find $$a,b,c$$.
-
 11. Solve the nonlinear system:
-
     $$
     \begin{cases}
     x^2+y^2=25\\
     x-y=1
     \end{cases}
     $$
-
 12. Solve the nonlinear system:
-
     $$
     \begin{cases}
     xy=12\\
     x+y=8
     \end{cases}
     $$
-
 13. Find the vertices and area of the region satisfying
-
     $$
     \begin{cases}
     x\ge 0\\
@@ -1241,9 +1431,7 @@ $$
     3x+y\le 9
     \end{cases}
     $$
-
 14. A matrix transformation sends the point $$(x,y)$$ to
-
     $$
     \begin{bmatrix}
     x'\\
@@ -1259,13 +1447,9 @@ $$
     y
     \end{bmatrix}.
     $$
-
     Find the original point $$(x,y)$$ that maps to $$(7,5)$$. Then find the image of the line $$y=2x+1$$ under this transformation.
-
 15. A small economy has two sectors: food and tools. Producing one unit of food requires $$0.20$$ units of food and $$0.10$$ units of tools. Producing one unit of tools requires $$0.30$$ units of food and $$0.20$$ units of tools. External demand is $$110$$ units of food and $$80$$ units of tools. Let $$F$$ and $$T$$ be the total production levels. Set up and solve the matrix equation for $$F$$ and $$T$$.
-
 16. **Extension (Cayley-Hamilton and Matrix Powers).** Let
-
     $$
     A=\begin{bmatrix}a&b\\c&d\end{bmatrix},
     \qquad
@@ -1273,37 +1457,25 @@ $$
     \qquad
     \det(A)=ad-bc.
     $$
-
     $$(A)$$ Prove the Cayley-Hamilton identity
-
     $$
     A^2-\operatorname{tr}(A)A+\det(A)I=0.
     $$
-
     $$(B)$$ Use part $$(A)$$ to derive the inverse formula for $$A$$ when $$\det(A)\ne 0$$.
-
     $$(C)$$ Explain why every power $$A^n$$ for $$n\ge 2$$ can be rewritten in the form
-
     $$
     A^n=\alpha_n A+\beta_n I
     $$
-
     for some constants $$\alpha_n$$ and $$\beta_n$$.
-
     $$(D)$$ Let
-
     $$
     M=\begin{bmatrix}2&1\\1&1\end{bmatrix}.
     $$
-
     Use part $$(C)$$ to compute $$M^6$$ without multiplying six matrices directly.
-
----
 
 ## Solutions
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 Start with the augmented matrix:
@@ -1407,11 +1579,9 @@ so $$x=1$$. The solution is
 $$
 \boxed{(1,2,3)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 The second equation is exactly $$2$$ times the first equation, so it does not add new information. Use the first and third equations:
@@ -1472,11 +1642,9 @@ Thus the system has infinitely many solutions:
 $$
 \boxed{(x,y,z)=\left(\frac{6-t}{7},\frac{11+4t}{7},t\right),\quad t\in\mathbb R}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 The coefficient matrix is
@@ -1533,11 +1701,9 @@ Therefore:
 $$
 \boxed{k=4\text{ gives infinitely many solutions, and }k=-4\text{ gives no solution}.}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 First,
@@ -1627,11 +1793,9 @@ BA=
 \end{bmatrix}
 }.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 Compute $$AB$$:
@@ -1702,11 +1866,9 @@ a&b\\
 \text{ for any real numbers }a,b.
 }
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 The determinant is
@@ -1780,11 +1942,9 @@ X=
 -7/3
 \end{bmatrix}.}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 7
 
 Let
@@ -1876,11 +2036,9 @@ A^{-1}=
 \end{bmatrix}
 }.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 8
 
 Compute the determinant:
@@ -1930,11 +2088,9 @@ Therefore
 $$
 \boxed{t=0,\ \sqrt5,\ -\sqrt5}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 9
 
 Compute
@@ -1983,11 +2139,9 @@ So
 $$
 \boxed{\left(\frac{29}{11},-\frac{17}{11}\right)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 10
 
 Use the three points in $$f(x)=ax^2+bx+c$$.
@@ -2071,11 +2225,9 @@ Therefore
 $$
 \boxed{f(x)=\frac75x^2-\frac{12}{5}x+\frac{11}{5}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 11
 
 From $$x-y=1$$,
@@ -2119,11 +2271,9 @@ Thus $$y=-4$$ or $$y=3$$. Since $$x=y+1$$, the solutions are
 $$
 \boxed{(-3,-4)\text{ and }(4,3)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 12
 
 Since
@@ -2155,11 +2305,9 @@ So the two numbers are $$2$$ and $$6$$. Therefore
 $$
 \boxed{(x,y)=(2,6)\text{ or }(6,2)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 13
 
 The region is in the first quadrant and below both lines:
@@ -2236,11 +2384,9 @@ So
 $$
 \boxed{\text{vertices }(0,0),(3,0),(2,3),(0,4)\text{ and area }\frac{17}{2}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 14
 
 We need
@@ -2305,11 +2451,9 @@ As $$x$$ varies, $$y'$$ varies freely, but $$x'$$ is always $$-1$$. Therefore th
 $$
 \boxed{x'=-1}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 15
 
 The total production must satisfy internal demand plus external demand.
@@ -2408,11 +2552,9 @@ So the required production levels are
 $$
 \boxed{F=\frac{11200}{61}\approx 183.61,\qquad T=\frac{7500}{61}\approx 122.95}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 16
 
 Part $$(A)$$. Compute $$A^2$$:
@@ -2704,5 +2846,4 @@ M^6=
 \end{bmatrix}
 }.
 $$
-
-</div>
+:::

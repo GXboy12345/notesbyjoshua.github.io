@@ -17,7 +17,7 @@ export const collections = {
   }),
   pages: defineCollection({
     loader: glob({
-      pattern: '{about,how-to-use-these-notes}.md',
+      pattern: 'how-to-use-these-notes.md',
       base: '.',
     }),
     schema: fm.extend({ nav_order: z.coerce.number().optional() }),

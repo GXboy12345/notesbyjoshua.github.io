@@ -20,7 +20,9 @@ An angle is in **standard position** if:
 - its initial side lies on the positive $$x$$-axis,
 - its terminal side is determined by rotating from the positive $$x$$-axis.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/standpos.jpg' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/standpos.jpg)
+:::
 
 By definition, counterclockwise rotations are positive, and clockwise rotations are negative.
 
@@ -42,15 +44,12 @@ $$
 180^\circ=\pi\text{ radians}.
 $$
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Extension.** The radian is a unitless measure, meaning that it is not arbitrarily set. Why is there always $$2\pi$$ radians in a circle?
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Convert $$225^\circ$$ to radians.
+:::example
+Convert $$225^\circ$$ to radians.
 
 Multiply by $$\frac{\pi}{180}$$:
 
@@ -65,12 +64,10 @@ Thus
 $$
 225^\circ=\frac{5\pi}{4}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Convert $$-\frac{4\pi}{3}$$ radians to degrees.
+:::example
+Convert $$-\frac{4\pi}{3}$$ radians to degrees.
 
 Multiply by $$\frac{180}{\pi}$$:
 
@@ -84,8 +81,7 @@ Thus
 $$
 -\frac{4\pi}{3}=-240^\circ.
 $$
-
-</div>
+:::
 
 ### Common angles
 
@@ -135,9 +131,8 @@ $$
 
 The angle $$\theta$$ must be measured in radians. On your calculator, if you go to **MODE**, you can switch from degrees to radians.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the arc length of a circle of radius $$3$$ meters subtended by a central angle of $$120^\circ$$.
+:::example
+Find the arc length of a circle of radius $$3$$ meters subtended by a central angle of $$120^\circ$$.
 
 First convert the angle to radians:
 
@@ -156,12 +151,10 @@ So the arc length is
 $$
 2\pi\text{ meters}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the radius of a circle whose arc length is $$6$$ meters and whose central angle is $$\frac14$$ radian.
+:::example
+Find the radius of a circle whose arc length is $$6$$ meters and whose central angle is $$\frac14$$ radian.
 
 Use
 
@@ -180,8 +173,7 @@ Thus
 $$
 r=24\text{ meters}.
 $$
-
-</div>
+:::
 
 ### Sector area
 
@@ -197,9 +189,8 @@ $$
 A=\frac{\theta}{2\pi}\cdot \pi r^2=\frac12r^2\theta.
 $$
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the area of a sector with radius $$6$$ and central angle $$\frac{5\pi}{6}$$.
+:::example
+Find the area of a sector with radius $$6$$ and central angle $$\frac{5\pi}{6}$$.
 
 Use the sector area formula:
 
@@ -220,8 +211,7 @@ Thus
 $$
 15\pi.
 $$
-
-</div>
+:::
 
 ---
 
@@ -252,9 +242,8 @@ $$
 
 Again, angular speed must be measured in radians per unit time.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** A wheel rotates at $$15$$ revolutions per second. The radius of the wheel is $$20$$ cm. Find the angular speed in radians per second and the linear speed of a point on the edge of the wheel.
+:::example
+A wheel rotates at $$15$$ revolutions per second. The radius of the wheel is $$20$$ cm. Find the angular speed in radians per second and the linear speed of a point on the edge of the wheel.
 
 One revolution is $$2\pi$$ radians, so
 
@@ -279,8 +268,7 @@ So the linear speed is
 $$
 600\pi\text{ cm/sec}.
 $$
-
-</div>
+:::
 
 ---
 
@@ -329,9 +317,8 @@ $$.
 
 The three functions are called cosecant, secant, and cotangent, respectively. To memorize, remember that you have to add co- to any trig function without a co- and do not add one otherwise.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** A right triangle has legs $$6$$ and $$2$$. Find the six trigonometric functions for the acute angle opposite the side of length $$6$$.
+:::example
+A right triangle has legs $$6$$ and $$2$$. Find the six trigonometric functions for the acute angle opposite the side of length $$6$$.
 
 First find the hypotenuse:
 
@@ -370,8 +357,7 @@ and
 $$
 \cot\theta=\frac13.
 $$
-
-</div>
+:::
 
 ### Cofunction identities
 
@@ -403,11 +389,9 @@ $$
 \sin 37^\circ=\cos 53^\circ.
 $$
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Extension.** Prove the six theorems above.
-
-</div>
+:::
 
 ---
 
@@ -549,9 +533,8 @@ For common quadrant angles:
 
 The reference angle gives the magnitude of the trig value. The quadrant gives the sign.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Evaluate $$\cos 315^\circ$$.
+:::example
+Evaluate $$\cos 315^\circ$$.
 
 The angle $$315^\circ$$ is in Quadrant IV. Its reference angle is
 
@@ -570,12 +553,10 @@ Thus
 $$
 \cos 315^\circ=\frac{\sqrt2}{2}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Evaluate $$\sin\left(\frac{4\pi}{3}\right)$$.
+:::example
+Evaluate $$\sin\left(\frac{4\pi}{3}\right)$$.
 
 The angle $$\frac{4\pi}{3}$$ is in Quadrant III. Its reference angle is
 
@@ -596,12 +577,13 @@ Thus
 $$
 \sin\left(\frac{4\pi}{3}\right)=-\frac{\sqrt3}{2}.
 $$
-
-</div>
+:::
 
 An image of the unit circle is shown below (with filled in values as described later):
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/unitcircle.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/unitcircle.png)
+:::
 
 ### Coterminal angles
 
@@ -738,9 +720,8 @@ $$
 
 If one trig value is known, the Pythagorean identity and the quadrant can determine the others.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Suppose $$90^\circ<\beta<180^\circ$$ and $$\sin\beta=\frac14$$. Find $$\cos\beta$$ and $$\tan\beta$$.
+:::example
+Suppose $$90^\circ<\beta<180^\circ$$ and $$\sin\beta=\frac14$$. Find $$\cos\beta$$ and $$\tan\beta$$.
 
 Since $$\beta$$ is in Quadrant II, cosine is negative and tangent is negative.
 
@@ -787,8 +768,7 @@ Thus
 $$
 \tan\beta=-\frac1{\sqrt{15}}.
 $$
-
-</div>
+:::
 
 ### Proving identities
 
@@ -801,9 +781,8 @@ To prove a trigonometric identity, work on one side of the equation and transfor
 - factor,
 - multiply by a conjugate when useful.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Prove that
+:::example
+Prove that
 
 $$
 \tan\theta\sin\theta=\sec\theta-\cos\theta.
@@ -849,12 +828,10 @@ Thus
 $$
 \tan\theta\sin\theta=\sec\theta-\cos\theta.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Prove that
+:::example
+Prove that
 
 $$
 \frac{\sin A}{1+\cos A}+\frac{1+\cos A}{\sin A}=2\csc A.
@@ -908,8 +885,7 @@ Thus
 $$
 \frac{\sin A}{1+\cos A}+\frac{1+\cos A}{\sin A}=2\csc A.
 $$
-
-</div>
+:::
 
 ---
 
@@ -955,9 +931,8 @@ $$
 \tan(\theta+\pi k)=\tan\theta.
 $$
 
-<div class="theorem-box" markdown="1">
-
-**Example.** If $$\sin t=\frac23$$, find $$\sin(-t)$$.
+:::example
+If $$\sin t=\frac23$$, find $$\sin(-t)$$.
 
 Since sine is odd,
 
@@ -970,8 +945,7 @@ Therefore
 $$
 \sin(-t)=-\frac23.
 $$
-
-</div>
+:::
 
 ---
 
@@ -1035,9 +1009,8 @@ $$
 
 Graphs and the unit circle both help solve equations like $$\sin x=0.75$$ or $$\cos x=-0.35$$ on an interval.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Solve $$\sin x=0.75$$ on $$[0,2\pi)$$.
+:::example
+Solve $$\sin x=0.75$$ on $$[0,2\pi)$$.
 
 The calculator gives the first solution
 
@@ -1056,12 +1029,10 @@ Thus
 $$
 x\approx0.848\quad\text{or}\quad x\approx2.294.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Solve $$\cos x=-0.35$$ on $$[0,2\pi)$$.
+:::example
+Solve $$\cos x=-0.35$$ on $$[0,2\pi)$$.
 
 Cosine is negative in Quadrants II and III. The calculator gives
 
@@ -1080,8 +1051,7 @@ Thus
 $$
 x\approx1.928\quad\text{or}\quad x\approx4.355.
 $$
-
-</div>
+:::
 
 REMEMBER to always check for multiple solutions using the trig rules!
 
@@ -1089,18 +1059,224 @@ REMEMBER to always check for multiple solutions using the trig rules!
 
 ## Practice
 
+:::practice
+:::frq{id=precalc-trigfunc-1}
 1. Let $$\theta=-\frac{29\pi}{6}$$.
-
    $$(A)$$ Find the least positive coterminal angle with $$\theta$$.
-
    $$(B)$$ Convert both angles to degrees.
-
    $$(C)$$ Find the reference angle and quadrant of $$\theta$$.
-
    $$(D)$$ Evaluate all six trigonometric functions of $$\theta$$ exactly.
 
+:::solution
+Add multiples of $$2\pi$$ to find a positive coterminal angle:
+
+$$
+-\frac{29\pi}{6}+3(2\pi)
+=-\frac{29\pi}{6}+\frac{36\pi}{6}
+=\frac{7\pi}{6}.
+$$
+
+This is positive, but not least positive, since
+
+$$
+\frac{7\pi}{6}-2\pi=-\frac{5\pi}{6}<0.
+$$
+
+So the least positive coterminal angle is
+
+$$
+\boxed{\frac{7\pi}{6}}.
+$$
+
+Convert the original angle to degrees:
+
+$$
+-\frac{29\pi}{6}\cdot\frac{180}{\pi}
+=-870^\circ.
+$$
+
+Also,
+
+$$
+\frac{7\pi}{6}\cdot\frac{180}{\pi}
+=210^\circ.
+$$
+
+Thus
+
+$$
+\boxed{-\frac{29\pi}{6}=-870^\circ,\qquad \frac{7\pi}{6}=210^\circ}.
+$$
+
+The angle $$\frac{7\pi}{6}$$ is in Quadrant III, and its reference angle is
+
+$$
+\frac{7\pi}{6}-\pi=\frac{\pi}{6}.
+$$
+
+So
+
+$$
+\boxed{\text{reference angle }=\frac{\pi}{6},\quad \text{Quadrant III}}.
+$$
+
+Since $$\theta$$ is coterminal with $$\frac{7\pi}{6}$$,
+
+$$
+\sin\theta=-\frac12,
+\qquad
+\cos\theta=-\frac{\sqrt3}{2},
+\qquad
+\tan\theta=\frac{\sqrt3}{3}.
+$$
+
+The reciprocal functions are
+
+$$
+\csc\theta=-2,
+\qquad
+\sec\theta=-\frac{2\sqrt3}{3},
+\qquad
+\cot\theta=\sqrt3.
+$$
+:::
+:::
+
+:::frq{id=precalc-trigfunc-2}
 2. A sector of a circle has perimeter $$40$$ cm and central angle $$\frac{5\pi}{6}$$. Find the radius, arc length, and area of the sector exactly.
+
+:::solution
+For a sector,
+
+$$
+P=2r+s.
+$$
+
+Since $$s=r\theta$$,
+
+$$
+P=2r+r\theta=r(2+\theta).
+$$
+
+We are given $$P=40$$ and $$\theta=\frac{5\pi}{6}$$, so
+
+$$
+40=r\left(2+\frac{5\pi}{6}\right).
+$$
+
+Thus
+
+$$
+r=\frac{40}{2+\frac{5\pi}{6}}
+=\frac{240}{12+5\pi}.
+$$
+
+So
+
+$$
+\boxed{r=\frac{240}{12+5\pi}\text{ cm}}.
+$$
+
+The arc length is
+
+$$
+s=r\theta
+=\frac{240}{12+5\pi}\cdot\frac{5\pi}{6}
+=\frac{200\pi}{12+5\pi}.
+$$
+
+Thus
+
+$$
+\boxed{s=\frac{200\pi}{12+5\pi}\text{ cm}}.
+$$
+
+The sector area is
+
+$$
+A=\frac12r^2\theta.
+$$
+
+So
+
+$$
+A=\frac12\left(\frac{240}{12+5\pi}\right)^2\left(\frac{5\pi}{6}\right)
+=\frac{24000\pi}{(12+5\pi)^2}.
+$$
+
+Therefore
+
+$$
+\boxed{A=\frac{24000\pi}{(12+5\pi)^2}\text{ cm}^2}.
+$$
+:::
+:::
+
+:::frq{id=precalc-trigfunc-3}
 3. A wheel of radius $$18$$ cm rotates counterclockwise at $$45$$ revolutions per minute. A bug starts at the point on the wheel closest to the ground. After $$7$$ seconds, find the bug's angle in standard position, its coordinates relative to the center of the wheel, and its linear speed in cm/sec.
+
+:::solution
+The wheel rotates at
+
+$$
+45\text{ rev/min}=45(2\pi)=90\pi\text{ rad/min}.
+$$
+
+Convert to radians per second:
+
+$$
+\omega=\frac{90\pi}{60}=\frac{3\pi}{2}\text{ rad/sec}.
+$$
+
+The bug starts at the point closest to the ground, so its starting angle is
+
+$$
+\frac{3\pi}{2}.
+$$
+
+After $$7$$ seconds, the angle swept out is
+
+$$
+\omega t=\frac{3\pi}{2}(7)=\frac{21\pi}{2}.
+$$
+
+The total angle is
+
+$$
+\frac{3\pi}{2}+\frac{21\pi}{2}
+=\frac{24\pi}{2}
+=12\pi.
+$$
+
+This is coterminal with $$0$$, so the bug is at
+
+$$
+\boxed{(18,0)}.
+$$
+
+The angle in standard position is
+
+$$
+\boxed{0\text{ radians}}
+$$
+
+after reducing coterminally.
+
+The linear speed is
+
+$$
+v=r\omega=18\cdot\frac{3\pi}{2}=27\pi.
+$$
+
+Thus
+
+$$
+\boxed{v=27\pi\text{ cm/sec}}.
+$$
+:::
+:::
+:::
+
 4. A pulley system has two wheels connected by a belt without slipping. Wheel A has radius $$4$$ inches and rotates at $$150$$ revolutions per minute. Wheel B rotates at $$60$$ revolutions per minute. Find the radius of Wheel B. Then find the linear belt speed in inches per second.
 5. Let $$\theta$$ be in Quadrant II and suppose $$\tan\theta=-\frac{8}{15}$$. Find exact values of $$\sin\theta$$, $$\cos\theta$$, $$\sec\theta$$, $$\csc\theta$$, and $$\cot\theta$$. Then evaluate $$\sin(\pi-\theta)$$ and $$\cos(\theta+\pi)$$.
 6. Let $$P=(x,y)$$ be a point on the unit circle in Quadrant III. If $$x-y=\frac{\sqrt2}{2}$$, find $$P$$ and the angle $$\theta\in[0,2\pi)$$ whose terminal side passes through $$P$$.
@@ -1109,46 +1285,32 @@ REMEMBER to always check for multiple solutions using the trig rules!
 9. Solve exactly on $$[0,2\pi)$$:$$2\cos^2x+\sqrt3\cos x-1=0.$$
 10. Solve exactly on $$[0,3\pi)$$:$$\tan^2x-3=0.$$
 11. The radius of the circle in the figure is 2 units. Express the length of $$DC$$ in terms of $$\alpha$$.
-
-   <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/cirtri1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
-
+   :::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/cirtri1.png)
 12. Prove the identity: $$\frac{1-\cos\theta}{\sin\theta}+\frac{\sin\theta}{1-\cos\theta}=2\csc\theta.$$ Then state all values of $$\theta$$ in $$[0,2\pi)$$ for which the original identity is undefined.
 13. Prove the identity: $$1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}=\sin\theta\cos\theta.$$
 14. For each of the following trigonometric expressions, find a segment in the diagram that has length equal to the trigonometric expression: $$\sin\theta, \cos\theta, \sec\theta, \csc\theta, \tan\theta, \cot\theta$$. Note that you are not asked to express each trigonometric function in terms of multiple segments in the diagram. You must find a segment whose whole length equals the corresponding trig function. The graph is given below:
-
-   <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/cirtri2.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
-
+   :::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/cirtri2.png)
 15. On $$[0,2\pi)$$, solve the equation numerically to three decimal places: $$3\sin x-2\cos x=1.$$ (Hint: Try the substitution $$t=\tan(x/2)$$, and solve for $$x$$ using the $$\tan^{-1}$$ button on the calculator.)
 16. (Bonus, rational points on the unit circle)
-
    The unit circle is
-
    $$
    x^2+y^2=1.
    $$
-
    One obvious rational point on the unit circle is $$(-1,0)$$. Now draw a line with rational slope $$m$$ through $$(-1,0)$$:
-
    $$
    y=m(x+1).
    $$
-
    $$(A)$$ Substitute $$y=m(x+1)$$ into $$x^2+y^2=1$$ and show that the line intersects the unit circle at $$(-1,0)$$ and one other point.
-
    $$(B)$$ Find the coordinates of the second intersection point in terms of $$m$$.
-
    $$(C)$$ Explain why every rational value of $$m$$ gives a rational point on the unit circle.
-
    $$(D)$$ Use your formula to find a rational point on the unit circle when $$m=\frac23$$, then interpret that point as $$(\cos\theta,\sin\theta)$$ for some angle $$\theta$$.
-
    $$(E)$$ Why does this method not produce the point $$(-1,0)$$ as the second intersection point? What slope would be needed to reach the point $$(1,0)$$?
-
----
 
 ## Solutions
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 Add multiples of $$2\pi$$ to find a positive coterminal angle:
@@ -1222,11 +1384,9 @@ $$
 \qquad
 \cot\theta=\sqrt3.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 For a sector,
@@ -1292,11 +1452,9 @@ Therefore
 $$
 \boxed{A=\frac{24000\pi}{(12+5\pi)^2}\text{ cm}^2}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 The wheel rotates at
@@ -1356,11 +1514,9 @@ Thus
 $$
 \boxed{v=27\pi\text{ cm/sec}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 Wheel A rotates at
@@ -1408,11 +1564,9 @@ Thus
 $$
 \boxed{20\pi\text{ in/sec}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 Since $$\theta$$ is in Quadrant II and
@@ -1466,11 +1620,9 @@ $$
 \qquad
 \boxed{\cos(\theta+\pi)=\frac{15}{17}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 Since $$P=(x,y)$$ is on the unit circle,
@@ -1550,11 +1702,9 @@ $$
 $$
 
 Equivalently, $$\theta\approx4.451$$ radians.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 7
 
 Use coterminal angles:
@@ -1603,11 +1753,9 @@ Therefore
 $$
 \boxed{-2+\frac{4\sqrt3}{3}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 8
 
 Let
@@ -1653,11 +1801,9 @@ Therefore
 $$
 \boxed{x=\frac{\pi}{2},\frac{7\pi}{6},\frac{11\pi}{6},\frac{5\pi}{2},\frac{19\pi}{6},\frac{23\pi}{6}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 9
 
 Let
@@ -1698,11 +1844,9 @@ $$
 \quad\text{or}\quad
 x=2\pi-\cos^{-1}\left(\frac{\sqrt{11}-\sqrt3}{4}\right)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 10
 
 We have
@@ -1728,11 +1872,9 @@ The tangent function has period $$\pi$$. On $$[0,3\pi)$$, the solutions are
 $$
 \boxed{x=\frac{\pi}{3},\frac{2\pi}{3},\frac{4\pi}{3},\frac{5\pi}{3},\frac{7\pi}{3},\frac{8\pi}{3}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 11
 
 The radius of the circle is $$2$$, and $$C$$ is the point on the positive $$x$$-axis at the right edge of the circle. Thus
@@ -1758,11 +1900,9 @@ Therefore
 $$
 \boxed{DC=2\tan\alpha}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 12
 
 Start with the left-hand side:
@@ -1831,11 +1971,9 @@ On $$[0,2\pi)$$, this happens at
 $$
 \boxed{\theta=0,\pi}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 13
 
 Start with the left-hand side:
@@ -1909,11 +2047,9 @@ Therefore,
 $$
 \boxed{1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}=\sin\theta\cos\theta}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 14
 
 In the diagram, the circle is the unit circle and $$A=(\cos\theta,\sin\theta)$$.
@@ -2018,11 +2154,9 @@ So the six matching segments are
 $$
 \boxed{\sin\theta=AC,\quad \cos\theta=OC,\quad \sec\theta=OD,\quad \csc\theta=OB,\quad \tan\theta=AD,\quad \cot\theta=AB}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 15
 
 Use the substitution
@@ -2097,11 +2231,9 @@ Using a calculator and choosing values of $$x$$ in $$[0,2\pi)$$ gives
 $$
 \boxed{x\approx0.869\quad\text{or}\quad x\approx3.450}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 16
 
 For part $$(A)$$, substitute
@@ -2220,5 +2352,4 @@ To reach $$(1,0)$$, the line must be the $$x$$-axis, which has slope
 $$
 \boxed{m=0}.
 $$
-
-</div>
+:::

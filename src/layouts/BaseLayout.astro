@@ -5,6 +5,8 @@ import { ClientRouter } from 'astro:transitions';
 import FontPreload from '../components/FontPreload.astro';
 import ThemeScript from '../components/ThemeScript.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import ReferenceSheetDrawer from '../components/ReferenceSheetDrawer.astro';
+import { footerNav } from '../data/navigation';
 import { p } from '../lib/paths';
 
 interface Props {
@@ -40,9 +42,20 @@ const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Jo
   <body>
     <div class="site-shell">
       <SiteHeader current={Astro.url.pathname} />
+      <ReferenceSheetDrawer />
       <slot />
       <footer class="site-footer">
-        <p>Study notes by Joshua · <a href="https://github.com/notesbyjoshua">GitHub</a></p>
+        <p>
+          Study notes by Joshua · <a href="https://github.com/notesbyjoshua">GitHub</a>
+          {
+            footerNav.map((item) => (
+              <>
+                {' · '}
+                <a href={p(item.href)}>{item.label}</a>
+              </>
+            ))
+          }
+        </p>
       </footer>
     </div>
     <script>

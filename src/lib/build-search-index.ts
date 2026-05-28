@@ -5,13 +5,18 @@ import type { SearchRecord } from './search-types';
 
 function stripMarkdown(src: string): string {
   return src
+    .replace(/<!--[\s\S]*?-->/g, ' ')
     .replace(/```[\s\S]*?```/g, ' ')
     .replace(/\$\$[\s\S]*?\$\$/g, ' ')
     .replace(/\$[^$\n]+?\$/g, ' ')
     .replace(/\{%[\s\S]*?%\}/g, ' ')
     .replace(/\{\{[\s\S]*?\}\}/g, ' ')
+    .replace(/^:::[^\n]*$/gm, ' ')
+    .replace(/^:::\s*$/gm, ' ')
+    .replace(/<[^>]+>/g, ' ')
     .replace(/!\[[^\]]*\]\([^)]+\)/g, ' ')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/^\s*-\s*\[[ xX]\]\s*/gm, ' ')
     .replace(/[#*_>`~|]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();

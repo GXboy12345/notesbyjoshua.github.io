@@ -50,7 +50,9 @@ Most sampling is biased! For example, most surveys/polls are volunteer samples, 
 
 True physical randomness is hard to achieve: pseudo-random generators have limitations, and implementation mistakes break fairness, but the goal is that **sampling bias** from selection is controlled.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/collectingdata/sampling-methods.png' | relative_url }}" alt="Sampling methods placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Sampling methods placeholder](/assets/APs/AP%20Stats/collectingdata/sampling-methods.png)
+:::
 
 ---
 
@@ -123,7 +125,9 @@ Note that in rare studies with inanimate objects, they can't be blinded, since t
 
 ## Types of experimental design
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/collectingdata/experimental-designs.png' | relative_url }}" alt="Experimental designs placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Experimental designs placeholder](/assets/APs/AP%20Stats/collectingdata/experimental-designs.png)
+:::
 
 ### Completely randomized design
 

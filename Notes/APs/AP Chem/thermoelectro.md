@@ -544,47 +544,131 @@ Since this unit is very equation-heavy, below is a list of all important equatio
 
 ### MCQ
 
+:::practice
+:::mcq{id=chem-thermoelectro-1 correct=B}
 1. For a spontaneous galvanic cell under standard conditions, which statement is correct?
 
-   (A) $$E^\circ_{\text{cell}}<0$$ and $$\Delta G^\circ<0$$<br>
-   (B) $$E^\circ_{\text{cell}}>0$$ and $$\Delta G^\circ<0$$<br>
-   (C) $$E^\circ_{\text{cell}}>0$$ and $$\Delta G^\circ>0$$<br>
-   (D) $$E^\circ_{\text{cell}}=0$$ and $$\Delta G^\circ=0$$
+- [ ] $$E^\circ_{\text{cell}}<0$$ and $$\Delta G^\circ<0$$
+- [ ] $$E^\circ_{\text{cell}}>0$$ and $$\Delta G^\circ<0$$
+- [ ] $$E^\circ_{\text{cell}}>0$$ and $$\Delta G^\circ>0$$
+- [ ] $$E^\circ_{\text{cell}}=0$$ and $$\Delta G^\circ=0$$
 
+:::solution
+For a spontaneous galvanic cell,
+
+$$
+\Delta G^\circ=-nFE^\circ_{\text{cell}}.
+$$
+
+Spontaneous means $$\Delta G^\circ<0$$, which requires $$E^\circ_{\text{cell}}>0$$.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-thermoelectro-2 correct=C}
 2. Which change always increases the entropy of the system?
 
-   (A) $$\text{H}_2\text{O}(g)\rightarrow\text{H}_2\text{O}(l)$$<br>
-   (B) $$\text{NaCl}(aq)\rightarrow\text{NaCl}(s)$$<br>
-   (C) $$\text{CO}_2(s)\rightarrow\text{CO}_2(g)$$<br>
-   (D) $$2\text{NO}_2(g)\rightarrow\text{N}_2\text{O}_4(g)$$
+- [ ] $$\text{H}_2\text{O}(g)\rightarrow\text{H}_2\text{O}(l)$$
+- [ ] $$\text{NaCl}(aq)\rightarrow\text{NaCl}(s)$$
+- [ ] $$\text{CO}_2(s)\rightarrow\text{CO}_2(g)$$
+- [ ] $$2\text{NO}_2(g)\rightarrow\text{N}_2\text{O}_4(g)$$
 
+:::solution
+Sublimation changes a solid directly into a gas. Gas particles have many more accessible microstates than particles in a solid.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+
+:::mcq{id=chem-thermoelectro-3 correct=B}
 3. A reaction has $$\Delta H^\circ>0$$ and $$\Delta S^\circ>0$$. The reaction is most likely thermodynamically favorable at
 
-   (A) low temperatures only.<br>
-   (B) high temperatures only.<br>
-   (C) all temperatures.<br>
-   (D) no temperatures.
+- [ ] low temperatures only.
+- [ ] high temperatures only.
+- [ ] all temperatures.
+- [ ] no temperatures.
 
+:::solution
+Use
+
+$$
+\Delta G^\circ=\Delta H^\circ-T\Delta S^\circ.
+$$
+
+When both $$\Delta H^\circ$$ and $$\Delta S^\circ$$ are positive, high temperature makes the $$-T\Delta S^\circ$$ term large and negative.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-thermoelectro-4 correct=A}
 4. In an electrolytic cell, oxidation occurs at the
 
-   (A) anode.<br>
-   (B) cathode.<br>
-   (C) salt bridge.<br>
-   (D) voltmeter.
+- [ ] anode.
+- [ ] cathode.
+- [ ] salt bridge.
+- [ ] voltmeter.
 
+:::solution
+Oxidation always occurs at the anode, in both galvanic and electrolytic cells.
+
+$$
+\boxed{\text{A}}
+$$
+:::
+:::
+
+:::mcq{id=chem-thermoelectro-5 correct=C}
 5. If $$\Delta G^\circ<0$$ for a reaction under standard conditions, which statement is true?
 
-   (A) $$K<1$$<br>
-   (B) $$K=1$$<br>
-   (C) $$K>1$$<br>
-   (D) $$E^\circ_{\text{cell}}<0$$ for the corresponding galvanic cell
+- [ ] $$K<1$$
+- [ ] $$K=1$$
+- [ ] $$K>1$$
+- [ ] $$E^\circ_{\text{cell}}<0$$ for the corresponding galvanic cell
 
+:::solution
+Since
+
+$$
+\Delta G^\circ=-RT\ln K,
+$$
+
+a negative $$\Delta G^\circ$$ means $$\ln K>0$$, so $$K>1$$.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+
+:::mcq{id=chem-thermoelectro-6 correct=B}
 6. What mass of Ag is plated by $$1.00\ \text{mol}$$ of electrons from $$\text{Ag}^+$$?
 
-   (A) $$53.9\ \text{g}$$<br>
-   (B) $$107.9\ \text{g}$$<br>
-   (C) $$215.8\ \text{g}$$<br>
-   (D) $$96500\ \text{g}$$
+- [ ] $$53.9\ \text{g}$$
+- [ ] $$107.9\ \text{g}$$
+- [ ] $$215.8\ \text{g}$$
+- [ ] $$96500\ \text{g}$$
+
+:::solution
+For $$\text{Ag}^+ + e^- \rightarrow \text{Ag}(s)$$, $$1.00\ \text{mol}$$ of electrons plates $$1.00\ \text{mol}$$ of Ag.
+
+$$
+1.00\ \text{mol Ag}\times107.9\ \text{g/mol}=107.9\ \text{g}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+:::
 
 ### FRQ
 
@@ -618,8 +702,7 @@ Use $$E^\circ_{\text{red}}(\text{Cu}^{2+}/\text{Cu})=+0.34\ \text{V}$$ and $$E^\
 
 ### MCQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 For a spontaneous galvanic cell,
@@ -633,11 +716,9 @@ Spontaneous means $$\Delta G^\circ<0$$, which requires $$E^\circ_{\text{cell}}>0
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 Sublimation changes a solid directly into a gas. Gas particles have many more accessible microstates than particles in a solid.
@@ -645,11 +726,9 @@ Sublimation changes a solid directly into a gas. Gas particles have many more ac
 $$
 \boxed{\text{C}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 Use
@@ -663,11 +742,9 @@ When both $$\Delta H^\circ$$ and $$\Delta S^\circ$$ are positive, high temperatu
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 Oxidation always occurs at the anode, in both galvanic and electrolytic cells.
@@ -675,11 +752,9 @@ Oxidation always occurs at the anode, in both galvanic and electrolytic cells.
 $$
 \boxed{\text{A}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 Since
@@ -693,11 +768,9 @@ a negative $$\Delta G^\circ$$ means $$\ln K>0$$, so $$K>1$$.
 $$
 \boxed{\text{C}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 For $$\text{Ag}^+ + e^- \rightarrow \text{Ag}(s)$$, $$1.00\ \text{mol}$$ of electrons plates $$1.00\ \text{mol}$$ of Ag.
@@ -709,13 +782,11 @@ $$
 $$
 \boxed{\text{B}}
 $$
-
-</div>
+:::
 
 ### FRQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$(A)$$ Zinc is oxidized:
@@ -765,13 +836,11 @@ $$(D)$$ Electrons are produced at the zinc anode and consumed at the copper cath
 <div class="placeholder-box" markdown="1">
 
 **Image placeholder:** Galvanic cell diagram with Zn anode, Cu cathode, electron flow from Zn to Cu, and ion flow through the salt bridge.
+:::
 
 </div>
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 $$(A)$$ Electroplating is nonspontaneous as written, so an external power source is needed to drive electron flow and force reduction of metal ions onto the object. In other words, electrical energy is used to make a thermodynamically unfavorable redox process occur.
@@ -803,5 +872,4 @@ $$
 This is about $$25.3\ \text{min}$$ if converted to minutes.
 
 $$(C)$$ Metal ions gain electrons and become solid metal on the object, so reduction occurs at the object being plated. The object being plated acts as the cathode in the electrolytic cell.
-
-</div>
+:::

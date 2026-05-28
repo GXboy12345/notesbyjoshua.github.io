@@ -33,7 +33,9 @@ Unit 1 establishes the vocabulary and models used everywhere else in chemistry: 
 - A **pure substance** has fixed composition, meaning only one type of substance makes it up.
 - A **mixture** combines substances without fixed proportion. A **homogeneous mixture** (solution) are uniform on a macroscopic scale, meaning you cannot tell the difference between molecules jsut by looking at it, while a **heterogeneous mixture** does not have this property.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/Matter%20Chart.png' | relative_url }}" alt="Matter Chart" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Matter Chart](/assets/APs/AP%20Chem/atomicstrucprop/Matter%20Chart.png)
+:::
 
 ---
 
@@ -69,7 +71,9 @@ An **ion** is an atom or group of atoms with a net electric charge from gain or 
 
 **Polyatomic ions** are charged covalent units that behave as a single piece in **ionic compounds** due to their lower eneergy state compared to their individual atomic states: for example, nitrate ($$\text{NO}_3^-$$), sulfate ($$\text{SO}_4^{2-}$$), and ammonium ($$\text{NH}_4^+$$) are all good exmamples of polyatomic ions. These are the polyatomic ions you need to memorize for AP Chem:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/polyions.png' | relative_url }}" alt="Polyatomic Ions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Polyatomic Ions](/assets/APs/AP%20Chem/atomicstrucprop/polyions.png)
+:::
 
 ---
 
@@ -129,7 +133,9 @@ That yields the empirical formula. **Combustion analysis** problems follow the s
 
 **Mass spectrometry** separates ions by *mass-to-charge ratio* $$\frac{m}{z}$$. A typical spectrum plots *relative abundance* (or detector *intensity*) on the vertical axis against $$\frac{m}{z}$$ on the horizontal axis. For an element, the pattern of peaks reveals isotope masses and their approximate natural abundances; for molecules, *fragmentation* patterns can support structure assignment in advanced work. An example of a mass spectrometer chart is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/Mass%20Spectrometry.png' | relative_url }}" alt="Mass spectrometry chart" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Mass spectrometry chart](/assets/APs/AP%20Chem/atomicstrucprop/Mass%20Spectrometry.png)
+:::
 
 ---
 
@@ -266,7 +272,9 @@ but for all purposes, memorizing this equation is not necessary for the AP Chemi
 
 **Photoelectron spectroscopy** (**PES**) measures how much energy must be supplied to remove electrons from subshells in atoms or molecules. Peaks appear at **binding energies** characteristic of each orbital type; relative peak areas (after accounting for ionization cross sections) reflect electron counts in those subshells. An example problem is shown below, feel free to try it out!
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/PES.png' | relative_url }}" alt="PES chart" loading="lazy" decoding="async" />
+:::figure{width=480}
+![PES chart](/assets/APs/AP%20Chem/atomicstrucprop/PES.png)
+:::
 
 An important thing to note is that a PES graph shifted to the right indicates less nuclear charge, since it takes less energy to take away those electrons.
 
@@ -282,7 +290,9 @@ $$
 
 a narrow window between **ultraviolet** and **infrared**. Moving toward shorter wavelength corresponds to higher photon energy (**gamma rays** and **X-rays** at the extreme) and longer wavelength to lower energy (**microwave**, **radio**).
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/em.jpg' | relative_url }}" alt="EM Spectrum" loading="lazy" decoding="async" />
+:::figure{width=480}
+![EM Spectrum](/assets/APs/AP%20Chem/atomicstrucprop/em.jpg)
+:::
 
 ---
 
@@ -330,7 +340,9 @@ meaning s electrons “see” more of the nucleus and are stabilized relative to
 
 Broad patterns: **atomic radius** increases *down a group* (new shells, more shielding) and decreases *across a period* (rising $$Z_{\text{eff}}$$). **Ionization energy** and **electron affinity** (for representative elements) generally show opposite *horizontal* trends to radius. **Metallic character** decreases across a period and increases down a group. Exceptions, such as the **ionization energy** dip at boron or the **electron affinity** anomaly for nitrogen, appear when subshell structure or pairing changes the cost of removing or adding an electron.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/periodictrends.png' | relative_url }}" alt="Periodic Trends" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Periodic Trends](/assets/APs/AP%20Chem/atomicstrucprop/periodictrends.png)
+:::
 
 ---
 
@@ -358,47 +370,127 @@ These expressions reappear when you interpret **lattice energy**, **bond** forma
 
 ### MCQ
 
+:::practice
+:::mcq{id=chem-atomicstrucprop-1 correct=B}
 1. A neutral atom has the electron configuration $$1s^2 2s^2 2p^6 3s^2 3p^4$$. Which statement is correct?
 
-   (A) The atom is in group 4 and forms $$4+$$ ions most often.<br>
-   (B) The atom is in group 16 and has six valence electrons.<br>
-   (C) The atom is a noble gas because the $$3p$$ subshell is occupied.<br>
-   (D) The atom has four valence electrons because the last exponent is $$4$$.
+- [ ] The atom is in group 4 and forms $$4+$$ ions most often.
+- [ ] The atom is in group 16 and has six valence electrons.
+- [ ] The atom is a noble gas because the $$3p$$ subshell is occupied.
+- [ ] The atom has four valence electrons because the last exponent is $$4$$.
 
+:::solution
+The highest principal energy level is $$n=3$$, and the atom has
+
+$$
+3s^2 3p^4
+$$
+
+as its valence-shell configuration. That is $$6$$ valence electrons, which places the atom in group $$16$$.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-atomicstrucprop-2 correct=B}
 2. Which set of particles is arranged in order of increasing radius?
 
-   (A) $$\text{Cl}^- < \text{S}^{2-} < \text{K}^+$$<br>
-   (B) $$\text{K}^+ < \text{Cl}^- < \text{S}^{2-}$$<br>
-   (C) $$\text{S}^{2-} < \text{Cl}^- < \text{K}^+$$<br>
-   (D) $$\text{Cl}^- < \text{K}^+ < \text{S}^{2-}$$
+- [ ] $$\text{Cl}^- < \text{S}^{2-} < \text{K}^+$$
+- [ ] $$\text{K}^+ < \text{Cl}^- < \text{S}^{2-}$$
+- [ ] $$\text{S}^{2-} < \text{Cl}^- < \text{K}^+$$
+- [ ] $$\text{Cl}^- < \text{K}^+ < \text{S}^{2-}$$
 
+:::solution
+The ions $$\text{K}^+$$, $$\text{Cl}^-$$, and $$\text{S}^{2-}$$ are isoelectronic, each with $$18$$ electrons. In an isoelectronic series, radius decreases as nuclear charge increases. Potassium has the most protons, so $$\text{K}^+$$ is smallest; sulfur has the fewest, so $$\text{S}^{2-}$$ is largest.
+
+$$
+\boxed{\text{K}^+ < \text{Cl}^- < \text{S}^{2-}}
+$$
+
+So the answer is
+
+$$
+\boxed{\text{B}}.
+$$
+:::
+:::
+
+:::mcq{id=chem-atomicstrucprop-3 correct=C}
 3. Which photon has the greatest energy?
 
-   (A) A photon with wavelength $$700\ \text{nm}$$<br>
-   (B) A photon with wavelength $$500\ \text{nm}$$<br>
-   (C) A photon with wavelength $$300\ \text{nm}$$<br>
-   (D) A photon with wavelength $$900\ \text{nm}$$
+- [ ] A photon with wavelength $$700\ \text{nm}$$
+- [ ] A photon with wavelength $$500\ \text{nm}$$
+- [ ] A photon with wavelength $$300\ \text{nm}$$
+- [ ] A photon with wavelength $$900\ \text{nm}$$
 
+:::solution
+Photon energy is
+
+$$
+E=\frac{hc}{\lambda}.
+$$
+
+Energy is inversely proportional to wavelength, so the shortest wavelength has the greatest energy.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+
+:::mcq{id=chem-atomicstrucprop-4 correct=B}
 4. Which statement best explains why first ionization energy generally increases from left to right across a period?
 
-   (A) Atomic radius increases, so electrons are easier to remove.<br>
-   (B) Effective nuclear charge increases, so valence electrons are held more strongly.<br>
-   (C) Shielding increases sharply, so valence electrons are held more weakly.<br>
-   (D) The number of occupied principal energy levels increases.
+- [ ] Atomic radius increases, so electrons are easier to remove.
+- [ ] Effective nuclear charge increases, so valence electrons are held more strongly.
+- [ ] Shielding increases sharply, so valence electrons are held more weakly.
+- [ ] The number of occupied principal energy levels increases.
 
+:::solution
+Across a period, protons are added to the nucleus while electrons are added to the same principal energy level. Shielding does not increase enough to cancel the increased nuclear attraction, so $$Z_{\text{eff}}$$ increases.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-atomicstrucprop-5 correct=B}
 5. Which element has the electron configuration $$[\text{Ne}]3s^2 3p^1$$?
 
-   (A) Mg<br>
-   (B) Al<br>
-   (C) Si<br>
-   (D) P
+- [ ] Mg
+- [ ] Al
+- [ ] Si
+- [ ] P
 
+:::solution
+After the neon core, $$3s^2 3p^1$$ gives three valence electrons in the third period. That is aluminum.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-atomicstrucprop-6 correct=C}
 6. Which set of quantum numbers is not allowed for an electron in an atom?
 
-   (A) $$n=2,\ l=1,\ m_l=0,\ m_s=+\frac12$$<br>
-   (B) $$n=3,\ l=2,\ m_l=-2,\ m_s=-\frac12$$<br>
-   (C) $$n=3,\ l=3,\ m_l=0,\ m_s=+\frac12$$<br>
-   (D) $$n=4,\ l=0,\ m_l=0,\ m_s=-\frac12$$
+- [ ] $$n=2,\ l=1,\ m_l=0,\ m_s=+\frac12$$
+- [ ] $$n=3,\ l=2,\ m_l=-2,\ m_s=-\frac12$$
+- [ ] $$n=3,\ l=3,\ m_l=0,\ m_s=+\frac12$$
+- [ ] $$n=4,\ l=0,\ m_l=0,\ m_s=-\frac12$$
+
+:::solution
+For a given $$n$$, the value of $$l$$ must be an integer from $$0$$ to $$n-1$$. If $$n=3$$, then $$l=3$$ is not allowed.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+:::
 
 ### FRQ
 
@@ -424,8 +516,7 @@ These expressions reappear when you interpret **lattice energy**, **bond** forma
 
 ### MCQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 The highest principal energy level is $$n=3$$, and the atom has
@@ -439,11 +530,9 @@ as its valence-shell configuration. That is $$6$$ valence electrons, which place
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 The ions $$\text{K}^+$$, $$\text{Cl}^-$$, and $$\text{S}^{2-}$$ are isoelectronic, each with $$18$$ electrons. In an isoelectronic series, radius decreases as nuclear charge increases. Potassium has the most protons, so $$\text{K}^+$$ is smallest; sulfur has the fewest, so $$\text{S}^{2-}$$ is largest.
@@ -457,11 +546,9 @@ So the answer is
 $$
 \boxed{\text{B}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 Photon energy is
@@ -475,11 +562,9 @@ Energy is inversely proportional to wavelength, so the shortest wavelength has t
 $$
 \boxed{\text{C}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 Across a period, protons are added to the nucleus while electrons are added to the same principal energy level. Shielding does not increase enough to cancel the increased nuclear attraction, so $$Z_{\text{eff}}$$ increases.
@@ -487,11 +572,9 @@ Across a period, protons are added to the nucleus while electrons are added to t
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 After the neon core, $$3s^2 3p^1$$ gives three valence electrons in the third period. That is aluminum.
@@ -499,11 +582,9 @@ After the neon core, $$3s^2 3p^1$$ gives three valence electrons in the third pe
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 For a given $$n$$, the value of $$l$$ must be an integer from $$0$$ to $$n-1$$. If $$n=3$$, then $$l=3$$ is not allowed.
@@ -511,13 +592,11 @@ For a given $$n$$, the value of $$l$$ must be an integer from $$0$$ to $$n-1$$. 
 $$
 \boxed{\text{C}}
 $$
-
-</div>
+:::
 
 ### FRQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$(A)$$ Use a weighted average:
@@ -537,11 +616,9 @@ $$
 $$(B)$$ The average is closer to $$35$$ because the $$^{35}\text{Cl}$$ isotope is much more abundant than $$^{37}\text{Cl}$$. In a weighted average, the more abundant isotope pulls the average closer to its mass. Since about three-fourths of the atoms are $$^{35}\text{Cl}$$, the average should sit much nearer $$35$$ than $$37$$, which matches the calculated value.
 
 $$(C)$$ Core electrons are closer to the nucleus and experience a larger effective nuclear attraction than valence electrons. They are also less shielded by other electrons. Because the attraction between the nucleus and a core electron is stronger, more energy is required to remove a core electron from the atom. Therefore, core-electron peaks appear at higher binding energy on a PES spectrum than valence-electron peaks.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 $$(A)$$ $$\text{Ag}$$ has the larger atomic radius.
@@ -555,5 +632,4 @@ $$
 Silver also has more inner electrons, which increases shielding. The greater distance and shielding make the attraction between the nucleus and valence electrons weaker, so the atomic radius is larger.
 
 $$(C)$$ Silver has more protons than copper, which by itself would increase attraction. But the valence electrons in silver are also farther from the nucleus and more shielded. Radius depends on the balance of nuclear charge, shielding, and distance, not nuclear charge alone. On the AP exam, a complete explanation should explicitly compare both the attractive force from the nucleus and the distance/shielding effect.
-
-</div>
+:::

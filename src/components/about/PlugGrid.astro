@@ -1,0 +1,31 @@
+---
+import type { Plug } from '../../data/about';
+
+interface Props {
+  plugs: Plug[];
+}
+
+const { plugs } = Astro.props;
+---
+
+<div class="about-plug-grid">
+  {
+    plugs.map((plug) => (
+      <article class="about-plug-card" id={plug.id}>
+        <h3 class="about-plug-title">{plug.title}</h3>
+        <p class="about-plug-body">{plug.description}</p>
+        {
+          plug.href && plug.cta && (
+            <a
+              class="about-plug-link"
+              href={plug.href}
+              {...(plug.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            >
+              {plug.cta}
+            </a>
+          )
+        }
+      </article>
+    ))
+  }
+</div>

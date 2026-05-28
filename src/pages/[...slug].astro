@@ -2,7 +2,7 @@
 import DocLayout from '../layouts/DocLayout.astro';
 import { routeSlug } from '../lib/routes';
 import { allDocEntries, docBySlug } from '../lib/resolve-doc';
-import { headingsFromMarkdown, readDocSource, renderDocHtml } from '../lib/render-doc';
+import { readDocSource, renderDoc } from '../lib/render-doc';
 import { preprocessMarkdown } from '../lib/markdown-preprocess';
 
 export async function getStaticPaths() {
@@ -28,8 +28,7 @@ if (!entry) {
 
 const { body } = readDocSource(entry);
 const md = preprocessMarkdown(body);
-const html = renderDocHtml(md);
-const headings = headingsFromMarkdown(md);
+const { html, headings } = renderDoc(md);
 const title = entry.data.title ?? entry.id.replace(/\.md$/, '');
 const isFeedback = entry.collection === 'siteFeedback';
 const embedUrl =
@@ -41,7 +40,8 @@ const embedUrl =
 
 <DocLayout
   title={title}
-  math={entry.collection === 'notes'}
+  math={false}
+  interactive={entry.collection === 'notes'}
   headings={headings}
 >
   <Fragment set:html={html} />

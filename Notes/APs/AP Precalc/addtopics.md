@@ -29,9 +29,8 @@ Factor $$D(x)$$ into linear and irreducible quadratic factors over $$\mathbb{R}$
 
 **Solve for coefficients**: multiply through by the LCD and equate coefficients, or substitute convenient $$x$$ values plus compare powers of $$x$$. Note that for all polynomials with a degree of 3 or higher can be factored into the form $$ax^2+bx+c$$ for some $$a$$, $$b$$, and $$c$$. To solve out, you can do a partial fraction-style solving for the coefficients.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Decompose
+:::example
+Decompose
 
 $$
 \frac{x^6 + x^5 + 7x^4 + 6x^3 + 2x^2 + 16x - 24}{x^5 + 8x^2}.
@@ -90,8 +89,7 @@ or equivalently,
 $$
 x + 1 + \frac{2}{5x} - \frac{3}{x^2} + \frac{1}{x + 2} + \frac{7x - 4}{2(x^2 - 2x + 4)}.
 $$
-
-</div>
+:::
 
 ---
 
@@ -142,9 +140,8 @@ Common induction proof types:
 - **Product/factorial statements**: write the $$k+1$$ case in terms of the $$k$$ case, often using $$(k+1)!=(k+1)k!$$.
 - **Inequalities**: use the inductive hypothesis to get a lower or upper bound, then show that bound is strong enough for the next case.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Prove that for every integer $$n \ge 1$$,
+:::example
+Prove that for every integer $$n \ge 1$$,
 
 $$
 \sum_{k=1}^{n} k(k!) = (n+1)! - 1.
@@ -209,8 +206,7 @@ which is exactly what we needed.
 $$
 \sum_{k=1}^{n} k(k!) = (n+1)! - 1 \quad \text{for all integers } n \ge 1.
 $$
-
-</div>
+:::
 
 ### Induction With Inequalities
 
@@ -232,8 +228,7 @@ Then you still have to finish the job by showing the new expression is at least 
 
 The most common mistake is stopping too early. It is not enough to use the induction hypothesis; you must land on the exact inequality for $$k+1$$.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Example (Inequality induction).** Prove that
 
 $$
@@ -310,8 +305,7 @@ $$
 $$
 
 So the statement is true for $$k+1$$. By induction, $$2^{n}\ge n^{2}$$ for all integers $$n\ge 4$$.
-
-</div>
+:::
 
 ---
 
@@ -329,8 +323,7 @@ where $$\displaystyle \binom{n}{k} = \frac{n!}{k!(n-k)!}$$ (read as “$$n$$ cho
 - Symmetry: $$\binom{n}{k}=\binom{n}{n-k}$$
 - Specific term: the term containing $$a^r b^{n-r}$$ has coefficient $$\binom{n}{r}$$ (fix exponents so they sum to $$n$$)
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Sum of Pascal's Triangle and Binomial Theorem).** We will prove that the sum of the $$n$$th row of Pascal's Triangle is equal to $$2^{n}$$. Suppose we have the polynomial $$(1+x)^{n}$$. By the binomial theorem,
 
 $$
@@ -344,8 +337,7 @@ $$
 $$
 
 The RHS is the sum of the values of the $$n$$th row of Pascal's Triangle, and the LHS can be simplified to $$2^{n}$$. Thus, the sum of the values in the $$n$$th row of Pascal's Triangle is equal to $$2^{n}$$.
-
-</div>
+:::
 
 ---
 
@@ -385,8 +377,7 @@ $$
 \sum_{i=1}^{n} a_i = \frac{n}{2}\bigl(a_1 + a_n\bigr) = \frac{n}{2}\bigl(2a_1 + (n-1)d\bigr)
 $$
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (finite arithmetic series).** Let $$S_n = \sum_{i=1}^{n} a_i$$ with $$a_i = a_1 + (i-1)d$$. Write the sum twice, forwards and backwards:
 
 $$
@@ -404,8 +395,7 @@ $$
 $$
 
 Substitute $$a_n = a_1+(n-1)d$$ to get $$\displaystyle S_n = \frac{n}{2}\bigl(2a_1+(n-1)d\bigr)$$.
-
-</div>
+:::
 
 ### Finite geometric series ($$r \ne 1$$)
 
@@ -415,8 +405,7 @@ $$
 
 (Index shifts change exponents: always identify first term, ratio, and number of terms)
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (finite geometric series, $$r \ne 1$$).** Let
 
 $$
@@ -442,8 +431,7 @@ S = a_1 \frac{1-r^n}{1-r}.
 $$
 
 If the series starts at index $$1$$ as $$\sum_{i=1}^{n} a_1 r^{i-1}$$, it is the same $$n$$ terms and the same sum.
-
-</div>
+:::
 
 ### Infinite geometric series
 
@@ -469,9 +457,8 @@ A rule $$a_n = f(a_{n-1},\ldots)$$ plus initial conditions defines the sequence.
 
 If $$b_k = u_{k+1}-u_k$$, then $$\sum_{k=m}^{n} b_k = u_{n+1}-u_m$$. Partial fractions often produce telescopes. Telescoping is usually done to cancel all the intermediate terms except for the first and last terms.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find
+:::example
+Find
 
 $$
 S = \sum_{k=1}^{n} \frac{1}{k(k+1)}.
@@ -494,8 +481,7 @@ Notice that all the terms in the middle will cancel out (e.g. $$-\frac{1}{2}$$ a
 $$
 S = 1 - \frac{1}{n+1} = \frac{n}{n+1}.
 $$
-
-</div>
+:::
 
 ---
 
@@ -545,9 +531,8 @@ $$
 
 For polynomials, the leading term controls the end behavior. Lower-degree terms become insignificant compared to the highest-degree term.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Evaluate
+:::example
+Evaluate
 
 $$
 \lim_{x\to\infty}(2x^3+3x^2-5x+1).
@@ -566,8 +551,7 @@ As $$x\to\infty$$, the parenthesized expression approaches $$2$$, while $$x^3\to
 $$
 \boxed{\lim_{x\to\infty}(2x^3+3x^2-5x+1)=\infty}.
 $$
-
-</div>
+:::
 
 For rational functions, compare the degrees of the numerator and denominator:
 
@@ -577,9 +561,8 @@ For rational functions, compare the degrees of the numerator and denominator:
 | numerator degree = denominator degree | limit is ratio of leading coefficients |
 | numerator degree > denominator degree | no finite horizontal asymptote; use division or leading terms |
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Evaluate
+:::example
+Evaluate
 
 $$
 \lim_{x\to\infty}\frac{4x^2-3x+7}{2x^2+5x-1}.
@@ -599,8 +582,7 @@ $$
 \lim_{x\to\infty}\frac{4x^2-3x+7}{2x^2+5x-1}=2
 }.
 $$
-
-</div>
+:::
 
 ### Horizontal and oblique asymptotes
 
@@ -626,9 +608,8 @@ or the same is true as $$x\to-\infty$$.
 
 For rational functions with numerator degree exactly one more than denominator degree, polynomial long division usually reveals the oblique asymptote.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the oblique asymptote of
+:::example
+Find the oblique asymptote of
 
 $$
 f(x)=\frac{x^2-3x+4}{x-2}.
@@ -659,8 +640,7 @@ the oblique asymptote is
 $$
 \boxed{y=x-1}.
 $$
-
-</div>
+:::
 
 ### Exponential, logarithmic, and trig limits
 
@@ -710,9 +690,90 @@ does not exist, since $$\sin x$$ keeps oscillating forever instead of approachin
 
 ## Practice
 
+:::practice
+:::frq{id=precalc-addtopics-1}
 1. Evaluate $$\displaystyle \lim_{x\to\infty}\frac{5x^3-2x+1}{x^3+4x^2-7}$$.
+
+:::solution
+Divide numerator and denominator by $$x^3$$:
+
+$$
+\lim_{x\to\infty}\frac{5x^3-2x+1}{x^3+4x^2-7}
+=
+\lim_{x\to\infty}
+\frac{5-\frac{2}{x^2}+\frac{1}{x^3}}{1+\frac{4}{x}-\frac{7}{x^3}}.
+$$
+
+As $$x\to\infty$$, every term with $$x$$ in the denominator approaches $$0$$. Therefore
+
+$$
+\boxed{\lim_{x\to\infty}\frac{5x^3-2x+1}{x^3+4x^2-7}=5}.
+$$
+
+Since the numerator and denominator have the same degree, this is also the ratio of leading coefficients.
+:::
+:::
+
+:::frq{id=precalc-addtopics-2}
 2. Find the horizontal asymptote, if it exists, of $$\displaystyle f(x)=\frac{3x^2+8x-1}{x^2-5}$$.
+
+:::solution
+Evaluate the end behavior:
+
+$$
+\lim_{x\to\infty}\frac{3x^2+8x-1}{x^2-5}
+=
+\lim_{x\to\infty}
+\frac{3+\frac{8}{x}-\frac{1}{x^2}}{1-\frac{5}{x^2}}
+=3.
+$$
+
+Likewise,
+
+$$
+\lim_{x\to-\infty}\frac{3x^2+8x-1}{x^2-5}=3.
+$$
+
+Therefore the horizontal asymptote is
+
+$$
+\boxed{y=3}.
+$$
+:::
+:::
+
+:::frq{id=precalc-addtopics-3}
 3. Find the oblique asymptote of $$\displaystyle g(x)=\frac{x^2+4x-1}{x+2}$$.
+
+:::solution
+Use polynomial division:
+
+$$
+\frac{x^2+4x-1}{x+2}
+=x+2-\frac{5}{x+2}.
+$$
+
+Since
+
+$$
+\lim_{x\to\infty}\left(-\frac{5}{x+2}\right)=0
+$$
+
+and
+
+$$
+\lim_{x\to-\infty}\left(-\frac{5}{x+2}\right)=0,
+$$
+
+the graph approaches the line
+
+$$
+\boxed{y=x+2}.
+$$
+:::
+:::
+:::
+
 4. Prove by induction that $$\sum_{k=1}^{n} k^3 = \frac{n^2 (n+1)^2}{4}$$ for all integers $$n \ge 1$$. Extension: This looks like the square of $$1 + 2 + ... + n = \frac{n(n+1)}{2}$$! Prove that this is true (you should not use induction here).
 5. Prove by induction that $$8^{2n} - 3^{2n}$$ is divisible by $$55$$ for all integers $$n \ge 1$$.
 6. Prove by induction that $$2^{n}\ge n^{3}$$ for all integers $$n\ge 10$$.
@@ -726,25 +787,17 @@ does not exist, since $$\sin x$$ keeps oscillating forever instead of approachin
 14. The first three terms of a geometric series are the integers $$a$$, $$720$$, and $$b$$, where $$a < 720 < b$$. What is the sum of the digits of the least possible value of $$b$$? (2024 AMC 10A).
 15. Evaluate the finite sum $$\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1)$$ in closed form. Hint: $$k\binom{n}{k} = n\binom{n-1}{k-1}$$
 16. (Bonus, Binet's Formula)
-
    Binet's Formula is a famous explicit formula for the Fibonnaci series. Let $$F_0=0$$, $$F_1=1$$, and $$F_{n+2}=F_{n+1}+F_n$$ for $$n\ge 0$$.
-
    $$(A)$$ Define a function $$G(x)=\sum_{n=0}^{\infty}F_nx^n$$. Use the recurrence to show that $$G(x)=\frac{x}{1-x-x^2}$$. $$G(x)$$ is called the generating function of $$F_n$$. Hint: How can you telescope to cancel out the correct terms?
-
    $$(B)$$ Decompose $$G(x)$$ into partial fractions (Hint: All terms should be linear!).
-
    $$(C)$$ Set the linear factors found in part (B) to $$\alpha$$ and $$\beta$$ (so your partial fraction looks like $$\frac{A}{1 - \alpha x}$$ and $$\frac{B}{1 - \beta x}$$). Use the geometric series formula to prove Binet's formula:
-
    $$
    F_n=\frac{\alpha^n-\beta^n}{\sqrt5}.
    $$
 
----
-
 ## Solutions
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 Divide numerator and denominator by $$x^3$$:
@@ -763,11 +816,9 @@ $$
 $$
 
 Since the numerator and denominator have the same degree, this is also the ratio of leading coefficients.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 Evaluate the end behavior:
@@ -791,11 +842,9 @@ Therefore the horizontal asymptote is
 $$
 \boxed{y=3}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 Use polynomial division:
@@ -822,11 +871,9 @@ the graph approaches the line
 $$
 \boxed{y=x+2}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 **Base case**: $$n=1$$:
@@ -906,11 +953,9 @@ $$
 $$
 
 with $$S_{0}=0$$.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 **Base case**: $$n=1$$: $$8^{2}-3^{2}=64-9=55$$, divisible by $$55$$.
@@ -956,11 +1001,9 @@ Thus $$55 \mid 8^{2(k+1)} - 3^{2(k+1)}$$. By induction,
 $$
 \boxed{55 \mid 8^{2n} - 3^{2n} \text{ for all integers } n \ge 1}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 **Base case**: $$n=10$$:
@@ -1039,11 +1082,9 @@ Thus the inequality is true for $$k+1$$. By induction,
 $$
 \boxed{2^{n}\ge n^{3} \text{ for all integers } n\ge 10}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 7
 
 Use the binomial theorem with $$a=3x$$, $$b=2y$$, and $$n=5$$:
@@ -1067,11 +1108,9 @@ Thus
 $$
 \boxed{(3x+2y)^5=243x^5+810x^4y+1080x^3y^2+720x^2y^3+240xy^4+32y^5}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 8
 
 Write $$\left(x^{3} - \dfrac{4}{\sqrt{x}}\right)^{12} = \left(x^{3} - 4x^{-1/2}\right)^{12}$$. A general term in the binomial expansion is
@@ -1103,11 +1142,9 @@ Therefore, the coefficient of $$x^{22}$$ is
 $$
 \boxed{126720}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 9
 
 $$
@@ -1137,11 +1174,9 @@ Every term in the sum has a factor of $$8$$ because $$k\ge 1$$. Therefore the en
 $$
 \boxed{8\mid 9^{n}-1 \text{ for every integer } n\ge 1}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 10
 
 The arithmetic sequence has terms
@@ -1191,11 +1226,9 @@ Thus
 $$
 \boxed{d=\frac{5}{2}\quad\text{and the geometric terms are }5,10,20}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 11
 
 Arithmetic: Since $$1,x,y,z$$ is arithmetic, let the common difference be $$d$$. Then
@@ -1235,11 +1268,9 @@ So the arithmetic sequence is $$1,22,43,64$$ and the geometric sequence is $$1,4
 $$
 \boxed{x+y+z+p+q=22+43+64+4+16=149}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 12
 
 The terms of the sum form an arithmetic series. The first term occurs when $$i=5$$:
@@ -1271,11 +1302,9 @@ So the answer is
 $$
 \boxed{14928}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 13
 
 This is a finite geometric series with first term $$192$$, common ratio $$2$$, and $$7$$ terms:
@@ -1293,11 +1322,9 @@ Since $$2^{7}=128$$, the answer is $$192\cdot127$$ which is
 $$
 \boxed{24384}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 14
 
 For a geometric sequence $$a,720,b$$, the middle term squared equals the product of the neighboring terms:
@@ -1329,11 +1356,9 @@ which is an integer and satisfies $$675<720<768$$. The sum of the digits of $$76
 $$
 \boxed{7+6+8=21}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 15
 
 Let
@@ -1397,11 +1422,9 @@ So
 $$
 \boxed{\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1)=5^{n-1}(3n+5)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 16
 
 For part (A), start with
@@ -1580,5 +1603,4 @@ Matching coefficients of $$x^n$$ gives
 $$
 \boxed{F_n=\frac{\alpha^n-\beta^n}{\sqrt5}}.
 $$
-
-</div>
+:::

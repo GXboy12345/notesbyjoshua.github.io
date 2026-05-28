@@ -126,7 +126,9 @@ As usual, you should balance coefficients to make a balanced equation.
 
 In **single-displacement**, an element in its standard state replaces ions of another element in solution (or in a melt). For metals (and hydrogen in acid), activity order decides whether reaction occurs: a metal higher in the **activity series** reduces the cation of a metal below it. Hydrogen’s position marks which metals react with dilute acid to liberate $$\text{H}_2$$.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/chemrxns/metalAS.png' | relative_url }}" alt="Metal Activity Series" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Metal Activity Series](/assets/APs/AP%20Chem/chemrxns/metalAS.png)
+:::
 
 For halogens, a more reactive halogen displaces the halide ion of a less reactive halogen from solution. Reactivity decreases down the group ($$\text{F}_2 > \text{Cl}_2 > \text{Br}_2 > \text{I}_2$$).
 
@@ -168,7 +170,9 @@ Half-reactions are a very important compenents of **galvanic and electrolytic ce
 
 By convention, the solvent is the component present in greater amount and the solute is the dissolved component (by convention in dilute lab work, the minor component).
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/chemrxns/solubility.jpg' | relative_url }}" alt="Solubility Rules" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Solubility Rules](/assets/APs/AP%20Chem/chemrxns/solubility.jpg)
+:::
 
 ---
 
@@ -224,47 +228,137 @@ A **colloid** contains dispersed particles larger than single molecules but smal
 
 ### MCQ
 
+:::practice
+:::mcq{id=chem-chemrxns-1 correct=B}
 1. What volume of $$0.200\ M\ \text{NaOH}$$ is required to neutralize $$25.0\ \text{mL}$$ of $$0.100\ M\ \text{H}_2\text{SO}_4$$?
 
-   (A) $$12.5\ \text{mL}$$<br>
-   (B) $$25.0\ \text{mL}$$<br>
-   (C) $$50.0\ \text{mL}$$<br>
-   (D) $$100.\ \text{mL}$$
+- [ ] $$12.5\ \text{mL}$$
+- [ ] $$25.0\ \text{mL}$$
+- [ ] $$50.0\ \text{mL}$$
+- [ ] $$100.\ \text{mL}$$
 
+:::solution
+Moles of acid are
+
+$$
+(0.0250\ \text{L})(0.100\ M)=0.00250\ \text{mol H}_2\text{SO}_4.
+$$
+
+Each mole of $$\text{H}_2\text{SO}_4$$ requires $$2$$ moles of $$\text{NaOH}$$, so
+
+$$
+n_{\text{NaOH}}=0.00500\ \text{mol}.
+$$
+
+The required volume is
+
+$$
+V=\frac{0.00500}{0.200}=0.0250\ \text{L}=25.0\ \text{mL}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-chemrxns-2 correct=A}
 2. Which net ionic equation represents the precipitation reaction between aqueous $$\text{AgNO}_3$$ and aqueous $$\text{NaCl}$$?
 
-   (A) $$\text{Ag}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{AgCl}(s)$$<br>
-   (B) $$\text{Na}^+(aq)+\text{NO}_3^-(aq)\rightarrow\text{NaNO}_3(s)$$<br>
-   (C) $$\text{Ag}^+(aq)+\text{NO}_3^-(aq)\rightarrow\text{AgNO}_3(s)$$<br>
-   (D) $$\text{Na}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{NaCl}(s)$$
+- [ ] $$\text{Ag}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{AgCl}(s)$$
+- [ ] $$\text{Na}^+(aq)+\text{NO}_3^-(aq)\rightarrow\text{NaNO}_3(s)$$
+- [ ] $$\text{Ag}^+(aq)+\text{NO}_3^-(aq)\rightarrow\text{AgNO}_3(s)$$
+- [ ] $$\text{Na}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{NaCl}(s)$$
 
+:::solution
+Nitrates and sodium salts remain soluble, while $$\text{AgCl}$$ is insoluble. The spectator ions are $$\text{Na}^+$$ and $$\text{NO}_3^-$$.
+
+$$
+\boxed{\text{Ag}^+(aq)+\text{Cl}^-(aq)\rightarrow\text{AgCl}(s)}
+$$
+
+So the answer is
+
+$$
+\boxed{\text{A}}.
+$$
+:::
+:::
+
+:::mcq{id=chem-chemrxns-3 correct=A}
 3. In the reaction $$\text{Zn}(s)+\text{Cu}^{2+}(aq)\rightarrow\text{Zn}^{2+}(aq)+\text{Cu}(s)$$, which species is oxidized?
 
-   (A) $$\text{Zn}(s)$$<br>
-   (B) $$\text{Cu}^{2+}(aq)$$<br>
-   (C) $$\text{Zn}^{2+}(aq)$$<br>
-   (D) $$\text{Cu}(s)$$
+- [ ] $$\text{Zn}(s)$$
+- [ ] $$\text{Cu}^{2+}(aq)$$
+- [ ] $$\text{Zn}^{2+}(aq)$$
+- [ ] $$\text{Cu}(s)$$
 
+:::solution
+Zinc goes from oxidation number $$0$$ in $$\text{Zn}(s)$$ to $$+2$$ in $$\text{Zn}^{2+}$$, so it loses electrons and is oxidized.
+
+$$
+\boxed{\text{A}}
+$$
+:::
+:::
+
+:::mcq{id=chem-chemrxns-4 correct=B}
 4. Which observation gives the strongest evidence that a precipitation reaction occurred?
 
-   (A) The solution remains clear and colorless.<br>
-   (B) A solid appears after two aqueous solutions are mixed.<br>
-   (C) The total volume of solution increases.<br>
-   (D) The beaker is made of glass.
+- [ ] The solution remains clear and colorless.
+- [ ] A solid appears after two aqueous solutions are mixed.
+- [ ] The total volume of solution increases.
+- [ ] The beaker is made of glass.
 
+:::solution
+A precipitate is an insoluble solid that forms from ions in solution.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-chemrxns-5 correct=C}
 5. What is the oxidation number of sulfur in $$\text{SO}_4^{2-}$$?
 
-   (A) $$+2$$<br>
-   (B) $$+4$$<br>
-   (C) $$+6$$<br>
-   (D) $$-2$$
+- [ ] $$+2$$
+- [ ] $$+4$$
+- [ ] $$+6$$
+- [ ] $$-2$$
 
+:::solution
+Oxygen is usually $$-2$$. Let sulfur be $$x$$:
+
+$$
+x+4(-2)=-2.
+$$
+
+So $$x=+6$$.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+
+:::mcq{id=chem-chemrxns-6 correct=B}
 6. Which pair of aqueous solutions will produce a precipitate when mixed?
 
-   (A) $$\text{NaNO}_3$$ and $$\text{KCl}$$<br>
-   (B) $$\text{BaCl}_2$$ and $$\text{Na}_2\text{SO}_4$$<br>
-   (C) $$\text{KNO}_3$$ and $$\text{NaC}_2\text{H}_3\text{O}_2$$<br>
-   (D) $$\text{NH}_4\text{Cl}$$ and $$\text{NaNO}_3$$
+- [ ] $$\text{NaNO}_3$$ and $$\text{KCl}$$
+- [ ] $$\text{BaCl}_2$$ and $$\text{Na}_2\text{SO}_4$$
+- [ ] $$\text{KNO}_3$$ and $$\text{NaC}_2\text{H}_3\text{O}_2$$
+- [ ] $$\text{NH}_4\text{Cl}$$ and $$\text{NaNO}_3$$
+
+:::solution
+$$\text{Ba}^{2+}$$ and $$\text{SO}_4^{2-}$$ form $$\text{BaSO}_4(s)$$, which is insoluble.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+:::
 
 ### FRQ
 
@@ -296,8 +390,7 @@ The reaction produces $$0.0200\ \text{mol}$$ of $$\text{CO}_2$$.
 
 ### MCQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 Moles of acid are
@@ -321,11 +414,9 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 Nitrates and sodium salts remain soluble, while $$\text{AgCl}$$ is insoluble. The spectator ions are $$\text{Na}^+$$ and $$\text{NO}_3^-$$.
@@ -339,11 +430,9 @@ So the answer is
 $$
 \boxed{\text{A}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 Zinc goes from oxidation number $$0$$ in $$\text{Zn}(s)$$ to $$+2$$ in $$\text{Zn}^{2+}$$, so it loses electrons and is oxidized.
@@ -351,11 +440,9 @@ Zinc goes from oxidation number $$0$$ in $$\text{Zn}(s)$$ to $$+2$$ in $$\text{Z
 $$
 \boxed{\text{A}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 A precipitate is an insoluble solid that forms from ions in solution.
@@ -363,11 +450,9 @@ A precipitate is an insoluble solid that forms from ions in solution.
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 Oxygen is usually $$-2$$. Let sulfur be $$x$$:
@@ -381,11 +466,9 @@ So $$x=+6$$.
 $$
 \boxed{\text{C}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 $$\text{Ba}^{2+}$$ and $$\text{SO}_4^{2-}$$ form $$\text{BaSO}_4(s)$$, which is insoluble.
@@ -393,13 +476,11 @@ $$\text{Ba}^{2+}$$ and $$\text{SO}_4^{2-}$$ form $$\text{BaSO}_4(s)$$, which is 
 $$
 \boxed{\text{B}}
 $$
-
-</div>
+:::
 
 ### FRQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$(A)$$ The balanced equation has a $$1:1$$ mole ratio between $$\text{CaCO}_3$$ and $$\text{CO}_2$$. The problem says the acid is in excess, so all of the carbonate that can react is converted to products, and the moles of $$\text{CO}_2$$ produced directly equal the moles of $$\text{CaCO}_3$$ that reacted:
@@ -423,11 +504,9 @@ $$
 $$
 
 This means $$80.0\%$$ of the impure sample was reactive $$\text{CaCO}_3$$, and the remaining $$20.0\%$$ was impurity that did not produce $$\text{CO}_2$$.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 $$(A)$$ Compare how much $$\text{Cl}_2$$ is needed for the available Al:
@@ -447,5 +526,4 @@ $$
 The mole ratio comes from the balanced equation: $$3$$ moles of $$\text{Cl}_2$$ produce $$2$$ moles of $$\text{AlCl}_3$$.
 
 $$(C)$$ The balanced reaction requires fixed mole ratios. Once $$\text{Cl}_2$$ is used up, no more $$\text{AlCl}_3$$ can form, even though some Al remains. The excess reactant remains because there are no longer enough particles of the limiting reactant available to collide and react in the required stoichiometric ratio.
-
-</div>
+:::

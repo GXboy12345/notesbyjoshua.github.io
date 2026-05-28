@@ -248,6 +248,8 @@ For a reversible elementary reaction, forward and reverse rates balance at equil
 
 ### MCQ
 
+:::practice
+:::mcq{id=chem-kinetics-1 correct=B}
 1. For the reaction $$A+B\rightarrow C$$, the initial-rate data below are collected.
 
 | Trial | $$[A]$$ | $$[B]$$ | Initial rate |
@@ -258,45 +260,127 @@ For a reversible elementary reaction, forward and reverse rates balance at equil
 
 What is the rate law?
 
-   (A) $$\text{rate}=k[A][B]$$<br>
-   (B) $$\text{rate}=k[A]^2$$<br>
-   (C) $$\text{rate}=k[A]^2[B]$$<br>
-   (D) $$\text{rate}=k[B]^2$$
+- [ ] $$\text{rate}=k[A][B]$$
+- [ ] $$\text{rate}=k[A]^2$$
+- [ ] $$\text{rate}=k[A]^2[B]$$
+- [ ] $$\text{rate}=k[B]^2$$
 
+:::solution
+Compare trials 1 and 2. Doubling $$[A]$$ while holding $$[B]$$ constant makes the rate four times larger, so the reaction is second order in $$A$$.
+
+Compare trials 2 and 3. Doubling $$[B]$$ while holding $$[A]$$ constant does not change the rate, so the reaction is zero order in $$B$$.
+
+$$
+\boxed{\text{rate}=k[A]^2}
+$$
+
+So the answer is
+
+$$
+\boxed{\text{B}}.
+$$
+:::
+:::
+
+:::mcq{id=chem-kinetics-2 correct=B}
 2. A catalyst increases the rate of a reaction by
 
-   (A) increasing $$\Delta G^\circ$$<br>
-   (B) lowering the activation energy<br>
-   (C) increasing the equilibrium constant<br>
-   (D) increasing the enthalpy change of the reaction
+- [ ] increasing $$\Delta G^\circ$$
+- [ ] lowering the activation energy
+- [ ] increasing the equilibrium constant
+- [ ] increasing the enthalpy change of the reaction
 
+:::solution
+A catalyst provides an alternate pathway with lower activation energy. It does not change $$\Delta G^\circ$$, $$\Delta H$$, or $$K$$.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-kinetics-3 correct=B}
 3. For a first-order reaction, which plot should be linear?
 
-   (A) $$[A]$$ versus time<br>
-   (B) $$\ln[A]$$ versus time<br>
-   (C) $$1/[A]$$ versus time<br>
-   (D) rate versus $$1/T$$
+- [ ] $$[A]$$ versus time
+- [ ] $$\ln[A]$$ versus time
+- [ ] $$1/[A]$$ versus time
+- [ ] rate versus $$1/T$$
 
+:::solution
+For a first-order reaction,
+
+$$
+\ln[A]_t=-kt+\ln[A]_0,
+$$
+
+so $$\ln[A]$$ versus time is linear.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-kinetics-4 correct=C}
 4. If the rate law is $$\text{rate}=k[A]^2[B]$$, what happens to the rate when $$[A]$$ is doubled and $$[B]$$ is held constant?
 
-   (A) It doubles.<br>
-   (B) It triples.<br>
-   (C) It quadruples.<br>
-   (D) It stays the same.
+- [ ] It doubles.
+- [ ] It triples.
+- [ ] It quadruples.
+- [ ] It stays the same.
 
+:::solution
+The rate depends on $$[A]^2$$. Doubling $$[A]$$ multiplies the rate by
+
+$$
+2^2=4.
+$$
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+
+:::mcq{id=chem-kinetics-5 correct=B}
 5. A reaction has a rate law $$\text{rate}=k[A]$$. What are the units of $$k$$ if rate is measured in $$M/s$$?
 
-   (A) $$M^{-1}s^{-1}$$<br>
-   (B) $$s^{-1}$$<br>
-   (C) $$M/s$$<br>
-   (D) $$M^2/s$$
+- [ ] $$M^{-1}s^{-1}$$
+- [ ] $$s^{-1}$$
+- [ ] $$M/s$$
+- [ ] $$M^2/s$$
 
+:::solution
+For $$\text{rate}=k[A]$$,
+
+$$
+k=\frac{M/s}{M}=s^{-1}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-kinetics-6 correct=B}
 6. Increasing temperature usually increases reaction rate because
 
-   (A) the activation energy becomes zero.<br>
-   (B) more collisions have energy greater than or equal to $$E_a$$.<br>
-   (C) the equilibrium constant must become larger.<br>
-   (D) the reaction mechanism cannot change.
+- [ ] the activation energy becomes zero.
+- [ ] more collisions have energy greater than or equal to $$E_a$$.
+- [ ] the equilibrium constant must become larger.
+- [ ] the reaction mechanism cannot change.
+
+:::solution
+At higher temperature, particles have greater kinetic energy on average, so a larger fraction of collisions can overcome the activation energy.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+:::
 
 ### FRQ
 
@@ -322,8 +406,7 @@ What is the rate law?
 
 ### MCQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 Compare trials 1 and 2. Doubling $$[A]$$ while holding $$[B]$$ constant makes the rate four times larger, so the reaction is second order in $$A$$.
@@ -339,11 +422,9 @@ So the answer is
 $$
 \boxed{\text{B}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 A catalyst provides an alternate pathway with lower activation energy. It does not change $$\Delta G^\circ$$, $$\Delta H$$, or $$K$$.
@@ -351,11 +432,9 @@ A catalyst provides an alternate pathway with lower activation energy. It does n
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 For a first-order reaction,
@@ -369,11 +448,9 @@ so $$\ln[A]$$ versus time is linear.
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 The rate depends on $$[A]^2$$. Doubling $$[A]$$ multiplies the rate by
@@ -385,11 +462,9 @@ $$
 $$
 \boxed{\text{C}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 For $$\text{rate}=k[A]$$,
@@ -401,11 +476,9 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 At higher temperature, particles have greater kinetic energy on average, so a larger fraction of collisions can overcome the activation energy.
@@ -413,13 +486,11 @@ At higher temperature, particles have greater kinetic energy on average, so a la
 $$
 \boxed{\text{B}}
 $$
-
-</div>
+:::
 
 ### FRQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$(A)$$ For a first-order reaction,
@@ -461,11 +532,9 @@ $$
 $$
 
 The negative slope shows that $$[A]$$ decreases as time increases. The magnitude of the slope gives the rate constant, so a steeper negative line means a faster first-order reaction.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 $$(A)$$ If a plot of $$\ln[A]$$ versus time is linear, the data support a first-order relationship in $$A$$. Equivalently, the concentration should decrease by the same fraction over equal time intervals. A plot of $$[A]$$ versus time or $$1/[A]$$ versus time would be used to test zero-order or second-order behavior, so the linear graph identifies the order.
@@ -485,5 +554,4 @@ t_{1/2}=\frac{0.693}{k}=\frac{0.693}{0.0150}=46.2\ \text{s}.
 $$
 
 For a first-order reaction, this half-life is constant, meaning every $$46.2\ \text{s}$$ the concentration is cut in half regardless of the starting concentration.
-
-</div>
+:::

@@ -110,7 +110,9 @@ A practical algorithm:
 
 Typical pairings of steric number and lone pairs give names such as **linear**, **trigonal planar**, **tetrahedral**, **trigonal bipyramidal**, and **octahedral** for the electron-domain geometry; lone pairs then influence the **molecular geometry** (for example, **bent** instead of **trigonal planar** when one lone pair sits on a central atom with three domains).
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/compounds/VSEPR.png' | relative_url }}" alt="VSEPR Model" loading="lazy" decoding="async" />
+:::figure{width=480}
+![VSEPR Model](/assets/APs/AP%20Chem/compounds/VSEPR.png)
+:::
 
 ---
 
@@ -118,7 +120,9 @@ Typical pairings of steric number and lone pairs give names such as **linear**, 
 
 Atomic orbitals on a bonded atom can mix to form **hybrid orbitals** that are consistent with VESPR. For carbon in many organic molecules, four **sigma** frameworks point toward the corners of a tetrahedron, described by $$\text{sp}^3$$ **hybridization**. $$\text{sp}^2$$ hybrids lie in a plane at $$120^\circ$$ (trigonal planar arrangement); $$\text{sp}$$ hybrids are linear at $$180^\circ$$. In addition, $$\text{sp}^3 d$$ hybridization occurs in trigonal bipyramidal configurations, while $$\text{sp}^3 d^2$$ hybridization occurs in an octahedral configuration.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/compounds/Hybrids.jpeg' | relative_url }}" alt="Hybridization" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Hybridization](/assets/APs/AP%20Chem/compounds/Hybrids.jpeg)
+:::
 
 ---
 
@@ -134,7 +138,9 @@ A **sigma bond** ($$\sigma$$) has electron density concentrated along the *inter
 
 When two atoms approach, the **potential energy** of the system typically drops as attractive interactions dominate, passes through a minimum at an **equilibrium bond length**, and then rises steeply as **nuclear repulsion** dominates at short distance.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/compounds/potenergycurve.jpg' | relative_url }}" alt="Potential Energy Curve" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Potential Energy Curve](/assets/APs/AP%20Chem/compounds/potenergycurve.jpg)
+:::
 
 **Bond energy** is related to the depth of that well. Comparing curves for the same bond order (single vs double vs triple) illustrates why higher **bond order** correlates with shorter, stronger bonds.
 
@@ -189,7 +195,9 @@ For salts with other stoichiometries (e.g. $$\text{MgCl}_2$$, $$\text{Na}_2\text
 
 Qualitatively, larger ion charges and smaller ions (shorter internuclear distances in the lattice) increase $$U_{\text{lattice}}$$, consistent with Coulomb attraction in the lattice and with the trends introduced earlier in this unit. A picture has been added below for illustrative purposes.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/compounds/bornhaber.gif' | relative_url }}" alt="Born-Haber Cycle" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Born-Haber Cycle](/assets/APs/AP%20Chem/compounds/bornhaber.gif)
+:::
 
 ---
 
@@ -197,47 +205,109 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
 
 ### MCQ
 
+:::practice
+:::mcq{id=chem-compounds-1 correct=D}
 1. Which molecule is polar?
 
-   (A) $$\text{CO}_2$$<br>
-   (B) $$\text{BF}_3$$<br>
-   (C) $$\text{CH}_4$$<br>
-   (D) $$\text{NH}_3$$
+- [ ] $$\text{CO}_2$$
+- [ ] $$\text{BF}_3$$
+- [ ] $$\text{CH}_4$$
+- [ ] $$\text{NH}_3$$
 
+:::solution
+$$\text{NH}_3$$ has three N-H bonds and one lone pair on nitrogen, giving a trigonal pyramidal shape. The bond dipoles do not cancel.
+
+$$
+\boxed{\text{D}}
+$$
+:::
+:::
+
+:::mcq{id=chem-compounds-2 correct=C}
 2. Which compound should have the greatest lattice energy magnitude?
 
-   (A) $$\text{NaF}$$<br>
-   (B) $$\text{NaCl}$$<br>
-   (C) $$\text{MgO}$$<br>
-   (D) $$\text{MgCl}_2$$
+- [ ] $$\text{NaF}$$
+- [ ] $$\text{NaCl}$$
+- [ ] $$\text{MgO}$$
+- [ ] $$\text{MgCl}_2$$
 
+:::solution
+Lattice energy increases when ion charges are larger and ion radii are smaller. $$\text{MgO}$$ contains $$\text{Mg}^{2+}$$ and $$\text{O}^{2-}$$, so the charge product is larger than in the salts with only $$1+$$ or $$1-$$ ions.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+
+:::mcq{id=chem-compounds-3 correct=C}
 3. Which species has a tetrahedral molecular geometry?
 
-   (A) $$\text{CO}_2$$<br>
-   (B) $$\text{NH}_3$$<br>
-   (C) $$\text{CH}_4$$<br>
-   (D) $$\text{BF}_3$$
+- [ ] $$\text{CO}_2$$
+- [ ] $$\text{NH}_3$$
+- [ ] $$\text{CH}_4$$
+- [ ] $$\text{BF}_3$$
 
+:::solution
+$$\text{CH}_4$$ has four bonding domains and no lone pairs on the central atom, so its molecular geometry is tetrahedral.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+
+:::mcq{id=chem-compounds-4 correct=C}
 4. In a nitrate ion, $$\text{NO}_3^-$$, resonance means that
 
-   (A) the atoms repeatedly switch positions.<br>
-   (B) one N-O bond is permanently double while the other two are permanently single.<br>
-   (C) the actual ion has three equivalent N-O bonds with bond order between single and double.<br>
-   (D) the ion violates conservation of charge.
+- [ ] the atoms repeatedly switch positions.
+- [ ] one N-O bond is permanently double while the other two are permanently single.
+- [ ] the actual ion has three equivalent N-O bonds with bond order between single and double.
+- [ ] the ion violates conservation of charge.
 
+:::solution
+Resonance structures are different valid Lewis structures with the same atom connectivity but different electron placement. In nitrate, the real ion is a resonance hybrid with equivalent N-O bonds.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+
+:::mcq{id=chem-compounds-5 correct=B}
 5. Which molecule has a bent molecular geometry?
 
-   (A) $$\text{CO}_2$$<br>
-   (B) $$\text{H}_2\text{O}$$<br>
-   (C) $$\text{BF}_3$$<br>
-   (D) $$\text{CH}_4$$
+- [ ] $$\text{CO}_2$$
+- [ ] $$\text{H}_2\text{O}$$
+- [ ] $$\text{BF}_3$$
+- [ ] $$\text{CH}_4$$
 
+:::solution
+Water has two bonding domains and two lone pairs around oxygen, giving a bent molecular geometry.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-compounds-6 correct=C}
 6. Which bond is most polar?
 
-   (A) C-H<br>
-   (B) C-C<br>
-   (C) H-F<br>
-   (D) Cl-Cl
+- [ ] C-H
+- [ ] C-C
+- [ ] H-F
+- [ ] Cl-Cl
+
+:::solution
+The H-F bond has the largest electronegativity difference among the choices, so it is the most polar.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+:::
 
 ### FRQ
 
@@ -263,8 +333,7 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
 
 ### MCQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$\text{NH}_3$$ has three N-H bonds and one lone pair on nitrogen, giving a trigonal pyramidal shape. The bond dipoles do not cancel.
@@ -272,11 +341,9 @@ $$\text{NH}_3$$ has three N-H bonds and one lone pair on nitrogen, giving a trig
 $$
 \boxed{\text{D}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 Lattice energy increases when ion charges are larger and ion radii are smaller. $$\text{MgO}$$ contains $$\text{Mg}^{2+}$$ and $$\text{O}^{2-}$$, so the charge product is larger than in the salts with only $$1+$$ or $$1-$$ ions.
@@ -284,11 +351,9 @@ Lattice energy increases when ion charges are larger and ion radii are smaller. 
 $$
 \boxed{\text{C}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 $$\text{CH}_4$$ has four bonding domains and no lone pairs on the central atom, so its molecular geometry is tetrahedral.
@@ -296,11 +361,9 @@ $$\text{CH}_4$$ has four bonding domains and no lone pairs on the central atom, 
 $$
 \boxed{\text{C}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 Resonance structures are different valid Lewis structures with the same atom connectivity but different electron placement. In nitrate, the real ion is a resonance hybrid with equivalent N-O bonds.
@@ -308,11 +371,9 @@ Resonance structures are different valid Lewis structures with the same atom con
 $$
 \boxed{\text{C}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 Water has two bonding domains and two lone pairs around oxygen, giving a bent molecular geometry.
@@ -320,11 +381,9 @@ Water has two bonding domains and two lone pairs around oxygen, giving a bent mo
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 The H-F bond has the largest electronegativity difference among the choices, so it is the most polar.
@@ -332,13 +391,11 @@ The H-F bond has the largest electronegativity difference among the choices, so 
 $$
 \boxed{\text{C}}
 $$
-
-</div>
+:::
 
 ### FRQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$(A)$$ In $$\text{CH}_2\text{O}$$, carbon is bonded to two H atoms and double-bonded to O. In $$\text{CH}_3\text{OH}$$, carbon is bonded to three H atoms and single-bonded to O, while O is bonded to H and has two lone pairs.
@@ -346,8 +403,7 @@ $$(A)$$ In $$\text{CH}_2\text{O}$$, carbon is bonded to two H atoms and double-b
 <div class="placeholder-box" markdown="1">
 
 **Image placeholder:** Lewis structures for $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
-
-</div>
+:::
 
 $$(B)$$ The carbon in $$\text{CH}_2\text{O}$$ has three electron domains, so it is
 
@@ -365,8 +421,7 @@ $$(C)$$ $$\text{CH}_3\text{OH}$$ forms stronger attractions with water because i
 
 </div>
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 $$(A)$$ The chromium has four bonding regions around it, so the electron-domain geometry and molecular geometry are both
@@ -378,5 +433,4 @@ $$
 $$(B)$$ The double-bond character can be placed between chromium and different oxygen atoms while keeping the same atom connectivity and total number of valence electrons. These drawings differ only in electron placement, not in which atoms are bonded to which, so they are resonance structures rather than different compounds.
 
 $$(C)$$ The resonance hybrid averages the valid resonance structures. Since no single resonance structure fully describes the ion, the Cr-O bonds have the same average bond order and are equivalent. A good particle-level explanation is that the extra electron density is delocalized over the Cr-O bonding framework rather than locked into one permanent double bond.
-
-</div>
+:::

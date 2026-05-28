@@ -62,8 +62,7 @@ $$
 
 The quantity $$\lvert 4p\rvert$$ controls how “wide” the parabola is: larger $$\lvert p\rvert$$ means a more gradual curve.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Standard equation of a vertical parabola).** Suppose the vertex is $$(h,k)$$, the focus is $$(h,k+p)$$, and the directrix is
 
 $$
@@ -107,8 +106,7 @@ $$
 $$
 
 This gives the standard form for a vertical parabola.
-
-</div>
+:::
 
 ### Latus rectum
 
@@ -150,11 +148,12 @@ $$
 (h+p,k+2p).
 $$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/parabolastuff.jpg' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/parabolastuff.jpg)
+:::
 
-<div class="theorem-box" markdown="1">
-
-**Example.** For
+:::example
+For
 
 $$
 x^2=16y,
@@ -173,18 +172,15 @@ Here $$h=0$$, $$k=0$$, and $$4p=16$$, so $$p=4$$. Therefore:
 - Directrix: $$y=-4$$.
 - Focal width: $$16$$.
 - Latus rectum endpoints: $$(-8,4)$$ and $$(8,4)$$.
-
-</div>
+:::
 
 ### Applications of parabolas
 
 For a parabola, any ray starting from the focus and reflecting off of the surface of the parabola will always be perpendicular to the latus rectum (the converse is true as well)! This makes parabolas especially useful for things like flashlights and mirrors.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Extension.** Prove the theorem stated above is true. One theorem you make find useful is the Law of Reflection: A ray reflecting off the surface will have the same angle of reflection as angle of incidence.
-
-</div>
+:::
 
 In photography, lenses are made up of portions of parabolas. Suppose you have a chord (parallel to the directrix) with half-length $$d$$. Define the focal ratio as $$\frac{p}{d}$$. This is what the $$f$$-stops are defined as in photography.
 
@@ -194,7 +190,9 @@ In photography, lenses are made up of portions of parabolas. Suppose you have a 
 
 An ellipse is defined as the set of points the sum of whose distances to two fixed foci is constant (greater than the distance between the foci).
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/ellipse.png' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Ellipse](/assets/APs/AP%20Precalc/ellipse.png)
+:::
 
 ### Basic definitions
 
@@ -224,8 +222,7 @@ $$
 
 If the denominators are equal ($$a = b$$), the ellipse is a circle of radius $$a$$.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Standard equation of an ellipse, horizontal major axis).** Place the foci on the $$x$$-axis at $$F_{1} = (-c,0)$$ and $$F_{2} = (c,0)$$ with $$0 < c < a$$. The ellipse is the set of points $$P = (x,y)$$ such that the sum of distances to the foci is the constant $$2a$$:
 
 $$
@@ -273,8 +270,7 @@ $$
 Thus the two-focus definition yields the standard equation with $$c^{2} = a^{2} - b^{2}$$. Translating the center to $$(h,k)$$ replaces $$x$$ by $$x-h$$ and $$y$$ by $$y-k$$, giving $$\dfrac{(x-h)^{2}}{a^{2}} + \dfrac{(y-k)^{2}}{b^{2}} = 1$$.
 
 For a vertical major axis, the same algebra applies after swapping the roles of $$x$$ and $$y$$ (foci on the vertical line through the center), which produces $$\dfrac{(x-h)^{2}}{b^{2}} + \dfrac{(y-k)^{2}}{a^{2}} = 1$$ with $$a > b$$ and again $$c^{2} = a^{2} - b^{2}$$.
-
-</div>
+:::
 
 ### Graphing an ellipse
 
@@ -295,9 +291,8 @@ $$
 
 This is why $$a$$ is the semi-major axis.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Graph and identify the key features of
+:::example
+Graph and identify the key features of
 
 $$
 \frac{x^2}{9}+\frac{y^2}{4}=1.
@@ -363,9 +358,10 @@ $$
 e=\frac{c}{a}=\frac{\sqrt5}{3}.
 $$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/ellipsegraph1.png' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
-
-</div>
+:::figure{width=480}
+![Ellipse](/assets/APs/AP%20Precalc/ellipsegraph1.png)
+:::
+:::
 
 ### Directrices of an ellipse
 
@@ -407,7 +403,9 @@ $$
 
 Each focus has its own directrix. The right focus pairs with the right directrix, the left focus pairs with the left directrix, and similarly for vertical ellipses. These directrices will come in handy later in the Focus-Directrix section.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/ellipsedir.png' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Ellipse](/assets/APs/AP%20Precalc/ellipsedir.png)
+:::
 
 ### Applications of ellipses
 
@@ -458,7 +456,9 @@ Eccentricity: $$\displaystyle e = \frac{c}{a} > 1$$.
 
 The conjugate hyperbola swaps the roles of the terms (e.g. $$\frac{y^{2}}{a^{2}} - \frac{x^{2}}{b^{2}} = 1$$ vs $$\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 1$$) and shares the same asymptote rectangle but different vertices and branches.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/hyperbolapic.jpg' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Ellipse](/assets/APs/AP%20Precalc/hyperbolapic.jpg)
+:::
 
 ### Graphing a hyperbola
 
@@ -495,9 +495,8 @@ $$
 \pm\frac ab.
 $$
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Graph and identify the key features of
+:::example
+Graph and identify the key features of
 
 $$
 \frac{x^2}{9}-\frac{y^2}{4}=1.
@@ -553,9 +552,10 @@ $$
 e=\frac ca=\frac{\sqrt{13}}{3}.
 $$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/hyperbolagraph1.png' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
-
-</div>
+:::figure{width=480}
+![Ellipse](/assets/APs/AP%20Precalc/hyperbolagraph1.png)
+:::
+:::
 
 ### Directrices of a hyperbola
 
@@ -601,13 +601,13 @@ $$
 \frac ae<a<c.
 $$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/hyperboladir.jpg' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Ellipse](/assets/APs/AP%20Precalc/hyperboladir.jpg)
+:::
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Extension.** Prove the standard formula for a hyperbola. This procedure should be similar to the procedure for deriving the equation for an ellipse.
-
-</div>
+:::
 
 ---
 
@@ -715,9 +715,8 @@ The formula is the same, but the location feels different:
 - for ellipses, $$c<a$$, so $$\dfrac{a^2}{c}>a$$ and the directrices are outside the ellipse;
 - for hyperbolas, $$c>a$$, so $$\dfrac{a^2}{c}<a$$ and the directrices lie between the vertices.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the directrices of
+:::example
+Find the directrices of
 
 $$
 \frac{(y+1)^2}{25}-\frac{(x-2)^2}{9}=1.
@@ -758,8 +757,7 @@ Therefore
 $$
 \boxed{y=-1\pm\frac{25}{\sqrt{34}}}.
 $$
-
-</div>
+:::
 
 ### From focus-directrix data to an equation
 
@@ -771,9 +769,8 @@ When a problem gives a focus, a directrix, and eccentricity, start from the defi
 4. Square both sides and simplify.
 5. Complete the square if needed.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the conic with focus $$(0,0)$$, directrix $$x=4$$, and eccentricity $$e=\frac12$$.
+:::example
+Find the conic with focus $$(0,0)$$, directrix $$x=4$$, and eccentricity $$e=\frac12$$.
 
 For a point $$P=(x,y)$$, the distance to the focus is
 
@@ -844,12 +841,10 @@ $$
 $$
 
 Since $$0<e<1$$, it makes sense that the result is an ellipse.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the foci, eccentricity, and directrices of
+:::example
+Find the foci, eccentricity, and directrices of
 
 $$
 9x^2+16y^2=144.
@@ -898,11 +893,9 @@ x=\pm\frac ae
 =\pm\frac{4}{\sqrt7/4}
 =\pm\frac{16}{\sqrt7}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Focus-directrix property).** We show that in rectangular coordinates the locus $$PF = e\,d(P,\ell)$$ is always a parabola, ellipse, or hyperbola according to $$e$$. Take $$e > 0$$ and place the focus at the origin and the directrix as the vertical line $$x = -d$$ with $$d > 0$$, so the focus lies to the right of the directrix. For any point $$P = (x,y)$$ on the same side of the directrix as the focus (so that the foot of the perpendicular has $$x$$-coordinate $$-d$$ and $$x > -d$$), the perpendicular distance is
 
 $$
@@ -962,8 +955,7 @@ which is the equation of a hyperbola (difference of squared terms with opposite 
 Thus the focus–directrix condition with fixed $$e > 0$$ produces exactly one nondegenerate conic type in each case $$e = 1$$, $$0 < e < 1$$, and $$e > 1$$. Other placements of the focus and directrix (rotations and translations) only change coordinates, not the classification.
 
 Much of the final algebra is not shown here and is left as practice.
-
-</div>
+:::
 
 ---
 
@@ -1056,9 +1048,8 @@ $$
 
 These are the positive and negative vertical directions.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the eccentricity, directrix, and vertices of
+:::example
+Find the eccentricity, directrix, and vertices of
 
 $$
 r=\frac{6}{1+\frac12\cos\theta}.
@@ -1111,11 +1102,9 @@ In rectangular coordinates, these points are
 $$
 \boxed{(4,0)\text{ and }(-12,0)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Polar conic formula).** Put the focus at the pole and let the directrix be
 
 $$
@@ -1177,8 +1166,7 @@ r=\frac{ed}{1+e\cos\theta}.
 $$
 
 Depending on which side the directrix is on and whether it is horizontal or vertical, the sign and trig function change.
-
-</div>
+:::
 
 ### Reading polar conic equations
 
@@ -1205,9 +1193,8 @@ $$
 
 So $$e=\frac12$$, not $$2$$.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Identify the conic:
+:::example
+Identify the conic:
 
 $$
 r=\frac{10}{2-\cos\theta}.
@@ -1251,8 +1238,7 @@ the directrix is
 $$
 x=-d=-10.
 $$
-
-</div>
+:::
 
 ### Converting polar conics to rectangular form
 
@@ -1270,9 +1256,8 @@ The basic strategy is:
 4. Square both sides if needed.
 5. Complete the square.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Convert
+:::example
+Convert
 
 $$
 r=\frac{4}{1-\cos\theta}
@@ -1329,12 +1314,10 @@ $$
 $$
 
 This is a parabola, which matches $$e=1$$ from the original polar equation.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Identify the conic:
+:::example
+Identify the conic:
 
 $$
 r=\frac{12}{3+4\cos\theta}.
@@ -1386,9 +1369,10 @@ $$
 
 These angles give the asymptotic directions of the hyperbola.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/hyperbolagraph2.png' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
-
-</div>
+:::figure{width=480}
+![Ellipse](/assets/APs/AP%20Precalc/hyperbolagraph2.png)
+:::
+:::
 
 ### Polar conics and orbits
 
@@ -1402,9 +1386,154 @@ This is why polar equations with a focus at the pole are often more natural than
 
 ## Practice
 
+:::practice
+:::frq{id=precalc-conicsections-1}
 1. Complete the square for $$4x^{2}+9y^{2}-24x+36y+36=0$$. Write the equation in standard form and give the center, vertices, co-vertices, foci, eccentricity, and major/minor axis lengths. Graph the conic.
+
+:::solution
+Complete the square:
+
+$$
+4x^{2}+9y^{2}-24x+36y+36=0
+$$
+
+$$
+4(x^{2}-6x)+9(y^{2}+4y)+36=0.
+$$
+
+Then
+
+$$
+4\bigl((x-3)^{2}-9\bigr)+9\bigl((y+2)^{2}-4\bigr)+36=0.
+$$
+
+Simplify:
+
+$$
+4(x-3)^{2}+9(y+2)^{2}=36.
+$$
+
+Divide by $$36$$:
+
+$$
+\frac{(x-3)^{2}}{9}+\frac{(y+2)^{2}}{4}=1.
+$$
+
+This is an ellipse centered at $$(3,-2)$$ with horizontal major axis. Here $$a^{2}=9$$, $$b^{2}=4$$, so $$a=3$$ and $$b=2$$. Also
+
+$$
+c^{2}=a^{2}-b^{2}=9-4=5,
+$$
+
+so $$c=\sqrt{5}$$ and $$e=\dfrac{c}{a}=\dfrac{\sqrt{5}}{3}$$.
+
+Thus
+
+$$
+\boxed{\frac{(x-3)^{2}}{9}+\frac{(y+2)^{2}}{4}=1}
+$$
+
+with center $$\boxed{(3,-2)}$$, vertices $$\boxed{(0,-2),(6,-2)}$$, co-vertices $$\boxed{(3,-4),(3,0)}$$, foci $$\boxed{(3-\sqrt{5},-2),(3+\sqrt{5},-2)}$$, eccentricity $$\boxed{\frac{\sqrt{5}}{3}}$$, major axis length $$\boxed{6}$$, and minor axis length $$\boxed{4}$$.
+
+The graph of the conic is displayed below:
+:::
+:::
+
+:::frq{id=precalc-conicsections-2}
 2. Find the equation of the parabola whose focus is $$(5,-2)$$ and whose directrix is $$x=-1$$. Give the vertex, value of $$p$$, axis of symmetry, and latus rectum endpoints.
+
+:::solution
+The focus is $$(5,-2)$$ and the directrix is $$x=-1$$, so the parabola opens horizontally. The vertex is halfway between the focus and directrix along the horizontal axis:
+
+$$
+\left(\frac{5+(-1)}{2},-2\right)=(2,-2).
+$$
+
+Thus $$h=2$$ and $$k=-2$$. Since the focus is $$(h+p,k)=(5,-2)$$,
+
+$$
+p=3.
+$$
+
+Use the horizontal parabola form
+
+$$
+(y-k)^{2}=4p(x-h).
+$$
+
+So
+
+$$
+\boxed{(y+2)^{2}=12(x-2)}.
+$$
+
+The axis of symmetry is $$\boxed{y=-2}$$. The latus rectum is vertical through the focus. Its length is $$\lvert 4p \rvert=12$$, so its endpoints are $$6$$ units above and below the focus:
+
+$$
+\boxed{(5,4)\text{ and }(5,-8)}.
+$$
+:::
+:::
+
+:::frq{id=precalc-conicsections-3}
 3. Find all lines with slope $$-2$$ that are tangent to the parabola $$(x-1)^{2}=8(y+3)$$.
+
+:::solution
+A line with slope $$-2$$ has equation
+
+$$
+y=-2x+b.
+$$
+
+Substitute into the parabola
+
+$$
+(x-1)^{2}=8(y+3).
+$$
+
+Then
+
+$$
+(x-1)^{2}=8(-2x+b+3).
+$$
+
+Expand:
+
+$$
+x^{2}-2x+1=-16x+8b+24.
+$$
+
+Move everything to one side:
+
+$$
+x^{2}+14x-(8b+23)=0.
+$$
+
+For the line to be tangent, this quadratic must have exactly one solution, so its discriminant is $$0$$:
+
+$$
+14^{2}-4(1)(-(8b+23))=0.
+$$
+
+Thus
+
+$$
+196+32b+92=0
+\quad\Longrightarrow\quad
+32b=-288
+\quad\Longrightarrow\quad
+b=-9.
+$$
+
+Therefore the tangent line is
+
+$$
+\boxed{y=-2x-9}.
+$$
+:::
+:::
+:::
+
 4. An ellipse has foci $$(1,4)$$ and $$(1,-2)$$ and passes through $$(5,1)$$. Find its standard-form equation and its eccentricity.
 5. The ellipse $$\dfrac{(x+2)^{2}}{36}+\dfrac{(y-1)^{2}}{20}=1$$ has foci $$F_1$$ and $$F_2$$. If $$P$$ is the point on the ellipse with $$x=1$$ and $$y>1$$, find $$PF_1$$ and $$PF_2$$ separately.
 6. Find all real numbers $$m$$ such that the line $$y=mx+3$$ is tangent to the ellipse $$\dfrac{x^{2}}{9}+\dfrac{y^{2}}{4}=1$$.
@@ -1418,55 +1547,36 @@ This is why polar equations with a focus at the pole are often more natural than
 14. Show that the conic $$Ax^{2}+Cy^{2}+Dx+Ey+F=0$$ has center $$(h,k)$$ when $$A\ne 0$$ and $$C\ne 0$$. Derive formulas for $$h$$ and $$k$$ in terms of $$A,C,D,E$$, then find the center of $$5x^{2}-3y^{2}+20x+18y-11=0$$.
 15. For the parabola $$y^{2}=4px$$ with $$p>0$$, let a line through the focus $$(p,0)$$ have slope $$m\ne 0$$ and meet the parabola at two distinct points $$A$$ and $$B$$. Prove that the product of the $$y$$-coordinates of $$A$$ and $$B$$ equals $$-4p^{2}$$.
 16. (Bonus, 2026 USAPhO)
-
 You are studying the motion of charged particles constrained to the $$xy$$-plane. Particle $$\alpha$$, with charge $$+1\ \mathrm{C}$$, is fixed at the origin.
-
 For motion under an inverse-square central force, trajectories are conic sections with the fixed particle at a focus. In polar coordinates:
-
 - For an attractive interaction (ellipse),
-
 $$
 r=\frac{r_0}{1+e\cos\phi},\qquad e<1.
 $$
-
 - For a repulsive interaction (hyperbola),
-
 $$
 r=\frac{r_0}{e\cos\phi-1},\qquad e>1.
 $$
-
 You have a camera that takes three snapshots of a moving particle at equal time intervals.
-
    $$(A)$$ A particle $$\beta$$, with charge $$-1\ \mathrm{C}$$, moves under the electrostatic force of particle $$\alpha$$. In three consecutive snapshots, its positions are
-
    $$
    (0,-5\ \mathrm{m}),\qquad (3\ \mathrm{m},0),\qquad (0,5\ \mathrm{m}).
    $$
-
    Assuming the motion is governed only by the Coulomb interaction with $$\alpha$$, determine the maximum distance that particle $$\beta$$ reaches from the origin.
-
    $$(B)$$ Now particle $$\beta$$ is replaced by particle $$\gamma$$, which has charge $$+2\ \mathrm{C}$$ and is free to move in the plane. In three consecutive snapshots, its positions are
-
    $$
    (3\ \mathrm{m},-4\ \mathrm{m}),\qquad (2\ \mathrm{m},0),\qquad (3\ \mathrm{m},4\ \mathrm{m}).
    $$
-
    Assuming the motion is governed only by the Coulomb interaction with $$\alpha$$, determine the angle $$\theta$$, measured from the positive $$x$$-axis, of the velocity of particle $$\gamma$$ at a large time.
-
    $$(C)$$ A family of particles, each identical to particle $$\gamma$$ (that is, each has charge $$+2\ \mathrm{C}$$), approaches from infinity in the $$xy$$-plane. All particles have the same speed $$v_{\infty}$$ far from the origin and move along lines parallel to the initial asymptotic direction of particle $$\gamma$$ from part $$(B)$$. The particles are injected one at a time, so they do not interact with one another.
-
    For each trajectory, define the **impact parameter** $$B$$ to be the perpendicular distance between the initial straight-line path of the particle and the origin.
-
    As a particle passes near the scattering center, its direction changes due to Coulomb repulsion. Let $$\alpha$$ denote the total deflection angle of the trajectory, i.e. the angle between the incoming and outgoing asymptotic directions.
-
    $$(i)$$ Using the conic form of the trajectory, derive a formula for $$B(\alpha)$$.
-
    $$(ii)$$ Using the result of part $$(B)$$, express $$B(\alpha)$$ in terms of $$r_0$$.
 
 ## Solutions
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 Complete the square:
@@ -1515,12 +1625,12 @@ with center $$\boxed{(3,-2)}$$, vertices $$\boxed{(0,-2),(6,-2)}$$, co-vertices 
 
 The graph of the conic is displayed below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/ellipsegraph2.png' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Ellipse](/assets/APs/AP%20Precalc/ellipsegraph2.png)
+:::
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 The focus is $$(5,-2)$$ and the directrix is $$x=-1$$, so the parabola opens horizontally. The vertex is halfway between the focus and directrix along the horizontal axis:
@@ -1552,11 +1662,9 @@ The axis of symmetry is $$\boxed{y=-2}$$. The latus rectum is vertical through t
 $$
 \boxed{(5,4)\text{ and }(5,-8)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 A line with slope $$-2$$ has equation
@@ -1610,11 +1718,9 @@ Therefore the tangent line is
 $$
 \boxed{y=-2x-9}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 The foci $$(1,4)$$ and $$(1,-2)$$ have midpoint
@@ -1658,11 +1764,9 @@ The eccentricity is
 $$
 \boxed{e=\frac{c}{a}=\frac{3}{5}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 The ellipse
@@ -1728,11 +1832,9 @@ Therefore
 $$
 \boxed{PF_{\text{right}}=4\quad\text{and}\quad PF_{\text{left}}=8}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 Substitute $$y=mx+3$$ into
@@ -1788,11 +1890,9 @@ Thus
 $$
 \boxed{m=\pm\frac{\sqrt{5}}{3}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 7
 
 Start with
@@ -1859,12 +1959,12 @@ $$
 
 An image of the hyperbola is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/hyperbolagraph3.png' | relative_url }}" alt="Ellipse" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Ellipse](/assets/APs/AP%20Precalc/hyperbolagraph3.png)
+:::
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 8
 
 A horizontal hyperbola centered at $$(2,-1)$$ has form
@@ -1910,11 +2010,9 @@ Thus the equation is
 $$
 \boxed{\frac{(x-2)^{2}}{16}-\frac{(y+1)^{2}}{36}=1}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 9
 
 Solve the system
@@ -1990,11 +2088,9 @@ All sign combinations work, so the intersection points are
 $$
 \boxed{\left(\pm\frac{4\sqrt{10}}{5},\,\pm\frac{3\sqrt{15}}{5}\right)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 10
 
 The focus is $$(0,0)$$ and the directrix is $$x=-6$$. For a point $$(x,y)$$ on the conic,
@@ -2058,11 +2154,9 @@ $$
 $$
 
 Since $$0<e<1$$, this conic is an ellipse.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 11
 
 Start with
@@ -2148,11 +2242,9 @@ Also $$c=ea=\frac{10}{3}$$, so the foci are
 $$
 \boxed{(0,0)\text{ and }\left(\frac{20}{3},0\right)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 12
 
 Rewrite
@@ -2194,11 +2286,9 @@ $$
 $$
 
 At those angles, $$r$$ is not finite. Geometrically, they give the asymptotic directions of the hyperbola.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 13
 
 A circle tangent to both axes in Quadrant I has center $$(r,r)$$ and radius $$r$$. Since the center lies on
@@ -2238,11 +2328,9 @@ Since $$r>0$$,
 $$
 \boxed{r=\frac{15}{\sqrt{34}}=\frac{15\sqrt{34}}{34}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 14
 
 Start with
@@ -2294,11 +2382,9 @@ So the center is
 $$
 \boxed{(-2,3)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 15
 
 The parabola is
@@ -2348,11 +2434,9 @@ Therefore
 $$
 \boxed{y_Ay_B=-4p^{2}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 16
 
 For part (A), use the attractive model
@@ -2686,5 +2770,4 @@ B=\frac{4}{2\sqrt2}=\sqrt2\ \mathrm{m}.
 $$
 
 Note that the answer may be different depending on how you define the asymptote angle, so always match your work instead of necessarily matching solutions.
-
-</div>
+:::

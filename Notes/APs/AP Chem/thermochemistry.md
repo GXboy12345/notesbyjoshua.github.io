@@ -160,47 +160,127 @@ Higher $$T$$ increases vapor pressure; stronger IMFs tend to lower vapor pressur
 
 ### MCQ
 
+:::practice
+:::mcq{id=chem-thermochemistry-1 correct=C}
 1. A reaction has $$\Delta H=-85\ \text{kJ/mol}$$. Which statement is correct?
 
-   (A) The reaction absorbs heat from the surroundings.<br>
-   (B) The products have greater enthalpy than the reactants.<br>
-   (C) The reaction is exothermic.<br>
-   (D) The reaction must be spontaneous at all temperatures.
+- [ ] The reaction absorbs heat from the surroundings.
+- [ ] The products have greater enthalpy than the reactants.
+- [ ] The reaction is exothermic.
+- [ ] The reaction must be spontaneous at all temperatures.
 
+:::solution
+A negative $$\Delta H$$ means heat is released by the system. The reaction is exothermic.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+
+:::mcq{id=chem-thermochemistry-2 correct=B}
 2. A $$50.0\ \text{g}$$ sample of water is warmed from $$22.0^\circ\text{C}$$ to $$28.0^\circ\text{C}$$. Using $$c=4.184\ \text{J/(g}\cdot^\circ\text{C)}$$, how much heat is absorbed by the water?
 
-   (A) $$1.26\times10^2\ \text{J}$$<br>
-   (B) $$1.26\times10^3\ \text{J}$$<br>
-   (C) $$5.02\times10^3\ \text{J}$$<br>
-   (D) $$1.17\times10^4\ \text{J}$$
+- [ ] $$1.26\times10^2\ \text{J}$$
+- [ ] $$1.26\times10^3\ \text{J}$$
+- [ ] $$5.02\times10^3\ \text{J}$$
+- [ ] $$1.17\times10^4\ \text{J}$$
 
+:::solution
+Use
+
+$$
+q=mc\Delta T.
+$$
+
+Here $$\Delta T=6.0^\circ\text{C}$$, so
+
+$$
+q=(50.0)(4.184)(6.0)=1.26\times10^3\ \text{J}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-thermochemistry-3 correct=D}
 3. Which process is endothermic?
 
-   (A) Freezing water<br>
-   (B) Condensing steam<br>
-   (C) Burning methane<br>
-   (D) Vaporizing liquid water
+- [ ] Freezing water
+- [ ] Condensing steam
+- [ ] Burning methane
+- [ ] Vaporizing liquid water
 
+:::solution
+Vaporization requires energy to overcome intermolecular attractions in the liquid.
+
+$$
+\boxed{\text{D}}
+$$
+:::
+:::
+
+:::mcq{id=chem-thermochemistry-4 correct=A}
 4. In a coffee-cup calorimeter, the solution temperature increases. What is true about the reaction occurring in the solution?
 
-   (A) The reaction releases heat to the solution.<br>
-   (B) The reaction absorbs heat from the solution.<br>
-   (C) The reaction has no enthalpy change.<br>
-   (D) The reaction must have $$\Delta S<0$$.
+- [ ] The reaction releases heat to the solution.
+- [ ] The reaction absorbs heat from the solution.
+- [ ] The reaction has no enthalpy change.
+- [ ] The reaction must have $$\Delta S<0$$.
 
+:::solution
+If the solution temperature increases, the solution absorbed heat. The reaction released that heat, so the reaction is exothermic.
+
+$$
+\boxed{\text{A}}
+$$
+:::
+:::
+
+:::mcq{id=chem-thermochemistry-5 correct=B}
 5. Which equation correctly represents Hess's law?
 
-   (A) $$q=mc\Delta T$$<br>
-   (B) $$\Delta H_{\text{rxn}}=\sum \Delta H_{\text{steps}}$$<br>
-   (C) $$PV=nRT$$<br>
-   (D) $$K=\frac{[\text{products}]}{[\text{reactants}]}$$
+- [ ] $$q=mc\Delta T$$
+- [ ] $$\Delta H_{\text{rxn}}=\sum \Delta H_{\text{steps}}$$
+- [ ] $$PV=nRT$$
+- [ ] $$K=\frac{[\text{products}]}{[\text{reactants}]}$$
 
+:::solution
+Hess's law says enthalpy is a state function, so the enthalpy change for an overall reaction equals the sum of the enthalpy changes for the steps.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-thermochemistry-6 correct=B}
 6. If bonds broken require $$650\ \text{kJ}$$ and bonds formed release $$900\ \text{kJ}$$, what is the approximate $$\Delta H_{\text{rxn}}$$?
 
-   (A) $$+250\ \text{kJ}$$<br>
-   (B) $$-250\ \text{kJ}$$<br>
-   (C) $$+1550\ \text{kJ}$$<br>
-   (D) $$-1550\ \text{kJ}$$
+- [ ] $$+250\ \text{kJ}$$
+- [ ] $$-250\ \text{kJ}$$
+- [ ] $$+1550\ \text{kJ}$$
+- [ ] $$-1550\ \text{kJ}$$
+
+:::solution
+Use
+
+$$
+\Delta H_{\text{rxn}}\approx \sum D(\text{broken})-\sum D(\text{formed}).
+$$
+
+$$
+\Delta H_{\text{rxn}}=650-900=-250\ \text{kJ}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+:::
 
 ### FRQ
 
@@ -232,8 +312,7 @@ with $$\Delta H^\circ_{\text{rxn}}=-572\ \text{kJ}$$ for the reaction as written
 
 ### MCQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 A negative $$\Delta H$$ means heat is released by the system. The reaction is exothermic.
@@ -241,11 +320,9 @@ A negative $$\Delta H$$ means heat is released by the system. The reaction is ex
 $$
 \boxed{\text{C}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 Use
@@ -263,11 +340,9 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 Vaporization requires energy to overcome intermolecular attractions in the liquid.
@@ -275,11 +350,9 @@ Vaporization requires energy to overcome intermolecular attractions in the liqui
 $$
 \boxed{\text{D}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 If the solution temperature increases, the solution absorbed heat. The reaction released that heat, so the reaction is exothermic.
@@ -287,11 +360,9 @@ If the solution temperature increases, the solution absorbed heat. The reaction 
 $$
 \boxed{\text{A}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 Hess's law says enthalpy is a state function, so the enthalpy change for an overall reaction equals the sum of the enthalpy changes for the steps.
@@ -299,11 +370,9 @@ Hess's law says enthalpy is a state function, so the enthalpy change for an over
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 Use
@@ -319,13 +388,11 @@ $$
 $$
 \boxed{\text{B}}
 $$
-
-</div>
+:::
 
 ### FRQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$(A)$$ The reaction forms $$2$$ moles of water, so the enthalpy change must be divided by $$2$$ to find the value per mole of water:
@@ -343,11 +410,9 @@ $$
 $$
 
 $$(C)$$ Energy must be added to separate bonded atoms, so bond breaking is endothermic. The overall reaction is exothermic because forming the O-H bonds in water releases more energy than was required to break the H-H and O=O bonds. In bond-enthalpy language, $$\Delta H_{\text{rxn}}$$ is negative because the energy released by bonds formed is greater than the energy absorbed by bonds broken.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 $$(A)$$ The reaction forms $$2$$ moles of $$\text{Na}_2\text{O}(s)$$ from elements in their standard states, so the reaction enthalpy is twice the molar enthalpy of formation:
@@ -365,5 +430,4 @@ $$
 So $$414\ \text{kJ}$$ of heat is released.
 
 $$(C)$$ Formation enthalpy measures formation from elements in their standard states. An element already in its standard state requires no formation reaction, so its assigned value is zero. This is a reference convention that lets formation enthalpies be added and subtracted consistently in Hess's law calculations.
-
-</div>
+:::

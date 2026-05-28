@@ -8,10 +8,13 @@ interface Props {
   title: string;
   description?: string;
   headings?: { depth: number; slug: string; text: string }[];
+  /** Legacy client KaTeX pass when SSR math is off. */
   math?: boolean;
+  /** Practice MCQs, figures lightbox, etc. */
+  interactive?: boolean;
 }
 
-const { title, description, headings = [], math = false } = Astro.props;
+const { title, description, headings = [], math = false, interactive = false } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -25,4 +28,19 @@ const { title, description, headings = [], math = false } = Astro.props;
     <TableOfContents headings={headings} />
   </div>
   {math && <MathRender />}
+  {
+    interactive && (
+      <script>
+        import { initDocPractice } from '../scripts/doc-practice.ts';
+        import { initDocLightbox } from '../scripts/doc-lightbox.ts';
+
+        initDocPractice();
+        initDocLightbox();
+        document.addEventListener('astro:page-load', () => {
+          initDocPractice();
+          initDocLightbox();
+        });
+      </script>
+    )
+  }
 </BaseLayout>

@@ -257,17 +257,23 @@ For a weak acid $$\text{HA}$$ titrated with strong base:
 
 For a weak base titrated with strong acid, swap the acid/base roles: the buffer contains $$\text{B}$$ and $$\text{BH}^+$$, the half-equivalence point gives $$\text{pOH} = \text{p}K_b$$ or $$\text{pH} = \text{p}K_a$$ for $$\text{BH}^+$$, and the equivalence point is acidic.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/acidbase/titrationcurve.gif' | relative_url }}" alt="Titration curves" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Titration curves](/assets/APs/AP%20Chem/acidbase/titrationcurve.gif)
+:::
 
 If an acid can dissociate more than once, it's titration curve follows a polyprotic titration curve:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/acidbase/polyprotictitration.jpg' | relative_url }}" alt="Polyprotic titration curve placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Polyprotic titration curve placeholder](/assets/APs/AP%20Chem/acidbase/polyprotictitration.jpg)
+:::
 
 ### pH Indicators
 
 **Acid–base indicators** are weak acids or bases whose conjugate forms have different colors. The **endpoint** is where the color change is observed; it should lie near the **equivalence point** of a titration.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/acidbase/phindicator.png' | relative_url }}" alt="pH Indicators" loading="lazy" decoding="async" />
+:::figure{width=480}
+![pH Indicators](/assets/APs/AP%20Chem/acidbase/phindicator.png)
+:::
 
 Choose an indicator whose transition range lies within the steep vertical region of the titration curve. A strong acid-strong base titration has a steep jump around pH $$7$$, so many indicators can work. A weak acid-strong base titration has an equivalence point above $$7$$, so phenolphthalein is often better than methyl orange. A weak base-strong acid titration has an equivalence point below $$7$$, so an acidic-range indicator is usually better.
 
@@ -305,47 +311,131 @@ $$\text{HF}$$ is weak; $$\text{HSO}_4^-$$ is a weak acid.
 
 ### MCQ
 
+:::practice
+:::mcq{id=chem-acidbase-1 correct=B}
 1. What is the $$\text{pH}$$ of a $$1.0\times10^{-3}\ M$$ solution of $$\text{HCl}$$ at $$25^\circ\text{C}$$?
 
-   (A) $$1.00$$<br>
-   (B) $$3.00$$<br>
-   (C) $$7.00$$<br>
-   (D) $$11.00$$
+- [ ] $$1.00$$
+- [ ] $$3.00$$
+- [ ] $$7.00$$
+- [ ] $$11.00$$
 
+:::solution
+$$\text{HCl}$$ is a strong acid, so
+
+$$
+[\text{H}_3\text{O}^+]=1.0\times10^{-3}\ M.
+$$
+
+Thus
+
+$$
+\text{pH}=-\log(1.0\times10^{-3})=3.00.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-acidbase-2 correct=B}
 2. A buffer contains equal concentrations of $$\text{HF}$$ and $$\text{F}^-$$. If $$K_a$$ for $$\text{HF}$$ is $$6.8\times10^{-4}$$, what is the $$\text{pH}$$ of the buffer?
 
-   (A) $$1.68$$<br>
-   (B) $$3.17$$<br>
-   (C) $$7.00$$<br>
-   (D) $$10.83$$
+- [ ] $$1.68$$
+- [ ] $$3.17$$
+- [ ] $$7.00$$
+- [ ] $$10.83$$
 
+:::solution
+When $$[\text{HF}]=[\text{F}^-]$$, the Henderson-Hasselbalch equation gives
+
+$$
+\text{pH}=\text{p}K_a.
+$$
+
+$$
+\text{p}K_a=-\log(6.8\times10^{-4})=3.17.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-acidbase-3 correct=D}
 3. Which solution has the greatest $$\text{pH}$$?
 
-   (A) $$0.10\ M\ \text{HCl}$$<br>
-   (B) $$0.10\ M\ \text{HC}_2\text{H}_3\text{O}_2$$<br>
-   (C) $$0.10\ M\ \text{NaCl}$$<br>
-   (D) $$0.10\ M\ \text{NaOH}$$
+- [ ] $$0.10\ M\ \text{HCl}$$
+- [ ] $$0.10\ M\ \text{HC}_2\text{H}_3\text{O}_2$$
+- [ ] $$0.10\ M\ \text{NaCl}$$
+- [ ] $$0.10\ M\ \text{NaOH}$$
 
+:::solution
+$$\text{NaOH}$$ is a strong base, so it produces the greatest $$[\text{OH}^-]$$ and therefore the greatest $$\text{pH}$$.
+
+$$
+\boxed{\text{D}}
+$$
+:::
+:::
+
+:::mcq{id=chem-acidbase-4 correct=A}
 4. At the half-equivalence point in a weak acid-strong base titration,
 
-   (A) $$\text{pH}=\text{p}K_a$$.<br>
-   (B) $$\text{pH}=7.00$$ for every weak acid.<br>
-   (C) all weak acid has been converted to conjugate base.<br>
-   (D) $$[\text{H}_3\text{O}^+]=[\text{OH}^-]$$.
+- [ ] $$\text{pH}=\text{p}K_a$$.
+- [ ] $$\text{pH}=7.00$$ for every weak acid.
+- [ ] all weak acid has been converted to conjugate base.
+- [ ] $$[\text{H}_3\text{O}^+]=[\text{OH}^-]$$.
 
+:::solution
+At the half-equivalence point, $$[\text{HA}]=[\text{A}^-]$$. Henderson-Hasselbalch becomes
+
+$$
+\text{pH}=\text{p}K_a+\log(1)=\text{p}K_a.
+$$
+
+$$
+\boxed{\text{A}}
+$$
+:::
+:::
+
+:::mcq{id=chem-acidbase-5 correct=B}
 5. Which species is the conjugate base of $$\text{H}_2\text{PO}_4^-$$?
 
-   (A) $$\text{H}_3\text{PO}_4$$<br>
-   (B) $$\text{HPO}_4^{2-}$$<br>
-   (C) $$\text{PO}_4^{3-}$$<br>
-   (D) $$\text{OH}^-$$
+- [ ] $$\text{H}_3\text{PO}_4$$
+- [ ] $$\text{HPO}_4^{2-}$$
+- [ ] $$\text{PO}_4^{3-}$$
+- [ ] $$\text{OH}^-$$
 
+:::solution
+A conjugate base is formed by removing one proton. Removing $$\text{H}^+$$ from $$\text{H}_2\text{PO}_4^-$$ gives $$\text{HPO}_4^{2-}$$.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-acidbase-6 correct=C}
 6. Which mixture is a buffer?
 
-   (A) $$\text{HCl}$$ and $$\text{NaCl}$$<br>
-   (B) $$\text{NaOH}$$ and $$\text{NaCl}$$<br>
-   (C) $$\text{HF}$$ and $$\text{NaF}$$<br>
-   (D) $$\text{HNO}_3$$ and $$\text{NaNO}_3$$
+- [ ] $$\text{HCl}$$ and $$\text{NaCl}$$
+- [ ] $$\text{NaOH}$$ and $$\text{NaCl}$$
+- [ ] $$\text{HF}$$ and $$\text{NaF}$$
+- [ ] $$\text{HNO}_3$$ and $$\text{NaNO}_3$$
+
+:::solution
+A buffer contains a weak acid and its conjugate base, or a weak base and its conjugate acid. $$\text{HF}$$ and $$\text{F}^-$$ form a buffer pair.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+:::
 
 ### FRQ
 
@@ -373,8 +463,7 @@ $$\text{HF}$$ is weak; $$\text{HSO}_4^-$$ is a weak acid.
 
 ### MCQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$\text{HCl}$$ is a strong acid, so
@@ -392,11 +481,9 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 When $$[\text{HF}]=[\text{F}^-]$$, the Henderson-Hasselbalch equation gives
@@ -412,11 +499,9 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 $$\text{NaOH}$$ is a strong base, so it produces the greatest $$[\text{OH}^-]$$ and therefore the greatest $$\text{pH}$$.
@@ -424,11 +509,9 @@ $$\text{NaOH}$$ is a strong base, so it produces the greatest $$[\text{OH}^-]$$ 
 $$
 \boxed{\text{D}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 At the half-equivalence point, $$[\text{HA}]=[\text{A}^-]$$. Henderson-Hasselbalch becomes
@@ -440,11 +523,9 @@ $$
 $$
 \boxed{\text{A}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 A conjugate base is formed by removing one proton. Removing $$\text{H}^+$$ from $$\text{H}_2\text{PO}_4^-$$ gives $$\text{HPO}_4^{2-}$$.
@@ -452,11 +533,9 @@ A conjugate base is formed by removing one proton. Removing $$\text{H}^+$$ from 
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 A buffer contains a weak acid and its conjugate base, or a weak base and its conjugate acid. $$\text{HF}$$ and $$\text{F}^-$$ form a buffer pair.
@@ -464,13 +543,11 @@ A buffer contains a weak acid and its conjugate base, or a weak base and its con
 $$
 \boxed{\text{C}}
 $$
-
-</div>
+:::
 
 ### FRQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$(A)$$
@@ -512,11 +589,9 @@ $$
 $$
 
 $$(D)$$ Sodium acetate adds the common ion $$\text{C}_2\text{H}_3\text{O}_2^-$$, shifting the acid ionization left. Since less acetic acid ionizes, $$[\text{H}_3\text{O}^+]$$ decreases and the percent ionization decreases. This is the common-ion effect.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 $$(A)$$ At equivalence, the weak acid has been converted mostly into its conjugate base. The conjugate base reacts with water to produce $$\text{OH}^-$$:
@@ -548,7 +623,6 @@ $$(C)$$ The steep part of the titration curve is where a tiny volume change caus
 <div class="placeholder-box" markdown="1">
 
 **Image placeholder:** Weak acid-strong base titration curve with equivalence point above $$\text{pH}=7$$ and an indicator transition range near the steep region.
-
-</div>
+:::
 
 </div>

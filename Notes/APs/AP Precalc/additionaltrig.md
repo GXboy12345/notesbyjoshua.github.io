@@ -29,8 +29,7 @@ $$
 K=\frac12ab\sin C=\frac12bc\sin A=\frac12ac\sin B.
 $$
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Area formula)** Drop an altitude from angle $$B$$ to side $$AC$$. This splits the triangle into two right triangles.
 
 Since side $$c$$ is adjacent to angle $$A$$ and the altitude is opposite angle $$A$$,
@@ -62,11 +61,9 @@ By dropping different altitudes, the same reasoning gives
 $$
 K=\frac12ab\sin C=\frac12ac\sin B.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Law of Sines).** Since the area of the same triangle can be written three ways,
 
 $$
@@ -80,16 +77,13 @@ $$
 $$
 
 This is the Law of Sines.
-
-</div>
+:::
 
 The Law of Sines also has an extended version, which is not particularly important for AP Precalculus.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Extension.** Prove the extended Law of Sines: $$\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}=2R.$$
-
-</div>
+:::
 
 ### The SSA case
 
@@ -121,9 +115,8 @@ $$
 
 so a possible second angle may need to be checked.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Suppose $$A=45^\circ$$, $$a=12$$, and $$b=15$$. Find the possible values for angle $$B$$ (opposite to side $$b$$).
+:::example
+Suppose $$A=45^\circ$$, $$a=12$$, and $$b=15$$. Find the possible values for angle $$B$$ (opposite to side $$b$$).
 
 First find the height:
 
@@ -164,8 +157,7 @@ $$
 $$
 
 Both angles create valid triangles because each leaves a positive value for angle $$C$$.
-
-</div>
+:::
 
 ### Law of Cosines
 
@@ -198,8 +190,7 @@ $$
 \cos A=\frac{b^2+c^2-a^2}{2bc}.
 $$
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Law of Cosines).** Place the triangle on the coordinate plane so that angle $$A$$ is at the origin and side $$b$$ lies on the positive $$x$$-axis.
 
 Then the endpoint of side $$b$$ is
@@ -243,12 +234,10 @@ we get
 $$
 a^2=b^2+c^2-2bc\cos A.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** If $$b=7$$, $$c=10$$, and $$A=60^\circ$$, find side $$a$$.
+:::example
+If $$b=7$$, $$c=10$$, and $$A=60^\circ$$, find side $$a$$.
 
 By Law of Cosines,
 
@@ -267,8 +256,7 @@ Thus,
 $$
 a=\sqrt{79}.
 $$
-
-</div>
+:::
 
 ---
 
@@ -308,8 +296,7 @@ $$
 \mathbf v=\langle \lvert \mathbf v \rvert \cos\theta, \lvert \mathbf v \rvert\sin\theta\rangle.
 $$
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Component Definition).** Draw a vector $$\mathbf v$$ with direction angle $$\theta$$. Its horizontal and vertical components form a right triangle whose hypotenuse is $$\lvert \mathbf v \rvert$$.
 
 By right triangle trigonometry,
@@ -335,8 +322,7 @@ and
 $$
 v_y=\lvert \mathbf v \rvert\sin\theta.
 $$
-
-</div>
+:::
 
 For a vector
 
@@ -358,9 +344,8 @@ $$
 
 but the quadrant of the vector must be considered.
 
-<div class="theorem-box" markdown="1">
-
-**Example.**  A force has magnitude $$6.34$$ Newtons and direction angle $$175^\circ$$. Find the corresponding force vector.
+:::example
+A force has magnitude $$6.34$$ Newtons and direction angle $$175^\circ$$. Find the corresponding force vector.
 
 The components of the vector are
 
@@ -381,8 +366,7 @@ $$
 $$
 
 The negative $$x$$-component makes sense because $$175^\circ$$ points mostly left.
-
-</div>
+:::
 
 ### Vector addition
 
@@ -525,8 +509,7 @@ $$
 
 The dot product is a method of multiplication of two vectors, and always returns a *scalar*. Another form of vector multiplication is the cross product, which will not be taught here.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Dot product formula).** Let
 
 $$
@@ -574,8 +557,7 @@ Comparing the two equations,
 $$
 \mathbf A\cdot \mathbf B=|\mathbf A||\mathbf B|\cos\theta.
 $$
-
-</div>
+:::
 
 Useful vector formulas that follow from the dot product include
 
@@ -607,9 +589,8 @@ $$
 \operatorname{proj}_{\mathbf B}\mathbf A=\frac{\mathbf A\cdot \mathbf B}{\lvert \mathbf B \rvert^2}\mathbf B.
 $$
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the angle between
+:::example
+Find the angle between
 
 $$
 \mathbf A=\langle 3,4\rangle
@@ -644,8 +625,7 @@ Therefore,
 $$
 \theta=\cos^{-1}\left(\frac35\right)\approx 53.1^\circ.
 $$
-
-</div>
+:::
 
 ---
 
@@ -684,9 +664,8 @@ Substituting this into the equation for $$y$$ gives a rectangular equation relat
 
 The rectangular equation may not show the full behavior of the parametric curve, because the parameter can restrict the domain or determine the direction of travel. Always indicate the allowed domain for $$t$$.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Consider
+:::example
+Consider
 
 $$
 x=3t,\qquad y=\frac12t^2.
@@ -715,8 +694,7 @@ This is a parabola. However, if the parameter is restricted, such as $$0\le t\le
 $$
 0\le x\le 6.
 $$
-
-</div>
+:::
 
 ### Trig parametrizations
 
@@ -766,9 +744,8 @@ For trig parametrizations, there are many simple steps to eliminate the paramete
 2. Use a version of the Pythagoren Identity (e.g. $$\cos^2 t + \sin^2 t = 1$$) to combine the two equations
 3. State any domain restrictions on the graph and indicate orientation/direction.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** For
+:::example
+For
 
 $$
 x=-3\sin t,\qquad y=4\cos t,
@@ -793,8 +770,7 @@ $$
 $$
 
 The graph is an ellipse centered at the origin.
-
-</div>
+:::
 
 ### Graphing parametric equations
 
@@ -847,9 +823,8 @@ $$
 
 A negative value of $$r$$ means the point is plotted in the direction opposite the angle $$\theta$$.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find two points that are the same point as $$\left(4,\frac{\pi}{3}\right)$$.
+:::example
+Find two points that are the same point as $$\left(4,\frac{\pi}{3}\right)$$.
 
 The polar points
 
@@ -862,8 +837,7 @@ $$
 all represent the same point.
 
 The first two use the same radius and coterminal angles. The third uses a negative radius, so it points in the opposite direction from $$\frac{4\pi}{3}$$, which lands at angle $$\frac{\pi}{3}$$.
-
-</div>
+:::
 
 ### Converting between polar and rectangular form
 
@@ -899,8 +873,7 @@ $$
 
 and choose $$\theta$$ based on the quadrant of the point.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Conversion formulas).** Prove the conversion formulas above.
 
 A polar point $$(r,\theta)$$ forms a right triangle with horizontal leg $$x$$, vertical leg $$y$$, and hypotenuse $$r$$.
@@ -934,12 +907,10 @@ Similarly, since $$\tan\theta$$ represents the slope of the line connecting the 
 $$
 \tan\theta=\frac{y}{x}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Convert
+:::example
+Convert
 
 $$
 \left(2,\frac{7\pi}{6}\right)
@@ -970,8 +941,7 @@ So the rectangular point is
 $$
 (-\sqrt3,-1).
 $$
-
-</div>
+:::
 
 ### Polar equations
 
@@ -995,9 +965,8 @@ $$
 r\sin\theta=y.
 $$
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Convert
+:::example
+Convert
 
 $$
 r\sin\left(\theta+\frac{\pi}{4}\right)=6
@@ -1035,8 +1004,7 @@ Multiply by $$\sqrt2$$:
 $$
 x+y=6\sqrt2.
 $$
-
-</div>
+:::
 
 ### Distance in polar coordinates
 
@@ -1060,8 +1028,7 @@ $$
 
 This comes from the Law of Cosines.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Distance formula in polar).** Draw the two polar points from the pole. Their distances from the pole are $$r_1$$ and $$r_2$$.
 
 The angle between the two segments is
@@ -1081,8 +1048,7 @@ Taking the square root gives
 $$
 d=\sqrt{r_1^2+r_2^2-2r_1r_2\cos(\theta_2-\theta_1)}.
 $$
-
-</div>
+:::
 
 ### Circles in polar coordinates
 
@@ -1094,8 +1060,7 @@ $$
 
 This is the polar distance formula applied to a moving point $$(r,\theta)$$ and a fixed center $$(r_0,\theta_0)$$.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Circle equation in polar).** A point $$(r,\theta)$$ is on a circle with center $$(r_0,\theta_0)$$ and radius $$a$$ exactly when its distance from the center is $$a$$.
 
 Using the polar distance formula,
@@ -1109,8 +1074,7 @@ Squaring both sides gives
 $$
 a^2=r^2+r_0^2-2rr_0\cos(\theta-\theta_0).
 $$
-
-</div>
+:::
 
 Alternatively, you can write the circle equation (centered at the origin) as $$r=a$$, which represents the set of all points $$a$$ away from origin (aka a circle).
 
@@ -1128,8 +1092,7 @@ $$
 
 where $$(d,\alpha)$$ is the polar point on the line closest to the pole.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Polar line equation).** Let $$(d,\alpha)$$ be the point on the line closest to the pole. The segment from the pole to this point is perpendicular to the line.
 
 For any point $$(r,\theta)$$ on the line, draw the triangle formed by the pole, $$(d,\alpha)$$, and $$(r,\theta)$$.
@@ -1151,12 +1114,10 @@ Multiplying by $$r$$ gives
 $$
 d=r\cos(\theta-\alpha).
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** A line is tangent to the circle
+:::example
+A line is tangent to the circle
 
 $$
 x^2+y^2=36
@@ -1179,8 +1140,7 @@ Using the polar line formula,
 $$
 6=r\cos\left(\theta-\frac{4\pi}{3}\right).
 $$
-
-</div>
+:::
 
 ---
 
@@ -1211,9 +1171,8 @@ $$
 
 creates a spiral. As $$\theta$$ increases, $$r$$ changes, so the point moves farther from or closer to the pole.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Graph $$r=\frac{\theta}{\pi},$$
+:::example
+Graph $$r=\frac{\theta}{\pi},$$
 
 The radius grows as $$\theta$$ grows:
 
@@ -1229,9 +1188,10 @@ So the graph spirals outward from the pole.
 
 A graph (with the helper graph) of the function is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/polargraph1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
-
-</div>
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/polargraph1.png)
+:::
+:::
 
 ### Cardioids and limacons
 
@@ -1269,11 +1229,12 @@ If the equation uses sine, the main symmetry is usually vertical. If the equatio
 
 A list of all the limacons are shown below (note that a circle is technically a limacon as well):
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/limacon.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/limacon.png)
+:::
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Graph $$r=2+4\cos\theta.$$
+:::example
+Graph $$r=2+4\cos\theta.$$
 
 Here $$a=2$$ and $$b=4$$. Since
 
@@ -1287,9 +1248,10 @@ Since the equation uses cosine, the graph has symmetry across the polar axis.
 
 A graph (with the helper graph) of the function is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/polargraph2.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
-
-</div>
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/polargraph2.png)
+:::
+:::
 
 ### Rose curves
 
@@ -1318,8 +1280,7 @@ $$
 
 The value $$\lvert a \rvert$$ controls the length of each petal.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Rose petal count formula).** The helper graph
 
 $$
@@ -1335,12 +1296,10 @@ $$
 For odd $$n$$, the negative radius portions trace the same petals that the positive radius portions already traced, so there are $$n$$ petals total.
 
 For even $$n$$, the negative radius portions trace new petals, so there are $$2n$$ petals total.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Draw the rose curve $$r=4\sin(3\theta)$$.
+:::example
+Draw the rose curve $$r=4\sin(3\theta)$$.
 
 For this curve, the value of $$n$$ is $$2$$, which is odd. Therefore, the rose curve has $$3$$ petals, and each petal has length $$2$$.
 
@@ -1348,9 +1307,10 @@ To draw the rose, start at $$\theta=0$$ (point $$0,0$$) and start plotting point
 
 A graph (with the helper graph) of the function is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/polargraph3.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
-
-</div>
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/polargraph3.png)
+:::
+:::
 
 ### Lemniscates
 
@@ -1368,9 +1328,8 @@ $$
 
 Because $$r^2$$ cannot be negative, only angles that make the right side nonnegative appear on the graph.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Graph $$r^2=9\sin(2\theta)$$.
+:::example
+Graph $$r^2=9\sin(2\theta)$$.
 
 For this graph, the maximum value of $$r^2$$ is $$9$$, so the maximum value of $$r$$ is $$3$$.
 
@@ -1380,9 +1339,10 @@ An image of the lemniscate is shown below:
 
 A graph (with the helper graph) of the function is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/polargraph4.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
-
-</div>
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/polargraph4.png)
+:::
+:::
 
 ---
 
@@ -1480,9 +1440,8 @@ $$
 
 To divide complex numbers, multiply the numerator and denominator by the conjugate of the denominator, kind of like rationalizing the denominator.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Simplify
+:::example
+Simplify
 
 $$
 \frac{3+2i}{1-4i}.
@@ -1517,8 +1476,7 @@ So
 $$
 \frac{3+2i}{1-4i}=-\frac5{17}+\frac{14}{17}i.
 $$
-
-</div>
+:::
 
 ### Polar form of complex numbers
 
@@ -1601,8 +1559,7 @@ In words, when dividing, divide the moduli and subtract the angles.
 
 These two operations show why polar form for complex numbers is sometimes preferred.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Polar multiplication formula).** Multiply directly:
 
 $$
@@ -1638,18 +1595,14 @@ we get
 $$
 z_1z_2=r_1r_2\left(\cos(\alpha+\beta)+i\sin(\alpha+\beta)\right).
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Extension.** Derive the division formula for two complex numbers.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Multiply
+:::example
+Multiply
 
 $$
 z_1=3\left(\cos\frac{\pi}{6}+i\sin\frac{\pi}{6}\right)
@@ -1666,8 +1619,7 @@ Multiply the moduli and add the angles:
 $$
 z_1z_2=6\left(\cos\frac{\pi}{2}+i\sin\frac{\pi}{2}\right)=6i.
 $$
-
-</div>
+:::
 
 ### Exponential form of complex numbers
 
@@ -1719,9 +1671,8 @@ $$
 
 These are the same rules as polar form, just written more compactly.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Write
+:::example
+Write
 
 $$
 z=-2+2i
@@ -1746,12 +1697,10 @@ So
 $$
 z=2\sqrt2 e^{i3\pi/4}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Write
+:::example
+Write
 
 $$
 z=-1+\sqrt3i
@@ -1776,8 +1725,7 @@ Thus,
 $$
 z=2\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right).
 $$
-
-</div>
+:::
 
 ### De Moivre's Theorem
 
@@ -1795,8 +1743,7 @@ $$
 
 This is **De Moivre's Theorem**.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (De Moivre's Theorem).** Multiplying complex numbers in polar form multiplies their moduli and adds their angles.
 
 If
@@ -1824,12 +1771,10 @@ z^n=r^n(\cos(n\theta)+i\sin(n\theta)),
 $$
 
 which is De Moivre's Theorem. To reverse De Moivre's Theorem (e.g. solve for roots of a complex number), just swap $$n$$ for $$\frac{1}{n}$$.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Find
+:::example
+Find
 
 $$
 (1+i)^6.
@@ -1864,8 +1809,7 @@ we get
 $$
 (1+i)^6=8\left(\cos\frac{3\pi}{2}+i\sin\frac{3\pi}{2}\right)=-8i.
 $$
-
-</div>
+:::
 
 ### Roots of complex numbers
 
@@ -1901,9 +1845,8 @@ $$
 
 This is just a classic example of De Moivre's Theorem.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the cube roots of $$8$$.
+:::example
+Find the cube roots of $$8$$.
 
 Write
 
@@ -1934,8 +1877,7 @@ and
 $$
 2\left(\cos\frac{4\pi}{3}+i\sin\frac{4\pi}{3}\right)=-1-\sqrt3i.
 $$
-
-</div>
+:::
 
 ### Roots of unity
 
@@ -1997,9 +1939,8 @@ For example:
 - The $$4$$th roots of unity form a square.
 - The $$5$$th roots of unity form a regular pentagon.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the fourth roots of unity.
+:::example
+Find the fourth roots of unity.
 
 Use
 
@@ -2040,11 +1981,12 @@ $$
 $$
 
 Geomertrically, the solutions look like this:
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/complex1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/complex1.png)
+:::
 
 Note that the rendering on the $$y$$-axis shows that it is real, but treat it like the imaginary axis.
-
-</div>
+:::
 
 ### Sum and product of roots of unity
 
@@ -2074,11 +2016,9 @@ $$
 
 Additionally, the product of the $$n$$th roots of unity is $$(-1)^{n+1}$$.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Extension.** Prove that the product of the $$n$$ roots of unity is $$(-1)^{n+1}$$. (Hint: Use dot product!)
-
-</div>
+:::
 
 ### Roots of other complex numbers
 
@@ -2110,92 +2050,146 @@ So the $$n$$ roots of any nonzero complex number also form a regular $$n$$-gon c
 
 ## Practice
 
+:::practice
+:::frq{id=precalc-additionaltrig-1}
 1. Solve the triangle with $$A=60^\circ$$, $$a=9$$ cm, and $$b=10$$ cm. Determine whether there are zero, one, or two possible triangles. For each valid triangle, find the remaining side and angles.
+
+:::solution
+By the Law of Sines,
+
+$$
+\frac{\sin B}{10}=\frac{\sin 60^\circ}{9},
+$$
+
+so
+
+$$
+\sin B=\frac{10\sin 60^\circ}{9}=\frac{5\sqrt3}{9}.
+$$
+
+This gives two possible angles:
+
+$$
+B\approx 74.2^\circ\quad \text{or}\quad B\approx 105.8^\circ.
+$$
+
+If $$B\approx 74.2^\circ$$, then
+
+$$
+C\approx 45.8^\circ,\qquad c\approx 7.45\text{ cm}.
+$$
+
+If $$B\approx 105.8^\circ$$, then
+
+$$
+C\approx 14.2^\circ,\qquad c\approx 2.55\text{ cm}.
+$$
+
+Therefore, there are **two possible triangles**.
+:::
+:::
+
+:::frq{id=precalc-additionaltrig-2}
 2. A plane is flying above the ocean. The angle of depression to a submarine is $$24^\circ$$, and the angle of depression to a ship is $$17^\circ$$. The distance from the plane to the ship is $$5120$$ feet. Assuming the submarine and ship are in the same vertical plane as the airplane, find the distance between the submarine and the ship.
+
+:::solution
+The plane-to-ship distance is $$5120$$ ft, and the angle of depression to the ship is $$17^\circ$$. So the plane's height is
+
+$$
+h=5120\sin 17^\circ\approx 1496.94\text{ ft}.
+$$
+
+The horizontal distance from the plane to the ship is
+
+$$
+5120\cos 17^\circ\approx 4896.28\text{ ft}.
+$$
+
+The horizontal distance from the plane to the submarine is
+
+$$
+\frac{h}{\tan 24^\circ}\approx 3362.19\text{ ft}.
+$$
+
+Assuming the ship and submarine are on the same side of the plane, their distance apart is
+
+$$
+4896.28-3362.19\approx 1534.09\text{ ft}.
+$$
+:::
+:::
+
+:::frq{id=precalc-additionaltrig-3}
 3. Two towns $$A$$ and $$B$$ are $$1.4$$ miles apart, with $$B$$ due east of $$A$$. A signal is detected on a bearing of $$S22^\circ E$$ from $$A$$ and $$S43^\circ W$$ from $$B$$. Draw a labeled diagram and find the distance from each town to the signal.
+
+:::solution
+Place town $$A$$ at $$(0,0)$$ and town $$B$$ at $$(1.4,0)$$. The bearing $$S22^\circ E$$ from $$A$$ points down and right, while $$S43^\circ W$$ from $$B$$ points down and left.
+
+Solving the two bearing lines gives the signal at approximately
+
+$$
+(0.423,-1.047).
+$$
+
+Therefore,
+
+$$
+AS\approx 1.13\text{ miles},\qquad BS\approx 1.43\text{ miles}.
+$$
+:::
+:::
+:::
+
 4. Prove that for any triangle with side lengths $$a,b,c$$ and semiperimeter $$s=\frac12(a+b+c)$$, $$\sin^2\left(\frac C2\right)=\frac{(s-a)(s-b)}{ab}.$$
 5. Let $$\mathbf u=\langle -2,1\rangle$$ and $$\mathbf v=\langle -5,3\rangle$$.
-
     $$(A)$$ Find $$2\mathbf u-3\mathbf v$$.
-
     $$(B)$$ Find the angle between $$\mathbf u$$ and $$\mathbf v$$ to the nearest degree.
-
     $$(C)$$ Find a unit vector in the direction of $$\mathbf u+\mathbf v$$.
-
 6. A plane is heading $$40^\circ$$ east of north at $$120$$ mph. A wind blows directly from the east at $$10$$ mph. Find the ground-speed vector, the ground speed, and the drift angle from the plane's intended heading.
 7. A force of $$18$$ Newtons acts in the direction $$235^\circ$$ from the positive $$x$$-axis. Resolve the force into horizontal and vertical components. Then find the magnitude and direction of the vector obtained by adding this force to $$\langle 12,-5\rangle$$.
 8. A particle moves according to $$x(t)=2\cos t-\sin(2t),\qquad y(t)=6\sin t,$$ for $$0\le t\le 2\pi$$.
-
     $$(A)$$ Find all exact $$x$$-intercepts.
-
     $$(B)$$ Find the particle's position when $$t=\frac{\pi}{2}$$ and when $$t=\frac{7\pi}{6}$$.
-
     $$(C)$$ Write a formula for the particle's distance from the origin as a function of $$t$$.
-
 9. Eliminate the parameter and describe the curve, including any domain restrictions and orientation: $$x=e^t$$, $$y=e^{2t}-3$$, $$-\ln2\le t\le \ln3.$$
 10. The curve $$x=4\cos t$$, $$y=-2\sin t$$ is traced for $$0\le t\le 2\pi$$. Eliminate the parameter, state where the curve starts, and determine the direction (clockwise or counterclockwise) the curve is traced in.
 11. Classify each polar curve as a cardioid, limacon, rose curve, lemniscate, circle, line, or spiral. For rose curves, state the number of petals. Graph each of the curves.
-
     $$(A)$$ Graph $$r=3-3\sin\theta$$
-
     $$(B)$$ Graph $$r=2+5\cos\theta$$
-
     $$(C)$$ Graph $$r=4\sin(3\theta)$$
-
     $$(D)$$ Graph $$r^2=25\sin(2\theta)$$
-
 12. Graph both $$r=2+2\cos\theta$$ and $$r=2-2\cos\theta$$. Then, find the number of intersection points.
 13. Suppose you have an octagon centered at the origin with one vertex at $$P_1=2\sqrt2$$.
     $$(A)$$ Find a vertex in the third quadrant and a vertex in the fourth quadrant.
     $$(B)$$ Without finding all of the vertices calculate $$P_1+P_2+\cdots+P_8$$
     $$(C)$$ Without finding all of the vertices calculate $$P_1P_2\cdots P_8$$.
 14. Let $$z_1=-2+2\sqrt3i,\qquad z_2=1-i.$$
-
     $$(A)$$ Write both numbers in polar form.
-
     $$(B)$$ Write both numbers in exponential form.
-
     $$(C)$$ Compute $$z_1z_2$$ in polar form and rectangular form.
-
 15. Use De Moivre's Theorem to find all fourth roots of $$16\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right).$$
 16. (Bonus, Brahmagupta's and Bretschneider's formulas)
-
 Let $$ABCD$$ be a cyclic quadrilateral, meaning all four vertices lie on one circle. Let its side lengths be $$a,b,c,d$$, and let its semiperimeter be
-
 $$
 s=\frac12(a+b+c+d).
 $$
-
 The goal is to prove the area of a cyclic quadrilateral is:
-
 $$
 K=\sqrt{(s-a)(s-b)(s-c)(s-d)},
 $$
-
 where $$K$$ is the area of the cyclic quadrilateral. We will also extend the area formula to all cases, not just cyclic ones.
-
 <div markdown="1" style="margin-left: 1.5rem;">
-
 $$(A)$$ Draw diagonal $$AC$$. Let $$\angle ABC=B$$ and $$\angle ADC=D$$. Use triangle area formulas and $$D=180^\circ-B$$ (A property of cyclic quadrilaterals) to rewrite the area as $$K=\frac12(ab+cd)\sin B.$$
-
 $$(B)$$ Apply the Law of Cosines to triangles $$ABC$$ and $$ADC$$ to show that $$2ab\cos B=a^2+b^2-c^2-d^2+2cd\cos D.$$
-
 $$(C)$$ Use $$\cos D=-\cos B$$ to solve for $$\cos B$$, then combine this with $$K=\frac12(ab+cd)\sin B$$ and $$\sin^2B=1-\cos^2B$$ to prove $$K^2=(s-a)(s-b)(s-c)(s-d).$$ This is Brahmagupta's formula.
-
 $$(D)$$ Now suppose $$ABCD$$ is not necessarily cyclic. Keep the same notation, with opposite angles $$B$$ and $$D$$. Show that $$(4K)^2+(a^2+b^2-c^2-d^2)^2=4(a^2b^2+c^2d^2-2abcd\cos(B+D)).$$
-
 $$(E)$$ Now prove **Bretschneider's formula**: $$K^2=(s-a)(s-b)(s-c)(s-d)-abcd\cos^2\left(\frac{B+D}{2}\right).$$
-
 $$(F)$$ Explain why Bretschneider's formula turns into Brahmagupta's formula when $$ABCD$$ is cyclic.
-
 </div>
-
----
 
 ## Solutions
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 By the Law of Sines,
@@ -2229,11 +2223,9 @@ C\approx 14.2^\circ,\qquad c\approx 2.55\text{ cm}.
 $$
 
 Therefore, there are **two possible triangles**.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 The plane-to-ship distance is $$5120$$ ft, and the angle of depression to the ship is $$17^\circ$$. So the plane's height is
@@ -2259,11 +2251,9 @@ Assuming the ship and submarine are on the same side of the plane, their distanc
 $$
 4896.28-3362.19\approx 1534.09\text{ ft}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 Place town $$A$$ at $$(0,0)$$ and town $$B$$ at $$(1.4,0)$$. The bearing $$S22^\circ E$$ from $$A$$ points down and right, while $$S43^\circ W$$ from $$B$$ points down and left.
@@ -2279,11 +2269,9 @@ Therefore,
 $$
 AS\approx 1.13\text{ miles},\qquad BS\approx 1.43\text{ miles}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 Use the half-angle identity:
@@ -2323,11 +2311,9 @@ Thus,
 $$
 \sin^2\left(\frac C2\right)=\frac{(s-a)(s-b)}{ab}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 We have
@@ -2380,11 +2366,9 @@ $$
 \frac{\langle -7,4\rangle}{\sqrt{65}}
 =\left\langle \frac{-7}{\sqrt{65}},\frac{4}{\sqrt{65}}\right\rangle.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 Let east be positive $$x$$ and north be positive $$y$$. A heading of $$40^\circ$$ east of north at $$120$$ mph has velocity
@@ -2425,11 +2409,9 @@ $$
 $$
 
 west of the intended heading.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 7
 
 The force components are
@@ -2457,11 +2439,9 @@ The direction angle is approximately
 $$
 274.9^\circ.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 8
 
 The particle has
@@ -2531,11 +2511,9 @@ Therefore,
 $$
 d(t)=\sqrt{(2\cos t-\sin(2t))^2+36\sin^2t}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 9
 
 Since
@@ -2585,11 +2563,9 @@ to
 $$
 (3,6).
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 10
 
 From
@@ -2629,11 +2605,9 @@ $$
 $$
 
 For small positive $$t$$, $$y=-2\sin t$$ is negative, so the curve moves downward from $$(4,0)$$. Therefore, the ellipse is traced **clockwise**.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 11
 
 This is an Archimedean spiral:
@@ -2645,11 +2619,9 @@ $$
 As $$\theta$$ increases from $$-4\pi$$ to $$4\pi$$, $$r$$ increases from $$-8$$ to $$8$$. Negative $$r$$ values are plotted in the opposite direction from the angle $$\theta$$.
 
 **ADD IMAGE HERE**
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 12
 
 The curves are
@@ -2705,11 +2677,9 @@ $$
 $$
 
 intersection points.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 13
 
 For part (A), the resulting octagon is regular, so consecutive vertices differ by an angle of
@@ -2773,11 +2743,9 @@ Therefore,
 $$
 P_1P_2\cdots P_8=-4096.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 14
 
 For part (A), for
@@ -2839,11 +2807,9 @@ In rectangular form,
 $$
 z_1z_2=(2\sqrt3-2)+(2\sqrt3+2)i.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 15
 
 Write the complex number as
@@ -2879,11 +2845,9 @@ In rectangular form, these are
 $$
 \sqrt3+i,\quad -1+\sqrt3i,\quad -\sqrt3-i,\quad 1-\sqrt3i.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 16
 
 For part (A), draw diagonal $$AC$$. The diagonal splits the quadrilateral into triangles $$ABC$$ and $$ADC$$. Using $$K=\frac12ab\sin C$$ for triangle area,
@@ -3199,5 +3163,4 @@ K^2=(s-a)(s-b)(s-c)(s-d),
 $$
 
 which is Brahmagupta's formula.
-
-</div>
+:::

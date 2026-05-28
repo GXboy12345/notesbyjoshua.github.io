@@ -102,7 +102,9 @@ Other methods of separation include distillation (uses differences in boiling po
 
 Temperature (in Kelvin) is proportional to the average translational kinetic energy of ideal-gas molecules, but varies per molecule.  However, the KE can be mapped as a distribution (called the **Maxwell-Boltzmann distribution**). A **Maxwell–Boltzmann** curve plots fraction versus speed or energy. Lighter gases at the same $$T$$ have higher average speed, and raising $$T$$ broadens the curve and increases the fraction with energy above a given activation energy. Note that macroscopic kinetic energy $$\frac{1}{2}mv^2$$ applies to bulk motion; do not confuse it with thermal motion of molecules inside a sample. An example of a Maxwell-Boltzmann distribution can be seen below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/submix/maxwellboltzmann.png' | relative_url }}" alt="Maxwell Boltzmann Distribution" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Maxwell Boltzmann Distribution](/assets/APs/AP%20Chem/submix/maxwellboltzmann.png)
+:::
 
 ---
 
@@ -244,7 +246,9 @@ which equals $$1$$ for an ideal gas (by Ideal Gas Law). $$Z < 1$$ often reflects
 
 **Vapor pressure** is the pressure of vapor in equilibrium with a condensed phase at a given temperature; it rises with $$T$$ and reflects IMF strength (volatile liquids have high vapor pressure at a given $$T$$). A **phase diagram** plots pressure versus temperature; the **triple point** is where solid, liquid, and gas coexist. The **critical point** ends the liquid–vapor boundary; above the critical temperature there is no distinct liquid phase at any pressure.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/submix/phasediagram.jpg' | relative_url }}" alt="Phase Diagram" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Phase Diagram](/assets/APs/AP%20Chem/submix/phasediagram.jpg)
+:::
 
 ---
 
@@ -328,47 +332,121 @@ but transmittance rarely shows up on the AP exam. Beer's law is very applicable 
 
 ### MCQ
 
+:::practice
+:::mcq{id=chem-submix-1 correct=C}
 1. Which substance is expected to have the highest boiling point?
 
-   (A) $$\text{CH}_4$$<br>
-   (B) $$\text{CH}_3\text{CH}_3$$<br>
-   (C) $$\text{CH}_3\text{OH}$$<br>
-   (D) $$\text{CH}_3\text{OCH}_3$$
+- [ ] $$\text{CH}_4$$
+- [ ] $$\text{CH}_3\text{CH}_3$$
+- [ ] $$\text{CH}_3\text{OH}$$
+- [ ] $$\text{CH}_3\text{OCH}_3$$
 
+:::solution
+$$\text{CH}_3\text{OH}$$ can form hydrogen bonds because it has an O-H bond. The other choices rely mainly on London dispersion forces or dipole-dipole attractions.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+
+:::mcq{id=chem-submix-2 correct=C}
 2. A solution is prepared by dissolving $$0.250\ \text{mol}$$ of $$\text{NaCl}$$ in enough water to make $$0.500\ \text{L}$$ of solution. Assuming complete dissociation, what is the approximate total particle concentration?
 
-   (A) $$0.250\ M$$<br>
-   (B) $$0.500\ M$$<br>
-   (C) $$1.00\ M$$<br>
-   (D) $$2.00\ M$$
+- [ ] $$0.250\ M$$
+- [ ] $$0.500\ M$$
+- [ ] $$1.00\ M$$
+- [ ] $$2.00\ M$$
 
+:::solution
+The formal concentration of $$\text{NaCl}$$ is
+
+$$
+\frac{0.250\ \text{mol}}{0.500\ \text{L}}=0.500\ M.
+$$
+
+Since $$\text{NaCl}$$ dissociates into two ions, the total particle concentration is approximately
+
+$$
+2(0.500\ M)=1.00\ M.
+$$
+
+So the answer is
+
+$$
+\boxed{\text{C}}.
+$$
+:::
+:::
+
+:::mcq{id=chem-submix-3 correct=B}
 3. Which pair is most likely to be miscible?
 
-   (A) Hexane and water<br>
-   (B) Ethanol and water<br>
-   (C) Sodium chloride and hexane<br>
-   (D) Oil and water
+- [ ] Hexane and water
+- [ ] Ethanol and water
+- [ ] Sodium chloride and hexane
+- [ ] Oil and water
 
+:::solution
+Ethanol and water are both polar and can hydrogen bond with each other, so they mix well.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-submix-4 correct=A}
 4. If the pressure of a gas above a liquid is increased at constant temperature, the solubility of the gas in the liquid generally
 
-   (A) increases.<br>
-   (B) decreases.<br>
-   (C) remains exactly zero.<br>
-   (D) becomes independent of gas identity.
+- [ ] increases.
+- [ ] decreases.
+- [ ] remains exactly zero.
+- [ ] becomes independent of gas identity.
 
+:::solution
+Henry's law says gas solubility increases as the partial pressure of the gas above the liquid increases.
+
+$$
+\boxed{\text{A}}
+$$
+:::
+:::
+
+:::mcq{id=chem-submix-5 correct=C}
 5. Which sample should behave most ideally as a gas?
 
-   (A) $$\text{NH}_3$$ at high pressure and low temperature<br>
-   (B) $$\text{CO}_2$$ at high pressure and low temperature<br>
-   (C) He at low pressure and high temperature<br>
-   (D) $$\text{H}_2\text{O}$$ vapor near condensation
+- [ ] $$\text{NH}_3$$ at high pressure and low temperature
+- [ ] $$\text{CO}_2$$ at high pressure and low temperature
+- [ ] He at low pressure and high temperature
+- [ ] $$\text{H}_2\text{O}$$ vapor near condensation
 
+:::solution
+Gases behave most ideally at low pressure and high temperature, especially when particles have weak intermolecular forces. Helium fits best.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+
+:::mcq{id=chem-submix-6 correct=C}
 6. Which solution has the highest boiling point, assuming ideal behavior?
 
-   (A) $$0.10\ m$$ glucose<br>
-   (B) $$0.10\ m\ \text{NaCl}$$<br>
-   (C) $$0.10\ m\ \text{CaCl}_2$$<br>
-   (D) pure water
+- [ ] $$0.10\ m$$ glucose
+- [ ] $$0.10\ m\ \text{NaCl}$$
+- [ ] $$0.10\ m\ \text{CaCl}_2$$
+- [ ] pure water
+
+:::solution
+Boiling-point elevation depends on total dissolved particle concentration. $$\text{CaCl}_2$$ produces about three ions per formula unit, the largest value among the choices.
+
+$$
+\boxed{\text{C}}
+$$
+:::
+:::
+:::
 
 ### FRQ
 
@@ -394,8 +472,7 @@ but transmittance rarely shows up on the AP exam. Beer's law is very applicable 
 
 ### MCQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$\text{CH}_3\text{OH}$$ can form hydrogen bonds because it has an O-H bond. The other choices rely mainly on London dispersion forces or dipole-dipole attractions.
@@ -403,11 +480,9 @@ $$\text{CH}_3\text{OH}$$ can form hydrogen bonds because it has an O-H bond. The
 $$
 \boxed{\text{C}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 The formal concentration of $$\text{NaCl}$$ is
@@ -427,11 +502,9 @@ So the answer is
 $$
 \boxed{\text{C}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 Ethanol and water are both polar and can hydrogen bond with each other, so they mix well.
@@ -439,11 +512,9 @@ Ethanol and water are both polar and can hydrogen bond with each other, so they 
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 Henry's law says gas solubility increases as the partial pressure of the gas above the liquid increases.
@@ -451,11 +522,9 @@ Henry's law says gas solubility increases as the partial pressure of the gas abo
 $$
 \boxed{\text{A}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 Gases behave most ideally at low pressure and high temperature, especially when particles have weak intermolecular forces. Helium fits best.
@@ -463,11 +532,9 @@ Gases behave most ideally at low pressure and high temperature, especially when 
 $$
 \boxed{\text{C}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 Boiling-point elevation depends on total dissolved particle concentration. $$\text{CaCl}_2$$ produces about three ions per formula unit, the largest value among the choices.
@@ -475,13 +542,11 @@ Boiling-point elevation depends on total dissolved particle concentration. $$\te
 $$
 \boxed{\text{C}}
 $$
-
-</div>
+:::
 
 ### FRQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$(A)$$ Beer-Lambert law gives
@@ -505,11 +570,9 @@ c=\frac{0.420}{15.0}=0.0280\ \text{mol/L}.
 $$
 
 $$(C)$$ Choosing a strongly absorbed wavelength gives a larger absorbance change for a given concentration change, which makes the measurement more sensitive. If the wavelength is poorly absorbed, the absorbance values may be too small and close together, making it harder to distinguish concentrations accurately.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 $$(A)$$ More colored ions means more particles are available to absorb photons at that wavelength. For fixed path length, Beer-Lambert law says absorbance is proportional to concentration.
@@ -531,7 +594,6 @@ $$(C)$$ The $$0.040\ M$$ solution has twice the concentration, so an equal-volum
 <div class="placeholder-box" markdown="1">
 
 **Image placeholder:** Equal-volume particle diagrams showing the $$0.040\ M$$ solution with twice as many colored ions as the $$0.020\ M$$ solution.
-
-</div>
+:::
 
 </div>

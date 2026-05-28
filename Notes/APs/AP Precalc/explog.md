@@ -110,9 +110,8 @@ $$
 
 A good idea is to always plot a couple of integer points to start with.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Graph the function and give the domain and range of
+:::example
+Graph the function and give the domain and range of
 
 $$
 y=\frac12(4)^{x-3}+2.
@@ -140,9 +139,10 @@ $$
 
 The graph is shown below (Note that the scale is a bit off, the dashed line is the horizontal asymptote):
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/expgraph1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
-
-</div>
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/expgraph1.png)
+:::
+:::
 
 ---
 
@@ -162,9 +162,8 @@ $$
 
 Numerically, as $$x$$ gets very large, the expression gets closer and closer to $$e$$. After plugging in larger and larger values of $$x$$, you find that $$e\approx 2.71828$$. In addition, the instantaneous rate of change of $$y=e^x$$ is equal to itself! We will demonstrate this below:
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Approximate the rate of change of $$e^x$$ for smaller and smaller intervals.
+:::example
+Approximate the rate of change of $$e^x$$ for smaller and smaller intervals.
 
 Rhe average rate of change on $$[1,1.1]$$ is
 
@@ -187,8 +186,7 @@ $$
 $$
 
 As the interval gets smaller, the rate of change becomes increasingly instantaneous. One reason why $$e^x$$ is studied so much is topics like calculus is that it is equal to its own instantaneous rate of change, like derivatives!
-
-</div>
+:::
 
 $$e^x$$ is an exponential growth function because $$e>1$$. Like other exponential functions, it has domain $$(-\infty,\infty)$$, range $$(0,\infty)$$, horizontal asymptote $$y=0$$, and $$y$$-intercept $$(0,1)$$.
 
@@ -208,9 +206,8 @@ $$
 
 These are pronounced "cinch" and "cosh." They behave somewhat like trigonometric functions, but they are built from exponentials.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Show that
+:::example
+Show that
 
 $$
 (\cosh x)^2=\frac12(\cosh(2x)+1).
@@ -248,8 +245,7 @@ we get
 $$
 (\cosh x)^2=\frac12(\cosh(2x)+1).
 $$
-
-</div>
+:::
 
 Similarly,
 
@@ -306,9 +302,8 @@ has:
 
 Note that this is the opposite of the exponent function, which is expected since they are inverses! Accordingly, the graph of $$y=\log_b x$$ is the reflection of $$y=b^x$$ across the line $$y=x$$.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Evaluate each logarithm.
+:::example
+Evaluate each logarithm.
 
 $$
 1. \log_3 9
@@ -351,8 +346,7 @@ because
 $$
 8^{5/3}=(2^3)^{5/3}=2^5=32.
 $$
-
-</div>
+:::
 
 ### Increasing and decreasing logs
 
@@ -447,9 +441,8 @@ $$
 
 as $$\ln a+\ln b$$. There is no sum rule for logarithms.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Rewrite as a single logarithm with coefficient $$1$$:
+:::example
+Rewrite as a single logarithm with coefficient $$1$$:
 
 $$
 \log(x^2-16)-3\bigl(\log(x+4)+2\log x\bigr).
@@ -496,12 +489,10 @@ x^2-16>0,\qquad x+4>0,\qquad x>0,
 $$
 
 so actually $$x>4$$.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Expand:
+:::example
+Expand:
 
 $$
 \log_5\sqrt[3]{\frac{x+3}{x}}.
@@ -525,12 +516,10 @@ Then use the quotient rule:
 $$
 \boxed{\frac13\log_5(x+3)-\frac13\log_5 x}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Simplify
+:::example
+Simplify
 
 $$
 \log_{e^2}2.
@@ -553,8 +542,7 @@ we get
 $$
 \boxed{\frac{\ln 2}{2}}.
 $$
-
-</div>
+:::
 
 ---
 
@@ -570,9 +558,8 @@ Always check domain restrictions when logarithms appear.
 
 ### Exponential equations
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Solve
+:::example
+Solve
 
 $$
 3^{x-1}=4^{2x}.
@@ -605,8 +592,7 @@ Therefore
 $$
 \boxed{x=\frac{\ln 3}{\ln 3-2\ln 4}}.
 $$
-
-</div>
+:::
 
 Sometimes graphing technology is a good way to check your answer. For the previous example, you could graph
 
@@ -622,9 +608,8 @@ and find their intersection.
 
 Some exponential equations become quadratics after substitution.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Solve
+:::example
+Solve
 
 $$
 e^x+e^{-x}=2.
@@ -665,16 +650,14 @@ so
 $$
 \boxed{x=0}.
 $$
-
-</div>
+:::
 
 ### Logarithmic equations and inequalities
 
 When solving logarithmic equations or inequalities, first impose the domain. Every logarithm input must be positive.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Solve
+:::example
+Solve
 
 $$
 \ln\left(\frac{3x-2}{4x+1}\right)>\ln 4.
@@ -737,8 +720,7 @@ This interval is inside the logarithm's domain, so the solution is
 $$
 \boxed{\left(-\frac6{13},-\frac14\right)}.
 $$
-
-</div>
+:::
 
 If the logarithm base is between $$0$$ and $$1$$, remember that the logarithm is decreasing, so inequalities reverse when you compare inputs.
 
@@ -746,9 +728,268 @@ If the logarithm base is between $$0$$ and $$1$$, remember that the logarithm is
 
 ## Practice
 
+:::practice
+:::frq{id=precalc-explog-1}
 1. Let $$f(x)=3-2\cdot 5^{x+1}$$. State the domain, range, horizontal asymptote, intercepts, intervals of increase/decrease, and find an explicit formula for $$f^{-1}(x)$$ with the domain and range of the inverse.
+
+:::solution
+The domain is all real numbers:
+
+$$
+\boxed{(-\infty,\infty)}.
+$$
+
+Since $$5^{x+1}>0$$, we have $$-2\cdot 5^{x+1}<0$$, so
+
+$$
+f(x)<3.
+$$
+
+Thus the range is
+
+$$
+\boxed{(-\infty,3)}.
+$$
+
+The horizontal asymptote is
+
+$$
+\boxed{y=3}.
+$$
+
+The $$y$$-intercept is
+
+$$
+f(0)=3-2\cdot 5=-7,
+$$
+
+so the $$y$$-intercept is
+
+$$
+\boxed{(0,-7)}.
+$$
+
+For the $$x$$-intercept,
+
+$$
+0=3-2\cdot 5^{x+1}
+$$
+
+so
+
+$$
+5^{x+1}=\frac32.
+$$
+
+Therefore
+
+$$
+x+1=\log_5\left(\frac32\right),
+$$
+
+so the $$x$$-intercept is
+
+$$
+\boxed{\left(\log_5\left(\frac32\right)-1,0\right)}.
+$$
+
+Since $$5^{x+1}$$ is increasing and the coefficient is negative, $$f$$ is decreasing on
+
+$$
+\boxed{(-\infty,\infty)}.
+$$
+
+It is never increasing.
+
+To find the inverse, let
+
+$$
+y=3-2\cdot 5^{x+1}.
+$$
+
+Then
+
+$$
+2\cdot 5^{x+1}=3-y,
+$$
+
+so
+
+$$
+5^{x+1}=\frac{3-y}{2}.
+$$
+
+Take $$\log_5$$ of both sides:
+
+$$
+x+1=\log_5\left(\frac{3-y}{2}\right).
+$$
+
+Thus
+
+$$
+x=\log_5\left(\frac{3-y}{2}\right)-1.
+$$
+
+Switch $$x$$ and $$y$$:
+
+$$
+\boxed{f^{-1}(x)=\log_5\left(\frac{3-x}{2}\right)-1}.
+$$
+
+The domain of $$f^{-1}$$ is the range of $$f$$:
+
+$$
+\boxed{(-\infty,3)}.
+$$
+
+The range of $$f^{-1}$$ is the domain of $$f$$:
+
+$$
+\boxed{(-\infty,\infty)}.
+$$
+:::
+:::
+
+:::frq{id=precalc-explog-2}
 2. The points $$(-1,17)$$ and $$(2,1)$$ lie on the graph of $$g(x)=a\cdot b^{x-h}+k$$. The horizontal asymptote is $$y=-1$$, and $$h=1$$. Find $$a$$ and $$b$$, then determine whether $$g$$ represents exponential growth or decay.
+
+:::solution
+Since the horizontal asymptote is $$y=-1$$ and $$h=1$$, the function has the form
+
+$$
+g(x)=a\cdot b^{x-1}-1.
+$$
+
+Use the point $$(-1,17)$$:
+
+$$
+17=a\cdot b^{-2}-1.
+$$
+
+So
+
+$$
+\frac{a}{b^2}=18.
+$$
+
+Use the point $$(2,1)$$:
+
+$$
+1=a\cdot b^{1}-1.
+$$
+
+Thus
+
+$$
+ab=2.
+$$
+
+From $$ab=2$$,
+
+$$
+a=\frac2b.
+$$
+
+Substitute into $$\frac{a}{b^2}=18$$:
+
+$$
+\frac{2/b}{b^2}=18.
+$$
+
+Then
+
+$$
+\frac{2}{b^3}=18,
+$$
+
+so
+
+$$
+b^3=\frac19.
+$$
+
+Therefore
+
+$$
+\boxed{b=\sqrt[3]{\frac19}=9^{-1/3}}.
+$$
+
+Then
+
+$$
+a=\frac2b=2\sqrt[3]{9}.
+$$
+
+So
+
+$$
+\boxed{a=2\sqrt[3]{9}}.
+$$
+
+Since $$0<b<1$$ and $$a>0$$, this represents
+
+$$
+\boxed{\text{exponential decay}}.
+$$
+:::
+:::
+
+:::frq{id=precalc-explog-3}
 3. Find all real solutions to $$4^{x+1}-10\cdot 2^x+1=0$$. Give exact answers.
+
+:::solution
+Rewrite everything in terms of $$2^x$$:
+
+$$
+4^{x+1}=4\cdot 4^x=4\cdot 2^{2x}.
+$$
+
+So the equation becomes
+
+$$
+4\cdot 2^{2x}-10\cdot 2^x+1=0.
+$$
+
+Let
+
+$$
+u=2^x.
+$$
+
+Then
+
+$$
+4u^2-10u+1=0.
+$$
+
+Use the quadratic formula:
+
+$$
+u=\frac{10\pm\sqrt{100-16}}{8}
+=\frac{10\pm\sqrt{84}}{8}
+=\frac{5\pm\sqrt{21}}{4}.
+$$
+
+Both values are positive, so both are valid values of $$2^x$$. Therefore
+
+$$
+2^x=\frac{5+\sqrt{21}}{4}
+\qquad\text{or}\qquad
+2^x=\frac{5-\sqrt{21}}{4}.
+$$
+
+Thus
+
+$$
+\boxed{x=\log_2\left(\frac{5+\sqrt{21}}4\right)
+\quad\text{or}\quad
+x=\log_2\left(\frac{5-\sqrt{21}}4\right)}.
+$$
+:::
+:::
+:::
+
 4. Solve in $$\mathbb{R}$$: $$3^{2x}-28\cdot 3^x+27\le 0$$. Write the answer in interval notation.
 5. Solve for $$x$$ exactly: $$2^{x+1}=5^{2x-3}.$$
 6. Solve in $$\mathbb{R}$$: $$e^x+e^{-x}=\frac{13}{6}.$$
@@ -762,35 +1003,22 @@ If the logarithm base is between $$0$$ and $$1$$, remember that the logarithm is
 14. Let $$F(x)=\ln\left(\dfrac{x-a}{b-x}\right)$$, where $$a<b$$. Find the domain, intercepts in terms of $$a$$ and $$b$$, the vertical asymptotes, and an explicit formula for $$F^{-1}(x)$$. Then determine the range of $$F$$.
 15. Find the exact value of the product $$\prod_{k=4}^{63}\frac{\log_k\left(5^{k^2-1}\right)}{\log_{k+1}\left(5^{k^2-4}\right)}$$. (Hint: Use change of base and cancel out things to simplify the expression) (2025 AIME II)
 16. (Bonus, The EML function)
-
    Define a binary operation called $$\operatorname{EML}$$ by
-
    $$
    \operatorname{EML}(x,y)=e^x-\ln y,
    $$
-
    where $$y>0$$.
-
    $$(A)$$ First, show that EML contains the exponential function directly: $$e^x=\operatorname{EML}(x,1).$$
-
    $$(B)$$ Now show that EML also contains logarithms: $$\operatorname{EML}(0,x)=1-\ln x.$$ Use this equation to solve for $$\ln x$$ in terms of $$\operatorname{EML}(0,x)$$.
-
    $$(C)$$ Using part $$(B)$$, write $$\log_b x$$ in terms of EML expressions, where $$b>0$$, $$b\ne1$$, and $$x>0$$.
-
    $$(D)$$ Since EML can produce both exponentials and logarithms, it can also build simpler operations. Use the identities $$x+y=\ln(e^x e^y)$$ and $$x-y=\ln\left(\frac{e^x}{e^y}\right)$$ to write formulas for $$x+y$$ and $$x-y$$ using EML expressions.
-
    $$(E)$$ An **EML tree** is an expression built by repeatedly feeding outputs of EML into new EML operations. For example, $$\operatorname{EML}\left(\operatorname{EML}(x,1),\operatorname{EML}(0,y)\right)$$ is an EML tree. Draw its tree diagram, then simplify the expression as much as possible using exponent and logarithm rules.
-
    $$(F)$$ It is claimed that EML trees can represent all standard elementary functions. In a short paragraph, compare this idea to the way a single NAND gate can generate all Boolean logic. A NAND gate outputs $$0$$ only when both inputs are $$1$$, and outputs $$1$$ otherwise.
-
    This problem is inspired by the paper *All elementary functions from a single operator* by Andrzej Odrzywołek. Learn more here: [https://arxiv.org/html/2603.21852v2](https://arxiv.org/html/2603.21852v2).
-
----
 
 ## Solutions
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 The domain is all real numbers:
@@ -908,11 +1136,9 @@ The range of $$f^{-1}$$ is the domain of $$f$$:
 $$
 \boxed{(-\infty,\infty)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 Since the horizontal asymptote is $$y=-1$$ and $$h=1$$, the function has the form
@@ -992,11 +1218,9 @@ Since $$0<b<1$$ and $$a>0$$, this represents
 $$
 \boxed{\text{exponential decay}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 Rewrite everything in terms of $$2^x$$:
@@ -1046,11 +1270,9 @@ $$
 \quad\text{or}\quad
 x=\log_2\left(\frac{5-\sqrt{21}}4\right)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 Let
@@ -1094,11 +1316,9 @@ Because $$3^x$$ is increasing,
 $$
 \boxed{[0,3]}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 Take natural logs of both sides:
@@ -1136,11 +1356,9 @@ Therefore
 $$
 \boxed{x=\frac{3\ln 5+\ln 2}{2\ln 5-\ln 2}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 Let
@@ -1202,11 +1420,9 @@ $$
 \quad\text{or}\quad
 x=\ln\left(\frac32\right)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 7
 
 Start with
@@ -1282,11 +1498,9 @@ The intersection is
 $$
 \boxed{x>3}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 8
 
 The expression is
@@ -1348,11 +1562,9 @@ Thus the restrictions are
 $$
 \boxed{x\ne 0,\qquad 2<y<5}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 9
 
 The domain requires
@@ -1398,11 +1610,9 @@ Intersect this with the domain $$\frac12<x<7$$:
 $$
 \boxed{\left(\frac12,\frac83\right]}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 10
 
 First find the logarithm domain:
@@ -1481,11 +1691,9 @@ Intersect with the logarithm domain:
 $$
 \boxed{\left[\frac{7-\sqrt{37}}2,2\right)\cup\left(3,\frac{7+\sqrt{37}}2\right]}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 11
 
 The function is
@@ -1620,12 +1828,12 @@ The inverse has domain $$(-\infty,\infty)$$ and range $$(-\infty,4)$$. The graph
 
 The graph of both functions are shown below (green = inverse function):
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/expgraph2.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/expgraph2.png)
+:::
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 12
 
 The model is
@@ -1720,11 +1928,9 @@ So
 $$
 \boxed{t=\frac52\ln 57}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 13
 
 Let
@@ -1787,11 +1993,9 @@ Therefore
 $$
 \boxed{n=4^4=256}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 14
 
 The function is
@@ -1935,11 +2139,9 @@ As $$x$$ moves through $$(a,b)$$, the ratio $$\frac{x-a}{b-x}$$ moves through $$
 $$
 \boxed{(-\infty,\infty)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 15
 
 The product is
@@ -2027,11 +2229,9 @@ Therefore the product is
 $$
 \frac{31}{13}\cdot 3=\boxed{\frac{93}{13}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 16
 
 For part $$(A)$$,
@@ -2195,5 +2395,4 @@ $$
 $$
 
 For part $$(F)$$, the comparison is that both EML and NAND are examples of a very small set of building blocks being powerful enough to generate a much larger system. A NAND gate alone can build NOT, AND, OR, and therefore all Boolean logic circuits. Similarly, the paper claims that EML, together with the constant $$1$$, can be composed into trees that represent the standard elementary functions. In both cases, complicated expressions can be built from repeated uses of one simple operation.
-
-</div>
+:::

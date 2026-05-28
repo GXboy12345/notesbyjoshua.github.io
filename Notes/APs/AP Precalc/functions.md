@@ -785,9 +785,178 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below (this i
 
 ## Practice
 
+:::practice
+:::frq{id=precalc-functions-1}
 1. Find the domain and range of $$f(x)=\frac{\sqrt{9-(x-2)^2}}{x-2}$$.
+
+:::solution
+The square root requires
+
+$$
+9-(x-2)^2\ge 0.
+$$
+
+Thus
+
+$$
+-3\le x-2\le 3
+\quad\Longrightarrow\quad
+-1\le x\le 5.
+$$
+
+The denominator also requires $$x\ne 2$$, so
+
+$$
+\boxed{\text{domain}=[-1,2)\cup(2,5]}.
+$$
+
+Let $$t=x-2$$. Then
+
+$$
+f(x)=\frac{\sqrt{9-t^2}}{t},
+\qquad
+t\in[-3,0)\cup(0,3].
+$$
+
+For $$t>0$$, the outputs cover $$[0,\infty)$$. For $$t<0$$, the outputs cover $$(-\infty,0]$$. Therefore
+
+$$
+\boxed{\text{range}=(-\infty,\infty)}.
+$$
+:::
+:::
+
+:::frq{id=precalc-functions-2}
 2. Let $$f(x)=\begin{cases}x^2-4x+1, & x<1,\\ax+b, & 1\le x<4,\\\sqrt{x+c}, & x\ge 4.\end{cases}$$. Find $$a$$, $$b$$, and $$c$$ so that the pieces connect at $$x=1$$ and $$x=4$$, and so that the middle piece has average rate of change $$3$$ on $$[1,4]$$.
+
+:::solution
+The average rate of change of the middle piece $$ax+b$$ is its slope, so
+
+$$
+a=3.
+$$
+
+The pieces connect at $$x=1$$, so
+
+$$
+1^2-4(1)+1=3(1)+b.
+$$
+
+This gives
+
+$$
+-2=3+b
+\quad\Longrightarrow\quad
+b=-5.
+$$
+
+The pieces connect at $$x=4$$, so
+
+$$
+3(4)-5=\sqrt{4+c}.
+$$
+
+Thus
+
+$$
+7=\sqrt{4+c}
+\quad\Longrightarrow\quad
+49=4+c
+\quad\Longrightarrow\quad
+c=45.
+$$
+
+Therefore
+
+$$
+\boxed{a=3,\qquad b=-5,\qquad c=45}.
+$$
+:::
+:::
+
+:::frq{id=precalc-functions-3}
 3. Find the explicit form(s) for the relation $$(x^2+y^2)^2=4(x^2-y^2)$$.
+
+:::solution
+Let
+
+$$
+u=y^2.
+$$
+
+Then
+
+$$
+(x^2+u)^2=4(x^2-u).
+$$
+
+Expand and collect terms:
+
+$$
+x^4+2x^2u+u^2=4x^2-4u
+$$
+
+$$
+u^2+(2x^2+4)u+x^4-4x^2=0.
+$$
+
+Using the quadratic formula,
+
+$$
+u=\frac{-(2x^2+4)\pm\sqrt{(2x^2+4)^2-4(x^4-4x^2)}}{2}.
+$$
+
+The discriminant simplifies:
+
+$$
+(2x^2+4)^2-4(x^4-4x^2)=16(2x^2+1).
+$$
+
+So
+
+$$
+u=-(x^2+2)\pm 2\sqrt{2x^2+1}.
+$$
+
+Since $$u=y^2$$,
+
+$$
+y^2=-(x^2+2)+2\sqrt{2x^2+1}
+$$
+
+or
+
+$$
+y^2=-(x^2+2)-2\sqrt{2x^2+1}.
+$$
+
+The second expression is always negative, so it gives no real branches. The real explicit forms are
+
+$$
+\boxed{y=\sqrt{-(x^2+2)+2\sqrt{2x^2+1}}}
+$$
+
+and
+
+$$
+\boxed{y=-\sqrt{-(x^2+2)+2\sqrt{2x^2+1}}}.
+$$
+
+For these branches to be real,
+
+$$
+-(x^2+2)+2\sqrt{2x^2+1}\ge 0.
+$$
+
+This simplifies to $$x^2\le 4$$, so both branches have domain
+
+$$
+\boxed{[-2,2]}.
+$$
+:::
+:::
+:::
+
 4. Find the explicit form(s) for the relation $$y^2-2xy+x^2=4x+4$$. State the domain of each branch.
 5. Let $$f(x)=(x-3)^2+2$$ with domain $$x\ge 3$$. Find $$f^{-1}(x)$$, and state the domain and range of $$f^{-1}$$.
 6. Let $$f:[-2,\infty)\to[-4,\infty)$$ be defined by $$f(x)=(x+2)^2-4$$. Determine whether $$f$$ is injective, surjective, bijective, or none.
@@ -801,17 +970,11 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below (this i
 14. Suppose $$f$$ is an odd function with domain $$[-5,5]$$, range $$[-3,3]$$, and $$f(2)=-1$$. Define $$g(x)=2f(x-1)-4$$. Find the domain and range of $$g$$, and find $$g(3)$$ and $$g(-1)$$.
 15. Suppose $$f:A\to B$$ and $$g:B\to C$$. Prove that if $$f$$ and $$g$$ are both injective, then $$g\circ f$$ is injective. Also prove that if $$g\circ f$$ is surjective onto $$C$$, then $$g$$ must be surjective onto $$C$$.
 16. (Bonus, Cauchy's Functional Equation)
-
    Consider a function $$\mathbb{Q} \longrightarrow \mathbb{Q}$$ (basically taking rational inputs and giving rational outputs) such that $$f(x+y)=f(x)+f(y)$$ (basically for any two rational numbers, this equation holds true for $$f(x)$$).
-
    (A) Show that $$f(0) = 0$$ and $$f(-x) = -f(x)$$. What does this show about $$f(x)$$?
-
    (B) Prove that $$f(nx) = nf(x)$$ for all $$n \in \mathbb{Z}$$ (for all integer $$n$$).
-
    (C) Prove that $$f(\frac{x}{n}) = \frac{f(x)}{n}$$.
-
    (D) Determine all such functions $$f(x)$$ that satisfy Cauchy's Functional Equation. Remember you not only need to find all such solutions, but prove that each one is a valid solution to the equation.
-
    (E) The solution in part (D) is the only solution for the rationals, but there exist infinitely more solutions for the reals! Why can't your proof in steps (A) - (D) extend to real numbers?
 
 ## Solutions

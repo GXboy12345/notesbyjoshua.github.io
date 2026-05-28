@@ -33,7 +33,9 @@ $$
 
 The **confidence level** describes the long-run capture rate of the method. A 95% confidence interval does not mean there is a 95% probability that the fixed parameter is in this particular interval. It means that if we repeatedly sampled and built intervals the same way, about 95% of those intervals would contain the true parameter.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/catprop/confidence-intervals.png' | relative_url }}" alt="Confidence interval repeated sampling placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Confidence interval repeated sampling placeholder](/assets/APs/AP%20Stats/catprop/confidence-intervals.png)
+:::
 
 ---
 
@@ -127,7 +129,9 @@ Conditions:
 2. Independence: if sampling without replacement, $$n \le 0.10N$$.
 3. Large counts using the null value: $$np_0 \ge 10$$ and $$n(1-p_0) \ge 10$$.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/catprop/p-value-tail.png' | relative_url }}" alt="p-value tail area placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![p-value tail area placeholder](/assets/APs/AP%20Stats/catprop/p-value-tail.png)
+:::
 
 ---
 

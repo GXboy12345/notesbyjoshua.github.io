@@ -175,7 +175,9 @@ Typical stresses:
 
 Since $$K$$ depends on $$T$$, **do not** treat temperature like a simple concentration stress when you need a **numerical** $$K$$: use the correct $$K$$ for the new temperature if given, compute $$K_2$$ from $$K_1$$ with the **van’t Hoff equation** (previous section), or reason qualitatively from $$\Delta H$$.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/equilibrium/lechat.webp' | relative_url }}" alt="Le Chatelier's Principle" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Le Chatelier's Principle](/assets/APs/AP%20Chem/equilibrium/lechat.webp)
+:::
 
 ---
 
@@ -197,7 +199,9 @@ Since $$K$$ depends on $$T$$, **do not** treat temperature like a simple concent
 - **Small $$K$$** (product-poor): equilibrium lies left; $$x$$ may be negligible compared to initial concentrations—**verify** with the **5% rule** (or exact quadratic) when your course allows.
 - **Large $$K$$:** equilibrium lies right; sometimes you assume **complete** reaction first, then **back-react** a small amount.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/equilibrium/icetable.png' | relative_url }}" alt="ICE Table" loading="lazy" decoding="async" />
+:::figure{width=480}
+![ICE Table](/assets/APs/AP%20Chem/equilibrium/icetable.png)
+:::
 
 ---
 
@@ -305,47 +309,117 @@ This unit’s equilibrium constant logic is the same machinery you will reuse fo
 
 ### MCQ
 
+:::practice
+:::mcq{id=chem-equilibrium-1 correct=B}
 1. For the reaction $$\text{N}_2(g)+3\text{H}_2(g)\rightleftharpoons2\text{NH}_3(g)$$, which expression is $$K_c$$?
 
-   (A) $$\dfrac{[\text{NH}_3]}{[\text{N}_2][\text{H}_2]}$$<br>
-   (B) $$\dfrac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}$$<br>
-   (C) $$\dfrac{[\text{N}_2][\text{H}_2]^3}{[\text{NH}_3]^2}$$<br>
-   (D) $$\dfrac{2[\text{NH}_3]}{[\text{N}_2]+3[\text{H}_2]}$$
+- [ ] $$\dfrac{[\text{NH}_3]}{[\text{N}_2][\text{H}_2]}$$
+- [ ] $$\dfrac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}$$
+- [ ] $$\dfrac{[\text{N}_2][\text{H}_2]^3}{[\text{NH}_3]^2}$$
+- [ ] $$\dfrac{2[\text{NH}_3]}{[\text{N}_2]+3[\text{H}_2]}$$
 
+:::solution
+Gas and aqueous equilibrium expressions use concentrations raised to stoichiometric coefficients:
+
+$$
+K_c=\frac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}.
+$$
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-equilibrium-2 correct=D}
 2. For a system at equilibrium, adding a catalyst will
 
-   (A) increase $$K$$<br>
-   (B) decrease $$K$$<br>
-   (C) shift the equilibrium toward products<br>
-   (D) leave the equilibrium composition unchanged
+- [ ] increase $$K$$
+- [ ] decrease $$K$$
+- [ ] shift the equilibrium toward products
+- [ ] leave the equilibrium composition unchanged
 
+:::solution
+A catalyst speeds both forward and reverse reactions. It helps the system reach equilibrium faster, but it does not change $$K$$ or the equilibrium composition.
+
+$$
+\boxed{\text{D}}
+$$
+:::
+:::
+
+:::mcq{id=chem-equilibrium-3 correct=B}
 3. If $$Q>K$$ for a reaction mixture, the reaction will proceed
 
-   (A) toward products until equilibrium is reached.<br>
-   (B) toward reactants until equilibrium is reached.<br>
-   (C) in neither direction because it is already at equilibrium.<br>
-   (D) only if a catalyst is added.
+- [ ] toward products until equilibrium is reached.
+- [ ] toward reactants until equilibrium is reached.
+- [ ] in neither direction because it is already at equilibrium.
+- [ ] only if a catalyst is added.
 
+:::solution
+If $$Q>K$$, the mixture has too much product relative to equilibrium, so it shifts toward reactants.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-equilibrium-4 correct=B}
 4. Which species is omitted from the equilibrium expression for $$\text{CaCO}_3(s)\rightleftharpoons\text{CaO}(s)+\text{CO}_2(g)$$?
 
-   (A) $$\text{CO}_2(g)$$ only<br>
-   (B) $$\text{CaCO}_3(s)$$ and $$\text{CaO}(s)$$<br>
-   (C) $$\text{CaO}(s)$$ and $$\text{CO}_2(g)$$<br>
-   (D) all species
+- [ ] $$\text{CO}_2(g)$$ only
+- [ ] $$\text{CaCO}_3(s)$$ and $$\text{CaO}(s)$$
+- [ ] $$\text{CaO}(s)$$ and $$\text{CO}_2(g)$$
+- [ ] all species
 
+:::solution
+Pure solids are omitted from equilibrium expressions, so both solids are omitted.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+
+:::mcq{id=chem-equilibrium-5 correct=A}
 5. For $$\text{AgCl}(s)\rightleftharpoons\text{Ag}^+(aq)+\text{Cl}^-(aq)$$, what is the expression for $$K_{sp}$$?
 
-   (A) $$[\text{Ag}^+][\text{Cl}^-]$$<br>
-   (B) $$\dfrac{[\text{Ag}^+][\text{Cl}^-]}{[\text{AgCl}]}$$<br>
-   (C) $$[\text{AgCl}]$$<br>
-   (D) $$\dfrac{1}{[\text{Ag}^+][\text{Cl}^-]}$$
+- [ ] $$[\text{Ag}^+][\text{Cl}^-]$$
+- [ ] $$\dfrac{[\text{Ag}^+][\text{Cl}^-]}{[\text{AgCl}]}$$
+- [ ] $$[\text{AgCl}]$$
+- [ ] $$\dfrac{1}{[\text{Ag}^+][\text{Cl}^-]}$$
 
+:::solution
+Pure solids are omitted from equilibrium expressions, so
+
+$$
+K_{sp}=[\text{Ag}^+][\text{Cl}^-].
+$$
+
+$$
+\boxed{\text{A}}
+$$
+:::
+:::
+
+:::mcq{id=chem-equilibrium-6 correct=B}
 6. If an exothermic equilibrium reaction is heated, the equilibrium shifts
 
-   (A) toward products.<br>
-   (B) toward reactants.<br>
-   (C) nowhere, because temperature does not affect equilibrium.<br>
-   (D) only if a catalyst is present.
+- [ ] toward products.
+- [ ] toward reactants.
+- [ ] nowhere, because temperature does not affect equilibrium.
+- [ ] only if a catalyst is present.
+
+:::solution
+For an exothermic reaction, heat behaves like a product. Adding heat shifts the equilibrium toward reactants.
+
+$$
+\boxed{\text{B}}
+$$
+:::
+:::
+:::
 
 ### FRQ
 
@@ -377,8 +451,7 @@ A sealed container initially has $$0.600\ M$$ $$\text{A}$$ and no $$\text{B}$$.
 
 ### MCQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 Gas and aqueous equilibrium expressions use concentrations raised to stoichiometric coefficients:
@@ -390,11 +463,9 @@ $$
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 A catalyst speeds both forward and reverse reactions. It helps the system reach equilibrium faster, but it does not change $$K$$ or the equilibrium composition.
@@ -402,11 +473,9 @@ A catalyst speeds both forward and reverse reactions. It helps the system reach 
 $$
 \boxed{\text{D}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 If $$Q>K$$, the mixture has too much product relative to equilibrium, so it shifts toward reactants.
@@ -414,11 +483,9 @@ If $$Q>K$$, the mixture has too much product relative to equilibrium, so it shif
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 Pure solids are omitted from equilibrium expressions, so both solids are omitted.
@@ -426,11 +493,9 @@ Pure solids are omitted from equilibrium expressions, so both solids are omitted
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 Pure solids are omitted from equilibrium expressions, so
@@ -442,11 +507,9 @@ $$
 $$
 \boxed{\text{A}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 For an exothermic reaction, heat behaves like a product. Adding heat shifts the equilibrium toward reactants.
@@ -454,13 +517,11 @@ For an exothermic reaction, heat behaves like a product. Adding heat shifts the 
 $$
 \boxed{\text{B}}
 $$
-
-</div>
+:::
 
 ### FRQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$(A)$$
@@ -518,11 +579,9 @@ $$
 $$
 
 The negative root is rejected because it would make no physical sense for the reaction progress variable in this setup. Both equilibrium concentrations are positive, which is a useful check.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 $$(A)$$
@@ -544,7 +603,6 @@ $$(C)$$ Since $$Q<K$$, the system has too little product relative to equilibrium
 <div class="placeholder-box" markdown="1">
 
 **Image placeholder:** Particle diagram for $$\text{H}_2+\text{I}_2\rightleftharpoons2\text{HI}$$ showing the mixture shifting toward more $$\text{HI}$$.
-
-</div>
+:::
 
 </div>

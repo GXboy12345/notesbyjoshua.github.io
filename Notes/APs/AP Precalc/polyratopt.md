@@ -34,9 +34,8 @@ $$
 m=-\frac{A}{B}.
 $$
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find a linear function $$f$$ such that $$f(2)=1$$ and the graph of $$y=f(x)$$ is perpendicular to the graph of $$6x-3y=2$$.
+:::example
+Find a linear function $$f$$ such that $$f(2)=1$$ and the graph of $$y=f(x)$$ is perpendicular to the graph of $$6x-3y=2$$.
 
 First put the given line in slope-intercept form:
 
@@ -63,8 +62,7 @@ so $$b=2$$. Therefore
 $$
 \boxed{f(x)=-\frac12x+2}.
 $$
-
-</div>
+:::
 
 ### Quadratic functions
 
@@ -81,9 +79,8 @@ Its graph is a parabola.
 
 Sometimes it is useful to complete the square on a quadratic to see some of its properties.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the vertex of the quadratic $$ax^2+bx+c$$.
+:::example
+Find the vertex of the quadratic $$ax^2+bx+c$$.
 
 The vertex (minimum/maximum depending on the shape) of the quadratic occurs at
 
@@ -121,8 +118,7 @@ f(x)=a(x-h)^{2}+k,
 $$
 
 where the vertex is $$(h,k)$$.
-
-</div>
+:::
 
 If a function is built from this quadratic in a way that preserves order, the same input may still be optimal. For example,
 
@@ -236,9 +232,8 @@ $$
 
 In general, a polynomial of degree $$n$$ has at most $$n-1$$ turning points. This does not mean it must have $$n-1$$ turning points; it is only an upper bound.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Suppose $$P(x)=2x^{4}+5x^{3}-38x^{2}+28x+24$$ and we are given that $$P(2)=0$$ with a multiplicity of 2. Graph the polynomial.
+:::example
+Suppose $$P(x)=2x^{4}+5x^{3}-38x^{2}+28x+24$$ and we are given that $$P(2)=0$$ with a multiplicity of 2. Graph the polynomial.
 
 Since $$P(2)=0$$, $$x-2$$ is a factor. Synthetic division by $$2$$ gives:
 
@@ -278,8 +273,7 @@ $$
 Since $$x=2$$ has multiplicity $$2$$, the graph touches/bounces at $$x=2$$. The end behavior of this function is up & up since the highest degree is even and the leading coefficient is positive. It goes through $$(-6,0)$$ and $$(-1/2,0)$$ while bouncing at $$(2,0)$$. A graph of the polynomial is shown below:
 
 **ADD IMAGE OF GRAPH**
-
-</div>
+:::
 
 ---
 
@@ -344,9 +338,8 @@ $$
 \pm\frac{\text{factor of constant term}}{\text{factor of leading coefficient}}.
 $$
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the possible rational zeros of $$f(x)=2x^{4}-x^{3}+7x^{2}+3x-3.$$
+:::example
+Find the possible rational zeros of $$f(x)=2x^{4}-x^{3}+7x^{2}+3x-3.$$
 
 Here the constant term is $$-3$$ and the leading coefficient is $$2$$. Thus
 
@@ -363,8 +356,7 @@ $$
 $$
 
 This theorem only gives candidates. You still need to test them.
-
-</div>
+:::
 
 ---
 
@@ -474,9 +466,8 @@ When solving out rational polynomials, always factor first. If a factor cancels,
 
 If a denominator factor does not cancel, it creates a **vertical asymptote**, where the values approach $$\pm \infinity$$.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the vertical asymptotes and holes of$$R(x)=\frac{(x-2)(x+1)}{(x-2)(x-3)}.$$
+:::example
+Find the vertical asymptotes and holes of$$R(x)=\frac{(x-2)(x+1)}{(x-2)(x-3)}.$$
 
 The original denominator is zero at $$x=2$$ and $$x=3$$. After canceling,
 
@@ -497,8 +488,7 @@ $$
 $$
 
 Thus the hole is at $$(2,-3).$$
-
-</div>
+:::
 
 ### Horizontal asymptotes
 
@@ -515,8 +505,7 @@ a **horizontal asymptote** is the value of which $$y$$ approaches as $$x$$ appro
 - If numerator degree is exactly one bigger, there is a slant asymptote from polynomial division.
 - If numerator degree is more than one bigger, there is a polynomial asymptote from polynomial division.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 Below are two common examples of rational polynomials and their horizontal asymptotes.
 
 **Example (Horizontal asymptote).** Find the horizontal/slant asymptote of $$\frac{2x+3}{x-1}$$.
@@ -557,8 +546,7 @@ as $$x\to \pm\infty$$, the slant asymptote is
 $$
 y=x+2.
 $$
-
-</div>
+:::
 
 ### Graphing checklist for rational functions
 
@@ -590,8 +578,7 @@ The usual workflow is:
 6. Find the maximum or minimum using algebra, graphing, or a calculator.
 7. Answer the original question with units and in context.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Example (largest rectangle with fixed perimeter).**
 
 What is the largest possible area of a rectangle with perimeter $$80\text{ cm}$$?
@@ -631,11 +618,9 @@ So the largest rectangle is a square, and its maximum area is
 $$
 \boxed{400\text{ cm}^2}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Example (maximizing a rational model).**
 
 Suppose the efficiency of a machine after $$x$$ hours is modeled by
@@ -702,16 +687,182 @@ $$
 $$
 
 This method is useful when the equation can be rewritten as a quadratic in the input and the discriminant tells which output values are possible.
-
-</div>
+:::
 
 ---
 
 ## Practice
 
+:::practice
+:::frq{id=precalc-polyratopt-1}
 1. Let $$f(x)=mx+b$$. Suppose $$f(a+b)=f(a)+f(b)-6$$ for all real numbers $$a,b$$ and $$f(4)=10$$. Find $$f(x)$$, its $$x$$-intercept, and the equation of the line perpendicular to $$f$$ through $$(4,10)$$.
+
+:::solution
+Let $$f(x)=mx+b$$. Then
+
+$$
+f(a+b)=m(a+b)+b=ma+mb+b,
+$$
+
+while
+
+$$
+f(a)+f(b)-6=(ma+b)+(mb+b)-6=ma+mb+2b-6.
+$$
+
+Since these are equal for all $$a,b$$,
+
+$$
+b=2b-6,
+$$
+
+so $$b=6$$. Use $$f(4)=10$$:
+
+$$
+4m+6=10,
+$$
+
+so $$m=1$$. Therefore
+
+$$
+\boxed{f(x)=x+6}.
+$$
+
+The $$x$$-intercept satisfies $$x+6=0$$, so it is
+
+$$
+\boxed{(-6,0)}.
+$$
+
+The slope of $$f$$ is $$1$$, so a perpendicular line has slope $$-1$$. Through $$(4,10)$$:
+
+$$
+y-10=-(x-4),
+$$
+
+so
+
+$$
+\boxed{y=-x+14}.
+$$
+:::
+:::
+
+:::frq{id=precalc-polyratopt-2}
 2. A quadratic function has $$x$$-intercepts $$-1$$ and $$5$$ and passes through $$(0,10)$$. Find the function, its vertex, maximum/minimum value, and range.
+
+:::solution
+Since the zeros are $$-1$$ and $$5$$,
+
+$$
+q(x)=a(x+1)(x-5).
+$$
+
+Use $$(0,10)$$:
+
+$$
+10=a(1)(-5),
+$$
+
+so $$a=-2$$. Thus
+
+$$
+\boxed{q(x)=-2(x+1)(x-5)}.
+$$
+
+Expanding,
+
+$$
+q(x)=-2x^2+8x+10.
+$$
+
+The axis of symmetry is halfway between the zeros:
+
+$$
+x=\frac{-1+5}{2}=2.
+$$
+
+Then
+
+$$
+q(2)=-2(3)(-3)=18.
+$$
+
+The vertex is
+
+$$
+\boxed{(2,18)}.
+$$
+
+Since $$a<0$$, this is a maximum. The maximum value is $$18$$ and the range is
+
+$$
+\boxed{(-\infty,18]}.
+$$
+:::
+:::
+
+:::frq{id=precalc-polyratopt-3}
 3. For $$h(x)=\sqrt{-2x^2+8x+10}$$, find the domain, range, and maximum value of $$h$$.
+
+:::solution
+The square root requires
+
+$$
+-2x^2+8x+10\ge 0.
+$$
+
+Factor:
+
+$$
+-2(x^2-4x-5)\ge 0
+$$
+
+so
+
+$$
+-2(x-5)(x+1)\ge 0.
+$$
+
+This is true for
+
+$$
+\boxed{-1\le x\le 5}.
+$$
+
+Thus the domain is
+
+$$
+\boxed{[-1,5]}.
+$$
+
+The inside quadratic has maximum at the midpoint of the roots:
+
+$$
+x=2.
+$$
+
+Its maximum value is
+
+$$
+-2(2)^2+8(2)+10=18.
+$$
+
+Since square root is increasing, the maximum of $$h$$ is
+
+$$
+\boxed{\sqrt{18}=3\sqrt2}.
+$$
+
+At the endpoints, $$h(x)=0$$, so the range is
+
+$$
+\boxed{[0,3\sqrt2]}.
+$$
+:::
+:::
+:::
+
 4. Find the lowest-degree polynomial $$p(x)$$ with real coefficients such that $$x=-3$$ is a zero of multiplicity $$2$$, $$x=1$$ is a zero of multiplicity $$3$$, and $$p(0)=-18$$. Give the end behavior.
 5. For $$f(x)=-\dfrac12(x+4)(x-1)^2(x-3)^3$$, give the degree, leading coefficient, end behavior, zeros with multiplicities, crossing/bouncing behavior, $$y$$-intercept, and maximum possible number of turning points. Give a rough graph of the function.
 6. Find the lowest-degree polynomial with real coefficients, leading coefficient positive, zeros $$2$$ with multiplicity $$2$$, $$-1$$, and $$3+i$$, and $$f(0)=100$$.
@@ -725,29 +876,19 @@ This method is useful when the equation can be rewritten as a quadratic in the i
 14. A machine's output is modeled by $$M(x)=\dfrac{150x}{x^2+25}$$ for $$x\ge 0$$. Use an algebraic method to find the maximum possible output and the input where it occurs.
 15. A farmer has $$240$$ feet of fencing to build three identical rectangular pens side-by-side, sharing interior fences. If the pens together form one large rectangle split by two parallel dividers, find the dimensions of the large rectangle that maximize the total area.
 16. (Bonus, Rational Root Theorem)
-
    In this unit, we have introduced the Rational Root Theorem as a quick way of finding rational roots. We will now get a chance to prove this theorem.
-
    Let
-
    $$
    f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0
    $$
-
    have integer coefficients. Suppose $$\frac{p}{q}$$ is a rational zero in lowest terms. Note that $$a \mid b$$ means $$a$$ divides $$b$$ and $$gcd$$ means greatest common divisor.
-
    $$(A)$$ Substitute $$\frac{p}{q}$$ into $$f(x)=0$$ and multiply by $$q^n$$ and rearrange your equation to show that $$p\mid a_0q^n$$. Also explain why $$\gcd(p,q)=1$$ implies $$p\mid a_0$$.
-
    $$(B)$$ Rearrange the equation from part $$(A)$$ in a different way to show that $$q\mid a_np^n$$ and explain why $$\gcd(p,q)=1$$ implies $$q\mid a_n$$.
-
    $$(C)$$ State the Rational Root Theorem in words.
-
----
 
 ## Solutions
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 Let $$f(x)=mx+b$$. Then
@@ -797,11 +938,9 @@ so
 $$
 \boxed{y=-x+14}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 Since the zeros are $$-1$$ and $$5$$,
@@ -851,11 +990,9 @@ Since $$a<0$$, this is a maximum. The maximum value is $$18$$ and the range is
 $$
 \boxed{(-\infty,18]}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 The square root requires
@@ -911,11 +1048,9 @@ At the endpoints, $$h(x)=0$$, so the range is
 $$
 \boxed{[0,3\sqrt2]}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 The lowest-degree polynomial must have factors
@@ -951,11 +1086,9 @@ x\to -\infty \Rightarrow p(x)\to -\infty,
 \qquad
 x\to \infty \Rightarrow p(x)\to \infty.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 For
@@ -1010,12 +1143,12 @@ $$
 
 This graph is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/polygraph1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/polygraph1.png)
+:::
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 Because the polynomial has real coefficients, $$3-i$$ must also be a zero. The lowest-degree polynomial has the form
@@ -1047,11 +1180,9 @@ Thus $$a=\dfrac52$$, and
 $$
 \boxed{f(x)=\frac52(x-2)^2(x+1)\bigl((x-3)^2+1\bigr)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 7
 
 Since $$P(3)=0$$, $$x-3$$ is a factor. Synthetic division gives
@@ -1098,11 +1229,9 @@ Therefore
 $$
 \boxed{P(x)=(x-3)^2\left(x-\frac{-3+\sqrt{17}}{2}\right)\left(x-\frac{-3-\sqrt{17}}{2}\right)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 8
 
 By the Rational Root Theorem, possible rational zeros are
@@ -1136,11 +1265,9 @@ So the real zeros are
 $$
 \boxed{-3,\ -1,\ 2,\ \frac52}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 9
 
 When dividing by $$(x-2)(x+1)$$, the remainder must be linear:
@@ -1180,11 +1307,9 @@ so $$a=3$$. Then $$b=-1$$. The remainder is
 $$
 \boxed{3x-1}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 10
 
 For rational coefficients, conjugate pairs are required:
@@ -1222,11 +1347,9 @@ Expanding:
 $$
 \boxed{x^4-6x^3+11x^2-10x+2}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 11
 
 Start with
@@ -1305,12 +1428,12 @@ $$
 
 The graph is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/ratgraph1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/ratgraph1.png)
+:::
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 12
 
 $$
@@ -1351,11 +1474,9 @@ Therefore the solution is
 $$
 \boxed{(-\infty,-1)\cup(2,4]}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 13
 
 The dimensions of the box are:
@@ -1401,11 +1522,9 @@ The maximum volume is approximately
 $$
 V(3.39)\approx 655.0\text{ in}^3.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 14
 
 Let
@@ -1467,11 +1586,9 @@ So the maximum occurs at
 $$
 \boxed{x=5}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 15
 
 Let the large rectangle have length $$y$$ and width $$x$$, where the two interior dividers are each parallel to the width. Then the fencing uses four widths and two lengths:
@@ -1515,11 +1632,9 @@ The maximum total area is
 $$
 \boxed{1800\text{ ft}^2}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 16
 
 For part (A), since $$\frac{p}{q}$$ is a zero,
@@ -1578,5 +1693,4 @@ For part (C), the theorem statement is this: If a polynomial with integer coeffi
 $$
 \boxed{p\mid a_0\quad\text{and}\quad q\mid a_n}.
 $$
-
-</div>
+:::

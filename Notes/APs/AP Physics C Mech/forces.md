@@ -64,7 +64,9 @@ Third-law forces act on different objects, so they never cancel on a free-body d
 
 A **free-body diagram** is a force diagram for one object or one chosen system. It should show only external forces acting on that object/system, not forces the object applies to something else.
 
-<!-- <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/free-body-diagram.png' | relative_url }}" alt="Free body diagram placeholder" loading="lazy" decoding="async" /> -->
+<!-- :::figure{width=480}
+![Free body diagram placeholder](/assets/APs/AP%20Physics%20C%20Mech/forces/free-body-diagram.png)
+::: -->
 
 Good procedure:
 
@@ -209,7 +211,9 @@ $$
 a = g\sin\theta.
 $$
 
-<!-- <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/incline-forces.png' | relative_url }}" alt="Inclined plane force components placeholder" loading="lazy" decoding="async" /> -->
+<!-- :::figure{width=480}
+![Inclined plane force components placeholder](/assets/APs/AP%20Physics%20C%20Mech/forces/incline-forces.png)
+::: -->
 
 With friction, decide whether the block is moving or about to move. If it is moving, use kinetic friction. If it is at rest, static friction takes whatever value is needed up to $$\mu_sF_N$$.
 
@@ -243,7 +247,9 @@ This is the maximum angle before sliding for a simple block on a rough incline. 
 
 For ideal ropes and pulleys, connected objects share related accelerations. A common Atwood machine has two hanging masses connected by a massless string over a frictionless pulley.
 <!--
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/pulley-system.png' | relative_url }}" alt="Pulley system placeholder" loading="lazy" decoding="async" /> -->
+:::figure{width=480}
+![Pulley system placeholder](/assets/APs/AP%20Physics%20C%20Mech/forces/pulley-system.png)
+::: -->
 
 If $$m_2 > m_1$$, the acceleration magnitude is
 
@@ -333,7 +339,9 @@ $$
 
 There is no special "centripetal force." The phrase describes the net inward force required for circular motion. Gravity, tension, friction, the normal force, or a combination of forces can provide the centripetal force.
 
-<!-- <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/circular-motion-forces.png' | relative_url }}" alt="Circular motion force diagram placeholder" loading="lazy" decoding="async" /> -->
+<!-- :::figure{width=480}
+![Circular motion force diagram placeholder](/assets/APs/AP%20Physics%20C%20Mech/forces/circular-motion-forces.png)
+::: -->
 
 Examples:
 

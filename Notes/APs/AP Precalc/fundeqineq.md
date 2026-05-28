@@ -135,8 +135,7 @@ $$
 
 The basic idea is to get the equation into a form where the zero-product property, square roots, or the quadratic formula can finish the job.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Examples of problem solving techniques (Quadratics).**
 
 Factoring is the fastest method when it works:
@@ -170,8 +169,7 @@ x+3=\pm 2,
 $$
 
 so $$x=-1$$ or $$x=-5$$.
-
-</div>
+:::
 
 The quadratic formula works for every quadratic, but often times it is very inefficient to use compared to the techniques shown above. The solutions to any quadratic come in the form of:
 
@@ -191,8 +189,7 @@ $$
 r_1+r_2=-\frac{b}{a},\qquad r_1r_2=\frac{c}{a}.
 $$
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Quadratic formula).** Let the quadratic be in the form of
 
 $$
@@ -236,8 +233,7 @@ Subtract $$\frac{b}{2a}$$:
 $$
 x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
-
-</div>
+:::
 
 ---
 
@@ -616,19 +612,141 @@ $$
 
 which simplifies back to $$y=x^3$$.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Extension.** If a graph has both $$x$$-axis and $$y$$-axis symmetry, does it necessarily have origin symmetry? If a graph has origin symmetry, does it necessarily have $$x$$-axis and $$y$$-axis symmetry?
-
-</div>
+:::
 
 ---
 
 ## Practice
 
+:::practice
+:::frq{id=precalc-fundeqineq-1}
 1. The taxicab distance between points $$(x_1, y_1)$$ and $$(x_2, y_2)$$ in the coordinate plane is given by $$\lvert x_1 - x_2 \rvert + \lvert y_1 - y_2 \rvert$$. For how many points $$P$$ with integer coordinates is the taxicab distance between $$P$$ and the origin less than or equal to $$20$$? (2022 AMC 12A)
+
+:::solution
+We want integer points $$(x,y)$$ satisfying
+
+$$
+\lvert x \rvert +\lvert y \rvert \le 20.
+$$
+
+For distance $$0$$, there is only the origin: $$1$$ point.
+
+For each distance $$r\ge 1$$, the equation
+
+$$
+\lvert x \rvert +\lvert y \rvert =r
+$$
+
+has $$4r$$ integer points. Therefore the total number of points is
+
+$$
+1+\sum_{r=1}^{20}4r
+=1+4\left(\frac{20\cdot 21}{2}\right)
+=1+840
+=841.
+$$
+
+Thus
+
+$$
+\boxed{841}.
+$$
+:::
+:::
+
+:::frq{id=precalc-fundeqineq-2}
 2. Solve for $$x$$: $$x^4 - 13x^2 + 36 = 0$$.
+
+:::solution
+Let $$u=x^2$$. Then
+
+$$
+x^4-13x^2+36=0
+$$
+
+becomes
+
+$$
+u^2-13u+36=0.
+$$
+
+Factor:
+
+$$
+(u-9)(u-4)=0.
+$$
+
+So $$u=9$$ or $$u=4$$. Since $$u=x^2$$,
+
+$$
+x^2=9
+\quad\text{or}\quad
+x^2=4.
+$$
+
+Therefore
+
+$$
+\boxed{x=-3,-2,2,3}.
+$$
+:::
+:::
+
+:::frq{id=precalc-fundeqineq-3}
 3. Simplify $$\sqrt{\frac{x^4}{256} + \frac{x^3}{32} + \frac{5x^2}{16} + x + 4 + 16x - 8\sqrt{4x-7} - 24 + 2(\frac{x^2}{16} + \frac{x}{4} + 2)(-2 + 2\sqrt{4x-7})}$$. (Hint: Use factor by grouping.)
+
+:::solution
+Let
+
+$$
+A=\frac{x^{2}}{16}+\frac{x}{4}+2
+\qquad\text{and}\qquad
+B=-2+2\sqrt{4x-7}.
+$$
+
+The first five terms under the square root are exactly $$A^2$$:
+
+$$
+\left(\frac{x^{2}}{16}+\frac{x}{4}+2\right)^2
+=\frac{x^4}{256}+\frac{x^3}{32}+\frac{5x^2}{16}+x+4.
+$$
+
+The next three terms are exactly $$B^2$$:
+
+$$
+\left(-2+2\sqrt{4x-7}\right)^2
+=16x-8\sqrt{4x-7}-24.
+$$
+
+The remaining term is $$2AB$$, so the expression under the radical is
+
+$$
+A^2+B^2+2AB=(A+B)^2.
+$$
+
+Thus the original expression is
+
+$$
+\sqrt{(A+B)^2}=\lvert A+B\rvert.
+$$
+
+Now
+
+$$
+A+B=\frac{x^2}{16}+\frac{x}{4}+2\sqrt{4x-7}.
+$$
+
+The domain requires $$4x-7\ge 0$$, so $$x\ge \frac74$$. On this domain, $$A+B\ge 0$$, so
+
+$$
+\boxed{\frac{x^2}{16}+\frac{x}{4}+2\sqrt{4x-7}}.
+$$
+:::
+:::
+:::
+
 4. Solve for $$x$$ and discard any extraneous solutions: $$\dfrac{1}{x-1} + \dfrac{2}{x^2-1} = \dfrac{3}{x+1}$$.
 5. Solve for $$x$$ in $$\mathbb{R}$$: $$9^x - 10\cdot 3^x + 9 = 0$$.
 6. Solve for $$x$$ in $$\mathbb{R}$$ and check every candidate in the original equation: $$\sqrt{2x+3} + \sqrt{x+1} = 3$$.
@@ -642,31 +760,20 @@ which simplifies back to $$y=x^3$$.
 14. Solve in $$\mathbb{R}$$: $$\sqrt{x^{2} + 5} \le x + 2$$. Impose all conditions needed before and after squaring.
 15. Determine the symmetries of both graphs: $$f(x)=\dfrac{x^2}{x^2+1}$$ and $$g(x)=x\lvert x\rvert$$. For each, decide whether the graph has $$y$$-axis symmetry, $$x$$-axis symmetry, origin symmetry, or none.
 16. (Bonus, Markov equations)
-
    Our goal is to find all positive integer solutions $$(x,y)$$ to
-
    $$
    x^2+y^2+1=3xy.
    $$
-
    This is a small version of a famous family of Diophantine equations (equations with positive integer solutions) known as Markov equations.
-
    $$(A)$$ Find the solutions with $$y=1$$.
-
    $$(B)$$ Treat the equation as a quadratic in $$x$$. If $$x$$ is one root, use Vieta's formulas to find the other root $$x'$$.
-
    $$(C)$$ Suppose $$(x,y)$$ is a positive integer solution with $$x\ge y\ge 2$$. Prove that the other root $$x'$$ is a positive integer and that $$x'<y$$.
-
    $$(D)$$ Explain why repeatedly replacing the larger coordinate by the smaller Vieta root must eventually reach a solution with one coordinate equal to $$1$$.
-
    $$(E)$$ Reverse the process to describe all positive integer solutions.
-
----
 
 ## Solutions
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 We want integer points $$(x,y)$$ satisfying
@@ -697,11 +804,9 @@ Thus
 $$
 \boxed{841}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 Let $$u=x^2$$. Then
@@ -735,11 +840,9 @@ Therefore
 $$
 \boxed{x=-3,-2,2,3}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 Let
@@ -787,11 +890,9 @@ The domain requires $$4x-7\ge 0$$, so $$x\ge \frac74$$. On this domain, $$A+B\ge
 $$
 \boxed{\frac{x^2}{16}+\frac{x}{4}+2\sqrt{4x-7}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 The denominators show that
@@ -827,11 +928,9 @@ Since $$3$$ is allowed in the original equation,
 $$
 \boxed{x=3}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 Let
@@ -879,11 +978,9 @@ Therefore
 $$
 \boxed{x=0,2}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 The domain requires
@@ -952,11 +1049,9 @@ Check candidates in the original equation. The value $$25+6\sqrt{17}$$ is extran
 $$
 \boxed{x=25-6\sqrt{17}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 7
 
 Move everything to one side:
@@ -986,11 +1081,9 @@ Thus
 $$
 \boxed{(-\infty,-5)\cup(2,\infty)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 8
 
 The expression
@@ -1044,11 +1137,9 @@ This gives $$(2,4]$$. Combining all pieces,
 $$
 \boxed{[-6,4]}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 9
 
 Start with
@@ -1074,11 +1165,9 @@ Thus $$x^2$$ must be at least $$4$$ and at most $$14$$. Therefore
 $$
 \boxed{[-\sqrt{14},-2]\cup[2,\sqrt{14}]}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 10
 
 The inequality is already factored:
@@ -1107,11 +1196,9 @@ Because the inequality is strict, none of the zeros are included. Thus
 $$
 \boxed{(-2,1)\cup(1,4)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 11
 
 Factor:
@@ -1138,11 +1225,9 @@ Since the inequality is $$\ge 0$$, include the zeros. Therefore
 $$
 \boxed{[0,2]\cup[3,\infty)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 12
 
 The domain comes from the denominator:
@@ -1183,11 +1268,9 @@ Thus
 $$
 \boxed{\text{domain: }x\ne -1,0;\quad \frac{(x-2)(x+2)}{x(x+1)}\le 0;\quad [-2,-1)\cup(0,2]}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 13
 
 First find the domain:
@@ -1225,11 +1308,9 @@ With $$x\ge 0$$, this gives $$0\le x\le \sqrt2$$. Combining both cases,
 $$
 \boxed{[-2,\sqrt2]}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 14
 
 The radical is always defined because
@@ -1277,11 +1358,9 @@ This already satisfies $$x\ge -2$$, so
 $$
 \boxed{\left[\frac14,\infty\right)}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 15
 
 For
@@ -1319,11 +1398,9 @@ Therefore
 $$
 \boxed{f\text{ has }y\text{-axis symmetry only, and }g\text{ has origin symmetry only}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 16
 
 We solve
@@ -1499,5 +1576,4 @@ Since $$(1,1)$$ works, every pair generated by the recurrence works. The descent
 $$
 \boxed{\text{All positive integer solutions are }(1,1),(1,2),(2,1),(2,5),(5,2),(5,13),(13,5),\ldots}
 $$
-
-</div>
+:::

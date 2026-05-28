@@ -28,7 +28,9 @@ $$
 
 The t-distribution is symmetric and bell-shaped like the normal distribution, but it has heavier tails. As degrees of freedom increase, the t-distribution approaches the standard normal distribution.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/quantmeans/t-distribution.png' | relative_url }}" alt="t distribution placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![t distribution placeholder](/assets/APs/AP%20Stats/quantmeans/t-distribution.png)
+:::
 
 ---
 
@@ -155,7 +157,9 @@ $$
 df=n-1.
 $$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/quantmeans/matched-pairs.png' | relative_url }}" alt="Matched pairs design placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Matched pairs design placeholder](/assets/APs/AP%20Stats/quantmeans/matched-pairs.png)
+:::
 
 ---
 

@@ -48,7 +48,9 @@ Use the acronym **LINER**:
 4. **Equal variance**: vertical spread of residuals is roughly constant across $$x$$.
 5. **Random**: data come from a random sample or randomized experiment.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Stats/quantslopes/regression-residuals.png' | relative_url }}" alt="Regression residual plots placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Regression residual plots placeholder](/assets/APs/AP%20Stats/quantslopes/regression-residuals.png)
+:::
 
 ---
 

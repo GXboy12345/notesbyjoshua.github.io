@@ -160,9 +160,8 @@ $$
 =\frac{\pi}{6}.
 $$
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the amplitude, period, phase shift, midline, range, and key-point increment for $$y=-2\cos\left(3\left(x-\frac{\pi}{4}\right)\right)+1.$$ Then graph the function.
+:::example
+Find the amplitude, period, phase shift, midline, range, and key-point increment for $$y=-2\cos\left(3\left(x-\frac{\pi}{4}\right)\right)+1.$$ Then graph the function.
 
 Here
 
@@ -206,9 +205,10 @@ Since $$A<0$$, the cosine graph is reflected over its midline.
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph6.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
-
-</div>
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/triggraph6.png)
+:::
+:::
 
 ---
 
@@ -240,9 +240,8 @@ $$
 x=\text{solution}+2\pi k,\qquad k\in\mathbb Z.
 $$
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Solve on $$[0,4\pi)$$: $$\sin x=\frac12.$$
+:::example
+Solve on $$[0,4\pi)$$: $$\sin x=\frac12.$$
 
 The reference angle is
 
@@ -269,8 +268,7 @@ x=\frac{\pi}{6},\frac{5\pi}{6},\frac{13\pi}{6},\frac{17\pi}{6}.
 $$
 
 Graphically, the horizontal line $$y=\frac12$$ intersects one full sine cycle twice, and since there are two cycles there are four intersections.
-
-</div>
+:::
 
 ---
 
@@ -316,9 +314,8 @@ $$
 
 The distance from the center point to each neighboring vertical asymptote is one half of the period.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Graph $$y=3\tan\left(2\left(x+\frac{\pi}{8}\right)\right)-4,$$ and list all important features.
+:::example
+Graph $$y=3\tan\left(2\left(x+\frac{\pi}{8}\right)\right)-4,$$ and list all important features.
 
 the period is
 
@@ -356,9 +353,10 @@ $$
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph7.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
-
-</div>
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/triggraph7.png)
+:::
+:::
 
 ### Cotangent
 
@@ -476,8 +474,7 @@ $$
 
 The angle addition and subtraction formulas let us rewrite trig functions of sums and differences of angles.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Angle addition formulas).** Let two points on the unit circle be
 
 $$
@@ -521,8 +518,7 @@ $$
 $$
 
 The other addition and subtraction formulas follow from this identity, even/odd identities, and cofunction relationships. For example, a similar proof can be done for sine addition/subtraction, and the proof is left to the reader as an exercise.
-
-</div>
+:::
 
 ### List of identities
 
@@ -550,8 +546,7 @@ $$
 \tan(A-B)=\frac{\tan A-\tan B}{1+\tan A\tan B}
 $$
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Tangent addition formula).** Use the fact that tangent is sine divided by cosine: $$\tan(A+B)=\frac{\sin(A+B)}{\cos(A+B)}$$ to prove the tangent addition formula.
 
 Substitute the addition formulas:
@@ -577,14 +572,12 @@ $$
 $$
 
 The subtraction formula follows the same way using $$\sin(A-B)$$ and $$\cos(A-B)$$.
-
-</div>
+:::
 
 These formulas are especially useful for finding exact trig values for angles that can be written as sums or differences of special angles, such as $$75^\circ=45^\circ+30^\circ$$.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the exact value of $$\sin 75^\circ$$.
+:::example
+Find the exact value of $$\sin 75^\circ$$.
 
 Rewrite the angle as a sum of special angles:
 
@@ -608,8 +601,7 @@ $$
 +\frac{\sqrt2}{2}\cdot\frac12
 \frac{\sqrt6+\sqrt2}{4}.
 $$
-
-</div>
+:::
 
 ---
 
@@ -617,8 +609,7 @@ $$
 
 Double-angle formulas are the addition formulas with the same angle used twice.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof.** Start with the angle addition formula for sine:
 
 $$
@@ -686,8 +677,7 @@ $$
 $$
 \tan(2\theta)=\frac{2\tan A}{1 - \tan^2 A}.
 $$
-
-</div>
+:::
 
 ---
 
@@ -705,8 +695,7 @@ $$
 
 These are useful when rewriting expressions with powers of sine or cosine. Later we will learn De Moivre's Theorem to generalize power formulas.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Power reduction formulas).** Prove the two power reduction formulas.
 
 Use the cosine double-angle identities:
@@ -738,8 +727,7 @@ Solving for $$\sin^2\theta$$ gives
 $$
 \sin^2\theta=\frac{1-\cos(2\theta)}{2}.
 $$
-
-</div>
+:::
 
 ### Half-angle formulas
 
@@ -767,15 +755,12 @@ $$
 \tan\left(\frac{\theta}{2}\right)=\frac{1-\cos\theta}{\sin\theta}.
 $$
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Extension.** Prove the tangent half angle identity. As a bonus, try to solve it geometrically!
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Find the exact value of $$\sin 105^\circ$$.
+:::example
+Find the exact value of $$\sin 105^\circ$$.
 
 Since
 
@@ -810,8 +795,7 @@ $$
 =\sqrt{\frac{2+\sqrt3}{4}}
 =\frac{\sqrt{2+\sqrt3}}{2}.
 $$
-
-</div>
+:::
 
 ---
 
@@ -855,8 +839,7 @@ $$
 
 These formulas are useful for simplifying expressions and for rewriting functions in a graphable form.
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 **Proof (Sum-to-product/Product-to-sum formulas).** Prove the formulas above.
 
 Add the cosine addition and subtraction formulas:
@@ -896,12 +879,10 @@ $$
 $$
 
 The other product-to-sum formulas come from adding or subtracting the sine addition and subtraction formulas and is left as an exercise to the reader.
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example.** Rewrite
+:::example
+Rewrite
 
 $$
 \cos(5x)+\cos(3x)
@@ -927,8 +908,7 @@ So
 $$
 \cos(5x)+\cos(3x)=2\cos(4x)\cos x.
 $$
-
-</div>
+:::
 
 ---
 
@@ -949,9 +929,8 @@ A general strategy is:
 5. Check for extraneous solutions if the work involved squaring, dividing by a variable expression, or using reciprocal functions.
 
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Solve exactly on $$[0,2\pi)$$:
+:::example
+Solve exactly on $$[0,2\pi)$$:
 
 $$
 2\sin^2x+\sin x-1=0.
@@ -1000,8 +979,7 @@ Thus
 $$
 x=\frac{\pi}{6},\frac{5\pi}{6},\frac{3\pi}{2}.
 $$
-
-</div>
+:::
 
 ### General solutions
 
@@ -1142,9 +1120,8 @@ $$
 
 draw a triangle or use an identity and always inverse trig functions represent angles. If $$\theta=\cos^{-1}x$$, then $$\cos\theta=x$$ and $$\theta$$ is in $$[0,\pi]$$. The sign of the final answer should match the quadrant allowed by the inverse trig function.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** Evaluate exactly:
+:::example
+Evaluate exactly:
 
 $$
 \sin\left(\cos^{-1}\frac35\right).
@@ -1181,16 +1158,264 @@ So
 $$
 \sin\left(\cos^{-1}\frac35\right)=\frac45.
 $$
-
-</div>
+:::
 
 ---
 
 ## Practice
 
+:::practice
+:::frq{id=precalc-graphanalyticaltrig-1}
 1. For $$f(x)=-3\sin\left(2\left(x-\frac{\pi}{6}\right)\right)+1$$, find the amplitude, period, phase shift, midline, range, and five key points for one full period. Then sketch one full period.
+
+:::solution
+The function is
+
+$$
+f(x)=-3\sin\left(2\left(x-\frac{\pi}{6}\right)\right)+1.
+$$
+
+The amplitude is
+
+$$
+\boxed{3}.
+$$
+
+The period is
+
+$$
+\frac{2\pi}{\lvert 2 \rvert}=\pi.
+$$
+
+So
+
+$$
+\boxed{\text{period}=\pi}.
+$$
+
+The phase shift is
+
+$$
+\boxed{\frac{\pi}{6}\text{ right}}.
+$$
+
+The midline is
+
+$$
+\boxed{y=1}.
+$$
+
+The range is
+
+$$
+1-3\le y\le 1+3,
+$$
+
+so
+
+$$
+\boxed{[-2,4]}.
+$$
+
+The key-point increment is one fourth of the period:
+
+$$
+\frac{\pi}{4}.
+$$
+
+Starting at $$x=\frac{\pi}{6}$$, the five key $$x$$-values are
+
+$$
+\frac{\pi}{6},\quad
+\frac{5\pi}{12},\quad
+\frac{2\pi}{3},\quad
+\frac{11\pi}{12},\quad
+\frac{7\pi}{6}.
+$$
+
+Because the sine graph is reflected over the $$x$$-axis, the corresponding $$y$$-values are
+
+$$
+1,\quad -2,\quad 1,\quad 4,\quad 1.
+$$
+
+Thus the five key points are
+
+$$
+\boxed{\left(\frac{\pi}{6},1\right),
+\left(\frac{5\pi}{12},-2\right),
+\left(\frac{2\pi}{3},1\right),
+\left(\frac{11\pi}{12},4\right),
+\left(\frac{7\pi}{6},1\right)}.
+$$
+
+A graph with many key points is shown below:
+:::
+:::
+
+:::frq{id=precalc-graphanalyticaltrig-2}
 2. A sinusoidal function has maximum value $$7$$ at $$x=\frac{\pi}{3}$$ and minimum value $$-1$$ at $$x=\frac{7\pi}{6}$$. Write a cosine model for the function, assuming the given maximum and minimum are consecutive. Then find five key points and sketch one full period.
+
+:::solution
+The maximum is $$7$$ and the minimum is $$-1$$. The midline is the average:
+
+$$
+D=\frac{7+(-1)}{2}=3.
+$$
+
+The amplitude is half the distance between max and min:
+
+$$
+A=\frac{7-(-1)}{2}=4.
+$$
+
+The distance from a maximum to the next minimum is half a period:
+
+$$
+\frac{7\pi}{6}-\frac{\pi}{3}
+=\frac{7\pi}{6}-\frac{2\pi}{6}
+=\frac{5\pi}{6}.
+$$
+
+So the period is
+
+$$
+2\cdot\frac{5\pi}{6}=\frac{5\pi}{3}.
+$$
+
+Thus
+
+$$
+B=\frac{2\pi}{\frac{5\pi}{3}}=\frac65.
+$$
+
+Since the function has a maximum at $$x=\frac{\pi}{3}$$, use a positive cosine model:
+
+$$
+\boxed{f(x)=4\cos\left(\frac65\left(x-\frac{\pi}{3}\right)\right)+3}.
+$$
+
+The key-point increment is
+
+$$
+\frac14\cdot\frac{5\pi}{3}=\frac{5\pi}{12}.
+$$
+
+Starting at the maximum $$x=\frac{\pi}{3}$$, the five key points are
+
+$$
+\boxed{\left(\frac{\pi}{3},7\right),
+\left(\frac{3\pi}{4},3\right),
+\left(\frac{7\pi}{6},-1\right),
+\left(\frac{19\pi}{12},3\right),
+\left(2\pi,7\right)}.
+$$
+
+A graph with many key points is shown below:
+:::
+:::
+
+:::frq{id=precalc-graphanalyticaltrig-3}
 3. For $$g(x)=2\tan\left(3\left(x+\frac{\pi}{12}\right)\right)-1$$, find the period, center point of one branch, vertical asymptotes surrounding that branch, and the $$x$$-intercept in that branch. Then sketch the branch.
+
+:::solution
+The function is
+
+$$
+g(x)=2\tan\left(3\left(x+\frac{\pi}{12}\right)\right)-1.
+$$
+
+The period of tangent is
+
+$$
+\frac{\pi}{\lvert 3 \rvert}=\frac{\pi}{3}.
+$$
+
+So
+
+$$
+\boxed{\text{period}=\frac{\pi}{3}}.
+$$
+
+The center point occurs where the tangent input is $$0$$:
+
+$$
+3\left(x+\frac{\pi}{12}\right)=0.
+$$
+
+Thus
+
+$$
+x=-\frac{\pi}{12}.
+$$
+
+At the center,
+
+$$
+g\left(-\frac{\pi}{12}\right)=2\tan(0)-1=-1.
+$$
+
+So the center point is
+
+$$
+\boxed{\left(-\frac{\pi}{12},-1\right)}.
+$$
+
+The distance from the center to each vertical asymptote is half the period:
+
+$$
+\frac12\cdot\frac{\pi}{3}=\frac{\pi}{6}.
+$$
+
+So the surrounding vertical asymptotes are
+
+$$
+-\frac{\pi}{12}-\frac{\pi}{6}=-\frac{\pi}{4}
+$$
+
+and
+
+$$
+-\frac{\pi}{12}+\frac{\pi}{6}=\frac{\pi}{12}.
+$$
+
+Thus
+
+$$
+\boxed{x=-\frac{\pi}{4}\quad\text{and}\quad x=\frac{\pi}{12}}.
+$$
+
+For the $$x$$-intercept, set $$g(x)=0$$:
+
+$$
+2\tan\left(3\left(x+\frac{\pi}{12}\right)\right)-1=0.
+$$
+
+Then
+
+$$
+\tan\left(3\left(x+\frac{\pi}{12}\right)\right)=\frac12.
+$$
+
+On the center branch,
+
+$$
+3\left(x+\frac{\pi}{12}\right)=\tan^{-1}\left(\frac12\right).
+$$
+
+Therefore
+
+$$
+\boxed{x=\frac13\tan^{-1}\left(\frac12\right)-\frac{\pi}{12}}.
+$$
+
+The branch should increase from the vertical asymptote $$x=-\frac{\pi}{4}$$ to the vertical asymptote $$x=\frac{\pi}{12}$$, passing through the center point $$\left(-\frac{\pi}{12},-1\right)$$ and the $$x$$-intercept above.
+
+A graph with many key points is shown below:
+:::
+:::
+:::
+
 4. For $$h(x)=-2\sec\left(\frac12(x-\pi)\right)+3$$, find the period, midline, vertical asymptotes in one period starting at $$x=\pi$$, and range. Then sketch one full period, including the guiding cosine curve.
 5. Solve exactly on $$[0,4\pi)$$. Then sketch $$y=2\sin^2x-\sin x-1$$ on $$[0,4\pi)$$ and label all $$x$$-intercepts: $$2\sin^2x-\sin x-1=0.$$
 6. Solve on $$[0, 4\pi)$$: $$4\sin(4x)\cos(6x)= 2\sin(10x)+1$$.
@@ -1203,47 +1428,30 @@ $$
 13. Suppose $$\frac{\pi}{2}<\theta<\pi$$ and $$\cos\theta=-\frac35$$. Find exact values of $$\sin\left(\frac{\theta}{2}\right), \cos\left(\frac{\theta}{2}\right),$$ and $$\tan\left(\frac{\theta}{2}\right).$$
 14. Let $$x$$ and $$y$$ be real numbers such that $$\frac{\sin x}{\sin y} = 3$$ and $$\frac{\cos x}{\cos y} = \frac{1}{2}$$. The value of $$\frac{\sin 2x}{\sin 2y} + \frac{\cos 2x}{\cos 2y}$$ can be expressed in the form $$\frac{p}{q}$$, where $$p$$ and $$q$$ are relatively prime positive integers. Find $$p+q$$. (2014 AIME II)
 15. A tide height is modeled by a sinusoidal function of time. At $$t=2$$ hours, the tide is at a high of $$11$$ feet. At $$t=8$$ hours, the tide is at the next low of $$3$$ feet.
-
    $$(A)$$ Write a cosine model $$H(t)$$ for the tide height.
-
    $$(B)$$ Find the period and midline.
-
    $$(C)$$ Find the first time after $$t=2$$ when the tide height is $$9$$ feet.
-
    $$(D)$$ Sketch one full period of the tide model and label the high tide, low tide, midline, and the point where $$H(t)=9$$ first occurs after $$t=2$$.
-
 16. (Bonus, Viète's formula for $$\pi$$)
-
 Let
-
 $$
 a_1=\sqrt2
 $$
-
 and define
-
 $$
 a_{n+1}=\sqrt{2+a_n}.
 $$
-
 The nested radicals
-
 $$
 \sqrt2,\quad \sqrt{2+\sqrt2},\quad \sqrt{2+\sqrt{2+\sqrt2}},\quad \ldots
 $$
-
 are connected to repeated half-angle identities.
-
    $$(A)$$ Use the half-angle identity for cosine to show that
-
    $$
    a_n=2\cos\left(\frac{\pi}{2^{n+1}}\right).
    $$
-
    $$(B)$$ Use part $$(A)$$ and the identity $$\sin(2x)=2\sin x\cos x$$ to show how products of the terms $$\frac{a_n}{2}$$ are related to $$\frac{2}{\pi}$$.
-
    $$(C)$$ Explain why this leads to Viète's infinite product:
-
    $$
    \frac{2}{\pi}
    =\frac{\sqrt2}{2}\cdot
@@ -1251,12 +1459,9 @@ are connected to repeated half-angle identities.
    \frac{\sqrt{2+\sqrt{2+\sqrt2}}}{2}\cdots.
    $$
 
----
-
 ## Solutions
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 The function is
@@ -1341,12 +1546,12 @@ $$
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph1.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/triggraph1.png)
+:::
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 The maximum is $$7$$ and the minimum is $$-1$$. The midline is the average:
@@ -1405,12 +1610,12 @@ $$
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph2.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/triggraph2.png)
+:::
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 3
 
 The function is
@@ -1507,12 +1712,12 @@ The branch should increase from the vertical asymptote $$x=-\frac{\pi}{4}$$ to t
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph3.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/triggraph3.png)
+:::
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 4
 
 The function is
@@ -1597,12 +1802,12 @@ The secant graph has vertices at $$(\pi,1)$$, $$(3\pi,5)$$, and $$(5\pi,1)$$, wi
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph4.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/triggraph4.png)
+:::
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 5
 
 Let
@@ -1665,12 +1870,12 @@ The graph of $$y=2\sin^2x-\sin x-1$$ crosses the $$x$$-axis exactly at those val
 
 A graph with many key points is shown below:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Precalc/triggraph5.png' | relative_url }}" alt="parent functions" loading="lazy" decoding="async" />
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/triggraph5.png)
+:::
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 6
 
 Start with
@@ -1735,11 +1940,9 @@ $$
 \boxed{x=\frac{7\pi}{12},\frac{11\pi}{12},\frac{19\pi}{12},\frac{23\pi}{12},
 \frac{31\pi}{12},\frac{35\pi}{12},\frac{43\pi}{12},\frac{47\pi}{12}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 7
 
 The equation is
@@ -1796,11 +1999,9 @@ the solutions on $$[0,2\pi)$$ are
 $$
 \boxed{x=\frac{\pi}{12},\frac{5\pi}{12},\frac{13\pi}{12},\frac{17\pi}{12}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 8
 
 Use angle addition and subtraction formulas.
@@ -1877,11 +2078,9 @@ and
 $$
 \boxed{\tan105^\circ=-2-\sqrt3}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 9
 
 Start with the left-hand side:
@@ -1924,11 +2123,9 @@ Thus
 $$
 \boxed{\frac{\sin(x+y)+\sin(x-y)}{\cos(x+y)+\cos(x-y)}=\tan x}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 10
 
 Use the sum-to-product formula:
@@ -2003,11 +2200,9 @@ $$
 shows that zeros occur whenever either factor is zero. A sketch should mark the eight zeros from $$\cos(4x)=0$$ and the two zeros from $$\cos x=0$$.
 
 **ADD IMAGE OF GRAPH**
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 11
 
 Let
@@ -2082,11 +2277,9 @@ Therefore
 $$
 \boxed{\frac{253}{260}}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 12
 
 We need count solutions to
@@ -2152,11 +2345,9 @@ Therefore there is exactly one solution in each of the five pieces.
 $$
 \boxed{5}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 13
 
 We are given
@@ -2224,11 +2415,9 @@ $$
 \qquad
 \boxed{\tan\left(\frac{\theta}{2}\right)=2}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 14
 
 We are given
@@ -2387,11 +2576,9 @@ So
 $$
 \boxed{p+q=107}.
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 15
 
 The high tide is $$11$$ feet and the low tide is $$3$$ feet. The midline is
@@ -2491,11 +2678,9 @@ $$
 $$
 
 **ADD IMAGE OF GRAPH**
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 16
 
 For part $$(A)$$, first note that
@@ -2652,5 +2837,4 @@ $$
 \frac{\sqrt{2+\sqrt{2+\sqrt2}}}{2}\cdots
 }.
 $$
-
-</div>
+:::

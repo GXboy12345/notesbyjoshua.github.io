@@ -1,0 +1,15 @@
+---
+interface Props {
+  intro: string;
+}
+
+const { intro } = Astro.props;
+---
+
+<section class="about-profile" aria-labelledby="about-profile-heading">
+  <div class="about-profile-card">
+    <p class="about-profile-eyebrow">About</p>
+    <h1 id="about-profile-heading" class="about-profile-name">About Me</h1>
+    <p class="about-profile-intro">{intro}</p>
+  </div>
+</section>

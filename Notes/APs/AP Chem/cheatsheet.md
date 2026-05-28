@@ -59,7 +59,9 @@ $$
 - **Electronegativity**: decreases down, increases across
 - More positive effective nuclear charge usually means electrons are held more tightly
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/periodictrends.png' | relative_url }}" alt="Periodic trends summary placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Periodic trends summary placeholder](/assets/APs/AP%20Chem/atomicstrucprop/periodictrends.png)
+:::
 
 ### Photoelectron spectroscopy
 
@@ -67,7 +69,9 @@ $$
 - Higher peaks can mean more electrons in a subshell
 - Peak position tells energy level; peak height/area tracks electron count
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/atomicstrucprop/PES.png' | relative_url }}" alt="Photoelectron spectroscopy summary placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Photoelectron spectroscopy summary placeholder](/assets/APs/AP%20Chem/atomicstrucprop/PES.png)
+:::
 
 ---
 
@@ -105,7 +109,9 @@ $$
 
 Molecular shape depends on lone pairs.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/compounds/VSEPR.png' | relative_url }}" alt="VSEPR summary placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![VSEPR summary placeholder](/assets/APs/AP%20Chem/compounds/VSEPR.png)
+:::
 
 ### Hybridization
 
@@ -209,7 +215,9 @@ $$
 - Usually soluble: sulfates except with $$\text{Ba}^{2+}$$, $$\text{Sr}^{2+}$$, $$\text{Pb}^{2+}$$, often $$\text{Ca}^{2+}$$
 - Usually insoluble: carbonates, phosphates, chromates, sulfides, hydroxides except with Group 1 and $$\text{NH}_4^+$$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/chemrxns/solubility.jpg' | relative_url }}" alt="Solubility rules summary placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Solubility rules summary placeholder](/assets/APs/AP%20Chem/chemrxns/solubility.jpg)
+:::
 
 ### Oxidation number reminders
 
@@ -465,7 +473,9 @@ $$
 - weak base / strong acid equivalence point below 7
 - half-equivalence point for weak acid/base gives $$\text{pH} = \text{p}K_a$$ or $$\text{pOH} = \text{p}K_b$$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/acidbase/titrationcurve.gif' | relative_url }}" alt="Titration curves summary placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Titration curves summary placeholder](/assets/APs/AP%20Chem/acidbase/titrationcurve.gif)
+:::
 
 ---
 
@@ -534,7 +544,9 @@ $$
 - oxidation always at anode
 - reduction always at cathode
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Chem/cheatsheet/electrochem-summary.png' | relative_url }}" alt="Electrochemistry summary placeholder" loading="lazy" decoding="async" />
+:::figure{width=480}
+![Electrochemistry summary placeholder](/assets/APs/AP%20Chem/cheatsheet/electrochem-summary.png)
+:::
 
 ---
 
@@ -596,8 +608,7 @@ $$
 
 ### MCQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 Spontaneity depends on
@@ -611,11 +622,9 @@ If $$\Delta H<0$$ and $$\Delta S<0$$, then $$-T\Delta S$$ is positive. At low te
 $$
 \boxed{\text{A}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 The relationship between standard free energy and equilibrium is
@@ -627,13 +636,11 @@ $$
 $$
 \boxed{\text{B}}
 $$
-
-</div>
+:::
 
 ### FRQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$(A)$$ Before the equivalence point, added strong base or strong acid reacts essentially completely with the weak acid or conjugate base. The reaction changes the amounts present, so the equilibrium calculation must use the post-stoichiometry mixture.
@@ -651,5 +658,4 @@ $$
 $$
 
 $$(C)$$ A common error is including pure solids, pure liquids, or liquid water as concentration terms in equilibrium expressions when they should be omitted.
-
-</div>
+:::

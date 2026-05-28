@@ -72,8 +72,7 @@ AP free-response questions often reward clear particle-level explanations, corre
 
 ### MCQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 If $$Q<K$$, the mixture has too few products compared with the equilibrium ratio. The reaction proceeds forward to form more products.
@@ -81,11 +80,9 @@ If $$Q<K$$, the mixture has too few products compared with the equilibrium ratio
 $$
 \boxed{\text{B}}
 $$
+:::
 
-</div>
-
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 2
 
 Strong AP Chemistry explanations connect the particle-level model to the evidence, equation, graph, or calculation in the problem.
@@ -93,13 +90,11 @@ Strong AP Chemistry explanations connect the particle-level model to the evidenc
 $$
 \boxed{\text{B}}
 $$
-
-</div>
+:::
 
 ### FRQ
 
-<div class="theorem-box" markdown="1">
-
+:::theorem
 ### Solution 1
 
 $$(A)$$ Kinetics predicts how fast a reaction occurs and what factors affect rate. Equilibrium predicts the relative amounts of reactants and products after the forward and reverse processes balance.
@@ -107,8 +102,7 @@ $$(A)$$ Kinetics predicts how fast a reaction occurs and what factors affect rat
 $$(B)$$ One useful check is to inspect units, sign, and magnitude. For example, an equilibrium concentration should not be negative, and a thermodynamics calculation should have a sign that matches the stated spontaneity.
 
 $$(C)$$ Balanced equations give the mole ratios between reactants and products. Without those ratios, the stoichiometric conversion from one substance to another is not chemically meaningful.
-
-</div>
+:::
 
 ---
 

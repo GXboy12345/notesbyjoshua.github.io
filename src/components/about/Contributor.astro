@@ -1,0 +1,47 @@
+---
+import { p } from '../../lib/paths';
+
+export type ContributorLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
+interface Props {
+  name: string;
+  role: string;
+  bio: string;
+  links?: ContributorLink[];
+  variant?: 'author' | 'maintainer';
+}
+
+const { name, role, bio, links = [], variant = 'author' } = Astro.props;
+
+function linkHref(href: string): string {
+  return href.startsWith('http') ? href : p(href);
+}
+---
+
+<article class={`contributor contributor--${variant}`}>
+  <header class="contributor-head">
+    <h2 class="contributor-name">{name}</h2>
+    <p class="contributor-role">{role}</p>
+  </header>
+  <p class="contributor-bio">{bio}</p>
+  {
+    links.length > 0 && (
+      <ul class="contributor-links">
+        {links.map((link) => (
+          <li>
+            <a
+              href={linkHref(link.href)}
+              {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</article>
