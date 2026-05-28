@@ -1519,8 +1519,7 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
     var(--callout-bg) 42%
   );
   position: relative;
-  overflow-x: clip;
-  overflow-y: visible;
+  overflow: hidden;
 }
 
 .prose .callout::before,
@@ -1533,6 +1532,7 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
   right: 0;
   height: var(--callout-rail-height);
   background: var(--callout-rail);
+  border-radius: var(--radius) var(--radius) 0 0;
   pointer-events: none;
 }
 
@@ -1703,6 +1703,23 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 [data-theme='dark'] .prose .callout--warning {
   --callout-accent: #e88a6a;
   --callout-label: #f0a890;
+}
+
+.prose .callout--mistakes {
+  --callout-accent: #b85c28;
+  --callout-label: #b85c28;
+  --callout-rail-height: 4px;
+  --callout-rail: var(--callout-rail-hot),
+    repeating-linear-gradient(
+      90deg,
+      var(--callout-accent) 0 7px,
+      transparent 7px 13px
+    );
+}
+
+[data-theme='dark'] .prose .callout--mistakes {
+  --callout-accent: #e8a060;
+  --callout-label: #f0b878;
 }
 
 .prose .callout--note {

@@ -88,6 +88,11 @@ Check units on $$k$$ before picking a integrated law.
 Do not confuse rate constant units across reaction orders.
 :::
 
+:::mistakes
+- Using first-order half-life when the reaction is second order.
+- Dropping units on $$k$$ before comparing trials.
+:::
+
 :::note
 Collisions must be correctly oriented for a reaction to occur.
 :::

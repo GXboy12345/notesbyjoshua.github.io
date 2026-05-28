@@ -20,6 +20,7 @@ export const CALLOUT_DEFAULT_LABELS: Record<string, string> = {
   proof: 'Proof',
   tip: 'Tip',
   warning: 'Warning',
+  mistakes: 'Common mistakes',
   note: 'Note',
   exam: 'On the exam',
   key: 'Key formula',

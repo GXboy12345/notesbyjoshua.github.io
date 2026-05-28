@@ -51,6 +51,11 @@ On the exam, write the rate law from the slow step only.
 Do not confuse $K$ with $K_p$ when species are in different phases.
 :::
 
+:::mistakes
+- Using initial concentrations instead of equilibrium values in $K$.
+- Forgetting to omit pure solids and liquids from $K_c$.
+:::
+
 :::note
 Standard state for gases is $1\ \text{atm}$ unless the prompt says otherwise.
 :::
@@ -70,7 +75,8 @@ College Board often tests ICE tables with a small initial change.
 | `:::example` | Worked problems | `title=` example title |
 | `:::proof` | Proofs | `of=` result being proved |
 | `:::tip` | Mnemonics and exam tactics | — |
-| `:::warning` | Common mistakes and traps | — |
+| `:::warning` | Single trap or caution | — |
+| `:::mistakes` | Collected common-mistakes lists | — |
 | `:::note` | Asides and conventions | — |
 | `:::exam` | "On the test" / CB alignment | `topic=` exam focus |
 | `:::key` | One formula or rule to memorize | `name=` formula name |

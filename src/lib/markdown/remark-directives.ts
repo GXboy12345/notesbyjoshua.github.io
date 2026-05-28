@@ -21,6 +21,7 @@ const CALLOUT_NAMES = new Set([
   'proof',
   'tip',
   'warning',
+  'mistakes',
   'note',
   'exam',
   'key',
