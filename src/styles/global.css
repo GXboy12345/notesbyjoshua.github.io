@@ -1287,7 +1287,7 @@ body.ref-sheet-open {
 .prose .katex-display {
   margin: 1rem 0;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: visible;
 }
 
 .prose .katex {
@@ -1446,7 +1446,9 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 }
 
 .prose .theorem-box .katex-display {
-  margin: 0.5rem 0;
+  margin: 0.65rem 0;
+  overflow-x: auto;
+  overflow-y: visible;
 }
 
 /* ——— Note components (callouts, figures, practice, chrome) ——— */
@@ -1481,7 +1483,8 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
     var(--callout-bg) 42%
   );
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .prose .callout::before,
@@ -1538,6 +1541,38 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
   transform: translateY(-50%) rotate(45deg);
 }
 
+.prose .callout__label--named {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.prose .callout__type {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--callout-label);
+}
+
+/* Name as a filled slot—solid wash reads as a populated value, not an empty outline */
+.prose .callout__name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--text);
+  background: color-mix(in srgb, var(--callout-accent) 28%, var(--bg-elevated));
+  border: 1px solid color-mix(in srgb, var(--callout-accent) 38%, var(--border));
+  box-shadow: inset 0 1px 2px color-mix(in srgb, var(--callout-accent) 12%, transparent);
+  border-radius: 4px;
+  padding: 0.18em 0.55em;
+  line-height: 1.3;
+}
+
 .prose .callout__body {
   padding: 0.95rem 1.1rem;
 }
@@ -1559,7 +1594,13 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 }
 
 .prose .callout__body .katex-display {
-  margin: 0.5rem 0;
+  margin: 0.65rem 0;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.prose .callout__body .katex-display > .katex {
+  padding-block: 0.1em;
 }
 
 /* .theorem-box—backward-compat alias for .callout--theorem */
@@ -1996,6 +2037,12 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
   border-radius: calc(var(--radius) - 4px);
   border: 1px dashed color-mix(in srgb, var(--accent) 35%, var(--border));
   background: color-mix(in srgb, var(--accent) 5%, var(--bg-elevated));
+}
+
+.prose .mcq-solution .katex-display,
+.prose [data-solution] .katex-display {
+  overflow-x: auto;
+  overflow-y: visible;
 }
 
 .prose .mcq-solution:not(.is-revealed),
@@ -2528,7 +2575,7 @@ body.lightbox-open {
 
 .katex-display {
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: visible;
 }
 
 /* ——— Home page ——— */

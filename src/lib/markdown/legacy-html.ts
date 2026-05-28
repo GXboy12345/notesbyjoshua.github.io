@@ -21,8 +21,8 @@ function convertTheoremBoxes(src: string): string {
     }
 
     const inner = src.slice(start, closeIdx).trim();
-    const { directive, body } = classifyTheoremBody(inner);
-    result += `:::${directive}\n${body}\n:::\n\n`;
+    const { directive, attrs, body } = classifyTheoremBody(inner);
+    result += `:::${directive}${attrs}\n${body}\n:::\n\n`;
     last = closeIdx + 6;
     openRe.lastIndex = last;
   }
@@ -36,28 +36,41 @@ function findClosingDiv(src: string, from: number): number {
   return close === -1 ? -1 : close;
 }
 
-function classifyTheoremBody(inner: string): { directive: string; body: string } {
+function quoteAttrValue(value: string): string {
+  if (/[\s="'{}]/.test(value)) {
+    return `"${value.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
+  }
+  return value;
+}
+
+function calloutAttr(field: string, value: string): string {
+  return `{${field}=${quoteAttrValue(value)}}`;
+}
+
+function classifyTheoremBody(inner: string): { directive: string; attrs: string; body: string } {
   const lines = inner.split('\n');
   let i = 0;
   while (i < lines.length && !lines[i].trim()) i += 1;
-  if (i >= lines.length) return { directive: 'theorem', body: inner };
+  if (i >= lines.length) return { directive: 'theorem', attrs: '', body: inner };
 
   const first = lines[i].trim();
   const ex = /^\*\*Example\.?\*\*\s*(.*)$/i.exec(first);
   if (ex) {
-    const rest = ex[1] ? `${ex[1]}\n` : '';
-    const body = rest + lines.slice(i + 1).join('\n').trim();
-    return { directive: 'example', body: body.trim() };
+    const title = ex[1]?.trim();
+    const attrs = title ? calloutAttr('title', title) : '';
+    const body = lines.slice(i + 1).join('\n').trim();
+    return { directive: 'example', attrs, body: body.trim() };
   }
 
   const th = /^\*\*Theorem\.?\*\*\s*(.*)$/i.exec(first);
   if (th) {
-    const rest = th[1] ? `${th[1]}\n` : '';
-    const body = rest + lines.slice(i + 1).join('\n').trim();
-    return { directive: 'theorem', body: body.trim() };
+    const name = th[1]?.trim();
+    const attrs = name ? calloutAttr('name', name) : '';
+    const body = lines.slice(i + 1).join('\n').trim();
+    return { directive: 'theorem', attrs, body: body.trim() };
   }
 
-  return { directive: 'theorem', body: inner };
+  return { directive: 'theorem', attrs: '', body: inner };
 }
 
 function convertNoteImages(src: string): string {

@@ -10,6 +10,6 @@ When you add or change a **remark directive**, **callout**, **practice widget**,
 2. Open `/dev/components/` locally and verify render + interaction.
 3. If the component needs new client script wiring, confirm `src/pages/dev/components.astro` still sets `interactive={true}`.
 
-Directive inventory lives in `src/lib/markdown/remark-directives.ts` (`CALLOUT_NAMES`, `figure`, `practice`, `mcq`, `frq`, `under-construction`).
+Directive inventory lives in `src/lib/markdown/remark-directives.ts` (`CALLOUT_NAMES`, `figure`, `practice`, `mcq`, `frq`, `under-construction`). Optional callout fields are defined in `src/lib/markdown/callout-fields.ts`.
 
 Do not link this page from production navigation. It is excluded from the sitemap.

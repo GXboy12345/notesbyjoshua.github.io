@@ -12,6 +12,7 @@ import type {
 } from 'mdast';
 import { toString } from 'mdast-util-to-string';
 import { visit } from 'unist-util-visit';
+import { calloutLabelHtml } from './callout-fields';
 import { underConstructionHtml } from '../under-construction';
 
 const CALLOUT_NAMES = new Set([
@@ -53,29 +54,14 @@ function htmlNode(value: string): { type: 'html'; value: string } {
   return { type: 'html', value };
 }
 
-function calloutHtml(name: string, title: string | undefined, bodyHtml: string): string {
-  const label = title
-    ? `<div class="callout__label">${escapeHtml(title)}</div>`
-    : defaultLabel(name);
+function calloutHtml(
+  name: string,
+  attributes: Record<string, string>,
+  legacyLabel: string | undefined,
+  bodyHtml: string,
+): string {
+  const label = calloutLabelHtml(name, attributes, legacyLabel);
   return `<div class="callout callout--${name} theorem-box"><div class="callout__body">${label}${bodyHtml}</div></div>`;
-}
-
-function defaultLabel(name: string): string {
-  const labels: Record<string, string> = {
-    theorem: 'Theorem',
-    example: 'Example',
-    proof: 'Proof',
-    tip: 'Tip',
-    warning: 'Warning',
-    note: 'Note',
-    exam: 'On the exam',
-    key: 'Key formula',
-    summary: 'Summary',
-    solution: 'Solution',
-    placeholder: 'Coming soon',
-  };
-  const text = labels[name] ?? name;
-  return `<div class="callout__label">${text}</div>`;
 }
 
 function escapeHtml(s: string): string {
@@ -210,9 +196,8 @@ function processLeaf(leaf: LeafDirective, renderFragment: FragmentRenderer) {
   };
 
   if (CALLOUT_NAMES.has(name)) {
-    const title = labelText(dir);
     const body = renderFragment(dir.children as BlockContent[]);
-    replace(calloutHtml(name, title, body));
+    replace(calloutHtml(name, attrs(dir), labelText(dir), body));
     return;
   }
 

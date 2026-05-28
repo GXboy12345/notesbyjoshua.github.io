@@ -28,14 +28,18 @@ Live examples: open `/dev/components/` locally after `npm run dev` (orphan page;
 
 ### Callouts
 
-Use these for definitions, worked problems, and exam tips. An optional title goes in square brackets on the opening line.
+Use these for definitions, worked problems, and exam tips. Several callout types accept an **optional named field** on the opening line (attribute syntax). Omit the attribute when there is no name or title to show. Quote values that contain spaces: `{name="Rational Root Theorem"}`.
 
 ```markdown
-:::theorem[Rational Root Theorem]
+:::theorem{name="Rational Root Theorem"}
 If $\frac{p}{q}$ is a rational zero in lowest terms, then $p \mid a_0$ and $q \mid a_n$.
 :::
 
-:::example
+:::theorem
+Statement without a named theorem—renders the default "Theorem" label.
+:::
+
+:::example{title="Amplitude and period"}
 Find the amplitude and period of $y = 3\sin(2x)$.
 :::
 
@@ -51,24 +55,26 @@ Do not confuse $K$ with $K_p$ when species are in different phases.
 Standard state for gases is $1\ \text{atm}$ unless the prompt says otherwise.
 :::
 
-:::exam
+:::exam{topic="ICE tables"}
 College Board often tests ICE tables with a small initial change.
 :::
 
-:::key
+:::key{name="Faraday constant"}
 \boxed{F = 96485\ \text{C/mol e}^-}
 :::
 ```
 
-| Directive | Use for |
-| --- | --- |
-| `:::theorem` | Definitions, laws, named results |
-| `:::example` | Worked problems |
-| `:::tip` | Mnemonics and exam tactics |
-| `:::warning` | Common mistakes and traps |
-| `:::note` | Asides and conventions |
-| `:::exam` | "On the test" / CB alignment |
-| `:::key` | One formula or rule to memorize |
+| Directive | Use for | Optional field |
+| --- | --- | --- |
+| `:::theorem` | Definitions, laws, named results | `name=` theorem name |
+| `:::example` | Worked problems | `title=` example title |
+| `:::proof` | Proofs | `of=` result being proved |
+| `:::tip` | Mnemonics and exam tactics | — |
+| `:::warning` | Common mistakes and traps | — |
+| `:::note` | Asides and conventions | — |
+| `:::exam` | "On the test" / CB alignment | `topic=` exam focus |
+| `:::key` | One formula or rule to memorize | `name=` formula name |
+| `:::summary` | Section recap | `title=` summary title |
 
 Legacy `<div class="theorem-box" markdown="1">` still renders during migration; prefer directives for new content.
 

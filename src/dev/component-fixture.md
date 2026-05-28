@@ -16,17 +16,69 @@ $$
 
 ## Callouts
 
-:::theorem[Rate law]
+Callouts with an optional named field show the type label plus a filled name chip; omit the attribute for the default type label only.
+
+### Theorem (`name`)
+
+:::theorem{name="Rate law"}
 For elementary steps, exponents match stoichiometric coefficients only when the step is rate-determining.
 :::
 
-:::example
+:::theorem
+Unnamed theorem—default label only.
+:::
+
+### Example (`title`)
+
+:::example{title="Half-life from k"}
 Compute $$t_{1/2}$$ when $$k = 0.0300\ \text{s}^{-1}$$.
 :::
 
-:::proof
+:::example
+Unnamed example—default label only.
+:::
+
+### Proof (`of`)
+
+:::proof{of="First-order integrated rate law"}
 Assume first-order decay. Then $$\ln[A]_t = \ln[A]_0 - kt$$.
 :::
+
+:::proof
+Unnamed proof—default label only.
+:::
+
+### Key (`name`)
+
+:::key{name="First-order half-life"}
+First order: $$t_{1/2} = \frac{0.693}{k}$$
+:::
+
+:::key
+Unnamed key formula—default label only.
+:::
+
+### Exam (`topic`)
+
+:::exam{topic="Linearized plots"}
+AP often asks you to justify order from linearized plots.
+:::
+
+:::exam
+Unnamed exam note—default label only.
+:::
+
+### Summary (`title`)
+
+:::summary{title="Rate laws"}
+Rate laws come from mechanism or experiment; order is not always equal to coefficients.
+:::
+
+:::summary
+Unnamed summary—default label only.
+:::
+
+### Other callouts (no optional fields)
 
 :::tip
 Check units on $$k$$ before picking a integrated law.
@@ -38,18 +90,6 @@ Do not confuse rate constant units across reaction orders.
 
 :::note
 Collisions must be correctly oriented for a reaction to occur.
-:::
-
-:::exam
-AP often asks you to justify order from linearized plots.
-:::
-
-:::key
-First order: $$t_{1/2} = \frac{0.693}{k}$$
-:::
-
-:::summary
-Rate laws come from mechanism or experiment; order is not always equal to coefficients.
 :::
 
 :::placeholder
