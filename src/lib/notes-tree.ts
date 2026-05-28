@@ -1,6 +1,7 @@
+import { notesHubPath } from '../data/navigation';
 import type { DocEntry } from './resolve-doc';
 import { routePath, routeSlug } from './routes';
-import { p, pathsRelated } from './paths';
+import { p, pathExact, pathsRelated } from './paths';
 
 export type TreeNode = {
   label: string;
@@ -145,6 +146,7 @@ export function buildNotesTree(entries: DocEntry[]): TreeNode[] {
   const children: InternalNode[] = [];
 
   for (const entry of notes) {
+    if (pathExact(routePath(entry), notesHubPath)) continue;
     const parts = slugParts(entry);
     if (!parts.length) continue;
     insert(children, parts, entry);

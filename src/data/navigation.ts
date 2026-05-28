@@ -1,9 +1,12 @@
 export type NavItem = { label: string; href: string; children?: NavItem[] };
 
+/** Notes subject index — primary nav only, not duplicated in the library tree. */
+export const notesHubPath = '/Notes/notes/';
+
 export const mainNav: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'How to use', href: '/how-to-use-these-notes/' },
-  { label: 'Notes', href: '/Notes/notes/' },
+  { label: 'Notes', href: notesHubPath },
   { label: 'Practice', href: '/practiceproblems/practice/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Resources', href: '/Resources/resources/' },

@@ -64,6 +64,7 @@
   --font-display: 'Cabin Sketch', cursive;
   --font-meta: 'Saira SemiCondensed', system-ui, sans-serif;
   --radius: 14px;
+  --nav-highlight-radius: 8px;
   --max-read: 60rem;
   --sidebar-width: 17.5rem;
   --toc-width: 12rem;
@@ -189,7 +190,7 @@ img {
 
 .header-nav a {
   padding: 0.35rem 0.65rem;
-  border-radius: 999px;
+  border-radius: var(--nav-highlight-radius);
   font-size: 0.875rem;
   color: var(--muted);
   transition: color var(--motion-fast) var(--ease-out),
@@ -295,7 +296,7 @@ img {
   display: grid;
   gap: 0.15rem;
   padding: 0.45rem 0.5rem;
-  border-radius: 8px;
+  border-radius: var(--nav-highlight-radius);
   color: inherit;
   text-decoration: none;
   transition: background-color var(--motion-fast) var(--ease-out);
@@ -861,7 +862,7 @@ img {
 .sidebar-primary-link {
   display: block;
   padding: 0.45rem 0.65rem;
-  border-radius: 999px;
+  border-radius: var(--nav-highlight-radius);
   font-size: 0.875rem;
   color: var(--muted);
   text-decoration: none;
@@ -888,7 +889,7 @@ img {
   display: inline-flex;
   align-items: center;
   padding: 0.28rem 0.6rem;
-  border-radius: 999px;
+  border-radius: var(--nav-highlight-radius);
   font-family: var(--font-meta);
   font-size: 0.72rem;
   font-weight: 600;
@@ -946,7 +947,7 @@ img {
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 0.15rem;
+  padding-inline: 0.1rem 0.45rem;
   scrollbar-gutter: stable;
   scrollbar-width: thin;
 }
@@ -1060,8 +1061,8 @@ img {
   cursor: pointer;
   list-style: none;
   padding: 0.28rem 0.45rem;
-  margin: 0 -0.45rem;
-  border-radius: 8px;
+  margin: 0.08rem 0;
+  border-radius: var(--nav-highlight-radius);
   transition: background-color var(--motion-fast) var(--ease-out);
 }
 
@@ -1109,8 +1110,8 @@ img {
 
 .notes-tree .tree-link--leaf {
   padding: 0.28rem 0.45rem 0.28rem 1.75rem;
-  margin: 0.08rem -0.45rem;
-  border-radius: 8px;
+  margin: 0.08rem 0;
+  border-radius: var(--nav-highlight-radius);
   transition: color var(--motion-fast) var(--ease-out),
     background-color var(--motion-fast) var(--ease-out),
     transform var(--motion-fast) var(--ease-out);
@@ -1119,7 +1120,7 @@ img {
 .notes-tree .tree-link--branch {
   padding: 0;
   margin: 0;
-  border-radius: 6px;
+  border-radius: var(--nav-highlight-radius);
 }
 
 .notes-tree .tree-link {
@@ -1153,8 +1154,8 @@ img {
 .notes-tree .tree-summary .tree-link[aria-current='page'] {
   background: color-mix(in srgb, var(--accent-soft) 80%, transparent);
   padding: 0.05rem 0.35rem;
-  margin: -0.05rem -0.35rem;
-  border-radius: 6px;
+  margin: -0.05rem 0;
+  border-radius: var(--nav-highlight-radius);
 }
 
 .prose .katex-display {
