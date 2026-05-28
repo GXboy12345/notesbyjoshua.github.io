@@ -45,5 +45,13 @@ const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Jo
         <p>Study notes by Joshua · <a href="https://github.com/notesbyjoshua">GitHub</a></p>
       </footer>
     </div>
+    <script>
+      import { initHashScroll, scrollToCurrentHash } from '../scripts/hash-scroll.ts';
+
+      initHashScroll();
+      document.addEventListener('astro:page-load', () => {
+        scrollToCurrentHash();
+      });
+    </script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import matter from 'gray-matter';
-import { marked } from 'marked';
+import { Marked, type Token } from 'marked';
 import type { DocEntry } from './resolve-doc';
 import { routeSlug } from './routes';
 
@@ -71,6 +71,22 @@ function slugify(text: string): string {
     .replace(/\s+/g, '-');
 }
 
+function headingPlainText(tokens: Token[]): string {
+  let out = '';
+  for (const token of tokens) {
+    if (token.type === 'text') out += token.text;
+    else if ('tokens' in token && Array.isArray(token.tokens)) out += headingPlainText(token.tokens);
+  }
+  return out.trim();
+}
+
+function assignHeadingSlug(text: string, counts: Map<string, number>): string {
+  const base = slugify(text) || 'section';
+  const seen = counts.get(base) ?? 0;
+  counts.set(base, seen + 1);
+  return seen === 0 ? base : `${base}-${seen + 1}`;
+}
+
 export function headingsFromMarkdown(md: string) {
   const out: { depth: number; slug: string; text: string }[] = [];
   for (const line of md.split('\n')) {
@@ -83,5 +99,17 @@ export function headingsFromMarkdown(md: string) {
 }
 
 export function renderDocHtml(md: string): string {
-  return marked.parse(md, { async: false }) as string;
+  const slugCounts = new Map<string, number>();
+  const parser = new Marked({
+    renderer: {
+      heading({ tokens, depth }) {
+        const plain = headingPlainText(tokens);
+        const id = assignHeadingSlug(plain, slugCounts);
+        const inner = this.parser.parseInline(tokens);
+        return `<h${depth} id="${id}">${inner}</h${depth}>\n`;
+      },
+    },
+  });
+
+  return parser.parse(md, { async: false }) as string;
 }
