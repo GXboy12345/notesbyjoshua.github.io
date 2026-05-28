@@ -745,21 +745,56 @@ $$
 $$
 :::
 :::
-:::
+
+:::frq{id=precalc-fundeqineq-4}
+4. Solve for $$x$$ and discard any extraneous solutions: $$\dfrac{1}{x-1} + \dfrac{2}{x^2-1} = \dfrac{3}{x+1}$$.
 :::
 
-4. Solve for $$x$$ and discard any extraneous solutions: $$\dfrac{1}{x-1} + \dfrac{2}{x^2-1} = \dfrac{3}{x+1}$$.
+:::frq{id=precalc-fundeqineq-5}
 5. Solve for $$x$$ in $$\mathbb{R}$$: $$9^x - 10\cdot 3^x + 9 = 0$$.
+:::
+
+:::frq{id=precalc-fundeqineq-6}
 6. Solve for $$x$$ in $$\mathbb{R}$$ and check every candidate in the original equation: $$\sqrt{2x+3} + \sqrt{x+1} = 3$$.
+:::
+
+:::frq{id=precalc-fundeqineq-7}
 7. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\dfrac{3x+1}{x-2} > 2$$.
+:::
+
+:::frq{id=precalc-fundeqineq-8}
 8. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x - 2\rvert + \lvert x + 4\rvert \le 10$$.
+:::
+
+:::frq{id=precalc-fundeqineq-9}
 9. Solve for $$x$$ in $$\mathbb{R}$$ and write the answer in interval notation: $$\lvert x^{2} - 9\rvert \le 5$$.
+:::
+
+:::frq{id=precalc-fundeqineq-10}
 10. Solve in $$\mathbb{R}$$: $$(x-1)^{2}(x-4)(x+2) < 0$$. Explain how repeated roots change the sign chart compared with all simple roots.
+:::
+
+:::frq{id=precalc-fundeqineq-11}
 11. Solve in $$\mathbb{R}$$: $$x^{3} - 5x^{2} + 6x \ge 0$$.
+:::
+
+:::frq{id=precalc-fundeqineq-12}
 12. Solve in $$\mathbb{R}$$: $$\dfrac{x^{2} - 4}{x^{2} + x} \le 0$$. Give the domain, a single rational inequality of the form $$\dfrac{R(x)}{Q(x)} \le 0$$ with no common factors, and the solution in interval notation.
+:::
+
+:::frq{id=precalc-fundeqineq-13}
 13. Solve in $$\mathbb{R}$$: $$\sqrt{4 - x^{2}} \ge x$$. Find the radical domain first, then split into $$x < 0$$ and $$x \ge 0$$ before squaring where legal.
+:::
+
+:::frq{id=precalc-fundeqineq-14}
 14. Solve in $$\mathbb{R}$$: $$\sqrt{x^{2} + 5} \le x + 2$$. Impose all conditions needed before and after squaring.
+:::
+
+:::frq{id=precalc-fundeqineq-15}
 15. Determine the symmetries of both graphs: $$f(x)=\dfrac{x^2}{x^2+1}$$ and $$g(x)=x\lvert x\rvert$$. For each, decide whether the graph has $$y$$-axis symmetry, $$x$$-axis symmetry, origin symmetry, or none.
+:::
+
+:::frq{id=precalc-fundeqineq-16}
 16. (Bonus, Markov equations)
    Our goal is to find all positive integer solutions $$(x,y)$$ to
    $$
@@ -771,3 +806,5 @@ $$
    $$(C)$$ Suppose $$(x,y)$$ is a positive integer solution with $$x\ge y\ge 2$$. Prove that the other root $$x'$$ is a positive integer and that $$x'<y$$.
    $$(D)$$ Explain why repeatedly replacing the larger coordinate by the smaller Vieta root must eventually reach a solution with one coordinate equal to $$1$$.
    $$(E)$$ Reverse the process to describe all positive integer solutions.
+:::
+:::

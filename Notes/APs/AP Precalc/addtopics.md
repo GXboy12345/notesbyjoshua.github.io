@@ -772,21 +772,56 @@ $$
 $$
 :::
 :::
-:::
+
+:::frq{id=precalc-addtopics-4}
+4. Prove by induction that $$\sum_{k=1}^{n} k^3 = \frac{n^2 (n+1)^2}{4}$$ for all integers $$n \ge 1$$. Extension: This looks like the square of $$1 + 2 + ... + n = \frac{n(n+1)}{2}$$! Prove that this is true (you should not use induction here).
 :::
 
-4. Prove by induction that $$\sum_{k=1}^{n} k^3 = \frac{n^2 (n+1)^2}{4}$$ for all integers $$n \ge 1$$. Extension: This looks like the square of $$1 + 2 + ... + n = \frac{n(n+1)}{2}$$! Prove that this is true (you should not use induction here).
+:::frq{id=precalc-addtopics-5}
 5. Prove by induction that $$8^{2n} - 3^{2n}$$ is divisible by $$55$$ for all integers $$n \ge 1$$.
+:::
+
+:::frq{id=precalc-addtopics-6}
 6. Prove by induction that $$2^{n}\ge n^{3}$$ for all integers $$n\ge 10$$.
+:::
+
+:::frq{id=precalc-addtopics-7}
 7. Expand $$(3x+2y)^{5}$$ using the binomial theorem.
+:::
+
+:::frq{id=precalc-addtopics-8}
 8. What is the coefficient of the term containing $$x^{22}$$ in $$\left(x^{3} - \dfrac{4}{\sqrt{x}}\right)^{12}$$?
+:::
+
+:::frq{id=precalc-addtopics-9}
 9. Use the binomial theorem to prove that $$9^{n}-1$$ is divisible by $$8$$ for every integer $$n\ge 1$$.
+:::
+
+:::frq{id=precalc-addtopics-10}
 10. A nonconstant arithmetic sequence has first term $$5$$ and common difference $$d$$. Its first, third, and seventh terms form a geometric sequence in that order. Find $$d$$ and the three geometric terms.
+:::
+
+:::frq{id=precalc-addtopics-11}
 11. The sequence $$1,x,y,z$$ is arithmetic. The sequence $$1,p,q,z$$ is geometric. Both sequences are strictly increasing and contain only integers, and $$z$$ is as small as possible. What is the value of $$x+y+z+p+q$$? (2025 AMC 10A)
+:::
+
+:::frq{id=precalc-addtopics-12}
 12. Find $$\sum_{i=5}^{100}(3i-2)$$.
+:::
+
+:::frq{id=precalc-addtopics-13}
 13. Evaluate $$\sum_{i=6}^{12} 3\cdot 2^i$$.
+:::
+
+:::frq{id=precalc-addtopics-14}
 14. The first three terms of a geometric series are the integers $$a$$, $$720$$, and $$b$$, where $$a < 720 < b$$. What is the sum of the digits of the least possible value of $$b$$? (2024 AMC 10A).
+:::
+
+:::frq{id=precalc-addtopics-15}
 15. Evaluate the finite sum $$\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1)$$ in closed form. Hint: $$k\binom{n}{k} = n\binom{n-1}{k-1}$$
+:::
+
+:::frq{id=precalc-addtopics-16}
 16. (Bonus, Binet's Formula)
    Binet's Formula is a famous explicit formula for the Fibonnaci series. Let $$F_0=0$$, $$F_1=1$$, and $$F_{n+2}=F_{n+1}+F_n$$ for $$n\ge 0$$.
    $$(A)$$ Define a function $$G(x)=\sum_{n=0}^{\infty}F_nx^n$$. Use the recurrence to show that $$G(x)=\frac{x}{1-x-x^2}$$. $$G(x)$$ is called the generating function of $$F_n$$. Hint: How can you telescope to cancel out the correct terms?
@@ -795,3 +830,5 @@ $$
    $$
    F_n=\frac{\alpha^n-\beta^n}{\sqrt5}.
    $$
+:::
+:::

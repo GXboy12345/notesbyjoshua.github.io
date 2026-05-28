@@ -1,6 +1,18 @@
-import type { BlockContent, ContainerDirective, List, ListItem, Parent, Root } from 'mdast';
+import type {
+  BlockContent,
+  ContainerDirective,
+  Image,
+  LeafDirective,
+  List,
+  ListItem,
+  Paragraph,
+  Parent,
+  Root,
+  TextDirective,
+} from 'mdast';
 import { toString } from 'mdast-util-to-string';
 import { visit } from 'unist-util-visit';
+import { underConstructionHtml } from '../under-construction';
 
 const CALLOUT_NAMES = new Set([
   'theorem',
@@ -72,6 +84,55 @@ function escapeHtml(s: string): string {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+function figureImgTag(url: string, alt: string, widthClass: string): string {
+  return `<img class="note-img${widthClass}" src="${escapeHtml(url)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" />`;
+}
+
+/** Image markdown inside a figure directive is often a paragraph child, not a block-level image node. */
+function extractFigureContent(
+  child: BlockContent,
+  widthClass: string,
+): { imgHtml?: string; caption?: string } {
+  if (child.type === 'image') {
+    const img = child as Image;
+    return { imgHtml: figureImgTag(img.url, img.alt ?? '', widthClass) };
+  }
+
+  if (child.type !== 'paragraph') return {};
+
+  const captionParts: string[] = [];
+  let imgHtml = '';
+
+  for (const node of (child as Paragraph).children ?? []) {
+    if (node.type === 'image' && !imgHtml) {
+      const img = node as Image;
+      imgHtml = figureImgTag(img.url, img.alt ?? '', widthClass);
+      continue;
+    }
+    if (node.type === 'text') {
+      const text = node.value.trim();
+      if (text) captionParts.push(text);
+    }
+  }
+
+  if (imgHtml) {
+    return { imgHtml, caption: captionParts.join('\n') || undefined };
+  }
+
+  const text = toString(child);
+  const imgMatch = /!\[([^\]]*)\]\(([^)]+)\)/.exec(text);
+  if (imgMatch) {
+    const rest = text.replace(imgMatch[0], '').trim();
+    return {
+      imgHtml: figureImgTag(imgMatch[2], imgMatch[1], widthClass),
+      caption: rest || undefined,
+    };
+  }
+
+  const caption = text.trim();
+  return caption ? { caption } : {};
 }
 
 function isOrphanFenceParagraph(node: BlockContent): boolean {
@@ -163,21 +224,11 @@ function processLeaf(leaf: LeafDirective, renderFragment: FragmentRenderer) {
     let imgHtml = '';
     let caption = '';
 
-        for (const child of parts) {
-          if (child.type === 'image') {
-            imgHtml = `<img class="note-img${widthClass}" src="${escapeHtml(child.url)}" alt="${escapeHtml(child.alt ?? '')}" loading="lazy" decoding="async" />`;
-            continue;
-          }
-          if (child.type === 'paragraph') {
-            const text = toString(child);
-            const imgMatch = /!\[([^\]]*)\]\(([^)]+)\)/.exec(text);
-            if (imgMatch) {
-              imgHtml = `<img class="note-img${widthClass}" src="${escapeHtml(imgMatch[2])}" alt="${escapeHtml(imgMatch[1])}" loading="lazy" decoding="async" />`;
-            } else if (!caption) {
-              caption = text;
-            }
-          }
-        }
+    for (const child of parts) {
+      const { imgHtml: nextImg, caption: nextCaption } = extractFigureContent(child, widthClass);
+      if (nextImg) imgHtml = nextImg;
+      if (nextCaption) caption = caption ? `${caption}\n${nextCaption}` : nextCaption;
+    }
 
     const cap = caption ? `<figcaption class="note-figure__caption">${escapeHtml(caption)}</figcaption>` : '';
     const wrap =
@@ -242,6 +293,19 @@ function processLeaf(leaf: LeafDirective, renderFragment: FragmentRenderer) {
     return;
   }
 
+  if (name === 'under-construction' || name === 'construction') {
+    const title = labelText(dir);
+    const body = renderFragment(dir.children as BlockContent[]);
+    replace(
+      underConstructionHtml({
+        variant: 'block',
+        label: title,
+        bodyHtml: body,
+      }),
+    );
+    return;
+  }
+
   if (name === 'frq') {
     const a = attrs(dir);
     const id = a.id ?? '';
@@ -279,8 +343,28 @@ function processLeaf(leaf: LeafDirective, renderFragment: FragmentRenderer) {
 
 }
 
+function underConstructionInlineNode(label: string | undefined) {
+  return htmlNode(
+    underConstructionHtml({
+      variant: 'inline',
+      label,
+    }),
+  );
+}
+
+function processInlineUnderConstruction(tree: Root) {
+  visit(tree, (node, index, parent) => {
+    if (!parent || index === undefined) return;
+    if (node.type !== 'textDirective' && node.type !== 'leafDirective') return;
+    const dir = node as TextDirective | LeafDirective;
+    if (dir.name !== 'under-construction' && dir.name !== 'construction') return;
+    parent.children[index] = underConstructionInlineNode(labelText(dir));
+  });
+}
+
 export function remarkDirectives(renderFragment: FragmentRenderer) {
   return (tree: Root) => {
+    processInlineUnderConstruction(tree);
     for (;;) {
       const leaf = findLeafDirective(tree);
       if (!leaf) break;

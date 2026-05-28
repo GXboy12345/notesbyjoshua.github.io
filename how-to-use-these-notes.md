@@ -31,8 +31,12 @@ Some pages include **Check** buttons on multiple-choice items and **Show solutio
 
 Spot an error or want a topic added? Use the [Feedback and Requests](/feedback/) page so requests stay in one place.
 
-## Seeing a construction sign 🚧
+## Under construction markers
 
-If you see a construction sign, this means that the page is currently under development. Please check back later for updates! Note that all individual note pages will not have a 🚧 sign on it, so look at the home page or the subject hub for whether a course is marked available, in progress, or draft.
+Some hubs and headings show an **under construction** badge. That means the page or course is still being written—check back later.
+
+:::under-construction
+Individual unit pages usually do not repeat this banner. Use the [home page](/) or the subject hub status (Available, In progress, Draft) to see what is ready.
+:::
 
 *This site is in active development; new notes and polish are added regularly.*

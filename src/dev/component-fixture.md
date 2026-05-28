@@ -56,6 +56,22 @@ Rate laws come from mechanism or experiment; order is not always equal to coeffi
 Future widget slot—replace when a new directive ships.
 :::
 
+---
+
+## Under construction
+
+Inline badge (text directive, e.g. next to a heading): :under-construction
+
+Block banner:
+
+:::under-construction
+This unit is still being written. Check the home page for course status.
+:::
+
+Custom inline label: :under-construction[Draft]
+
+---
+
 Standalone solution callout:
 
 :::solution

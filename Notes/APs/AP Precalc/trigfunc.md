@@ -1275,25 +1275,64 @@ $$
 $$
 :::
 :::
+
+:::frq{id=precalc-trigfunc-4}
+4. A pulley system has two wheels connected by a belt without slipping. Wheel A has radius $$4$$ inches and rotates at $$150$$ revolutions per minute. Wheel B rotates at $$60$$ revolutions per minute. Find the radius of Wheel B. Then find the linear belt speed in inches per second.
+:::
+
+:::frq{id=precalc-trigfunc-5}
+5. Let $$\theta$$ be in Quadrant II and suppose $$\tan\theta=-\frac{8}{15}$$. Find exact values of $$\sin\theta$$, $$\cos\theta$$, $$\sec\theta$$, $$\csc\theta$$, and $$\cot\theta$$. Then evaluate $$\sin(\pi-\theta)$$ and $$\cos(\theta+\pi)$$.
+:::
+
+:::frq{id=precalc-trigfunc-6}
+6. Let $$P=(x,y)$$ be a point on the unit circle in Quadrant III. If $$x-y=\frac{\sqrt2}{2}$$, find $$P$$ and the angle $$\theta\in[0,2\pi)$$ whose terminal side passes through $$P$$.
+:::
+
+:::frq{id=precalc-trigfunc-7}
+7. Evaluate exactly: $$6\sin\left(-\frac{7\pi}{6}\right)-4\cos\left(\frac{11\pi}{3}\right)+3\tan\left(-\frac{13\pi}{4}\right)-2\sec\left(\frac{17\pi}{6}\right).$$
+:::
+
+:::frq{id=precalc-trigfunc-8}
+8. Solve exactly on $$[0,4\pi)$$: $$2\sin^2x-\sin x-1=0.$$
+:::
+
+:::frq{id=precalc-trigfunc-9}
+9. Solve exactly on $$[0,2\pi)$$:$$2\cos^2x+\sqrt3\cos x-1=0.$$
+:::
+
+:::frq{id=precalc-trigfunc-10}
+10. Solve exactly on $$[0,3\pi)$$:$$\tan^2x-3=0.$$
+:::
+
+:::frq{id=precalc-trigfunc-11}
+11. The radius of the circle in the figure is 2 units. Express the length of $$DC$$ in terms of $$\alpha$$.
+
+:::figure{width=480}
+![parent functions](/assets/APs/AP%20Precalc/cirtri1.png)
 :::
 :::
 
-4. A pulley system has two wheels connected by a belt without slipping. Wheel A has radius $$4$$ inches and rotates at $$150$$ revolutions per minute. Wheel B rotates at $$60$$ revolutions per minute. Find the radius of Wheel B. Then find the linear belt speed in inches per second.
-5. Let $$\theta$$ be in Quadrant II and suppose $$\tan\theta=-\frac{8}{15}$$. Find exact values of $$\sin\theta$$, $$\cos\theta$$, $$\sec\theta$$, $$\csc\theta$$, and $$\cot\theta$$. Then evaluate $$\sin(\pi-\theta)$$ and $$\cos(\theta+\pi)$$.
-6. Let $$P=(x,y)$$ be a point on the unit circle in Quadrant III. If $$x-y=\frac{\sqrt2}{2}$$, find $$P$$ and the angle $$\theta\in[0,2\pi)$$ whose terminal side passes through $$P$$.
-7. Evaluate exactly: $$6\sin\left(-\frac{7\pi}{6}\right)-4\cos\left(\frac{11\pi}{3}\right)+3\tan\left(-\frac{13\pi}{4}\right)-2\sec\left(\frac{17\pi}{6}\right).$$
-8. Solve exactly on $$[0,4\pi)$$: $$2\sin^2x-\sin x-1=0.$$
-9. Solve exactly on $$[0,2\pi)$$:$$2\cos^2x+\sqrt3\cos x-1=0.$$
-10. Solve exactly on $$[0,3\pi)$$:$$\tan^2x-3=0.$$
-11. The radius of the circle in the figure is 2 units. Express the length of $$DC$$ in terms of $$\alpha$$.
-   :::figure{width=480}
-![parent functions](/assets/APs/AP%20Precalc/cirtri1.png)
+:::frq{id=precalc-trigfunc-12}
 12. Prove the identity: $$\frac{1-\cos\theta}{\sin\theta}+\frac{\sin\theta}{1-\cos\theta}=2\csc\theta.$$ Then state all values of $$\theta$$ in $$[0,2\pi)$$ for which the original identity is undefined.
+:::
+
+:::frq{id=precalc-trigfunc-13}
 13. Prove the identity: $$1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}=\sin\theta\cos\theta.$$
+:::
+
+:::frq{id=precalc-trigfunc-14}
 14. For each of the following trigonometric expressions, find a segment in the diagram that has length equal to the trigonometric expression: $$\sin\theta, \cos\theta, \sec\theta, \csc\theta, \tan\theta, \cot\theta$$. Note that you are not asked to express each trigonometric function in terms of multiple segments in the diagram. You must find a segment whose whole length equals the corresponding trig function. The graph is given below:
-   :::figure{width=480}
+
+:::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/cirtri2.png)
+:::
+:::
+
+:::frq{id=precalc-trigfunc-15}
 15. On $$[0,2\pi)$$, solve the equation numerically to three decimal places: $$3\sin x-2\cos x=1.$$ (Hint: Try the substitution $$t=\tan(x/2)$$, and solve for $$x$$ using the $$\tan^{-1}$$ button on the calculator.)
+:::
+
+:::frq{id=precalc-trigfunc-16}
 16. (Bonus, rational points on the unit circle)
    The unit circle is
    $$
@@ -1308,3 +1347,5 @@ $$
    $$(C)$$ Explain why every rational value of $$m$$ gives a rational point on the unit circle.
    $$(D)$$ Use your formula to find a rational point on the unit circle when $$m=\frac23$$, then interpret that point as $$(\cos\theta,\sin\theta)$$ for some angle $$\theta$$.
    $$(E)$$ Why does this method not produce the point $$(-1,0)$$ as the second intersection point? What slope would be needed to reach the point $$(1,0)$$?
+:::
+:::

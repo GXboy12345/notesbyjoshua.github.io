@@ -1529,21 +1529,56 @@ $$
 $$
 :::
 :::
-:::
+
+:::frq{id=precalc-conicsections-4}
+4. An ellipse has foci $$(1,4)$$ and $$(1,-2)$$ and passes through $$(5,1)$$. Find its standard-form equation and its eccentricity.
 :::
 
-4. An ellipse has foci $$(1,4)$$ and $$(1,-2)$$ and passes through $$(5,1)$$. Find its standard-form equation and its eccentricity.
+:::frq{id=precalc-conicsections-5}
 5. The ellipse $$\dfrac{(x+2)^{2}}{36}+\dfrac{(y-1)^{2}}{20}=1$$ has foci $$F_1$$ and $$F_2$$. If $$P$$ is the point on the ellipse with $$x=1$$ and $$y>1$$, find $$PF_1$$ and $$PF_2$$ separately.
+:::
+
+:::frq{id=precalc-conicsections-6}
 6. Find all real numbers $$m$$ such that the line $$y=mx+3$$ is tangent to the ellipse $$\dfrac{x^{2}}{9}+\dfrac{y^{2}}{4}=1$$.
+:::
+
+:::frq{id=precalc-conicsections-7}
 7. Complete the square for $$9y^{2}-4x^{2}-54y-16x+29=0$$. Write the equation in standard form and give the center, vertices, foci, eccentricity, and asymptotes. Graph the conic.
+:::
+
+:::frq{id=precalc-conicsections-8}
 8. A hyperbola has center $$(2,-1)$$, asymptotes $$y+1=\pm\dfrac{3}{2}(x-2)$$, and one focus at $$(2+\sqrt{52},-1)$$. Assuming it opens left/right, find its standard-form equation.
+:::
+
+:::frq{id=precalc-conicsections-9}
 9. Find all intersection points in $$\mathbb{R}^{2}$$ of the ellipse $$\dfrac{x^{2}}{16}+\dfrac{y^{2}}{9}=1$$ and the hyperbola $$\dfrac{x^{2}}{4}-\dfrac{y^{2}}{9}=1$$.
+:::
+
+:::frq{id=precalc-conicsections-10}
 10. With focus at $$(0,0)$$, directrix $$x=-6$$, and eccentricity $$e=\dfrac{2}{3}$$, derive the Cartesian equation of the conic. Write it in standard form and identify the conic type.
+:::
+
+:::frq{id=precalc-conicsections-11}
 11. Convert $$r=\dfrac{10}{2-\cos\theta}$$ to a Cartesian equation. Identify the conic type, eccentricity, center, vertices, and foci.
+:::
+
+:::frq{id=precalc-conicsections-12}
 12. For $$r=\dfrac{12}{3+4\cos\theta}$$, identify the conic type and eccentricity, then find the values of $$\theta$$ where the denominator vanishes. Explain what those angles represent geometrically.
+:::
+
+:::frq{id=precalc-conicsections-13}
 13. A circle is tangent to both axes in Quadrant I and its center lies on the ellipse $$\dfrac{x^{2}}{25}+\dfrac{y^{2}}{9}=1$$. Find the circle's radius.
+:::
+
+:::frq{id=precalc-conicsections-14}
 14. Show that the conic $$Ax^{2}+Cy^{2}+Dx+Ey+F=0$$ has center $$(h,k)$$ when $$A\ne 0$$ and $$C\ne 0$$. Derive formulas for $$h$$ and $$k$$ in terms of $$A,C,D,E$$, then find the center of $$5x^{2}-3y^{2}+20x+18y-11=0$$.
+:::
+
+:::frq{id=precalc-conicsections-15}
 15. For the parabola $$y^{2}=4px$$ with $$p>0$$, let a line through the focus $$(p,0)$$ have slope $$m\ne 0$$ and meet the parabola at two distinct points $$A$$ and $$B$$. Prove that the product of the $$y$$-coordinates of $$A$$ and $$B$$ equals $$-4p^{2}$$.
+:::
+
+:::frq{id=precalc-conicsections-16}
 16. (Bonus, 2026 USAPhO)
 You are studying the motion of charged particles constrained to the $$xy$$-plane. Particle $$\alpha$$, with charge $$+1\ \mathrm{C}$$, is fixed at the origin.
 For motion under an inverse-square central force, trajectories are conic sections with the fixed particle at a focus. In polar coordinates:
@@ -1571,3 +1606,5 @@ You have a camera that takes three snapshots of a moving particle at equal time 
    As a particle passes near the scattering center, its direction changes due to Coulomb repulsion. Let $$\alpha$$ denote the total deflection angle of the trajectory, i.e. the angle between the incoming and outgoing asymptotic directions.
    $$(i)$$ Using the conic form of the trajectory, derive a formula for $$B(\alpha)$$.
    $$(ii)$$ Using the result of part $$(B)$$, express $$B(\alpha)$$ in terms of $$r_0$$.
+:::
+:::

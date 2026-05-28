@@ -18,22 +18,5 @@ const { html, headings } = renderDoc(md);
   interactive={true}
   noindex={true}
 >
-  <p class="dev-fixture-banner">
-    Orphan dev page—not in nav. Source: <code>src/dev/component-fixture.md</code>.
-    See <code>src/dev/README.md</code> when adding components.
-  </p>
   <Fragment set:html={html} />
 </DocLayout>
-
-<style>
-  .dev-fixture-banner {
-    margin: 0 0 1.25rem;
-    padding: 0.65rem 0.85rem;
-    border: 1px dashed var(--border);
-    border-radius: var(--radius);
-    background: color-mix(in srgb, var(--accent) 5%, var(--bg-elevated));
-    font-family: var(--font-ui);
-    font-size: 0.875rem;
-    line-height: 1.45;
-  }
-</style>

@@ -1423,10 +1423,10 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 
 .prose .theorem-box {
   margin: 1.25rem 0;
-  padding: 0.95rem 1.1rem;
-  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
+  padding: calc(0.95rem + var(--callout-rail-height, 3px)) 1.1rem 0.95rem;
+  border: 1px solid var(--callout-border, color-mix(in srgb, var(--accent) 22%, var(--border)));
   border-radius: var(--radius);
-  background: color-mix(in srgb, var(--accent) 6%, var(--bg-elevated));
+  background: var(--callout-surface-wash), var(--callout-bg);
 }
 
 .prose .theorem-box > :first-child {
@@ -1464,21 +1464,52 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
   --callout-bg: color-mix(in srgb, var(--callout-accent) 6%, var(--bg-elevated));
 }
 
+.prose .callout,
+.prose .theorem-box,
+.prose .uc--block {
+  --callout-rail-height: 3px;
+  --callout-rail-hot: linear-gradient(
+    90deg,
+    var(--callout-accent) 0%,
+    color-mix(in srgb, var(--callout-accent) 55%, transparent) 30%,
+    transparent 100%
+  );
+  --callout-rail: var(--callout-rail-hot);
+  --callout-surface-wash: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--callout-accent) 9%, var(--bg-elevated)) 0%,
+    var(--callout-bg) 42%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.prose .callout::before,
+.prose .theorem-box::before,
+.prose .uc--block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--callout-rail-height);
+  background: var(--callout-rail);
+  pointer-events: none;
+}
+
 .prose .callout {
   margin: 1.25rem 0;
   padding: 0;
   border: 1px solid var(--callout-border);
   border-radius: var(--radius);
-  background: var(--callout-bg);
-  border-left-width: 3px;
-  border-left-color: var(--callout-accent);
-  overflow: hidden;
+  background: var(--callout-surface-wash), var(--callout-bg);
 }
 
 .prose .callout__label {
   display: block;
+  position: relative;
   margin: 0;
-  padding: 0.55rem 1.1rem 0.45rem;
+  padding: 0.55rem 1.1rem 0.45rem 1.65rem;
   font-family: var(--font-ui);
   font-size: 0.72rem;
   font-weight: 600;
@@ -1486,7 +1517,25 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
   text-transform: uppercase;
   color: var(--callout-label);
   border-bottom: 1px solid color-mix(in srgb, var(--callout-accent) 14%, var(--border));
-  background: color-mix(in srgb, var(--callout-accent) 4%, var(--bg-elevated));
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--callout-accent) 10%, var(--bg-elevated)) 0%,
+    color-mix(in srgb, var(--callout-accent) 4%, var(--bg-elevated)) 38%,
+    var(--bg-elevated) 100%
+  );
+}
+
+.prose .callout__label::before {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background: var(--callout-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--callout-accent) 22%, transparent);
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .prose .callout__body {
@@ -1518,8 +1567,6 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 .prose .theorem-box {
   --callout-accent: var(--accent);
   --callout-label: var(--accent);
-  border-left-width: 3px;
-  border-left-color: var(--callout-accent);
 }
 
 .prose .callout--solution {
@@ -1545,6 +1592,8 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 .prose .callout--proof {
   --callout-accent: #5c4a8a;
   --callout-label: #5c4a8a;
+  --callout-rail: var(--callout-rail-hot),
+    repeating-linear-gradient(90deg, var(--callout-accent) 0 10px, transparent 10px 16px);
 }
 
 [data-theme='dark'] .prose .callout--proof {
@@ -1565,6 +1614,13 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 .prose .callout--warning {
   --callout-accent: #a83820;
   --callout-label: #a83820;
+  --callout-rail-height: 4px;
+  --callout-rail: var(--callout-rail-hot),
+    repeating-linear-gradient(
+      -45deg,
+      var(--callout-accent) 0 6px,
+      color-mix(in srgb, var(--callout-accent) 16%, var(--bg-elevated)) 6px 12px
+    );
 }
 
 [data-theme='dark'] .prose .callout--warning {
@@ -1580,13 +1636,27 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 .prose .callout--exam {
   --callout-accent: var(--accent);
   --callout-label: var(--accent);
-  border-left-width: 4px;
+  --callout-rail-height: 4px;
+  --callout-rail: linear-gradient(
+    90deg,
+    var(--callout-accent) 0%,
+    color-mix(in srgb, var(--callout-accent) 50%, transparent) 48%,
+    transparent 100%
+  );
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .prose .callout--key {
   --callout-accent: #8a6a18;
   --callout-label: #8a6a18;
+  --callout-rail-height: 4px;
+  --callout-rail: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--callout-accent) 80%, #fff) 0%,
+    var(--callout-accent) 18%,
+    color-mix(in srgb, var(--callout-accent) 45%, transparent) 42%,
+    transparent 100%
+  );
 }
 
 [data-theme='dark'] .prose .callout--key {
@@ -1602,6 +1672,106 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 [data-theme='dark'] .prose .callout--summary {
   --callout-accent: #6eb8b8;
   --callout-label: #8ed0d0;
+}
+
+/* Under construction (inline badge + block banner) */
+.prose .uc {
+  --uc-accent: #9a6a12;
+  --uc-border: color-mix(in srgb, var(--uc-accent) 28%, var(--border));
+  --uc-bg: color-mix(in srgb, var(--uc-accent) 10%, var(--bg-elevated));
+  --callout-accent: var(--uc-accent);
+  --callout-rail-height: 4px;
+  --callout-rail: var(--callout-rail-hot),
+    repeating-linear-gradient(
+      -45deg,
+      var(--uc-accent) 0 5px,
+      color-mix(in srgb, var(--uc-accent) 14%, var(--bg-elevated)) 5px 10px
+    );
+  color: var(--text);
+}
+
+[data-theme='dark'] .prose .uc {
+  --uc-accent: #e0b04a;
+}
+
+.prose .uc--inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  margin-inline-start: 0.35em;
+  padding: 0.12em 0.5em 0.12em 0.35em;
+  vertical-align: middle;
+  font-family: var(--font-ui);
+  font-size: 0.72em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  white-space: nowrap;
+  border: 1px solid var(--uc-border);
+  border-radius: 1px;
+  background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--uc-accent) 18%, var(--uc-bg)) 0%,
+      var(--uc-bg) 55%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      color-mix(in srgb, var(--uc-accent) 10%, var(--uc-bg)) 0 4px,
+      var(--uc-bg) 4px 8px
+    ),
+    var(--uc-bg);
+  color: var(--uc-accent);
+  box-shadow: inset 1px 0 0 color-mix(in srgb, var(--uc-accent) 35%, transparent);
+}
+
+.prose .uc--inline .uc-icon {
+  flex-shrink: 0;
+  font-size: 1em;
+  line-height: 1;
+}
+
+.prose .uc--block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 1.25rem 0;
+  padding: calc(0.85rem + var(--callout-rail-height)) 1rem 0.85rem;
+  border: 1px solid var(--uc-border);
+  border-radius: var(--radius);
+  background: var(--callout-surface-wash), var(--uc-bg);
+}
+
+.prose .uc--block .uc__head {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--uc-accent);
+  padding-left: 0.15rem;
+}
+
+.prose .uc--block .uc-icon {
+  flex-shrink: 0;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.prose .uc--block .uc__body {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.prose .uc--block .uc__body > :first-child {
+  margin-top: 0;
+}
+
+.prose .uc--block .uc__body > :last-child {
+  margin-bottom: 0;
 }
 
 /* Figures */
@@ -1975,10 +2145,18 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 
 .prose .frq-grade-next {
   margin: 0.85rem 0 0;
-  padding: 0.65rem 0.75rem;
-  border-left: 3px solid var(--accent);
+  padding: 0.75rem 0.75rem 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
+  border-radius: calc(var(--radius) - 2px);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent) 10%, var(--bg-elevated)) 0%,
+    color-mix(in srgb, var(--accent) 4%, var(--bg-elevated)) 40%,
+    var(--bg-elevated) 100%
+  );
   font-size: 0.92rem;
   line-height: 1.45;
+  box-shadow: inset 3px 0 0 0 var(--accent);
 }
 
 .prose .frq-grade-block {
@@ -2204,6 +2382,15 @@ body.lightbox-open {
 .prose td {
   border: 1px solid var(--border);
   padding: 0.5rem 0.65rem;
+}
+
+/* KaTeX tabular arrays (\\begin{array}) — column gutter and row height */
+.prose .katex .mtable .arraycolsep {
+  width: 0.85em !important;
+}
+
+.prose .katex .mtable .vertical-separator {
+  margin-inline: 0.35em !important;
 }
 
 .hero {
@@ -3449,27 +3636,14 @@ body.lightbox-open {
   }
 }
 
-/* Default VT backdrop is black; opacity crossfades read as a dark flash without this. */
-::view-transition {
-  background-color: var(--bg);
-}
-
-::view-transition-group(root),
-::view-transition-group(*) {
-  background-color: var(--bg);
-}
-
+/* Suppress the root crossfade entirely.
+ * Header and sidebar use transition:persist (live, no snapshot).
+ * Scoped elements (main, home, about) get their own named transition below.
+ * A root opacity crossfade causes a double-fade + plus-lighter darkening flash. */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  background: var(--bg);
-}
-
-::view-transition-old(root) {
-  animation: page-fade-out var(--motion-fast) var(--ease-out) both;
-}
-
-::view-transition-new(root) {
-  animation: page-fade-in var(--motion-base) var(--ease-out) both;
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 html.theme-swapping,
@@ -3477,28 +3651,25 @@ html.theme-swapping * {
   transition-duration: 0s !important;
 }
 
-/* Astro injects plus-lighter on scoped fades; it darkens over the VT backdrop during nav. */
+/* Override Astro's scoped fade keyframes — default mix-blend-mode is plus-lighter,
+ * which darkens over a dark background during the opacity crossfade. */
 @keyframes astroFadeIn {
   from {
     opacity: 0;
-    mix-blend-mode: normal;
   }
 
   to {
     opacity: 1;
-    mix-blend-mode: normal;
   }
 }
 
 @keyframes astroFadeOut {
   from {
     opacity: 1;
-    mix-blend-mode: normal;
   }
 
   to {
     opacity: 0;
-    mix-blend-mode: normal;
   }
 }
 

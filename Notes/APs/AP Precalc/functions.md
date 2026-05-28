@@ -955,205 +955,11 @@ $$
 $$
 :::
 :::
-:::
-:::
 
+:::frq{id=precalc-functions-4}
 4. Find the explicit form(s) for the relation $$y^2-2xy+x^2=4x+4$$. State the domain of each branch.
-5. Let $$f(x)=(x-3)^2+2$$ with domain $$x\ge 3$$. Find $$f^{-1}(x)$$, and state the domain and range of $$f^{-1}$$.
-6. Let $$f:[-2,\infty)\to[-4,\infty)$$ be defined by $$f(x)=(x+2)^2-4$$. Determine whether $$f$$ is injective, surjective, bijective, or none.
-7. Simplify the difference quotient for $$f(x)=\frac{2}{x-1}$$. That is, simplify $$\frac{f(x+h)-f(x)}{h}.$$
-8. The graph of $$y=f(x)$$ has domain $$[-4,6]$$ and range $$[-2,5]$$. Find the domain and range of $$g(x)=-3f(\frac{x-2}{x+1})+7$$.
-9. Find $$f^{-1}(3)$$ given that $$f(x)=\frac{3x+1}{2x+f(x)}$$.
-10. Let $$h(x)=\sqrt{4-\lvert x-1 \rvert}.$$ Find the domain and range of $$h$$, and describe the transformations from $$y=\sqrt{x}$$ as clearly as possible.
-11. Let $$f(x)=\sqrt{2x+5}$$ and $$g(x)=\frac{1}{x-3}$$. Find formulas and domains for $$(f\circ g)(x)$$ and $$(g\circ f)(x)$$.
-12. Let $$f(x)=\lvert x-2\rvert+1$$. If the domain is restricted to $$[2,\infty)$$ and the codomain is $$[1,\infty)$$, determine whether $$f$$ is bijective and find $$f^{-1}(x)$$. Then explain what goes wrong if the domain is all real numbers.
-13. Let $$f(x)=\begin{cases}2x+a, & x<1,\\x^2+b, & 1\le x<3,\\cx-1, & x\ge 3.\end{cases}$$ Find $$a$$, $$b$$, and $$c$$ so that $$f$$ is continuous everywhere and $$f(0)=5$$.
-14. Suppose $$f$$ is an odd function with domain $$[-5,5]$$, range $$[-3,3]$$, and $$f(2)=-1$$. Define $$g(x)=2f(x-1)-4$$. Find the domain and range of $$g$$, and find $$g(3)$$ and $$g(-1)$$.
-15. Suppose $$f:A\to B$$ and $$g:B\to C$$. Prove that if $$f$$ and $$g$$ are both injective, then $$g\circ f$$ is injective. Also prove that if $$g\circ f$$ is surjective onto $$C$$, then $$g$$ must be surjective onto $$C$$.
-16. (Bonus, Cauchy's Functional Equation)
-   Consider a function $$\mathbb{Q} \longrightarrow \mathbb{Q}$$ (basically taking rational inputs and giving rational outputs) such that $$f(x+y)=f(x)+f(y)$$ (basically for any two rational numbers, this equation holds true for $$f(x)$$).
-   (A) Show that $$f(0) = 0$$ and $$f(-x) = -f(x)$$. What does this show about $$f(x)$$?
-   (B) Prove that $$f(nx) = nf(x)$$ for all $$n \in \mathbb{Z}$$ (for all integer $$n$$).
-   (C) Prove that $$f(\frac{x}{n}) = \frac{f(x)}{n}$$.
-   (D) Determine all such functions $$f(x)$$ that satisfy Cauchy's Functional Equation. Remember you not only need to find all such solutions, but prove that each one is a valid solution to the equation.
-   (E) The solution in part (D) is the only solution for the rationals, but there exist infinitely more solutions for the reals! Why can't your proof in steps (A) - (D) extend to real numbers?
 
-## Solutions
-
-<div class="theorem-box" markdown="1">
-
-### Solution 1
-
-The square root requires
-
-$$
-9-(x-2)^2\ge 0.
-$$
-
-Thus
-
-$$
--3\le x-2\le 3
-\quad\Longrightarrow\quad
--1\le x\le 5.
-$$
-
-The denominator also requires $$x\ne 2$$, so
-
-$$
-\boxed{\text{domain}=[-1,2)\cup(2,5]}.
-$$
-
-Let $$t=x-2$$. Then
-
-$$
-f(x)=\frac{\sqrt{9-t^2}}{t},
-\qquad
-t\in[-3,0)\cup(0,3].
-$$
-
-For $$t>0$$, the outputs cover $$[0,\infty)$$. For $$t<0$$, the outputs cover $$(-\infty,0]$$. Therefore
-
-$$
-\boxed{\text{range}=(-\infty,\infty)}.
-$$
-
-</div>
-
-<div class="theorem-box" markdown="1">
-
-### Solution 2
-
-The average rate of change of the middle piece $$ax+b$$ is its slope, so
-
-$$
-a=3.
-$$
-
-The pieces connect at $$x=1$$, so
-
-$$
-1^2-4(1)+1=3(1)+b.
-$$
-
-This gives
-
-$$
--2=3+b
-\quad\Longrightarrow\quad
-b=-5.
-$$
-
-The pieces connect at $$x=4$$, so
-
-$$
-3(4)-5=\sqrt{4+c}.
-$$
-
-Thus
-
-$$
-7=\sqrt{4+c}
-\quad\Longrightarrow\quad
-49=4+c
-\quad\Longrightarrow\quad
-c=45.
-$$
-
-Therefore
-
-$$
-\boxed{a=3,\qquad b=-5,\qquad c=45}.
-$$
-
-</div>
-
-<div class="theorem-box" markdown="1">
-
-### Solution 3
-
-Let
-
-$$
-u=y^2.
-$$
-
-Then
-
-$$
-(x^2+u)^2=4(x^2-u).
-$$
-
-Expand and collect terms:
-
-$$
-x^4+2x^2u+u^2=4x^2-4u
-$$
-
-$$
-u^2+(2x^2+4)u+x^4-4x^2=0.
-$$
-
-Using the quadratic formula,
-
-$$
-u=\frac{-(2x^2+4)\pm\sqrt{(2x^2+4)^2-4(x^4-4x^2)}}{2}.
-$$
-
-The discriminant simplifies:
-
-$$
-(2x^2+4)^2-4(x^4-4x^2)=16(2x^2+1).
-$$
-
-So
-
-$$
-u=-(x^2+2)\pm 2\sqrt{2x^2+1}.
-$$
-
-Since $$u=y^2$$,
-
-$$
-y^2=-(x^2+2)+2\sqrt{2x^2+1}
-$$
-
-or
-
-$$
-y^2=-(x^2+2)-2\sqrt{2x^2+1}.
-$$
-
-The second expression is always negative, so it gives no real branches. The real explicit forms are
-
-$$
-\boxed{y=\sqrt{-(x^2+2)+2\sqrt{2x^2+1}}}
-$$
-
-and
-
-$$
-\boxed{y=-\sqrt{-(x^2+2)+2\sqrt{2x^2+1}}}.
-$$
-
-For these branches to be real,
-
-$$
--(x^2+2)+2\sqrt{2x^2+1}\ge 0.
-$$
-
-This simplifies to $$x^2\le 4$$, so both branches have domain
-
-$$
-\boxed{[-2,2]}.
-$$
-
-</div>
-
-<div class="theorem-box" markdown="1">
-
-### Solution 4
-
+:::solution
 Start with
 
 $$
@@ -1230,13 +1036,13 @@ $$
 $$
 
 each with domain $$[-1,\infty)$$.
+:::
+:::
 
-</div>
+:::frq{id=precalc-functions-5}
+5. Let $$f(x)=(x-3)^2+2$$ with domain $$x\ge 3$$. Find $$f^{-1}(x)$$, and state the domain and range of $$f^{-1}$$.
 
-<div class="theorem-box" markdown="1">
-
-### Solution 5
-
+:::solution
 Start with
 
 $$
@@ -1278,13 +1084,13 @@ The range of $$f^{-1}$$ is the domain of $$f$$:
 $$
 \boxed{[3,\infty)}.
 $$
+:::
+:::
 
-</div>
+:::frq{id=precalc-functions-6}
+6. Let $$f:[-2,\infty)\to[-4,\infty)$$ be defined by $$f(x)=(x+2)^2-4$$. Determine whether $$f$$ is injective, surjective, bijective, or none.
 
-<div class="theorem-box" markdown="1">
-
-### Solution 6
-
+:::solution
 On $$[-2,\infty)$$, the parabola starts at its vertex and increases. Therefore it passes the horizontal line test, so it is injective.
 
 Also,
@@ -1306,13 +1112,13 @@ Since $$f$$ is both injective and surjective,
 $$
 \boxed{f\text{ is bijective}}.
 $$
+:::
+:::
 
-</div>
+:::frq{id=precalc-functions-7}
+7. Simplify the difference quotient for $$f(x)=\frac{2}{x-1}$$. That is, simplify $$\frac{f(x+h)-f(x)}{h}.$$
 
-<div class="theorem-box" markdown="1">
-
-### Solution 7
-
+:::solution
 First,
 
 $$
@@ -1346,13 +1152,13 @@ $$
 =\frac{\frac{-2h}{(x+h-1)(x-1)}}{h}
 =\boxed{\frac{-2}{(x+h-1)(x-1)}}.
 $$
+:::
+:::
 
-</div>
+:::frq{id=precalc-functions-8}
+8. The graph of $$y=f(x)$$ has domain $$[-4,6]$$ and range $$[-2,5]$$. Find the domain and range of $$g(x)=-3f(\frac{x-2}{x+1})+7$$.
 
-<div class="theorem-box" markdown="1">
-
-### Solution 8
-
+:::solution
 For the domain, the input to $$f$$ must lie in $$[-4,6]$$:
 
 $$
@@ -1411,13 +1217,13 @@ but that is an extra assumption. Therefore the correct conclusion from the state
 $$
 \boxed{\text{the range is not determined by the given data}}.
 $$
+:::
+:::
 
-</div>
+:::frq{id=precalc-functions-9}
+9. Find $$f^{-1}(3)$$ given that $$f(x)=\frac{3x+1}{2x+f(x)}$$.
 
-<div class="theorem-box" markdown="1">
-
-### Solution 9
-
+:::solution
 We want $$f^{-1}(3)$$, meaning we want the input $$x$$ for which
 
 $$
@@ -1455,13 +1261,13 @@ So
 $$
 \boxed{f^{-1}(3)=-\frac83}.
 $$
+:::
+:::
 
-</div>
+:::frq{id=precalc-functions-10}
+10. Let $$h(x)=\sqrt{4-\lvert x-1 \rvert}.$$ Find the domain and range of $$h$$, and describe the transformations from $$y=\sqrt{x}$$ as clearly as possible.
 
-<div class="theorem-box" markdown="1">
-
-### Solution 10
-
+:::solution
 For the domain, require
 
 $$
@@ -1515,13 +1321,13 @@ h(x)=
 $$
 
 The graph is symmetric about $$x=1$$, has endpoints $$(-3,0)$$ and $$(5,0)$$, and reaches its maximum at $$(1,2)$$.
+:::
+:::
 
-</div>
+:::frq{id=precalc-functions-11}
+11. Let $$f(x)=\sqrt{2x+5}$$ and $$g(x)=\frac{1}{x-3}$$. Find formulas and domains for $$(f\circ g)(x)$$ and $$(g\circ f)(x)$$.
 
-<div class="theorem-box" markdown="1">
-
-### Solution 11
-
+:::solution
 First,
 
 $$
@@ -1596,13 +1402,13 @@ with
 $$
 \boxed{\text{domain of }g\circ f=\left[-\frac52,\infty\right)\setminus\{2\}}.
 $$
+:::
+:::
 
-</div>
+:::frq{id=precalc-functions-12}
+12. Let $$f(x)=\lvert x-2\rvert+1$$. If the domain is restricted to $$[2,\infty)$$ and the codomain is $$[1,\infty)$$, determine whether $$f$$ is bijective and find $$f^{-1}(x)$$. Then explain what goes wrong if the domain is all real numbers.
 
-<div class="theorem-box" markdown="1">
-
-### Solution 12
-
+:::solution
 On the restricted domain $$[2,\infty)$$,
 
 $$
@@ -1650,13 +1456,13 @@ f(3)=2.
 $$
 
 Since two different inputs give the same output, the function does not have an inverse function on all of $$\mathbb{R}$$.
+:::
+:::
 
-</div>
+:::frq{id=precalc-functions-13}
+13. Let $$f(x)=\begin{cases}2x+a, & x<1,\\x^2+b, & 1\le x<3,\\cx-1, & x\ge 3.\end{cases}$$ Find $$a$$, $$b$$, and $$c$$ so that $$f$$ is continuous everywhere and $$f(0)=5$$.
 
-<div class="theorem-box" markdown="1">
-
-### Solution 13
-
+:::solution
 Since $$f(0)=5$$ and $$0<1$$, use the first piece:
 
 $$
@@ -1716,13 +1522,13 @@ Therefore
 $$
 \boxed{a=5,\qquad b=6,\qquad c=\frac{16}{3}}.
 $$
+:::
+:::
 
-</div>
+:::frq{id=precalc-functions-14}
+14. Suppose $$f$$ is an odd function with domain $$[-5,5]$$, range $$[-3,3]$$, and $$f(2)=-1$$. Define $$g(x)=2f(x-1)-4$$. Find the domain and range of $$g$$, and find $$g(3)$$ and $$g(-1)$$.
 
-<div class="theorem-box" markdown="1">
-
-### Solution 14
-
+:::solution
 The expression $$f(x-1)$$ requires
 
 $$
@@ -1800,13 +1606,13 @@ So
 $$
 \boxed{g(-1)=-2}.
 $$
+:::
+:::
 
-</div>
+:::frq{id=precalc-functions-15}
+15. Suppose $$f:A\to B$$ and $$g:B\to C$$. Prove that if $$f$$ and $$g$$ are both injective, then $$g\circ f$$ is injective. Also prove that if $$g\circ f$$ is surjective onto $$C$$, then $$g$$ must be surjective onto $$C$$.
 
-<div class="theorem-box" markdown="1">
-
-### Solution 15
-
+:::solution
 First suppose $$f$$ and $$g$$ are both injective. To prove that $$g\circ f$$ is injective, start by assuming two inputs give the same output:
 
 $$
@@ -1856,13 +1662,20 @@ Therefore
 $$
 \boxed{g\text{ is surjective onto }C}.
 $$
+:::
+:::
 
-</div>
+:::frq{id=precalc-functions-16}
+16. (Bonus, Cauchy's Functional Equation)
+   Consider a function $$\mathbb{Q} \longrightarrow \mathbb{Q}$$ (basically taking rational inputs and giving rational outputs) such that $$f(x+y)=f(x)+f(y)$$ (basically for any two rational numbers, this equation holds true for $$f(x)$$).
+   (A) Show that $$f(0) = 0$$ and $$f(-x) = -f(x)$$. What does this show about $$f(x)$$?
+   (B) Prove that $$f(nx) = nf(x)$$ for all $$n \in \mathbb{Z}$$ (for all integer $$n$$).
+   (C) Prove that $$f(\frac{x}{n}) = \frac{f(x)}{n}$$.
+   (D) Determine all such functions $$f(x)$$ that satisfy Cauchy's Functional Equation. Remember you not only need to find all such solutions, but prove that each one is a valid solution to the equation.
+   (E) The solution in part (D) is the only solution for the rationals, but there exist infinitely more solutions for the reals! Why can't your proof in steps (A) - (D) extend to real numbers?
 
-<div class="theorem-box" markdown="1">
 
-### Solution 16
-
+:::solution
 We are given
 
 $$
@@ -1966,5 +1779,6 @@ f(x+y)=c(x+y)=cx+cy=f(x)+f(y).
 $$
 
 For part (E), the proof works over $$\mathbb{Q}$$ because every rational number is a rational multiple of $$1$$. It does not extend to all real numbers because not every real number can be built from $$1$$ using only integer multiplication and division. Over $$\mathbb{R}$$, there are many wild additive functions if no conditions like continuity, monotonicity, or boundedness are required.
-
-</div>
+:::
+:::
+:::

@@ -987,21 +987,56 @@ x=\log_2\left(\frac{5-\sqrt{21}}4\right)}.
 $$
 :::
 :::
-:::
+
+:::frq{id=precalc-explog-4}
+4. Solve in $$\mathbb{R}$$: $$3^{2x}-28\cdot 3^x+27\le 0$$. Write the answer in interval notation.
 :::
 
-4. Solve in $$\mathbb{R}$$: $$3^{2x}-28\cdot 3^x+27\le 0$$. Write the answer in interval notation.
+:::frq{id=precalc-explog-5}
 5. Solve for $$x$$ exactly: $$2^{x+1}=5^{2x-3}.$$
+:::
+
+:::frq{id=precalc-explog-6}
 6. Solve in $$\mathbb{R}$$: $$e^x+e^{-x}=\frac{13}{6}.$$
+:::
+
+:::frq{id=precalc-explog-7}
 7. Rewrite the following expression as a single logarithm with coefficient $$1$$, and state the full domain of the original expression: $$\frac12\ln(x^2-9)-2\ln(x-3)+\ln\left(\frac{x+1}{x}\right).$$
+:::
+
+:::frq{id=precalc-explog-8}
 8. Expand completely using logarithm properties, and state all restrictions on $$x$$ and $$y$$: $$\log_3\left(\frac{x^4\sqrt{y-2}}{(x^2+1)^3(5-y)}\right).$$
+:::
+
+:::frq{id=precalc-explog-9}
 9. Solve in $$\mathbb{R}$$: $$\log_{1/3}(2x-1)\ge \log_{1/3}(7-x).$$
+:::
+
+:::frq{id=precalc-explog-10}
 10. Solve in $$\mathbb{R}$$: $$\ln(x^2-5x+6)\le \ln(2x+3).$$
+:::
+
+:::frq{id=precalc-explog-11}
 11. Let $$h(x)=\log_4(16-4x)-2$$. State the domain, range, vertical asymptote, intercepts, intervals of increase/decrease, and find $$h^{-1}(x)$$. Graph both equations.
+:::
+
+:::frq{id=precalc-explog-12}
 12. A population is modeled by $$P(t)=\dfrac{1200}{1+19e^{-0.4t}}$$ for $$t\ge 0$$. Find the initial population, the limiting population (aka horizontal asymptote), and the exact time when $$P(t)=900$$.
+:::
+
+:::frq{id=precalc-explog-13}
 13. Find the unique positive integer $$n$$ such that $$\log_2 (\log_{16} n) = \log_4 (\log_4 n)$$ (2020 AMC 12A).
+:::
+
+:::frq{id=precalc-explog-14}
 14. Let $$F(x)=\ln\left(\dfrac{x-a}{b-x}\right)$$, where $$a<b$$. Find the domain, intercepts in terms of $$a$$ and $$b$$, the vertical asymptotes, and an explicit formula for $$F^{-1}(x)$$. Then determine the range of $$F$$.
+:::
+
+:::frq{id=precalc-explog-15}
 15. Find the exact value of the product $$\prod_{k=4}^{63}\frac{\log_k\left(5^{k^2-1}\right)}{\log_{k+1}\left(5^{k^2-4}\right)}$$. (Hint: Use change of base and cancel out things to simplify the expression) (2025 AIME II)
+:::
+
+:::frq{id=precalc-explog-16}
 16. (Bonus, The EML function)
    Define a binary operation called $$\operatorname{EML}$$ by
    $$
@@ -1015,3 +1050,5 @@ $$
    $$(E)$$ An **EML tree** is an expression built by repeatedly feeding outputs of EML into new EML operations. For example, $$\operatorname{EML}\left(\operatorname{EML}(x,1),\operatorname{EML}(0,y)\right)$$ is an EML tree. Draw its tree diagram, then simplify the expression as much as possible using exponent and logarithm rules.
    $$(F)$$ It is claimed that EML trees can represent all standard elementary functions. In a short paragraph, compare this idea to the way a single NAND gate can generate all Boolean logic. A NAND gate outputs $$0$$ only when both inputs are $$1$$, and outputs $$1$$ otherwise.
    This problem is inspired by the paper *All elementary functions from a single operator* by Andrzej Odrzywołek. Learn more here: [https://arxiv.org/html/2603.21852v2](https://arxiv.org/html/2603.21852v2).
+:::
+:::

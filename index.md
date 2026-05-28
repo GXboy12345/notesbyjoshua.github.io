@@ -53,7 +53,7 @@ Here is a list of notes that have been added (in completion)!
 
 ---
 
-## 🚧 To-do List 🚧
+## To-do list
 
 Here is a list of notes I will add!
 

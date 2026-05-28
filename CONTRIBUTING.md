@@ -72,6 +72,26 @@ College Board often tests ICE tables with a small initial change.
 
 Legacy `<div class="theorem-box" markdown="1">` still renders during migration; prefer directives for new content.
 
+### Under construction
+
+Mark draft hubs or headings without emoji:
+
+```markdown
+### AP Biology :under-construction
+
+:::under-construction
+This course is not published yet. Check the home page for status.
+:::
+```
+
+| Form | Use for |
+| --- | --- |
+| `:under-construction` | Inline badge beside a heading or in a sentence |
+| `:under-construction[Draft]` | Inline badge with a custom short label |
+| `:::under-construction` | Full-width banner with optional body text |
+
+Preview at `/dev/components/` after `npm run dev`.
+
 ### Figures
 
 Replace Jekyll `<img class="note-img" …>` tags with a figure directive. Put the image on the next line as standard Markdown. A line of caption text after the image is optional.

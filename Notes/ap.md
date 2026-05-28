@@ -12,13 +12,13 @@ These notes will roughly follow a AP curriculum but might have some extra stuff 
 
 ---
 
-- ### AP Biology 🚧
+- ### AP Biology :under-construction
 
 - ### [AP Calculus AB/BC hub]({{ '/notes/ap/calculus/' | relative_url }})
 
 - ### [AP Chemistry hub]({{ '/notes/ap/chemistry/' | relative_url }})
 
-- ### AP Computer Science A 🚧
+- ### AP Computer Science A :under-construction
 
 - ### [AP Physics C Mechanics hub]({{ '/notes/ap/ap-physics-c-mechanics/' | relative_url }})
 

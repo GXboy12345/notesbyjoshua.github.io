@@ -1,0 +1,16 @@
+---
+import {
+  underConstructionHtml,
+  type UnderConstructionVariant,
+} from '../lib/under-construction';
+
+interface Props {
+  variant?: UnderConstructionVariant;
+  label?: string;
+}
+
+const { variant = 'block', label } = Astro.props;
+const html = underConstructionHtml({ variant, label });
+---
+
+<Fragment set:html={html} />

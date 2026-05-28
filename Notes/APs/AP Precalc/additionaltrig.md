@@ -2134,37 +2134,72 @@ AS\approx 1.13\text{ miles},\qquad BS\approx 1.43\text{ miles}.
 $$
 :::
 :::
-:::
+
+:::frq{id=precalc-additionaltrig-4}
+4. Prove that for any triangle with side lengths $$a,b,c$$ and semiperimeter $$s=\frac12(a+b+c)$$, $$\sin^2\left(\frac C2\right)=\frac{(s-a)(s-b)}{ab}.$$
 :::
 
-4. Prove that for any triangle with side lengths $$a,b,c$$ and semiperimeter $$s=\frac12(a+b+c)$$, $$\sin^2\left(\frac C2\right)=\frac{(s-a)(s-b)}{ab}.$$
+:::frq{id=precalc-additionaltrig-5}
 5. Let $$\mathbf u=\langle -2,1\rangle$$ and $$\mathbf v=\langle -5,3\rangle$$.
     $$(A)$$ Find $$2\mathbf u-3\mathbf v$$.
     $$(B)$$ Find the angle between $$\mathbf u$$ and $$\mathbf v$$ to the nearest degree.
     $$(C)$$ Find a unit vector in the direction of $$\mathbf u+\mathbf v$$.
+:::
+
+:::frq{id=precalc-additionaltrig-6}
 6. A plane is heading $$40^\circ$$ east of north at $$120$$ mph. A wind blows directly from the east at $$10$$ mph. Find the ground-speed vector, the ground speed, and the drift angle from the plane's intended heading.
+:::
+
+:::frq{id=precalc-additionaltrig-7}
 7. A force of $$18$$ Newtons acts in the direction $$235^\circ$$ from the positive $$x$$-axis. Resolve the force into horizontal and vertical components. Then find the magnitude and direction of the vector obtained by adding this force to $$\langle 12,-5\rangle$$.
+:::
+
+:::frq{id=precalc-additionaltrig-8}
 8. A particle moves according to $$x(t)=2\cos t-\sin(2t),\qquad y(t)=6\sin t,$$ for $$0\le t\le 2\pi$$.
     $$(A)$$ Find all exact $$x$$-intercepts.
     $$(B)$$ Find the particle's position when $$t=\frac{\pi}{2}$$ and when $$t=\frac{7\pi}{6}$$.
     $$(C)$$ Write a formula for the particle's distance from the origin as a function of $$t$$.
+:::
+
+:::frq{id=precalc-additionaltrig-9}
 9. Eliminate the parameter and describe the curve, including any domain restrictions and orientation: $$x=e^t$$, $$y=e^{2t}-3$$, $$-\ln2\le t\le \ln3.$$
+:::
+
+:::frq{id=precalc-additionaltrig-10}
 10. The curve $$x=4\cos t$$, $$y=-2\sin t$$ is traced for $$0\le t\le 2\pi$$. Eliminate the parameter, state where the curve starts, and determine the direction (clockwise or counterclockwise) the curve is traced in.
+:::
+
+:::frq{id=precalc-additionaltrig-11}
 11. Classify each polar curve as a cardioid, limacon, rose curve, lemniscate, circle, line, or spiral. For rose curves, state the number of petals. Graph each of the curves.
     $$(A)$$ Graph $$r=3-3\sin\theta$$
     $$(B)$$ Graph $$r=2+5\cos\theta$$
     $$(C)$$ Graph $$r=4\sin(3\theta)$$
     $$(D)$$ Graph $$r^2=25\sin(2\theta)$$
+:::
+
+:::frq{id=precalc-additionaltrig-12}
 12. Graph both $$r=2+2\cos\theta$$ and $$r=2-2\cos\theta$$. Then, find the number of intersection points.
+:::
+
+:::frq{id=precalc-additionaltrig-13}
 13. Suppose you have an octagon centered at the origin with one vertex at $$P_1=2\sqrt2$$.
     $$(A)$$ Find a vertex in the third quadrant and a vertex in the fourth quadrant.
     $$(B)$$ Without finding all of the vertices calculate $$P_1+P_2+\cdots+P_8$$
     $$(C)$$ Without finding all of the vertices calculate $$P_1P_2\cdots P_8$$.
+:::
+
+:::frq{id=precalc-additionaltrig-14}
 14. Let $$z_1=-2+2\sqrt3i,\qquad z_2=1-i.$$
     $$(A)$$ Write both numbers in polar form.
     $$(B)$$ Write both numbers in exponential form.
     $$(C)$$ Compute $$z_1z_2$$ in polar form and rectangular form.
+:::
+
+:::frq{id=precalc-additionaltrig-15}
 15. Use De Moivre's Theorem to find all fourth roots of $$16\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right).$$
+:::
+
+:::frq{id=precalc-additionaltrig-16}
 16. (Bonus, Brahmagupta's and Bretschneider's formulas)
 Let $$ABCD$$ be a cyclic quadrilateral, meaning all four vertices lie on one circle. Let its side lengths be $$a,b,c,d$$, and let its semiperimeter be
 $$
@@ -2183,3 +2218,5 @@ $$(D)$$ Now suppose $$ABCD$$ is not necessarily cyclic. Keep the same notation, 
 $$(E)$$ Now prove **Bretschneider's formula**: $$K^2=(s-a)(s-b)(s-c)(s-d)-abcd\cos^2\left(\frac{B+D}{2}\right).$$
 $$(F)$$ Explain why Bretschneider's formula turns into Brahmagupta's formula when $$ABCD$$ is cyclic.
 </div>
+:::
+:::

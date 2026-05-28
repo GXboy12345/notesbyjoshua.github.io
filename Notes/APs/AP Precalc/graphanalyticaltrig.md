@@ -1412,25 +1412,60 @@ The branch should increase from the vertical asymptote $$x=-\frac{\pi}{4}$$ to t
 A graph with many key points is shown below:
 :::
 :::
-:::
+
+:::frq{id=precalc-graphanalyticaltrig-4}
+4. For $$h(x)=-2\sec\left(\frac12(x-\pi)\right)+3$$, find the period, midline, vertical asymptotes in one period starting at $$x=\pi$$, and range. Then sketch one full period, including the guiding cosine curve.
 :::
 
-4. For $$h(x)=-2\sec\left(\frac12(x-\pi)\right)+3$$, find the period, midline, vertical asymptotes in one period starting at $$x=\pi$$, and range. Then sketch one full period, including the guiding cosine curve.
+:::frq{id=precalc-graphanalyticaltrig-5}
 5. Solve exactly on $$[0,4\pi)$$. Then sketch $$y=2\sin^2x-\sin x-1$$ on $$[0,4\pi)$$ and label all $$x$$-intercepts: $$2\sin^2x-\sin x-1=0.$$
+:::
+
+:::frq{id=precalc-graphanalyticaltrig-6}
 6. Solve on $$[0, 4\pi)$$: $$4\sin(4x)\cos(6x)= 2\sin(10x)+1$$.
+:::
+
+:::frq{id=precalc-graphanalyticaltrig-7}
 7. Solve exactly on $$[0,2\pi)$$: $$\tan x+\cot x=4.$$
+:::
+
+:::frq{id=precalc-graphanalyticaltrig-8}
 8. Evaluate each of these exactly: $$\sin 75^\circ, \cos 15^\circ,\tan 105^\circ.$$ The sine and cosine values for $$15^\circ$$ and $$75^\circ$$ are also useful to memorize as well.
+:::
+
+:::frq{id=precalc-graphanalyticaltrig-9}
 9. Prove the identity: $$\frac{\sin(x+y)+\sin(x-y)}{\cos(x+y)+\cos(x-y)}=\tan x.$$
+:::
+
+:::frq{id=precalc-graphanalyticaltrig-10}
 10. Solve exactly on $$[0,2\pi)$$. Then use the product-to-sum form to sketch enough of the graph to explain why your number of solutions makes sense: $$\cos(5x)+\cos(3x)=0.$$
+:::
+
+:::frq{id=precalc-graphanalyticaltrig-11}
 11. Evaluate exactly: $$\sin\left(\cos^{-1}\frac35\right)+\cos\left(\sin^{-1}\left(-\frac5{13}\right)\right)+\tan\left(\cos^{-1}\left(-\frac45\right)\right).$$
+:::
+
+:::frq{id=precalc-graphanalyticaltrig-12}
 12. How many solutions does the equation $$\tan(2x)=\cos(\tfrac{x}{2})$$ have on the interval $$[0,2\pi]$$?
+:::
+
+:::frq{id=precalc-graphanalyticaltrig-13}
 13. Suppose $$\frac{\pi}{2}<\theta<\pi$$ and $$\cos\theta=-\frac35$$. Find exact values of $$\sin\left(\frac{\theta}{2}\right), \cos\left(\frac{\theta}{2}\right),$$ and $$\tan\left(\frac{\theta}{2}\right).$$
+:::
+
+:::frq{id=precalc-graphanalyticaltrig-14}
 14. Let $$x$$ and $$y$$ be real numbers such that $$\frac{\sin x}{\sin y} = 3$$ and $$\frac{\cos x}{\cos y} = \frac{1}{2}$$. The value of $$\frac{\sin 2x}{\sin 2y} + \frac{\cos 2x}{\cos 2y}$$ can be expressed in the form $$\frac{p}{q}$$, where $$p$$ and $$q$$ are relatively prime positive integers. Find $$p+q$$. (2014 AIME II)
+:::
+
+:::frq{id=precalc-graphanalyticaltrig-15}
 15. A tide height is modeled by a sinusoidal function of time. At $$t=2$$ hours, the tide is at a high of $$11$$ feet. At $$t=8$$ hours, the tide is at the next low of $$3$$ feet.
    $$(A)$$ Write a cosine model $$H(t)$$ for the tide height.
    $$(B)$$ Find the period and midline.
    $$(C)$$ Find the first time after $$t=2$$ when the tide height is $$9$$ feet.
    $$(D)$$ Sketch one full period of the tide model and label the high tide, low tide, midline, and the point where $$H(t)=9$$ first occurs after $$t=2$$.
+:::
+
+:::frq{id=precalc-graphanalyticaltrig-16}
 16. (Bonus, Viète's formula for $$\pi$$)
 Let
 $$
@@ -1457,3 +1492,5 @@ are connected to repeated half-angle identities.
    \frac{\sqrt{2+\sqrt2}}{2}\cdot
    \frac{\sqrt{2+\sqrt{2+\sqrt2}}}{2}\cdots.
    $$
+:::
+:::

@@ -8,335 +8,159 @@ permalink: /notes/ap/chem/cheatsheet/
 
 # AP Chemistry Cheat Sheet
 
-This page is a high-yield AP Chemistry reference sheet. It collects the most important concepts, formulas, trends, and problem-solving checks from Units 1-9 in one place. It is best used as a last-minute review tool or a quick lookup page while studying a full unit. Always remember that you have a [formula sheet](https://apcentral.collegeboard.org/media/pdf/ap-chemistry-equations-sheet.pdf) for the AP test!
+Units 1-9. [Official AP formula sheet](https://apcentral.collegeboard.org/media/pdf/ap-chemistry-equations-sheet.pdf).
 
 ---
 
-## Constants and Common Values
+## Constants
 
-- Avogadro's Number: $$N_A = 6.022 \times 10^{23}\ \text{mol}^{-1}$$
-- Ideal Gas Constant: $$R = 0.08206\ \text{L·atm/(mol·K)} = 8.314\ \text{J/(mol·K)}$$
-- Faraday's Constant: $$F = 96485\ \text{C/mol e}^-$$
-- Specific heat of water: $$c_{\text{water}} \approx 4.18\ \text{J/(g·^\circ C)}$$
-- Pressure conversions: $$1\ \text{atm} = 760\ \text{mmHg} = 760\ \text{torr} = 101.325\ \text{kPa}$$
-- STP for AP Chem: $$273.15\ \text{K}$$ and $$1\ \text{atm}$$
-- Molar volume of an ideal gas at STP: about $$22.4\ \text{L/mol}$$
-- $$K_w = 1.0 \times 10^{-14}$$ at $$25^\circ\text{C}$$
+- $N_A = 6.022 \times 10^{23}\ \text{mol}^{-1}$
+- $R = 0.08206\ \text{L·atm/(mol·K)} = 8.314\ \text{J/(mol·K)}$
+- $F = 96485\ \text{C/mol e}^-$
+- $c_{\text{water}} \approx 4.18\ \text{J g}^{-1}\,^\circ\text{C}^{-1}$
+- $1\ \text{atm} = 760\ \text{mmHg} = 760\ \text{torr} = 101.325\ \text{kPa}$
+- STP: $273.15\ \text{K}$, $1\ \text{atm}$; $V_m \approx 22.4\ \text{L/mol}$
+- $K_w = 1.0 \times 10^{-14}$ at $25^\circ\text{C}$
 
 ---
 
-## Unit 1: Atomic Structure and Properties
+## Unit 1 — Atomic Structure
 
-### Essential ideas
+- $A = p + n$; $Z = p$
+- avg atomic mass: isotope-weighted
+- $M = \dfrac{n_{\text{solute}}}{V_{\text{solution}}}$
+- Aufbau; Pauli (2 e⁻/orbital, opposite spin); Hund (singlet before pair)
+- $1s \to 2s \to 2p \to 3s \to 3p \to 4s \to 3d \to 4p \to 5s \to 4d \to 5p \to 6s \to 4f \to 5d \to 6p$
 
-- **Mass number** = protons + neutrons
-- **Atomic number** = protons
-- **Average atomic mass** is a weighted average of isotopes
-- **Moles** connect microscopic particles to measurable mass
-- **Molarity**:
+| Trend | Down group | Across period |
+| --- | --- | --- |
+| $r$ | ↑ | ↓ |
+| IE, EN | ↓ | ↑ |
+| EA | — | ↑ (usual) |
 
-$$
-M = \frac{\text{mol solute}}{\text{L solution}}
-$$
-
-### Electron configuration
-
-- Aufbau order matters
-- Pauli exclusion: max 2 electrons per orbital with opposite spin
-- Hund's rule: fill equal-energy orbitals singly first
-
-Common order:
-
-$$
-1s,\ 2s,\ 2p,\ 3s,\ 3p,\ 4s,\ 3d,\ 4p,\ 5s,\ 4d,\ 5p,\ 6s,\ 4f,\ 5d,\ 6p
-$$
-
-### Periodic trends
-
-- **Atomic radius**: increases down, decreases across
-- **Ionization energy**: decreases down, increases across
-- **Electron affinity**: usually becomes more favorable across a period
-- **Electronegativity**: decreases down, increases across
-- More positive effective nuclear charge usually means electrons are held more tightly
+- PES: lower binding energy = easier removal; peak height ∝ e⁻ count; position = subshell
 
 :::figure{width=480}
-![Periodic trends summary placeholder](/assets/APs/AP%20Chem/atomicstrucprop/periodictrends.png)
+![Periodic trends](/assets/APs/AP%20Chem/atomicstrucprop/periodictrends.png)
 :::
 
-### Photoelectron spectroscopy
-
-- Lower binding energy means easier to remove electron (so elements with higher nuclear charge have charts that are shifted left)
-- Higher peaks can mean more electrons in a subshell
-- Peak position tells energy level; peak height/area tracks electron count
-
 :::figure{width=480}
-![Photoelectron spectroscopy summary placeholder](/assets/APs/AP%20Chem/atomicstrucprop/PES.png)
+![PES](/assets/APs/AP%20Chem/atomicstrucprop/PES.png)
 :::
 
 ---
 
-## Unit 2: Compound Structure and Properties
+## Unit 2 — Structure and Bonding
 
-### Bond types
+| Bond | Pattern |
+| --- | --- |
+| Ionic | metal + nonmetal |
+| Covalent | nonmetal + nonmetal |
+| Metallic | metal lattice + delocalized e⁻ |
 
-- **Ionic**: metal + nonmetal, electron transfer
-- **Covalent**: nonmetal + nonmetal, electron sharing
-- **Metallic**: metal cations in a sea of delocalized electrons
-
-### Lewis structures checklist
-
-1. Count valence electrons
-2. Pick central atom
-3. Connect atoms with single bonds
-4. Complete octets on outer atoms
-5. Place remaining electrons on central atom
-6. Make multiple bonds if needed
-7. Check formal charges
-
-### Formal charge
+**Lewis:** count valence e⁻; central atom; single bonds; octets on outers; remainder on center; multiple bonds; check FC
 
 $$
-\text{FC} = \text{valence} - \text{nonbonding} - \frac{1}{2}(\text{bonding})
+\text{FC} = V - N - \tfrac{1}{2}B
 $$
 
-### VSEPR / geometry
+| e⁻ groups | Electron geometry |
+| --- | --- |
+| 2 | linear |
+| 3 | trigonal planar |
+| 4 | tetrahedral |
+| 5 | trigonal bipyramidal |
+| 6 | octahedral |
 
-- 2 electron groups: linear
-- 3: trigonal planar
-- 4: tetrahedral
-- 5: trigonal bipyramidal
-- 6: octahedral
-
-Molecular shape depends on lone pairs.
+Molecular shape: subtract lone pairs from geometry above.
 
 :::figure{width=480}
-![VSEPR summary placeholder](/assets/APs/AP%20Chem/compounds/VSEPR.png)
+![VSEPR](/assets/APs/AP%20Chem/compounds/VSEPR.png)
 :::
 
-### Hybridization
+| e⁻ groups | Hybridization |
+| --- | --- |
+| 2 | $sp$ |
+| 3 | $sp^2$ |
+| 4 | $sp^3$ |
+| 5 | $sp^3d$ |
+| 6 | $sp^3d^2$ |
 
-- 2 groups: $$sp$$
-- 3 groups: $$sp^2$$
-- 4 groups: $$sp^3$$
-- 5 groups: $$sp^3d$$
-- 6 groups: $$sp^3d^2$$
-
-### Bond order and bond properties
-
-- Higher bond order -> shorter, stronger bond
-- Longer bonds are usually weaker
+- ↑ bond order: shorter, stronger bond
 
 ---
 
-## Unit 3: Substances and Mixtures
+## Unit 3 — Substances and Mixtures
 
-### Intermolecular forces
+**IMF (weak to strong):** London dispersion, dipole-dipole, H-bond, ion-dipole
 
-Weakest to strongest, in common AP contexts:
-
-1. London dispersion
-2. Dipole-dipole
-3. Hydrogen bonding
-4. Ion-dipole
-
-### "Like dissolves like"
-
-- Polar dissolves polar
-- Nonpolar dissolves nonpolar
-- Ionic compounds usually dissolve best in polar solvents
-
-### Gas laws
+- Polar ∥ polar; nonpolar ∥ nonpolar; ionic in polar solvent
 
 $$
-PV = nRT
+PV = nRT \qquad P_{\text{total}} = \sum P_i \qquad P_i = x_i P_{\text{total}}
 $$
 
 $$
-P_{\text{total}} = \sum P_i
+KE_{\text{avg}} = \tfrac{3}{2}RT \quad \text{(ideal gas)} \qquad \frac{r_1}{r_2} = \sqrt{\frac{M_2}{M_1}} \quad \text{(Graham)}
 $$
 
 $$
-P_i = x_i P_{\text{total}}
-$$
-
-### Kinetic theory
-
-- Higher temperature -> higher average kinetic energy
-- For ideal gases:
-
-$$
-KE_{\text{avg}} = \frac{3}{2}RT
-$$
-
-### Graham's law
-
-$$
-\frac{\text{rate}_1}{\text{rate}_2} = \sqrt{\frac{M_2}{M_1}}
-$$
-
-### Colligative properties
-
-$$
-\Delta T_b = iK_bm
-$$
-
-$$
-\Delta T_f = iK_fm
-$$
-
-$$
-\Pi = iMRT
+\Delta T_b = iK_bm \qquad \Delta T_f = iK_fm \qquad \Pi = iMRT
 $$
 
 ---
 
-## Unit 4: Chemical Reactions
+## Unit 4 — Reactions
 
-### Reaction types
+**Types:** synthesis, decomposition, single replacement, double replacement, combustion, acid-base, redox
 
-- Synthesis
-- Decomposition
-- Single replacement
-- Double replacement
-- Combustion
-- Acid-base
-- Redox
+**Net ionic:** split strong electrolytes; keep s, l, g, weak intact; cancel spectators
 
-### Net ionic equations
+**Solubility (memorize):**
 
-- Split strong electrolytes into ions
-- Keep solids, liquids, gases, and weak electrolytes intact
-- Cancel spectator ions
-
-### Solubility rules to memorize
-
-- Always soluble: Group 1, $$\text{NH}_4^+$$, $$\text{NO}_3^-$$, acetate, chlorate, perchlorate
-- Usually soluble: halides except with $$\text{Ag}^+$$, $$\text{Pb}^{2+}$$, $$\text{Hg}_2^{2+}$$
-- Usually soluble: sulfates except with $$\text{Ba}^{2+}$$, $$\text{Sr}^{2+}$$, $$\text{Pb}^{2+}$$, often $$\text{Ca}^{2+}$$
-- Usually insoluble: carbonates, phosphates, chromates, sulfides, hydroxides except with Group 1 and $$\text{NH}_4^+$$
+- Always: Group 1, $\text{NH}_4^+$, $\text{NO}_3^-$, acetate, chlorate, perchlorate
+- Usually: halides (except $\text{Ag}^+$, $\text{Pb}^{2+}$, $\text{Hg}_2^{2+}$); sulfates (except $\text{Ba}^{2+}$, $\text{Sr}^{2+}$, $\text{Pb}^{2+}$, often $\text{Ca}^{2+}$)
+- Usually insoluble: carbonates, phosphates, chromates, sulfides, hydroxides (except Group 1, $\text{NH}_4^+$)
 
 :::figure{width=480}
-![Solubility rules summary placeholder](/assets/APs/AP%20Chem/chemrxns/solubility.jpg)
+![Solubility rules](/assets/APs/AP%20Chem/chemrxns/solubility.jpg)
 :::
 
-### Oxidation number reminders
-
-- Element alone: 0
-- Monatomic ion: charge
-- Oxygen: usually -2
-- Hydrogen: usually +1 with nonmetals, -1 with metals
-- Sum of oxidation numbers = overall charge
+**Oxidation #:** element alone 0; monatomic ion = charge; O usually −2; H +1 (nonmetals) / −1 (metals); sum = overall charge
 
 ---
 
-## Unit 5: Kinetics
-
-### Core ideas
-
-- Rate depends on concentration, temperature, orientation, and activation energy
-- Catalyst lowers activation energy but does not change $$\Delta H$$ or $$K$$
-
-### Rate law
+## Unit 5 — Kinetics
 
 $$
 \text{rate} = k[A]^m[B]^n
 $$
 
-- Orders come from experiment, not from the balanced equation unless the step is elementary
+Orders from experiment (not balanced eqn unless elementary). Catalyst: ↓ $E_a$; no change to $\Delta H$ or $K$.
 
-### Integrated rate laws
-
-Zeroth:
-
-$$
-[A] = [A]_0 - kt
-$$
-
-First:
+| Order | Integrated | $t_{1/2}$ |
+| --- | --- | --- |
+| 0 | $[A] = [A]_0 - kt$ | $[A]_0/(2k)$ |
+| 1 | $\ln[A] = \ln[A]_0 - kt$ | $0.693/k$ |
+| 2 | $1/[A] = 1/[A]_0 + kt$ | $1/(k[A]_0)$ |
 
 $$
-\ln[A] = \ln[A]_0 - kt
-$$
-
-Second:
-
-$$
-\frac{1}{[A]} = \frac{1}{[A]_0} + kt
-$$
-
-### Half-life
-
-Zeroth:
-
-$$
-t_{1/2} = \frac{[A]_0}{2k}
-$$
-
-First:
-
-$$
-t_{1/2} = \frac{0.693}{k}
-$$
-
-Second:
-
-$$
-t_{1/2} = \frac{1}{k[A]_0}
-$$
-
-### Arrhenius equation
-
-$$
-k = Ae^{-E_a/(RT)}
-$$
-
-$$
-\ln k = -\frac{E_a}{R}\frac{1}{T} + \ln A
+k = Ae^{-E_a/(RT)} \qquad \ln k = -\frac{E_a}{R}\frac{1}{T} + \ln A
 $$
 
 ---
 
-## Unit 6: Thermochemistry
-
-### Heat and calorimetry
+## Unit 6 — Thermochemistry
 
 $$
-q = mc\Delta T
+q = mc\Delta T \qquad \Delta U = q + w \qquad w = -P_{\text{ext}}\Delta V \qquad \Delta H = q_p
 $$
 
-### First law
-
-$$
-\Delta U = q + w
-$$
-
-### Pressure-volume work
-
-$$
-w = -P_{\text{ext}}\Delta V
-$$
-
-### Enthalpy
-
-At constant pressure:
-
-$$
-\Delta H = q_p
-$$
-
-### Hess's law
-
-- Reverse reaction -> change sign of $$\Delta H$$
-- Multiply equation -> multiply $$\Delta H$$
-- Add equations -> add $$\Delta H$$
-
-### Formation enthalpies
+**Hess:** reverse: flip sign; multiply: scale $\Delta H$; add eqns: add $\Delta H$
 
 $$
 \Delta H^\circ_{\text{rxn}} = \sum \nu \Delta H_f^\circ(\text{products}) - \sum \nu \Delta H_f^\circ(\text{reactants})
 $$
-
-### Bond enthalpy estimate
 
 $$
 \Delta H_{\text{rxn}} \approx \sum D(\text{broken}) - \sum D(\text{formed})
@@ -344,318 +168,111 @@ $$
 
 ---
 
-## Unit 7: Equilibrium
+## Unit 7 — Equilibrium
 
-### Core equilibrium idea
+At eqm: $r_f = r_r$; $[ ]$ constant (not necessarily equal).
 
-At equilibrium:
-
-- forward rate = reverse rate
-- concentrations are constant, not necessarily equal
-
-### Equilibrium expression
-
-For
-
-$$
-aA + bB \rightleftharpoons cC + dD
-$$
+For $aA + bB \rightleftharpoons cC + dD$:
 
 $$
 K_c = \frac{[C]^c[D]^d}{[A]^a[B]^b}
 $$
 
-Pure solids and liquids are omitted.
-
-### Reaction quotient
-
-- $$Q < K$$ -> shifts right
-- $$Q > K$$ -> shifts left
-- $$Q = K$$ -> already at equilibrium
-
-### Gas-phase equilibrium
+Omit pure s, l. $Q < K$: shift right; $Q > K$: shift left; $Q = K$: at eqm.
 
 $$
 K_p = K_c(RT)^{\Delta n_{\text{gas}}}
 $$
 
-### ICE table logic
+**ICE:** Initial, Change ($\pm nx$), Equilibrium; small-$x$ approx when $x \ll$ initial $[ ]$
 
-Initial, Change, Equilibrium
-
-- use stoichiometric multiples of $$x$$
-- approximation may work if $$x$$ is very small compared with initial concentration
-
-### Le Châtelier
-
-- Add reactant -> shift right
-- Add product -> shift left
-- Increase pressure -> shift toward fewer moles gas
-- Change temperature -> changes $$K$$
-- Catalyst -> no change in $$K$$
-
-### Solubility product
+**Le Châtelier:** +reactant: right; +product: left; ↑$P$: fewer gas moles; ↑$T$: changes $K$; catalyst: no $K$ change
 
 $$
-K_{sp} = [\text{ions}]^{\text{coefficients}}
-$$
-
-### Thermodynamic connection
-
-$$
-\Delta G^\circ = -RT\ln K
+K_{sp} = [\text{ions}]^{\text{coeff}} \qquad \Delta G^\circ = -RT\ln K
 $$
 
 ---
 
-## Unit 8: Acid-Base Equilibrium
+## Unit 8 — Acids and Bases
 
-### Definitions
+| Model | Acid | Base |
+| --- | --- | --- |
+| Arrhenius | ↑ $[\text{H}^+]$ | ↑ $[\text{OH}^-]$ |
+| Brønsted-Lowry | proton donor | proton acceptor |
+| Lewis | e⁻-pair acceptor | e⁻-pair donor |
 
-- Arrhenius: acids increase $$[H^+]$$, bases increase $$[OH^-]$$
-- Brønsted-Lowry: acid donates proton, base accepts proton
-- Lewis: acid accepts electron pair, base donates electron pair
+**Strong acids:** $\text{HCl}$, $\text{HBr}$, $\text{HI}$, $\text{HNO}_3$, $\text{HClO}_4$, $\text{HClO}_3$, $\text{H}_2\text{SO}_4$ (1st proton)
 
-### Strong acids to memorize
-
-$$
-\text{HCl},\ \text{HBr},\ \text{HI},\ \text{HNO}_3,\ \text{HClO}_4,\ \text{HClO}_3,\ \text{H}_2\text{SO}_4 \text{ (first proton)}
-$$
-
-### Strong bases to memorize
-
-Group 1 hydroxides and heavier Group 2 hydroxides:
+**Strong bases:** Group 1 OH⁻; $\text{Ca(OH)}_2$, $\text{Sr(OH)}_2$, $\text{Ba(OH)}_2$
 
 $$
-\text{LiOH},\ \text{NaOH},\ \text{KOH},\ \text{Ca(OH)}_2,\ \text{Sr(OH)}_2,\ \text{Ba(OH)}_2
-$$
-
-### Weak acid/base equilibrium
-
-$$
-K_a = \frac{[H_3O^+][A^-]}{[HA]}
+K_a = \frac{[\text{H}_3\text{O}^+][\text{A}^-]}{[\text{HA}]} \qquad K_b = \frac{[\text{BH}^+][\text{OH}^-]}{[\text{B}]} \qquad K_a K_b = K_w
 $$
 
 $$
-K_b = \frac{[BH^+][OH^-]}{[B]}
+\text{pH} = -\log[\text{H}_3\text{O}^+] \qquad \text{pOH} = -\log[\text{OH}^-] \qquad \text{pH} + \text{pOH} = 14 \ \text{at } 25^\circ\text{C}
 $$
 
 $$
-K_aK_b = K_w
+\text{pH} = \text{p}K_a + \log\frac{[\text{A}^-]}{[\text{HA}]}
 $$
 
-### pH / pOH
-
-$$
-\text{pH} = -\log[H_3O^+]
-$$
-
-$$
-\text{pOH} = -\log[OH^-]
-$$
-
-$$
-\text{pH} + \text{pOH} = 14
-$$
-
-at $$25^\circ\text{C}$$.
-
-### Buffer equation
-
-$$
-\text{pH} = \text{p}K_a + \log\left(\frac{[A^-]}{[HA]}\right)
-$$
-
-### Titration checkpoints
-
-- strong acid / strong base equivalence point near pH 7
-- weak acid / strong base equivalence point above 7
-- weak base / strong acid equivalence point below 7
-- half-equivalence point for weak acid/base gives $$\text{pH} = \text{p}K_a$$ or $$\text{pOH} = \text{p}K_b$$
+| Titration | Eq. pt. pH |
+| --- | --- |
+| SA / SB | ≈ 7 |
+| WA / SB | > 7 |
+| WB / SA | < 7 |
+| Half-eq. (WA/WB) | $\text{pH} = \text{p}K_a$ or $\text{pOH} = \text{p}K_b$ |
 
 :::figure{width=480}
-![Titration curves summary placeholder](/assets/APs/AP%20Chem/acidbase/titrationcurve.gif)
+![Titration curves](/assets/APs/AP%20Chem/acidbase/titrationcurve.gif)
 :::
 
 ---
 
-## Unit 9: Thermodynamics and Electrochemistry
-
-### Entropy and spontaneity
+## Unit 9 — Thermodynamics and Electrochemistry
 
 $$
-\Delta S_{\text{universe}} = \Delta S_{\text{system}} + \Delta S_{\text{surroundings}}
-$$
-
-- spontaneous if $$\Delta S_{\text{universe}} > 0$$
-- equilibrium if $$\Delta S_{\text{universe}} = 0$$
-
-### Gibbs free energy
-
-$$
-\Delta G = \Delta H - T\Delta S
-$$
-
-- spontaneous if $$\Delta G < 0$$
-- equilibrium if $$\Delta G = 0$$
-
-### Standard free energy
-
-$$
-\Delta G^\circ = -RT\ln K
-$$
-
-### Electrochemistry
-
-$$
-\Delta G = -nFE_{\text{cell}}
+\Delta S_{\text{univ}} = \Delta S_{\text{sys}} + \Delta S_{\text{surr}} \qquad \text{spontaneous if } \Delta S_{\text{univ}} > 0
 $$
 
 $$
-E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}
-$$
-
-### Nernst equation
-
-$$
-E_{\text{cell}} = E^\circ_{\text{cell}} - \frac{RT}{nF}\ln Q
-$$
-
-At $$25^\circ\text{C}$$:
-
-$$
-E_{\text{cell}} = E^\circ_{\text{cell}} - \frac{0.0592}{n}\log Q
-$$
-
-### Faraday's law
-
-$$
-q = It = nF
+\Delta G = \Delta H - T\Delta S \qquad \text{spontaneous if } \Delta G < 0 \qquad \Delta G^\circ = -RT\ln K
 $$
 
 $$
-m = \frac{MIt}{nF}
+\Delta G = -nFE_{\text{cell}} \qquad E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}
 $$
 
-### Galvanic vs electrolytic
+$$
+E_{\text{cell}} = E^\circ_{\text{cell}} - \frac{RT}{nF}\ln Q \qquad E_{\text{cell}} = E^\circ_{\text{cell}} - \frac{0.0592}{n}\log Q \ \text{at } 25^\circ\text{C}
+$$
 
-- galvanic: spontaneous, anode negative, cathode positive
-- electrolytic: nonspontaneous, anode positive, cathode negative
-- oxidation always at anode
-- reduction always at cathode
+$$
+q = It = nF \qquad m = \frac{MIt}{nF}
+$$
+
+| | Galvanic | Electrolytic |
+| --- | --- | --- |
+| $\Delta G$ | < 0 | > 0 |
+| Anode sign | − | + |
+| Cathode sign | + | − |
+
+Oxidation at anode; reduction at cathode.
 
 :::figure{width=480}
-![Electrochemistry summary placeholder](/assets/APs/AP%20Chem/cheatsheet/electrochem-summary.png)
+![Electrochemistry](/assets/APs/AP%20Chem/cheatsheet/electrochem-summary.png)
 :::
 
 ---
 
-## Most Common AP Chemistry Mistakes
+## Pitfalls
 
-1. Forgetting units or using Celsius instead of Kelvin in gas/equilibrium/thermo work
-2. Including solids or liquids in equilibrium expressions
-3. Pulling rate-law exponents from the balanced equation without justification
-4. Forgetting stoichiometric coefficients in equilibrium, entropy, or formation-energy sums
-5. Mixing up anode/cathode with sign in galvanic vs electrolytic cells
-6. Forgetting to do stoichiometry first in titration and buffer problems
-7. Treating a catalyst as something that changes $$K$$ or $$\Delta G^\circ$$
-8. Confusing molecular polarity with bond polarity
-
----
-
-## Fast Problem-Solving Checklist
-
-1. Write the balanced equation first.
-2. Identify what unit/topic the problem belongs to.
-3. Decide whether the problem is stoichiometric, equilibrium-based, energetic, or statistical/rate-based.
-4. Track units before plugging in numbers.
-5. Check whether the answer sign and magnitude make chemical sense.
-6. For FRQs, explain with both particle-level logic and equation-level support when possible.
-
----
-
-## Practice
-
-### MCQ
-
-1. A reaction has $$\Delta H^\circ<0$$ and $$\Delta S^\circ<0$$. At which temperatures is the reaction most likely spontaneous?
-
-   (A) Low temperatures only<br>
-   (B) High temperatures only<br>
-   (C) All temperatures<br>
-   (D) No temperatures
-
-2. Which equation correctly relates standard free energy and the equilibrium constant?
-
-   (A) $$\Delta G^\circ=RT\ln K$$<br>
-   (B) $$\Delta G^\circ=-RT\ln K$$<br>
-   (C) $$\Delta G^\circ=-nFE$$<br>
-   (D) $$K=e^{RT\Delta G^\circ}$$
-
-### FRQ
-
-3. A student is solving an AP Chemistry FRQ involving a weak acid titration.
-
-   $$(A)$$ Explain why stoichiometry must be done before equilibrium at points before the equivalence point.
-
-   $$(B)$$ At the half-equivalence point, explain why $$\text{pH}=\text{p}K_a$$.
-
-   $$(C)$$ Describe one common error students make when writing equilibrium expressions.
-
----
-
-## Solutions
-
-### MCQ
-
-:::theorem
-### Solution 1
-
-Spontaneity depends on
-
-$$
-\Delta G=\Delta H-T\Delta S.
-$$
-
-If $$\Delta H<0$$ and $$\Delta S<0$$, then $$-T\Delta S$$ is positive. At low temperature, the favorable negative enthalpy term is more likely to dominate.
-
-$$
-\boxed{\text{A}}
-$$
-:::
-
-:::theorem
-### Solution 2
-
-The relationship between standard free energy and equilibrium is
-
-$$
-\Delta G^\circ=-RT\ln K.
-$$
-
-$$
-\boxed{\text{B}}
-$$
-:::
-
-### FRQ
-
-:::theorem
-### Solution 1
-
-$$(A)$$ Before the equivalence point, added strong base or strong acid reacts essentially completely with the weak acid or conjugate base. The reaction changes the amounts present, so the equilibrium calculation must use the post-stoichiometry mixture.
-
-$$(B)$$ At the half-equivalence point, half of the original weak acid has been converted into its conjugate base, so
-
-$$
-[\text{HA}]=[\text{A}^-].
-$$
-
-The Henderson-Hasselbalch equation becomes
-
-$$
-\text{pH}=\text{p}K_a+\log(1)=\text{p}K_a.
-$$
-
-$$(C)$$ A common error is including pure solids, pure liquids, or liquid water as concentration terms in equilibrium expressions when they should be omitted.
-:::
+- K in gas/eqm/thermo; not °C
+- No s, l in $K$
+- Rate-law orders from data, not coefficients
+- Stoichiometry before eqm (titration, buffer)
+- Catalyst: no $K$, no $\Delta G^\circ$
+- Bond polarity ≠ molecular polarity
+- Anode/cathode signs flip (galvanic vs electrolytic)
