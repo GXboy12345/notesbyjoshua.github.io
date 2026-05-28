@@ -94,7 +94,11 @@ export function normalizeMathDelimiters(src: string): string {
   // Remaining $$ … $$ is inline math in running text.
   normalized = normalized.replace(/\$\$([^$\n]+?)\$\$/g, (_, body) => `$${body.trim()}$`);
 
-  normalized = normalized.replace(/\u0000DISPLAY(\d+)\u0000/g, (_, idx) => `$$${display[Number(idx)]}$$`);
+  // remark-math only emits block `math` nodes when delimiters are on their own lines.
+  normalized = normalized.replace(
+    /\u0000DISPLAY(\d+)\u0000/g,
+    (_, idx) => `\n\n$$\n${display[Number(idx)]}\n$$\n\n`,
+  );
 
   return normalized;
 }

@@ -10,6 +10,7 @@ import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 import { preprocessMarkdown } from '../markdown-preprocess';
 import { convertLegacyHtmlToDirectives } from './legacy-html';
+import { rehypeExternalLinks } from './rehype-external-links';
 import { remarkDirectives } from './remark-directives';
 import { remarkStripOrphanFences } from './remark-strip-orphan-fences';
 import { headingsFromMdast, remarkHeadingIds, type DocHeading } from './remark-heading-ids';
@@ -20,7 +21,8 @@ export type { DocHeading };
 const mdastToHast = unified()
   .use(remarkRehype, { allowDangerousHtml: true })
   .use(rehypeRaw)
-  .use(rehypeKatex);
+  .use(rehypeKatex)
+  .use(rehypeExternalLinks);
 
 const hastToHtml = unified().use(rehypeStringify, { allowDangerousHtml: true });
 

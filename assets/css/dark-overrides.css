@@ -20,7 +20,7 @@ html {
   --site-link-accent: #0ea5e9;
 }
 
-/* One link / accent color in both themes (main content, header chrome, footer, search — not sidebar nav) */
+/* One link / accent color in both themes (main content, header chrome, footer, search—not sidebar nav) */
 html[data-site-theme="light"] .main-content a,
 html[data-site-theme="light"] .main-content a:link,
 html[data-site-theme="light"] .main-content a:visited,

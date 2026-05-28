@@ -12,9 +12,10 @@ import { p } from '../lib/paths';
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 
-const { title = 'Notes by Joshua', description = 'Math, physics, and AP study notes' } = Astro.props;
+const { title = 'Notes by Joshua', description = 'Math, physics, and AP study notes', noindex = false } = Astro.props;
 const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Joshua`;
 ---
 
@@ -26,6 +27,7 @@ const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Jo
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <FontPreload />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <title>{fullTitle}</title>
     <ClientRouter />
     <link rel="icon" type="image/jpeg" href={p('/assets/Images/favicon.jpeg')} />

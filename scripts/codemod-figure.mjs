@@ -5,7 +5,7 @@
  * Usage:
  *   node scripts/codemod-figure.mjs [--dry-run] [--write]
  *
- * Default (no flags): dry-run — print files that would change.
+ * Default (no flags): dry-run—print files that would change.
  * --dry-run: same as default.
  * --write: apply replacements in place.
  *

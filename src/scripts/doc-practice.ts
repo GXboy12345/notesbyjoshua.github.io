@@ -1,10 +1,3 @@
-import {
-  mountPracticeDebugPanel,
-  practiceDebug,
-  practiceDebugEnabled,
-  practiceDebugLog,
-} from './doc-practice-debug';
-
 const DELEGATED = 'practiceDelegated';
 const CHOICE = /^[A-F]$/;
 const GRADER_URL =
@@ -14,9 +7,7 @@ const ANON_ID_KEY = 'notes_frq_anon_id';
 type McqPhase = 'idle' | 'answered' | 'revealed';
 type McqFeedback = 'correct' | 'retry' | 'exhausted';
 
-let bindCount = 0;
-let lastBindAt = 0;
-let delegatedProse: HTMLElement | null = null;
+let documentClickBound = false;
 
 function articleProseFrom(el: HTMLElement): HTMLElement | null {
   const article = el.closest('article.prose');
@@ -172,13 +163,6 @@ function hideSolutions(root: HTMLElement) {
 }
 
 function submitPick(mcq: HTMLElement, picked: string) {
-  practiceDebug('check', {
-    phase: mcq.dataset.practicePhase ?? null,
-    picked,
-    correct: mcq.dataset.correct ?? null,
-    wrongAttempts: wrongAttempts(mcq),
-  });
-
   if ((mcq.dataset.practicePhase as McqPhase) !== 'idle') return;
 
   const correct = normalizeChoice(mcq.dataset.correct);
@@ -210,10 +194,7 @@ function submitPick(mcq: HTMLElement, picked: string) {
 
 function prepareMcq(mcq: HTMLElement) {
   const correct = normalizeChoice(mcq.dataset.correct);
-  if (!correct) {
-    practiceDebug('bind-skip', { reason: 'missing-correct', id: mcq.dataset.mcqId ?? null });
-    return;
-  }
+  if (!correct) return;
 
   hideSolutions(mcq);
   mcq.dataset.practicePhase = 'idle';
@@ -373,7 +354,7 @@ function renderGrade(data: GradeResponse): string {
         ? `<div class="frq-grade-block"><strong>Still missing</strong>${missing}</div>`
         : '';
       const strengthsBlock = strengths
-        ? `<div class="frq-grade-block"><strong>What you did well</strong>${strengthsBlock}</div>`
+        ? `<div class="frq-grade-block"><strong>What you did well</strong>${strengths}</div>`
         : '';
       const feedback = String(p.feedback ?? '').trim();
       return `<section class="frq-grade-part ${cls}">
@@ -399,10 +380,7 @@ async function gradeFrq(frq: HTMLElement) {
   const output = frq.querySelector<HTMLElement>('[data-frq-grade-output]');
   const gradeBtn = frq.querySelector<HTMLButtonElement>('[data-frq-grade]');
 
-  if (!frqId || !textarea || !output) {
-    practiceDebug('frq-grade', { status: 'missing-elements', frqId: frqId ?? null });
-    return;
-  }
+  if (!frqId || !textarea || !output) return;
 
   const answer = textarea.value.trim();
   if (!answer) {
@@ -419,15 +397,13 @@ async function gradeFrq(frq: HTMLElement) {
   output.textContent = 'Grading…';
   if (gradeBtn) gradeBtn.disabled = true;
 
-  practiceDebug('frq-grade', { status: 'request', frqId, url: GRADER_URL });
-
   try {
     const res = await fetch(GRADER_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         frqId,
-        pagePath: graderPagePath(),
+        pagePath: frq.dataset.frqPagePath ?? graderPagePath(),
         studentAnswer: textarea.value,
         anonUserId: getAnonUserId(),
       }),
@@ -447,28 +423,21 @@ async function gradeFrq(frq: HTMLElement) {
         typeof data.retryAfter === 'number' && data.retryAfter > 0
           ? `Grader is rate-limited. Try again in ${data.retryAfter}s.`
           : 'Grader is temporarily unavailable.';
-      practiceDebug('frq-grade', { status: 'error', http: res.status, data });
       return;
     }
 
     output.classList.remove('is-loading', 'is-error');
     output.innerHTML = renderGrade(data);
-    practiceDebug('frq-grade', { status: 'ok', frqId, totalScore: data.totalScore ?? null });
-  } catch (err) {
+  } catch {
     output.classList.remove('is-loading');
     output.classList.add('is-error');
     output.textContent = 'Could not reach the grader. Is the worker running locally?';
-    practiceDebug('frq-grade', {
-      status: 'network-error',
-      message: err instanceof Error ? err.message : String(err),
-    });
   } finally {
     if (gradeBtn) gradeBtn.disabled = false;
   }
 }
 
 function runMcqReveal(mcq: HTMLElement) {
-  practiceDebug('reveal', { id: mcq.dataset.mcqId ?? null });
   const correct = normalizeChoice(mcq.dataset.correct);
   if (correct) {
     finalizeMcq(mcq, correct, 'exhausted');
@@ -481,8 +450,6 @@ function runMcqReveal(mcq: HTMLElement) {
   }
 }
 
-let documentClickBound = false;
-
 function bindDocumentHandlers() {
   if (documentClickBound) return;
   documentClickBound = true;
@@ -492,39 +459,21 @@ function bindDocumentHandlers() {
     if (!(target instanceof HTMLElement)) return;
     if (!isPracticeTarget(target)) return;
 
-    practiceDebug('click', {
-      tag: target.tagName,
-      class: target.className || null,
-      choice: target.closest('[data-choice]') ? true : false,
-      mcqAction: target.closest('[data-mcq-show-solution]') ? true : false,
-    });
-
     const choice = target.closest<HTMLElement>('[data-choice]');
     if (choice) {
       const mcq = mcqRoot(choice);
-      if (!mcq) {
-        practiceDebug('choice', { status: 'no-mcq-root' });
-        return;
-      }
-      if ((mcq.dataset.practicePhase as McqPhase) !== 'idle') {
-        practiceDebug('choice', { status: 'wrong-phase', phase: mcq.dataset.practicePhase ?? null });
-        return;
-      }
+      if (!mcq) return;
+      if ((mcq.dataset.practicePhase as McqPhase) !== 'idle') return;
       if (choice instanceof HTMLButtonElement && choice.disabled) return;
       const value = normalizeChoice(choice.dataset.choice);
-      if (!value) {
-        practiceDebug('choice', { status: 'bad-value', raw: choice.dataset.choice ?? null });
-        return;
-      }
+      if (!value) return;
       submitPick(mcq, value);
-      practiceDebug('choice', { status: 'submitted', value, id: mcq.dataset.mcqId ?? null });
       return;
     }
 
     if (target.closest('[data-mcq-show-solution]')) {
       const mcq = mcqRoot(target);
       if (mcq) runMcqReveal(mcq);
-      else practiceDebug('reveal', { status: 'no-mcq-root' });
       return;
     }
 
@@ -537,7 +486,6 @@ function bindDocumentHandlers() {
     if (target.closest('[data-frq-reveal], [data-frq-show-solution]')) {
       const frq = frqRoot(target);
       if (!frq) return;
-      practiceDebug('frq-reveal', { id: frq.dataset.frqId ?? null });
       revealSolutions(frq);
       const btn = frq.querySelector<HTMLButtonElement>('[data-frq-reveal], [data-frq-show-solution]');
       if (btn) btn.disabled = true;
@@ -554,24 +502,11 @@ function bindDocumentHandlers() {
     event.preventDefault();
     choice.click();
   });
-
-  practiceDebug('delegate', { status: 'document-bound' });
 }
 
 function bindDelegatedHandlers(prose: HTMLElement) {
-  if (prose.dataset[DELEGATED] === '1') {
-    practiceDebug('delegate', { status: 'already-prepared', tag: prose.tagName, class: prose.className });
-    return;
-  }
+  if (prose.dataset[DELEGATED] === '1') return;
   prose.dataset[DELEGATED] = '1';
-  delegatedProse = prose;
-
-  practiceDebug('delegate', {
-    status: 'prepared',
-    tag: prose.tagName,
-    class: prose.className,
-    id: prose.id || null,
-  });
 }
 
 function proseRoot(): HTMLElement | null {
@@ -583,83 +518,23 @@ function proseRoot(): HTMLElement | null {
 }
 
 function bindAll() {
-  bindCount += 1;
-  lastBindAt = Date.now();
-
   bindDocumentHandlers();
 
   const prose = proseRoot();
-  const allProse = document.querySelectorAll('.prose');
-
-  if (!prose) {
-    practiceDebug('bind', { status: 'no-prose', bindCount, proseCount: allProse.length });
-    return;
-  }
+  if (!prose) return;
 
   bindDelegatedHandlers(prose);
 
-  const mcqs = prose.querySelectorAll<HTMLElement>('[data-mcq]');
-  const frqs = prose.querySelectorAll<HTMLElement>('[data-frq]');
-
-  mcqs.forEach(prepareMcq);
-  frqs.forEach(prepareFrq);
-
-  practiceDebug('bind', {
-    status: 'ok',
-    bindCount,
-    proseTag: prose.tagName,
-    proseClass: prose.className,
-    proseId: prose.id || null,
-    proseCount: allProse.length,
-    mcqCount: mcqs.length,
-    frqCount: frqs.length,
-    choiceCount: prose.querySelectorAll('[data-choice]').length,
-    delegated: prose.dataset[DELEGATED] === '1',
-    documentClickBound,
-  });
+  prose.querySelectorAll<HTMLElement>('[data-mcq]').forEach(prepareMcq);
+  prose.querySelectorAll<HTMLElement>('[data-frq]').forEach(prepareFrq);
 }
 
 let pageLoadBound = false;
-let debugPanelMounted = false;
-
-function debugState(): Record<string, unknown> {
-  const prose = proseRoot();
-  return {
-    enabled: practiceDebugEnabled(),
-    bindCount,
-    lastBindAt: lastBindAt ? new Date(lastBindAt).toISOString().slice(11, 23) : 'never',
-    prose: prose ? `${prose.tagName}.${prose.className}` : 'null',
-    delegatedOn: delegatedProse ? `${delegatedProse.tagName}.${delegatedProse.className}` : 'null',
-    documentClickBound,
-    mcqs: prose?.querySelectorAll('[data-mcq]').length ?? 0,
-    choices: prose?.querySelectorAll('[data-choice]').length ?? 0,
-    proseNodes: document.querySelectorAll('.prose').length,
-  };
-}
 
 export function initDocPractice() {
-  practiceDebug('init', { href: typeof location !== 'undefined' ? location.pathname : null });
-
-  try {
-    bindAll();
-  } catch (err) {
-    practiceDebug('error', { where: 'bindAll', message: err instanceof Error ? err.message : String(err) });
-    throw err;
-  }
-
-  if (practiceDebugEnabled() && !debugPanelMounted) {
-    debugPanelMounted = true;
-    mountPracticeDebugPanel(debugState);
-  }
+  bindAll();
 
   if (pageLoadBound) return;
   pageLoadBound = true;
-  document.addEventListener('astro:page-load', () => {
-    practiceDebug('init', { source: 'astro:page-load', href: location.pathname });
-    bindAll();
-  });
-}
-
-if (typeof window !== 'undefined') {
-  window.__practiceDebug = () => ({ ...debugState(), log: practiceDebugLog() });
+  document.addEventListener('astro:page-load', bindAll);
 }

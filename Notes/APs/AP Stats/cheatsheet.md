@@ -320,7 +320,7 @@ $$
 2. **Correlation ≠ causation**; confounding in observational studies.
 3. **Wrong SE**: pooled vs unpooled proportions; forgetting $$\sqrt{n}$$ in denominator.
 4. **Hypotheses about $$\hat{p}$$ or $$\bar{x}$$** instead of $$p$$ or $$\mu$$.
-5. **“Accept $$H_0$$”** language — say **fail to reject $$H_0$$**.
+5. **“Accept $$H_0$$”** language—say **fail to reject $$H_0$$**.
 6. **$$P$$-value definition**: mis-stating as $$P(H_0 \text{ true})$$.
 7. **Conditions skipped** or checked as “met” without linking to the study’s randomness and sample size.
 8. **Chi-square**: wrong $$\text{df}$$ or wrong “expected count” formula.

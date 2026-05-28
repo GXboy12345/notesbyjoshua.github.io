@@ -2,7 +2,7 @@ import type { Parent, Root } from 'mdast';
 import { toString } from 'mdast-util-to-string';
 import { visit } from 'unist-util-visit';
 
-/** Remove paragraph nodes that are only `:::` — invalid extra closes from nested directives. */
+/** Remove paragraph nodes that are only `:::`—invalid extra closes from nested directives. */
 export function remarkStripOrphanFences() {
   return (tree: Root) => {
     visit(tree, (node, index, parent) => {

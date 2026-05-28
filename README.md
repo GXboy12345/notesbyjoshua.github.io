@@ -28,4 +28,6 @@ Push to `main` (or `frontend` on the fork). GitHub Actions workflow `.github/wor
 
 Markdown lives under `Notes/`, `blog/`, `Practice Problems/`, `Resources/`, and `feedback/`. Each file can set `permalink:` in frontmatter for the canonical URL path.
 
+Author markup, directives, frontmatter, and sidebar rules: **[CONTRIBUTING.md](./CONTRIBUTING.md)**.
+
 Legacy Jekyll files (`_config.yml`, `_includes/`) remain for reference but are not part of the Astro build.

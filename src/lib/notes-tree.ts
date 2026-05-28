@@ -1,3 +1,4 @@
+import { NOTES_SIDEBAR_MOUNTS } from '../data/notes-library';
 import { notesHubPath } from '../data/navigation';
 import type { DocEntry } from './resolve-doc';
 import { routePath, routeSlug } from './routes';
@@ -67,6 +68,26 @@ function slugParts(entry: DocEntry): string[] {
   const parts = raw.split('/').filter(Boolean);
   if (parts[0]?.toLowerCase() === 'notes') parts.shift();
   return parts;
+}
+
+function treeParts(entry: DocEntry): string[] {
+  const navPath = entry.data.nav_path?.replace(/^\/+|\/+$/g, '');
+  if (navPath) {
+    const parts = navPath.split('/').filter(Boolean);
+    if (parts[0]?.toLowerCase() === 'notes') parts.shift();
+    if (parts.length) return parts;
+  }
+
+  const sourceId = entry.id.replace(/\\/g, '/').toLowerCase();
+  for (const { sourcePrefix, treePath } of NOTES_SIDEBAR_MOUNTS) {
+    const prefix = sourcePrefix.toLowerCase();
+    if (!sourceId.startsWith(prefix)) continue;
+    const leaf = sourceId.slice(sourcePrefix.length).replace(/\.md$/i, '');
+    if (!leaf || leaf.includes('/')) break;
+    return [...treePath.split('/').filter(Boolean), leaf];
+  }
+
+  return slugParts(entry);
 }
 
 function insert(root: InternalNode[], parts: string[], entry: DocEntry) {
@@ -147,7 +168,7 @@ export function buildNotesTree(entries: DocEntry[]): TreeNode[] {
 
   for (const entry of notes) {
     if (pathExact(routePath(entry), notesHubPath)) continue;
-    const parts = slugParts(entry);
+    const parts = treeParts(entry);
     if (!parts.length) continue;
     insert(children, parts, entry);
   }

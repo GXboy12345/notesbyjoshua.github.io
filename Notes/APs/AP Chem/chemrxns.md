@@ -36,11 +36,11 @@ If an element is a component of the reaction **ALONE**, they are written in thei
 
 The balanced equation conserves **mass** (atom counts). For **ionic** reactions in solution, you may also write:
 
-- **Molecular equation** — Molecular formulas are formulas as written in the bottle/usually stated in the problem (e.g. $$\text{AgNO}_3(aq) + \text{NaCl}(aq)$$)
+- **Molecular equation**—Molecular formulas are formulas as written in the bottle/usually stated in the problem (e.g. $$\text{AgNO}_3(aq) + \text{NaCl}(aq)$$)
 
-- **Total ionic equation** — You treat strong electrolytes as **separated ions**, while solids, liquids, weak electrolytes, and gases usually **undissociated** (Check solubility rules below for electrolytes; strong electrolytes are soluble in water)
+- **Total ionic equation**—You treat strong electrolytes as **separated ions**, while solids, liquids, weak electrolytes, and gases usually **undissociated** (Check solubility rules below for electrolytes; strong electrolytes are soluble in water)
 
-- **Net ionic equation** — Write the total ionic equation but cancel **spectator ions** that do not change (Basically anything that can cancel on both sides) and only species that actually react
+- **Net ionic equation**—Write the total ionic equation but cancel **spectator ions** that do not change (Basically anything that can cancel on both sides) and only species that actually react
 
 **Redox** reactions in acidic or basic solution often needs the *half-reaction method* (below) because oxidation numbers change and **electron** and **charge** balance are not handled by atom counting alone.
 

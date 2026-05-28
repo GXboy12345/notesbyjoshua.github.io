@@ -5,7 +5,7 @@
  * Usage:
  *   node scripts/codemod-chem-mcq.mjs [--dry-run] [--write] [--only <basename.md>]
  *
- * Default (no flags): dry-run — print files that would change.
+ * Default (no flags): dry-run—print files that would change.
  * --dry-run: same as default.
  * --write: apply replacements in place.
  * --only: process a single file under Notes/APs/AP Chem/ (e.g. kinetics.md).
@@ -106,7 +106,7 @@ function stripChoiceSuffix(text) {
 }
 
 /**
- * @param {string} block — text after "### MCQ\n"
+ * @param {string} block—text after "### MCQ\n"
  * @returns {{ num: number, stem: string, choices: string[], raw?: string }[]}
  */
 function parseMcqSection(block) {

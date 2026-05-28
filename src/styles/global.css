@@ -1334,6 +1334,30 @@ body.ref-sheet-open {
   scroll-margin-top: calc(var(--header-height) + 0.75rem);
 }
 
+.prose a.link-external {
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+
+.prose a.link-external::after {
+  content: '';
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  margin-inline-start: 0.18em;
+  vertical-align: 0.08em;
+  background-color: currentColor;
+  opacity: 0.6;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'%3E%3Cpath d='M11 3a1 1 0 1 0 0 2h2.586L7.293 11.293a1 1 0 1 0 1.414 1.414L15 6.414V9a1 1 0 1 0 2 0V4a1 1 0 0 0-1-1h-5z'/%3E%3Cpath d='M5 5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3a1 1 0 1 0-2 0v3H5V7h3a1 1 0 1 0 0-2H5z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'%3E%3Cpath d='M11 3a1 1 0 1 0 0 2h2.586L7.293 11.293a1 1 0 1 0 1.414 1.414L15 6.414V9a1 1 0 1 0 2 0V4a1 1 0 0 0-1-1h-5z'/%3E%3Cpath d='M5 5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3a1 1 0 1 0-2 0v3H5V7h3a1 1 0 1 0 0-2H5z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+.prose a.link-external:hover::after {
+  opacity: 0.85;
+}
+
 .hash-scroll-active {
   scroll-behavior: auto;
 }
@@ -1489,7 +1513,7 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
   margin: 0.5rem 0;
 }
 
-/* .theorem-box — backward-compat alias for .callout--theorem */
+/* .theorem-box—backward-compat alias for .callout--theorem */
 .prose .callout--theorem,
 .prose .theorem-box {
   --callout-accent: var(--accent);
@@ -1578,68 +1602,6 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
 [data-theme='dark'] .prose .callout--summary {
   --callout-accent: #6eb8b8;
   --callout-label: #8ed0d0;
-}
-
-/* Collapsible proof/example (cram-mode.ts wraps body in details.callout__details) */
-.prose details.callout,
-.prose .callout > details.callout__details {
-  border-left-width: 3px;
-}
-
-.prose details.callout > summary.callout__label,
-.prose details.callout__details > summary.callout__summary {
-  cursor: pointer;
-  list-style: none;
-  user-select: none;
-  padding: 0.55rem 1.1rem 0.45rem;
-  font-family: var(--font-ui);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--callout-label);
-  border-bottom: 1px solid color-mix(in srgb, var(--callout-accent) 14%, var(--border));
-  background: color-mix(in srgb, var(--callout-accent) 4%, var(--bg-elevated));
-}
-
-.prose details.callout > summary.callout__label::-webkit-details-marker,
-.prose details.callout__details > summary.callout__summary::-webkit-details-marker {
-  display: none;
-}
-
-.prose details.callout > summary.callout__label::after,
-.prose details.callout__details > summary.callout__summary::after {
-  content: '';
-  display: inline-block;
-  width: 0.45rem;
-  height: 0.45rem;
-  margin-left: 0.45rem;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg) translateY(-0.1em);
-  vertical-align: middle;
-  opacity: 0.65;
-  transition: transform var(--motion-fast) var(--ease-out);
-}
-
-.prose details.callout[open] > summary.callout__label::after,
-.prose details.callout__details[open] > summary.callout__summary::after {
-  transform: rotate(-135deg) translateY(0.05em);
-}
-
-.prose .callout > details.callout__details > .callout__body {
-  padding: 0.95rem 1.1rem;
-}
-
-.prose .callout__body.is-collapsed,
-.prose .callout.is-collapsed > .callout__body,
-.prose .callout__body[hidden] {
-  display: none;
-}
-
-html[data-cram-mode] .prose .callout--proof > details.callout__details:not([open]) .callout__body,
-html[data-cram-mode] .prose .callout--example > details.callout__details:not([open]) .callout__body {
-  display: none;
 }
 
 /* Figures */
@@ -2078,13 +2040,6 @@ html[data-cram-mode] .prose .callout--example > details.callout__details:not([op
 
 [data-theme='dark'] .prose .frq-grade-part--bad .frq-grade-part__title {
   color: #f0a890;
-}
-
-/* Cram mode — hide solutions until revealed; proof/example use details (see callout__details) */
-html[data-cram-mode] .prose [data-solution][hidden],
-html[data-cram-mode] .prose [data-rubric][hidden],
-html[data-cram-mode] .prose .mcq-solution:not(.is-revealed) {
-  display: none;
 }
 
 /* Image lightbox (doc-lightbox.ts); .lightbox aliases for legacy markup */

@@ -5,7 +5,7 @@
  * Usage:
  *   node scripts/codemod-precalc-practice.mjs [--dry-run] [--write] [--limit N] [--only <basename.md>]
  *
- * Default (no flags): dry-run — print files that would change.
+ * Default (no flags): dry-run—print files that would change.
  * --dry-run: same as default.
  * --write: apply replacements in place.
  * --limit N: convert at most N practice items per file (default: 3, pilot scope).
@@ -105,7 +105,7 @@ function parseSolutions(src) {
 }
 
 /**
- * @param {string} block — text after "## Practice\n"
+ * @param {string} block—text after "## Practice\n"
  * @returns {{ num: number, stem: string, raw?: string }[]}
  */
 function parsePracticeSection(block) {

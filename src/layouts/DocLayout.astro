@@ -12,12 +12,14 @@ interface Props {
   math?: boolean;
   /** Practice MCQs, figures lightbox, etc. */
   interactive?: boolean;
+  /** Hide from search engines (dev/orphan pages). */
+  noindex?: boolean;
 }
 
-const { title, description, headings = [], math = false, interactive = false } = Astro.props;
+const { title, description, headings = [], math = false, interactive = false, noindex = false } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} noindex={noindex}>
   <div class="layout-doc">
     <DocSidebar current={Astro.url.pathname} />
     <main class="doc-main" transition:animate="fade">

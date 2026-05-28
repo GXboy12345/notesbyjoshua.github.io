@@ -245,6 +245,7 @@ function processLeaf(leaf: LeafDirective, renderFragment: FragmentRenderer) {
   if (name === 'frq') {
     const a = attrs(dir);
     const id = a.id ?? '';
+    const pagePath = a.pagePath ?? a.pagepath ?? '';
     let solutionNodes: BlockContent[] = [];
     const bodyNodes: BlockContent[] = [];
 
@@ -261,7 +262,7 @@ function processLeaf(leaf: LeafDirective, renderFragment: FragmentRenderer) {
 
     const answerId = id ? `frq-answer-${escapeHtml(id)}` : undefined;
     replace(
-      `<div class="frq" data-frq${id ? ` data-frq-id="${escapeHtml(id)}"` : ''}>
+      `<div class="frq" data-frq${id ? ` data-frq-id="${escapeHtml(id)}"` : ''}${pagePath ? ` data-frq-page-path="${escapeHtml(pagePath)}"` : ''}>
 <div class="frq-parts">${bodyHtml}</div>
 <label class="frq-answer-label"${answerId ? ` for="${answerId}"` : ''}>Your answer</label>
 <textarea class="frq-answer" data-frq-answer${answerId ? ` id="${answerId}"` : ''} rows="6" placeholder="Write your answer for all parts…"></textarea>

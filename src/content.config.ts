@@ -7,6 +7,8 @@ const fm = z.object({
   parent: z.string().optional(),
   permalink: z.string().optional(),
   nav_order: z.coerce.number().optional(),
+  /** Sidebar segments under /notes/; overrides permalink-based placement. */
+  nav_path: z.string().optional(),
   has_toc: z.boolean().optional(),
 });
 

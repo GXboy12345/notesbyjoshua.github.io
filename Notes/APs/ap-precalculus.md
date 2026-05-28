@@ -35,4 +35,4 @@ nav_order: 6
 
 ## Resources
 
-- [Resources]({{ '/Resources/resources/' | relative_url }}) — general AP prep links, College Board, and books.
+- [Resources]({{ '/Resources/resources/' | relative_url }})—general AP prep links, College Board, and books.

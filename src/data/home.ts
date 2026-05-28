@@ -84,12 +84,12 @@ export const mathGroups: UnitGroup[] = [
   {
     title: 'AP Calculus AB/BC',
     href: '/notes/ap/calculus/',
-    summary: 'Limits through series — aligned with the AP Calculus curriculum.',
+    summary: 'Limits through series—aligned with the AP Calculus curriculum.',
     status: 'draft',
     units: [
       { label: 'Limits', href: '/notes/math/limits/' },
-      { label: 'Derivatives — fundamentals', href: '/notes/math/diffdeffund/' },
-      { label: 'Derivatives — complex', href: '/notes/math/diffcomplex/' },
+      { label: 'Derivatives—fundamentals', href: '/notes/math/diffdeffund/' },
+      { label: 'Derivatives—complex', href: '/notes/math/diffcomplex/' },
       { label: 'Analytical applications', href: '/notes/math/analyticalappdiff/' },
       { label: 'Contextual applications', href: '/notes/math/contextappdiff/' },
       { label: 'Differential equations', href: '/notes/math/diffeq/' },

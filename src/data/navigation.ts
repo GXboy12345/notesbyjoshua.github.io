@@ -1,6 +1,6 @@
 export type NavItem = { label: string; href: string; children?: NavItem[] };
 
-/** Notes subject index — primary nav only, not duplicated in the library tree. */
+/** Notes subject index—primary nav only, not duplicated in the library tree. */
 export const notesHubPath = '/Notes/notes/';
 
 export const mainNav: NavItem[] = [
@@ -14,7 +14,7 @@ export const mainNav: NavItem[] = [
   { label: 'About', href: '/about/' },
 ];
 
-/** Secondary links — footer, not primary nav. */
+/** Secondary links—footer, not primary nav. */
 export const footerNav: NavItem[] = [{ label: 'Credits', href: '/credits/' }];
 
 export const subjectHubs = [

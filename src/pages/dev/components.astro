@@ -1,0 +1,39 @@
+---
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import DocLayout from '../../layouts/DocLayout.astro';
+import { preprocessMarkdown } from '../../lib/markdown-preprocess';
+import { renderDoc } from '../../lib/render-doc';
+
+const fixturePath = join(process.cwd(), 'src/dev/component-fixture.md');
+const raw = readFileSync(fixturePath, 'utf8');
+const md = preprocessMarkdown(raw);
+const { html, headings } = renderDoc(md);
+---
+
+<DocLayout
+  title="Component fixture (dev)"
+  description="Orphan page for manual testing of remark directives and practice UI. Not linked from navigation."
+  headings={headings}
+  interactive={true}
+  noindex={true}
+>
+  <p class="dev-fixture-banner">
+    Orphan dev page—not in nav. Source: <code>src/dev/component-fixture.md</code>.
+    See <code>src/dev/README.md</code> when adding components.
+  </p>
+  <Fragment set:html={html} />
+</DocLayout>
+
+<style>
+  .dev-fixture-banner {
+    margin: 0 0 1.25rem;
+    padding: 0.65rem 0.85rem;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--accent) 5%, var(--bg-elevated));
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+</style>

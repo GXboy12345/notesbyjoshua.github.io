@@ -1,7 +1,6 @@
 ---
 import { mainNav } from '../data/navigation';
 import { p, pathActive } from '../lib/paths';
-import CramModeToggle from './CramModeToggle.astro';
 import HeaderSearch from './HeaderSearch.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
@@ -26,7 +25,6 @@ const { current = Astro.url.pathname } = Astro.props;
   <div class="header-actions">
     <div id="ref-sheet-handle" class="ref-sheet-handle-slot" hidden></div>
     <HeaderSearch />
-    <CramModeToggle />
     <ThemeToggle />
   </div>
 </header>

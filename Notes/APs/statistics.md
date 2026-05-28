@@ -44,6 +44,6 @@ For AP free-response problems, the calculation is usually only part of the answe
 
 ## Resources
 
-- [Resources]({{ '/Resources/resources/' | relative_url }}) — general AP prep links, College Board, and books.
+- [Resources]({{ '/Resources/resources/' | relative_url }})—general AP prep links, College Board, and books.
 - [AP Statistics Course Page](https://apstudents.collegeboard.org/courses/ap-statistics)
 - [Released AP Statistics Free-Response Questions](https://apcentral.collegeboard.org/courses/ap-statistics/exam/past-exam-questions)
