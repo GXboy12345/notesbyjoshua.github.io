@@ -22,13 +22,15 @@ import { findHighlightAtPoint, caretRangeFromPoint, rangeContainsPoint } from '.
 import { MARK_ICON, NOTE_ICON } from '../lib/annotations/icons';
 import {
   collapseAllPlaintextNotes,
+  clearPlaintextNotes,
   enterPlaintextNoteEdit,
   expandPlaintextNote,
   expandedPlaintextNoteId,
   getPlaintextNoteEntry,
-  mountPlaintextNote,
   readPlaintextNoteDraft,
+  registerPlaintextNoteFallbackRange,
   relayoutPlaintextNotes,
+  scheduleFlyInPlaintextNote,
   updatePlaintextNoteBody,
   updatePlaintextNoteRange,
 } from '../lib/annotations/plaintext-note';
@@ -253,16 +255,13 @@ async function saveHighlightComment(
     ...record,
     comment: trimmed,
     updatedAt: Date.now(),
-  });
+  }, { emit: false });
   window.getSelection()?.removeAllRanges();
   dismissToolbar();
+  if (fallbackRange) registerPlaintextNoteFallbackRange(id, fallbackRange);
+  scheduleFlyInPlaintextNote(id);
   await refreshPageAnnotations();
-  const article = proseArticle();
-  const fresh = pageRecordsCache.find((r) => r.id === id);
-  if (article && fresh) {
-    mountPlaintextNote(article, fresh, fallbackRange);
-  }
-  expandPlaintextNote(id);
+  emitAnnotationsChanged({ skipPageRefresh: true });
 }
 
 function openSelectionNotePopover(): void {
@@ -697,7 +696,7 @@ async function saveTextNoteEdit(id: string, text: string): Promise<void> {
     updatedAt: Date.now(),
   });
   await refreshPageAnnotations();
-  expandPlaintextNote(id);
+  collapseAllPlaintextNotes();
 }
 
 async function removeBlockNoteById(id: string): Promise<void> {
@@ -777,7 +776,11 @@ function onPageNoteClick(e: Event): void {
   const tabId = target.closest<HTMLElement>('[data-text-note-tab]')?.dataset.textNoteTab;
   if (tabId) {
     e.preventDefault();
-    expandPlaintextNote(tabId);
+    if (expandedPlaintextNoteId() === tabId) {
+      collapseAllPlaintextNotes();
+    } else {
+      expandPlaintextNote(tabId);
+    }
     return;
   }
 
@@ -1036,17 +1039,16 @@ async function createHighlight(
       updatedAt: now,
       stale: false,
     }),
+    { emit: false },
   );
   window.getSelection()?.removeAllRanges();
   dismissToolbar();
-  await refreshPageAnnotations();
   if (trimmedComment) {
-    const fresh = pageRecordsCache.find((r) => r.id === id);
-    if (fresh) {
-      mountPlaintextNote(article, fresh, savedRange);
-    }
-    expandPlaintextNote(id);
+    registerPlaintextNoteFallbackRange(id, savedRange);
+    scheduleFlyInPlaintextNote(id);
   }
+  await refreshPageAnnotations();
+  emitAnnotationsChanged({ skipPageRefresh: true });
 }
 
 function buildBookmarkAnchor(
@@ -1129,6 +1131,13 @@ async function saveBlockNote(block: HTMLElement, comment: string): Promise<void>
   await refreshPageAnnotations();
 }
 
+const markAnimPending = new WeakMap<HTMLButtonElement, number>();
+
+function clearMarkAnimation(btn: HTMLButtonElement): void {
+  markAnimPending.delete(btn);
+  btn.classList.remove('annotation-poi-btn--marking', 'annotation-poi-btn--unmarking');
+}
+
 function setMarkButtonState(
   btn: HTMLButtonElement | null,
   active: boolean,
@@ -1140,13 +1149,27 @@ function setMarkButtonState(
   btn.setAttribute('aria-pressed', active ? 'true' : 'false');
 
   if (opts?.animate && wasActive !== active) {
-    btn.classList.remove('annotation-poi-btn--marking', 'annotation-poi-btn--unmarking');
+    clearMarkAnimation(btn);
     void btn.offsetWidth;
     btn.classList.add(active ? 'annotation-poi-btn--marking' : 'annotation-poi-btn--unmarking');
+    markAnimPending.set(btn, 1);
   }
 }
 
 function bindMarkButton(btn: HTMLButtonElement, onToggle: () => void): void {
+  btn.addEventListener('animationend', (e) => {
+    if (!(e.target instanceof Element)) return;
+    if (!e.animationName.startsWith('annotation-mark')) return;
+    const pending = markAnimPending.get(btn);
+    if (pending === undefined) return;
+    const next = pending - 1;
+    if (next <= 0) {
+      clearMarkAnimation(btn);
+    } else {
+      markAnimPending.set(btn, next);
+    }
+  });
+
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -1402,6 +1425,7 @@ function teardownDocAnnotations(): void {
   setSelectedHighlightRange(null);
   destroyAnnotationChrome();
   clearRenderedHighlights();
+  clearPlaintextNotes();
   savedSelectionRange = null;
   lastSelectionToolbarRect = null;
   toolbarPointerPending = false;
@@ -1427,9 +1451,15 @@ function bindDocEvents(): void {
     true,
   );
   document.addEventListener('astro:before-swap', teardownDocAnnotations);
-  document.addEventListener(ANNOTATIONS_CHANGED, () => {
+  document.addEventListener(ANNOTATIONS_CHANGED, (event) => {
     if (handleDragActive) return;
+    if ((event as CustomEvent<{ skipPageRefresh?: boolean }>).detail?.skipPageRefresh) return;
     void refreshPageAnnotations();
+  });
+  document.addEventListener('annotations:focus-text-note', (event) => {
+    const id = (event as CustomEvent<{ id: string }>).detail?.id;
+    if (!id) return;
+    expandPlaintextNote(id);
   });
   window.addEventListener(
     'scroll',

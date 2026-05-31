@@ -77,6 +77,7 @@
   --motion-fast: 140ms;
   --motion-base: 220ms;
   --motion-slow: 360ms;
+  --motion-mark: 520ms;
   --motion-sidebar: 340ms;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
@@ -1349,12 +1350,15 @@ html.annotation-library-open .doc-main__canvas-wrap {
     display: flex;
     flex-direction: column;
     align-self: stretch;
+    position: relative;
+    z-index: 130;
     height: 100%;
     max-height: 100%;
     min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
     overscroll-behavior: contain;
+    background: color-mix(in srgb, var(--bg-elevated) 94%, var(--accent-soft));
   }
 
   .doc-toc ul {
@@ -1559,6 +1563,35 @@ html.annotation-library-open .doc-main__canvas-wrap {
 }
 
 .doc-minimap__star:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.doc-minimap__poi {
+  position: absolute;
+  left: 0.1rem;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.05rem;
+  height: 1.05rem;
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  pointer-events: auto;
+  filter: drop-shadow(0 0 3px var(--bg)) drop-shadow(0 0 6px var(--bg));
+}
+
+.doc-minimap__poi--note:hover,
+.doc-minimap__poi--note:focus-visible {
+  color: var(--fg);
+  outline: none;
+}
+
+.doc-minimap__poi--note:focus-visible {
   box-shadow: 0 0 0 2px var(--accent);
 }
 
@@ -1953,12 +1986,7 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
   text-transform: uppercase;
   color: var(--callout-label);
   border-bottom: 1px solid color-mix(in srgb, var(--callout-accent) 14%, var(--border));
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--callout-accent) 10%, var(--bg-elevated)) 0%,
-    color-mix(in srgb, var(--callout-accent) 4%, var(--bg-elevated)) 38%,
-    var(--bg-elevated) 100%
-  );
+  background: transparent;
 }
 
 .prose .callout__label::before {
@@ -1997,7 +2025,7 @@ body.hash-scroll-source-hidden .hash-scroll-ghost-source {
   font-weight: 600;
   letter-spacing: 0.01em;
   text-transform: none;
-  color: var(--text);
+  color: var(--fg);
   background: color-mix(in srgb, var(--callout-accent) 28%, var(--bg-elevated));
   border: 1px solid color-mix(in srgb, var(--callout-accent) 38%, var(--border));
   box-shadow: inset 0 1px 2px color-mix(in srgb, var(--callout-accent) 12%, transparent);
@@ -4753,9 +4781,7 @@ article.prose[data-annotation-root] {
 .annotation-poi-btn--mark .annotation-poi-icon__shape {
   transform-origin: center bottom;
   fill: transparent;
-  transition:
-    fill var(--motion-base) var(--ease-out),
-    transform var(--motion-base) var(--ease-out);
+  transition: fill var(--motion-mark) var(--ease-out);
 }
 
 .annotation-poi-btn--mark.is-active .annotation-poi-icon path {
@@ -4766,75 +4792,64 @@ article.prose[data-annotation-root] {
   fill: currentColor;
 }
 
-.annotation-poi-btn--mark.annotation-poi-btn--marking {
-  animation: annotation-mark-pop var(--motion-base) var(--ease-out);
+.annotation-poi-btn--mark.annotation-poi-btn--marking,
+.annotation-poi-btn--mark.annotation-poi-btn--unmarking {
+  transition: none;
 }
 
-.annotation-poi-btn--mark.annotation-poi-btn--marking .annotation-poi-icon__shape {
-  animation: annotation-mark-icon-in var(--motion-base) var(--ease-out) forwards;
+.annotation-poi-btn--mark.annotation-poi-btn--marking {
+  animation: annotation-mark-bounce-in var(--motion-mark) linear;
 }
 
 .annotation-poi-btn--mark.annotation-poi-btn--unmarking {
-  animation: annotation-mark-settle var(--motion-fast) var(--ease-out);
+  animation: annotation-mark-bounce-out var(--motion-mark) linear;
 }
 
-.annotation-poi-btn--mark.annotation-poi-btn--unmarking .annotation-poi-icon__shape {
-  animation: annotation-mark-icon-out var(--motion-fast) var(--ease-out) forwards;
-}
-
-@keyframes annotation-mark-pop {
+@keyframes annotation-mark-bounce-in {
   0% {
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
   }
 
-  42% {
-    transform: scale(1.14);
+  16% {
+    transform: scale(0.68) rotate(-11deg);
+  }
+
+  44% {
+    transform: scale(1.12) rotate(6deg);
+  }
+
+  64% {
+    transform: scale(0.95) rotate(-2deg);
+  }
+
+  84% {
+    transform: scale(1.04) rotate(1deg);
   }
 
   100% {
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
   }
 }
 
-@keyframes annotation-mark-settle {
+@keyframes annotation-mark-bounce-out {
   0% {
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
   }
 
-  55% {
-    transform: scale(0.9);
+  28% {
+    transform: scale(1.1) rotate(9deg);
+  }
+
+  52% {
+    transform: scale(0.86) rotate(-7deg);
+  }
+
+  76% {
+    transform: scale(1.04) rotate(3deg);
   }
 
   100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes annotation-mark-icon-in {
-  0% {
-    transform: scale(0.72) translateY(2px);
-    fill: transparent;
-  }
-
-  65% {
-    transform: scale(1.08) translateY(-1px);
-  }
-
-  100% {
-    transform: scale(1) translateY(0);
-    fill: currentColor;
-  }
-}
-
-@keyframes annotation-mark-icon-out {
-  0% {
-    transform: scale(1) translateY(0);
-    fill: currentColor;
-  }
-
-  100% {
-    transform: scale(0.86) translateY(2px);
-    fill: transparent;
+    transform: scale(1) rotate(0deg);
   }
 }
 
@@ -4847,22 +4862,18 @@ article.prose[data-annotation-root] {
   padding: 0;
 }
 
-.annotation-heading-host {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
-
-h1.annotation-heading-host {
-  align-items: center;
-}
-
 .annotation-heading-chrome {
   display: inline-flex;
   align-items: center;
   margin-left: 0.35rem;
-  vertical-align: middle;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.06em;
+  white-space: nowrap;
+}
+
+.prose h1 .annotation-heading-chrome {
+  top: -0.18em;
 }
 
 .annotation-on-page-note {
@@ -4945,7 +4956,7 @@ h1.annotation-heading-host {
 
 .annotation-text-note-card {
   position: fixed;
-  z-index: 126;
+  z-index: 125;
   display: flex;
   align-items: stretch;
   overflow: hidden;
@@ -4954,18 +4965,64 @@ h1.annotation-heading-host {
   background: var(--bg-elevated);
   box-shadow: var(--shadow);
   font-family: var(--font-ui);
-  transition:
-    transform var(--motion-base) var(--ease-out),
-    opacity var(--motion-fast) var(--ease-out);
+  --note-card-width: 240px;
 }
 
+.annotation-text-note-card.is-note-flying-in {
+  will-change: transform;
+  transition: none !important;
+}
+
+.annotation-text-note-card.is-note-awaiting-enter {
+  transform: translateX(calc(var(--note-card-width) - 1.35rem));
+}
+
+.annotation-text-note-card.is-note-expanding,
+.annotation-text-note-card.is-note-collapsing {
+  will-change: transform;
+  z-index: 125;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .annotation-text-note-card.is-note-awaiting-enter {
+    transform: none;
+  }
+}
+
+/* Collapsed: tab left of minimap; panel clipped and stacked under minimap (z-index 125 < toc 130). */
 .annotation-text-note-card.is-collapsed {
-  transform: translateX(calc(100% - 1.35rem));
-  opacity: 0.88;
+  z-index: 125;
+  opacity: 1;
+  clip-path: inset(0 calc(100% - 1.35rem) 0 0);
 }
 
-.annotation-text-note-card.is-expanded {
-  transform: translateX(0);
+.annotation-text-note-card.is-collapsed .annotation-text-note-card__panel {
+  pointer-events: none;
+}
+
+.annotation-text-note-card.is-collapsed .annotation-text-note-card__tab {
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--border));
+  border-right: 1px solid color-mix(in srgb, var(--accent) 55%, var(--border));
+  border-radius: var(--radius) 0 0 var(--radius);
+  background: color-mix(in srgb, var(--accent-soft) 88%, var(--bg-elevated));
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--bg) 40%, transparent),
+    0 2px 12px color-mix(in srgb, var(--accent) 28%, transparent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.annotation-text-note-card.is-collapsed .annotation-text-note-card__tab:hover,
+.annotation-text-note-card.is-collapsed .annotation-text-note-card__tab:focus-visible {
+  background: color-mix(in srgb, var(--accent-soft) 95%, var(--bg-elevated));
+  border-color: var(--accent);
+  outline: none;
+}
+
+.annotation-text-note-card.is-expanded,
+.annotation-text-note-card.is-editing {
+  z-index: 140;
   opacity: 1;
 }
 

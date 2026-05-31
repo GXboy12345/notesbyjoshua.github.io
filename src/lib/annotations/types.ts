@@ -76,6 +76,11 @@ export const MAX_COMMENT_LENGTH = 4096;
 
 export const ANNOTATIONS_CHANGED = 'annotations:changed';
 
+export type AnnotationsChangedDetail = {
+  /** Skip doc-annotations full page re-render (e.g. right after a local refresh + fly-in). */
+  skipPageRefresh?: boolean;
+};
+
 export type AnnotationPageMeta = {
   pageId: string;
   pageTitle: string;

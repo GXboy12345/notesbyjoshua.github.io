@@ -1,6 +1,6 @@
 import type { AnnotationColor, AnnotationRecord } from './types';
 import { reAnchorRecord } from './anchors';
-import { clearPlaintextNotes, renderPlaintextNotes } from './plaintext-note';
+import { renderPlaintextNotes } from './plaintext-note';
 import { escapeHtml } from './sanitize';
 
 const HIGHLIGHT_REGISTRY = new Map<string, Highlight>();
@@ -223,7 +223,6 @@ export function clearRenderedHighlights(): void {
   overlayLayer = null;
   overlayArticle = null;
   selectionHighlight?.clear();
-  clearPlaintextNotes();
   document.querySelectorAll('.annotation-stale-badge').forEach((el) => el.remove());
   document.querySelectorAll('.annotation-on-page-note').forEach((el) => el.remove());
 }

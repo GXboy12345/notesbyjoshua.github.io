@@ -1,5 +1,6 @@
 import Dexie, { type Table } from 'dexie';
-import type { AnnotationRecord, AnnotationTombstone, ImportMergeResult } from './types';
+import type { AnnotationRecord, AnnotationTombstone, AnnotationsChangedDetail, ImportMergeResult } from './types';
+import { ANNOTATIONS_CHANGED } from './types';
 
 export type MetaRow = { key: string; value: string };
 
@@ -114,6 +115,6 @@ export async function recordImportAudit(result: ImportMergeResult): Promise<void
   });
 }
 
-export function emitAnnotationsChanged(): void {
-  document.dispatchEvent(new CustomEvent('annotations:changed'));
+export function emitAnnotationsChanged(detail?: AnnotationsChangedDetail): void {
+  document.dispatchEvent(new CustomEvent(ANNOTATIONS_CHANGED, { detail }));
 }

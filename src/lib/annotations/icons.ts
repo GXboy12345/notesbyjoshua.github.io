@@ -9,3 +9,6 @@ export const NOTE_ICON = `<svg class="annotation-poi-icon" viewBox="0 0 24 24" w
 
 /** Filled star — minimap bookmark rail. */
 export const MINIMAP_STAR_ICON = `<svg class="doc-minimap__star-icon" viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><path d="M12 2.5l2.55 5.17 5.7.83-4.12 4.02.97 5.68L12 15.9l-5.1 2.3.97-5.68-4.12-4.02 5.7-.83L12 2.5z" fill="currentColor"/></svg>`;
+
+/** Pencil — minimap note POI rail (text notes and on-page notes). */
+export const MINIMAP_NOTE_ICON = `<svg class="doc-minimap__poi-icon" viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;

@@ -4,7 +4,7 @@
 
 import { readPageMeta, reAnchorRecord, scrollTargetForRecord } from '../lib/annotations/anchors';
 import { listAnnotationsForPage } from '../lib/annotations/db';
-import { MINIMAP_STAR_ICON } from '../lib/annotations/icons';
+import { MINIMAP_NOTE_ICON, MINIMAP_STAR_ICON } from '../lib/annotations/icons';
 import { excerptForRecord } from '../lib/annotations/search';
 import { ANNOTATIONS_CHANGED, type AnnotationRecord } from '../lib/annotations/types';
 import { scrollToY } from './hash-scroll.ts';
@@ -192,24 +192,34 @@ function scrollMax(root: HTMLElement): number {
 function visibleArticleRange(
   scrollRoot: HTMLElement,
   article: HTMLElement,
-  g: Geometry,
-): { top: number; bottom: number; snapFullBlock: boolean } {
+): { top: number; bottom: number; articleHeight: number; snapFullBlock: boolean } {
   const articleTop = measureArticleTopInRoot(scrollRoot, article);
+  const articleHeight = article.scrollHeight;
   const contentStart = articleTop;
-  const contentEnd = articleTop + g.articleHeight;
+  const contentEnd = articleTop + articleHeight;
   const viewStart = scrollRoot.scrollTop;
   const viewEnd = viewStart + scrollRoot.clientHeight;
-  const snapFullBlock = scrollMax(scrollRoot) < 2;
+  const maxScroll = scrollMax(scrollRoot);
+  const snapFullBlock = maxScroll < 2;
 
   if (snapFullBlock) {
-    return { top: 0, bottom: g.articleHeight, snapFullBlock: true };
+    return { top: 0, bottom: articleHeight, articleHeight, snapFullBlock: true };
   }
 
   const visStart = Math.max(viewStart, contentStart);
-  const visEnd = Math.min(viewEnd, contentEnd);
-  const top = clamp(visStart - contentStart, 0, g.articleHeight);
-  const bottom = clamp(visEnd - contentStart, top, g.articleHeight);
-  return { top, bottom, snapFullBlock: false };
+  const visEnd = Math.min(viewEnd, contentEnd, scrollRoot.scrollHeight);
+  let top = clamp(visStart - articleTop, 0, articleHeight);
+  let bottom = clamp(visEnd - articleTop, top, articleHeight);
+
+  // Scroll root extent (padding, subpixel) can be shorter than articleTop + scrollHeight;
+  // pin the band to the article end when the user has reached scroll bottom.
+  if (scrollRoot.scrollTop >= maxScroll - 2) {
+    const band = bottom - top;
+    bottom = articleHeight;
+    top = Math.max(0, articleHeight - band);
+  }
+
+  return { top, bottom, articleHeight, snapFullBlock: false };
 }
 
 // ─── Sharp-layer feathered mask ───────────────────────────────────────────────
@@ -334,33 +344,48 @@ function setupScrollSpy(
   return observer;
 }
 
-// ─── Bookmark stars ───────────────────────────────────────────────────────────
+type MinimapMarkerKind = 'bookmark' | 'note';
+
+type MinimapMarker = {
+  record: AnnotationRecord;
+  articleY: number;
+  kind: MinimapMarkerKind;
+};
 
 function articleYForTarget(article: HTMLElement, target: HTMLElement): number {
   const articleTop = article.getBoundingClientRect().top;
   return target.getBoundingClientRect().top - articleTop;
 }
 
-function bookmarkLabel(record: AnnotationRecord): string {
+function articleYForRange(article: HTMLElement, range: Range): number {
+  const articleTop = article.getBoundingClientRect().top;
+  const rects = [...range.getClientRects()].filter((r) => r.width || r.height);
+  const y = rects.length ? rects[0].top : range.getBoundingClientRect().top;
+  return y - articleTop;
+}
+
+function markerLabel(record: AnnotationRecord): string {
   return excerptForRecord(record);
 }
 
-function buildBookmarkStars(
+function buildMinimapMarkers(
   container: HTMLElement,
-  bookmarks: { record: AnnotationRecord; articleY: number }[],
+  markers: MinimapMarker[],
   onJump: (record: AnnotationRecord) => void,
 ) {
   const frag = document.createDocumentFragment();
-  for (const { record, articleY } of bookmarks) {
+  for (const { record, articleY, kind } of markers) {
     const btn = document.createElement('button');
     btn.type = 'button';
-    btn.className = 'doc-minimap__star';
+    btn.className =
+      kind === 'bookmark' ? 'doc-minimap__star' : 'doc-minimap__poi doc-minimap__poi--note';
     btn.dataset.annotationId = record.id;
-    const label = bookmarkLabel(record);
+    btn.dataset.markerKind = kind;
+    const label = markerLabel(record);
     btn.setAttribute('aria-label', label);
     btn.title = label;
     btn.style.top = `${articleY}px`;
-    btn.innerHTML = MINIMAP_STAR_ICON;
+    btn.innerHTML = kind === 'bookmark' ? MINIMAP_STAR_ICON : MINIMAP_NOTE_ICON;
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       onJump(record);
@@ -370,42 +395,53 @@ function buildBookmarkStars(
   container.replaceChildren(frag);
 }
 
-function collapseStarOverlap(container: HTMLElement) {
-  const stars = [...container.querySelectorAll<HTMLElement>('.doc-minimap__star')].sort(
-    (a, b) => parseFloat(a.style.top || '0') - parseFloat(b.style.top || '0'),
-  );
+function collapseMarkerOverlap(container: HTMLElement) {
+  const markers = [
+    ...container.querySelectorAll<HTMLElement>('.doc-minimap__star, .doc-minimap__poi'),
+  ].sort((a, b) => parseFloat(a.style.top || '0') - parseFloat(b.style.top || '0'));
   let lastBottom = -Infinity;
-  for (const star of stars) {
-    const y = parseFloat(star.style.top || '0');
+  for (const marker of markers) {
+    const y = parseFloat(marker.style.top || '0');
     if (y < lastBottom + STAR_MIN_GAP_PX) {
-      star.hidden = true;
-      star.style.pointerEvents = 'none';
+      marker.hidden = true;
+      marker.style.pointerEvents = 'none';
     } else {
-      star.hidden = false;
-      star.style.pointerEvents = '';
+      marker.hidden = false;
+      marker.style.pointerEvents = '';
       lastBottom = y;
     }
   }
 }
 
-async function resolveActiveBookmarks(
-  article: HTMLElement,
-): Promise<{ record: AnnotationRecord; articleY: number }[]> {
+async function resolveMinimapMarkers(article: HTMLElement): Promise<MinimapMarker[]> {
   if (!article.dataset.pageId) return [];
   const records = await listAnnotationsForPage(readPageMeta(article).pageId);
-  const out: { record: AnnotationRecord; articleY: number }[] = [];
+  const out: MinimapMarker[] = [];
 
   for (const record of records) {
-    if (record.kind !== 'bookmark' || record.anchor.kind === 'page') continue;
-    const { stale, element } = reAnchorRecord(article, record);
-    if (stale || !element) continue;
-    const articleY = clamp(articleYForTarget(article, element), 0, article.scrollHeight);
-    out.push({ record, articleY });
+    if (record.kind === 'bookmark' && record.anchor.kind !== 'page') {
+      const { stale, element } = reAnchorRecord(article, record);
+      if (stale || !element) continue;
+      const articleY = clamp(articleYForTarget(article, element), 0, article.scrollHeight);
+      out.push({ record, articleY, kind: 'bookmark' });
+      continue;
+    }
+
+    if (!record.comment?.trim()) continue;
+
+    if (record.kind === 'highlight' && record.anchor.kind === 'text') {
+      const { range, stale } = reAnchorRecord(article, record);
+      if (stale || !range) continue;
+      const articleY = clamp(articleYForRange(article, range), 0, article.scrollHeight);
+      out.push({ record, articleY, kind: 'note' });
+    }
   }
 
   out.sort((a, b) => a.articleY - b.articleY);
   return out;
 }
+
+// ─── Bookmark stars (legacy section label) ────────────────────────────────────
 
 // ─── Main controller ──────────────────────────────────────────────────────────
 
@@ -484,7 +520,7 @@ export function setupDocMinimap(): Controller | null {
   scrollRoot.addEventListener('scroll', scheduleSync, { passive: true, signal });
   scrollRoot.addEventListener('scrollend', scheduleSync, { passive: true, signal });
   window.addEventListener('resize', scheduleMeasure, { passive: true, signal });
-  document.addEventListener(ANNOTATIONS_CHANGED, scheduleBookmarkStars, { signal });
+  document.addEventListener(ANNOTATIONS_CHANGED, scheduleMinimapMarkers, { signal });
 
   // ── Interaction ──
 
@@ -572,43 +608,56 @@ export function setupDocMinimap(): Controller | null {
     setMinimapActive(true);
     applyGeometry(minimap, g);
     positionLabels(labelsEl, headings, article, g);
-    void refreshBookmarkStars();
+    void refreshMinimapMarkers();
     syncScroll();
   }
 
-  async function refreshBookmarkStars() {
+  async function refreshMinimapMarkers() {
     if (!g || g.scale <= 0) {
       starsEl.replaceChildren();
       return;
     }
-    const bookmarks = await resolveActiveBookmarks(article);
+    const markers = await resolveMinimapMarkers(article);
     if (destroyed) return;
-    buildBookmarkStars(
+    buildMinimapMarkers(
       starsEl,
-      bookmarks.map(({ record, articleY }) => ({
+      markers.map(({ record, articleY, kind }) => ({
         record,
+        kind,
         articleY: aToM(clamp(articleY, 0, g!.articleHeight), g!),
       })),
-      (record) => jumpToBookmark(record),
+      (record) => jumpToAnnotation(record),
     );
-    collapseStarOverlap(starsEl);
+    collapseMarkerOverlap(starsEl);
   }
 
-  function scheduleBookmarkStars() {
-    void refreshBookmarkStars();
+  function scheduleMinimapMarkers() {
+    void refreshMinimapMarkers();
   }
 
-  function jumpToBookmark(record: AnnotationRecord) {
+  function jumpToAnnotation(record: AnnotationRecord) {
     if (!g) return;
     const target = scrollTargetForRecord(article, record);
     if (!target) return;
-    const y = clamp(articleYForTarget(article, target), 0, g.articleHeight);
+    let y: number;
+    if (record.kind === 'highlight' && record.comment?.trim() && record.anchor.kind === 'text') {
+      const { range, stale } = reAnchorRecord(article, record);
+      if (stale || !range) return;
+      y = clamp(articleYForRange(article, range), 0, g.articleHeight);
+    } else {
+      y = clamp(articleYForTarget(article, target), 0, g.articleHeight);
+    }
     scrollToArticleY(y, true);
+    if (record.kind === 'highlight' && record.comment?.trim() && record.anchor.kind === 'text') {
+      window.dispatchEvent(
+        new CustomEvent('annotations:focus-text-note', { detail: { id: record.id } }),
+      );
+    }
   }
 
   function syncScroll() {
     if (!g || g.scale <= 0) return;
-    const { top, bottom, snapFullBlock } = visibleArticleRange(scrollRoot, article, g);
+    const { top, bottom, articleHeight, snapFullBlock } = visibleArticleRange(scrollRoot, article);
 
     let miniTop: number;
     let miniBot: number;
@@ -626,7 +675,8 @@ export function setupDocMinimap(): Controller | null {
 
     const featherMini = cssPropPx(minimap, '--minimap-feather', 18);
     const featherArticle = g.scale > 0 ? featherMini / g.scale : 0;
-    applySharpMask(sharpSlot, top, bottom, featherArticle, g.articleHeight);
+    const maskHeight = Math.max(articleHeight, g.articleHeight);
+    applySharpMask(sharpSlot, top, bottom, featherArticle, maskHeight);
   }
 
   function scrollToArticleY(articleY: number, animated: boolean) {
