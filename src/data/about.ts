@@ -95,7 +95,7 @@ export const joshuaPlugs: Plug[] = [
 // ─── Garret ───────────────────────────────────────────────────────────────────
 
 export const garretIntro =
-  "Hi, I'm Garret. I built this site's frontend. Don't make the notes, though, lol. Just edit, organize, and graphic-ify them.";
+  "Hi, I'm Garret. I built this site. Don't make the notes, though, lol. Just edit, organize, and graphic-ify them.";
 
 export type GarretThing = {
   name: string;

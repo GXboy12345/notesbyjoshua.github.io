@@ -89,6 +89,10 @@ function animateScrollTo(root: HTMLElement, targetY: number, focusTarget?: HTMLE
       ? createScrollGhostBlur(root, article, { blurStrength })
       : null;
 
+  // Position ghost clones before the first rAF so the source article isn't hidden
+  // behind an empty overlay for a frame.
+  activeGhost?.update(startY, 0, delta < 0 ? -1 : 1);
+
   const duration = Math.min(720, Math.max(380, jumpDistance * 0.48));
   const distancePeak = blurStrength * 70;
   const t0 = performance.now();
@@ -145,6 +149,24 @@ export function scrollToHashTarget(
   animateScrollTo(root, y, target);
 }
 
+/** Animated scroll to an absolute Y in the current scroll root (doc-main on desktop). */
+export function scrollToY(
+  targetY: number,
+  behavior: ScrollBehavior = prefersReducedMotion() ? 'auto' : 'smooth',
+) {
+  const root = getScrollRoot();
+  const y = clamp(targetY, 0, getMaxScrollTop(root));
+
+  if (behavior === 'auto' || prefersReducedMotion()) {
+    if (animFrame) cancelAnimationFrame(animFrame);
+    destroyGhost();
+    setRootScrollTop(root, y);
+    return;
+  }
+
+  animateScrollTo(root, y);
+}
+
 function isSameDocument(url: URL): boolean {
   const here = new URL(window.location.href);
   return url.pathname === here.pathname && url.search === here.search;
@@ -183,6 +205,7 @@ function onHashLinkClick(event: MouseEvent) {
 
   event.preventDefault();
   event.stopPropagation();
+  event.stopImmediatePropagation();
 
   const next = `${url.pathname}${url.search}${url.hash}`;
   if (`${window.location.pathname}${window.location.search}${window.location.hash}` !== next) {

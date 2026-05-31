@@ -38,6 +38,14 @@ const { title, description, headings = [], math = false, interactive = false, no
 
     bindDocCanvasParallax();
   </script>
+  <script>
+    import { initDocMinimap } from '../scripts/doc-minimap.ts';
+
+    initDocMinimap();
+    document.addEventListener('astro:page-load', () => {
+      initDocMinimap();
+    });
+  </script>
   {
     interactive && (
       <>

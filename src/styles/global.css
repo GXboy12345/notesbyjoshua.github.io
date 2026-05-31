@@ -68,8 +68,10 @@
   --max-read: 60rem;
   --sidebar-width: 17.5rem;
   --toc-width: 12rem;
-  --minimap-blur: 1.3px;
+  --minimap-blur: 6.3px;
   --minimap-feather: 18px;
+  --minimap-preview-pad-x: 0.65rem;
+  --minimap-preview-pad-y: 0.5rem;
   --header-height: 3.25rem;
   --sidebar-fab-gap: 1.25rem;
   --motion-fast: 140ms;
@@ -80,7 +82,7 @@
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --canvas-bg: var(--bg-elevated);
   --canvas-dot: color-mix(in srgb, var(--fg) 28%, transparent);
-  --canvas-dot-size: 1.5px;
+  --canvas-dot-size: 1.22px;
   --canvas-dot-spacing: 28px;
   --canvas-parallax-rate: 0.25;
 }
@@ -1356,13 +1358,13 @@ body.ref-sheet-open {
   }
 }
 
-.doc-toc a {
+.doc-toc .toc-list a {
   transition: color var(--motion-fast) var(--ease-out),
     opacity var(--motion-fast) var(--ease-out),
     transform var(--motion-fast) var(--ease-out);
 }
 
-.doc-toc a:hover {
+.doc-toc .toc-list a:hover {
   transform: translateX(2px);
 }
 
@@ -1374,6 +1376,12 @@ body.ref-sheet-open {
 .doc-toc[data-minimap-active='true'] {
   padding: 0.75rem 0.65rem;
   overflow: hidden;
+}
+
+/* Participates in layout for geometry measure, but invisible until activated. */
+.doc-minimap--boot {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .doc-minimap {
@@ -1465,7 +1473,7 @@ body.ref-sheet-open {
   transform: translateY(-50%);
   font-family: var(--font-meta);
   font-size: 0.62rem;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.05;
   color: var(--fg);
   text-decoration: none;
@@ -1475,21 +1483,26 @@ body.ref-sheet-open {
   pointer-events: auto;
   cursor: pointer;
   text-shadow:
-    0 0 3px var(--bg),
-    0 0 6px var(--bg),
-    0 1px 2px color-mix(in srgb, var(--bg) 85%, transparent);
+    0 0 4px var(--bg),
+    0 0 8px var(--bg),
+    0 0 14px var(--bg),
+    0 1px 3px var(--bg);
 }
 
 .doc-minimap__label[data-depth='3'] {
   left: 0.55rem;
   max-width: calc(100% - 0.75rem);
   font-size: 0.58rem;
-  opacity: 0.82;
+  font-weight: 600;
 }
 
 .doc-minimap__label[data-active='true'] {
   color: var(--accent);
   font-weight: 700;
+}
+
+.doc-minimap__label:hover {
+  color: var(--accent);
 }
 
 .doc-minimap__label::before {

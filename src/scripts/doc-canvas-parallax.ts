@@ -1,15 +1,140 @@
 const DESKTOP_QUERY = '(min-width: 1100px)';
+const TAU = Math.PI * 2;
 
-// --- Compact 2D Perlin noise ---
-function fade(t: number): number {
-  return t * t * t * (t * (t * 6 - 15) + 10);
+const CFG = {
+  grid: { spacingPx: 28, baseRadiusPx: 1.22, dprMax: 1.5 },
+  parallax: { rate: 0.25, reducedMotionRate: 0.18 },
+  tide: {
+    radiusAmp: 0.30,
+    radiusPower: 0.72,
+    displaceAmpPx: 0.95,
+    tangentAmpPx: 0.34,
+    warpSpatial: 0.00115,
+    warpTemporal: 0.030,
+    warpAmpPx: 42,
+    waves: [
+      { angleDeg: 118, wavelengthPx: 420, speedCyclesPerSec: 0.035, amp: 0.52, phase: 0.0 },
+      { angleDeg: 132, wavelengthPx: 680, speedCyclesPerSec: 0.022, amp: 0.34, phase: 1.7 },
+      { angleDeg: 96, wavelengthPx: 310, speedCyclesPerSec: 0.050, amp: 0.22, phase: 4.2 },
+    ],
+  },
+  scroll: {
+    velocityFilterHz: 16,
+    velocityNormPxPerSec: 2200,
+    movingEpsPxPerSec: 55,
+    stopDelaySec: 0.105,
+    stopRippleCooldownSec: 0.40,
+    trailImpulse: 42,
+    compressionImpulse: 3.8,
+    shearImpulse: 18,
+    trailStiffness: 24,
+    trailDamping: 8.5,
+    compressionStiffness: 34,
+    compressionDamping: 10.5,
+    shearStiffness: 22,
+    shearDamping: 8.0,
+    maxTrailPx: 14,
+    maxCompression: 0.52,
+    maxShearPx: 5.0,
+    centerSigmaX: 0.22,
+    centerSigmaY: 0.34,
+    compressionSpatial: 2.6,
+    compressionTemporal: 3.2,
+    radiusCompressionAmp: 0.18,
+    wakeIntervalSec: 0.085,
+    wakeVelocityForFullStrength: 1800,
+    wakeYDown: 0.32,
+    wakeYUp: 0.68,
+  },
+  pointer: {
+    posHz: 28,
+    speedHz: 12,
+    enterHz: 10,
+    leaveHz: 0.75,
+    minSpeedPxPerSec: 90,
+    maxSpeedForStrength: 1800,
+    spawnIntervalSlow: 0.052,
+    spawnIntervalFast: 0.026,
+    minSpawnDistSlow: 24,
+    minSpawnDistFast: 13,
+    baseStrength: 0.16,
+    speedStrength: 0.56,
+  },
+  ripple: {
+    maxRipples: 72,
+    fadeInLife: 0.10,
+    fadeOutPower: 1.65,
+    cullWidthMult: 2.8,
+    mouse: {
+      speedSlow: 270, speedFast: 390,
+      widthSlow: 28, widthFast: 44,
+      wavelengthSlow: 72, wavelengthFast: 104,
+      durationSlow: 1.45, durationFast: 2.10,
+      displaceMin: 1.5, displaceMax: 2.7,
+      radiusAmpMin: 0.18, radiusAmpMax: 0.32,
+      dirBias: 0.24,
+    },
+    scroll: {
+      strengthMin: 0.18, strengthMax: 0.72,
+      speed: 420, width: 58, wavelength: 128, duration: 1.35,
+      displacePx: 2.4, radiusAmp: 0.16, dirBias: 0.34,
+    },
+    scrollStop: {
+      strengthMin: 0.26, strengthMax: 0.75,
+      speed: 360, width: 72, wavelength: 150, duration: 1.65,
+      displacePx: 2.8, radiusAmp: 0.20, dirBias: 0.18,
+    },
+    load: {
+      strength: 0.34,
+      speed: 330, width: 76, wavelength: 160, duration: 1.75,
+      displacePx: 2.2, radiusAmp: 0.16, dirBias: 0.10,
+    },
+  },
+  compositor: {
+    tideRadiusMin: 0.70, tideRadiusMax: 1.30,
+    scrollRadiusMin: 0.82, scrollRadiusMax: 1.22,
+    rippleRadiusMin: 0.72, rippleRadiusMax: 1.42,
+    radiusMinPx: 0.42, radiusMaxPx: 3.05,
+    maxTotalDisplacePx: 9.5,
+    alphaSmall: 0.18, alphaMid: 0.28, alphaLarge: 0.40,
+    alphaActivityLift: 0.18, alphaMax: 0.46,
+    smallRadiusCutoffPx: 0.85, largeRadiusCutoffPx: 1.65,
+  },
+} as const;
+
+// ─── Utilities ────────────────────────────────────────────────────────────────
+
+function clamp(v: number, lo: number, hi: number): number {
+  return v < lo ? lo : v > hi ? hi : v;
 }
-function lerpN(a: number, b: number, t: number): number {
-  return a + t * (b - a);
+function lerp(a: number, b: number, t: number): number {
+  return a + (b - a) * t;
 }
-function grad2(h: number, x: number, y: number): number {
-  const hh = h & 3;
-  return ((hh & 1) ? -x : x) + ((hh & 2) ? -y : y);
+function square(v: number): number { return v * v; }
+function smoothstep01(t: number): number {
+  t = clamp(t, 0, 1);
+  return t * t * (3 - 2 * t);
+}
+function signedPow(v: number, p: number): number {
+  return Math.sign(v) * Math.pow(Math.abs(v), p);
+}
+function hypot2(x: number, y: number): number {
+  return Math.sqrt(x * x + y * y);
+}
+function expLerp(cur: number, target: number, hz: number, dt: number): number {
+  return lerp(cur, target, 1 - Math.exp(-hz * dt));
+}
+
+// ─── Perlin / fBm ───────────────────────────────────────────────────────────
+
+function fade(t: number): number { return t * t * t * (t * (t * 6 - 15) + 10); }
+function lerpN(a: number, b: number, t: number): number { return a + t * (b - a); }
+
+function grad3(h: number, x: number, y: number, z: number): number {
+  const hh = h & 15;
+  const u = hh < 8 ? x : y;
+  const v = hh < 4 ? y : (hh === 12 || hh === 14 ? x : z);
+  return ((hh & 1) ? -u : u) + ((hh & 2) ? -v : v);
 }
 
 class Perlin {
@@ -26,45 +151,88 @@ class Perlin {
     this.p = new Uint8Array(512);
     for (let i = 0; i < 512; i++) this.p[i] = src[i & 255];
   }
-  noise(x: number, y: number): number {
-    const xi = Math.floor(x) & 255;
-    const yi = Math.floor(y) & 255;
-    const xf = x - Math.floor(x);
-    const yf = y - Math.floor(y);
-    const u = fade(xf);
-    const v = fade(yf);
-    const a = this.p[xi] + yi;
-    const b = this.p[xi + 1] + yi;
+  noise3(x: number, y: number, z: number): number {
+    const xi = Math.floor(x) & 255, yi = Math.floor(y) & 255, zi = Math.floor(z) & 255;
+    const xf = x - Math.floor(x), yf = y - Math.floor(y), zf = z - Math.floor(z);
+    const u = fade(xf), v = fade(yf), w = fade(zf);
+    const a = this.p[xi] + yi, aa = this.p[a] + zi, ab = this.p[a + 1] + zi;
+    const b = this.p[xi + 1] + yi, ba = this.p[b] + zi, bb = this.p[b + 1] + zi;
     return lerpN(
-      lerpN(grad2(this.p[a], xf, yf), grad2(this.p[b], xf - 1, yf), u),
-      lerpN(grad2(this.p[a + 1], xf, yf - 1), grad2(this.p[b + 1], xf - 1, yf - 1), u),
-      v,
+      lerpN(
+        lerpN(grad3(this.p[aa], xf, yf, zf), grad3(this.p[ba], xf - 1, yf, zf), u),
+        lerpN(grad3(this.p[ab], xf, yf - 1, zf), grad3(this.p[bb], xf - 1, yf - 1, zf), u), v
+      ),
+      lerpN(
+        lerpN(grad3(this.p[aa + 1], xf, yf, zf - 1), grad3(this.p[ba + 1], xf - 1, yf, zf - 1), u),
+        lerpN(grad3(this.p[ab + 1], xf, yf - 1, zf - 1), grad3(this.p[bb + 1], xf - 1, yf - 1, zf - 1), u), v
+      ), w
     );
   }
 }
 
 const perlin = new Perlin(42);
 
-// --- Helpers ---
-function isDesktop(): boolean {
-  return window.matchMedia(DESKTOP_QUERY).matches;
+function fbm3(x: number, y: number, z: number): number {
+  let val = 0, amp = 0.5, freq = 1, norm = 0;
+  for (let i = 0; i < 3; i++) {
+    val += amp * (perlin.noise3(x * freq, y * freq, z * freq) * 0.5 + 0.5);
+    norm += amp; amp *= 0.5; freq *= 2.03;
+  }
+  return val / norm;
 }
 
-function prefersReducedMotion(): boolean {
-  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+type RippleKind = 'mouse' | 'scroll' | 'scrollStop' | 'load';
+
+interface Spring1D { value: number; velocity: number; }
+
+interface Ripple {
+  kind: RippleKind;
+  x: number; y: number; t0: number; duration: number; strength: number;
+  speed: number; width: number; wavelength: number;
+  displacePx: number; radiusAmp: number; dirX: number; dirY: number;
 }
 
-function getRate(docMain: HTMLElement): number {
-  if (prefersReducedMotion()) return 1;
-  const raw = getComputedStyle(docMain).getPropertyValue('--canvas-parallax-rate').trim();
-  const r = parseFloat(raw);
-  return isFinite(r) ? Math.max(0, Math.min(1, r)) : 0.25;
+interface ScrollFluidState {
+  lastScrollTop: number;
+  velocityPxPerSec: number;
+  filteredVelocityPxPerSec: number;
+  trail: Spring1D;
+  compression: Spring1D;
+  shear: Spring1D;
+  movingUntil: number;
+  lastWakeTime: number;
+  lastStopRippleTime: number;
+  wasMoving: boolean;
 }
+
+interface PointerTrailState {
+  active: boolean;
+  inside: boolean;
+  filteredX: number;
+  filteredY: number;
+  filteredSpeed: number;
+  lastSpawnTime: number;
+  lastSpawnX: number;
+  lastSpawnY: number;
+  strength: number;
+}
+
+interface FluidSample {
+  dx: number; dy: number; radiusMul: number; activity: number;
+}
+
+type Controller = { destroy(): void };
+let active: Controller | null = null;
+
+function isDesktop(): boolean { return window.matchMedia(DESKTOP_QUERY).matches; }
+function prefersReducedMotion(): boolean { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
 
 function getScrollRoot(docMain: HTMLElement): HTMLElement {
   if (isDesktop()) {
-    const { overflowY } = getComputedStyle(docMain);
-    if (overflowY === 'auto' || overflowY === 'scroll' || overflowY === 'overlay') return docMain;
+    const oy = getComputedStyle(docMain).overflowY;
+    if (oy === 'auto' || oy === 'scroll' || oy === 'overlay') return docMain;
   }
   return document.documentElement;
 }
@@ -75,140 +243,549 @@ function getScrollTop(root: HTMLElement): number {
     : root.scrollTop;
 }
 
-// --- Draw ---
-// Angled wave direction — ~28 degrees off horizontal
-const WAVE_COS = Math.cos(Math.PI / 6.5);
-const WAVE_SIN = Math.sin(Math.PI / 6.5);
-// Wavelength in world-space pixels (controls band width)
-const WAVELENGTH = 210;
-const WAVE_FREQ = (Math.PI * 2) / WAVELENGTH;
-// Perlin perturbation scale
-const NOISE_SCALE = 0.038;
-
-function dotRadius(worldX: number, worldY: number, baseRadius: number): number {
-  // Project position onto wave direction, get sine value
-  const proj = worldX * WAVE_COS + worldY * WAVE_SIN;
-  const wave = Math.sin(proj * WAVE_FREQ); // [-1, 1]
-
-  // Perlin adds organic irregularity so wave edges aren't sharp/mechanical
-  const n = perlin.noise(worldX * NOISE_SCALE, worldY * NOISE_SCALE);
-  const noise = n * (1 / 0.7); // normalize to ~[-1, 1]
-
-  // 70% wave shape, 30% noise irregularity
-  const combined = wave * 0.7 + noise * 0.3;
-  const t = combined * 0.5 + 0.5; // [0, 1]
-
-  return baseRadius * (0.45 + 0.85 * t);
+function resolveDotColor(): string {
+  const fg = getComputedStyle(document.documentElement).getPropertyValue('--fg').trim();
+  const dark = document.documentElement.dataset.theme === 'dark';
+  const a = dark ? 0.18 : 0.28;
+  if (fg.startsWith('#') && fg.length === 7) {
+    const r = parseInt(fg.slice(1, 3), 16);
+    const g = parseInt(fg.slice(3, 5), 16);
+    const b = parseInt(fg.slice(5, 7), 16);
+    return `rgba(${r},${g},${b},${a})`;
+  }
+  return dark ? `rgba(232,236,244,${a})` : `rgba(20,24,32,${a})`;
 }
 
-function drawDots(
-  ctx: CanvasRenderingContext2D,
-  W: number,
-  H: number,
-  scrollTop: number,
-  rate: number,
-  dotColor: string,
-  spacing: number,
-  baseRadius: number,
-): void {
-  ctx.clearRect(0, 0, W, H);
-  if (W === 0 || H === 0) return;
+// ─── Physics helpers ──────────────────────────────────────────────────────────
 
-  ctx.fillStyle = dotColor;
+function updateSpring(s: Spring1D, stiffness: number, damping: number, dt: number): void {
+  const accel = -stiffness * s.value - damping * s.velocity;
+  s.velocity += accel * dt;
+  s.value += s.velocity * dt;
+}
 
-  const worldYStart = scrollTop * rate;
-  const rowStart = Math.floor(worldYStart / spacing) - 1;
-  const rowEnd = Math.ceil((worldYStart + H) / spacing) + 1;
-  const colEnd = Math.ceil(W / spacing) + 1;
-
-  for (let gy = rowStart; gy <= rowEnd; gy++) {
-    const worldY = gy * spacing;
-    const canvasY = worldY - worldYStart;
-    for (let gx = 0; gx <= colEnd; gx++) {
-      const worldX = gx * spacing;
-      const r = dotRadius(worldX, worldY, baseRadius);
-      if (r < 0.1) continue;
-      ctx.beginPath();
-      ctx.arc(worldX, canvasY, r, 0, Math.PI * 2);
-      ctx.fill();
-    }
+function pruneRipples(ripples: Ripple[], now: number): void {
+  for (let i = ripples.length - 1; i >= 0; i--) {
+    if (now - ripples[i].t0 > ripples[i].duration) ripples.splice(i, 1);
   }
 }
 
-// --- Controller ---
-type Controller = { destroy(): void };
-let active: Controller | null = null;
+function pushRipple(ripples: Ripple[], ripple: Ripple, now: number): void {
+  pruneRipples(ripples, now);
+  if (ripples.length >= CFG.ripple.maxRipples) {
+    let weakestIndex = 0, weakestEnergy = Infinity;
+    for (let i = 0; i < ripples.length; i++) {
+      const r = ripples[i];
+      const life = clamp((now - r.t0) / r.duration, 0, 1);
+      const kindWeight = r.kind === 'mouse' ? 1.0 : 1.2;
+      const energy = r.strength * (1 - life) * kindWeight;
+      if (energy < weakestEnergy) { weakestEnergy = energy; weakestIndex = i; }
+    }
+    ripples.splice(weakestIndex, 1);
+  }
+  ripples.push(ripple);
+}
+
+function spawnMouseWakeRipple(
+  ripples: Ripple[], x: number, y: number, dx: number, dy: number,
+  speed: number, strength: number, now: number,
+): void {
+  const speed01 = clamp(speed / CFG.pointer.maxSpeedForStrength, 0, 1);
+  const len = hypot2(dx, dy) || 1;
+  const m = CFG.ripple.mouse;
+  pushRipple(ripples, {
+    kind: 'mouse', x, y, t0: now,
+    duration: lerp(m.durationSlow, m.durationFast, smoothstep01(speed01)),
+    strength,
+    speed: lerp(m.speedSlow, m.speedFast, smoothstep01(speed01)),
+    width: lerp(m.widthSlow, m.widthFast, smoothstep01(speed01)),
+    wavelength: lerp(m.wavelengthSlow, m.wavelengthFast, smoothstep01(speed01)),
+    displacePx: lerp(m.displaceMin, m.displaceMax, clamp(strength, 0, 1)),
+    radiusAmp: lerp(m.radiusAmpMin, m.radiusAmpMax, clamp(strength, 0, 1)),
+    dirX: dx / len, dirY: dy / len,
+  }, now);
+}
+
+function updatePointerTrail(
+  pointer: PointerTrailState, ripples: Ripple[],
+  now: number, x: number, y: number, dt: number,
+): void {
+  const first = !pointer.active;
+  pointer.active = true;
+  pointer.inside = true;
+
+  if (first) {
+    pointer.filteredX = x;
+    pointer.filteredY = y;
+    pointer.filteredSpeed = 0;
+    pointer.lastSpawnTime = now;
+    pointer.lastSpawnX = x;
+    pointer.lastSpawnY = y;
+    pointer.strength = 1;
+    return;
+  }
+
+  const prevX = pointer.filteredX;
+  const prevY = pointer.filteredY;
+  pointer.filteredX = expLerp(pointer.filteredX, x, CFG.pointer.posHz, dt);
+  pointer.filteredY = expLerp(pointer.filteredY, y, CFG.pointer.posHz, dt);
+
+  const moveDx = pointer.filteredX - prevX;
+  const moveDy = pointer.filteredY - prevY;
+  const rawSpeed = hypot2(moveDx, moveDy) / Math.max(dt, 1 / 240);
+  pointer.filteredSpeed = expLerp(pointer.filteredSpeed, rawSpeed, CFG.pointer.speedHz, dt);
+  pointer.strength = expLerp(pointer.strength, 1, CFG.pointer.enterHz, dt);
+
+  const speed01 = clamp(
+    (pointer.filteredSpeed - CFG.pointer.minSpeedPxPerSec) /
+      (CFG.pointer.maxSpeedForStrength - CFG.pointer.minSpeedPxPerSec),
+    0, 1,
+  );
+
+  const dynamicInterval = lerp(CFG.pointer.spawnIntervalSlow, CFG.pointer.spawnIntervalFast, smoothstep01(speed01));
+  const dynamicMinDist = lerp(CFG.pointer.minSpawnDistSlow, CFG.pointer.minSpawnDistFast, smoothstep01(speed01));
+
+  const spawnDx = pointer.filteredX - pointer.lastSpawnX;
+  const spawnDy = pointer.filteredY - pointer.lastSpawnY;
+  const spawnDist = hypot2(spawnDx, spawnDy);
+
+  const canSpawn =
+    pointer.filteredSpeed >= CFG.pointer.minSpeedPxPerSec &&
+    now - pointer.lastSpawnTime >= dynamicInterval &&
+    spawnDist >= dynamicMinDist;
+
+  if (!canSpawn) return;
+
+  const strength =
+    (CFG.pointer.baseStrength + CFG.pointer.speedStrength * smoothstep01(speed01)) *
+    pointer.strength;
+
+  spawnMouseWakeRipple(
+    ripples, pointer.filteredX, pointer.filteredY,
+    spawnDx, spawnDy, pointer.filteredSpeed, strength, now,
+  );
+
+  pointer.lastSpawnTime = now;
+  pointer.lastSpawnX = pointer.filteredX;
+  pointer.lastSpawnY = pointer.filteredY;
+}
+
+function updatePointerIdle(pointer: PointerTrailState, dt: number): void {
+  if (pointer.inside) return;
+  pointer.strength = expLerp(pointer.strength, 0, CFG.pointer.leaveHz, dt);
+  if (pointer.strength < 0.015) pointer.active = false;
+}
+
+function updateScrollFluid(
+  scroll: ScrollFluidState, ripples: Ripple[],
+  now: number, dt: number, scrollTop: number, vw: number, vh: number,
+): void {
+  const dy = scrollTop - scroll.lastScrollTop;
+  const rawVelocity = dy / Math.max(dt, 1 / 240);
+  scroll.velocityPxPerSec = rawVelocity;
+  scroll.filteredVelocityPxPerSec = expLerp(
+    scroll.filteredVelocityPxPerSec, rawVelocity, CFG.scroll.velocityFilterHz, dt,
+  );
+
+  const v = scroll.filteredVelocityPxPerSec;
+  const absV = Math.abs(v);
+  const sign = Math.sign(v) || Math.sign(rawVelocity) || 1;
+  const moving = absV > CFG.scroll.movingEpsPxPerSec;
+
+  if (moving) {
+    scroll.movingUntil = now + CFG.scroll.stopDelaySec;
+    const vNorm = clamp(v / CFG.scroll.velocityNormPxPerSec, -1, 1);
+    scroll.trail.velocity += vNorm * CFG.scroll.trailImpulse;
+    scroll.compression.velocity += Math.abs(vNorm) * CFG.scroll.compressionImpulse;
+    scroll.shear.velocity += vNorm * CFG.scroll.shearImpulse;
+
+    if (now - scroll.lastWakeTime >= CFG.scroll.wakeIntervalSec) {
+      const lateral = Math.sin(now * 7.13) * 0.08;
+      const rs = CFG.ripple.scroll;
+      pushRipple(ripples, {
+        kind: 'scroll',
+        x: vw * (0.5 + lateral),
+        y: sign > 0 ? vh * CFG.scroll.wakeYDown : vh * CFG.scroll.wakeYUp,
+        t0: now,
+        duration: rs.duration,
+        strength: clamp(absV / CFG.scroll.wakeVelocityForFullStrength, rs.strengthMin, rs.strengthMax),
+        speed: rs.speed, width: rs.width, wavelength: rs.wavelength,
+        displacePx: rs.displacePx, radiusAmp: rs.radiusAmp,
+        dirX: 0, dirY: -sign,
+      }, now);
+      scroll.lastWakeTime = now;
+    }
+  }
+
+  const stopped =
+    scroll.wasMoving &&
+    !moving &&
+    now > scroll.movingUntil &&
+    now - scroll.lastStopRippleTime > CFG.scroll.stopRippleCooldownSec;
+
+  if (stopped) {
+    const lastEnergy = clamp(absV / CFG.scroll.wakeVelocityForFullStrength, 0, 1);
+    const rs = CFG.ripple.scrollStop;
+    pushRipple(ripples, {
+      kind: 'scrollStop',
+      x: vw * 0.5, y: vh * 0.48, t0: now,
+      duration: rs.duration,
+      strength: clamp(0.30 + lastEnergy * 0.45, rs.strengthMin, rs.strengthMax),
+      speed: rs.speed, width: rs.width, wavelength: rs.wavelength,
+      displacePx: rs.displacePx, radiusAmp: rs.radiusAmp,
+      dirX: 0, dirY: 0,
+    }, now);
+    scroll.lastStopRippleTime = now;
+  }
+
+  updateSpring(scroll.trail, CFG.scroll.trailStiffness, CFG.scroll.trailDamping, dt);
+  updateSpring(scroll.compression, CFG.scroll.compressionStiffness, CFG.scroll.compressionDamping, dt);
+  updateSpring(scroll.shear, CFG.scroll.shearStiffness, CFG.scroll.shearDamping, dt);
+
+  scroll.trail.value = clamp(scroll.trail.value, -CFG.scroll.maxTrailPx, CFG.scroll.maxTrailPx);
+  scroll.compression.value = clamp(scroll.compression.value, 0, CFG.scroll.maxCompression);
+  scroll.shear.value = clamp(scroll.shear.value, -CFG.scroll.maxShearPx, CFG.scroll.maxShearPx);
+
+  scroll.wasMoving = moving || now <= scroll.movingUntil;
+  scroll.lastScrollTop = scrollTop;
+}
+
+function sampleFluidField(
+  worldX: number, worldY: number, screenX: number, screenY: number,
+  timeSec: number, vw: number, vh: number,
+  scroll: ScrollFluidState, ripples: Ripple[],
+  fluidEnabled: boolean,
+): FluidSample {
+  if (!fluidEnabled) {
+    return { dx: 0, dy: 0, radiusMul: 1, activity: 0 };
+  }
+
+  let dx = 0, dy = 0;
+  let tideRadiusAdd = 0, scrollRadiusAdd = 0, rippleRadiusAdd = 0;
+
+  // Idle tide
+  const warp = CFG.tide.warpAmpPx * fbm3(
+    worldX * CFG.tide.warpSpatial,
+    worldY * CFG.tide.warpSpatial,
+    timeSec * CFG.tide.warpTemporal,
+  );
+
+  let waveSum = 0, ampSum = 0;
+  let tideDx = 0, tideDy = 0;
+
+  for (const w of CFG.tide.waves) {
+    const a = (w.angleDeg * Math.PI) / 180;
+    const nx = Math.cos(a), ny = Math.sin(a);
+    const tx = -ny, ty = nx;
+    const p = worldX * nx + worldY * ny;
+    const phase = TAU * ((p + warp) / w.wavelengthPx + timeSec * w.speedCyclesPerSec) + w.phase;
+    const s = Math.sin(phase), c = Math.cos(phase);
+    waveSum += s * w.amp;
+    ampSum += w.amp;
+    tideDx += nx * c * w.amp * CFG.tide.displaceAmpPx;
+    tideDy += ny * c * w.amp * CFG.tide.displaceAmpPx;
+    tideDx += tx * Math.sin(phase * 0.73 + 1.4) * w.amp * CFG.tide.tangentAmpPx;
+    tideDy += ty * Math.sin(phase * 0.73 + 1.4) * w.amp * CFG.tide.tangentAmpPx;
+  }
+
+  const tideNorm = ampSum > 0 ? waveSum / ampSum : 0;
+  tideRadiusAdd = CFG.tide.radiusAmp * signedPow(tideNorm, CFG.tide.radiusPower);
+  dx += tideDx;
+  dy += tideDy;
+
+  // Scroll fluid
+  const cx = screenX / vw - 0.5;
+  const cy = screenY / vh - 0.5;
+  const centerFalloff = Math.exp(
+    -(cx * cx) / CFG.scroll.centerSigmaX - (cy * cy) / CFG.scroll.centerSigmaY,
+  );
+  const sign = Math.sign(scroll.filteredVelocityPxPerSec) || 1;
+  const trailPx = clamp(scroll.trail.value, -CFG.scroll.maxTrailPx, CFG.scroll.maxTrailPx);
+  const shearPx = clamp(scroll.shear.value, -CFG.scroll.maxShearPx, CFG.scroll.maxShearPx);
+  const compression = clamp(scroll.compression.value, 0, CFG.scroll.maxCompression);
+  const verticalShape = 0.55 + 0.45 * Math.cos(Math.PI * cy);
+
+  dx += shearPx * centerFalloff * cx * verticalShape;
+  dy += -Math.sign(trailPx || sign) * Math.abs(trailPx) * centerFalloff * verticalShape;
+
+  const compressionWave = Math.sin(
+    (cy * CFG.scroll.compressionSpatial + timeSec * CFG.scroll.compressionTemporal * sign) * Math.PI,
+  );
+  scrollRadiusAdd = compression * centerFalloff * compressionWave * CFG.scroll.radiusCompressionAmp;
+
+  // Unified ripples
+  let rippleDx = 0, rippleDy = 0;
+  for (const r of ripples) {
+    const age = timeSec - r.t0;
+    if (age < 0 || age > r.duration) continue;
+
+    const rx = screenX - r.x, ry = screenY - r.y;
+    const dist = Math.sqrt(rx * rx + ry * ry) + 0.0001;
+    const front = age * r.speed;
+    const reachPad = r.width * CFG.ripple.cullWidthMult;
+    if (dist > front + reachPad) continue;
+    if (dist < Math.max(0, front - reachPad)) continue;
+
+    const life = age / r.duration;
+    const fadeIn = smoothstep01(life / CFG.ripple.fadeInLife);
+    const fadeOut = Math.pow(1 - life, CFG.ripple.fadeOutPower);
+    const env = fadeIn * fadeOut;
+    const band = Math.exp(-square(dist - front) / (2 * square(r.width)));
+    const wave = Math.sin(TAU * ((dist - front) / r.wavelength));
+    const s = r.strength * env * band * wave;
+
+    const radialX = rx / dist, radialY = ry / dist;
+    const dirBias =
+      r.kind === 'scroll' ? CFG.ripple.scroll.dirBias :
+      r.kind === 'scrollStop' ? CFG.ripple.scrollStop.dirBias :
+      r.kind === 'load' ? CFG.ripple.load.dirBias :
+      CFG.ripple.mouse.dirBias;
+
+    const pushX = radialX * (1 - dirBias) + r.dirX * dirBias;
+    const pushY = radialY * (1 - dirBias) + r.dirY * dirBias;
+    rippleDx += s * r.displacePx * pushX;
+    rippleDy += s * r.displacePx * pushY;
+    rippleRadiusAdd += s * r.radiusAmp;
+  }
+
+  dx += rippleDx;
+  dy += rippleDy;
+
+  const len = hypot2(dx, dy);
+  if (len > CFG.compositor.maxTotalDisplacePx) {
+    const k = CFG.compositor.maxTotalDisplacePx / len;
+    dx *= k; dy *= k;
+  }
+
+  const tideMul = clamp(1 + tideRadiusAdd, CFG.compositor.tideRadiusMin, CFG.compositor.tideRadiusMax);
+  const scrollMul = clamp(1 + scrollRadiusAdd, CFG.compositor.scrollRadiusMin, CFG.compositor.scrollRadiusMax);
+  const rippleMul = clamp(1 + rippleRadiusAdd, CFG.compositor.rippleRadiusMin, CFG.compositor.rippleRadiusMax);
+
+  const scrollActivity = clamp(
+    Math.abs(scroll.filteredVelocityPxPerSec) / CFG.scroll.velocityNormPxPerSec, 0, 1,
+  );
+
+  return { dx, dy, radiusMul: tideMul * scrollMul * rippleMul, activity: scrollActivity };
+}
+
+// ─── Controller ───────────────────────────────────────────────────────────────
 
 function bindParallax(docMain: HTMLElement, canvas: HTMLCanvasElement): Controller {
   const ctx = canvas.getContext('2d');
   if (!ctx) return { destroy: () => {} };
 
-  let root = getScrollRoot(docMain);
-  let raf = 0;
+  const reduceMotion = prefersReducedMotion();
+  const scroll: ScrollFluidState = {
+    lastScrollTop: 0, velocityPxPerSec: 0, filteredVelocityPxPerSec: 0,
+    trail: { value: 0, velocity: 0 },
+    compression: { value: 0, velocity: 0 },
+    shear: { value: 0, velocity: 0 },
+    movingUntil: 0, lastWakeTime: 0, lastStopRippleTime: 0, wasMoving: false,
+  };
+  const pointer: PointerTrailState = {
+    active: false, inside: false,
+    filteredX: 0, filteredY: 0, filteredSpeed: 0,
+    lastSpawnTime: 0, lastSpawnX: 0, lastSpawnY: 0, strength: 0,
+  };
+  const ripples: Ripple[] = [];
 
-  function viewportH(): number {
-    return isDesktop() ? docMain.clientHeight : window.innerHeight;
+  let root = getScrollRoot(docMain);
+  let running = false, rafId = 0, prevTime = 0, lastPointerTime = 0;
+  let vw = 0, vh = 0;
+  let dotColor = resolveDotColor();
+  let spacing = CFG.grid.spacingPx;
+  let baseRadius = CFG.grid.baseRadiusPx;
+  let parallaxRate = reduceMotion ? CFG.parallax.reducedMotionRate : CFG.parallax.rate;
+
+  function refreshCssVars(): void {
+    const s = getComputedStyle(docMain);
+    const cssRate = parseFloat(s.getPropertyValue('--canvas-parallax-rate').trim());
+    if (!reduceMotion && Number.isFinite(cssRate)) parallaxRate = cssRate;
+    const cssSpacing = parseFloat(s.getPropertyValue('--canvas-dot-spacing').trim());
+    if (Number.isFinite(cssSpacing)) spacing = cssSpacing;
+    const cssRadius = parseFloat(s.getPropertyValue('--canvas-dot-size').trim());
+    if (Number.isFinite(cssRadius)) baseRadius = cssRadius;
   }
 
   function syncSize(): void {
-    const w = docMain.clientWidth;
-    const h = viewportH();
-    if (canvas.width !== w || canvas.height !== h) {
-      canvas.width = w;
-      canvas.height = h;
+    const dpr = Math.min(window.devicePixelRatio || 1, CFG.grid.dprMax);
+    const cssW = docMain.clientWidth;
+    const cssH = isDesktop() ? docMain.clientHeight : window.innerHeight;
+    const W = Math.round(cssW * dpr), H = Math.round(cssH * dpr);
+    if (canvas.width !== W || canvas.height !== H) {
+      canvas.width = W; canvas.height = H;
+      canvas.style.width = `${cssW}px`;
+      canvas.style.height = `${cssH}px`;
     }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    vw = cssW; vh = cssH;
+    refreshCssVars();
   }
 
-  function draw(): void {
-    const style = getComputedStyle(docMain);
-    const dotColor = style.getPropertyValue('--canvas-dot').trim() || 'rgba(20,24,32,0.2)';
-    const spacing = parseFloat(style.getPropertyValue('--canvas-dot-spacing').trim()) || 28;
-    const baseRadius = parseFloat(style.getPropertyValue('--canvas-dot-size').trim()) || 1.5;
-    drawDots(ctx, canvas.width, canvas.height, getScrollTop(root), getRate(docMain), dotColor, spacing, baseRadius);
+  const buckets: Array<Array<[number, number, number]>> = [[], [], []];
+
+  function renderFrame(now: number): void {
+    const w = vw, h = vh;
+    ctx.clearRect(0, 0, w, h);
+    if (w === 0 || h === 0) return;
+
+    buckets[0].length = 0; buckets[1].length = 0; buckets[2].length = 0;
+
+    const scrollTop = scroll.lastScrollTop;
+    const worldYStart = scrollTop * parallaxRate;
+    const rowStart = Math.floor(worldYStart / spacing) - 1;
+    const rowEnd = Math.ceil((worldYStart + h) / spacing) + 1;
+    const colEnd = Math.ceil(w / spacing) + 1;
+
+    const fluidEnabled = !reduceMotion;
+    let maxActivity = 0;
+
+    for (let gy = rowStart; gy <= rowEnd; gy++) {
+      const wy = gy * spacing;
+      const sy = wy - worldYStart;
+      for (let gx = 0; gx <= colEnd; gx++) {
+        const wx = gx * spacing, sx = wx;
+        const sample = sampleFluidField(
+          wx, wy, sx, sy, now, w, h, scroll, ripples, fluidEnabled,
+        );
+        if (sample.activity > maxActivity) maxActivity = sample.activity;
+
+        const r = clamp(
+          baseRadius * sample.radiusMul,
+          CFG.compositor.radiusMinPx, CFG.compositor.radiusMaxPx,
+        );
+        const x = sx + sample.dx;
+        const y = sy + sample.dy;
+
+        const bucket =
+          r < CFG.compositor.smallRadiusCutoffPx ? 0 :
+          r < CFG.compositor.largeRadiusCutoffPx ? 1 : 2;
+        buckets[bucket].push([x, y, r]);
+      }
+    }
+
+    const activity = Math.max(maxActivity, pointer.strength * 0.45);
+    const alphaMul = 1 + CFG.compositor.alphaActivityLift * activity;
+
+    ctx.fillStyle = dotColor;
+    const alphas = [
+      Math.min(CFG.compositor.alphaSmall * alphaMul, CFG.compositor.alphaMax),
+      Math.min(CFG.compositor.alphaMid * alphaMul, CFG.compositor.alphaMax),
+      Math.min(CFG.compositor.alphaLarge * alphaMul, CFG.compositor.alphaMax),
+    ];
+
+    for (let b = 0; b < 3; b++) {
+      const dots = buckets[b];
+      if (!dots.length) continue;
+      ctx.globalAlpha = alphas[b];
+      ctx.beginPath();
+      for (let i = 0; i < dots.length; i++) {
+        const [dx, dy, dr] = dots[i];
+        ctx.moveTo(dx + dr, dy);
+        ctx.arc(dx, dy, dr, 0, TAU);
+      }
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
   }
 
-  function schedule(): void {
-    if (raf) return;
-    raf = requestAnimationFrame(() => {
-      raf = 0;
+  function frame(nowMs: number): void {
+    if (!running) return;
+    rafId = requestAnimationFrame(frame);
+    const now = nowMs / 1000;
+    const dt = clamp(now - prevTime, 1 / 240, 1 / 30);
+    prevTime = now;
+
+    const scrollTop = getScrollTop(root);
+    if (!reduceMotion) {
+      updateScrollFluid(scroll, ripples, now, dt, scrollTop, vw, vh);
+      updatePointerIdle(pointer, dt);
+      pruneRipples(ripples, now);
+    } else {
+      scroll.lastScrollTop = scrollTop;
+    }
+
+    renderFrame(now);
+  }
+
+  function start(): void {
+    if (running) return;
+    running = true;
+    rafId = requestAnimationFrame((t) => {
+      prevTime = t / 1000;
+      scroll.lastScrollTop = getScrollTop(root);
       syncSize();
-      draw();
+      if (!reduceMotion && vw > 0) {
+        const ld = CFG.ripple.load;
+        pushRipple(ripples, {
+          kind: 'load', x: vw * 0.5, y: vh * 0.5, t0: t / 1000,
+          duration: ld.duration, strength: ld.strength,
+          speed: ld.speed, width: ld.width, wavelength: ld.wavelength,
+          displacePx: ld.displacePx, radiusAmp: ld.radiusAmp,
+          dirX: 0, dirY: 0,
+        }, t / 1000);
+      }
+      frame(t);
     });
   }
 
-  const onScroll = () => schedule();
-  const onResize = () => schedule();
+  function stop(): void {
+    running = false;
+    if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
+  }
 
-  root.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onResize, { passive: true });
+  const onVisibility = () => { if (document.hidden) stop(); else start(); };
+  document.addEventListener('visibilitychange', onVisibility);
 
-  const mediaQuery = window.matchMedia(DESKTOP_QUERY);
-  const onMediaChange = () => {
-    root.removeEventListener('scroll', onScroll);
-    root = getScrollRoot(docMain);
-    root.addEventListener('scroll', onScroll, { passive: true });
-    schedule();
+  const io = typeof IntersectionObserver !== 'undefined'
+    ? new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting && !document.hidden) start(); else stop();
+      })
+    : null;
+  io?.observe(docMain);
+
+  const onMouseMove = (e: MouseEvent) => {
+    if (reduceMotion) return;
+    const rect = docMain.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const now = performance.now() / 1000;
+    const dt = lastPointerTime > 0
+      ? clamp(now - lastPointerTime, 1 / 240, 1 / 30)
+      : 1 / 60;
+    lastPointerTime = now;
+    updatePointerTrail(pointer, ripples, now, x, y, dt);
   };
-  mediaQuery.addEventListener('change', onMediaChange);
+  const onMouseLeave = () => { pointer.inside = false; };
+  docMain.addEventListener('mousemove', onMouseMove, { passive: true });
+  docMain.addEventListener('mouseleave', onMouseLeave, { passive: true });
 
-  // Redraw when theme toggles (data-theme attribute changes on <html>)
-  const themeObserver = new MutationObserver(() => schedule());
-  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  const mqDesktop = window.matchMedia(DESKTOP_QUERY);
+  const onMediaChange = () => { root = getScrollRoot(docMain); syncSize(); };
+  mqDesktop.addEventListener('change', onMediaChange);
 
-  const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(() => schedule()) : null;
+  const ro = typeof ResizeObserver !== 'undefined'
+    ? new ResizeObserver(() => syncSize()) : null;
   ro?.observe(docMain);
 
-  syncSize();
-  draw();
+  const themeObserver = new MutationObserver(() => {
+    dotColor = resolveDotColor();
+    refreshCssVars();
+  });
+  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+  start();
 
   return {
     destroy() {
-      if (raf) cancelAnimationFrame(raf);
-      root.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onResize);
-      mediaQuery.removeEventListener('change', onMediaChange);
-      themeObserver.disconnect();
+      stop();
+      document.removeEventListener('visibilitychange', onVisibility);
+      io?.disconnect();
+      docMain.removeEventListener('mousemove', onMouseMove);
+      docMain.removeEventListener('mouseleave', onMouseLeave);
+      mqDesktop.removeEventListener('change', onMediaChange);
       ro?.disconnect();
+      themeObserver.disconnect();
     },
   };
 }
@@ -216,11 +793,9 @@ function bindParallax(docMain: HTMLElement, canvas: HTMLCanvasElement): Controll
 export function initDocCanvasParallax(): void {
   active?.destroy();
   active = null;
-
   const docMain = document.querySelector<HTMLElement>('.doc-main');
   const canvas = docMain?.querySelector<HTMLCanvasElement>('.doc-main__canvas');
   if (!docMain || !canvas) return;
-
   active = bindParallax(docMain, canvas);
 }
 
