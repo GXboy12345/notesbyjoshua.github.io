@@ -19,32 +19,20 @@ const CFG = {
     ],
   },
   scroll: {
-    velocityFilterHz: 16,
+    velocityFilterHz: 9,
     velocityNormPxPerSec: 2200,
-    movingEpsPxPerSec: 55,
-    stopDelaySec: 0.105,
-    stopRippleCooldownSec: 0.40,
-    trailImpulse: 42,
-    compressionImpulse: 3.8,
-    shearImpulse: 18,
-    trailStiffness: 24,
-    trailDamping: 8.5,
-    compressionStiffness: 34,
-    compressionDamping: 10.5,
-    shearStiffness: 22,
-    shearDamping: 8.0,
-    maxTrailPx: 14,
-    maxCompression: 0.52,
-    maxShearPx: 5.0,
-    centerSigmaX: 0.22,
-    centerSigmaY: 0.34,
-    compressionSpatial: 2.6,
-    compressionTemporal: 3.2,
-    radiusCompressionAmp: 0.18,
-    wakeIntervalSec: 0.085,
-    wakeVelocityForFullStrength: 1800,
-    wakeYDown: 0.32,
-    wakeYUp: 0.68,
+    movingEpsPxPerSec: 45,
+    stopDelaySec: 0.12,
+    stopRippleCooldownSec: 0.55,
+    stopRippleMinVelocity: 420,
+    // Velocity-coupled drag — no springs, no oscillation
+    dragFollowHz: 11,
+    dragReleaseHz: 7,
+    maxDragPx: 7.5,
+    radiusBoostMax: 0.10,
+    radiusFollowHz: 10,
+    centerSigmaX: 0.24,
+    centerSigmaY: 0.36,
   },
   pointer: {
     posHz: 28,
@@ -59,6 +47,13 @@ const CFG = {
     minSpawnDistFast: 13,
     baseStrength: 0.16,
     speedStrength: 0.56,
+    aura: {
+      radiusPx: 132,
+      featherExp: 5.5,
+      radiusBoostMax: 0.42,
+      alphaBoostMax: 0.62,
+      alphaTiers: 16,
+    },
   },
   ripple: {
     maxRipples: 72,
@@ -80,9 +75,9 @@ const CFG = {
       displacePx: 2.4, radiusAmp: 0.16, dirBias: 0.34,
     },
     scrollStop: {
-      strengthMin: 0.26, strengthMax: 0.75,
-      speed: 360, width: 72, wavelength: 150, duration: 1.65,
-      displacePx: 2.8, radiusAmp: 0.20, dirBias: 0.18,
+      strengthMin: 0.12, strengthMax: 0.38,
+      speed: 280, width: 90, wavelength: 180, duration: 1.85,
+      displacePx: 1.6, radiusAmp: 0.10, dirBias: 0.10,
     },
     load: {
       strength: 0.34,
@@ -185,8 +180,6 @@ function fbm3(x: number, y: number, z: number): number {
 
 type RippleKind = 'mouse' | 'scroll' | 'scrollStop' | 'load';
 
-interface Spring1D { value: number; velocity: number; }
-
 interface Ripple {
   kind: RippleKind;
   x: number; y: number; t0: number; duration: number; strength: number;
@@ -198,11 +191,10 @@ interface ScrollFluidState {
   lastScrollTop: number;
   velocityPxPerSec: number;
   filteredVelocityPxPerSec: number;
-  trail: Spring1D;
-  compression: Spring1D;
-  shear: Spring1D;
+  dragY: number;
+  radiusBoost: number;
+  peakAbsVelocity: number;
   movingUntil: number;
-  lastWakeTime: number;
   lastStopRippleTime: number;
   wasMoving: boolean;
 }
@@ -220,7 +212,11 @@ interface PointerTrailState {
 }
 
 interface FluidSample {
-  dx: number; dy: number; radiusMul: number; activity: number;
+  dx: number;
+  dy: number;
+  staticRadiusMul: number;
+  rippleRadiusMul: number;
+  activity: number;
 }
 
 type Controller = { destroy(): void };
@@ -257,12 +253,6 @@ function resolveDotColor(): string {
 }
 
 // ─── Physics helpers ──────────────────────────────────────────────────────────
-
-function updateSpring(s: Spring1D, stiffness: number, damping: number, dt: number): void {
-  const accel = -stiffness * s.value - damping * s.velocity;
-  s.velocity += accel * dt;
-  s.value += s.velocity * dt;
-}
 
 function pruneRipples(ripples: Ripple[], now: number): void {
   for (let i = ripples.length - 1; i >= 0; i--) {
@@ -309,6 +299,7 @@ function spawnMouseWakeRipple(
 function updatePointerTrail(
   pointer: PointerTrailState, ripples: Ripple[],
   now: number, x: number, y: number, dt: number,
+  spawnWake: boolean,
 ): void {
   const first = !pointer.active;
   pointer.active = true;
@@ -335,6 +326,8 @@ function updatePointerTrail(
   const rawSpeed = hypot2(moveDx, moveDy) / Math.max(dt, 1 / 240);
   pointer.filteredSpeed = expLerp(pointer.filteredSpeed, rawSpeed, CFG.pointer.speedHz, dt);
   pointer.strength = expLerp(pointer.strength, 1, CFG.pointer.enterHz, dt);
+
+  if (!spawnWake) return;
 
   const speed01 = clamp(
     (pointer.filteredSpeed - CFG.pointer.minSpeedPxPerSec) /
@@ -376,6 +369,34 @@ function updatePointerIdle(pointer: PointerTrailState, dt: number): void {
   if (pointer.strength < 0.015) pointer.active = false;
 }
 
+function sampleCursorAura(screenX: number, screenY: number, pointer: PointerTrailState): number {
+  if (pointer.strength <= 0.001) return 0;
+  const dx = screenX - pointer.filteredX;
+  const dy = screenY - pointer.filteredY;
+  const dist = hypot2(dx, dy);
+  const r = CFG.pointer.aura.radiusPx;
+  const x = dist / Math.max(r, 1);
+  // Rational falloff — potent core, long soft tail, no Gaussian plateau
+  const falloff = 1 / (1 + Math.pow(x, CFG.pointer.aura.featherExp));
+  return pointer.strength * falloff;
+}
+
+function auraAlphaTier(aura: number): number {
+  const tiers = CFG.pointer.aura.alphaTiers;
+  // Round to nearest tier — smoother than floor, less banding at boundaries
+  return clamp(Math.round(aura * (tiers - 1)), 0, tiers - 1);
+}
+
+function composeDotRadiusMul(
+  staticRadiusMul: number,
+  rippleRadiusMul: number,
+  aura: number,
+): number {
+  const auraSizeMul = 1 + aura * CFG.pointer.aura.radiusBoostMax;
+  const ambientMul = lerp(staticRadiusMul, auraSizeMul, aura);
+  return ambientMul * rippleRadiusMul;
+}
+
 function updateScrollFluid(
   scroll: ScrollFluidState, ripples: Ripple[],
   now: number, dt: number, scrollTop: number, vw: number, vh: number,
@@ -389,62 +410,45 @@ function updateScrollFluid(
 
   const v = scroll.filteredVelocityPxPerSec;
   const absV = Math.abs(v);
-  const sign = Math.sign(v) || Math.sign(rawVelocity) || 1;
+  const vNorm = clamp(v / CFG.scroll.velocityNormPxPerSec, -1, 1);
   const moving = absV > CFG.scroll.movingEpsPxPerSec;
 
   if (moving) {
     scroll.movingUntil = now + CFG.scroll.stopDelaySec;
-    const vNorm = clamp(v / CFG.scroll.velocityNormPxPerSec, -1, 1);
-    scroll.trail.velocity += vNorm * CFG.scroll.trailImpulse;
-    scroll.compression.velocity += Math.abs(vNorm) * CFG.scroll.compressionImpulse;
-    scroll.shear.velocity += vNorm * CFG.scroll.shearImpulse;
-
-    if (now - scroll.lastWakeTime >= CFG.scroll.wakeIntervalSec) {
-      const lateral = Math.sin(now * 7.13) * 0.08;
-      const rs = CFG.ripple.scroll;
-      pushRipple(ripples, {
-        kind: 'scroll',
-        x: vw * (0.5 + lateral),
-        y: sign > 0 ? vh * CFG.scroll.wakeYDown : vh * CFG.scroll.wakeYUp,
-        t0: now,
-        duration: rs.duration,
-        strength: clamp(absV / CFG.scroll.wakeVelocityForFullStrength, rs.strengthMin, rs.strengthMax),
-        speed: rs.speed, width: rs.width, wavelength: rs.wavelength,
-        displacePx: rs.displacePx, radiusAmp: rs.radiusAmp,
-        dirX: 0, dirY: -sign,
-      }, now);
-      scroll.lastWakeTime = now;
-    }
+    if (absV > scroll.peakAbsVelocity) scroll.peakAbsVelocity = absV;
   }
+
+  // Drag follows velocity while scrolling; eases back to zero when idle — no spring ring.
+  const targetDragY = moving ? -vNorm * CFG.scroll.maxDragPx : 0;
+  const dragHz = moving ? CFG.scroll.dragFollowHz : CFG.scroll.dragReleaseHz;
+  scroll.dragY = expLerp(scroll.dragY, targetDragY, dragHz, dt);
+
+  const targetBoost = moving ? Math.abs(vNorm) * CFG.scroll.radiusBoostMax : 0;
+  const boostHz = moving ? CFG.scroll.radiusFollowHz : CFG.scroll.dragReleaseHz;
+  scroll.radiusBoost = expLerp(scroll.radiusBoost, targetBoost, boostHz, dt);
 
   const stopped =
     scroll.wasMoving &&
     !moving &&
     now > scroll.movingUntil &&
-    now - scroll.lastStopRippleTime > CFG.scroll.stopRippleCooldownSec;
+    now - scroll.lastStopRippleTime > CFG.scroll.stopRippleCooldownSec &&
+    scroll.peakAbsVelocity > CFG.scroll.stopRippleMinVelocity;
 
   if (stopped) {
-    const lastEnergy = clamp(absV / CFG.scroll.wakeVelocityForFullStrength, 0, 1);
     const rs = CFG.ripple.scrollStop;
+    const energy = clamp(scroll.peakAbsVelocity / CFG.scroll.velocityNormPxPerSec, 0, 1);
     pushRipple(ripples, {
       kind: 'scrollStop',
       x: vw * 0.5, y: vh * 0.48, t0: now,
       duration: rs.duration,
-      strength: clamp(0.30 + lastEnergy * 0.45, rs.strengthMin, rs.strengthMax),
+      strength: lerp(rs.strengthMin, rs.strengthMax, smoothstep01(energy)),
       speed: rs.speed, width: rs.width, wavelength: rs.wavelength,
       displacePx: rs.displacePx, radiusAmp: rs.radiusAmp,
       dirX: 0, dirY: 0,
     }, now);
     scroll.lastStopRippleTime = now;
+    scroll.peakAbsVelocity = 0;
   }
-
-  updateSpring(scroll.trail, CFG.scroll.trailStiffness, CFG.scroll.trailDamping, dt);
-  updateSpring(scroll.compression, CFG.scroll.compressionStiffness, CFG.scroll.compressionDamping, dt);
-  updateSpring(scroll.shear, CFG.scroll.shearStiffness, CFG.scroll.shearDamping, dt);
-
-  scroll.trail.value = clamp(scroll.trail.value, -CFG.scroll.maxTrailPx, CFG.scroll.maxTrailPx);
-  scroll.compression.value = clamp(scroll.compression.value, 0, CFG.scroll.maxCompression);
-  scroll.shear.value = clamp(scroll.shear.value, -CFG.scroll.maxShearPx, CFG.scroll.maxShearPx);
 
   scroll.wasMoving = moving || now <= scroll.movingUntil;
   scroll.lastScrollTop = scrollTop;
@@ -457,7 +461,7 @@ function sampleFluidField(
   fluidEnabled: boolean,
 ): FluidSample {
   if (!fluidEnabled) {
-    return { dx: 0, dy: 0, radiusMul: 1, activity: 0 };
+    return { dx: 0, dy: 0, staticRadiusMul: 1, rippleRadiusMul: 1, activity: 0 };
   }
 
   let dx = 0, dy = 0;
@@ -493,25 +497,16 @@ function sampleFluidField(
   dx += tideDx;
   dy += tideDy;
 
-  // Scroll fluid
+  // Scroll drag — smooth velocity follow, strongest at viewport center
   const cx = screenX / vw - 0.5;
   const cy = screenY / vh - 0.5;
   const centerFalloff = Math.exp(
     -(cx * cx) / CFG.scroll.centerSigmaX - (cy * cy) / CFG.scroll.centerSigmaY,
   );
-  const sign = Math.sign(scroll.filteredVelocityPxPerSec) || 1;
-  const trailPx = clamp(scroll.trail.value, -CFG.scroll.maxTrailPx, CFG.scroll.maxTrailPx);
-  const shearPx = clamp(scroll.shear.value, -CFG.scroll.maxShearPx, CFG.scroll.maxShearPx);
-  const compression = clamp(scroll.compression.value, 0, CFG.scroll.maxCompression);
-  const verticalShape = 0.55 + 0.45 * Math.cos(Math.PI * cy);
+  const verticalShape = 0.6 + 0.4 * Math.cos(Math.PI * cy);
 
-  dx += shearPx * centerFalloff * cx * verticalShape;
-  dy += -Math.sign(trailPx || sign) * Math.abs(trailPx) * centerFalloff * verticalShape;
-
-  const compressionWave = Math.sin(
-    (cy * CFG.scroll.compressionSpatial + timeSec * CFG.scroll.compressionTemporal * sign) * Math.PI,
-  );
-  scrollRadiusAdd = compression * centerFalloff * compressionWave * CFG.scroll.radiusCompressionAmp;
+  dy += scroll.dragY * centerFalloff * verticalShape;
+  scrollRadiusAdd = scroll.radiusBoost * centerFalloff;
 
   // Unified ripples
   let rippleDx = 0, rippleDy = 0;
@@ -536,7 +531,6 @@ function sampleFluidField(
 
     const radialX = rx / dist, radialY = ry / dist;
     const dirBias =
-      r.kind === 'scroll' ? CFG.ripple.scroll.dirBias :
       r.kind === 'scrollStop' ? CFG.ripple.scrollStop.dirBias :
       r.kind === 'load' ? CFG.ripple.load.dirBias :
       CFG.ripple.mouse.dirBias;
@@ -565,7 +559,12 @@ function sampleFluidField(
     Math.abs(scroll.filteredVelocityPxPerSec) / CFG.scroll.velocityNormPxPerSec, 0, 1,
   );
 
-  return { dx, dy, radiusMul: tideMul * scrollMul * rippleMul, activity: scrollActivity };
+  return {
+    dx, dy,
+    staticRadiusMul: tideMul * scrollMul,
+    rippleRadiusMul: rippleMul,
+    activity: scrollActivity,
+  };
 }
 
 // ─── Controller ───────────────────────────────────────────────────────────────
@@ -577,10 +576,8 @@ function bindParallax(docMain: HTMLElement, canvas: HTMLCanvasElement): Controll
   const reduceMotion = prefersReducedMotion();
   const scroll: ScrollFluidState = {
     lastScrollTop: 0, velocityPxPerSec: 0, filteredVelocityPxPerSec: 0,
-    trail: { value: 0, velocity: 0 },
-    compression: { value: 0, velocity: 0 },
-    shear: { value: 0, velocity: 0 },
-    movingUntil: 0, lastWakeTime: 0, lastStopRippleTime: 0, wasMoving: false,
+    dragY: 0, radiusBoost: 0, peakAbsVelocity: 0,
+    movingUntil: 0, lastStopRippleTime: 0, wasMoving: false,
   };
   const pointer: PointerTrailState = {
     active: false, inside: false,
@@ -622,14 +619,19 @@ function bindParallax(docMain: HTMLElement, canvas: HTMLCanvasElement): Controll
     refreshCssVars();
   }
 
-  const buckets: Array<Array<[number, number, number]>> = [[], [], []];
+  const buckets: Array<Array<[number, number, number]>> = Array.from(
+    { length: 3 },
+    () => Array.from({ length: CFG.pointer.aura.alphaTiers }, () => []),
+  );
 
   function renderFrame(now: number): void {
     const w = vw, h = vh;
     ctx.clearRect(0, 0, w, h);
     if (w === 0 || h === 0) return;
 
-    buckets[0].length = 0; buckets[1].length = 0; buckets[2].length = 0;
+    buckets[0].forEach((b) => { b.length = 0; });
+    buckets[1].forEach((b) => { b.length = 0; });
+    buckets[2].forEach((b) => { b.length = 0; });
 
     const scrollTop = scroll.lastScrollTop;
     const worldYStart = scrollTop * parallaxRate;
@@ -650,41 +652,57 @@ function bindParallax(docMain: HTMLElement, canvas: HTMLCanvasElement): Controll
         );
         if (sample.activity > maxActivity) maxActivity = sample.activity;
 
-        const r = clamp(
-          baseRadius * sample.radiusMul,
-          CFG.compositor.radiusMinPx, CFG.compositor.radiusMaxPx,
-        );
         const x = sx + sample.dx;
         const y = sy + sample.dy;
+        const aura = sampleCursorAura(x, y, pointer);
 
-        const bucket =
+        const r = clamp(
+          baseRadius * composeDotRadiusMul(
+            sample.staticRadiusMul, sample.rippleRadiusMul, aura,
+          ),
+          CFG.compositor.radiusMinPx, CFG.compositor.radiusMaxPx,
+        );
+
+        const sizeBucket =
           r < CFG.compositor.smallRadiusCutoffPx ? 0 :
           r < CFG.compositor.largeRadiusCutoffPx ? 1 : 2;
-        buckets[bucket].push([x, y, r]);
+        buckets[sizeBucket][auraAlphaTier(aura)].push([x, y, r]);
       }
     }
 
     const activity = Math.max(maxActivity, pointer.strength * 0.45);
-    const alphaMul = 1 + CFG.compositor.alphaActivityLift * activity;
+    const auraTierSteps = CFG.pointer.aura.alphaTiers;
 
     ctx.fillStyle = dotColor;
-    const alphas = [
-      Math.min(CFG.compositor.alphaSmall * alphaMul, CFG.compositor.alphaMax),
-      Math.min(CFG.compositor.alphaMid * alphaMul, CFG.compositor.alphaMax),
-      Math.min(CFG.compositor.alphaLarge * alphaMul, CFG.compositor.alphaMax),
-    ];
+    for (let sizeBucket = 0; sizeBucket < 3; sizeBucket++) {
+      const baseAlpha =
+        sizeBucket === 0 ? CFG.compositor.alphaSmall :
+        sizeBucket === 1 ? CFG.compositor.alphaMid :
+        CFG.compositor.alphaLarge;
 
-    for (let b = 0; b < 3; b++) {
-      const dots = buckets[b];
-      if (!dots.length) continue;
-      ctx.globalAlpha = alphas[b];
-      ctx.beginPath();
-      for (let i = 0; i < dots.length; i++) {
-        const [dx, dy, dr] = dots[i];
-        ctx.moveTo(dx + dr, dy);
-        ctx.arc(dx, dy, dr, 0, TAU);
+      for (let auraTier = 0; auraTier < auraTierSteps; auraTier++) {
+        const dots = buckets[sizeBucket][auraTier];
+        if (!dots.length) continue;
+
+        const repAura = auraTier / Math.max(auraTierSteps - 1, 1);
+        const alpha = Math.min(
+          baseAlpha * (
+            1 +
+            CFG.compositor.alphaActivityLift * activity * (1 - repAura) +
+            CFG.pointer.aura.alphaBoostMax * repAura * repAura
+          ),
+          CFG.compositor.alphaMax,
+        );
+
+        ctx.globalAlpha = alpha;
+        ctx.beginPath();
+        for (let i = 0; i < dots.length; i++) {
+          const [dx, dy, dr] = dots[i];
+          ctx.moveTo(dx + dr, dy);
+          ctx.arc(dx, dy, dr, 0, TAU);
+        }
+        ctx.fill();
       }
-      ctx.fill();
     }
     ctx.globalAlpha = 1;
   }
@@ -699,11 +717,11 @@ function bindParallax(docMain: HTMLElement, canvas: HTMLCanvasElement): Controll
     const scrollTop = getScrollTop(root);
     if (!reduceMotion) {
       updateScrollFluid(scroll, ripples, now, dt, scrollTop, vw, vh);
-      updatePointerIdle(pointer, dt);
       pruneRipples(ripples, now);
     } else {
       scroll.lastScrollTop = scrollTop;
     }
+    updatePointerIdle(pointer, dt);
 
     renderFrame(now);
   }
@@ -745,7 +763,6 @@ function bindParallax(docMain: HTMLElement, canvas: HTMLCanvasElement): Controll
   io?.observe(docMain);
 
   const onMouseMove = (e: MouseEvent) => {
-    if (reduceMotion) return;
     const rect = docMain.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -754,7 +771,7 @@ function bindParallax(docMain: HTMLElement, canvas: HTMLCanvasElement): Controll
       ? clamp(now - lastPointerTime, 1 / 240, 1 / 30)
       : 1 / 60;
     lastPointerTime = now;
-    updatePointerTrail(pointer, ripples, now, x, y, dt);
+    updatePointerTrail(pointer, ripples, now, x, y, dt, !reduceMotion);
   };
   const onMouseLeave = () => { pointer.inside = false; };
   docMain.addEventListener('mousemove', onMouseMove, { passive: true });
