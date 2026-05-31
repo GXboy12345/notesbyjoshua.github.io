@@ -1,6 +1,8 @@
 # Component fixture
 
-Maintenance: see `src/dev/README.md`. Update this file when directives or practice UI change.
+Maintenance: see `src/dev/README.md`. Update this file when directives, practice UI, or annotation POIs change.
+
+**Annotations:** callouts, figures, practice blocks, MCQs, and FRQs expose Mark/Note POI controls. Select prose text to open the highlight toolbar.
 
 ---
 

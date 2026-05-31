@@ -6,6 +6,7 @@ import FontPreload from '../components/FontPreload.astro';
 import ThemeScript from '../components/ThemeScript.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import ReferenceSheetDrawer from '../components/ReferenceSheetDrawer.astro';
+import AnnotationLibraryDrawer from '../components/AnnotationLibraryDrawer.astro';
 import { p } from '../lib/paths';
 
 interface Props {
@@ -44,6 +45,7 @@ const fullTitle = title === 'Notes by Joshua' ? title : `${title} · Notes by Jo
     <div class="site-shell">
       <SiteHeader current={Astro.url.pathname} />
       <ReferenceSheetDrawer />
+      <AnnotationLibraryDrawer />
       <slot />
       <footer class="site-footer">
         <p>

@@ -8,7 +8,10 @@ import { renderDoc } from '../../lib/render-doc';
 const fixturePath = join(process.cwd(), 'src/dev/component-fixture.md');
 const raw = readFileSync(fixturePath, 'utf8');
 const md = preprocessMarkdown(raw);
-const { html, headings } = renderDoc(md);
+const { html, headings, contentHash } = renderDoc(md, {
+  pageSlug: 'dev/components',
+  injectPois: true,
+});
 ---
 
 <DocLayout
@@ -16,6 +19,10 @@ const { html, headings } = renderDoc(md);
   description="Orphan page for manual testing of remark directives and practice UI. Not linked from navigation."
   headings={headings}
   interactive={true}
+  annotations={true}
+  pageId="/dev/components/"
+  pageTitle="Component fixture (dev)"
+  contentHash={contentHash}
   noindex={true}
 >
   <Fragment set:html={html} />

@@ -16,8 +16,15 @@ import { remarkKatexArraySpacing } from './remark-katex-array-spacing';
 import { remarkStripOrphanFences } from './remark-strip-orphan-fences';
 import { headingsFromMdast, remarkHeadingIds, type DocHeading } from './remark-heading-ids';
 import { resetSlugCounts } from './slugify';
+import { contentHashFromMdast } from '../annotations/content-hash';
+import { injectAnnotationPois } from '../annotations/remark-annotation-pois';
 
 export type { DocHeading };
+
+export type RenderMarkdownOptions = {
+  pageSlug?: string;
+  injectPois?: boolean;
+};
 
 const mdastToHast = unified()
   .use(remarkRehype, { allowDangerousHtml: true })
@@ -50,7 +57,10 @@ const applyKatexArraySpacing = remarkKatexArraySpacing();
 const applyDirectives = remarkDirectives(mdastFragmentToHtml);
 const applyHeadingIds = remarkHeadingIds();
 
-export function renderMarkdownToHtml(rawMd: string): { html: string; headings: DocHeading[] } {
+export function renderMarkdownToHtml(
+  rawMd: string,
+  options: RenderMarkdownOptions = {},
+): { html: string; headings: DocHeading[]; contentHash: string } {
   const md = convertLegacyHtmlToDirectives(preprocessMarkdown(rawMd));
   resetSlugCounts();
 
@@ -61,7 +71,12 @@ export function renderMarkdownToHtml(rawMd: string): { html: string; headings: D
   applyDirectives(tree);
   applyStripOrphanFences(tree);
   const headings = headingsFromMdast(tree);
-  return { html: mdastTreeToHtml(tree), headings };
+  const contentHash = contentHashFromMdast(tree);
+  let html = mdastTreeToHtml(tree);
+  if (options.injectPois && options.pageSlug) {
+    html = injectAnnotationPois(html, options.pageSlug);
+  }
+  return { html, headings, contentHash };
 }
 
 /** Regex TOC fallback when full parse is unnecessary. */

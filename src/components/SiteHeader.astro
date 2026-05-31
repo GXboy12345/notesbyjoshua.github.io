@@ -28,6 +28,29 @@ const { current = Astro.url.pathname } = Astro.props;
   </nav>
   <div class="header-actions">
     <div id="ref-sheet-handle" class="ref-sheet-handle-slot" hidden></div>
+    <button
+      type="button"
+      id="annotation-library-open"
+      class="annotation-library-trigger"
+      aria-label="My library"
+      title="My library"
+    >
+      <svg class="annotation-library-trigger__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+        <path
+          d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linejoin="round"></path>
+      </svg>
+    </button>
     <HeaderSearch />
     <ThemeToggle />
   </div>

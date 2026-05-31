@@ -1,6 +1,6 @@
 ---
 import DocLayout from '../layouts/DocLayout.astro';
-import { routeSlug } from '../lib/routes';
+import { routePath, routeSlug } from '../lib/routes';
 import { allDocEntries, docBySlug } from '../lib/resolve-doc';
 import { readDocSource, renderDoc } from '../lib/render-doc';
 import { preprocessMarkdown } from '../lib/markdown-preprocess';
@@ -28,7 +28,12 @@ if (!entry) {
 
 const { body } = readDocSource(entry);
 const md = preprocessMarkdown(body);
-const { html, headings } = renderDoc(md);
+const isNotes = entry.collection === 'notes';
+const pagePath = routePath(entry);
+const { html, headings, contentHash } = renderDoc(md, {
+  pageSlug: slug,
+  injectPois: isNotes,
+});
 const title = entry.data.title ?? entry.id.replace(/\.md$/, '');
 const isFeedback = entry.collection === 'siteFeedback';
 const embedUrl =
@@ -41,7 +46,11 @@ const embedUrl =
 <DocLayout
   title={title}
   math={false}
-  interactive={entry.collection === 'notes'}
+  interactive={isNotes}
+  annotations={isNotes}
+  pageId={pagePath}
+  pageTitle={title}
+  contentHash={contentHash}
   headings={headings}
 >
   <Fragment set:html={html} />

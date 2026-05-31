@@ -1,13 +1,19 @@
 // Minimap controller: scaled DOM-clone preview with feathered viewport unblur,
-// heading labels, draggable viewport thumb, and scroll-spy active state.
+// heading labels, bookmark stars, draggable viewport thumb, and scroll-spy active state.
 // Skipped entirely under reduced motion or below the desktop breakpoint.
 
+import { readPageMeta, reAnchorRecord, scrollTargetForRecord } from '../lib/annotations/anchors';
+import { listAnnotationsForPage } from '../lib/annotations/db';
+import { MINIMAP_STAR_ICON } from '../lib/annotations/icons';
+import { excerptForRecord } from '../lib/annotations/search';
+import { ANNOTATIONS_CHANGED, type AnnotationRecord } from '../lib/annotations/types';
 import { scrollToY } from './hash-scroll.ts';
 
 const DESKTOP_QUERY = '(min-width: 1100px)';
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
 const MIN_THUMB_PX = 12;
 const LABEL_MIN_GAP_PX = 11;
+const STAR_MIN_GAP_PX = 10;
 
 type Heading = { depth: 2 | 3; slug: string; text: string };
 
@@ -328,6 +334,79 @@ function setupScrollSpy(
   return observer;
 }
 
+// ─── Bookmark stars ───────────────────────────────────────────────────────────
+
+function articleYForTarget(article: HTMLElement, target: HTMLElement): number {
+  const articleTop = article.getBoundingClientRect().top;
+  return target.getBoundingClientRect().top - articleTop;
+}
+
+function bookmarkLabel(record: AnnotationRecord): string {
+  return excerptForRecord(record);
+}
+
+function buildBookmarkStars(
+  container: HTMLElement,
+  bookmarks: { record: AnnotationRecord; articleY: number }[],
+  onJump: (record: AnnotationRecord) => void,
+) {
+  const frag = document.createDocumentFragment();
+  for (const { record, articleY } of bookmarks) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'doc-minimap__star';
+    btn.dataset.annotationId = record.id;
+    const label = bookmarkLabel(record);
+    btn.setAttribute('aria-label', label);
+    btn.title = label;
+    btn.style.top = `${articleY}px`;
+    btn.innerHTML = MINIMAP_STAR_ICON;
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      onJump(record);
+    });
+    frag.appendChild(btn);
+  }
+  container.replaceChildren(frag);
+}
+
+function collapseStarOverlap(container: HTMLElement) {
+  const stars = [...container.querySelectorAll<HTMLElement>('.doc-minimap__star')].sort(
+    (a, b) => parseFloat(a.style.top || '0') - parseFloat(b.style.top || '0'),
+  );
+  let lastBottom = -Infinity;
+  for (const star of stars) {
+    const y = parseFloat(star.style.top || '0');
+    if (y < lastBottom + STAR_MIN_GAP_PX) {
+      star.hidden = true;
+      star.style.pointerEvents = 'none';
+    } else {
+      star.hidden = false;
+      star.style.pointerEvents = '';
+      lastBottom = y;
+    }
+  }
+}
+
+async function resolveActiveBookmarks(
+  article: HTMLElement,
+): Promise<{ record: AnnotationRecord; articleY: number }[]> {
+  if (!article.dataset.pageId) return [];
+  const records = await listAnnotationsForPage(readPageMeta(article).pageId);
+  const out: { record: AnnotationRecord; articleY: number }[] = [];
+
+  for (const record of records) {
+    if (record.kind !== 'bookmark' || record.anchor.kind === 'page') continue;
+    const { stale, element } = reAnchorRecord(article, record);
+    if (stale || !element) continue;
+    const articleY = clamp(articleYForTarget(article, element), 0, article.scrollHeight);
+    out.push({ record, articleY });
+  }
+
+  out.sort((a, b) => a.articleY - b.articleY);
+  return out;
+}
+
 // ─── Main controller ──────────────────────────────────────────────────────────
 
 export function setupDocMinimap(): Controller | null {
@@ -341,12 +420,13 @@ export function setupDocMinimap(): Controller | null {
   const sharpSlot = document.querySelector<HTMLElement>('[data-minimap-sharp]');
   const vpEl = document.querySelector<HTMLElement>('[data-minimap-viewport]');
   const labelsEl = document.querySelector<HTMLElement>('[data-minimap-labels]');
+  const starsEl = document.querySelector<HTMLElement>('[data-minimap-stars]');
   const scrollRoot = document.querySelector<HTMLElement>('.doc-main');
   const article = scrollRoot?.querySelector<HTMLElement>('article.prose') ?? null;
 
   if (
     !toc || !minimap || !preview || !blurSlot || !sharpSlot ||
-    !vpEl || !labelsEl || !scrollRoot || !article
+    !vpEl || !labelsEl || !starsEl || !scrollRoot || !article
   ) return null;
 
   const raw = toc.dataset.headings;
@@ -404,6 +484,7 @@ export function setupDocMinimap(): Controller | null {
   scrollRoot.addEventListener('scroll', scheduleSync, { passive: true, signal });
   scrollRoot.addEventListener('scrollend', scheduleSync, { passive: true, signal });
   window.addEventListener('resize', scheduleMeasure, { passive: true, signal });
+  document.addEventListener(ANNOTATIONS_CHANGED, scheduleBookmarkStars, { signal });
 
   // ── Interaction ──
 
@@ -455,6 +536,7 @@ export function setupDocMinimap(): Controller | null {
       blurSlot.replaceChildren();
       sharpSlot.replaceChildren();
       labelsEl.replaceChildren();
+      starsEl.replaceChildren();
       setMinimapActive(false);
       minimap.classList.remove('doc-minimap--boot');
       ['--article-width', '--article-height', '--minimap-scale', '--preview-top-inset', '--preview-left-inset'].forEach(
@@ -490,7 +572,38 @@ export function setupDocMinimap(): Controller | null {
     setMinimapActive(true);
     applyGeometry(minimap, g);
     positionLabels(labelsEl, headings, article, g);
+    void refreshBookmarkStars();
     syncScroll();
+  }
+
+  async function refreshBookmarkStars() {
+    if (!g || g.scale <= 0) {
+      starsEl.replaceChildren();
+      return;
+    }
+    const bookmarks = await resolveActiveBookmarks(article);
+    if (destroyed) return;
+    buildBookmarkStars(
+      starsEl,
+      bookmarks.map(({ record, articleY }) => ({
+        record,
+        articleY: aToM(clamp(articleY, 0, g!.articleHeight), g!),
+      })),
+      (record) => jumpToBookmark(record),
+    );
+    collapseStarOverlap(starsEl);
+  }
+
+  function scheduleBookmarkStars() {
+    void refreshBookmarkStars();
+  }
+
+  function jumpToBookmark(record: AnnotationRecord) {
+    if (!g) return;
+    const target = scrollTargetForRecord(article, record);
+    if (!target) return;
+    const y = clamp(articleYForTarget(article, target), 0, g.articleHeight);
+    scrollToArticleY(y, true);
   }
 
   function syncScroll() {

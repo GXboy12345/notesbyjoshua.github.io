@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="My library" description="Your personal highlights, bookmarks, and comments.">
+  <main class="library-page">
+    <header class="library-page__header">
+      <h1>My library</h1>
+      <p class="library-page__intro">
+        Highlights, bookmarks, and comments you saved while reading notes. Everything here is stored in
+        this browser only—clearing site data will erase it. Use export to keep a backup.
+      </p>
+    </header>
+
+    <div class="library-page__controls">
+      <label class="visually-hidden" for="library-page-search">Search annotations</label>
+      <input
+        id="library-page-search"
+        class="annotation-library-search library-page__search"
+        type="search"
+        placeholder="Search highlights, bookmarks, comments…"
+        autocomplete="off"
+      />
+
+      <div class="annotation-library-filters library-page__filters" role="group" aria-label="Filter annotations">
+        <button type="button" class="annotation-library-filter is-active" data-annotation-filter="all">All</button>
+        <button type="button" class="annotation-library-filter" data-annotation-filter="highlight">Highlights</button>
+        <button type="button" class="annotation-library-filter" data-annotation-filter="bookmark">Bookmarks</button>
+        <button type="button" class="annotation-library-filter" data-annotation-filter="stale">Stale</button>
+      </div>
+    </div>
+
+    <ul id="library-page-list" class="annotation-library-list library-page__list"></ul>
+
+    <footer class="library-page__footer">
+      <button type="button" id="library-page-export" class="annotation-library-footer-btn">Export JSON</button>
+      <label class="annotation-library-footer-btn annotation-library-import-label">
+        Import JSON
+        <input id="library-page-import" type="file" accept="application/json,.json" hidden />
+      </label>
+    </footer>
+  </main>
+</BaseLayout>
+
+<script>
+  import { initAnnotationLibrary, renderLibraryItemRow } from '../scripts/annotation-library.ts';
+  import {
+    downloadExport,
+    exportAnnotationsJson,
+    formatImportToast,
+    importAnnotationsJson,
+  } from '../lib/annotations/import-export';
+  import { deleteAnnotation, emitAnnotationsChanged } from '../lib/annotations/db';
+  import { rebuildLibrarySearchIndex, searchLibrary } from '../lib/annotations/search';
+  import { showAnnotationToast } from '../scripts/doc-annotations.ts';
+
+  type LibraryFilter = 'all' | 'highlight' | 'bookmark' | 'stale';
+
+  let filter: LibraryFilter = 'all';
+  let timer = 0;
+
+  function filterQuery(): { kind?: 'highlight' | 'bookmark'; stale?: boolean } | undefined {
+    if (filter === 'highlight') return { kind: 'highlight' };
+    if (filter === 'bookmark') return { kind: 'bookmark' };
+    if (filter === 'stale') return { stale: true };
+    return undefined;
+  }
+
+  async function renderPageList(): Promise<void> {
+    const list = document.getElementById('library-page-list');
+    const input = document.getElementById('library-page-search') as HTMLInputElement | null;
+    if (!list) return;
+    const hits = await searchLibrary(input?.value ?? '', 200, filterQuery());
+    list.innerHTML = hits.length
+      ? hits.map((hit) => renderLibraryItemRow(hit)).join('')
+      : '<li class="annotation-library-empty">No annotations yet.</li>';
+  }
+
+  function bindPageLibrary(): void {
+    initAnnotationLibrary();
+
+    const input = document.getElementById('library-page-search');
+    input?.addEventListener('input', () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => void renderPageList(), 120);
+    });
+
+    document.querySelectorAll('.library-page [data-annotation-filter]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filter = (btn.getAttribute('data-annotation-filter') as LibraryFilter) ?? 'all';
+        document.querySelectorAll('.library-page [data-annotation-filter]').forEach((b) => {
+          b.classList.toggle('is-active', b === btn);
+        });
+        void renderPageList();
+      });
+    });
+
+    document.getElementById('library-page-list')?.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const deleteId = target.closest('[data-delete]')?.getAttribute('data-delete');
+      if (deleteId) {
+        void deleteAnnotation(deleteId).then(async () => {
+          await rebuildLibrarySearchIndex();
+          emitAnnotationsChanged();
+          await renderPageList();
+        });
+      }
+    });
+
+    document.getElementById('library-page-export')?.addEventListener('click', () => {
+      void exportAnnotationsJson().then(downloadExport);
+    });
+
+    const importInput = document.getElementById('library-page-import') as HTMLInputElement | null;
+    importInput?.addEventListener('change', () => {
+      const file = importInput.files?.[0];
+      if (!file) return;
+      void importAnnotationsJson(file)
+        .then(async (result) => {
+          await rebuildLibrarySearchIndex();
+          emitAnnotationsChanged();
+          showAnnotationToast(formatImportToast(result));
+          await renderPageList();
+        })
+        .catch((err) => {
+          showAnnotationToast(err instanceof Error ? err.message : 'Import failed');
+        });
+      importInput.value = '';
+    });
+
+    void renderPageList();
+  }
+
+  bindPageLibrary();
+  document.addEventListener('astro:page-load', bindPageLibrary);
+</script>

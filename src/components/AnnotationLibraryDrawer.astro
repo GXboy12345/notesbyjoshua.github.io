@@ -1,0 +1,55 @@
+---
+import { p } from '../lib/paths';
+---
+
+<dialog id="annotation-library-drawer" class="annotation-library-drawer" aria-labelledby="annotation-library-title">
+  <div class="annotation-library-backdrop" data-annotation-library-close tabindex="-1" aria-hidden="true"></div>
+  <div class="annotation-library-panel" role="document">
+    <header class="annotation-library-header">
+      <h2 id="annotation-library-title" class="annotation-library-title">My library</h2>
+      <button type="button" class="annotation-library-close" data-annotation-library-close aria-label="Close library">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </header>
+
+    <p class="annotation-library-disclaimer">
+      Annotations are stored in this browser only and are erased if you clear site data. Export regularly to keep a backup.
+    </p>
+
+    <div class="annotation-library-search-wrap">
+      <label class="visually-hidden" for="annotation-library-search">Search annotations</label>
+      <input
+        id="annotation-library-search"
+        class="annotation-library-search"
+        type="search"
+        placeholder="Search highlights, bookmarks, comments…"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="annotation-library-filters" role="group" aria-label="Filter annotations">
+      <button type="button" class="annotation-library-filter is-active" data-annotation-filter="all">All</button>
+      <button type="button" class="annotation-library-filter" data-annotation-filter="highlight">Highlights</button>
+      <button type="button" class="annotation-library-filter" data-annotation-filter="bookmark">Bookmarks</button>
+      <button type="button" class="annotation-library-filter" data-annotation-filter="stale">Stale</button>
+    </div>
+
+    <ul id="annotation-library-list" class="annotation-library-list"></ul>
+
+    <footer class="annotation-library-footer">
+      <button type="button" id="annotation-library-export" class="annotation-library-footer-btn">Export JSON</button>
+      <label class="annotation-library-footer-btn annotation-library-import-label">
+        Import JSON
+        <input id="annotation-library-import" type="file" accept="application/json,.json" hidden />
+      </label>
+      <a class="annotation-library-footer-link" href={p('library/')}>Open library page</a>
+    </footer>
+  </div>
+</dialog>
+
+<script>
+  import { initAnnotationLibrary } from '../scripts/annotation-library.ts';
+
+  initAnnotationLibrary();
+  document.addEventListener('astro:page-load', initAnnotationLibrary);
+</script>

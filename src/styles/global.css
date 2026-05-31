@@ -1299,6 +1299,7 @@ body.ref-sheet-open {
   z-index: 0;
   pointer-events: none;
   overflow: visible;
+  transition: opacity var(--motion-base) var(--ease-out);
 }
 
 .doc-main__canvas {
@@ -1306,6 +1307,10 @@ body.ref-sheet-open {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+html.annotation-library-open .doc-main__canvas-wrap {
+  opacity: 0.28;
 }
 
 .doc-main .prose {
@@ -1400,8 +1405,7 @@ body.ref-sheet-open {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: calc(var(--radius) - 4px);
-  background: color-mix(in srgb, var(--fg) 4%, transparent);
+  background: transparent;
   cursor: pointer;
   contain: strict;
 }
@@ -1520,6 +1524,42 @@ body.ref-sheet-open {
   width: 0.45rem;
   height: 2px;
   opacity: 0.85;
+}
+
+.doc-minimap__stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.doc-minimap__star {
+  position: absolute;
+  right: 0.1rem;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.05rem;
+  height: 1.05rem;
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  pointer-events: auto;
+  filter: drop-shadow(0 0 3px var(--bg)) drop-shadow(0 0 6px var(--bg));
+}
+
+.doc-minimap__star:hover,
+.doc-minimap__star:focus-visible {
+  color: var(--fg);
+  outline: none;
+}
+
+.doc-minimap__star:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent);
 }
 
 .doc-minimap__clone :is(a, button, input, textarea, select, summary, iframe, video, audio) {
@@ -4365,6 +4405,1044 @@ html.theme-swapping * {
 
 .credits-upstream p:last-child {
   margin-bottom: 0;
+}
+
+/* ——— Personal annotations ——— */
+
+article.prose[data-annotation-root] {
+  position: relative;
+}
+
+::highlight(annotation-amber) {
+  background-color: color-mix(in srgb, #e8b84a 50%, transparent);
+}
+
+::highlight(annotation-sage) {
+  background-color: color-mix(in srgb, #8fb996 50%, transparent);
+}
+
+::highlight(annotation-sky) {
+  background-color: color-mix(in srgb, #7eb8da 50%, transparent);
+}
+
+::highlight(annotation-rose) {
+  background-color: color-mix(in srgb, #e09898 50%, transparent);
+}
+
+::highlight(annotation-lavender) {
+  background-color: color-mix(in srgb, #b8a8d8 50%, transparent);
+}
+
+::highlight(annotation-graphite) {
+  background-color: color-mix(in srgb, #9aa3b5 45%, transparent);
+}
+
+::highlight(annotation-selected) {
+  outline: 2px solid color-mix(in srgb, var(--accent) 85%, transparent);
+  outline-offset: 1px;
+}
+
+.annotation-hl-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.annotation-hl-overlay {
+  pointer-events: auto;
+  cursor: pointer;
+  border-radius: 0.12em;
+  mix-blend-mode: multiply;
+}
+
+.annotation-hl-overlay--amber {
+  background: color-mix(in srgb, #e8b84a 50%, transparent);
+}
+
+.annotation-hl-overlay--sage {
+  background: color-mix(in srgb, #8fb996 50%, transparent);
+}
+
+.annotation-hl-overlay--sky {
+  background: color-mix(in srgb, #7eb8da 50%, transparent);
+}
+
+.annotation-hl-overlay--rose {
+  background: color-mix(in srgb, #e09898 50%, transparent);
+}
+
+.annotation-hl-overlay--lavender {
+  background: color-mix(in srgb, #b8a8d8 50%, transparent);
+}
+
+.annotation-hl-overlay--graphite {
+  background: color-mix(in srgb, #9aa3b5 45%, transparent);
+}
+
+.annotation-hl-handles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 122;
+}
+
+.annotation-hl-handle {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  background: var(--bg-elevated);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--bg) 80%, transparent);
+  cursor: ew-resize;
+  pointer-events: auto;
+}
+
+.annotation-hl-handle--start {
+  cursor: w-resize;
+}
+
+.annotation-hl-handle--end {
+  cursor: e-resize;
+}
+
+.annotation-color-swatch.is-active {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.annotation-mark {
+  border-radius: 0.15em;
+  padding: 0 0.05em;
+}
+
+.annotation-mark--amber {
+  background: color-mix(in srgb, #e8b84a 50%, transparent);
+}
+
+.annotation-mark--sage {
+  background: color-mix(in srgb, #8fb996 50%, transparent);
+}
+
+.annotation-mark--sky {
+  background: color-mix(in srgb, #7eb8da 50%, transparent);
+}
+
+.annotation-mark--rose {
+  background: color-mix(in srgb, #e09898 50%, transparent);
+}
+
+.annotation-mark--lavender {
+  background: color-mix(in srgb, #b8a8d8 50%, transparent);
+}
+
+.annotation-mark--graphite {
+  background: color-mix(in srgb, #9aa3b5 45%, transparent);
+}
+
+.annotation-library-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--nav-highlight-radius);
+  background: var(--bg);
+  color: var(--muted);
+  cursor: pointer;
+  transition: color var(--motion-fast) var(--ease-out), border-color var(--motion-fast) var(--ease-out);
+}
+
+.annotation-library-trigger:hover {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+
+.annotation-toolbar,
+.annotation-toolbar--edit {
+  position: fixed;
+  z-index: 120;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: min(24rem, calc(100vw - 1rem));
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow);
+  font-family: var(--font-ui);
+}
+
+.annotation-toolbar[hidden],
+.annotation-toolbar--edit[hidden] {
+  display: none !important;
+}
+
+.annotation-toolbar__label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-right: 0.15rem;
+}
+
+.annotation-toolbar__colors {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.annotation-color-swatch {
+  width: 1.15rem;
+  height: 1.15rem;
+  border: 1px solid color-mix(in srgb, var(--fg) 15%, transparent);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.annotation-color-swatch--amber {
+  background: #e8b84a;
+}
+
+.annotation-color-swatch--sage {
+  background: #8fb996;
+}
+
+.annotation-color-swatch--sky {
+  background: #7eb8da;
+}
+
+.annotation-color-swatch--rose {
+  background: #e09898;
+}
+
+.annotation-color-swatch--lavender {
+  background: #b8a8d8;
+}
+
+.annotation-color-swatch--graphite {
+  background: #9aa3b5;
+}
+
+.annotation-toolbar__btn {
+  border: 1px solid var(--border);
+  border-radius: var(--nav-highlight-radius);
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.45rem;
+  cursor: pointer;
+}
+
+.annotation-toolbar__btn:hover {
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+
+.annotation-toolbar--note-only .annotation-toolbar__label,
+.annotation-toolbar--note-only .annotation-toolbar__colors {
+  display: none;
+}
+
+.annotation-comment-popover {
+  position: fixed;
+  inset: auto;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow);
+  font-family: var(--font-ui);
+  width: min(18rem, calc(100vw - 1rem));
+  max-width: min(18rem, calc(100vw - 1rem));
+  color: var(--fg);
+}
+
+.annotation-comment-popover::backdrop {
+  background: transparent;
+}
+
+.annotation-comment-popover__label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.annotation-comment-popover__input {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid var(--border);
+  border-radius: var(--nav-highlight-radius);
+  padding: 0.4rem;
+  font: inherit;
+  font-size: 0.85rem;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.annotation-comment-popover__actions {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.45rem;
+}
+
+.annotation-poi-host {
+  position: relative;
+}
+
+.annotation-poi-chrome {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  display: flex;
+  gap: 0.2rem;
+  z-index: 2;
+  opacity: 0.55;
+  transition: opacity var(--motion-fast) var(--ease-out);
+}
+
+.annotation-poi-host:hover .annotation-poi-chrome,
+.annotation-poi-host:focus-within .annotation-poi-chrome {
+  opacity: 1;
+}
+
+.annotation-poi-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--nav-highlight-radius);
+  background: var(--bg-elevated);
+  color: var(--muted);
+  cursor: pointer;
+  transform-origin: center;
+  transition:
+    color var(--motion-fast) var(--ease-out),
+    border-color var(--motion-fast) var(--ease-out),
+    background var(--motion-fast) var(--ease-out),
+    transform var(--motion-fast) var(--ease-out);
+}
+
+.annotation-poi-icon {
+  display: block;
+}
+
+.annotation-poi-btn:hover {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+
+.annotation-poi-btn.is-active {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: var(--accent-soft);
+}
+
+.annotation-poi-btn--mark .annotation-poi-icon__shape {
+  transform-origin: center bottom;
+  fill: transparent;
+  transition:
+    fill var(--motion-base) var(--ease-out),
+    transform var(--motion-base) var(--ease-out);
+}
+
+.annotation-poi-btn--mark.is-active .annotation-poi-icon path {
+  fill: color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+.annotation-poi-btn--mark.is-active .annotation-poi-icon__shape {
+  fill: currentColor;
+}
+
+.annotation-poi-btn--mark.annotation-poi-btn--marking {
+  animation: annotation-mark-pop var(--motion-base) var(--ease-out);
+}
+
+.annotation-poi-btn--mark.annotation-poi-btn--marking .annotation-poi-icon__shape {
+  animation: annotation-mark-icon-in var(--motion-base) var(--ease-out) forwards;
+}
+
+.annotation-poi-btn--mark.annotation-poi-btn--unmarking {
+  animation: annotation-mark-settle var(--motion-fast) var(--ease-out);
+}
+
+.annotation-poi-btn--mark.annotation-poi-btn--unmarking .annotation-poi-icon__shape {
+  animation: annotation-mark-icon-out var(--motion-fast) var(--ease-out) forwards;
+}
+
+@keyframes annotation-mark-pop {
+  0% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(1.14);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes annotation-mark-settle {
+  0% {
+    transform: scale(1);
+  }
+
+  55% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes annotation-mark-icon-in {
+  0% {
+    transform: scale(0.72) translateY(2px);
+    fill: transparent;
+  }
+
+  65% {
+    transform: scale(1.08) translateY(-1px);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    fill: currentColor;
+  }
+}
+
+@keyframes annotation-mark-icon-out {
+  0% {
+    transform: scale(1) translateY(0);
+    fill: currentColor;
+  }
+
+  100% {
+    transform: scale(0.86) translateY(2px);
+    fill: transparent;
+  }
+}
+
+.annotation-toolbar__btn--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  padding: 0;
+}
+
+.annotation-heading-host {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+h1.annotation-heading-host {
+  align-items: center;
+}
+
+.annotation-heading-chrome {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.35rem;
+  vertical-align: middle;
+}
+
+.annotation-on-page-note {
+  margin-top: 0.55rem;
+  padding: 0.45rem 0.6rem;
+  border-left: 3px solid color-mix(in srgb, var(--accent) 55%, var(--border));
+  border-radius: 0 var(--nav-highlight-radius) var(--nav-highlight-radius) 0;
+  background: color-mix(in srgb, var(--accent-soft) 65%, var(--bg-elevated));
+  font-family: var(--font-prose);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.annotation-on-page-note__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.45rem;
+}
+
+.annotation-on-page-note__btn {
+  border: 1px solid var(--border);
+  border-radius: var(--nav-highlight-radius);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  padding: 0.15rem 0.45rem;
+  cursor: pointer;
+}
+
+.annotation-on-page-note__btn--danger {
+  color: #b44;
+  border-color: color-mix(in srgb, #b44 35%, var(--border));
+}
+
+.annotation-on-page-note__edit {
+  width: 100%;
+  margin-top: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--nav-highlight-radius);
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  padding: 0.35rem 0.45rem;
+  resize: vertical;
+}
+
+.annotation-on-page-note.is-editing .annotation-on-page-note__body {
+  display: none;
+}
+
+.annotation-text-note-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.annotation-text-note-dash {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  border: 1.5px dashed color-mix(in srgb, var(--accent) 60%, var(--border));
+  border-radius: 0.15em;
+  background: color-mix(in srgb, var(--accent-soft) 18%, transparent);
+  pointer-events: auto;
+  cursor: pointer;
+  transition:
+    border-color var(--motion-fast) var(--ease-out),
+    background var(--motion-fast) var(--ease-out);
+}
+
+.annotation-text-note-dash:hover,
+.annotation-text-note-dash:focus-visible {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent-soft) 35%, transparent);
+  outline: none;
+}
+
+.annotation-text-note-card {
+  position: fixed;
+  z-index: 126;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow);
+  font-family: var(--font-ui);
+  transition:
+    transform var(--motion-base) var(--ease-out),
+    opacity var(--motion-fast) var(--ease-out);
+}
+
+.annotation-text-note-card.is-collapsed {
+  transform: translateX(calc(100% - 1.35rem));
+  opacity: 0.88;
+}
+
+.annotation-text-note-card.is-expanded {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.annotation-text-note-card__tab {
+  flex: 0 0 1.35rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  border: 0;
+  border-right: 1px dashed var(--border);
+  background: color-mix(in srgb, var(--accent-soft) 55%, var(--bg-elevated));
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.35rem 0;
+}
+
+.annotation-text-note-card__panel {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem 0.55rem 0.55rem;
+}
+
+.annotation-text-note-card__label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.annotation-text-note-card__body {
+  margin: 0;
+  font-family: var(--font-prose);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--fg);
+  white-space: pre-wrap;
+  max-height: 8rem;
+  overflow: auto;
+}
+
+.annotation-text-note-card__edit {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--nav-highlight-radius);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-prose);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  padding: 0.35rem 0.45rem;
+  resize: vertical;
+}
+
+.annotation-text-note-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.45rem;
+}
+
+.annotation-text-note-card__btn {
+  border: 1px solid var(--border);
+  border-radius: var(--nav-highlight-radius);
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.45rem;
+  cursor: pointer;
+}
+
+.annotation-text-note-card__btn--danger {
+  color: #b44;
+  border-color: color-mix(in srgb, #b44 35%, var(--border));
+}
+
+.annotation-text-note-card.is-editing .annotation-text-note-card__body {
+  display: none;
+}
+
+.annotation-on-page-note__label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  color: var(--accent);
+  margin-bottom: 0.15rem;
+}
+
+.annotation-on-page-note__body {
+  margin: 0;
+  color: var(--fg);
+  white-space: pre-wrap;
+}
+
+.annotation-stale-badge {
+  position: absolute;
+  top: -0.35rem;
+  right: -0.35rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  background: #e8c547;
+  color: #3d3200;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1rem;
+  text-align: center;
+  z-index: 3;
+  pointer-events: auto;
+  box-shadow: 0 0 0 1px color-mix(in srgb, #3d3200 25%, transparent);
+}
+
+.annotation-stale-badge--inline {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.35rem;
+  vertical-align: middle;
+}
+
+.annotation-flash {
+  outline: 2px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  outline-offset: 4px;
+  transition: outline-color 0.6s var(--ease-out);
+}
+
+.annotation-toast-host {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: min(22rem, calc(100vw - 2rem));
+}
+
+.annotation-toast {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--fg);
+}
+
+.annotation-library-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+.annotation-library-drawer::backdrop {
+  background: transparent;
+}
+
+.annotation-library-backdrop {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--canvas-bg) 70%, color-mix(in srgb, var(--fg) 16%, transparent));
+  opacity: 0;
+  backdrop-filter: blur(2px);
+  transition: opacity var(--motion-base) var(--ease-out);
+}
+
+.annotation-library-drawer.is-open .annotation-library-backdrop {
+  opacity: 1;
+}
+
+.annotation-library-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(26rem, 100vw);
+  height: 100%;
+  border-left: 1px solid var(--border);
+  background: var(--bg-elevated);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.22);
+  transform: translateX(105%);
+  transition: transform var(--motion-base) var(--ease-out);
+}
+
+.annotation-library-drawer.is-open .annotation-library-panel {
+  transform: translateX(0);
+}
+
+.annotation-library-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.annotation-library-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+.annotation-library-close {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.annotation-library-disclaimer {
+  margin: 0;
+  padding: 0.65rem 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--muted);
+  border-bottom: 1px dashed var(--border);
+}
+
+.annotation-library-search-wrap {
+  padding: 0.65rem 1rem 0;
+}
+
+.annotation-library-search {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  font: inherit;
+  font-size: 0.85rem;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.annotation-library-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.65rem 1rem;
+}
+
+.annotation-library-filter {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  cursor: pointer;
+}
+
+.annotation-library-filter.is-active {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.annotation-library-list {
+  flex: 1;
+  overflow: auto;
+  margin: 0;
+  padding: 0 0.65rem 0.65rem;
+  list-style: none;
+}
+
+.annotation-library-item {
+  margin-bottom: 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: var(--nav-highlight-radius);
+  background: var(--bg);
+}
+
+.annotation-library-item__head {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: 100%;
+  padding: 0.55rem 0.65rem 0.35rem;
+  font: inherit;
+  color: var(--fg);
+}
+
+.annotation-library-item__kind {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.annotation-library-item__title {
+  font-weight: 600;
+  font-size: 0.85rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.annotation-library-item__body {
+  padding: 0 0.65rem 0.65rem;
+}
+
+.annotation-library-item__preview-text,
+.annotation-library-item__comment {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--fg);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.annotation-library-item__comment {
+  margin-top: 0.35rem;
+}
+
+.annotation-library-item__comment {
+  font-family: var(--font-prose);
+  color: var(--muted);
+}
+
+.annotation-library-item__actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.55rem;
+}
+
+.annotation-library-link {
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+
+.annotation-library-delete {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.annotation-library-color {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.annotation-library-color--amber {
+  background: #e8b84a;
+}
+
+.annotation-library-color--sage {
+  background: #8fb996;
+}
+
+.annotation-library-color--sky {
+  background: #7eb8da;
+}
+
+.annotation-library-color--rose {
+  background: #e09898;
+}
+
+.annotation-library-color--lavender {
+  background: #b8a8d8;
+}
+
+.annotation-library-color--graphite {
+  background: #9aa3b5;
+}
+
+.annotation-library-empty {
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.annotation-library-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.annotation-library-footer-btn {
+  border: 1px solid var(--border);
+  border-radius: var(--nav-highlight-radius);
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+}
+
+.annotation-library-import-label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.annotation-library-footer-link {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+
+html.annotation-library-open,
+body.annotation-library-open {
+  overflow: hidden;
+}
+
+.library-page {
+  max-width: var(--max-read);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.library-page__header h1 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  color: var(--accent);
+}
+
+.library-page__intro {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.library-page__controls {
+  margin-top: 1.25rem;
+}
+
+.library-page__search {
+  margin-bottom: 0.65rem;
+}
+
+.library-page__list {
+  margin-top: 1rem;
+}
+
+.library-page__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 700px) {
+  .annotation-library-panel {
+    width: 100%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

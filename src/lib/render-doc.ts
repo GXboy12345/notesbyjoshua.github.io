@@ -69,12 +69,20 @@ export function readDocSource(entry: DocEntry) {
 
 export type { DocHeading };
 
-export function renderDocHtml(md: string): string {
-  return renderMarkdownToHtml(md).html;
+export type RenderDocOptions = {
+  pageSlug?: string;
+  injectPois?: boolean;
+};
+
+export function renderDocHtml(md: string, options: RenderDocOptions = {}): string {
+  return renderMarkdownToHtml(md, options).html;
 }
 
-export function renderDoc(md: string): { html: string; headings: DocHeading[] } {
-  return renderMarkdownToHtml(md);
+export function renderDoc(
+  md: string,
+  options: RenderDocOptions = {},
+): { html: string; headings: DocHeading[]; contentHash: string } {
+  return renderMarkdownToHtml(md, options);
 }
 
 export function headingsFromMarkdown(md: string): DocHeading[] {
