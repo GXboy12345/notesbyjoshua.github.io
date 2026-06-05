@@ -40,6 +40,12 @@ If $$f'$$ changes:
 - negative to positive at $$c$$: local minimum,
 - no sign change: neither.
 
+<div class="theorem-box" markdown="1">
+
+**Why the First Derivative Test works.** A positive derivative means the function is increasing, and a negative derivative means the function is decreasing. If $$f'$$ changes from positive to negative, the graph rises into $$c$$ and falls after $$c$$, so $$c$$ is a local maximum. If $$f'$$ changes from negative to positive, the graph falls into $$c$$ and rises after $$c$$, so $$c$$ is a local minimum.
+
+</div>
+
 ---
 
 ## Concavity and second derivative
@@ -83,6 +89,12 @@ f'(c) = \frac{f(b)-f(a)}{b-a}.
 $$
 
 Rolle's Theorem is the special case where $$f(a)=f(b)$$.
+
+<div class="theorem-box" markdown="1">
+
+**Why MVT is true.** Draw the secant line from $$(a,f(a))$$ to $$(b,f(b))$$. Subtract that line from the function to create a new function whose endpoint values are equal. Rolle's Theorem says this new function has a horizontal tangent somewhere inside the interval. At that point, the original function's tangent slope equals the secant slope.
+
+</div>
 
 ---
 

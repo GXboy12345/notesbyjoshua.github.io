@@ -83,6 +83,36 @@ $$
 y = Ce^{kt}.
 $$
 
+<div class="theorem-box" markdown="1">
+
+**Why proportional growth gives exponentials.** If
+
+$$
+\frac{dy}{dt}=ky,
+$$
+
+then the relative rate of change is constant:
+
+$$
+\frac{1}{y}\frac{dy}{dt}=k.
+$$
+
+Integrating gives
+
+$$
+\ln|y|=kt+C.
+$$
+
+Exponentiating both sides gives
+
+$$
+y=Ce^{kt}.
+$$
+
+So exponentials are the natural functions whose rate of change stays proportional to their current value.
+
+</div>
+
 ---
 
 ## Logistic differential equation
@@ -100,6 +130,18 @@ Behavior:
 - equilibrium solutions at $$y=0$$ and $$y=L$$,
 - growth is fastest near $$y=L/2$$,
 - solutions below $$L$$ increase toward $$L$$.
+
+<div class="theorem-box" markdown="1">
+
+**Why logistic growth slows down.** The factor
+
+$$
+1-\frac{y}{L}
+$$
+
+measures how much room remains before the carrying capacity. When $$y$$ is small, this factor is close to $$1$$, so the model behaves almost exponentially. When $$y$$ is close to $$L$$, this factor is close to $$0$$, so the growth rate becomes small. At $$y=L$$, the growth rate is exactly $$0$$.
+
+</div>
 
 ---
 

@@ -46,6 +46,20 @@ $$
 
 > [Image Placeholder: parametric curve with tangent vectors and repeated tracing]
 
+<div class="theorem-box" markdown="1">
+
+**Why parametric slope is a ratio.** Along a parametric curve, both $$x$$ and $$y$$ change as $$t$$ changes. The slope compares vertical change to horizontal change:
+
+$$
+\frac{dy}{dx}
+=
+\frac{dy/dt}{dx/dt}.
+$$
+
+This is the chain rule rearranged: if $$y$$ changes with $$t$$ and $$x$$ changes with $$t$$, then the rate of $$y$$ with respect to $$x$$ is the rate of $$y$$ with respect to $$t$$ divided by the rate of $$x$$ with respect to $$t$$.
+
+</div>
+
 ---
 
 ## Second derivative for parametric curves
@@ -118,6 +132,28 @@ A = \frac12 \int_a^b [r(\theta)]^2\,d\theta.
 $$
 
 > [Image Placeholder: sector approximation leading to polar area formula]
+
+<div class="theorem-box" markdown="1">
+
+**Why polar area has the factor $$\frac12$$.** A tiny polar slice looks like a circular sector. A sector with radius $$r$$ and angle $$\Delta\theta$$ has area approximately
+
+$$
+\frac12 r^2\Delta\theta.
+$$
+
+Adding many tiny sectors gives
+
+$$
+\sum \frac12 [r(\theta_i)]^2\Delta\theta.
+$$
+
+Taking the limit turns the sum into
+
+$$
+\frac12\int_a^b [r(\theta)]^2\,d\theta.
+$$
+
+</div>
 
 ---
 

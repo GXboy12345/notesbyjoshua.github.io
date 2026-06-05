@@ -58,6 +58,14 @@ Speed increasing:
 - $$v(t) > 0$$ and $$a(t) > 0$$, or
 - $$v(t) < 0$$ and $$a(t) < 0$$.
 
+<div class="theorem-box" markdown="1">
+
+**Why same signs mean speed increases.** Speed is $$|v(t)|$$, so it measures how far velocity is from $$0$$. If $$v>0$$ and $$a=v'>0$$, then velocity is positive and getting larger, so $$|v|$$ increases. If $$v<0$$ and $$a<0$$, then velocity is negative and becoming more negative, so it is moving farther from $$0$$, and $$|v|$$ also increases.
+
+When velocity and acceleration have opposite signs, velocity moves closer to $$0$$, so speed decreases.
+
+</div>
+
 ---
 
 ## Rate in, rate out, and accumulation
@@ -125,6 +133,28 @@ dy = f'(x)\,dx.
 $$
 
 If a measured input has small error $$dx$$, then the output error is approximately $$dy$$.
+
+<div class="theorem-box" markdown="1">
+
+**Why linearization works.** Differentiability at $$a$$ means
+
+$$
+f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}.
+$$
+
+For $$x$$ close to $$a$$, the difference quotient is close to $$f'(a)$$, so
+
+$$
+\frac{f(x)-f(a)}{x-a}\approx f'(a).
+$$
+
+Multiplying by $$x-a$$ gives
+
+$$
+f(x)\approx f(a)+f'(a)(x-a).
+$$
+
+</div>
 
 ---
 

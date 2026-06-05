@@ -60,6 +60,40 @@ $$
 \sum_{n=0}^{\infty} ar^n = \frac{a}{1-r}.
 $$
 
+<div class="theorem-box" markdown="1">
+
+**Why the geometric sum formula works.** Let
+
+$$
+S_N=a+ar+ar^2+\cdots+ar^N.
+$$
+
+Multiplying by $$r$$ gives
+
+$$
+rS_N=ar+ar^2+\cdots+ar^{N+1}.
+$$
+
+Subtracting cancels the middle terms:
+
+$$
+S_N-rS_N=a-ar^{N+1}.
+$$
+
+So
+
+$$
+S_N=\frac{a(1-r^{N+1})}{1-r}.
+$$
+
+If $$|r|<1$$, then $$r^{N+1}\to0$$, leaving
+
+$$
+\frac{a}{1-r}.
+$$
+
+</div>
+
 ---
 
 ## Harmonic and p-series
@@ -194,6 +228,24 @@ $$
 
 diverges.
 
+<div class="theorem-box" markdown="1">
+
+**Why the nth-term test works.** If an infinite series converges to a finite sum, then the partial sums
+
+$$
+S_N=a_1+a_2+\cdots+a_N
+$$
+
+must settle down. Consecutive partial sums then get closer together. But
+
+$$
+S_N-S_{N-1}=a_N.
+$$
+
+So the terms must approach $$0$$. If they do not, the partial sums cannot settle to one finite value.
+
+</div>
+
 ---
 
 ## Power series
@@ -223,6 +275,28 @@ $$
 $$
 
 Maclaurin series is the special case $$c=0$$.
+
+<div class="theorem-box" markdown="1">
+
+**Why Taylor coefficients look like this.** Suppose a polynomial centered at $$c$$ has the form
+
+$$
+P(x)=a_0+a_1(x-c)+a_2(x-c)^2+\cdots.
+$$
+
+Plugging in $$x=c$$ gives $$P(c)=a_0$$. Differentiating once and plugging in $$c$$ gives $$P'(c)=a_1$$. Differentiating twice gives $$P''(c)=2!a_2$$. In general,
+
+$$
+P^{(n)}(c)=n!a_n.
+$$
+
+So to make the polynomial match the derivatives of $$f$$ at $$c$$, the coefficient must be
+
+$$
+a_n=\frac{f^{(n)}(c)}{n!}.
+$$
+
+</div>
 
 Core series to memorize:
 

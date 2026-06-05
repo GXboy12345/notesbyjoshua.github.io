@@ -81,6 +81,12 @@ Interpretations:
 - net accumulation,
 - total change when integrating a rate.
 
+<div class="theorem-box" markdown="1">
+
+**Why Riemann sums become area.** Each term $$f(x_i^*)\Delta x$$ is the area of a thin rectangle. With wide rectangles, the approximation is rough. As the widths shrink toward $$0$$, the rectangles follow the curve more closely. If the limiting sum stabilizes, that stable value is the definite integral.
+
+</div>
+
 ---
 
 ## Fundamental Theorem of Calculus
@@ -104,6 +110,36 @@ g'(x) = f(x)
 $$
 
 when $$f$$ is continuous.
+
+<div class="theorem-box" markdown="1">
+
+**Why FTC Part 1 is true.** Let
+
+$$
+g(x)=\int_a^x f(t)\,dt.
+$$
+
+Changing $$x$$ by a small amount $$h$$ adds a thin strip of accumulated area:
+
+$$
+g(x+h)-g(x)=\int_x^{x+h}f(t)\,dt.
+$$
+
+For small $$h$$, this strip is approximately $$f(x)h$$. Dividing by $$h$$ gives approximately $$f(x)$$, and taking the limit gives $$g'(x)=f(x)$$.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Why FTC Part 2 is true.** If $$F'(x)=f(x)$$, then integrating $$f$$ adds up all the tiny changes in $$F$$. The tiny changes telescope into one total change:
+
+$$
+\int_a^b f(x)\,dx=F(b)-F(a).
+$$
+
+So the definite integral of a rate of change equals the net change in the original quantity.
+
+</div>
 
 ---
 

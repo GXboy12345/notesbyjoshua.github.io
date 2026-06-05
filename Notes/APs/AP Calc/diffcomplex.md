@@ -161,6 +161,24 @@ AP problems often hide the chain rule inside:
 
 Whenever you differentiate an outside function, pause and ask what the inside function is.
 
+<div class="theorem-box" markdown="1">
+
+**Why the chain rule is true.** Let $$u=g(x)$$ and $$y=f(u)$$. A small change in $$x$$ creates a small change in $$u$$, and that creates a small change in $$y$$. The ratio can be split as
+
+$$
+\frac{\Delta y}{\Delta x}
+=
+\frac{\Delta y}{\Delta u}\cdot\frac{\Delta u}{\Delta x}.
+$$
+
+As $$\Delta x\to0$$, the intermediate change $$\Delta u\to0$$ for a differentiable inside function. The two ratios approach $$f'(u)$$ and $$g'(x)$$, so
+
+$$
+\frac{dy}{dx}=f'(g(x))g'(x).
+$$
+
+</div>
+
 ---
 
 ## Implicit differentiation intuition
@@ -196,6 +214,28 @@ $$
 $$
 
 This formula only works when the original slope is nonzero. If $$f'(a)=0$$, the inverse graph would have a vertical tangent at the reflected point.
+
+<div class="theorem-box" markdown="1">
+
+**Why inverse slopes are reciprocals.** If $$y=f(x)$$ and $$x=f^{-1}(y)$$, then composing the functions gives
+
+$$
+f(f^{-1}(x))=x.
+$$
+
+Differentiate both sides:
+
+$$
+f'(f^{-1}(x))(f^{-1})'(x)=1.
+$$
+
+Solving for the inverse derivative gives
+
+$$
+(f^{-1})'(x)=\frac{1}{f'(f^{-1}(x))}.
+$$
+
+</div>
 
 ---
 

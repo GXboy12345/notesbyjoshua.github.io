@@ -19,6 +19,8 @@ AP Physics C Mechanics and E&M are organized under [AP Notes]({{ '/notes/ap/' | 
 
 ## F=ma and USAPhO Material
 
+The below material are physics olympiad prep outside of the usual AP curriculum.
+
 ### [F=ma Prep]({{ '/notes/physics/f-ma/' | relative_url }})
 
 ### [USAPhO Prep]({{ '/notes/physics/usapho/' | relative_url }})

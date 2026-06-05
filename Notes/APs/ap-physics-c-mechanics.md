@@ -24,7 +24,7 @@ nav_order: 4
 
 ## Practice Problems
 
-- Practice lol
+- Coming soon.
 
 ---
 

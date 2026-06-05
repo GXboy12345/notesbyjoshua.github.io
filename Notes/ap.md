@@ -12,7 +12,7 @@ These notes will roughly follow a AP curriculum but might have some extra stuff 
 
 ---
 
-- ### AP Biology 🚧
+- ### [AP Biology hub]({{ '/notes/ap/biology/' | relative_url }})
 
 - ### [AP Calculus AB/BC hub]({{ '/notes/ap/calculus/' | relative_url }})
 

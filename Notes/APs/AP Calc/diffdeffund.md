@@ -82,6 +82,43 @@ $$
 
 for $$g(x) \ne 0$$.
 
+<div class="theorem-box" markdown="1">
+
+**Why the power rule is true.** Start from the derivative definition:
+
+$$
+\frac{d}{dx}x^n
+=
+\lim_{h\to0}\frac{(x+h)^n-x^n}{h}.
+$$
+
+The binomial expansion begins
+
+$$
+(x+h)^n=x^n+nx^{n-1}h+\text{terms with }h^2,h^3,\ldots
+$$
+
+After subtracting $$x^n$$ and dividing by $$h$$, the leading surviving term is $$nx^{n-1}$$. All remaining terms still contain a factor of $$h$$, so they vanish as $$h\to0$$.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Why the product rule has two terms.** If both factors can change, the new product differs from the old product in two first-order ways:
+
+$$
+(f+\Delta f)(g+\Delta g)-fg
+=g\Delta f+f\Delta g+\Delta f\Delta g.
+$$
+
+The last term is a product of two tiny changes, so it becomes negligible compared with the first-order changes. Dividing by $$\Delta x$$ and taking the limit gives
+
+$$
+(fg)'=f'g+fg'.
+$$
+
+</div>
+
 ---
 
 ## Derivatives of common functions

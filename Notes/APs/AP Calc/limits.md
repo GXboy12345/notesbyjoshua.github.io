@@ -8,8 +8,6 @@ permalink: /notes/math/limits/
 
 # Unit 1: Limits and Continuity
 
-Limits are the language of calculus. They describe how a function behaves near a point, even when the function value at that point is missing, undefined, or unrelated to the nearby trend.
-
 ---
 
 ## What a limit means
@@ -27,6 +25,8 @@ This is about nearby behavior, not direct substitution. It is possible for:
 - the limit to exist while $$f(a)$$ is undefined,
 - the limit to exist while $$f(a) \ne L$$,
 - the limit to fail even though $$f(a)$$ exists.
+
+An introduction to limits can be found in the AP Precalculus course.
 
 ---
 
@@ -52,6 +52,21 @@ $$
 
 For polynomials and rational functions, direct substitution works whenever the denominator is nonzero.
 
+<div class="theorem-box" markdown="1">
+
+**Proof (Limit Laws).** A limit statement means the function values can be forced arbitrarily close to a target value. If $$f(x)$$ is close to $$L$$ and $$g(x)$$ is close to $$M$$, then their sum is close to $$L+M$$, their product is close to $$LM$$, and their quotient is close to $$L/M$$ as long as $$M\ne0$$.
+
+The formal epsilon-delta proof makes this precise by controlling the error terms. For sums, the total error is
+
+$$
+\lvert (f(x)+g(x))-(L+M) \rvert
+\le \lvert f(x)-L \rvert + \lvert g(x)-M \rvert.
+$$
+
+So if each individual error is made smaller than half the allowed total error, the sum is forced close to the correct limit.
+
+</div>
+
 ---
 
 ## One-sided limits and existence
@@ -66,9 +81,9 @@ If the left-hand and right-hand limits disagree, the limit does not exist.
 
 Common reasons a limit fails to exist:
 
-- jump discontinuity,
-- vertical asymptote with unbounded behavior,
-- oscillation, such as $$\sin(1/x)$$ near $$x = 0$$.
+- Jump discontinuity,
+- Vertical asymptote with unbounded behavior,
+- Oscillation, such as $$\sin(1/x)$$ near $$x = 0$$.
 
 > [Image Placeholder: left-hand vs right-hand limit examples, including a jump discontinuity]
 
@@ -112,6 +127,12 @@ $$
 \lim_{x \to 0} x\sin(1/x) = 0.
 $$
 
+<div class="theorem-box" markdown="1">
+
+**Proof (Squeeze Theorem).** If $$g(x)\le f(x)\le h(x)$$ and both outside functions are forced close to $$L$$, then $$f(x)$$ has nowhere else to go. For inputs close enough to $$a$$, both $$g(x)$$ and $$h(x)$$ lie inside a tiny band around $$L$$. Since $$f(x)$$ is trapped between them, it must lie inside the same band.
+
+</div>
+
 ---
 
 ## Continuity
@@ -124,18 +145,18 @@ A function is continuous at $$x = a$$ if:
 
 Types of discontinuities:
 
-- removable: a hole, often fixable by redefining one point,
-- jump: left and right limits differ,
-- infinite: vertical asymptote,
-- oscillatory: no single nearby trend.
+- Removable: a hole, often fixable by redefining one point,
+- Jump: left and right limits differ,
+- Infinite: vertical asymptote,
+- Oscillatory: no single nearby trend.
 
 Functions continuous on their natural domains:
 
-- polynomials,
-- rational functions where denominator is nonzero,
-- exponential and logarithmic functions on domain,
-- trig functions on domain,
-- compositions of continuous functions where defined.
+- Polynomials,
+- Rational functions where denominator is nonzero,
+- Exponential and logarithmic functions on domain,
+- Trig functions on domain,
+- Compositions of continuous functions where defined.
 
 ---
 
@@ -146,6 +167,12 @@ If $$f$$ is continuous on $$[a,b]$$ and $$N$$ lies between $$f(a)$$ and $$f(b)$$
 This theorem does not tell you how many such points there are, only that at least one exists.
 
 > [Image Placeholder: continuous curve crossing a horizontal line to illustrate IVT]
+
+<div class="theorem-box" markdown="1">
+
+**Proof (IVT).** Continuity means the graph cannot jump over a height. If the function starts below $$N$$ and ends above $$N$$, then moving from $$a$$ to $$b$$ forces the output to pass through every intermediate height. A discontinuity could skip the height, but a continuous function cannot.
+
+</div>
 
 ---
 
@@ -159,9 +186,11 @@ $$
 
 For rational functions:
 
-- degree numerator < degree denominator: limit is $$0$$,
-- equal degrees: limit is ratio of leading coefficients,
-- degree numerator > degree denominator: no finite horizontal asymptote.
+- Degree numerator < degree denominator: limit is $$0$$,
+- Equal degrees: limit is ratio of leading coefficients,
+- Degree numerator > degree denominator: no finite horizontal asymptote (slant/oblique asymptote).
+
+These rules can also be found in AP Precalculus.
 
 Useful asymptotic idea:
 
@@ -175,7 +204,7 @@ for large $$\lvert x \rvert$$, but be careful with sign when $$x \to -\infty$$.
 
 ## Indeterminate forms
 
-These forms require more work; they do not determine the limit by themselves:
+Some "numbers" are indeterminate, meaning they require more work; they do not determine the limit by themselves:
 
 - $$0/0$$
 - $$\infty/\infty$$
@@ -201,7 +230,7 @@ $$
 \lim_{x \to 0} \frac{\tan x}{x} = 1
 $$
 
-These only work cleanly in radians.
+These only work cleanly in radians. (the $$\frac{\cos x}{x}$$ limit is very easy to find (just plug it in) so isn't included here)
 
 ---
 
@@ -213,7 +242,7 @@ $$
 \frac{f(b) - f(a)}{b-a}
 $$
 
-is the average rate of change, or slope of the secant line. The derivative will be the limit of this expression as the interval collapses.
+is the average rate of change, or slope of the secant line. The derivative will be the limit of this expression as the interval becomes closer and closer to a certain value.
 
 ---
 
@@ -225,19 +254,13 @@ If direct substitution gives an ordinary number, the limit is usually finished. 
 
 Common rewrites:
 
-- factor and cancel a common factor,
-- multiply by a conjugate when radicals are involved,
-- combine fractions into one rational expression,
-- use a known trig limit after rewriting the angle,
-- divide by the dominant power of $$x$$ for limits at infinity.
+- Factor and cancel a common factor,
+- Multiply by a conjugate when radicals are involved,
+- Combine fractions into one rational expression,
+- Use a known trig limit after rewriting the angle,
+- Divide by the dominant power of $$x$$ for limits at infinity.
 
 For rational functions, holes and vertical asymptotes come from different algebraic behavior. A factor that cancels creates a removable discontinuity. A factor that remains in the denominator can create an infinite discontinuity.
-
-<div class="theorem-box" markdown="1">
-
-**AP language.** If a factor cancels, the original function and the simplified function agree near the point, but not necessarily at the point. Since limits only care about nearby behavior, the simplified function can be used for the limit.
-
-</div>
 
 ---
 
@@ -263,7 +286,7 @@ $$
 \infty,\quad -\infty,\quad \text{or one of each.}
 $$
 
-The sign of the infinite behavior often comes from a sign chart. Near a vertical asymptote, small positive and negative denominator values can send the function upward or downward very quickly.
+The sign of the infinite behavior often comes from a sign chart. Near a vertical asymptote, small positive and negative denominator values can send the function upward or downward very quickly, and thus have limits at $$\pm \infty$$.
 
 ---
 
@@ -277,12 +300,6 @@ For a closed interval $$[a,b]$$, endpoint continuity is one-sided:
 - at $$b$$, use the left-hand limit.
 
 This matters for the Intermediate Value Theorem and Extreme Value Theorem because both require continuity on a closed interval.
-
-<div class="theorem-box" markdown="1">
-
-**Key idea.** A continuous function on an interval has no breaks, jumps, holes, or vertical blow-ups inside that interval. That is why AP problems often ask whether a theorem applies before asking what the theorem guarantees.
-
-</div>
 
 ---
 
@@ -342,20 +359,3 @@ $$
 As $$x\to\infty$$, $$\lvert x\rvert=x$$. As $$x\to-\infty$$, $$\lvert x\rvert=-x$$.
 
 Keep the technique tied to the form of the expression: removable factors suggest factoring, radical differences suggest conjugates, nested fractions suggest common denominators, and end behavior suggests dominant terms.
-
----
-
-## BC-minded notes
-
-- Piecewise-defined functions often test whether you can make a function continuous or differentiable by solving for unknown constants.
-- A removable discontinuity may still break differentiability if not fixed.
-- Sequence limits later mirror function limits, except the input variable is restricted to integers.
-
----
-
-## Common mistakes
-
-- Plugging in before checking whether substitution is legal.
-- Claiming a limit does not exist just because the function is undefined at the point.
-- Forgetting that trig limit formulas require radians.
-- Treating vertical asymptotes as automatic DNE without checking one-sided behavior.

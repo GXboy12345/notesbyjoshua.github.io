@@ -79,6 +79,22 @@ Common cross sections:
 - semicircles,
 - equilateral triangles.
 
+<div class="theorem-box" markdown="1">
+
+**Why cross-section volume works.** Slice the solid into very thin slabs. A slab near $$x$$ has approximate volume
+
+$$
+A(x)\Delta x.
+$$
+
+Adding all slabs gives a Riemann sum. As the slabs become thinner, the sum approaches
+
+$$
+\int_a^b A(x)\,dx.
+$$
+
+</div>
+
 ---
 
 ## Disk and washer methods
@@ -97,6 +113,18 @@ $$
 
 > [Image Placeholder: disk vs washer setup with labeled radii]
 
+<div class="theorem-box" markdown="1">
+
+**Why washers use squared radii.** A washer is a large disk with a smaller disk removed. The cross-sectional area is therefore
+
+$$
+\pi R^2-\pi r^2=\pi(R^2-r^2).
+$$
+
+Integrating these cross-sectional areas stacks the washers into the full solid.
+
+</div>
+
 ---
 
 ## Volume by cylindrical shells
@@ -106,6 +134,18 @@ V = 2\pi \int_a^b (\text{radius})(\text{height})\,dx.
 $$
 
 Shell method is often simpler when washers would require solving for inverse functions or splitting many pieces.
+
+<div class="theorem-box" markdown="1">
+
+**Why shells use $$2\pi rh$$.** A thin vertical slice rotated around an axis sweeps out a thin cylindrical shell. The shell's circumference is $$2\pi r$$, its height is $$h$$, and its thickness is $$\Delta x$$. So its volume is approximately
+
+$$
+(2\pi r)(h)\Delta x.
+$$
+
+Adding the shells and taking the limit gives the shell integral.
+
+</div>
 
 ---
 
