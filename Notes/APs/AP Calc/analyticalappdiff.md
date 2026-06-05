@@ -144,6 +144,106 @@ $$
 
 ---
 
+## Function analysis as a sign story
+
+Most of this unit is about reading signs:
+
+- the sign of $$f'$$ tells whether $$f$$ is increasing or decreasing,
+- the sign of $$f''$$ tells whether $$f'$$ is increasing or decreasing,
+- a sign change in $$f'$$ identifies local extrema,
+- a sign change in $$f''$$ identifies changes in concavity.
+
+This is why sign charts are more than bookkeeping. They translate derivative information into graph behavior.
+
+<div class="theorem-box" markdown="1">
+
+**Key idea.** A zero of $$f'$$ is only a candidate for an extremum. The behavior around that point decides what actually happens.
+
+</div>
+
+---
+
+## Critical points and candidates
+
+Critical points occur where $$f'(c)=0$$ or $$f'(c)$$ does not exist, as long as $$c$$ is in the domain of $$f$$.
+
+For local extrema, critical points are candidates. For absolute extrema on a closed interval, endpoints are also candidates.
+
+That distinction matters:
+
+- endpoints can be absolute extrema,
+- endpoints are not local extrema under the usual AP definition,
+- interior critical points may or may not be extrema.
+
+When justifying an absolute maximum or minimum, compare function values, not derivative values.
+
+---
+
+## Concavity as rate behavior
+
+Concavity describes how the slope changes.
+
+If $$f''(x)>0$$, then $$f'(x)$$ is increasing. The graph of $$f$$ bends upward because its slopes are becoming more positive or less negative.
+
+If $$f''(x)<0$$, then $$f'(x)$$ is decreasing. The graph bends downward because its slopes are becoming less positive or more negative.
+
+An inflection point requires a change in concavity. The equation $$f''(x)=0$$ only gives a possible location.
+
+---
+
+## The Mean Value Theorem in words
+
+The Mean Value Theorem says that under the right smoothness conditions, some instantaneous rate equals the average rate over the interval.
+
+The hypotheses are essential:
+
+- continuous on $$[a,b]$$,
+- differentiable on $$(a,b)$$.
+
+If either hypothesis fails, the theorem may not apply, even if the conclusion happens to be true.
+
+Rolle's Theorem is the same idea when the average rate is zero. If a smooth function starts and ends at the same height, then somewhere in between it has a horizontal tangent.
+
+---
+
+## Optimization structure
+
+Optimization problems mix modeling with calculus. The derivative only works after the quantity being optimized is written as a one-variable function.
+
+The domain is part of the model. A critical point outside the feasible domain does not answer the contextual question.
+
+For closed feasible intervals, compare endpoint and critical-point values. For open or unbounded domains, use derivative sign changes or limiting behavior to justify the optimum.
+
+---
+
+## L'Hopital's Rule carefully
+
+L'Hopital's Rule applies to limits that produce
+
+$$
+\frac{0}{0}
+\quad\text{or}\quad
+\frac{\infty}{\infty}.
+$$
+
+It does not apply just because a fraction is present. Check the original form first.
+
+For other indeterminate forms, rewrite before using the rule. For instance, products, differences, and powers may need algebra or logarithms before they become a quotient form.
+
+---
+
+## Newton's method intuition
+
+Newton's method uses tangent lines to approximate roots. Starting from $$x_n$$, the tangent line to $$f$$ at $$x_n$$ crosses the $$x$$-axis at
+
+$$
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.
+$$
+
+The method works best when the starting guess is close to the root and the derivative is not near zero. If the tangent line is nearly horizontal, the next approximation can jump far away.
+
+---
+
 ## Common mistakes
 
 - Calling every critical point an extremum.

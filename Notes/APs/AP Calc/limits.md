@@ -219,20 +219,129 @@ is the average rate of change, or slope of the secant line. The derivative will 
 
 ## Common algebraic techniques for limits
 
-- Factor and cancel removable factors.
-- Rationalize with conjugates when radicals are involved.
-- Rewrite complex fractions as a single fraction.
-- Use common denominators.
-- Extract dominant powers for end behavior.
+Most AP limit work is not about memorizing tricks. It is about recognizing what kind of conflict the expression has near the input.
 
-Example:
+If direct substitution gives an ordinary number, the limit is usually finished. If direct substitution gives an indeterminate form, the expression is hiding competing behavior. The usual goal is to rewrite the expression so the removable part becomes visible.
+
+Common rewrites:
+
+- factor and cancel a common factor,
+- multiply by a conjugate when radicals are involved,
+- combine fractions into one rational expression,
+- use a known trig limit after rewriting the angle,
+- divide by the dominant power of $$x$$ for limits at infinity.
+
+For rational functions, holes and vertical asymptotes come from different algebraic behavior. A factor that cancels creates a removable discontinuity. A factor that remains in the denominator can create an infinite discontinuity.
+
+<div class="theorem-box" markdown="1">
+
+**AP language.** If a factor cancels, the original function and the simplified function agree near the point, but not necessarily at the point. Since limits only care about nearby behavior, the simplified function can be used for the limit.
+
+</div>
+
+---
+
+## Infinite limits and vertical asymptotes
+
+An infinite limit describes unbounded behavior:
 
 $$
-\lim_{x \to 4} \frac{\sqrt{x} - 2}{x - 4}
-=
-\lim_{x \to 4} \frac{1}{\sqrt{x} + 2}
-= \frac14
+\infty \quad\text{means increasing without bound,}
 $$
+
+while
+
+$$
+-\infty \quad\text{means decreasing without bound.}
+$$
+
+These are not real-number limits. They are a way of describing the direction of unbounded behavior.
+
+A vertical asymptote at $$x=a$$ usually appears when one or both one-sided limits are infinite:
+
+$$
+\infty,\quad -\infty,\quad \text{or one of each.}
+$$
+
+The sign of the infinite behavior often comes from a sign chart. Near a vertical asymptote, small positive and negative denominator values can send the function upward or downward very quickly.
+
+---
+
+## Continuity on intervals
+
+Continuity at a single point is local. Continuity on an interval means the function is continuous at every point in that interval.
+
+For a closed interval $$[a,b]$$, endpoint continuity is one-sided:
+
+- at $$a$$, use the right-hand limit,
+- at $$b$$, use the left-hand limit.
+
+This matters for the Intermediate Value Theorem and Extreme Value Theorem because both require continuity on a closed interval.
+
+<div class="theorem-box" markdown="1">
+
+**Key idea.** A continuous function on an interval has no breaks, jumps, holes, or vertical blow-ups inside that interval. That is why AP problems often ask whether a theorem applies before asking what the theorem guarantees.
+
+</div>
+
+---
+
+## Theorems about continuous functions
+
+The **Intermediate Value Theorem** guarantees existence of an output value between two known output values. It is used when the question asks whether an equation has a solution or whether a function reaches a certain value.
+
+The **Extreme Value Theorem** says that if $$f$$ is continuous on $$[a,b]$$, then $$f$$ has both an absolute maximum and an absolute minimum on that interval.
+
+The difference:
+
+- IVT guarantees a value between two endpoint outputs.
+- EVT guarantees highest and lowest values on a closed interval.
+
+Neither theorem tells you exactly where the value occurs. They only guarantee existence.
+
+---
+
+## Limits from graphs and tables
+
+From a graph, read a limit by following the curve toward the input from each side. The filled dot at the input only tells the function value, not necessarily the limit.
+
+From a table, look for the trend as inputs approach the target. Tables suggest limits but usually do not prove them unless paired with algebra or a theorem.
+
+For AP free-response explanations, be precise:
+
+- "The left-hand and right-hand limits are equal" supports a two-sided limit.
+- "The left-hand and right-hand limits are different" supports that the limit does not exist.
+- "The function is continuous at the point" supports evaluating the limit by substitution.
+
+---
+
+## End behavior and dominant terms
+
+Limits at infinity describe long-run behavior. For expressions made of powers of $$x$$, the highest-degree terms dominate because lower-degree terms become comparatively small.
+
+For rational functions,
+
+$$
+\frac{3x^4-2x}{x^4+7}
+$$
+
+has the same long-run behavior as
+
+$$
+\frac{3x^4}{x^4},
+$$
+
+so the horizontal behavior is controlled by the ratio of leading coefficients.
+
+Radicals need extra care because
+
+$$
+\sqrt{x^2}=\lvert x\rvert.
+$$
+
+As $$x\to\infty$$, $$\lvert x\rvert=x$$. As $$x\to-\infty$$, $$\lvert x\rvert=-x$$.
+
+Keep the technique tied to the form of the expression: removable factors suggest factoring, radical differences suggest conjugates, nested fractions suggest common denominators, and end behavior suggests dominant terms.
 
 ---
 

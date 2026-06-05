@@ -138,6 +138,138 @@ $$
 
 ---
 
+## Choosing a slicing direction
+
+Applications of integration usually begin with a geometric slice.
+
+Vertical slices use $$dx$$ and usually compare top minus bottom:
+
+$$
+\int_a^b [\text{top}-\text{bottom}]\,dx.
+$$
+
+Horizontal slices use $$dy$$ and usually compare right minus left:
+
+$$
+\int_c^d [\text{right}-\text{left}]\,dy.
+$$
+
+The correct choice depends on which direction makes the region easiest to describe without unnecessary splitting.
+
+<div class="theorem-box" markdown="1">
+
+**Key idea.** Draw the slice first, then write the formula. The slice tells you the width, height, radius, or cross-sectional area.
+
+</div>
+
+---
+
+## Area between curves
+
+Area between curves is geometric area, so it must be nonnegative. If the curves cross, the "top" and "bottom" functions may switch. Split the interval at intersection points so the subtraction matches the geometry on each piece.
+
+For functions of $$y$$, use right minus left instead. This is often cleaner when the region is bounded sideways or when solving for $$y$$ would produce multiple branches.
+
+---
+
+## Volumes from cross sections
+
+For cross-sectional volume, the integral adds thin slabs:
+
+$$
+dV=A(x)\,dx.
+$$
+
+The base region determines the side length, diameter, radius, or height needed for the cross-sectional area formula.
+
+Common area formulas:
+
+$$
+\text{square: } A=s^2,
+$$
+
+$$
+\text{semicircle: } A=\frac12\pi r^2,
+$$
+
+$$
+\text{equilateral triangle: } A=\frac{\sqrt3}{4}s^2.
+$$
+
+The calculus part is the accumulation. The geometry part is building $$A(x)$$ correctly.
+
+---
+
+## Washers vs shells
+
+Washers and disks come from slices perpendicular to the axis of rotation. Shells come from slices parallel to the axis of rotation.
+
+Washer volume:
+
+$$
+V=\pi\int [R^2-r^2]\,d(\text{slice variable}).
+$$
+
+Shell volume:
+
+$$
+V=2\pi\int(\text{radius})(\text{height})\,d(\text{slice variable}).
+$$
+
+The radius is always a distance to the axis of rotation, so it should be nonnegative. If the axis is not one of the coordinate axes, write the distance carefully.
+
+---
+
+## Motion and accumulation
+
+If velocity is given, displacement and distance are different:
+
+$$
+\text{displacement}=\int_a^b v(t)\,dt,
+$$
+
+$$
+\text{total distance}=\int_a^b |v(t)|\,dt.
+$$
+
+Displacement keeps direction. Total distance counts all movement as positive. Split total-distance integrals at times when velocity changes sign.
+
+If acceleration is given, integrate acceleration to get change in velocity. If velocity is given, integrate velocity to get change in position.
+
+---
+
+## Arc length intuition
+
+Arc length adds tiny straight-line distances along a curve. For $$y=f(x)$$,
+
+$$
+dL\approx \sqrt{(dx)^2+(dy)^2}.
+$$
+
+Since
+
+$$
+dy=f'(x)\,dx,
+$$
+
+the length element becomes
+
+$$
+dL=\sqrt{1+[f'(x)]^2}\,dx.
+$$
+
+This explains why the derivative appears inside the arc length formula: the steepness of the curve affects how much length is packed into each small horizontal interval.
+
+---
+
+## Improper integral meaning
+
+Improper integrals are always limits. Infinite intervals are handled by letting an endpoint move without bound. Infinite discontinuities are handled by approaching the problematic point from the correct side.
+
+Convergence means the limiting accumulated value is finite. Divergence means the accumulated value does not settle to a finite number.
+
+---
+
 ## Common mistakes
 
 - Forgetting to split total distance when velocity changes sign.

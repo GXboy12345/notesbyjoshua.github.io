@@ -256,6 +256,150 @@ For alternating Maclaurin series with decreasing term magnitudes, the truncation
 
 ---
 
+## Sequence vs series
+
+A sequence is a list of terms. A series is the sum of those terms.
+
+The sequence question is:
+
+$$
+\text{Do the terms }a_n\text{ approach a value?}
+$$
+
+The series question is:
+
+$$
+\text{Do the partial sums }S_N\text{ approach a value?}
+$$
+
+These are related but not the same. A series can only converge if its terms approach zero, but terms approaching zero do not guarantee that the infinite sum converges.
+
+<div class="theorem-box" markdown="1">
+
+**Key idea.** The nth-term test can only prove divergence. It never proves convergence.
+
+</div>
+
+---
+
+## Choosing a convergence test
+
+Series tests are tools for different patterns.
+
+Use geometric series when terms are built from a constant ratio. Use p-series when the series resembles
+
+$$
+\sum\frac{1}{n^p}.
+$$
+
+Use comparison when the terms are positive and resemble a known benchmark. Use limit comparison when the dominant long-run behavior is easier to compare than strict inequalities.
+
+Use the integral test when the terms come from a positive, continuous, decreasing function that is easy to integrate.
+
+Use the alternating series test when signs alternate and the magnitudes decrease to zero.
+
+Use the ratio test for factorials, exponentials, and many power series. Use the root test when the entire term is raised to the $$n$$th power.
+
+---
+
+## Positive, alternating, absolute, and conditional
+
+For positive-term series, convergence is about whether the sum of positive amounts stays finite.
+
+For alternating series, positive and negative terms can cancel. That creates two levels of convergence:
+
+- absolute convergence: $$\sum |a_n|$$ converges,
+- conditional convergence: $$\sum a_n$$ converges but $$\sum |a_n|$$ diverges.
+
+Absolute convergence is stronger. If a series converges absolutely, it converges.
+
+---
+
+## Remainder estimates
+
+For an alternating series satisfying the Alternating Series Test, the error after using $$n$$ terms is at most the magnitude of the first omitted term:
+
+$$
+|R_n|\le b_{n+1}.
+$$
+
+This works because the partial sums trap the true value from alternating sides, and each new term makes the trap smaller.
+
+For Taylor polynomials, the Lagrange error bound has the form
+
+$$
+|R_n(x)|
+\le
+\frac{M}{(n+1)!}|x-c|^{n+1},
+$$
+
+where $$M$$ bounds the absolute value of the next derivative on the interval between $$c$$ and $$x$$.
+
+---
+
+## Power series as functions
+
+A power series is like an infinite polynomial:
+
+$$
+\sum_{n=0}^{\infty}a_n(x-c)^n.
+$$
+
+Inside its interval of convergence, it behaves nicely:
+
+- it can be differentiated term by term,
+- it can be integrated term by term,
+- the center $$c$$ acts like the anchor point for the expansion.
+
+The radius of convergence comes from the long-run behavior of the coefficients. The endpoints need separate testing because the ratio or root test usually becomes inconclusive there.
+
+---
+
+## Taylor series intuition
+
+Taylor series build a function from derivative information at one center point. The terms are chosen so that the polynomial matches the function's value, slope, concavity, and higher-order derivative behavior at the center.
+
+The Taylor polynomial
+
+$$
+T_n(x)
+$$
+
+is a finite approximation. The Taylor series is the infinite version. A function equals its Taylor series only where the series converges to the function, not merely where the series converges.
+
+Maclaurin series are Taylor series centered at $$0$$.
+
+---
+
+## Memorized series as building blocks
+
+The core Maclaurin series are not isolated facts. They are templates that can be modified by substitution, multiplication, differentiation, and integration.
+
+For example, the geometric series
+
+$$
+\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n
+$$
+
+is the source of many rational-function power series. The interval restriction changes whenever the input expression replacing $$x$$ changes.
+
+When modifying a known series, update both:
+
+- the formula,
+- the interval or radius of convergence.
+
+---
+
+## Series notation habits
+
+Indexing is flexible, but consistency matters. If a series starts at $$n=0$$, the first term uses $$n=0$$. If it starts at $$n=1$$, the first term uses $$n=1$$.
+
+Factorials grow quickly, which is why they appear in Taylor series for functions like $$e^x$$, $$\sin x$$, and $$\cos x$$. The factorial in the denominator balances the higher derivatives and powers.
+
+For AP work, always state the test used and enough hypothesis information to justify it.
+
+---
+
 ## Common mistakes
 
 - Forgetting that $$a_n \to 0$$ is necessary but not sufficient.

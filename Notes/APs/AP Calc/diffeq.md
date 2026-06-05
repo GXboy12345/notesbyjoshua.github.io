@@ -14,19 +14,7 @@ Differential equations describe how a quantity changes rather than giving the qu
 
 ## General and particular solutions
 
-A differential equation relates a function and its derivatives.
-
-Example:
-
-$$
-\frac{dy}{dx} = 3x^2
-$$
-
-has general solution
-
-$$
-y = x^3 + C.
-$$
+A differential equation relates a function and its derivatives. A **general solution** contains a constant of integration, so it represents a family of functions.
 
 If an initial condition is given, such as $$y(1)=5$$, you solve for the constant to get the particular solution.
 
@@ -151,6 +139,144 @@ $$
 $$
 
 This helps determine concavity of solution curves.
+
+---
+
+## What differential equations describe
+
+A differential equation usually does not tell you the value of a function directly. It tells you how the function changes.
+
+For
+
+$$
+\frac{dy}{dx}=f(x,y),
+$$
+
+the slope at a point depends on the coordinates of that point. A solution curve is a function whose tangent slope matches the differential equation everywhere it passes through.
+
+This is why slope fields are useful: they show the local direction a solution must follow before you solve anything symbolically.
+
+---
+
+## Slope fields as visual solutions
+
+In a slope field, each small segment represents the slope assigned by the differential equation at that point.
+
+Useful things to notice:
+
+- rows or columns where slopes repeat,
+- places where slopes are zero,
+- regions where slopes are positive or negative,
+- equilibrium solutions,
+- whether solution curves appear to move toward or away from equilibria.
+
+Solution curves should follow the little segments smoothly. They should not cross each other for the same initial value problem because one input-output point should determine one local direction.
+
+---
+
+## Euler's method intuition
+
+Euler's method is repeated linear approximation. At each step, use the current slope to move forward:
+
+$$
+\text{new }y
+=
+\text{old }y
++
+(\text{step size})(\text{slope at old point}).
+$$
+
+The approximation improves when the step size is smaller, but AP questions usually care more about setting up the method correctly than about perfect numerical accuracy.
+
+Keep track of both coordinates:
+
+$$
+x_{n+1}=x_n+h,
+$$
+
+$$
+y_{n+1}=y_n+h f(x_n,y_n).
+$$
+
+---
+
+## Separating variables carefully
+
+A separable equation has the variables separated into an $$x$$ part and a $$y$$ part:
+
+$$
+\frac{dy}{dx}=g(x)h(y).
+$$
+
+The goal is to move all $$y$$ factors with $$dy$$ and all $$x$$ factors with $$dx$$:
+
+$$
+\frac{1}{h(y)}\,dy=g(x)\,dx.
+$$
+
+Then integrate both sides. The constant of integration belongs after integration, and an initial condition turns the general solution into a particular solution.
+
+---
+
+## Exponential models
+
+The model
+
+$$
+\frac{dy}{dt}=ky
+$$
+
+means the rate of change is proportional to the current amount.
+
+If $$k>0$$, the quantity grows. If $$k<0$$, the quantity decays. The solution has the form
+
+$$
+y=Ce^{kt}.
+$$
+
+The constant $$C$$ is the initial amount when $$t=0$$, assuming the model starts at $$t=0$$.
+
+---
+
+## Logistic model behavior
+
+The logistic equation
+
+$$
+\frac{dy}{dt}=ky\left(1-\frac{y}{L}\right)
+$$
+
+adds a limiting capacity. The factor $$y$$ makes growth proportional to the current population, while the factor
+
+$$
+1-\frac{y}{L}
+$$
+
+slows growth as $$y$$ approaches $$L$$.
+
+The equilibrium solutions are $$y=0$$ and $$y=L$$. For positive populations below $$L$$, solutions increase toward $$L$$. Growth is fastest when $$y=L/2$$ because that is where the logistic rate is largest.
+
+---
+
+## Concavity of solution curves
+
+For a differential equation, concavity often comes from differentiating the slope expression.
+
+If
+
+$$
+\frac{dy}{dx}=f(x,y),
+$$
+
+then
+
+$$
+\frac{d^2y}{dx^2}
+=
+\frac{d}{dx}[f(x,y)].
+$$
+
+When differentiating, remember that $$y$$ depends on $$x$$. After finding $$d^2y/dx^2$$, use its sign to describe whether solution curves are concave up or concave down.
 
 ---
 

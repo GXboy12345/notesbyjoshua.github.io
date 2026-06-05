@@ -186,6 +186,118 @@ $$
 
 ---
 
+## Why the derivative is a limit
+
+The average rate of change on $$[a,a+h]$$ is
+
+$$
+\frac{f(a+h)-f(a)}{h}.
+$$
+
+This is the slope of a secant line. The derivative asks what happens as the second point moves closer and closer to the first point. If the secant slopes approach one stable value, that value is the tangent slope.
+
+This is why the derivative can be interpreted in several connected ways:
+
+- geometrically, it is slope at an instant;
+- numerically, it is the limiting value of nearby average rates;
+- physically, it is instantaneous velocity when $$f$$ is position;
+- locally, it is the coefficient of the best linear approximation.
+
+<div class="theorem-box" markdown="1">
+
+**Key idea.** Differentiability means the function looks almost linear when you zoom in near the point. Corners and cusps fail because the left and right zoom-in slopes do not settle into the same line.
+
+</div>
+
+---
+
+## Notation for derivatives
+
+AP Calculus uses several derivative notations:
+
+$$
+f'(x),\qquad y',\qquad \frac{dy}{dx},\qquad \frac{d}{dx}[f(x)].
+$$
+
+They all refer to rate of change, but they emphasize different things. The notation $$f'(a)$$ is a number. The notation $$f'(x)$$ is a function. The notation $$dy/dx$$ emphasizes that the derivative compares a tiny change in $$y$$ to a tiny change in $$x$$.
+
+When a problem asks for "the derivative at $$x=a$$," give a value. When it asks for "the derivative of $$f$$," give a formula.
+
+---
+
+## Units and derivative meaning
+
+If $$f(x)$$ has units of output and $$x$$ has units of input, then
+
+$$
+f'(x)
+$$
+
+has units
+
+$$
+\frac{\text{output units}}{\text{input units}}.
+$$
+
+For instance, if position is measured in feet and time in seconds, velocity is measured in feet per second. The sign tells direction; the magnitude tells how fast the position is changing.
+
+Second derivatives have units of
+
+$$
+\frac{\text{output units}}{(\text{input units})^2}.
+$$
+
+That is why acceleration is measured in distance per time squared.
+
+---
+
+## Local linear behavior
+
+The derivative gives the slope of the tangent line, so near $$x=a$$ the function behaves approximately like
+
+$$
+L(x)=f(a)+f'(a)(x-a).
+$$
+
+The phrase "near $$a$$" matters. Linearization is usually very good for inputs close to $$a$$, but the error can grow as the input moves farther away.
+
+This idea also explains why derivatives are useful for estimation: a small input change $$\Delta x$$ creates an approximate output change
+
+$$
+\Delta y\approx f'(a)\Delta x.
+$$
+
+---
+
+## Differentiability from graphs
+
+From a graph, differentiability fails at places where the tangent slope is not a single finite number.
+
+Common visual signs:
+
+- a corner has two different one-sided slopes,
+- a cusp has slopes that become infinitely steep in opposite directions,
+- a vertical tangent has an infinite slope,
+- a discontinuity cannot be differentiable.
+
+A smooth-looking graph is not a proof by itself, but it gives a strong clue about where derivative values may exist.
+
+---
+
+## Derivative rule intuition
+
+The power rule says that powers become one degree lower because the most important local change in $$x^n$$ comes from the linear term created by expanding $$(x+h)^n$$.
+
+The product rule has two terms because both factors can change:
+
+$$
+(fg)'=f'g+fg'.
+$$
+
+The quotient rule is a product rule combined with the derivative of a reciprocal. Remember that the denominator is squared because the reciprocal function contributes a negative second power.
+
+---
+
 ## Common mistakes
 
 - Confusing the derivative at a point with the derivative function.

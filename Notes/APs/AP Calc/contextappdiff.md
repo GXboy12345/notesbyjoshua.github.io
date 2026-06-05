@@ -156,6 +156,126 @@ At large production levels, these are interpreted as approximate change from one
 
 ---
 
+## Reading derivative statements in words
+
+A derivative value is not just a number. A complete interpretation usually needs:
+
+- the quantity changing,
+- the input value or time,
+- the direction of change if the sign matters,
+- correct units.
+
+If $$H(t)$$ is height in meters and $$H'(3)=-2$$, then at $$t=3$$ the height is decreasing at $$2$$ meters per unit of time. The negative sign means the height is going down; the magnitude $$2$$ describes the speed of that change.
+
+<div class="theorem-box" markdown="1">
+
+**AP language.** "At time $$t=a$$, the quantity is changing at a rate of ..." is usually safer than saying only "the derivative is ..."
+
+</div>
+
+---
+
+## Derivatives of units
+
+Units help you check whether your answer makes sense.
+
+If a function measures gallons and the input is minutes, the derivative measures gallons per minute. If that derivative is integrated over minutes, the result returns to gallons.
+
+This creates a useful loop:
+
+$$
+\text{quantity}
+\xrightarrow{\text{differentiate}}
+\text{rate}
+\xrightarrow{\text{integrate}}
+\text{change in quantity}.
+$$
+
+When a problem involves a rate in and a rate out, the sign of the net rate tells whether the total amount is increasing or decreasing.
+
+---
+
+## Motion interpretation
+
+For motion on a line, position, velocity, acceleration, and speed are related but not interchangeable.
+
+Velocity:
+
+$$
+v(t)=s'(t)
+$$
+
+includes direction. Speed:
+
+$$
+|v(t)|
+$$
+
+does not include direction.
+
+Acceleration:
+
+$$
+a(t)=v'(t)
+$$
+
+tells how velocity is changing. Speed increases when velocity and acceleration point in the same direction, because the velocity value is moving farther from zero. Speed decreases when velocity and acceleration have opposite signs.
+
+---
+
+## Linearization in context
+
+Linearization is an estimate of output near a known input:
+
+$$
+f(a+\Delta x)\approx f(a)+f'(a)\Delta x.
+$$
+
+In context, this means a small input change produces an approximate output change:
+
+$$
+\Delta f\approx f'(a)\Delta x.
+$$
+
+This is the same idea behind differentials:
+
+$$
+dy=f'(x)\,dx.
+$$
+
+The approximation is local. It is meant for small changes near the input where the derivative was measured.
+
+---
+
+## Related quantities and hidden variables
+
+Contextual problems often include more variables than you actually need. The goal is to write one equation connecting the changing quantities, then identify which rate the question asks for.
+
+Useful habits:
+
+- define every variable before differentiating,
+- record which variables are changing,
+- keep constants as constants,
+- substitute numerical values after differentiating.
+
+If the independent variable is time, every changing quantity gets a rate such as $$dx/dt$$, $$dV/dt$$, or $$dA/dt$$.
+
+---
+
+## Justifying answers from graphs
+
+When using a graph of $$f$$, slope describes $$f'$$. When using a graph of $$f'$$, height describes the rate of change of $$f$$.
+
+That distinction is one of the biggest AP traps:
+
+- graph of position: slope is velocity;
+- graph of velocity: height is velocity and slope is acceleration;
+- graph of acceleration: height is acceleration.
+
+Always identify what the graph represents before interpreting signs, slopes, or areas.
+
+---
+
 ## Common mistakes
 
 - Reporting velocity when the question asks for speed.
