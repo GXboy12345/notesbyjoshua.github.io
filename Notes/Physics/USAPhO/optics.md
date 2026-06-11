@@ -94,6 +94,17 @@ using $$n = c/v$$. The law of reflection follows from the same principle with bo
 
 The index of refraction actually depends slightly on wavelength, $$n(\lambda)$$, with blue light (short $$\lambda$$) refracting more than red in most glass. This **dispersion** is why a prism spreads white light into a spectrum and why rainbows form (refraction + internal reflection + dispersion in water droplets).
 
+## Gradient-index refraction and mirages
+
+When the index varies *continuously* rather than in a sharp jump, Snell's law still applies across each infinitesimal layer, and the quantity $$n\sin\theta$$ (angle from the vertical) is conserved along the ray. The ray curves smoothly, always **bending toward the region of higher $$n$$** — toward slower light. Applying Snell's law to two nearby heights, a ray climbing through an index gradient turns through an angle $$\approx (1/n)\,(dn/dh)$$ per unit horizontal distance.
+
+This is the physics of **mirages**. In the atmosphere $$n - 1 \propto \rho \propto P/T$$, so a temperature gradient bends light:
+
+- Over hot ground (desert road), the air is hottest at the bottom, so $$n$$ *increases* with height and rays bend upward. You see an inverted image of the sky on the ground — the shimmering "water" of an **inferior mirage**.
+- In a thermal inversion (cold air below warm, e.g. over cold water), $$n$$ decreases with height, rays bend down to follow the Earth's curvature, and distant objects appear lifted above the horizon — a **superior mirage**.
+
+If the downward bending is strong enough to match the Earth's curvature, $$dn/dh = -n/R$$, light rays literally orbit at constant height and you can see beyond the geometric horizon.
+
 ## Spherical mirrors
 
 A spherical mirror of radius $$R$$ has focal length
@@ -116,6 +127,14 @@ $$
 - $$d_i > 0$$ for a real image (same side as object, in front); $$d_i < 0$$ for a virtual image (behind).
 - $$f > 0$$ for a concave (converging) mirror; $$f < 0$$ for convex (diverging).
 - $$m > 0$$ upright, $$m < 0$$ inverted; $$|m| > 1$$ enlarged.
+
+The reason a curved mirror focuses at all comes out cleanly for **conic-section** shapes, which have exact reflection properties:
+
+- An **ellipse** reflects every ray from one focus to the other focus.
+- A **parabola** reflects all rays parallel to its axis to a single focus (and vice versa) — the principle behind satellite dishes, headlights, and reflecting telescopes. A parabola is just an ellipse with its second focus sent to infinity, which is why parallel rays (a source at infinity) come to a point.
+- A **hyperbola** reflects rays aimed at one focus so they diverge as if from the other.
+
+A spherical mirror only *approximates* a parabola near its axis; rays striking far from the axis miss the focus, an error called **spherical aberration**.
 
 ## Thin lenses
 
@@ -163,6 +182,12 @@ For a system of lenses, work through them one at a time: the image of the first 
 
 Wave optics rests on **Huygens' principle**: every point on a wavefront acts as a source of secondary spherical wavelets, and the new wavefront is their envelope a moment later. This reproduces straight-line propagation, reflection, and refraction, and — crucially — explains why waves bend (diffract) around edges and through gaps.
 
+<div class="theorem-box" markdown="1">
+
+**Coherence.** Interference fringes only appear if the two combining waves keep a *stable* phase relationship; such waves are called **coherent**. This is hard with ordinary light: even a single-frequency lamp's phase wobbles randomly on nanosecond timescales, and two separate lamps never stay in step, so their interference term averages to zero and you see no fringes. The 19th-century fix was to illuminate the experiment through a tiny pinhole, so that the light reaching both slits originates from the same point and is automatically in phase with itself — good enough that even sunlight works. Lasers make this trivial today, since they emit highly coherent light. For the idealized problems below we assume perfect coherence, but in any real setup it is the first thing to check.
+
+</div>
+
 ## Interference: Young's double slit
 
 Two coherent sources (or one wavefront split by two slits a distance $$d$$ apart) produce alternating bright and dark fringes on a distant screen. For a screen far away, the path difference to a point at angle $$\theta$$ is $$d\sin\theta$$, giving
@@ -193,6 +218,8 @@ Measuring this spacing is a standard way to determine an unknown wavelength.
 
 </div>
 
+When mirrors or lenses are in the way, computing path-length differences directly is a nightmare. The shortcut is that **any image — real or virtual — can be treated as its own coherent point source**, so you measure path differences starting from the images rather than tracing all the way back to the original object. (For a real image this follows from Fermat's principle: every ray from object to image takes the same time, so they all arrive in phase and leave the image in phase.) Setups like **Lloyd's mirror** or two slightly tilted mirrors reduce to an ordinary double slit whose two "slits" are the image sources — even though there is only one real light source. A useful caution: reflection adds a phase of $$\pi$$, though it often cancels out when both images reflect the same way.
+
 ## Thin films
 
 Light reflecting off the top and bottom of a thin film of thickness $$t$$ and index $$n$$ interferes. Two subtleties decide the condition:
@@ -209,6 +236,22 @@ $$
 $$
 
 If instead there is a phase flip at *both* surfaces (or neither), the conditions swap. Always count the $$\pi$$-shifts first — this is the most common place to go wrong. Anti-reflection coatings exploit the destructive case.
+
+<div class="theorem-box" markdown="1">
+
+**Example (Newton's rings).** A plano-convex lens of radius of curvature $$R$$ rests on a flat glass plate, leaving a thin air wedge between them. Illuminated from above with wavelength $$\lambda$$, it shows concentric bright and dark rings. Find the radii of the dark rings.
+
+At radius $$r$$ from the contact point, the gap thickness $$t$$ satisfies $$r^2 = R^2 - (R-t)^2 \approx 2Rt$$ for $$t \ll R$$, so $$t \approx r^2/2R$$. The two interfering reflections are off the bottom of the lens (glass→air, no flip) and off the top of the plate (air→glass, $$\pi$$ flip). The net half-wavelength shift makes the **center dark** (where $$t\to 0$$), and dark rings occur when the round-trip path $$2t$$ is a whole number of wavelengths:
+
+$$
+2t = m\lambda
+\quad\Longrightarrow\quad
+r_m = \sqrt{m\lambda R}, \qquad m = 0,1,2,\dots
+$$
+
+The rings crowd together as $$r$$ grows (since $$r_m \propto \sqrt{m}$$), and measuring them is a classic way to find a wavelength or test how truly flat a surface is.
+
+</div>
 
 ## Diffraction
 
@@ -227,7 +270,22 @@ $$
 d\sin\theta = m\lambda.
 $$
 
-More slits make the maxima sharper and brighter, which is why gratings outperform double slits for measuring wavelengths and separating spectral lines.
+Summing the $$N$$ equally spaced, equal-phase-step contributions as a geometric series gives the intensity
+
+$$
+I(\theta) \propto \frac{\sin^2\!\big(N\,\tfrac{k\Delta r}{2}\big)}{\sin^2\!\big(\tfrac{k\Delta r}{2}\big)},
+\qquad \Delta r = d\sin\theta,
+$$
+
+a set of tall, sharp **principal maxima** (where all slits are in phase, $$d\sin\theta = m\lambda$$) separated by $$N-2$$ faint secondary maxima. More slits make the principal maxima sharper and brighter, which is why gratings outperform double slits for measuring wavelengths and separating spectral lines.
+
+The quality of a grating as a spectrometer is its **resolving power** — the ratio $$R = \lambda/\Delta\lambda$$ of a wavelength to the smallest wavelength difference it can split apart. Taking two lines to be just resolved when the maximum of one sits on the first minimum of the other (the Rayleigh criterion again) gives a strikingly simple result:
+
+$$
+R = \frac{\lambda}{\Delta\lambda} = Nm,
+$$
+
+the number of slits times the diffraction order. To resolve finer spectral detail you either illuminate more lines or work at a higher order.
 
 ## Resolution and the Rayleigh criterion
 
@@ -238,6 +296,12 @@ $$
 $$
 
 Bigger apertures (telescope mirrors, eye pupils) and shorter wavelengths give finer resolution.
+
+## Babinet's principle
+
+**Babinet's principle** states that an opaque obstacle and an aperture of the *same shape* produce identical diffraction patterns (away from the central beam). The argument is short: the aperture and the obstacle are complementary, so their amplitudes add up to the wave you'd get with no screen at all — a single bright forward spot and darkness elsewhere. At any point that *would* be dark, the two amplitudes must therefore be equal and opposite, hence equal in magnitude, so they give the same intensity.
+
+The practical payoff is that you can analyze diffraction off a small object (a wire, a strand of fiber, a dust speck, a circular disk) by pretending it is a slit or hole of the same size. It is what lets a laser pointer aimed at a helical spring — or X-rays aimed at the double helix of DNA — reveal the structure's spacing and pitch from the diffraction pattern alone.
 
 ## Polarization
 

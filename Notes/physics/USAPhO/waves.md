@@ -57,6 +57,20 @@ $$
 
 USAPhO will not require you to solve these types of equations, but it is good to know the general solutions.
 
+A slick way to see what those solutions are: factor the wave equation as a difference of squares,
+
+$$
+\left(\partial_t^2 - v^2\partial_x^2\right)y = (\partial_t - v\partial_x)(\partial_t + v\partial_x)\,y = 0.
+$$
+
+Anything killed by either factor solves the equation, and those are exactly the right- and left-movers $$f(x-vt)$$ and $$g(x+vt)$$. Because the equation is linear, the **general solution** is their superposition,
+
+$$
+y(x,t) = f(x-vt) + g(x+vt),
+$$
+
+for arbitrary shapes $$f$$ and $$g$$. Every wave problem on a string is ultimately about choosing $$f$$ and $$g$$ to match the initial conditions and boundaries.
+
 <div class="theorem-box" markdown="1">
 
 **Proof (Wave definition).** Let $$u = x - vt$$ and $$y = f(u)$$. By the chain rule,
@@ -97,6 +111,20 @@ $$
 
 This is the prototype of "restoring force over inertia": more tension means a faster wave, more mass per length means a slower one.
 
+When the tension varies along the string, so does the wave speed. The classic example is a **rope hanging under its own weight**: at a height $$x$$ above the bottom, the tension equals the weight of rope below it, $$T = \mu g x$$, so
+
+$$
+v(x) = \sqrt{\frac{T}{\mu}} = \sqrt{gx}.
+$$
+
+A pulse therefore speeds up as it climbs. The time to travel the full length $$L$$ is
+
+$$
+\tau = \int_0^L \frac{dx}{\sqrt{gx}} = 2\sqrt{\frac{L}{g}},
+$$
+
+which is — pleasingly — twice the time an object would take to *fall* the length of the rope.
+
 <div class="theorem-box" markdown="1">
 
 **Proof (Wave velocity equation).** Consider a small arc of string of length $$\Delta x$$ carrying a wave. The tension pulls tangentially at both ends; if the slope is small, the net upward (transverse) force is
@@ -126,6 +154,8 @@ P_{\text{avg}} = \tfrac12 \mu\, \omega^2 A^2 v.
 $$
 
 The key scalings to remember: power (and intensity) go as the **square of both amplitude and frequency**. Doubling the frequency at fixed amplitude quadruples the power transmitted.
+
+The energy is split between **kinetic** energy (transverse motion) and **potential** energy (stretching of the string against tension). A useful fact for any traveling wave $$y = f(x - vt)$$: the kinetic and potential energy densities are *equal at every point and every instant*, because $$\partial y/\partial t = -v\,\partial y/\partial x$$ ties the two together. This equipartition fails for a standing wave, where energy sloshes back and forth between purely kinetic (string flat, moving fast) and purely potential (string maximally bent, momentarily at rest).
 
 ## Superposition and interference
 
@@ -223,6 +253,22 @@ $$
 
 When the second medium is denser ($$v_2 < v_1$$), $$r<0$$ — the reflection is inverted, recovering the fixed-end rule as the limiting case $$v_2 \to 0$$.
 
+The cleaner way to package this is the **impedance** of the medium,
+
+$$
+Z = \sqrt{\mu T} = \mu v,
+$$
+
+in terms of which the reflection and transmission coefficients are
+
+$$
+r = \frac{Z_1 - Z_2}{Z_1 + Z_2},
+\qquad
+t = \frac{2Z_1}{Z_1 + Z_2}.
+$$
+
+Reflection happens whenever the impedances **mismatch**, and the reflection vanishes ($$r=0$$, perfect transmission) when $$Z_1 = Z_2$$ even if the media are otherwise different. This is exactly the same idea as matching impedances on a transmission line, and it is why engineers insert gradual "impedance-matching" devices (a tapered horn, an anti-reflection coating) to suppress unwanted reflections by softening the discontinuity.
+
 ## Sound waves
 
 Sound is a longitudinal pressure wave. Its speed in a fluid of bulk modulus $$B$$ and density $$\rho$$ is
@@ -238,6 +284,13 @@ v = \sqrt{\frac{\gamma P}{\rho}} = \sqrt{\frac{\gamma R T}{M}},
 $$
 
 where $$\gamma$$ is the ratio of specific heats (see the [Thermodynamics]({{ '/notes/physics/thermodynamics/' | relative_url }}) page). Note that sound speed depends on temperature but not on pressure for an ideal gas (since $$P/\rho \propto T$$).
+
+A sound wave can be described either by the **displacement** $$\xi(x,t)$$ of the gas parcels or by the **pressure variation** $$\delta P \propto -\partial\xi/\partial x$$. These are a quarter-wavelength out of step, which makes the boundary rules subtle. The reliable principle: *whatever quantity the boundary forces to zero is the one that gets a node and flips sign on reflection.*
+
+- A **hard wall** pins the displacement, $$\xi = 0$$: it is a displacement node and a pressure antinode.
+- An **open end** of a tube sits at atmospheric pressure, $$\delta P = 0$$: it is a pressure node and a displacement antinode.
+
+This is why an open–closed pipe has the open end as a displacement antinode and the closed end as a displacement node, giving the odd-harmonic series quoted above. (Plenty of textbooks botch this by claiming "hard boundaries flip transverse waves but not longitudinal ones" — not true; track which quantity is fixed.)
 
 **Intensity** is power per unit area, $$I = P/A$$. For a point source radiating uniformly into spheres,
 
@@ -301,6 +354,28 @@ $$
 \sin\theta = \frac{v}{v_{\text{src}}} = \frac{1}{\text{Mach number}}.
 $$
 
+## Water waves
+
+Water waves are the most familiar waves in daily life and also the most complicated — the restoring force is gravity, and the result is **dispersive**, so the speed depends on wavelength. Two limiting cases are worth knowing.
+
+**Shallow water** ($$\lambda \gg D$$, where $$D$$ is the depth). The wave speed depends only on the depth,
+
+$$
+v = \sqrt{gD},
+$$
+
+independent of wavelength — so shallow water waves are *non*dispersive. Two consequences: a tsunami in the deep ocean ($$D \sim 4\text{ km}$$) travels at jet-airliner speeds, and as waves approach shore the dropping depth slows and steepens them. The speed change also explains why waves always arrive nearly **parallel to the shoreline** (the part of a crest in deeper water outruns the part in shallow water, swinging the crest around — the same refraction that bends light toward slower media).
+
+**Deep water** ($$\lambda \ll D$$). Now the depth drops out and gravity competes with wavelength,
+
+$$
+v_p = \sqrt{\frac{g}{k}} = \sqrt{\frac{g\lambda}{2\pi}},
+$$
+
+so longer swells travel faster and a storm sorts its waves by wavelength as they spread out. The dispersion relation $$\omega = \sqrt{gk}$$ gives a group velocity that is exactly **half** the phase velocity, $$v_g = \tfrac12 v_p$$ — individual crests appear to run forward through a wave group and vanish at its leading edge.
+
+(For very short ripples, $$\lambda \lesssim 1\text{ cm}$$, surface tension takes over from gravity and the trend reverses: shorter ripples go faster.)
+
 ## Phase velocity and group velocity
 
 In a **dispersive** medium the wave speed depends on frequency, so we distinguish two speeds. The **phase velocity** is how fast a single wave crest moves,
@@ -316,3 +391,25 @@ v_g = \frac{d\omega}{dk}.
 $$
 
 For a nondispersive wave ($$\omega = vk$$) the two coincide. The relation $$\omega(k)$$ is called the **dispersion relation**, and computing $$v_g = d\omega/dk$$ from it is a recurring olympiad task.
+
+The group velocity is the speed of a **wave packet** — a localized burst built by superposing waves over a band of wavenumbers $$\Delta k$$. A single sinusoid has infinite extent; to make a packet of finite size $$\Delta x$$ you must combine a *range* of wavenumbers, and the two are inversely related:
+
+$$
+\Delta x\,\Delta k \gtrsim 1,
+\qquad\text{equivalently}\qquad
+\Delta t\,\Delta \omega \gtrsim 1.
+$$
+
+This is a purely classical statement about waves — a narrow pulse needs a broad spectrum — but feeding in the de Broglie relation $$p = \hbar k$$ turns it directly into the Heisenberg uncertainty principle $$\Delta x\,\Delta p \gtrsim \hbar$$. In a dispersive medium the components of a packet travel at different speeds, so the packet gradually spreads out, or **disperses**.
+
+<div class="theorem-box" markdown="1">
+
+**Note (a wave with a minimum frequency).** Not every dispersion relation passes through the origin. If a string is tied down by a bed of springs, its equation of motion picks up an extra restoring term and the dispersion relation becomes
+
+$$
+\omega^2 = \omega_0^2 + v^2 k^2.
+$$
+
+There is now a **minimum frequency** $$\omega_0$$: drive the string below it and no traveling wave propagates — the disturbance decays exponentially instead. Reading $$E = \hbar\omega$$ and $$p = \hbar k$$, this is exactly the energy–momentum relation $$E^2 = (mc^2)^2 + (pc)^2$$ of a relativistic *massive* particle, with the minimum frequency playing the role of rest mass. It is a toy model for how a field can acquire mass.
+
+</div>
