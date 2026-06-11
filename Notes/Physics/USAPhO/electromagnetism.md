@@ -2,7 +2,7 @@
 layout: default
 title: Electromagnetism
 parent: USAPhO Prep
-nav_order: 8
+nav_order: 9
 permalink: /notes/physics/electromagnetism/
 ---
 

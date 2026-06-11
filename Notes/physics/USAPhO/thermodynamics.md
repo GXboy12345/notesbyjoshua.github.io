@@ -8,7 +8,7 @@ permalink: /notes/physics/thermodynamics/
 
 # Thermodynamics
 
-These notes build thermodynamics from temperature and the gas laws up through the first and second laws, engines, and a statistical picture of entropy. The early sections are mostly definitions and the microscopic model of a gas; the later sections are where the olympiad problems usually live.
+This page is written in collaboration with Michael Zhao.
 
 ---
 
@@ -70,7 +70,7 @@ A **bimetallic strip** bonds two metals with different $$\alpha$$ (e.g. brass an
 
 **Example.** Railroad track is laid in $$25\text{ m}$$ steel segments at $$10^\circ\text{C}$$. How wide must the expansion gap between consecutive segments be so the rails do not buckle when the temperature rises to $$50^\circ\text{C}$$? Take $$\alpha_{\text{steel}} = 1.1\times 10^{-5}\ ^\circ\text{C}^{-1}$$.
 
-**Solution.** Each segment lengthens by
+Each segment lengthens by
 
 $$
 \Delta L = \alpha L\,\Delta T = (1.1\times 10^{-5})(25)(40) = 1.1\times 10^{-2}\text{ m}.
@@ -122,7 +122,7 @@ $$
 \langle(\Delta x)^2\rangle = \frac{RT}{3\pi\eta a N_A}\,\Delta t.
 $$
 
-Jean Baptiste Perrin used measurements of $$\langle(\Delta x)^2\rangle$$ to deduce $$N_A \sim 6\times 10^{23}$$. Qualitatively, a larger $$N_A$$ would mean the bombardment on opposite sides nearly balances (less jitter); a smaller $$N_A$$ would mean bigger fluctuations.
+Note that $$\langle\rangle$$ denotes the average. Jean Baptiste Perrin used measurements of $$\langle(\Delta x)^2\rangle$$ to deduce $$N_A \sim 6\times 10^{23}$$. Qualitatively, a larger $$N_A$$ would mean the bombardment on opposite sides nearly balances (less jitter); a smaller $$N_A$$ would mean bigger fluctuations.
 
 ### Pressure from kinetic theory
 
@@ -142,7 +142,7 @@ $$
 
 **Example.** Find the rms speed of nitrogen molecules ($$\text{N}_2$$, molar mass $$M = 0.028\text{ kg/mol}$$) in air at $$T = 300\text{ K}$$.
 
-**Solution.** Using $$v_{\text{rms}} = \sqrt{3RT/M}$$,
+Using $$v_{\text{rms}} = \sqrt{3RT/M}$$,
 
 $$
 v_{\text{rms}} = \sqrt{\frac{3(8.31)(300)}{0.028}} = \sqrt{2.67\times 10^{5}} \approx 517\text{ m/s}.
