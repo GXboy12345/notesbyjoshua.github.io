@@ -66,6 +66,20 @@ Thermal expansion comes from the *asymmetry* of the interatomic potential energy
 
 A **bimetallic strip** bonds two metals with different $$\alpha$$ (e.g. brass and steel). Heating bends the strip toward the lower-$$\alpha$$ metal; coiling it into a helix turns this into a thermometer or thermostat switch.
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Railroad track is laid in $$25\text{ m}$$ steel segments at $$10^\circ\text{C}$$. How wide must the expansion gap between consecutive segments be so the rails do not buckle when the temperature rises to $$50^\circ\text{C}$$? Take $$\alpha_{\text{steel}} = 1.1\times 10^{-5}\ ^\circ\text{C}^{-1}$$.
+
+**Solution.** Each segment lengthens by
+
+$$
+\Delta L = \alpha L\,\Delta T = (1.1\times 10^{-5})(25)(40) = 1.1\times 10^{-2}\text{ m}.
+$$
+
+So a gap of about $$11\text{ mm}$$ is needed. Note that we used the installed length and the temperature *change* (the size of a degree is the same in $$^\circ\text{C}$$ and K); the absolute temperature never enters.
+
+</div>
+
 ## The Ideal Gas
 
 The ideal gas law ties together pressure, volume, temperature, and amount of gas:
@@ -123,6 +137,20 @@ where $$\rho$$ is the mass density. Solving for the root-mean-square speed,
 $$
 v_{\text{rms}} = \sqrt{\langle v^2\rangle} = \sqrt{\frac{3p}{\rho}} = \sqrt{\frac{3k_BT}{m}} = \sqrt{\frac{3RT}{M}}.
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the rms speed of nitrogen molecules ($$\text{N}_2$$, molar mass $$M = 0.028\text{ kg/mol}$$) in air at $$T = 300\text{ K}$$.
+
+**Solution.** Using $$v_{\text{rms}} = \sqrt{3RT/M}$$,
+
+$$
+v_{\text{rms}} = \sqrt{\frac{3(8.31)(300)}{0.028}} = \sqrt{2.67\times 10^{5}} \approx 517\text{ m/s}.
+$$
+
+This is comfortably faster than the speed of sound in air ($$\sim 340\text{ m/s}$$), which makes sense — sound propagates through the same molecular collisions, just slower than the typical molecular speed.
+
+</div>
 
 ### Mean free path
 
@@ -207,7 +235,7 @@ The constant $$a>0$$ for attractive forces: a molecule approaching the wall is p
 
 ## Heat and Heat Transfer
 
-**Heat** is energy that flows between a system and its environment *because of a temperature difference*. By convention $$Q>0$$ when heat flows into the system. Crucially, heat and work are *not* state functions — a system does not "contain" heat or work. They are associated with a process, with the transfer between states, not with the states themselves.
+**Heat** is energy that flows between a system and its environment *because of a temperature difference*. By convention $$Q>0$$ when heat flows into the system. Crucially, heat and work are *not* state functions (a function that has the same value regardless of path) since a system does not "contain" heat or work. They are associated with a process, with the transfer between states, not with the states themselves.
 
 ### Conduction
 
@@ -237,6 +265,28 @@ $$
 
 Conductances in series add like resistances (same $$H$$, temperature drops add); in parallel the areas add.
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Two slabs with thicknesses $$L_1, L_2$$ and conductivities $$k_1, k_2$$ are stacked face to face. The outer faces are held at $$T_1$$ and $$T_2$$ (with $$T_2 > T_1$$). In steady state, find the rate of heat flow and the interface temperature $$T_x$$.
+
+In steady state no energy piles up at the interface, so the same $$H$$ flows through both slabs:
+
+$$
+H = \frac{k_1 A (T_x - T_1)}{L_1} = \frac{k_2 A (T_2 - T_x)}{L_2}.
+$$
+
+Solving the right-hand equality for $$T_x$$ and substituting back gives a result that looks exactly like resistors in series — the thermal resistances $$L/k$$ add:
+
+$$
+H = \frac{A(T_2 - T_1)}{\dfrac{L_1}{k_1} + \dfrac{L_2}{k_2}},
+\qquad
+T_x = \frac{k_1 L_2\,T_1 + k_2 L_1\,T_2}{k_1 L_2 + k_2 L_1}.
+$$
+
+The same idea extends to any number of layers: just sum all the $$L_i/k_i$$ in the denominator.
+
+</div>
+
 ### Convection and radiation
 
 **Convection** transfers heat through bulk fluid motion: warmed fluid expands, becomes less dense, and rises while cooler fluid sinks, setting up a circulation.
@@ -256,7 +306,7 @@ $$
 Therefore the heat to change temperature is
 
 $$
-Q = mc(T_f - T_i),
+Q = mc \Delta T,
 \qquad
 Q = m\int_{T_i}^{T_f} c\,dT
 $$
@@ -270,6 +320,26 @@ $$
 with $$L_f$$ for fusion (melting/freezing) and $$L_v$$ for vaporization (boiling/condensing).
 
 A useful empirical fact: the molar heat capacity (specific heat times molar mass) of most solids approaches about $$25\text{ J/(mol·K)}$$ at high temperature (the Dulong–Petit value), falling off toward zero at low temperature.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** How much heat is needed to turn $$50\text{ g}$$ of ice at $$-10^\circ\text{C}$$ into water at $$20^\circ\text{C}$$? Use $$c_{\text{ice}} = 2100\ \text{J/(kg·K)}$$, $$c_{\text{water}} = 4186\ \text{J/(kg·K)}$$, and $$L_f = 3.34\times 10^{5}\ \text{J/kg}$$.
+
+Do the problem in three stages — never melt and warm in one step, because melting happens at constant temperature.
+
+1. Warm the ice from $$-10^\circ\text{C}$$ to $$0^\circ\text{C}$$: $$\;Q_1 = mc_{\text{ice}}\,\Delta T = (0.050)(2100)(10) = 1050\text{ J}.$$
+2. Melt the ice at $$0^\circ\text{C}$$: $$\;Q_2 = mL_f = (0.050)(3.34\times 10^{5}) = 16{,}700\text{ J}.$$
+3. Warm the meltwater from $$0^\circ\text{C}$$ to $$20^\circ\text{C}$$: $$\;Q_3 = mc_{\text{water}}\,\Delta T = (0.050)(4186)(20) = 4186\text{ J}.$$
+
+The total is
+
+$$
+Q = Q_1 + Q_2 + Q_3 \approx 2.2\times 10^{4}\text{ J} = 22\text{ kJ}.
+$$
+
+The melting step requires much more heat because latent heats are typically much larger than the heat for a modest temperature change.
+
+</div>
 
 <div class="theorem-box" markdown="1">
 
@@ -305,7 +375,7 @@ $$
 
 The sign is the subtle part: when the gas expands ($$dV>0$$) it does positive work on its surroundings, so negative work is done *on* the gas. On a $$pV$$ diagram the magnitude of the work is the area under the curve, and **work is path-dependent** — different paths between the same endpoints give different work.
 
-The internal energy of an ideal gas depends only on temperature. With $$f$$ degrees of freedom,
+The internal energy of an ideal gas depends only on temperature. With $$f$$ degrees of freedom (talked about in the next section),
 
 $$
 E_{\text{int}} = \frac f2 nRT,
@@ -337,7 +407,7 @@ A linear molecule like $$\text{CO}_2$$ has no kinetic energy for rotation about 
 
 ### Molar heat capacities of an ideal gas
 
-How much heat raises the temperature depends on *how* the heat is added.
+How much heat raises the temperature depends on how the heat is added.
 
 At constant volume no work is done, so
 
@@ -347,7 +417,7 @@ Q = \Delta E_{\text{int}},
 C_V = \frac{Q}{n\,\Delta T} = \frac{\Delta E_{\text{int}}}{n\,\Delta T} = \frac f2 R.
 $$
 
-At constant pressure the gas also does expansion work. Substituting $$Q = nC_p\Delta T$$ and $$W = -nR\Delta T$$ into the first law (with $$\Delta E_{\text{int}}$$ the same as the constant-volume path between the same isotherms) gives **Mayer's relation**
+At constant pressure the gas also does expansion work. Substituting $$Q = nC_p\Delta T$$ and $$W = -nR\Delta T$$ into the first law (with $$\Delta E_{\text{int}}$$ the same as the constant-volume path between the same isotherms) gives **Mayer's relation**:
 
 $$
 C_p = C_V + R.
@@ -359,7 +429,7 @@ $$
 \gamma = \frac{C_p}{C_V},
 $$
 
-controls adiabatic processes. Collecting values:
+is called the adiabatic gas constant and controls adiabatic processes. Collecting values:
 
 | Gas | $$C_V$$ | $$C_p$$ | $$\gamma$$ |
 |---|---|---|---|
@@ -371,7 +441,7 @@ controls adiabatic processes. Collecting values:
 
 ## Thermodynamic Processes
 
-Each process is a different constraint applied to the first law. The table at the end summarizes them.
+Each type of process is a different constraint applied to the first law. The table at the end summarizes them.
 
 ### Isochoric (constant volume)
 
@@ -423,21 +493,41 @@ TV^{\gamma-1} = \text{const},
 T^\gamma p^{1-\gamma} = \text{const}.
 $$
 
-Because $$\gamma > 1$$, an adiabat is steeper than an isotherm through the same point, so an adiabatic expansion does less work and cools the gas. Carrying out the integral,
+Since $$\gamma > 1$$, an adiabat is steeper than an isotherm through the same point, so an adiabatic expansion does less work and cools the gas. Carrying out the integral,
 
 $$
 W = -\int_{V_i}^{V_f} p\,dV = \frac{1}{\gamma-1}\left(p_fV_f - p_iV_i\right).
 $$
 
+<div class="theorem-box" markdown="1">
+
+**Example.** A diatomic ideal gas ($$\gamma = 7/5$$) initially at $$T_i = 300\text{ K}$$ is compressed adiabatically to half its volume. Find the final temperature.
+
+Along an adiabat $$TV^{\gamma-1}$$ is constant, so
+
+$$
+T_f = T_i\left(\frac{V_i}{V_f}\right)^{\gamma-1} = 300\,(2)^{0.4}.
+$$
+
+Since $$2^{0.4} = e^{0.4\ln 2} \approx 1.32$$,
+
+$$
+T_f \approx 300(1.32) \approx 396\text{ K}.
+$$
+
+The gas heats up even though no heat was added — all of the compression work went into internal energy. This is the principle behind a diesel engine igniting fuel without a spark plug.
+
+</div>
+
 ### Cyclical and free expansion
 
 Over a complete **cycle** the system returns to its initial state, so $$\Delta E_{\text{int}} = 0$$ and $$Q = -W$$: the net heat absorbed equals the net work done by the gas, which is the area enclosed by the cycle on a $$pV$$ diagram.
 
-In a **free expansion** a gas rushes into vacuum: no work is done ($$W=0$$) and no heat is exchanged ($$Q=0$$), so $$\Delta E_{\text{int}} = 0$$ and for an ideal gas $$\Delta T = 0$$. This is an irreversible, nonequilibrium process — the $$pV$$ path is not even well defined between the endpoints, though the endpoints themselves are equilibrium states.
+In a **free expansion** a gas rushes into vacuum: no work is done ($$W=0$$) and no heat is exchanged ($$Q=0$$), so $$\Delta E_{\text{int}} = 0$$ and for an ideal gas $$\Delta T = 0$$. This is an irreversible, nonequilibrium process — the $$pV$$ path is not even well defined between the endpoints, though the endpoints themselves are equilibrium states, and cannot be reversed (unless you vacuum the surroundings) because gas will flow from high pressure to low pressure.
 
-<div class="theorem-box" markdown="1">
+### Thermodynamic process summary table
 
-**Applications of the first law ($$\Delta E_{\text{int}} = Q + W$$).** Underlined results apply to ideal gases only.
+Underlined results apply to ideal gases only.
 
 | Process | Restriction | First law | Other results |
 |---|---|---|---|
@@ -449,11 +539,9 @@ In a **free expansion** a gas rushes into vacuum: no work is done ($$W=0$$) and 
 | Cycle | $$\Delta E_{\text{int}} = 0$$ | $$Q = -W$$ | |
 | Free expansion | $$Q = W = 0$$ | $$\Delta E_{\text{int}} = 0$$ | $$\underline{\Delta T = 0}$$ |
 
-</div>
+## Entropy and the Second Law of Thermodynamics
 
-## Entropy and the Second Law
-
-All naturally occurring processes proceed in one direction only; they are **irreversible**. **Entropy** $$S$$ is the state function that picks out that direction.
+Most naturally occurring processes proceed in one direction only; they are **irreversible** (there are reversible reactions (like in Chemistry) but for most purposes processes are irreversible without active heat input). **Entropy** $$S$$ is the state function that picks out that direction.
 
 For a reversible process,
 
@@ -478,9 +566,7 @@ Specializing: $$\Delta S = nR\ln(V_f/V_i)$$ for an isothermal process, $$nC_V\ln
 
 To find $$\Delta S$$ for an **irreversible** process (like free expansion), invent any reversible process connecting the same two states and compute $$\Delta S$$ along it — since $$S$$ is a state function, the answer carries over.
 
-<div class="theorem-box" markdown="1">
-
-**Second Law of Thermodynamics.** In a closed system entropy never decreases:
+The **Second Law of Thermodynamics** states that in a closed system entropy never decreases:
 
 $$
 \Delta S \ge 0,
@@ -490,26 +576,46 @@ with equality only for reversible processes. Equivalently, heat flows spontaneou
 
 </div>
 
-## Heat Engines
+<div class="theorem-box" markdown="1">
 
-A **heat engine** uses a working substance cycling through thermodynamic processes to extract heat and produce work. Because it returns to its starting state each cycle, $$\Delta E_{\text{int}} = 0$$, so the net work equals the net heat. Drawing heat $$|Q_H|$$ from a hot reservoir and dumping $$|Q_L|$$ to a cold one,
+**Example.** One mole of an ideal gas free-expands into a vacuum until its volume doubles. Find the entropy change of the gas and of the universe.
+
+Free expansion is irreversible, so we cannot integrate $$dQ/T$$ along the actual path. But entropy is a state function, and the endpoints have the same temperature ($$\Delta T = 0$$ for a free expansion). So connect them with a *reversible isothermal* expansion, for which
 
 $$
-|W| = |Q_H| - |Q_L|,
+\Delta S_{\text{gas}} = nR\ln\frac{V_f}{V_i} = (1)(8.31)\ln 2 \approx 5.76\text{ J/K}.
+$$
+
+The surroundings exchanged no heat ($$Q = 0$$ in the real process), so $$\Delta S_{\text{surr}} = 0$$ and
+
+$$
+\Delta S_{\text{univ}} = 5.76\text{ J/K} > 0,
+$$
+
+confirming the process is irreversible — exactly what the second law demands.
+
+</div>
+
+## Heat Engines
+
+A **heat engine** uses a working substance cycling through thermodynamic processes to extract heat and produce work. Because it returns to its starting state each cycle, $$\Delta E_{\text{int}} = 0$$, so the net work equals the net heat. Drawing heat $$\lvert Q_H\rvert$$ from a hot reservoir and dumping $$\lvert Q_L\rvert$$ to a cold one,
+
+$$
+\lvert W\rvert = \lvert Q_H\rvert - \lvert Q_L\rvert,
 $$
 
 and the **efficiency** is
 
 $$
-\epsilon = \frac{\text{what you get}}{\text{what you pay for}} = \frac{|W|}{|Q_H|} = 1 - \frac{|Q_L|}{|Q_H|}.
+\epsilon = \frac{\text{what you get}}{\text{what you pay for}} = \frac{\lvert W\rvert}{\lvert Q_H\rvert} = 1 - \frac{\lvert Q_L\rvert}{\lvert Q_H\rvert}.
 $$
 
 ### The Carnot engine
 
-The Carnot cycle is two isotherms (at $$T_H$$ and $$T_L$$) joined by two adiabats. On a $$T$$–$$S$$ diagram it is simply a rectangle: the isotherms are horizontal, and the adiabats are vertical (constant entropy, "isentropic"). Heat enters reversibly at $$T_H$$ and leaves reversibly at $$T_L$$, so
+The Carnot cycle is two isotherms (at $$T_H$$ and $$T_L$$) joined by two adiabats. On a $$T$$–$$S$$ diagram it is simply a rectangle: the isotherms are horizontal, and the adiabats are vertical (constant entropy, "isentropic", although this term is rarely used). Heat enters reversibly at $$T_H$$ and leaves reversibly at $$T_L$$, so
 
 $$
-\frac{|Q_H|}{T_H} = \frac{|Q_L|}{T_L}.
+\frac{\lvert Q_H\rvert}{T_H} = \frac{\lvert Q_L\rvert}{T_L}.
 $$
 
 Substituting into the efficiency gives the **Carnot efficiency**
@@ -522,7 +628,23 @@ No engine operating between two reservoirs can beat this, because the Carnot cyc
 
 <div class="theorem-box" markdown="1">
 
-**Why nothing beats Carnot.** Suppose an engine X were more efficient than a Carnot engine between the same reservoirs. Use X's work output to drive a Carnot engine *backwards* as a refrigerator. The combination would move heat from cold to hot with no net work input — a perfect refrigerator — which violates the second law. Hence $$\epsilon_X \le \epsilon_{\text{Carnot}}$$.
+**Proof (Carnot efficiency is the maximum efficiency).** Suppose an engine X were more efficient than a Carnot engine between the same reservoirs. Use X's work output to drive a Carnot engine *backwards* as a refrigerator. The combination would move heat from cold to hot with no net work input — a perfect refrigerator — which violates the Second Law. Hence $$\epsilon_X \le \epsilon_{\text{Carnot}}$$.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A Carnot engine operates between reservoirs at $$T_H = 500\text{ K}$$ and $$T_L = 300\text{ K}$$ and absorbs $$Q_H = 1000\text{ J}$$ from the hot reservoir each cycle. Find its efficiency, work output, and heat rejected.
+
+The efficiency is
+
+$$
+\epsilon = 1 - \frac{T_L}{T_H} = 1 - \frac{300}{500} = 0.40.
+$$
+
+So the work per cycle is $$\lvert W\rvert = \epsilon\lvert Q_H\rvert = 400\text{ J}$$, and the heat dumped is $$\lvert Q_L\rvert = \lvert Q_H\rvert - \lvert W\rvert = 600\text{ J}$$.
+
+As a check, $$\lvert Q_H\rvert/T_H = 1000/500 = 2\text{ J/K}$$ equals $$\lvert Q_L\rvert/T_L = 600/300 = 2\text{ J/K}$$: the entropy drawn from the hot reservoir exactly matches that given to the cold one, which is the hallmark of a reversible cycle.
 
 </div>
 
@@ -532,34 +654,32 @@ The Carnot formula applies only to reversible engines using exactly **two** rese
 
 ## Refrigerators and Heat Pumps
 
-A **refrigerator** uses work to push heat from a cold reservoir to a hot one — the reverse of an engine. By the first law,
+A **refrigerator** uses work to push heat from a cold reservoir to a hot one — the reverse of an engine. By the First Law,
 
 $$
-|W| = |Q_H| - |Q_L|.
+\lvert W\rvert = \lvert Q_H\rvert - \lvert Q_L\rvert.
 $$
 
 Its performance is measured by the **coefficient of performance** $$K$$, "what you want over what you pay for":
 
 $$
-K = \frac{|Q_L|}{|W|}
+K = \frac{\lvert Q_L\rvert}{\lvert W\rvert}
 \quad\Longrightarrow\quad
 K_{\text{Carnot}} = \frac{T_L}{T_H - T_L}.
 $$
 
-An air conditioner is a refrigerator whose cold reservoir is the room. A **heat pump** is the same machine run to *heat* a room — now the room is the hot reservoir, and the relevant quantity is $$|Q_H|$$.
+An air conditioner is a refrigerator whose cold reservoir is the room. A **heat pump** is the same machine run to *heat* a room — now the room is the hot reservoir, and the relevant quantity is $$\lvert Q_H\rvert$$.
 
-<div class="theorem-box" markdown="1">
-
-**Which COP to use.** For *cooling* (AC, refrigerator) the goal is $$Q_L$$:
+For *cooling* (AC, refrigerator) the goal is $$Q_L$$:
 
 $$
-K_L = \frac{|Q_L|}{|W|} = \frac{T_L}{T_H - T_L}.
+K_L = \frac{\lvert Q_L\rvert}{\lvert W\rvert} = \frac{T_L}{T_H - T_L}.
 $$
 
 For *heating* (warming a house) the goal is $$Q_H$$:
 
 $$
-K_H = \frac{|Q_H|}{|W|} = \frac{T_H}{T_H - T_L}.
+K_H = \frac{\lvert Q_H\rvert}{\lvert W\rvert} = \frac{T_H}{T_H - T_L}.
 $$
 
 The two are related by
@@ -568,9 +688,7 @@ $$
 K_H = K_L + 1,
 $$
 
-which follows directly from $$|Q_H| = |Q_L| + |W|$$.
-
-</div>
+which follows directly from $$\lvert Q_H\rvert = \lvert Q_L\rvert + \lvert W\rvert$$.
 
 ## A Statistical View of Entropy
 
@@ -596,10 +714,10 @@ $$
 \Delta S = k_B\ln\frac{\Omega_f}{\Omega_i}.
 $$
 
-For large factorials, **Stirling's approximation** makes $$w$$ tractable:
+For large factorials, **Stirling's approximation** for factorials is used to approximate entropy:
 
 $$
 \ln N! \approx N\ln N - N.
 $$
 
-A "spread out" configuration has higher multiplicity, hence higher entropy, than an ordered one ($$w_{\text{resting}} > w_{\text{swirling}}$$, so $$S_{\text{resting}} > S_{\text{swirling}}$$) — the statistical statement of the second law.
+A "spread out" configuration has higher multiplicity, hence higher entropy, than an ordered one ($$w_{\text{resting}} > w_{\text{swirling}}$$, so $$S_{\text{resting}} > S_{\text{swirling}}$$) — the statistical statement of the Second Law.
