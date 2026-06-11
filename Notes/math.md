@@ -34,10 +34,10 @@ Through my years of preparing for AMC 10/12, AIME, and USAJMO, here are some imp
 
 - Polynomials
 - Newton's Sums
-- Summations
+- [Summations]({{ '/notes/math/algebra/summations/' | relative_url }})
 - Inequalities
 - Functional equations
-- Recursion
+- [Recursion]({{ '/notes/math/algebra/recursion/' | relative_url }})
 
 ---
 
@@ -45,7 +45,7 @@ Through my years of preparing for AMC 10/12, AIME, and USAJMO, here are some imp
 
 - Circles
 - Inversion
-- Homothety
+- [Homothety]({{ '/notes/math/geometry/homothety/' | relative_url }})
 
 ---
 

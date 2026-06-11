@@ -26,30 +26,44 @@ This unit studies how conductors rearrange charge in electrostatic equilibrium a
 
 ---
 
-## Conductors in Electrostatic Equilibrium
+## Conductors in electrostatic equilibrium
 
-A conductor contains mobile charge. In electrostatic equilibrium, the charge has stopped rearranging, so the electric field inside the conducting material is zero:
+A conductor has mobile charges. In **electrostatic equilibrium**, the charges are no longer drifting, so the electric field inside the conducting material must be zero. If there were a nonzero internal field, free electrons would accelerate and the charge distribution would not be static.
 
-$$
-\vec{E}_{\text{inside conductor}}=0.
-$$
+Important consequences:
 
-If an internal electric field existed, mobile charges would accelerate and the conductor would not be in equilibrium.
+- The electric field inside the conducting material is zero.
+- If there are no charges trapped in cavities, any excess charge on an isolated conductor lives on its outer surface.
+- The electric field just outside a conducting surface is perpendicular to that surface.
+- Charge gathers more densely near sharp points, where the surface curvature is larger.
 
-Consequences:
+<div class="theorem-box" markdown="1">
 
-- The conductor is an equipotential.
-- Any excess charge resides on the outer surface.
-- The electric field just outside a conductor is perpendicular to the surface.
-- A hollow cavity inside a conductor has zero electric field if no charge is placed inside the cavity.
-
-The perpendicular field just outside a conducting surface satisfies
+**Proof (Excess charge must be on the surface).** Imagine a Gaussian surface entirely inside the metal of a conductor, just below its actual surface, and assume there are no charges inside cavities. Since $$E=0$$ everywhere on that Gaussian surface,
 
 $$
-E = \frac{\sigma}{\varepsilon_0},
+\oint \vec E\cdot d\vec A=0.
 $$
 
-where $$\sigma$$ is the local surface charge density.
+Gauss's law gives $$Q_{\text{enc}}/\varepsilon_0=0$$, so $$Q_{\text{enc}}=0$$. Any net excess charge cannot remain in the conducting bulk; it must reside on the surface.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Near a small patch of a conductor's surface, use a tiny pillbox with one face just outside the conductor and one face just inside.
+
+Inside the conductor, $$E=0$$. The side wall contributes negligible flux as the pillbox becomes very thin. If the local surface charge density is $$\sigma$$, then
+
+$$
+EA=\frac{\sigma A}{\varepsilon_0}
+\quad\Rightarrow\quad
+E=\frac{\sigma}{\varepsilon_0}.
+$$
+
+This differs from the infinite nonconducting sheet result by a factor of $$2$$ because the conductor has zero field on the inside.
+
+</div>
 
 ---
 

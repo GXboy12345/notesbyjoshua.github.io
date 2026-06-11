@@ -8,64 +8,6 @@ permalink: /notes/math/limits/
 
 # Unit 1: Limits and Continuity
 
-<div class="example-box" markdown="1">
-
-**Example — Trig limit with linear scaling**
-
-Problem: Evaluate $$\displaystyle\lim_{x\to0}\frac{\sin(5x)}{x}.$$ 
-
-Strategy: Manipulate the expression to match the standard limit $$\lim_{u\to0}\frac{\sin u}{u}=1$$ by substituting $$u=5x$$.
-
-Solution:
-
-\begin{align*}
-\frac{\sin(5x)}{x} &= 5\cdot\frac{\sin(5x)}{5x}\\
-&=5\cdot\frac{\sin u}{u}\quad( u=5x ).
-\end{align*}
-
-As $$x\to0$$, we have $$u\to0$$, and therefore $$\frac{\sin u}{u}\to1$$. Hence the limit equals $$5\cdot1=5$$.
-
-Answer: $$5$$.
-
-</div>
-
----
-
-## Practice
-
-1. Evaluate $$\displaystyle\lim_{x\to 1}\frac{x^3-1}{x-1}$$.
-2. Find the one-sided limits and determine whether the two-sided limit exists for
-
-	$$f(x)=\begin{cases}x+2,&x<0,\\3-x,&x\ge0.\end{cases}$$
-3. Compute $$\displaystyle\lim_{x\to0}x^2\ln(1+x)$$.
-4. Evaluate $$\displaystyle\lim_{x\to0}\frac{\sin(3x)-3x}{x^3}$$.
-5. Find $$\displaystyle\lim_{x\to\infty}\frac{5x^3-2x}{x^3+4}$$ and state any horizontal asymptote.
-6. Let $$h(x)=\begin{cases}\frac{\sqrt{x+4}-2}{x-0},&x\ne0,\\a,&x=0.\end{cases}$$ Find $$a$$ so that $$h$$ is continuous at $$0$$.
-
----
-
-## Solutions
-
-<div class="theorem-box" markdown="1">
-
-**Solutions (detailed)**
-
-1. Factor numerator: $$x^3-1=(x-1)(x^2+x+1)$$. Cancel and evaluate: $$\lim_{x\to1}(x^2+x+1)=3.$$ 
-
-2. Left: $$\lim_{x\to0^-}(x+2)=2$$. Right: $$\lim_{x\to0^+}(3-x)=3$$. Two-sided limit DNE (values differ).
-
-3. Use expansion: $$\ln(1+x)=x-\tfrac{x^2}{2}+O(x^3)$$, so $$x^2\ln(1+x)=x^3+O(x^4)\to0$$. Limit is 0.
-
-4. Use Taylor expansions: $$\sin(3x)=3x-\frac{(3x)^3}{6}+O(x^5)=3x-\frac{27x^3}{6}+O(x^5).$$ Thus numerator $$\sin(3x)-3x\sim -\frac{27x^3}{6}$$ and dividing by $$x^3$$ gives $$-\frac{27}{6}=-\frac{9}{2}$$.
-
-5. Divide by $$x^3$$: $$\frac{5-2/x^2}{1+4/x^3}\to5$$. Horizontal asymptote $$y=5$$.
-
-6. For $$x\ne0$$, simplify numerator using conjugate: $$\frac{\sqrt{x+4}-2}{x}=\frac{x}{x(\sqrt{x+4}+2)}=\frac{1}{\sqrt{x+4}+2}$$. Taking limit as $$x\to0$$ gives $$\frac{1}{4}$$. Therefore set $$a=1/4$$ to make $$h$$ continuous.
-
-</div>
-
-Limits describe the value a function approaches as the input gets close to a point. In AP Calculus, we use limits to analyze nearby behavior, compare one-sided approaches, study asymptotes, and prepare for the derivative.
-
 ---
 
 ## What a limit means
@@ -86,25 +28,17 @@ This is about nearby behavior, not direct substitution. It is possible for:
 
 A quick check is direct substitution. If substituting $$x = a$$ gives a finite number and the expression is defined there, the limit is usually that number.
  
-<div class="example-box" markdown="1">
+<div class="theorem-box" markdown="1">
 
-**Example — Direct substitution**
+**Example.** Evaluate $$\displaystyle\lim_{x\to 2}\bigl(3x^2-1\bigr).$$
 
-Problem: Find $$\displaystyle\lim_{x\to 2}\bigl(3x^2-1\bigr).$$
+This function is a polynomial, and polynomials are continuous everywhere. Therefore the limit is equal to the function value at the point:
 
-Strategy: Polynomials are continuous everywhere, so evaluate the function at the point.
+$$
+3(2)^2-1 = 11.
+$$
 
-Solution:
-
-\begin{align*}
-\lim_{x\to 2}(3x^2-1) &= 3(2)^2-1\\
-&= 3\cdot4-1\\
-&=11.
-\end{align*}
-
-Answer: $$11$$.
-
-Note: When a function is continuous at the point, direct substitution is the quickest method.
+So the limit is $$11$$.
 
 </div>
 
@@ -133,22 +67,23 @@ Common reasons a limit fails to exist:
 
 > [Image Placeholder: left-hand vs right-hand limit examples, including a jump discontinuity]
 
-<div class="example-box" markdown="1">
+<div class="theorem-box" markdown="1">
 
-**Example — One-sided limits (jump discontinuity)**
+**Example.** Let $$f(x)=\begin{cases}1,&x<0,\\2,&x\ge0.\end{cases}$$ Find the left-hand and right-hand limits as $$x\to0$$.
 
-Problem: Let $$f(x)=\begin{cases}1,&x<0,\\2,&x\ge0.\end{cases}$$ Determine the one-sided limits at $$0$$ and decide if the two-sided limit exists.
+For $$x<0$$, the function is constant at 1, so
 
-Strategy: Compute the left- and right-hand limits separately by approaching 0 from each side.
+$$
+\lim_{x\to0^-}f(x)=1.
+$$
 
-Solution:
+For $$x\ge0$$, the function is constant at 2, so
 
-- Left-hand limit: $$\displaystyle\lim_{x\to0^-}f(x)=1$$ because for values slightly less than 0 the function value is 1.
-- Right-hand limit: $$\displaystyle\lim_{x\to0^+}f(x)=2$$ because for values slightly greater than or equal to 0 the function value is 2.
+$$
+\lim_{x\to0^+}f(x)=2.
+$$
 
-Since the two one-sided limits are different, the two-sided limit $$\lim_{x\to0}f(x)$$ does not exist.
-
-Answer: Left limit = 1; right limit = 2; two-sided limit does not exist (DNE).
+Because the left-hand and right-hand limits differ, the two-sided limit does not exist.
 
 </div>
 
@@ -176,6 +111,24 @@ $$
 $$
 
 For polynomials and rational functions, direct substitution works whenever the denominator is nonzero. If substitution gives a finite number, the limit is usually that number.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Suppose $$\lim_{x\to 2}f(x)=3$$ and $$\lim_{x\to 2}g(x)=-1$$. Find
+
+$$
+\lim_{x\to2}\frac{2f(x)-g(x)}{[f(x)]^2}.
+$$
+
+Using limit laws, substitute the known limits:
+
+$$
+\frac{2\cdot 3-(-1)}{3^2} = \frac{7}{9}.
+$$
+
+Therefore the limit equals $$\frac{7}{9}$$.
+
+</div>
 
 <div class="theorem-box" markdown="1">
 
@@ -211,54 +164,47 @@ Common algebraic techniques:
 
 Most AP limit work is about recognizing whether direct substitution works or whether the expression hides competing behavior.
 
-<div class="example-box" markdown="1">
+<div class="theorem-box" markdown="1">
 
-**Example — Factor and cancel (removable form)**
+**Example.** Evaluate $$\displaystyle\lim_{x\to3}\frac{x^2-9}{x-3}.$$ 
 
-Problem: Evaluate $$\displaystyle\lim_{x\to3}\frac{x^2-9}{x-3}.$$ 
+Factor the numerator to expose the removable factor:
 
-Strategy: Factor the numerator to reveal and cancel the removable factor producing the indeterminate form $$0/0$$.
+$$
+\frac{x^2-9}{x-3}=\frac{(x-3)(x+3)}{x-3},\qquad x\ne3.
+$$
 
-Solution:
+Cancelling gives
 
-\begin{align*}
-\frac{x^2-9}{x-3} &= \frac{(x-3)(x+3)}{x-3}\quad(x\ne3)\\
-&= x+3.
-\end{align*}
+$$
+\frac{x^2-9}{x-3}=x+3\quad(x\ne3).
+$$
 
 Now take the limit of the simplified expression:
 
-$$\lim_{x\to3}(x+3)=6.$$ 
+$$
+\lim_{x\to3}(x+3)=6.
+$$
 
-Answer: $$6$$.
-
-Remark: Cancelling is safe because limit concerns values arbitrarily close to, but not equal to, the point.
+This is a classic removable-indeterminate limit: the original expression is undefined at 3, but the nearby behavior is well defined.
 
 </div>
 
-<div class="example-box" markdown="1">
+<div class="theorem-box" markdown="1">
 
-**Example — Conjugate trick (radicals)**
+**Example.** Evaluate $$\displaystyle\lim_{x\to0}\frac{\sqrt{x+1}-1}{x}.$$ 
 
-Problem: Compute $$\displaystyle\lim_{x\to0}\frac{\sqrt{x+1}-1}{x}.$$ 
+Multiply by the conjugate to remove the radical from the numerator:
 
-Strategy: Multiply numerator and denominator by the conjugate to eliminate the radical and remove the indeterminate form $$0/0$$.
+$$
+\frac{\sqrt{x+1}-1}{x}=\frac{(\sqrt{x+1}-1)(\sqrt{x+1}+1)}{x(\sqrt{x+1}+1)}=\frac{x}{x(\sqrt{x+1}+1)}=\frac{1}{\sqrt{x+1}+1},\qquad x\ne0.
+$$
 
-Solution:
+Now evaluate the simplified limit:
 
-Multiply by the conjugate:
-
-\begin{align*}
-\frac{\sqrt{x+1}-1}{x}&=\frac{(\sqrt{x+1}-1)(\sqrt{x+1}+1)}{x(\sqrt{x+1}+1)}\\
-&=\frac{x}{x(\sqrt{x+1}+1)}\\
-&=\frac{1}{\sqrt{x+1}+1},\qquad x\ne0.
-\end{align*}
-
-Take the limit as $$x\to0$$:
-
-$$\lim_{x\to0}\frac{1}{\sqrt{x+1}+1}=\frac{1}{\sqrt{1}+1}=\frac{1}{2}.$$ 
-
-Answer: $$\tfrac12$$.
+$$
+\lim_{x\to0}\frac{1}{\sqrt{x+1}+1}=\frac{1}{2}.
+$$
 
 </div>
 
@@ -293,29 +239,21 @@ $$
 
 </div>
 
-<div class="example-box" markdown="1">
+<div class="theorem-box" markdown="1">
 
-**Example — Squeeze Theorem (oscillatory factor)**
+**Example.** Show that $$\displaystyle\lim_{x\to0}x\sin\frac{1}{x}=0.$$ 
 
-Problem: Show that $$\displaystyle\lim_{x\to0}x\sin\frac{1}{x}=0.$$ 
+The sine factor is bounded by $$-1\le\sin\frac{1}{x}\le1$$ for all nonzero $$x$$. Multiply through by $$|x|$$ to obtain
 
-Strategy: Use inequalities that bound the oscillatory factor and then apply the Squeeze Theorem.
+$$
+-\lvert x\rvert \le x\sin\frac{1}{x} \le \lvert x\rvert.
+$$
 
-Solution:
+Since both outer bounds tend to 0 as $$x\to0$$, the Squeeze Theorem gives
 
-We have for all real $$t$$ that $$-1\le\sin t\le1$$. Set $$t=1/x$$ to get
-
-$$-1\le\sin\frac{1}{x}\le1.$$ 
-
-Multiplying the inequality by $$|x|$$ (which is nonnegative) yields
-
-$$-\lvert x\rvert\le x\sin\frac{1}{x}\le\lvert x\rvert.$$ 
-
-Since $$\lim_{x\to0}-\lvert x\rvert=0$$ and $$\lim_{x\to0}\lvert x\rvert=0$$, the Squeeze Theorem implies
-
-$$\lim_{x\to0}x\sin\frac{1}{x}=0.$$ 
-
-Answer: $$0$$.
+$$
+\lim_{x\to0}x\sin\frac{1}{x}=0.
+$$
 
 </div>
 
@@ -333,13 +271,19 @@ $$
 \lim_{x \to 0} \frac{\tan x}{x} = 1.
 $$
 
-These are valid only in radians. They are frequently used after rewriting a trig expression into a form that matches one of these limits. It is important to note that $$cos x$$ is not a part of this because the limit of $$\lim_{x \to 0} \frac{\cos x}{x}$$ can be easily solved by plugging $$0$$ into the expression.
+These are valid only in radians. They are frequently used after rewriting a trig expression into a form that matches one of these limits. It is important to note that $$\cos x$$ is not a part of this because the limit of $$\lim_{x \to 0} \frac{\cos x}{x}$$ can be easily solved by plugging $$0$$ into the expression.
 
-<div class="example-box" markdown="1">
+<div class="theorem-box" markdown="1">
 
-**Example (Trig limit):** Evaluate $$\lim_{x\to 0} \frac{\sin(5x)}{x}$$.
+**Example.** Evaluate $$\displaystyle\lim_{x\to0}\frac{\sin(5x)}{x}.$$ 
 
-Rewrite as $$5\cdot\frac{\sin(5x)}{5x}$$. As $$x\to0$$, $$\frac{\sin(5x)}{5x}\to1$$, so the limit is $$5$$.
+Rewrite the expression to use the standard limit $$\lim_{u\to0}\frac{\sin u}{u}=1$$:
+
+$$
+\frac{\sin(5x)}{x}=5\cdot\frac{\sin(5x)}{5x}.
+$$
+
+As $$x\to0$$, the ratio $$\frac{\sin(5x)}{5x}\to1$$, so the limit equals $$5$$.
 
 </div>
 
@@ -369,11 +313,23 @@ $$ (where C is a constant)
 
 for large $$\lvert x \rvert$$, but be careful with the sign when $$x \to -\infty$$.
 
-<div class="example-box" markdown="1">
+<div class="theorem-box" markdown="1">
 
-**Example (Limit at infinity):** Evaluate $$\lim_{x\to\infty} \frac{3x^2+5x}{2x^2-7}$$.
+**Example.** Evaluate $$\displaystyle\lim_{x\to\infty} \frac{3x^2+5x}{2x^2-7}$$ and identify the horizontal asymptote.
 
-Divide numerator and denominator by $$x^2$$ to get $$\frac{3+5/x}{2-7/x^2}\to\frac{3}{2}$$, so the horizontal asymptote is $$y=3/2$$.
+Divide numerator and denominator by $$x^2$$:
+
+$$
+\frac{3x^2+5x}{2x^2-7}=\frac{3+5/x}{2-7/x^2}.
+$$
+
+As $$x\to\infty$$, the terms $$5/x$$ and $$7/x^2$$ vanish, leaving the limit
+
+$$
+\frac{3}{2}.
+$$
+
+Therefore the horizontal asymptote is $$y=\frac32$$.
 
 </div>
 
@@ -404,18 +360,6 @@ Functions that are continuous on their natural domains include:
 - Trigonometric functions on their domains,
 - Compositions of continuous functions where defined.
 
-<div class="example-box" markdown="1">
-
-**Example (Removable discontinuity):** Let
-
-$$
-g(x)=\begin{cases} \frac{x^2-1}{x-1} & x\ne1,\\ 5 & x=1. \end{cases}
-$$
-
-For $$x\ne1$$, $$g(x)=x+1$$. The limit as $$x\to1$$ is $$2$$, but $$g(1)=5$$, so the function has a removable discontinuity at 1. Redefining $$g(1)=2$$ makes it continuous.
-
-</div>
-
 ---
 
 ## Intermediate Value Theorem
@@ -432,14 +376,6 @@ This theorem guarantees at least one solution, but it does not tell you how many
 
 </div>
 
----
-
-<div class="example-box" markdown="1">
-
-**Example (IVT):** Suppose $$f$$ is continuous on $$[0,2]$$ with $$f(0)=-1$$ and $$f(2)=3$$. By the IVT, for any value between -1 and 3 (for instance, 0), there exists $$c\in(0,2)$$ with $$f(c)=0$$.
-
-</div>
-
 ## Average rate of change (Introduction to derivatives)
 
 On $$[a,b]$$, the average rate of change is modeled by
@@ -450,10 +386,28 @@ $$.
 
 This is also the slope of the secant line. The derivative will be the limit of this expression as the interval shrinks toward a single point. This will be explored more in Unit 2.
 
-<div class="example-box" markdown="1">
+<div class="theorem-box" markdown="1">
 
-**Example (Average rate of change):** For $$f(x)=x^2$$ on $$[1,3]$$, the average rate of change is
+**Example.** For $$f(x)=x^2$$, compute the average rate of change on $$[1,1.1]$$, $$[1,1.01]$$, and $$[1,1.001]$$ to observe the pattern.
 
-$$\frac{f(3)-f(1)}{3-1}=\frac{9-1}{2}=4.$$ This is the slope of the secant line between the two points. The derivative at a point is the limit of such secant slopes; for $$f(x)=x^2$$, $$f'(x)=2x$$.
+- On $$[1,1.1]$$:
+
+$$
+\frac{f(1.1)-f(1)}{1.1-1} = \frac{1.21-1}{0.1} = 2.1.
+$$
+
+- On $$[1,1.01]$$:
+
+$$
+\frac{f(1.01)-f(1)}{1.01-1} = \frac{1.0201-1}{0.01} = 2.01.
+$$
+
+- On $$[1,1.001]$$:
+
+$$
+\frac{f(1.001)-f(1)}{1.001-1} = \frac{1.002001-1}{0.001} = 2.001.
+$$
+
+Each secant slope gets closer to $$2$$ as the interval shrinks. This pattern shows how the average rate of change approaches the derivative at $$x=1$$, and for $$f(x)=x^2$$ the derivative is $$f'(x)=2x$$, giving $$f'(1)=2$$. You will learn more about derivatives in the next unit.
 
 </div>

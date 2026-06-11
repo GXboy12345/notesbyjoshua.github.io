@@ -20,7 +20,7 @@ This unit is the foundation of electricity: how charge produces forces, how we d
 - $$k$$ = Coulomb's constant = $$8.99 \times 10^9 \text{ N}\cdot\text{m}^2/\text{C}^2$$
 - $$\varepsilon_0$$ = permittivity of free space = $$8.85 \times 10^{-12} \text{ C}^2/(\text{N}\cdot\text{m}^2)$$ (Equivalently, the units could also be written as $$\frac{F}{m}$$, F = Farads)
 - $$E$$ = electric field (Units: $$\frac{N}{C}$$)
--$$\lambda$$ = charge per unit length (Units: $$\frac{C}{m}$$)
+- $$\lambda$$ = charge per unit length (Units: $$\frac{C}{m}$$)
 - $$\sigma$$ = charge per unit area (Units: $$\frac{C}{m^2}$$)
 - $$\rho$$ = charge per unit volume (Units: $$\frac{C}{m^3}$$)
 - $$\Phi_E$$ = electric flux (Units: $$\frac{N \times m^2}{C}$$)
@@ -71,6 +71,8 @@ An **electroscope** uses thin metal leaves (or a similar mechanical indicator) t
 
 **Polarization** is the separation of positive and negative charge within a neutral object when a charged object is brought nearby. A charged object can polarize a neutral insulator or conductor: internal charge shifts so that one side of the material presents a net excess closer to the inducer. For example, a negative balloon near a wall pushes electrons in the wall slightly away, so the nearer surface acts more positive. The balloon and wall can attract even though the wall’s net charge is still zero—attraction without net charge on the neutral object is the usual signature of polarization.
 
+**ADD IMAGE**
+
 ---
 
 ## Coulomb’s law
@@ -89,6 +91,22 @@ $$
 
 Like charges give a repulsive force along $$\hat{r}$$; opposite charges attract (force opposite to $$\hat{r}$$ if $$\hat{r}$$ is defined as above). The magnitude falls as $$1/r^2$$, the same inverse-square geometry as Newton’s law of gravitation, but charge can be positive or negative so the force can be attractive or repulsive.
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Suppose $$q_1=+2.0\,\mu\text{C}$$ is at $$x=0$$ and $$q_2=-3.0\,\mu\text{C}$$ is at $$x=0.50\text{ m}$$. Find the force on $$q_1$$.
+
+The magnitude is
+
+$$
+F=k\frac{|q_1q_2|}{r^2}
+=\left(8.99\times10^9\right)\frac{(2.0\times10^{-6})(3.0\times10^{-6})}{(0.50)^2}
+=0.216\text{ N}.
+$$
+
+Because the charges are opposite, $$q_1$$ is attracted toward $$q_2$$, so the force on $$q_1$$ points in the $$+x$$ direction.
+
+</div>
+
 ---
 
 ## Permittivity of free space
@@ -105,7 +123,7 @@ $$
 \varepsilon_0 = 8.85 \times 10^{-12} \text{ C}^2/(\text{N}\cdot\text{m}^2)
 $$
 
-(equivalently farads per meter, $$\text{F/m}$$). It sets how electric fields in vacuum relate to source charge in SI form.
+(equivalently farads per meter, $$\text{F/m}$$). It sets how electric fields in vacuum relate to source charge.
 
 ---
 
@@ -137,6 +155,28 @@ $$
 \vec{E} = \frac{1}{4\pi \varepsilon_0} \frac{Q}{r^2} \hat{r}.
 $$
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Two equal positive charges $$+Q$$ are placed at $$(0,a)$$ and $$(0,-a)$$. Find the electric field at $$(x,0)$$.
+
+Each charge is a distance $$r=\sqrt{x^2+a^2}$$ from the point. The vertical components cancel by symmetry. The horizontal component from one charge is
+
+$$
+E_x=\frac{kQ}{r^2}\cos\theta
+=\frac{kQ}{x^2+a^2}\cdot\frac{x}{\sqrt{x^2+a^2}}
+=\frac{kQx}{(x^2+a^2)^{3/2}}.
+$$
+
+There are two equal horizontal components, so
+
+$$
+\vec E=\frac{2kQx}{(x^2+a^2)^{3/2}}\hat{\imath}.
+$$
+
+For $$x>0$$ this points right; for $$x<0$$ it points left.
+
+</div>
+
 ---
 
 ## Continuous charge distributions
@@ -167,13 +207,68 @@ $$
 dE = \frac{1}{4\pi \varepsilon_0} \frac{dq}{r^2}
 $$
 
-with $$dq$$ replaced by $$\lambda\, dL$$, $$\sigma\, dA$$, or $$\rho\, dV$$ according to the geometry. Set up coordinates, exploit symmetry, and integrate.
+with $$dq$$ replaced by $$\lambda\, dL$$, $$\sigma\, dA$$, or $$\rho\, dV$$ according to the geometry. Set up coordinates, exploit symmetry, and integrate. Some common techniques are to convert into polar form, or only calculate non-cancelling portions of the field.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A ring of radius $$R$$ carries total charge $$Q$$ uniformly. Find the field a distance $$x$$ from the center along the ring's axis.
+
+Every charge element $$dq$$ is the same distance
+
+$$
+r=\sqrt{x^2+R^2}
+$$
+
+from the field point by Pythagorean Theorem. The sideways components cancel around the ring, so only the axial components add:
+
+$$
+dE_x=dE\cos\theta
+=k\frac{dq}{r^2}\cdot\frac{x}{r}
+=k\frac{x\,dq}{(x^2+R^2)^{3/2}}.
+$$
+
+Since $$x$$ and $$R$$ are constant over the ring,
+
+$$
+E_x=k\frac{x}{(x^2+R^2)^{3/2}}\int dq
+=k\frac{Qx}{(x^2+R^2)^{3/2}}.
+$$
+
+**ADD IMAGE**
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A rod of length $$2L$$ lies on the $$x$$-axis from $$-L$$ to $$L$$ with uniform charge density $$\lambda$$. Find the field at $$(0,a)$$.
+
+For a small element $$dq=\lambda\,dx$$ at position $$x$$, the distance to the point is $$r=\sqrt{x^2+a^2}$$. Horizontal components cancel between $$+x$$ and $$-x$$, so keep only the vertical component:
+
+$$
+dE_y=k\frac{dq}{r^2}\frac{a}{r}
+=k\lambda\frac{a\,dx}{(x^2+a^2)^{3/2}}.
+$$
+
+Therefore
+
+$$
+E_y=k\lambda a\int_{-L}^{L}\frac{dx}{(x^2+a^2)^{3/2}}
+=\frac{2k\lambda L}{a\sqrt{L^2+a^2}}.
+$$
+
+The field points away from the rod if $$\lambda>0$$ and toward the rod if $$\lambda<0$$.
+
+**ADD IMAGE**
+
+</div>
 
 ---
 
 ## Field lines
 
 Field lines are a pictorial tool: they leave positive charge, terminate on negative charge, and their spacing indicates field strength (closer lines mean larger $$|\vec{E}|$$). Field lines never cross, because the field at a point has a single direction.
+
+**ADD IMAGE**
 
 ---
 
@@ -199,12 +294,104 @@ $$
 \oint \vec{E} \cdot d\vec{A} = \frac{Q_{\text{enc}}}{\varepsilon_0}.
 $$
 
-The closed surface used in the integral is called a **Gaussian surface**; it is a mathematical construct, not a physical shell. The law is always true; it is computationally powerful when symmetry lets you pull $$|\vec{E}|$$ outside the integral because it is constant on the chosen surface.
+The closed surface used in the integral is called a **Gaussian surface**; it is a mathematical construct, not a physical shell. The law is always true; it is computationally powerful when symmetry lets you pull $$\lvert \vec{E} \rvert$$ outside the integral because it is constant on the chosen surface.
 
 Gauss’s law is especially efficient for:
 
 - spherically symmetric charge (use a concentric sphere),
 - infinite cylindrical symmetry (use a coaxial cylinder),
-- infinite planar symmetry (use a pillbox).
+- infinite planar symmetry (use a pillbox, which is a very short cylinder).
 
 Choose a surface on which $$E$$ is constant and parallel or perpendicular to $$d\vec{A}$$ on each piece, so the flux reduces to $$E$$ times an area.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Gauss's law for a point charge).** Put a point charge $$q$$ at the center of a sphere of radius $$r$$. On the sphere,
+
+$$
+E=\frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}
+$$
+
+and $$\vec E$$ is parallel to $$d\vec A$$ everywhere. Thus
+
+$$
+\oint \vec E\cdot d\vec A
+=E(4\pi r^2)
+=\frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}(4\pi r^2)
+=\frac{q}{\varepsilon_0}.
+$$
+
+The important cancellation is geometric: the field weakens like $$1/r^2$$ while the sphere's area grows like $$r^2$$. A general proof of Gauss's Law will not be described here but feel free to try on your own!
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A nonconducting sphere of radius $$R$$ has total charge $$Q$$ spread uniformly through its volume. Find $$E(r)$$.
+
+For $$r\ge R$$, a spherical Gaussian surface encloses all the charge:
+
+$$
+E(4\pi r^2)=\frac{Q}{\varepsilon_0}
+\quad\Rightarrow\quad
+E=\frac{1}{4\pi\varepsilon_0}\frac{Q}{r^2}.
+$$
+
+For $$r<R$$, only the charge inside radius $$r$$ is enclosed. Since the volume fraction is $$r^3/R^3$$,
+
+$$
+Q_{\text{enc}}=Q\frac{r^3}{R^3}.
+$$
+
+Then
+
+$$
+E(4\pi r^2)=\frac{Qr^3}{\varepsilon_0R^3}
+\quad\Rightarrow\quad
+E=\frac{1}{4\pi\varepsilon_0}\frac{Qr}{R^3}.
+$$
+
+Inside the sphere, the field grows linearly with distance from the center.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** An infinite line has uniform charge density $$\lambda$$. Find the electric field of the line a distance $$r$$ away from the line.
+
+The field is radial and constant on the curved side. The end caps have zero flux because $$\vec E$$ is parallel to the caps, not perpendicular to them. Therefore
+
+$$
+\oint \vec E\cdot d\vec A=E(2\pi rL).
+$$
+
+The enclosed charge is $$Q_{\text{enc}}=\lambda L$$, so
+
+$$
+E(2\pi rL)=\frac{\lambda L}{\varepsilon_0}
+\quad\Rightarrow\quad
+E=\frac{\lambda}{2\pi\varepsilon_0 r}.
+$$
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** An infinite nonconducting sheet has surface charge density $$\sigma$$. Use a thin pillbox crossing the sheet.
+
+The field points perpendicular to the sheet and has the same magnitude on both sides. The curved side of the pillbox contributes no flux, while the two flat faces contribute $$EA$$ each:
+
+$$
+\oint \vec E\cdot d\vec A=2EA.
+$$
+
+The enclosed charge is $$\sigma A$$, so
+
+$$
+2EA=\frac{\sigma A}{\varepsilon_0}
+\quad\Rightarrow\quad
+E=\frac{\sigma}{2\varepsilon_0}.
+$$
+
+</div>
+
+These examples are very common throughout AP Physics C E&M, and are worth memorizing how to do.
