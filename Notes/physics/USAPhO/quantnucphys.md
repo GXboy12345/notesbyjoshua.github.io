@@ -14,7 +14,7 @@ permalink: /notes/physics/quantnucphys/
 
 ## The semiclassical picture
 
-A full treatment of quantum mechanics needs the Schrödinger equation, but there is a **semiclassical** regime — historically discovered first, by people like Bohr — that explains an enormous amount with almost no machinery. The idea is to treat a particle as a wave, and demand that the wave fit together consistently.
+A full treatment of quantum mechanics needs the Schrödinger equation (beyond the scope of USAPhO), but there is a **semiclassical** regime, historically discovered first, by people like Bohr, that explains an enormous amount with almost no machinery. The idea is to treat a particle as a wave, and demand that the wave fit together consistently.
 
 The phase $$\phi$$ of a wave varies in space and time according to its wavenumber and angular frequency,
 
@@ -60,27 +60,21 @@ $$
 p = \hbar k, \qquad E = \hbar\omega,
 $$
 
-and for a nonrelativistic particle in a potential $$V(x)$$,
+where $$\hbar$$ is the reduced Planck constant (the exact value, $$\hbar = \frac{h}{2\pi} = 1.05 \cdot 10^{-34} J \cdot s$$ is usually given if necessary) and $$\omega$$ denotes angular velocity. For a nonrelativistic particle in a potential $$V(x)$$,
 
 $$
 E = \frac{p^2}{2m} + V(x).
 $$
 
-The group velocity is then $$v_g = d\omega/dk = dE/dp = p/m$$ — just the ordinary classical velocity. (The same relations hold relativistically if $$E$$ is the relativistic energy and $$p = \gamma m v_g$$.)
+The group velocity is then $$v_g = d\omega/dk = dE/dp = p/m$$, which just the ordinary classical velocity. (The same relations hold relativistically if $$E$$ is the relativistic energy and $$p = \gamma m v_g$$.)
 
-Because $$\omega$$ (hence $$E$$) is uniform for a standing wave, these quantum standing waves are **states of definite energy**. The quantization condition becomes the **WKB / Bohr–Sommerfeld** rule:
-
-<div class="theorem-box" markdown="1">
-
-**WKB quantization.** A semiclassical standing wave must satisfy
+Since $$\omega$$ (hence $$E$$) is uniform for a standing wave, these quantum standing waves are **states of definite energy**. The quantization condition becomes the **WKB / Bohr–Sommerfeld** rule:
 
 $$
 \oint p\,dx = \left(n + \frac{\alpha}{2\pi}\right) h, \qquad n = 0, 1, 2, \dots
 $$
 
 where the integral runs over one full classical period of the motion, and the extra phase $$\alpha$$ accounts for what happens at the turning points.
-
-</div>
 
 The rule for $$\alpha$$ at the two ends of the motion:
 
@@ -89,11 +83,13 @@ The rule for $$\alpha$$ at the two ends of the motion:
 
 So a box with two hard walls has $$\alpha = 2\pi$$ (equivalent to $$\alpha = 0$$), while a smooth potential well like the harmonic oscillator has $$\alpha = \pi$$.
 
-The left-hand side $$\oint p\,dx$$ is precisely the **adiabatic invariant** of classical mechanics, which is conserved when system parameters change slowly. This guarantees the quantization condition stays self-consistent over time.
+The left-hand side $$\oint p\,dx$$ is equivalent to the **adiabatic invariant** of classical mechanics, which is conserved when system parameters change slowly. This guarantees the quantization condition stays self-consistent over time.
 
-### Example: particle in a box
+<div class="theorem-box" markdown="1">
 
-For a particle of mass $$m$$ in a box of length $$L$$ with hard walls, $$\alpha = 0$$ and $$p$$ is constant inside, so $$\oint p\,dx = 2pL = nh$$, giving $$p = nh/2L$$ and
+**Example.** For a particle of mass $$m$$ in a box of length $$L$$ with hard walls, $$\alpha = 0$$ and $$p$$ is constant inside, find the energy inside the box. 
+
+$$\oint p\,dx = 2pL = nh$$, giving $$p = nh/2L$$ and
 
 $$
 E_n = \frac{p^2}{2m} = \frac{n^2 h^2}{8 m L^2}.
@@ -101,15 +97,21 @@ $$
 
 If instead the "particle" is a photon with $$E = pc$$, the same momenta give the standing-wave (cavity) frequencies $$E_n = nhc/2L$$ — the electromagnetic modes of a box with conducting walls.
 
-### Example: harmonic oscillator
+</div>
 
-For $$V(x) = \tfrac{1}{2}kx^2$$, the particle turns around at soft boundaries, so $$\alpha = \pi$$. Carrying out $$\oint p\,dx$$ over the ellipse in phase space gives the energy levels
+<div class="theorem-box" markdown="1">
+
+For a particle inside a harmonic osciallator with $$V(x) = \tfrac{1}{2}kx^2$$, find the energy of the particle.
+
+The particle turns around at soft boundaries, so $$\alpha = \pi$$. Carrying out $$\oint p\,dx$$ over the ellipse in phase space gives the energy levels
 
 $$
 \boxed{E_n = \hbar\omega_0\left(n + \tfrac{1}{2}\right)}, \qquad \omega_0 = \sqrt{\frac{k}{m}}.
 $$
 
 Remarkably this is the **exact** answer, even though WKB is an approximation. The leftover $$\tfrac{1}{2}\hbar\omega_0$$ at $$n=0$$ is the **zero-point energy** — the oscillator can never sit perfectly still.
+
+</div>
 
 ## Bohr quantization
 
@@ -129,7 +131,9 @@ Rotation differs from back-and-forth motion in two ways: $$n$$ can be positive o
 
 <div class="theorem-box" markdown="1">
 
-**Hydrogen via Bohr quantization.** Postulate a circular orbit and quantize angular momentum:
+**Example.** Find the energy of an electron at energy level $$n$$ of a hydrogen atom. Assume circular orbit.
+
+Quantize angular momentum:
 
 $$
 \frac{mv^2}{r} = \frac{e^2}{4\pi\epsilon_0 r^2}, \qquad L = mvr = n\hbar.
@@ -155,7 +159,7 @@ The same method handles hydrogen-like systems: for **positronium** (electron + p
 
 ### The correspondence principle
 
-The **correspondence principle** says quantum results must smoothly match classical ones in the limit $$\hbar \to 0$$, i.e. for large quantum numbers $$n \to \infty$$. For high $$n$$ you can superpose nearby orbitals into a sharply peaked wavepacket that orbits just like a classical particle — which is why the Bohr model still describes highly excited **Rydberg atoms**. In fact, demanding that the classical orbital frequency match the quantum transition frequency $$\Delta E = \hbar\omega$$ as $$n\to\infty$$ is exactly how Bohr originally *derived* his quantization rule.
+The **correspondence principle** says quantum results must smoothly match classical ones in the limit $$\hbar \to 0$$, i.e. for large quantum numbers $$n \to \infty$$. For high $$n$$ you can superpose nearby orbitals into a sharply peaked wavepacket that orbits just like a classical particle, which is why the Bohr model still describes highly excited **Rydberg atoms**. In fact, demanding that the classical orbital frequency match the quantum transition frequency $$\Delta E = \hbar\omega$$ as $$n\to\infty$$ is exactly how Bohr originally *derived* his quantization rule.
 
 ## Higher dimensions and degeneracy
 
