@@ -8,6 +8,8 @@ permalink: /notes/physics/waves/
 
 # Waves
 
+**Yo ts is not done yet please edit and stuff**
+
 ---
 
 ## Wave definition
@@ -402,9 +404,7 @@ $$
 
 This is a purely classical statement about waves — a narrow pulse needs a broad spectrum — but feeding in the de Broglie relation $$p = \hbar k$$ turns it directly into the Heisenberg uncertainty principle $$\Delta x\,\Delta p \gtrsim \hbar$$. In a dispersive medium the components of a packet travel at different speeds, so the packet gradually spreads out, or **disperses**.
 
-<div class="theorem-box" markdown="1">
-
-**Note (a wave with a minimum frequency).** Not every dispersion relation passes through the origin. If a string is tied down by a bed of springs, its equation of motion picks up an extra restoring term and the dispersion relation becomes
+However, not every dispersion relation passes through the origin. If a string is tied down by a bed of springs, its equation of motion picks up an extra restoring term and the dispersion relation becomes
 
 $$
 \omega^2 = \omega_0^2 + v^2 k^2.

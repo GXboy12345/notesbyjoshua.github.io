@@ -10,6 +10,7 @@ permalink: /notes/physics/optics/
 
 **TODO: REARRANGE AND ADD EXAMPLES/MORE PROOFS!**
 **ALSO ADD MORE STUFF**
+**Yo ts is not done yet please edit and stuff**
 
 ---
 
