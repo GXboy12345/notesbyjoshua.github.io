@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Optics
-parent: USAPhO Prep
+parent: Physics Competition Prep
 nav_order: 11
 permalink: /notes/physics/optics/
 ---

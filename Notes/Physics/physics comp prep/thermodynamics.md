@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Thermodynamics
-parent: USAPhO Prep
+parent: Physics Competition Prep
 nav_order: 9
 permalink: /notes/physics/thermodynamics/
 ---

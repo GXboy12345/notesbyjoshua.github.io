@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Advanced Mechanics
-parent: USAPhO Prep
+parent: Physics Competition Prep
 nav_order: 4
 permalink: /notes/physics/advmech/
 ---

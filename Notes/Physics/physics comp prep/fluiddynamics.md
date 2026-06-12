@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Fluid Dynamics
-parent: USAPhO Prep
+parent: Physics Competition Prep
 nav_order: 5
 permalink: /notes/physics/fluiddynamics/
 ---

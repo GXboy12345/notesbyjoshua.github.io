@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Waves
-parent: USAPhO Prep
+parent: Physics Competition Prep
 nav_order: 10
 permalink: /notes/physics/waves/
 ---

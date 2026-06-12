@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Modern Physics
-parent: USAPhO Prep
+parent: Physics Competition Prep
 nav_order: 6
 permalink: /notes/physics/quantnucphys/
 ---

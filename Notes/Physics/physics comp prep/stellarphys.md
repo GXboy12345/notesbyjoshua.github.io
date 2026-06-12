@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Stellar Physics
-parent: USAPhO Prep
+parent: Physics Competition Prep
 nav_order: 8
 permalink: /notes/physics/stellarphys/
 ---
