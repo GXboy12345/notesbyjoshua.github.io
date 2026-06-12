@@ -53,7 +53,7 @@ $$
 p(h)=p_0+\rho g h.
 $$
 
-Two consequences worth internalizing:
+Two major consequences come from this that are both worth memorizing:
 
 - **Pressure depends only on depth**, not on the shape of the container or the amount of fluid above (the *hydrostatic paradox*). A thin tube and a wide reservoir filled to the same height have the same bottom pressure.
 - **Connected fluid at the same height has the same pressure** (provided it's the same continuous fluid). This is the workhorse principle for manometer and U-tube problems: pick a horizontal level that lies in a single connected body of one fluid, and set the pressures on the two sides equal.
@@ -88,7 +88,7 @@ A **U-tube manometer** measures a pressure difference. The trick is always the s
 
 <div class="theorem-box" markdown="1">
 
-**Example (U-tube with two liquids).** A U-tube is partly filled with water ($$\rho_w$$). Oil of density $$\rho_o<\rho_w$$ is poured into the left arm, forming a column of height $$h_o$$ above the water. The water rises in the right arm. Find the height difference $$\Delta$$ between the two water surfaces.
+**Example.** A U-tube is partly filled with water ($$\rho_w$$). Oil of density $$\rho_o<\rho_w$$ is poured into the left arm, forming a column of height $$h_o$$ above the water. The water rises in the right arm. Find the height difference $$\Delta$$ between the two water surfaces.
 
 Pick the level of the oil–water interface in the left arm; this lies in the water, which is connected across the bottom. Pressure there from the left = $$p_{\text{atm}}+\rho_o g h_o$$. Pressure at the same height from the right = $$p_{\text{atm}}+\rho_w g \Delta$$. Equate:
 
@@ -118,21 +118,19 @@ A floating body displaces its own weight of fluid: $$\rho_{\text{body}}V_{\text{
 
 <div class="theorem-box" markdown="1">
 
-**Buoyancy is just the pressure integral.** It's worth seeing that Archimedes is not a new law. The net upward pressure force on a fully submerged object is
+**Remark.** It's worth seeing that Archimedes is not a new law. The net upward pressure force on a fully submerged object is
 
 $$
 F_B=\oint (-p\,\hat n)\cdot\hat z\,dA = -\oint p\,dA_z.
 $$
 
-By the divergence theorem this equals $$-\int \frac{\partial p}{\partial z}\,dV=\int \rho_{\text{fluid}}g\,dV=\rho_{\text{fluid}}gV$$. Same answer, but this form generalizes to **non-uniform pressure fields** — for instance buoyancy in an accelerating or rotating fluid, where you replace $$g$$ by the effective gravity $$g_{\text{eff}}$$.
+By the divergence theorem this equals $$-\int \frac{\partial p}{\partial z}\,dV=\int \rho_{\text{fluid}}g\,dV=\rho_{\text{fluid}}gV$$. Same answer, but this form generalizes to **non-uniform pressure fields** — for instance buoyancy in an accelerating or rotating fluid, where you replace $$g$$ by the effective gravity $$g_{\text{eff}}$$. This knowledge will not be needed for F=ma/USAPhO and is just a nice little extension.
 
 </div>
 
-### A classic subtlety: buoyancy in an accelerating frame
+If a container of fluid accelerates, the buoyant force uses the *effective* gravity. A helium balloon in a car that accelerates forward drifts forward, not backward: in the car frame there's a pseudo-gravity pointing backward, so the "up" (low-pressure) direction tilts forward, and the light balloon rises toward it. Always ask "which way is the pressure gradient?" rather than relying on intuition.
 
-If a container of fluid accelerates, the buoyant force uses the *effective* gravity. A helium balloon in a car that accelerates forward drifts *forward*, not backward: in the car frame there's a pseudo-gravity pointing backward, so the "up" (low-pressure) direction tilts forward, and the light balloon rises toward it. Always ask "which way is the pressure gradient?" rather than relying on intuition.
-
-### Stability of floating bodies — the metacenter
+### Stability of floating bodies (the metacenter)
 
 A floating body can be in vertical equilibrium yet still tip over. Stability against *rotation* is governed by the **metacenter** $$M$$: when the body heels by a small angle, the center of buoyancy $$B$$ shifts (because the displaced-volume shape changes), and the buoyant force's line of action crosses the body's centerline at $$M$$. If $$M$$ lies *above* the center of gravity $$G$$, the couple restores; if below, it capsizes. The **metacentric height** $$GM$$ is
 
@@ -140,39 +138,7 @@ $$
 GM=\frac{I}{V_{\text{disp}}}-BG,
 $$
 
-where $$I$$ is the second moment of area of the waterline cross-section about the tilt axis and $$V_{\text{disp}}$$ is the displaced volume. A wide, flat hull (large $$I$$) is stable; a tall narrow one tips. This shows up on harder USAPhO problems about why boats float upright.
-
----
-
-## Fluids in rigid-body motion
-
-A fluid that moves *without internal shear* — translating with uniform acceleration, or rotating as a solid block — is still "static" in the sense that parcels don't slide past each other, so we can use $$\nabla p = \rho(\vec g - \vec a)$$, the hydrostatic equation with an inertial correction. Equivalently, work in the accelerating frame with an effective gravity $$\vec g_{\text{eff}}=\vec g-\vec a$$, and free surfaces are perpendicular to $$\vec g_{\text{eff}}$$.
-
-### Linear acceleration
-
-A tank of liquid accelerating horizontally with $$a$$ has effective gravity tilted backward, so the free surface tilts at angle
-
-$$
-\tan\theta=\frac{a}{g}.
-$$
-
-The surface is a flat plane sloping up toward the back; pressure still increases linearly along $$\vec g_{\text{eff}}$$.
-
-### Rotating fluids — the parabolic surface
-
-A fluid in a bucket rotating at angular velocity $$\omega$$ settles into solid-body rotation. In the rotating frame each parcel feels gravity down and centrifugal force $$\rho\omega^2 r$$ outward. The pressure satisfies
-
-$$
-\frac{\partial p}{\partial r}=\rho\omega^2 r,\qquad \frac{\partial p}{\partial z}=-\rho g.
-$$
-
-Integrating, $$p=p_0-\rho g z+\tfrac12\rho\omega^2 r^2$$. A free surface is a constant-pressure surface, so
-
-$$
-z(r)=z_0+\frac{\omega^2 r^2}{2g}.
-$$
-
-The free surface is a **paraboloid**. This is a beautiful, frequently tested result — the surface rises at the rim and dips at the axis, and the rise equals the dip (the average height is unchanged because volume is conserved). It is also the principle behind liquid-mirror telescopes.
+where $$I$$ is the second moment of area of the waterline cross-section about the tilt axis and $$V_{\text{disp}}$$ is the displaced volume. A wide, flat hull (large $$I$$) is stable; a tall narrow one tips.
 
 ---
 
@@ -223,29 +189,29 @@ Smaller bubbles have higher internal pressure — which is why, if you connect a
 
 ### Capillary rise and contact angle
 
-Where liquid, solid, and air meet, the liquid makes a **contact angle** $$\theta$$ set by the balance of the three surface tensions (Young's relation). In a thin tube of radius $$r$$, the curved meniscus produces a Laplace pressure that lifts (or depresses) a column of height $$h$$. Balancing the upward surface-tension force $$2\pi r\gamma\cos\theta$$ against the weight $$\rho g \pi r^2 h$$ of the lifted column:
+Where liquid, solid, and air meet, the liquid makes a **contact angle** $$\theta$$ set by the balance of the three surface tensions (Young's relation). In a thin tube of radius $$r$$, the curved meniscus produces a Laplace pressure that lifts (or depresses) a column of height $$h$$. Balancing the upward surface-tension force $$2\pi r\gamma\cos\theta$$ against the weight $$\rho g \pi r^2 h$$ of the lifted column gives Jurin's law:
 
 $$
-\boxed{\ h=\frac{2\gamma\cos\theta}{\rho g r}\ }
+\ h=\frac{2\gamma\cos\theta}{\rho g r}\
 $$
 
-(**Jurin's law**). Water ($$\theta\approx 0$$) climbs; mercury ($$\theta>90^\circ$$) is pushed down. Rise is inversely proportional to tube radius — the basis of capillary action in plants and paper towels.
+Water ($$\theta\approx 0$$) climbs; mercury ($$\theta>90^\circ$$) is pushed down. Rise is inversely proportional to tube radius, the basis of capillary action in plants and paper towels.
 
 ---
 
 ## Fluid dynamics: kinematics
 
-Now the fluid moves. We describe flow by the velocity field $$\vec v(\vec r,t)$$.
+Now suppose the fluid moves. We describe flow by the velocity field $$\vec v(\vec r,t)$$.
 
-- **Streamlines** are curves everywhere tangent to $$\vec v$$. In **steady flow** ($$\partial/\partial t=0$$) streamlines are fixed and coincide with the paths fluid parcels actually follow.
-- **Laminar** flow is smooth and layered; **turbulent** flow is chaotic and mixing. Which one occurs is governed by the Reynolds number (below).
+- **Streamlines** are curves everywhere tangent to $$\vec v$$. In **steady flow** ($$\partial/\partial t=0$$) streamlines are fixed and coincide with the paths fluid parcels actually follow. Most fluid dynamic problems you see are governed by streamlines.
+- **Laminar** flow is smooth and layered; **turbulent** flow is chaotic and mixing. The one that occurs is governed by the Reynolds number (talked about later).
 
-### Conservation of mass: continuity
+### The continuity equation
 
 Mass cannot accumulate in a steady flow, so the mass flow rate $$\dot m=\rho A v$$ is the same through every cross-section of a streamtube. For an incompressible fluid ($$\rho$$ constant):
 
 $$
-\boxed{\ A_1 v_1 = A_2 v_2\ }\qquad(\text{volume flow rate } Q=Av=\text{const}).
+\ A_1 v_1 = A_2 v_2\ \qquad(\text{volume flow rate } Q=Av=\text{const}).
 $$
 
 Narrow the pipe and the fluid speeds up. This is exact for incompressible steady flow and is half of almost every flow problem.
@@ -258,7 +224,7 @@ Bernoulli is energy conservation for a fluid parcel along a streamline, under th
 
 <div class="theorem-box" markdown="1">
 
-**Derivation (work–energy on a streamtube).** Consider fluid in a thin streamtube between sections 1 and 2. In time $$dt$$, a slug of volume $$dV$$ effectively disappears at section 1 and reappears at section 2 (steady flow). Mass conservation: $$dm=\rho\,dV$$ is the same at both ends.
+**Proof (Bernoulli's equation).** Consider fluid in a thin streamtube between sections 1 and 2. In time $$dt$$, a slug of volume $$dV$$ effectively disappears at section 1 and reappears at section 2 (steady flow). Mass conservation: $$dm=\rho\,dV$$ is the same at both ends.
 
 The net work done on the slug:
 
@@ -277,7 +243,7 @@ $$
 Hence along a streamline,
 
 $$
-\boxed{\ p+\tfrac12\rho v^2+\rho g y=\text{const}\ }.
+\ p+\tfrac12\rho v^2+\rho g y=\text{const}\.
 $$
 
 Each term is an energy per unit volume: $$p$$ is "flow work," $$\tfrac12\rho v^2$$ is kinetic, $$\rho g y$$ is potential. The headline physics: **where a fluid moves faster, its pressure is lower** (at the same height). That single sentence explains lift, the Venturi meter, the curveball, and why shower curtains billow inward.
@@ -294,7 +260,7 @@ p_{\text{atm}}+\rho g h = p_{\text{atm}}+\tfrac12\rho v^2
 \boxed{\ v=\sqrt{2gh}\ }.
 $$
 
-The efflux speed is the same as if the fluid had *free-fallen* the height $$h$$ — a clean statement of energy conservation. A few standard extensions:
+The efflux speed is the same as if the fluid had *free-fallen* the height $$h$$. A few standard extensions:
 
 - **Range of the jet** from a hole at height $$y$$ in a tank of depth $$H$$: the jet leaves horizontally with $$v=\sqrt{2g(H-y)}$$ and falls for time $$t=\sqrt{2y/g}$$, landing at $$x=2\sqrt{y(H-y)}$$. This is maximized at $$y=H/2$$, and holes symmetric about the midpoint land at the same spot.
 - **Draining time:** combine Torricelli with continuity ($$A_{\text{tank}}\,\dot h = -A_{\text{hole}}\sqrt{2gh}$$) and integrate to find how long a tank takes to empty — the level drops as $$\sqrt{h}$$, giving a finite emptying time.
@@ -310,7 +276,7 @@ p_1-p_2=\tfrac12\rho(v_2^2-v_1^2)
 v_1=A_2\sqrt{\frac{2(p_1-p_2)}{\rho(A_1^2-A_2^2)}}.
 $$
 
-Measuring the pressure drop (e.g. with a side manometer) gives the flow rate. The same effect — fast flow, low pressure — runs aspirators, carburetors, and atomizers.
+Measuring the pressure drop (e.g. with a side manometer) gives the flow rate. The same effect, fast flow, low pressure, runs aspirators, carburetors, and atomizers.
 
 ### The Pitot tube
 
@@ -322,10 +288,6 @@ $$
 
 This is how aircraft measure airspeed.
 
-### Dynamic lift, qualitatively
-
-An airfoil or a spinning ball deflects air, and by Newton's third law the air pushes back — that momentum transfer is the honest origin of lift. The Bernoulli picture (faster flow over one side ⟶ lower pressure ⟶ net force) is a correct *bookkeeping* of the same effect for the pressure field, but be careful: the popular "equal transit time" story is wrong. On the F=ma exam, lift questions are usually answered with a momentum-flux argument (next section) rather than detailed Bernoulli.
-
 ---
 
 ## Momentum in fluids
@@ -336,21 +298,9 @@ $$
 \vec F_{\text{net}}=\frac{d\vec p}{dt}=\dot m\,\Delta \vec v,
 $$
 
-where $$\dot m=\rho A v$$ is the mass flow rate and $$\Delta\vec v$$ is the change in velocity the fluid undergoes. This is the **momentum-flux** or **control-volume** method: draw a box, add up the momentum flowing in and out, and that net rate equals the external force.
+where $$\dot m=\rho A v$$ is the mass flow rate and $$\Delta\vec v$$ is the change in velocity the fluid undergoes. This is the **momentum-flux** or **control-volume** method: draw a box, add up the momentum flowing in and out, and that net rate equals the external force. Note that the derivative is on the *mass* term instead of the velocity term for fluids.
 
-<div class="theorem-box" markdown="1">
-
-**Example (jet hitting a wall).** A horizontal water jet of cross-section $$A$$ and speed $$v$$ strikes a wall perpendicularly and spreads sideways, losing its horizontal momentum. The mass per second arriving is $$\dot m=\rho A v$$, each kilogram loses horizontal velocity $$v$$, so the force on the wall is
-
-$$
-F=\dot m\,v=\rho A v^2.
-$$
-
-If instead the jet hits a curved vane and *reverses* ($$\Delta v=2v$$), the force doubles to $$2\rho A v^2$$. This is the principle of the Pelton turbine.
-
-</div>
-
-This same reasoning gives **rocket/jet thrust** ($$F=\dot m\,v_{\text{exhaust}}$$) and the force needed to hold a bent pipe carrying flowing water. Whenever a problem asks for a *force* on a moving fluid (rather than a speed or pressure), reach for momentum flux, not Bernoulli.
+This same reasoning gives **rocket/jet thrust** ($$F=\dot m\,v_{\text{exhaust}}$$) and the force needed to hold a bent pipe carrying flowing water. Whenever a problem asks for a *force* on a moving fluid (rather than a speed or pressure), use momentum flux, not Bernoulli.
 
 ---
 
@@ -362,17 +312,15 @@ $$
 \tau = \mu\,\frac{dv}{dy}.
 $$
 
-A fluid obeying this with constant $$\mu$$ is **Newtonian** (water, air). Near a solid wall the fluid sticks to it — the **no-slip condition**, $$v=0$$ at the wall — which is what makes viscous problems have velocity *profiles* rather than plug flow.
+A fluid obeying this with constant $$\mu$$ is a **Newtonian** (water, air) fluid. Near a solid wall the fluid sticks to it, the **no-slip condition**, $$v=0$$ at the wall, which is what makes viscous problems have velocity *profiles* rather than plug flow.
 
 ### Poiseuille flow in a pipe
 
-For steady laminar flow of a Newtonian fluid through a circular pipe of radius $$R$$ and length $$L$$ under pressure difference $$\Delta p$$, balancing the pressure force on a coaxial cylinder of radius $$r$$ against the viscous drag on its surface gives a **parabolic velocity profile** $$v(r)=\frac{\Delta p}{4\mu L}(R^2-r^2)$$. Integrating over the cross-section gives the volume flow rate — **Poiseuille's law**:
+For steady laminar flow of a Newtonian fluid through a circular pipe of radius $$R$$ and length $$L$$ under pressure difference $$\Delta p$$, balancing the pressure force on a coaxial cylinder of radius $$r$$ against the viscous drag on its surface gives a **parabolic velocity profile** $$v(r)=\frac{\Delta p}{4\mu L}(R^2-r^2)$$. Integrating over the cross-section gives the volume flow rate (**Poiseuille's law**):
 
 $$
-\boxed{\ Q=\frac{\pi R^4\,\Delta p}{8\mu L}\ }.
+\ Q=\frac{\pi R^4\,\Delta p}{8\mu L}\.
 $$
-
-The dramatic $$R^4$$ dependence (halving a pipe's radius cuts flow 16-fold) explains why constricted arteries are so dangerous and why blood pressure responds so strongly to vessel diameter.
 
 ### Stokes' law and terminal velocity
 
@@ -390,8 +338,6 @@ $$
 v_t=\frac{2a^2 g(\rho_{\text{sphere}}-\rho_{\text{fluid}})}{9\mu}.
 $$
 
-This is exactly the Millikan oil-drop setup and a standard USAPhO scenario.
-
 ---
 
 ## Reynolds number and dimensional analysis
@@ -408,7 +354,7 @@ $$
 F_{\text{drag}}=\tfrac12 C_D\,\rho A v^2,
 $$
 
-quadratic in speed, with a drag coefficient $$C_D\sim O(1)$$. The crossover in a pipe is around $$\mathrm{Re}\approx 2300$$.
+quadratic in speed, with a drag coefficient $$C_D$$. The crossover in a pipe is around $$\mathrm{Re}\approx 2300$$.
 
 **Dimensional analysis** deserves emphasis because it cracks many fluid problems with no calculation. If you suspect drag depends on $$\rho$$, $$v$$, $$L$$, $$\mu$$, the only dimensionless group is $$\mathrm{Re}$$, so the drag *must* take the form $$F=\rho v^2 L^2\, f(\mathrm{Re})$$ for some unknown function $$f$$. The two limits above are just the small- and large-$$\mathrm{Re}$$ behaviors of $$f$$. The **Buckingham Pi theorem** formalizes this: $$n$$ variables built from $$k$$ independent dimensions form $$n-k$$ independent dimensionless groups, and any physical law relates only those groups. On the olympiad, when you don't know the governing equation, list the variables, find the dimensionless combinations, and you're often most of the way to the answer. (See also the [Math Tricks]({{ '/notes/physics/mathtricks/' | relative_url }}) and [Problem Solving Techniques]({{ '/notes/physics/techniques/' | relative_url }}) notes.)
 
