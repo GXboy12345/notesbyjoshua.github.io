@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Quantum and Modern Physics
+title: Modern Physics
 parent: USAPhO Prep
 nav_order: 3
 permalink: /notes/physics/quantnucphys/
 ---
 
-# Quantum and Nuclear Physics
+# Modern Physics
 
 **Yo ts is temp pls add more when get the chance**
 
@@ -60,7 +60,7 @@ $$
 p = \hbar k, \qquad E = \hbar\omega,
 $$
 
-where $$\hbar$$ is the reduced Planck constant (the exact value, $$\hbar = \frac{h}{2\pi} = 1.05 \cdot 10^{-34} J \cdot s$$ is usually given if necessary) and $$\omega$$ denotes angular velocity. For a nonrelativistic particle in a potential $$V(x)$$,
+where $$\hbar$$ is the reduced Planck constant (the exact value, $$\hbar = \frac{h}{2\pi} = 1.05 \cdot 10^{-34} J \cdot s$$ is usually given if necessary). For a nonrelativistic particle in a potential $$V(x)$$,
 
 $$
 E = \frac{p^2}{2m} + V(x).
@@ -87,29 +87,67 @@ The left-hand side $$\oint p\,dx$$ is equivalent to the **adiabatic invariant** 
 
 <div class="theorem-box" markdown="1">
 
-**Example.** For a particle of mass $$m$$ in a box of length $$L$$ with hard walls, $$\alpha = 0$$ and $$p$$ is constant inside, find the energy inside the box. 
+**Example.** For a particle of mass $$m$$ in a box of length $$L$$ with hard walls, $$\alpha = 0$$ and $$p$$ is constant inside, find the energy of the particle inside the box.
 
-$$\oint p\,dx = 2pL = nh$$, giving $$p = nh/2L$$ and
+Inside the box $$V = 0$$, so the particle moves freely at constant speed and constant momentum magnitude $$p$$, reflecting off each wall. One full period of the motion is a round trip: it crosses the box once moving right (momentum $$+p$$) and once moving left (momentum $$-p$$). The loop integral therefore picks up the same positive contribution on each leg,
 
 $$
-E_n = \frac{p^2}{2m} = \frac{n^2 h^2}{8 m L^2}.
+\oint p\,dx = \int_0^L (+p)\,dx + \int_L^0 (-p)\,dx = pL + pL = 2pL.
 $$
 
-If instead the "particle" is a photon with $$E = pc$$, the same momenta give the standing-wave (cavity) frequencies $$E_n = nhc/2L$$ — the electromagnetic modes of a box with conducting walls.
+Two hard walls give $$\alpha = 2\pi$$, equivalent to $$\alpha = 0$$, so the quantization rule is simply $$\oint p\,dx = nh$$:
+
+$$
+2pL = nh \quad\Longrightarrow\quad p = \frac{nh}{2L}.
+$$
+
+Since all the energy is kinetic,
+
+$$
+E_n = \frac{p^2}{2m} = \frac{n^2 h^2}{8 m L^2}, \qquad n = 1, 2, 3, \dots
+$$
+
+The levels grow as $$n^2$$, and the spacing widens with increasing $$n$$ — the opposite of the evenly spaced oscillator levels below. (Note $$n=0$$ is excluded: it would mean $$p=0$$, a particle at rest spread over the whole box, which violates uncertainty.)
+
+If instead the "particle" is a photon with $$E = pc$$ rather than $$p^2/2m$$, the *same* momenta $$p = nh/2L$$ give the standing-wave (cavity) frequencies
+
+$$
+E_n = pc = \frac{nhc}{2L},
+$$
+
+the electromagnetic modes of a box with conducting walls. These are exactly the modes whose zero-point energies are summed in the Casimir and blackbody discussions later.
 
 </div>
 
 <div class="theorem-box" markdown="1">
 
-For a particle inside a harmonic osciallator with $$V(x) = \tfrac{1}{2}kx^2$$, find the energy of the particle.
+For a particle inside a harmonic oscillator with $$V(x) = \tfrac{1}{2}kx^2$$, find the energy of the particle.
 
-The particle turns around at soft boundaries, so $$\alpha = \pi$$. Carrying out $$\oint p\,dx$$ over the ellipse in phase space gives the energy levels
+A particle of energy $$E$$ satisfies $$E = \dfrac{p^2}{2m} + \tfrac{1}{2}kx^2$$. Rearranging,
 
 $$
-\boxed{E_n = \hbar\omega_0\left(n + \tfrac{1}{2}\right)}, \qquad \omega_0 = \sqrt{\frac{k}{m}}.
+\frac{p^2}{2mE} + \frac{x^2}{2E/k} = 1,
 $$
 
-Remarkably this is the **exact** answer, even though WKB is an approximation. The leftover $$\tfrac{1}{2}\hbar\omega_0$$ at $$n=0$$ is the **zero-point energy** — the oscillator can never sit perfectly still.
+which is an **ellipse** in the $$(x,p)$$ phase plane with semi-axes
+
+$$
+x_{\max} = \sqrt{\frac{2E}{k}}, \qquad p_{\max} = \sqrt{2mE}.
+$$
+
+The loop integral $$\oint p\,dx$$ is just the area enclosed by this ellipse, $$\pi\, x_{\max} p_{\max}$$:
+
+$$
+\oint p\,dx = \pi\sqrt{\frac{2E}{k}}\,\sqrt{2mE} = 2\pi E\sqrt{\frac{m}{k}} = \frac{2\pi E}{\omega_0}, \qquad \omega_0 = \sqrt{\frac{k}{m}}.
+$$
+
+The particle turns around at two **soft** turning points (the potential rises smoothly through $$E$$), each contributing $$\pi/2$$, so $$\alpha = \pi$$ and the quantization rule reads $$\oint p\,dx = \left(n + \tfrac{1}{2}\right)h$$. Setting the two equal,
+
+$$
+\frac{2\pi E}{\omega_0} = \left(n + \tfrac{1}{2}\right)h \quad\Longrightarrow\quad E_n = \left(n + \tfrac{1}{2}\right)\frac{h\,\omega_0}{2\pi} = \hbar\omega_0\left(n + \tfrac{1}{2}\right).
+$$
+
+Unlike the box, these levels are **evenly spaced** by $$\hbar\omega_0$$. Remarkably this is the **exact** answer, even though WKB is an approximation. The leftover $$\tfrac{1}{2}\hbar\omega_0$$ at $$n=0$$ is the **zero-point energy** — the oscillator can never sit perfectly still, consistent with the uncertainty-principle estimate at the end of this page.
 
 </div>
 
@@ -133,25 +171,43 @@ Rotation differs from back-and-forth motion in two ways: $$n$$ can be positive o
 
 **Example.** Find the energy of an electron at energy level $$n$$ of a hydrogen atom. Assume circular orbit.
 
-Quantize angular momentum:
+Two equations govern a circular orbit. First, the Coulomb attraction supplies the centripetal force,
 
 $$
-\frac{mv^2}{r} = \frac{e^2}{4\pi\epsilon_0 r^2}, \qquad L = mvr = n\hbar.
+\frac{mv^2}{r} = \frac{e^2}{4\pi\epsilon_0 r^2} \quad\Longrightarrow\quad mv^2 = \frac{e^2}{4\pi\epsilon_0 r}. \tag{1}
 $$
 
-Solving for $$v$$ and substituting gives the allowed radii
+Second, the Bohr condition quantizes angular momentum,
+
+$$
+L = mvr = n\hbar \quad\Longrightarrow\quad v = \frac{n\hbar}{mr}. \tag{2}
+$$
+
+Substitute $$(2)$$ into $$(1)$$ to eliminate $$v$$:
+
+$$
+m\left(\frac{n\hbar}{mr}\right)^2 = \frac{e^2}{4\pi\epsilon_0 r} \;\Longrightarrow\; \frac{n^2\hbar^2}{m r^2} = \frac{e^2}{4\pi\epsilon_0 r},
+$$
+
+and solving for $$r$$ gives the allowed radii
 
 $$
 r_n = \frac{4\pi\epsilon_0 \hbar^2}{m e^2}\, n^2 = a_0 n^2, \qquad a_0 \approx 5.3\times10^{-11}\,\text{m},
 $$
 
-where $$a_0$$ is the **Bohr radius**. For an inverse-square force the total energy is half the potential energy, so
+where $$a_0$$ is the **Bohr radius**. For the energy, note the kinetic energy from $$(1)$$ is $$\tfrac{1}{2}mv^2 = \tfrac{1}{2}\dfrac{e^2}{4\pi\epsilon_0 r}$$, while the potential energy is $$U = -\dfrac{e^2}{4\pi\epsilon_0 r}$$. Their sum is
+
+$$
+E = \frac{1}{2}\frac{e^2}{4\pi\epsilon_0 r} - \frac{e^2}{4\pi\epsilon_0 r} = -\frac{e^2}{8\pi\epsilon_0 r},
+$$
+
+the general fact that for an inverse-square force the total energy is half the potential energy (the virial theorem). Inserting $$r = r_n$$,
 
 $$
 E_n = -\frac{e^2}{8\pi\epsilon_0 r_n} = -\frac{m e^4}{2(4\pi\epsilon_0)^2 \hbar^2}\,\frac{1}{n^2}.
 $$
 
-The constant prefactor is the **Rydberg energy**, $$13.6\,\text{eV}$$.
+The constant prefactor is the **Rydberg energy**, $$13.6\,\text{eV}$$, so $$E_n = -13.6\,\text{eV}/n^2$$. A jump from level $$n_i$$ to $$n_f$$ emits a photon of energy $$13.6\,\text{eV}\,(1/n_f^2 - 1/n_i^2)$$ — the Rydberg formula for the hydrogen spectral lines.
 
 </div>
 
@@ -194,11 +250,9 @@ $$
 
 The boundary conditions don't matter for bulk statistical properties — a fact worth remembering, since Rayleigh originally botched it by using hard walls *and* allowing negative $$n_i$$, overcounting by a factor of 8 (later fixed by Jeans).
 
-## The uncertainty principle
+## Heisenberg's Uncertainty Principle
 
-<div class="theorem-box" markdown="1">
-
-**Heisenberg uncertainty.** The standard deviations of position and momentum obey
+The **Heisenberg uncertainty principle** states that the standard deviations of position and momentum obey
 
 $$
 \Delta x\,\Delta p \ge \frac{\hbar}{2}.
@@ -206,17 +260,59 @@ $$
 
 </div>
 
-On Olympiad problems this is mostly used for **order-of-magnitude estimates**, where numeric factors don't matter. The semiclassical limit is just the regime where the required uncertainty is small compared to the scales involved, reached for $$n \gg 1$$.
+The semiclassical limit is just the regime where the required uncertainty is small compared to the scales involved, reached for $$n \gg 1$$.
 
-**Example — oscillator ground state.** With kinetic energy $$\sim (\Delta p)^2/2m$$ and potential $$\sim \tfrac{1}{2}k(\Delta x)^2$$, and using $$\Delta p \sim \hbar/\Delta x$$,
+<div class="theorem-box" markdown="1">
+
+**Example.** Approximate the energy of an oscillator at ground state.
+
+In the ground state the particle is localized to within $$\Delta x$$ of the origin, with a spread of momentum $$\Delta p$$. Its typical kinetic energy is $$\sim (\Delta p)^2/2m$$ and its typical potential energy is $$\sim \tfrac{1}{2}k(\Delta x)^2$$. Uncertainty ties the two scales together, $$\Delta p \sim \hbar/\Delta x$$, so writing everything in terms of $$\Delta x$$ (and dropping order-unity factors),
 
 $$
-E \sim k(\Delta x)^2 + \frac{\hbar^2}{m(\Delta x)^2}.
+E \sim \frac{\hbar^2}{m(\Delta x)^2} + k(\Delta x)^2.
 $$
 
-Minimizing over $$\Delta x$$ gives $$(\Delta x)^2 \sim \hbar/\sqrt{km}$$ and $$E \sim \hbar\sqrt{k/m} \sim \hbar\omega$$, reproducing the zero-point energy. The same trick on hydrogen yields the Bohr radius and Rydberg.
+Squeezing the particle (small $$\Delta x$$) raises the kinetic term; spreading it out raises the potential term — the ground state balances the two. Minimize: set $$dE/d(\Delta x) = 0$$,
 
-**Example — single-slit diffraction.** A photon through a slit of width $$a$$ acquires transverse momentum $$\Delta p_y \sim h/a$$, so the beam spreads by an angle $$\Delta\theta \sim \Delta p_y/p_x \sim \lambda/a$$, giving a pattern of width $$\Delta y \sim D\lambda/a$$ on a screen at distance $$D$$. The quantum derivation matches the classical wave-optics one — and now applies to matter waves too, with $$\lambda = h/p$$.
+$$
+-\frac{2\hbar^2}{m(\Delta x)^3} + 2k(\Delta x) = 0 \quad\Longrightarrow\quad (\Delta x)^4 \sim \frac{\hbar^2}{mk} \quad\Longrightarrow\quad (\Delta x)^2 \sim \frac{\hbar}{\sqrt{km}}.
+$$
+
+Substituting back, both terms become $$\sim \hbar\sqrt{k/m}$$, so
+
+$$
+E \sim \hbar\sqrt{\frac{k}{m}} \sim \hbar\omega_0,
+$$
+
+reproducing the zero-point energy $$\tfrac12\hbar\omega_0$$ up to the numerical factor. The same trick on hydrogen — balancing $$\hbar^2/2m(\Delta x)^2$$ against $$-e^2/4\pi\epsilon_0\Delta x$$ — yields the Bohr radius and Rydberg.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the width of a diffraction of a ray with wavelength $$\lambda$$ going through a single slit with width $$a$$ from a distance $$D$$ away.
+
+Passing through a slit of width $$a$$ confines the photon's transverse position to $$\Delta y \sim a$$. By uncertainty it therefore picks up a transverse momentum
+
+$$
+\Delta p_y \sim \frac{\hbar}{a} \sim \frac{h}{a}.
+$$
+
+Meanwhile its forward momentum is $$p_x = h/\lambda$$. The beam spreads by an angle equal to the ratio of transverse to forward momentum,
+
+$$
+\Delta\theta \sim \frac{\Delta p_y}{p_x} \sim \frac{h/a}{h/\lambda} = \frac{\lambda}{a},
+$$
+
+so on a screen a distance $$D$$ away the pattern has width
+
+$$
+\Delta y_{\text{screen}} \sim D\,\Delta\theta \sim \frac{D\lambda}{a}.
+$$
+
+The narrower the slit, the wider the spread — the hallmark of diffraction. This quantum derivation reproduces the classical wave-optics result, and now applies to matter waves too, with the de Broglie wavelength $$\lambda = h/p$$.
+
+</div>
 
 ### Energy–time uncertainty
 
@@ -269,11 +365,31 @@ At $$T = 0$$ this is a step function: every state below $$\mu$$ is filled, every
 
 <div class="theorem-box" markdown="1">
 
-**Fermi energy of a free electron gas.** Filling states (two spins each) up to $$E_F$$ in a box of volume $$V$$ with $$N$$ electrons, the count $$N$$ relates to $$E_F$$ through the density of states, giving
+**Fermi energy of a free electron gas.** We fill the lowest states with $$N$$ electrons in a box of volume $$V$$ and ask for the energy $$E_F$$ of the highest occupied state. The number of *spatial* states with energy at most $$E$$ was found above from the density of states,
 
 $$
-E_F = \frac{h^2}{2m_e}\left(\frac{3N}{8\pi V}\right)^{2/3}.
+N_{\text{spatial}}(E) = \frac{V}{6\pi^2}\left(\frac{2mE}{\hbar^2}\right)^{3/2}.
 $$
+
+Each spatial state holds **two** electrons (spin up and spin down), so at $$T=0$$ all states up to $$E_F$$ are filled and
+
+$$
+N = 2\,N_{\text{spatial}}(E_F) = \frac{V}{3\pi^2}\left(\frac{2mE_F}{\hbar^2}\right)^{3/2}.
+$$
+
+Solve for $$E_F$$. First isolate the bracket,
+
+$$
+\left(\frac{2mE_F}{\hbar^2}\right)^{3/2} = \frac{3\pi^2 N}{V} \quad\Longrightarrow\quad \frac{2mE_F}{\hbar^2} = \left(\frac{3\pi^2 N}{V}\right)^{2/3},
+$$
+
+so that
+
+$$
+E_F = \frac{\hbar^2}{2m_e}\left(\frac{3\pi^2 N}{V}\right)^{2/3} = \frac{h^2}{2m_e}\left(\frac{3N}{8\pi V}\right)^{2/3},
+$$
+
+where the second form just uses $$\hbar = h/2\pi$$ to absorb the $$\pi$$'s. The Fermi energy depends only on the **number density** $$N/V$$, not on $$N$$ and $$V$$ separately — it is an intensive property of the gas.
 
 </div>
 
