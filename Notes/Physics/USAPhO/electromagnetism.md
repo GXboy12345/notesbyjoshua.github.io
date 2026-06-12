@@ -177,7 +177,7 @@ $$
 d\Phi_E=\frac{q}{4\pi\varepsilon_0}\,d\Omega.
 $$
 
-If the charge is inside the closed surface, the surface surrounds the charge once, so the total solid angle is $$4\pi$$ steradians. Hence
+If the charge is inside the closed surface, the surface surrounds the charge once, so the total solid angle is $$4\pi$$ steradians (3D equivalent of radians). Hence
 
 $$
 \oint \vec E\cdot d\vec A
@@ -288,24 +288,13 @@ $$
 
 This comes from a thin Gaussian pillbox crossing the surface: the inside face has zero flux because the field inside the conductor is zero, and the outer face contributes $$EA$$.
 
-<div class="theorem-box" markdown="1">
-
-**Example.** If two non-overlapping spherically symmetric charged bodies have total charges $$Q_1$$ and $$Q_2$$, then outside each body the field is the same as if all charge were concentrated at its center. Therefore the force between them is
-
-$$
-F=k\frac{Q_1Q_2}{r^2},
-$$
-
-where $$r$$ is the distance between centers. This is the same structural idea as the gravitational shell theorem.
-</div>
-
 For advanced conductor problems, the outward electrostatic pressure on a charged conducting surface is
 
 $$
 P=\frac{\sigma^2}{2\varepsilon_0}.
 $$
 
-One way to remember this is that the surface charge feels the field from the rest of the conductor, not the full field including itself; that gives the factor of $$1/2$$.
+One way to remember this is that the surface charge feels the field from the rest of the conductor, not the full field including itself; that gives the factor of $$1/2$$. This is also equal to the energy density of a conductor, although that is rarely used.
 
 ## Multipole thinking
 

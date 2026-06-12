@@ -76,7 +76,7 @@ $$
 \Delta L = \alpha L\,\Delta T = (1.1\times 10^{-5})(25)(40) = 1.1\times 10^{-2}\text{ m}.
 $$
 
-So a gap of about $$11\text{ mm}$$ is needed. Note that we used the installed length and the temperature *change* (the size of a degree is the same in $$^\circ\text{C}$$ and K); the absolute temperature never enters.
+So a gap of about $$11\text{ mm}$$ is needed. Note that we used the installed length and the temperature *change* (the size of a degree is the same in $$^\circ\text{C}$$ and $$^\circ\text{K}$$); the absolute temperature never enters.
 
 </div>
 
@@ -291,7 +291,7 @@ The same idea extends to any number of layers: just sum all the $$L_i/k_i$$ in t
 
 **Convection** transfers heat through bulk fluid motion: warmed fluid expands, becomes less dense, and rises while cooler fluid sinks, setting up a circulation.
 
-**Radiation** transfers energy by electromagnetic waves, requiring no medium. Every object emits radiation depending on its temperature; the power radiated scales as the fourth power of the Kelvin temperature. Earth's average temperature levels off near $$300\text{ K}$$ because at that temperature it radiates energy away as fast as it absorbs it from the Sun.
+**Radiation** transfers energy by electromagnetic waves, requiring no medium. Every object emits radiation depending on its temperature; the power radiated scales as the fourth power of the Kelvin temperature (see [Stellar Physics]({{ '/notes/physics/stellarphys/' | relative_url }})). Earth's average temperature levels off near $$300\text{ K}$$ because at that temperature it radiates energy away as fast as it absorbs it from the Sun.
 
 ### Heat capacity and latent heat
 
