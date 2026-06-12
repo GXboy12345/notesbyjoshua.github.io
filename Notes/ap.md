@@ -26,7 +26,7 @@ These notes will roughly follow a AP curriculum but might have some extra stuff 
 > AP Calculus AB/BC
 
 > **Note:**
-> If you are looking for AP Physics 1 material, use the AP Physics C Mechanics notes but ignore all parts with calculus. For the unit not covered in AP Physics C Mech (Fluids), check out the respective sections in the physics portal (under the F=ma section)
+> If you are looking for AP Physics 1 material, use the AP Physics C Mechanics notes but ignore all parts with calculus. For the unit not covered in AP Physics C Mech (Fluids), check out the respective sections in the physics portal (under the USAPhO section)
 
 - ### [AP Physics C E&M hub]({{ '/notes/ap/ap-physics-c-em/' | relative_url }})
 

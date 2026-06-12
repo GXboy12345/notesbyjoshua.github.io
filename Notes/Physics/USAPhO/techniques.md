@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Problem Solving Techniques
-parent: F=ma Prep
-nav_order: 2
+parent: USAPhO Prep
+nav_order: 3
 permalink: /notes/physics/techniques/
 ---
 

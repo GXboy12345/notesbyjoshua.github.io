@@ -2,7 +2,7 @@
 layout: default
 title: USAPhO Prep
 parent: Physics
-nav_order: 4
+nav_order: 3
 permalink: /notes/physics/usapho/
 ---
 
@@ -15,7 +15,10 @@ A big thanks to Michael Zhao for collaborating with me on this page! Many of the
 ## Units
 
 - [Math Tricks]({{ '/notes/physics/mathtricks/' | relative_url }})
+- [Uncertainty]({{ '/notes/physics/uncertainty/' | relative_url }})
+- [Problem-Solving Techniques]({{ '/notes/physics/techniques/' | relative_url }})
 - [Advanced Mechanics]({{ '/notes/physics/advmech/' | relative_url }})
+- [Fluid Dynamics]({{ '/notes/physics/fluiddynamics/' | relative_url }})
 - [Quantum and Modern Physics]({{ '/notes/physics/quantnucphys/' | relative_url }})
 - [Relativity]({{ '/notes/physics/relativity/' | relative_url }})
 - [Stellar Physics]({{ '/notes/physics/stellarphys/' | relative_url }})

@@ -21,19 +21,16 @@ AP Physics C Mechanics and E&M are organized under [AP Notes]({{ '/notes/ap/' | 
 
 The below material are physics olympiad prep outside of the usual AP curriculum.
 
-### [F=ma Prep]({{ '/notes/physics/f-ma/' | relative_url }})
-
-- [Uncertainty]({{ '/notes/physics/uncertainty/' | relative_url }})
-- [Fluid Dynamics]({{ '/notes/physics/fluiddynamics/' | relative_url }})
-- [Mechanics Techniques]({{ '/notes/physics/techniques/' | relative_url }})
-
 ### [USAPhO Prep]({{ '/notes/physics/usapho/' | relative_url }})
 
 - [Math Tricks]({{ '/notes/physics/mathtricks/' | relative_url }})
+- [Uncertainty]({{ '/notes/physics/uncertainty/' | relative_url }})
+- [Mechanics Techniques]({{ '/notes/physics/techniques/' | relative_url }})
 - [Advanced Mechanics]({{ '/notes/physics/advmech/' | relative_url }})
-- [Electromagnetism]({{ '/notes/physics/electromagnetism/' | relative_url }})
-- [Optics/Waves]({{ '/notes/physics/waves/' | relative_url }})
-- [Thermodynamics]({{ '/notes/physics/thermodynamics/' | relative_url }})
+- [Fluid Dynamics]({{ '/notes/physics/fluiddynamics/' | relative_url }})
 - [Modern/Nuclear Physics]({{ '/notes/physics/quantnucphys/' | relative_url }})
 - [Relativity]({{ '/notes/physics/relativity/' | relative_url }})
 - [Stellar Physics]({{ '/notes/physics/stellarphys/' | relative_url }})
+- [Thermodynamics]({{ '/notes/physics/thermodynamics/' | relative_url }})
+- [Optics/Waves]({{ '/notes/physics/waves/' | relative_url }})
+- [Electromagnetism]({{ '/notes/physics/electromagnetism/' | relative_url }})
