@@ -67,7 +67,9 @@ $$
 W_{\text{net}} = \Delta K.
 $$
 
-This follows from Newton's second law:
+<div class="theorem-box" markdown="1">
+
+**Proof (Work-Energy Theorem).** Start with Newton's second law and the definition of work:
 
 $$
 W_{\text{net}} = \int \vec{F}_{\text{net}}\cdot d\vec{r}
@@ -75,6 +77,14 @@ W_{\text{net}} = \int \vec{F}_{\text{net}}\cdot d\vec{r}
 = \int m\vec{v}\cdot d\vec{v}
 = \frac{1}{2}mv_f^2-\frac{1}{2}mv_i^2.
 $$
+
+The key substitution is $$d\vec{r}=\vec{v}\,dt$$. Because $$\vec{v}\cdot d\vec{v}=\frac{1}{2}d(v^2)$$, the integral turns into the change in $$\frac{1}{2}mv^2$$. Therefore
+
+$$
+W_{\text{net}}=\Delta K.
+$$
+
+</div>
 
 This derivation is worth knowing because it explains why energy methods remain valid even when force varies with position.
 
@@ -132,6 +142,52 @@ $$
 
 The negative sign means a bound mass has less energy than it would have infinitely far away.
 
+<div class="theorem-box" markdown="1">
+
+**Proof (Near-Earth and Universal Gravitational Potential Energy).** Near Earth's surface, the gravitational force is approximately constant:
+
+$$
+\vec{F}_g=-mg\hat{y}.
+$$
+
+Since $$W_g=-\Delta U_g$$,
+
+$$
+\Delta U_g=-W_g=-\int_{y_i}^{y_f}(-mg)\,dy=mg(y_f-y_i).
+$$
+
+So, choosing $$U_g=0$$ at $$y=0$$,
+
+$$
+U_g=mgy.
+$$
+
+For universal gravitation,
+
+$$
+F_r=-\frac{GMm}{r^2}.
+$$
+
+Using $$F_r=-dU/dr$$,
+
+$$
+\frac{dU}{dr}=\frac{GMm}{r^2}.
+$$
+
+Integrate:
+
+$$
+U(r)=-\frac{GMm}{r}+C.
+$$
+
+Choosing $$U(\infty)=0$$ forces $$C=0$$, so
+
+$$
+U_g(r)=-\frac{GMm}{r}.
+$$
+
+</div>
+
 ---
 
 ## Spring Potential Energy
@@ -156,6 +212,46 @@ $$
 
 The spring does negative work when stretched farther from equilibrium and positive work when returning toward equilibrium.
 
+<div class="theorem-box" markdown="1">
+
+**Proof (Spring Potential Energy).** Hooke's law is
+
+$$
+F_s=-kx.
+$$
+
+For a conservative force,
+
+$$
+F_s=-\frac{dU_s}{dx}.
+$$
+
+Therefore
+
+$$
+-kx=-\frac{dU_s}{dx},
+$$
+
+so
+
+$$
+\frac{dU_s}{dx}=kx.
+$$
+
+Integrating gives
+
+$$
+U_s=\frac{1}{2}kx^2+C.
+$$
+
+Choosing $$U_s=0$$ at equilibrium, where $$x=0$$, makes $$C=0$$. Thus
+
+$$
+U_s=\frac{1}{2}kx^2.
+$$
+
+</div>
+
 ---
 
 ## Conservation of Mechanical Energy
@@ -171,6 +267,46 @@ If only conservative forces do work,
 $$
 K_i + U_i = K_f + U_f.
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Conservation of Mechanical Energy).** The work-energy theorem says
+
+$$
+W_{\text{net}}=\Delta K.
+$$
+
+If only conservative forces do work,
+
+$$
+W_{\text{net}}=W_{\text{cons}}.
+$$
+
+By definition of potential energy,
+
+$$
+W_{\text{cons}}=-\Delta U.
+$$
+
+Therefore
+
+$$
+\Delta K=-\Delta U,
+$$
+
+or
+
+$$
+\Delta(K+U)=0.
+$$
+
+So
+
+$$
+K_i+U_i=K_f+U_f.
+$$
+
+</div>
 
 If nonconservative forces such as kinetic friction, air drag, or applied pushes do work, then
 

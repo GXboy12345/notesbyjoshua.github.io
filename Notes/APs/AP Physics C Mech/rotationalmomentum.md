@@ -41,6 +41,41 @@ $$
 
 This form is especially important for rolling objects. The translational term tracks motion of the center of mass; the rotational term tracks spinning about the center of mass.
 
+<div class="theorem-box" markdown="1">
+
+**Proof (Rotational Kinetic Energy).** Treat a rigid body as many small masses $$m_i$$. If the body rotates with angular speed $$\omega$$ about a fixed axis, the speed of mass $$m_i$$ is
+
+$$
+v_i=r_i\omega.
+$$
+
+Total kinetic energy is
+
+$$
+K=\sum_i \frac{1}{2}m_iv_i^2.
+$$
+
+Substitute $$v_i=r_i\omega$$:
+
+$$
+K=\sum_i \frac{1}{2}m_i(r_i\omega)^2
+=\frac{1}{2}\omega^2\sum_i m_ir_i^2.
+$$
+
+Since
+
+$$
+I=\sum_i m_ir_i^2,
+$$
+
+we get
+
+$$
+K_{\text{rot}}=\frac{1}{2}I\omega^2.
+$$
+
+</div>
+
 ---
 
 ## Rotational Work
@@ -154,6 +189,46 @@ $$
 $$
 
 This form explains why angular momentum is conserved when the net external torque about the chosen axis is zero.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Torque as Rate of Change of Angular Momentum).** For a particle,
+
+$$
+\vec{L}=\vec{r}\times\vec{p}.
+$$
+
+Differentiate:
+
+$$
+\frac{d\vec{L}}{dt}=\frac{d\vec{r}}{dt}\times\vec{p}+\vec{r}\times\frac{d\vec{p}}{dt}.
+$$
+
+Since $$d\vec{r}/dt=\vec{v}$$ and $$\vec{p}=m\vec{v}$$, the first term is
+
+$$
+\vec{v}\times m\vec{v}=0.
+$$
+
+The second term becomes
+
+$$
+\vec{r}\times\vec{F}=\vec{\tau}.
+$$
+
+Therefore
+
+$$
+\frac{d\vec{L}}{dt}=\vec{\tau}.
+$$
+
+For a system of particles, internal torques cancel under the usual Newtonian assumptions, leaving
+
+$$
+\frac{d\vec{L}_{\text{sys}}}{dt}=\sum \vec{\tau}_{\text{ext}}.
+$$
+
+</div>
 
 ---
 

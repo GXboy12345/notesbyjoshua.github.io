@@ -54,6 +54,48 @@ $$
 
 The constants $$A$$ and $$\phi$$ are set by initial position and velocity.
 
+<div class="theorem-box" markdown="1">
+
+**Proof (Sinusoidal Motion Solves SHM).** The SHM differential equation is
+
+$$
+\frac{d^2x}{dt^2}+\omega^2x=0.
+$$
+
+Try
+
+$$
+x(t)=A\cos(\omega t+\phi).
+$$
+
+Differentiate once:
+
+$$
+\frac{dx}{dt}=-A\omega\sin(\omega t+\phi).
+$$
+
+Differentiate again:
+
+$$
+\frac{d^2x}{dt^2}=-A\omega^2\cos(\omega t+\phi).
+$$
+
+Since $$x=A\cos(\omega t+\phi)$$,
+
+$$
+\frac{d^2x}{dt^2}=-\omega^2x.
+$$
+
+So
+
+$$
+\frac{d^2x}{dt^2}+\omega^2x=0.
+$$
+
+Thus sinusoidal motion is exactly the motion produced by a restoring acceleration proportional to $$-x$$.
+
+</div>
+
 ---
 
 ## Velocity and Acceleration in SHM
@@ -137,6 +179,52 @@ T=2\pi\sqrt{\frac{m}{k}}.
 $$
 
 The period does not depend on amplitude for an ideal spring.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Mass-Spring Period).** Hooke's law gives
+
+$$
+F=-kx.
+$$
+
+Newton's second law gives
+
+$$
+m\frac{d^2x}{dt^2}=-kx.
+$$
+
+Rearrange:
+
+$$
+\frac{d^2x}{dt^2}+\frac{k}{m}x=0.
+$$
+
+Compare this to the SHM form
+
+$$
+\frac{d^2x}{dt^2}+\omega^2x=0.
+$$
+
+So
+
+$$
+\omega^2=\frac{k}{m},
+$$
+
+meaning
+
+$$
+\omega=\sqrt{\frac{k}{m}}.
+$$
+
+Since $$T=2\pi/\omega$$,
+
+$$
+T=2\pi\sqrt{\frac{m}{k}}.
+$$
+
+</div>
 
 ---
 

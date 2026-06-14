@@ -34,16 +34,9 @@ For AP free-response problems, the calculation is usually only part of the answe
 
 ---
 
-## Practice Problems
-
-- Practice released AP Statistics free-response questions from College Board.
-- For inference units, write every solution in the full structure: parameter, hypotheses or interval, conditions, calculation, conclusion.
-- For calculator-heavy procedures, still show the name of the procedure and the inputs.
-
----
-
 ## Resources
 
 - [Resources]({{ '/Resources/resources/' | relative_url }}) — general AP prep links, College Board, and books.
 - [AP Statistics Course Page](https://apstudents.collegeboard.org/courses/ap-statistics)
 - [Released AP Statistics Free-Response Questions](https://apcentral.collegeboard.org/courses/ap-statistics/exam/past-exam-questions)
+- [Practice MCQs online](https://www.mymathscloud.com/modules/ap-statistics/past-papers/)

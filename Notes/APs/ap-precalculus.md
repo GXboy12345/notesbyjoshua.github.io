@@ -8,7 +8,7 @@ nav_order: 6
 
 # AP Precalculus
 
-**Note**: The AP curriculum is a bit basic, I will add some extra units that are part of precalculus but do not show up on the AP. The units are organized according to the HW Honors Precalculus Curriculum. This curriculum will roughly follow [Precalculus by Cohen, 13th Edition](**ADD LINK**)
+**Note**: The AP curriculum is a bit basic, I will add some extra units that are part of precalculus but do not show up on the AP. The units are organized according to the HW Honors Precalculus Curriculum. This curriculum will roughly follow [Precalculus by Cohen, 13th Edition](https://www.cengage.com/c/precalculus-7e-cohen-lee-sklar/9780840069429/).
 
 ---
 
@@ -24,12 +24,6 @@ nav_order: 6
 - [Unit 11: Matrices and Systems]({{ '/notes/ap/precalc/matrices/' | relative_url }})
 - [Unit 12: Conic Sections]({{ '/notes/ap/precalc/conicsections/' | relative_url }})
 - [Unit 13 & 14: Additional Topics in Algebra]({{ '/notes/ap/precalc/addtopics/' | relative_url }})
-
----
-
-## Practice Problems
-
-- Practice?
 
 ---
 

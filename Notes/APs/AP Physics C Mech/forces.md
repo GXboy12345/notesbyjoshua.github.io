@@ -9,14 +9,6 @@ permalink: /notes/physics/forces/
 
 # Force and Translational Dynamics
 
-**Dynamics** explains why motion changes. In [Unit 1]({{ '/notes/physics/kinematics/' | relative_url }}), acceleration was treated as a given quantity; in this unit, acceleration comes from the net external force on an object or system. The core model is Newton's second law,
-
-$$
-\sum \vec{F} = m\vec{a},
-$$
-
-where the vector sum of all external forces determines the acceleration of the object's center of mass.
-
 ---
 
 ## Useful Variables
@@ -41,30 +33,30 @@ where the vector sum of all external forces determines the acceleration of the o
 
 ## Newton's Three Laws of Motion
 
-In 1687, Newton formulated the three laws of motion. They work extremely well for ordinary macroscopic objects moving much slower than the speed of light. At quantum, relativistic, or very strong-gravity scales, Newtonian mechanics must be replaced or extended, but for AP Physics C: Mechanics it is the standard model.
+In 1687, Newton formulated the three laws of motion. They work extremely well for ordinary macroscopic objects moving much slower than the speed of light. At quantum, relativistic, or very strong-gravity scales, Newtonian mechanics must be replaced or extended, but for AP purposes, Newtonian mechanics suffices.
 
 1. **Newton's First Law**: An object has constant velocity unless acted on by a nonzero net external force. If $$\sum \vec{F} = 0$$, then $$\vec{a} = 0$$.
 2. **Newton's Second Law**: The net external force equals mass times acceleration:
 
-   $$
-   \sum \vec{F} = m\vec{a}.
-   $$
+$$
+\sum \vec{F} = m\vec{a}.
+$$
 
 3. **Newton's Third Law**: If object $$A$$ exerts a force on object $$B$$, then object $$B$$ exerts an equal-magnitude, opposite-direction force on object $$A$$:
 
-   $$
-   \vec{F}_{A\text{ on }B} = -\vec{F}_{B\text{ on }A}.
-   $$
+$$
+\vec{F}_{A\text{ on }B} = -\vec{F}_{B\text{ on }A}.
+$$
 
-Third-law forces act on different objects, so they never cancel on a free-body diagram for one object. They can cancel only when you treat both interacting objects as one system and the force pair becomes internal.
+Third-law forces act on different objects, so they never cancel for one object. They can cancel only when you treat both interacting objects as one system and the force pair becomes internal.
 
 ---
 
 ## Free-body diagrams
 
-A **free-body diagram** is a force diagram for one object or one chosen system. It should show only external forces acting on that object/system, not forces the object applies to something else.
+A **free-body diagram** is a force diagram for one object or one chosen system. It should show only external forces acting on that object/system, not forces the object applies to something else. Forces are treated as vectors and can be composed accordingly.
 
-<!-- <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/free-body-diagram.png' | relative_url }}" alt="Free body diagram placeholder" loading="lazy" decoding="async" /> -->
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/freebodydiagram.png' | relative_url }}" alt="Free body diagram placeholder" loading="lazy" decoding="async" />
 
 Good procedure:
 
@@ -72,7 +64,7 @@ Good procedure:
 2. Draw a dot or simple sketch.
 3. Add one arrow for each external force.
 4. Choose axes, usually one axis parallel to the expected acceleration or along a surface.
-5. Resolve angled forces into components.
+5. Resolve angled forces into components using vector decomposition.
 6. Write Newton's second law separately for each direction.
 
 For a particle in two dimensions,
@@ -87,7 +79,7 @@ If acceleration is zero in one direction, the net force in that direction is zer
 
 ## Common types of forces
 
-In AP Physics C, most force problems are built from a small library of common forces.
+In AP Physics C, most force problems are built from a small set of common forces.
 
 ### Weight
 
@@ -103,15 +95,15 @@ $$
 F_g = mg.
 $$
 
-Weight points downward, toward Earth's center. Mass is not weight: mass is an object's inertia, while weight is a force caused by gravity.
+Weight points downward, toward Earth's center. Mass is not weight: mass is an object's inertia, while weight is a force caused by gravity. Weight is always drawn from the center of the object, and sometimes drawing out the whole object (as opposed to just a dot) is very important! For example, when the force of gravity passes through the corner of the object, it will start to topple!
 
 ### Normal force
 
-The **normal force** is a contact force perpendicular to a surface. It adjusts to prevent objects from passing through each other, but it is not automatically equal to $$mg$$. For example, on an incline or in an accelerating elevator, the normal force differs from the object's weight.
+The **normal force** is a contact force **perpendicular** to a surface and opposes gravity. It adjusts to prevent objects from passing through each other, but it is not automatically equal to $$mg$$. For example, on an incline or in an accelerating elevator, the normal force differs from the object's weight. Normally, you need to solve out force equations to get the normal force. The normal force acts along the entire surface of contact but is usually drawn out in the center of the contact plane.
 
 ### Tension
 
-**Tension** is a pulling force transmitted by a rope, string, or cable. In the ideal AP model, strings are massless and inextensible, and pulleys are massless and frictionless. Under those assumptions, the tension is the same throughout a continuous string.
+**Tension** is a pulling force transmitted by a rope, string, or cable. In an ideal world, strings are massless and inextensible, and pulleys are massless and frictionless. Under those assumptions, the tension is the same throughout a continuous string.
 
 If a string or pulley has mass, or if the pulley has rotational inertia, tension may differ on different sides. Those cases usually belong more naturally with rotational dynamics.
 
@@ -141,7 +133,7 @@ $$
 \vec{F}_s = -k\vec{x},
 $$
 
-where $$\vec{x}$$ is displacement from equilibrium. The negative sign means the spring force points opposite the displacement. This force appears again in [Unit 7: Oscillations]({{ '/notes/physics/oscillations/' | relative_url }}).
+where $$\vec{x}$$ is displacement from equilibrium. The negative sign means the spring force points opposite the displacement. This force is more relevant in [Unit 7: Oscillations]({{ '/notes/physics/oscillations/' | relative_url }}).
 
 ### Drag and resistive forces
 
@@ -154,7 +146,7 @@ $$
 for low-speed linear drag, and
 
 $$
-F_d = cv^2
+\vec{F}_d = c\vec{v}^2
 $$
 
 for high-speed quadratic drag. Linear drag leads naturally to differential equations, so it is a good Physics C extension.
@@ -195,7 +187,7 @@ $$
 F_{g,\perp} = mg\cos\theta,
 $$
 
-into the incline.
+into/perpendicular to the incline.
 
 If there is no acceleration perpendicular to the surface,
 
@@ -209,9 +201,9 @@ $$
 a = g\sin\theta.
 $$
 
-<!-- <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/incline-forces.png' | relative_url }}" alt="Inclined plane force components placeholder" loading="lazy" decoding="async" /> -->
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/inclinedplane.png' | relative_url }}" alt="Inclined plane force components placeholder" loading="lazy" decoding="async" />
 
-With friction, decide whether the block is moving or about to move. If it is moving, use kinetic friction. If it is at rest, static friction takes whatever value is needed up to $$\mu_sF_N$$.
+With friction, decide whether the block is moving or about to move. If it is moving, use kinetic friction. If it is at rest, static friction takes whatever value is needed up to $$\mu_sF_N$$. It is also helpful to use geometry/similar triangles to determine certain angles for vector decompositions. ALWAYS remember your normal force!
 
 ---
 
@@ -235,7 +227,7 @@ $$
 \tan\theta = \mu_s.
 $$
 
-This is the maximum angle before sliding for a simple block on a rough incline. If external forces or other constraints are present, the slipping condition must be rederived from the free-body diagram.
+This is the maximum angle before sliding for a simple block on a rough incline (rough meaning that there is friction). If external forces or other constraints are present, the slipping condition must be rederived from the free-body diagram.
 
 ---
 

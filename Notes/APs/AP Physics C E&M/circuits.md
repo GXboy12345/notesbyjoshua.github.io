@@ -44,6 +44,40 @@ $$
 
 Drift speeds are usually small; circuits respond quickly because the electric field is established throughout the circuit at near light-speed scales in the medium.
 
+<div class="theorem-box" markdown="1">
+
+**Proof (Drift Current Formula).** In time $$dt$$, charge carriers drifting at speed $$v_d$$ move distance
+
+$$
+dx=v_d\,dt.
+$$
+
+The volume of wire crossing a chosen cross-section during that time is
+
+$$
+dV=A\,dx=Av_d\,dt.
+$$
+
+If the number density of carriers is $$n$$, the number of carriers in that volume is
+
+$$
+dN=nAv_d\,dt.
+$$
+
+The charge passing through is
+
+$$
+dQ=q\,dN=nqAv_d\,dt.
+$$
+
+Therefore
+
+$$
+I=\frac{dQ}{dt}=nqAv_d.
+$$
+
+</div>
+
 ---
 
 ## Resistance and Ohm's Law
@@ -105,6 +139,40 @@ $$
 $$
 
 Adding a parallel branch lowers the equivalent resistance because it gives charge another path.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Resistors in Series and Parallel).** In series, the same current $$I$$ passes through each resistor. The total voltage drop is
+
+$$
+\Delta V_{\text{tot}}=\Delta V_1+\Delta V_2+\cdots=IR_1+IR_2+\cdots.
+$$
+
+Since $$\Delta V_{\text{tot}}=IR_{\text{eq}}$$,
+
+$$
+R_{\text{eq}}=R_1+R_2+\cdots.
+$$
+
+In parallel, each branch has the same voltage $$\Delta V$$. The total current is
+
+$$
+I_{\text{tot}}=I_1+I_2+\cdots=\frac{\Delta V}{R_1}+\frac{\Delta V}{R_2}+\cdots.
+$$
+
+Since $$I_{\text{tot}}=\Delta V/R_{\text{eq}}$$,
+
+$$
+\frac{\Delta V}{R_{\text{eq}}}=\Delta V\left(\frac{1}{R_1}+\frac{1}{R_2}+\cdots\right).
+$$
+
+Cancel $$\Delta V$$:
+
+$$
+\frac{1}{R_{\text{eq}}}=\frac{1}{R_1}+\frac{1}{R_2}+\cdots.
+$$
+
+</div>
 
 ---
 
@@ -204,6 +272,62 @@ $$
 
 The solution approaches the steady-state charge $$Q_{\infty}=C\mathcal{E}$$ exponentially.
 
+<div class="theorem-box" markdown="1">
+
+**Proof (Charging RC Formula).** For a charging RC circuit,
+
+$$
+R\frac{dQ}{dt}+\frac{Q}{C}=\mathcal{E}.
+$$
+
+Rearrange:
+
+$$
+\frac{dQ}{dt}=\frac{C\mathcal{E}-Q}{RC}.
+$$
+
+Separate variables:
+
+$$
+\frac{dQ}{C\mathcal{E}-Q}=\frac{dt}{RC}.
+$$
+
+Integrate from $$Q=0$$ at $$t=0$$ to charge $$Q$$ at time $$t$$:
+
+$$
+\int_0^Q \frac{dQ'}{C\mathcal{E}-Q'}=\int_0^t \frac{dt'}{RC}.
+$$
+
+The left side is
+
+$$
+-\ln(C\mathcal{E}-Q)+\ln(C\mathcal{E}).
+$$
+
+So
+
+$$
+\ln\left(\frac{C\mathcal{E}}{C\mathcal{E}-Q}\right)=\frac{t}{RC}.
+$$
+
+Exponentiate and solve for $$Q$$:
+
+$$
+Q(t)=C\mathcal{E}\left(1-e^{-t/RC}\right).
+$$
+
+Then $$V_C=Q/C$$ and $$I=dQ/dt$$ give
+
+$$
+V_C(t)=\mathcal{E}\left(1-e^{-t/RC}\right),
+$$
+
+$$
+I(t)=\frac{\mathcal{E}}{R}e^{-t/RC}.
+$$
+
+</div>
+
 For discharging,
 
 $$
@@ -211,6 +335,46 @@ R\frac{dQ}{dt}+\frac{Q}{C}=0,
 $$
 
 which gives exponential decay.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Discharging RC Formula).** For discharging,
+
+$$
+R\frac{dQ}{dt}+\frac{Q}{C}=0.
+$$
+
+Rearrange:
+
+$$
+\frac{dQ}{dt}=-\frac{Q}{RC}.
+$$
+
+Separate variables:
+
+$$
+\frac{dQ}{Q}=-\frac{dt}{RC}.
+$$
+
+Integrate:
+
+$$
+\ln Q=-\frac{t}{RC}+C_1.
+$$
+
+Exponentiating gives
+
+$$
+Q=Ae^{-t/RC}.
+$$
+
+Using $$Q(0)=Q_0$$ sets $$A=Q_0$$, so
+
+$$
+Q(t)=Q_0e^{-t/RC}.
+$$
+
+</div>
 
 ---
 

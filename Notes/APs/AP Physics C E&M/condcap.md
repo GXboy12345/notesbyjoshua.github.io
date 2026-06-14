@@ -51,6 +51,42 @@ $$
 
 where $$\sigma$$ is the local surface charge density.
 
+<div class="theorem-box" markdown="1">
+
+**Proof (Field Just Outside a Conductor).** Use a tiny cylindrical Gaussian surface, often called a pillbox, crossing the conductor surface. Let the pillbox have area $$A$$ on each flat face.
+
+Inside the conductor,
+
+$$
+\vec{E}=0.
+$$
+
+At the surface, the field has no tangential component in electrostatic equilibrium, so the only flux comes through the outer flat face:
+
+$$
+\Phi_E=EA.
+$$
+
+The enclosed charge is the surface charge on that patch:
+
+$$
+q_{\text{enc}}=\sigma A.
+$$
+
+Gauss's law gives
+
+$$
+EA=\frac{\sigma A}{\varepsilon_0}.
+$$
+
+Cancel $$A$$:
+
+$$
+E=\frac{\sigma}{\varepsilon_0}.
+$$
+
+</div>
+
 ---
 
 ## Charge Distribution on Conductors
@@ -107,6 +143,34 @@ $$
 
 Edge effects are usually ignored in AP Physics C unless the problem explicitly focuses on them.
 
+<div class="theorem-box" markdown="1">
+
+**Proof (Parallel-Plate Capacitance).** For large plates with charge $$+Q$$ and $$-Q$$,
+
+$$
+\sigma=\frac{Q}{A}.
+$$
+
+The electric field between the plates is approximately
+
+$$
+E=\frac{\sigma}{\varepsilon_0}=\frac{Q}{\varepsilon_0 A}.
+$$
+
+The potential difference between plates separated by $$d$$ is
+
+$$
+\Delta V=Ed=\frac{Qd}{\varepsilon_0 A}.
+$$
+
+Using $$C=Q/\Delta V$$,
+
+$$
+C=\frac{Q}{Qd/(\varepsilon_0 A)}=\frac{\varepsilon_0 A}{d}.
+$$
+
+</div>
+
 ---
 
 ## Capacitors in Parallel and Series
@@ -124,6 +188,41 @@ $$
 $$
 
 Series combinations have an equivalent capacitance smaller than any individual capacitor in the chain. Parallel combinations have an equivalent capacitance larger than any individual capacitor in the group.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Capacitors in Series and Parallel).** In parallel, every capacitor is connected across the same two nodes, so each has the same voltage $$\Delta V$$. The total charge supplied is
+
+$$
+Q_{\text{tot}}=Q_1+Q_2+\cdots=C_1\Delta V+C_2\Delta V+\cdots.
+$$
+
+Since $$Q_{\text{tot}}=C_{\text{eq}}\Delta V$$,
+
+$$
+C_{\text{eq}}=C_1+C_2+\cdots.
+$$
+
+In series, each capacitor carries the same charge magnitude $$Q$$ because charge cannot pile up indefinitely on the internal connecting plates. The total voltage is
+
+$$
+\Delta V_{\text{tot}}=\Delta V_1+\Delta V_2+\cdots
+=\frac{Q}{C_1}+\frac{Q}{C_2}+\cdots.
+$$
+
+Since $$\Delta V_{\text{tot}}=Q/C_{\text{eq}}$$,
+
+$$
+\frac{Q}{C_{\text{eq}}}=Q\left(\frac{1}{C_1}+\frac{1}{C_2}+\cdots\right).
+$$
+
+Cancel $$Q$$:
+
+$$
+\frac{1}{C_{\text{eq}}}=\frac{1}{C_1}+\frac{1}{C_2}+\cdots.
+$$
+
+</div>
 
 ---
 
@@ -154,6 +253,48 @@ u_E = \frac{1}{2}\varepsilon_0 E^2.
 $$
 
 For a parallel-plate capacitor, multiplying this density by the volume $$Ad$$ between the plates gives the same total energy.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Capacitor Energy).** When the capacitor already has charge $$q$$, its voltage is
+
+$$
+V=\frac{q}{C}.
+$$
+
+Bringing in a tiny additional charge $$dq$$ requires work
+
+$$
+dW=V\,dq=\frac{q}{C}\,dq.
+$$
+
+Integrate from $$0$$ to $$Q$$:
+
+$$
+U=\int_0^Q \frac{q}{C}\,dq=\frac{Q^2}{2C}.
+$$
+
+Using $$Q=C\Delta V$$ gives
+
+$$
+U=\frac{1}{2}Q\Delta V=\frac{1}{2}C(\Delta V)^2.
+$$
+
+For parallel plates,
+
+$$
+U=\frac{1}{2}C(\Delta V)^2
+=\frac{1}{2}\left(\frac{\varepsilon_0 A}{d}\right)(Ed)^2
+=\frac{1}{2}\varepsilon_0 E^2(Ad).
+$$
+
+Since $$Ad$$ is the volume of the field region,
+
+$$
+u_E=\frac{U}{Ad}=\frac{1}{2}\varepsilon_0 E^2.
+$$
+
+</div>
 
 ---
 

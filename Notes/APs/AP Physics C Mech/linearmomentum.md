@@ -76,6 +76,46 @@ $$
 
 Internal forces cancel in pairs by Newton's third law, so they cannot change the total momentum of the system. They can, however, redistribute momentum among the objects inside the system.
 
+<div class="theorem-box" markdown="1">
+
+**Proof (Conservation of Momentum).** For a system of particles, the total momentum is
+
+$$
+\vec{P}_{\text{sys}}=\sum_i \vec{p}_i.
+$$
+
+Differentiate:
+
+$$
+\frac{d\vec{P}_{\text{sys}}}{dt}=\sum_i \frac{d\vec{p}_i}{dt}.
+$$
+
+For each particle, Newton's second law says
+
+$$
+\frac{d\vec{p}_i}{dt}=\vec{F}_{i,\text{net}}.
+$$
+
+The forces on all particles can be split into external forces and internal forces. Internal forces occur in equal-and-opposite pairs:
+
+$$
+\vec{F}_{i\text{ on }j}=-\vec{F}_{j\text{ on }i}.
+$$
+
+When summed over the whole system, those internal pairs cancel. Therefore
+
+$$
+\frac{d\vec{P}_{\text{sys}}}{dt}=\sum \vec{F}_{\text{ext}}.
+$$
+
+If $$\sum \vec{F}_{\text{ext}}=0$$, then $$d\vec{P}_{\text{sys}}/dt=0$$, so total momentum is constant:
+
+$$
+\vec{P}_i=\vec{P}_f.
+$$
+
+</div>
+
 ---
 
 ## Center of Mass
@@ -109,6 +149,46 @@ The total momentum of a system is
 $$
 \vec{P}_{\text{sys}} = M\vec{v}_{\text{cm}}.
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Center-of-Mass Motion).** Start from the discrete center-of-mass definition:
+
+$$
+\vec{r}_{\text{cm}}=\frac{1}{M}\sum_i m_i\vec{r}_i.
+$$
+
+Differentiate once:
+
+$$
+\vec{v}_{\text{cm}}=\frac{1}{M}\sum_i m_i\vec{v}_i.
+$$
+
+Multiplying both sides by $$M$$ gives
+
+$$
+M\vec{v}_{\text{cm}}=\sum_i m_i\vec{v}_i=\vec{P}_{\text{sys}}.
+$$
+
+Differentiate again:
+
+$$
+M\vec{a}_{\text{cm}}=\frac{d\vec{P}_{\text{sys}}}{dt}.
+$$
+
+Using the momentum result above,
+
+$$
+\frac{d\vec{P}_{\text{sys}}}{dt}=\sum \vec{F}_{\text{ext}},
+$$
+
+so
+
+$$
+\sum \vec{F}_{\text{ext}}=M\vec{a}_{\text{cm}}.
+$$
+
+</div>
 
 ---
 
@@ -153,6 +233,56 @@ v_{2f}=\frac{2m_1}{m_1+m_2}v_{1i}+\frac{m_2-m_1}{m_1+m_2}v_{2i}.
 $$
 
 These formulas are useful, but the underlying conservation laws are usually safer.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Relative Speed Reversal in a 1D Elastic Collision).** Momentum conservation gives
+
+$$
+m_1v_{1i}+m_2v_{2i}=m_1v_{1f}+m_2v_{2f}.
+$$
+
+Rearrange:
+
+$$
+m_1(v_{1i}-v_{1f})=m_2(v_{2f}-v_{2i}).
+$$
+
+Kinetic energy conservation gives
+
+$$
+\frac{1}{2}m_1v_{1i}^2+\frac{1}{2}m_2v_{2i}^2
+=
+\frac{1}{2}m_1v_{1f}^2+\frac{1}{2}m_2v_{2f}^2.
+$$
+
+Rearrange and factor:
+
+$$
+m_1(v_{1i}^2-v_{1f}^2)=m_2(v_{2f}^2-v_{2i}^2),
+$$
+
+$$
+m_1(v_{1i}-v_{1f})(v_{1i}+v_{1f})
+=
+m_2(v_{2f}-v_{2i})(v_{2f}+v_{2i}).
+$$
+
+Divide this equation by the rearranged momentum equation:
+
+$$
+v_{1i}+v_{1f}=v_{2f}+v_{2i}.
+$$
+
+Move terms:
+
+$$
+v_{1i}-v_{2i}=-(v_{1f}-v_{2f}).
+$$
+
+So the relative velocity after the collision is the negative of the relative velocity before the collision.
+
+</div>
 
 ---
 

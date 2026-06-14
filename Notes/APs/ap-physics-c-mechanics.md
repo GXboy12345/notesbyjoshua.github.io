@@ -22,12 +22,6 @@ nav_order: 4
 
 ---
 
-## Practice Problems
-
-- Coming soon.
-
----
-
 ## Resources
 
 - [Resources]({{ '/Resources/resources/' | relative_url }}) — general AP prep links, College Board, and books.

@@ -122,6 +122,47 @@ Common results:
 - Thin rod about center: $$I = \frac{1}{12}ML^2$$
 - Thin rod about end: $$I = \frac{1}{3}ML^2$$
 
+<div class="theorem-box" markdown="1">
+
+**Proof (Rotational Inertia of a Thin Rod About Its Center).** Let a uniform rod of length $$L$$ and mass $$M$$ lie along the $$x$$-axis with its center at $$x=0$$. Its linear mass density is
+
+$$
+\lambda=\frac{M}{L}.
+$$
+
+A tiny piece has mass
+
+$$
+dm=\lambda\,dx.
+$$
+
+The rotational inertia about the center is
+
+$$
+I=\int r^2\,dm=\int_{-L/2}^{L/2}x^2\lambda\,dx.
+$$
+
+Substitute $$\lambda=M/L$$:
+
+$$
+I=\frac{M}{L}\int_{-L/2}^{L/2}x^2\,dx.
+$$
+
+Evaluate:
+
+$$
+I=\frac{M}{L}\left[\frac{x^3}{3}\right]_{-L/2}^{L/2}
+=\frac{M}{L}\cdot\frac{L^3}{12}.
+$$
+
+So
+
+$$
+I=\frac{1}{12}ML^2.
+$$
+
+</div>
+
 ---
 
 ## Newton's Second Law for Rotation
@@ -177,6 +218,34 @@ I = I_{\text{cm}} + Md^2.
 $$
 
 This theorem is useful for rods about one end, rolling bodies about contact points, and composite rigid bodies.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Parallel-Axis Theorem).** Put the center of mass at the origin, and let the new parallel axis be displaced by distance $$d$$ in the $$x$$-direction. For a mass element, the squared distance to the new axis can be written
+
+$$
+r^2=(x-d)^2+y^2.
+$$
+
+The moment of inertia about the new axis is
+
+$$
+I=\int \left[(x-d)^2+y^2\right]\,dm.
+$$
+
+Expand:
+
+$$
+I=\int (x^2+y^2)\,dm-2d\int x\,dm+d^2\int dm.
+$$
+
+The first term is $$I_{\text{cm}}$$. The middle term is zero because the origin is at the center of mass, so $$\int x\,dm=0$$. The final term is $$Md^2$$. Therefore
+
+$$
+I=I_{\text{cm}}+Md^2.
+$$
+
+</div>
 
 ---
 

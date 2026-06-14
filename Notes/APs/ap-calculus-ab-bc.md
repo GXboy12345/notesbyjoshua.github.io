@@ -27,12 +27,6 @@ nav_order: 1
 
 ---
 
-## Practice Problems
-
-- Practice? Never heard of it.
-
----
-
 ## Resources
 
 - [Resources]({{ '/Resources/resources/' | relative_url }}) — general AP prep links, College Board, and books.
