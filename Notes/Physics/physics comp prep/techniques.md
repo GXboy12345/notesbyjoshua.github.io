@@ -1,0 +1,103 @@
+---
+layout: default
+title: Problem Solving Techniques
+parent: Physics Competition Prep
+nav_order: 3
+permalink: /notes/physics/techniques/
+---
+
+# Problem Solving Techniques
+
+In this section, I will describe some very helpful methods/tools you could use on the F=ma/USAPhO, even though it is very rare that they will be seen on the AP exams. These are not new physics — they are *strategies* that turn an intimidating problem into a routine one. The best competitors reach for them automatically: before grinding through force diagrams, ask "is there a shortcut here?"
+
+---
+
+## Virtual Work Method
+
+The virtual work method is a way to find equilibrium conditions (or the force needed to hold something) **without drawing a single free-body diagram or worrying about internal/constraint forces**. It rests on one principle:
+
+> For a system in equilibrium, the total work done by the applied forces under any small displacement consistent with the constraints is zero: $$\;\delta W=0$$.
+
+The magic is that **constraint forces do no virtual work** — normal forces, tensions in inextensible strings, and frictionless contact forces are all perpendicular to the allowed motion (or internal and canceling), so they drop out entirely. You only ever deal with the forces you care about (gravity, applied loads, springs).
+
+The recipe:
+
+1. Identify the **degrees of freedom** and pick a single coordinate $$q$$ that captures the allowed motion.
+2. Write the positions of every point where a force acts in terms of $$q$$.
+3. Give the system a virtual displacement $$\delta q$$ and compute the total work $$\delta W=\sum_i \vec F_i\cdot\delta\vec r_i$$.
+4. Set $$\delta W=0$$ and solve.
+
+Equivalently, if the forces are conservative, equilibrium is where the potential energy is stationary: $$dU/dq=0$$.
+
+<div class="theorem-box" markdown="1">
+
+**Example (mechanical advantage without force diagrams).** A massless lever pivots about a fulcrum, with the input force $$F_1$$ applied a distance $$a$$ from the pivot and the load $$F_2$$ a distance $$b$$ on the other side. Rotate the lever by a tiny angle $$\delta\theta$$. The input point moves $$a\,\delta\theta$$ and the load point moves $$b\,\delta\theta$$, so
+
+$$
+\delta W = F_1(a\,\delta\theta)-F_2(b\,\delta\theta)=0\quad\Longrightarrow\quad F_1 a=F_2 b.
+$$
+
+The lever law falls out in one line, no torque diagram needed. The same method instantly gives the mechanical advantage of pulley systems, wedges, gear trains, and hydraulic presses: **the force ratio is the inverse of the displacement ratio**, because the constraint ties the displacements together.
+
+</div>
+
+This generalizes into **Lagrangian mechanics** (covered in [Advanced Mechanics]({{ '/notes/physics/advmech/' | relative_url }})), which is virtual work extended to dynamics.
+
+---
+
+## Dimensional analysis
+
+Before solving, ask what combination of the given quantities even *has the right units* for the answer. Often there's only one, which pins down the answer up to a dimensionless constant. This catches algebra errors, and sometimes solves the problem outright.
+
+<div class="theorem-box" markdown="1">
+
+**Example (period of a pendulum).** Suppose you forgot the pendulum formula. The period $$T$$ (units: s) could depend on length $$L$$ (m), mass $$m$$ (kg), and gravity $$g$$ (m/s²). The only way to build a time from these is $$\sqrt{L/g}$$ — mass cannot appear, because there's no other mass to cancel its kg. So $$T=C\sqrt{L/g}$$ for some dimensionless $$C$$ (which turns out to be $$2\pi$$). Dimensional analysis got the entire physical content — including the surprising fact that period is mass-independent — for free.
+
+</div>
+
+The method's one blind spot is **dimensionless constants** (the $$2\pi$$) and dimensionless ratios (like angles or the Reynolds number), which it cannot determine. Use it to fix the *form* of an answer and to sanity-check, not to nail numerical prefactors.
+
+---
+
+## Exploiting symmetry
+
+If a problem has a symmetry, the answer must respect it. This lets you skip enormous amounts of computation:
+
+- **Cancellation:** in computing a field or force, components that the symmetry maps onto their own negatives must sum to zero. (The field on the axis of a charged ring has no transverse component — every element's transverse contribution is canceled by the element opposite it.)
+- **Gauss's law / Ampère's law:** symmetry is what makes these usable — it forces the field to be constant over a well-chosen surface or loop, pulling it out of the integral.
+- **Superposition tricks:** a charged disk with a hole is a full disk *minus* a small disk; a sphere with an off-center cavity is a full sphere minus a smaller one. Adding back the missing piece restores symmetry and makes each part trivial.
+
+Always pause to ask: "what does this setup look the same under?" Reflection, rotation, and translation symmetries each kill some terms before you compute anything.
+
+---
+
+## Limiting cases and sanity checks
+
+After getting an answer (or to choose between answer choices), test it in extreme cases where you already know what should happen:
+
+- Let a mass, length, or angle go to $$0$$ or $$\infty$$ and check the formula behaves sensibly.
+- Set two quantities equal, or make one much larger than another, and see if it reduces to a simpler known result.
+- Check the **units** of the final expression.
+- Check **signs and directions** make physical sense.
+
+For example, the two-body reduced mass $$\mu=\dfrac{m_1 m_2}{m_1+m_2}$$ should reduce to $$m$$ when one mass is infinite (a fixed center) and to $$m/2$$ when the masses are equal — both of which it does. On a multiple-choice exam, limiting cases often eliminate every wrong option in seconds.
+
+---
+
+## Working in non-inertial frames
+
+It is frequently easier to jump *into* an accelerating frame and add a **pseudo-force** $$-m\vec a_{\text{frame}}$$ to every object than to track motion from the ground. In a frame accelerating with $$\vec a$$, everything feels an extra uniform force as if gravity had tilted; in a rotating frame, you add the **centrifugal** force $$m\omega^2 r$$ (outward) and, for moving objects, the Coriolis force.
+
+This converts many dynamics problems into *statics* problems. A block on an accelerating wedge, a pendulum in an accelerating car, or a bead in a rotating tube all become "find the equilibrium under an effective gravity $$\vec g_{\text{eff}}=\vec g-\vec a_{\text{frame}}$$" — the same trick used for [accelerating and rotating fluids]({{ '/notes/physics/fluiddynamics/' | relative_url }}).
+
+---
+
+## Reducing a two-body problem to one body
+
+When two objects interact only with each other (orbits, collisions, two masses on a spring), split the motion into the **center of mass** (which moves at constant velocity, by momentum conservation) and the **relative coordinate** $$\vec r=\vec r_1-\vec r_2$$. The relative motion obeys a single-particle equation with the **reduced mass**
+
+$$
+\mu=\frac{m_1 m_2}{m_1+m_2}.
+$$
+
+So two stars orbiting each other, or two atoms vibrating in a molecule, reduce to one effective particle of mass $$\mu$$ in the interaction potential. This is exactly why the full Kepler's third law carries $$G(M_1+M_2)$$ rather than a single mass (see [Stellar Physics]({{ '/notes/physics/stellarphys/' | relative_url }})), and why molecular vibration frequencies use $$\mu$$ instead of either atomic mass.
