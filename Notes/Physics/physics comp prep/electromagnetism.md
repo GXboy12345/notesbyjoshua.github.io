@@ -8,8 +8,6 @@ permalink: /notes/physics/electromagnetism/
 
 # Electromagnetism
 
-These notes collect electromagnetism ideas that go beyond the usual AP Physics C E&M treatment. The AP notes should focus on setting up fields, potentials, circuits, and Maxwell's equations in standard symmetric situations; this page can hold olympiad-style extensions that require extra mathematical maturity or unusual tricks.
-
 ---
 
 ## Charges
@@ -324,7 +322,7 @@ $$
 P=\frac{\sigma^2}{2\varepsilon_0}.
 $$
 
-One way to remember this is that the surface charge feels the field from the rest of the conductor, not the full field including itself; that gives the factor of $$1/2$$. This is also equal to the energy density of a conductor, although that is rarely used.
+One way to remember this is that the surface charge feels the field from the rest of the conductor, not the full field including itself; that gives the factor of $$1/2$$.
 
 ## Electric potential and potential energy
 
@@ -387,6 +385,26 @@ $$
 
 When the field is already known from symmetry, it is usually faster to integrate it: $$\Delta V=-\int \vec E\cdot d\vec\ell$$. A useful consistency fact: $$\vec E$$ may jump across a charged surface, but $$V$$ is always **continuous**, because it is the integral of a bounded field across zero thickness.
 
+<div class="theorem-box" markdown="1">
+
+**Example (get the field cheaply from the potential).** Find the field on the axis of a uniformly charged ring of radius $$R$$ and charge $$Q$$.
+
+The field integral requires projecting every element onto the axis. The *potential* integral does not: every element of the ring is the same distance $$r=\sqrt{x^2+R^2}$$ from the axial point $$x$$, so the "constant $$r$$" shortcut gives the answer with no integration at all,
+
+$$
+V(x)=\frac{k}{r}\int dq=\frac{kQ}{\sqrt{x^2+R^2}} .
+$$
+
+On the axis, symmetry makes $$\vec E$$ point along $$x$$, so the single derivative recovers the full field:
+
+$$
+E_x=-\frac{dV}{dx}=\frac{kQx}{(x^2+R^2)^{3/2}} .
+$$
+
+This is the same result the vector field integral gives, with far less work. The lesson generalizes: if you only need $$\vec E$$ along a symmetry axis, compute the scalar $$V$$ first and differentiate.
+
+</div>
+
 ### Choosing the reference point
 
 For real (finite) charge distributions, $$V(\infty)=0$$ is always valid. It fails for idealized **infinite** distributions—an infinite line or plane—because $$V=k\int dq/r$$ diverges: the source itself extends out to the reference point. There you must choose a finite reference, and only potential differences in the region of interest carry meaning. The divergence is an artifact of the idealization, not a real physical infinity.
@@ -401,6 +419,75 @@ For real (finite) charge distributions, $$V(\infty)=0$$ is always valid. It fail
 - **Parallel planes** $$\pm\sigma$$ separated by $$d$$: $$\Delta V=\dfrac{\sigma d}{\varepsilon_0}$$.
 
 If you want, it is a good exercise to derive these yourself!
+
+### Problem-solving tips
+
+A few habits that save the most time on potential problems:
+
+- **Reach for the scalar first.** Potential adds without components, so $$V=k\int dq/r$$ is almost always easier than the field integral. If you ultimately need $$\vec E$$ on a symmetry axis, find $$V$$ and take $$-\nabla V$$ (as in the ring example above).
+- **Look for "constant $$r$$."** If every charge element is equidistant from the field point—center of a ring, shell, arc, or hemisphere—the integral collapses to $$V=kQ/r$$ with no work.
+- **If you already have $$\vec E$$, integrate it, don't re-integrate $$dq$$.** Once Gauss's law has given $$\vec E$$, use $$\Delta V=-\int\vec E\cdot d\vec\ell$$ along the simplest path (usually radial, so $$\vec E\cdot d\vec\ell=E\,dr$$).
+- **Choose the reference to kill terms.** Use $$V(\infty)=0$$ for localized charge; for an infinite line or plane pick a convenient finite point and track only differences.
+- **Use continuity of $$V$$ as a free check.** When you stitch together piecewise regions (inside/outside a shell, across a boundary), the pieces must agree in value even where $$\vec E$$ jumps. A mismatch means an algebra error.
+- **For dynamics, use energy, not force.** When a problem asks only for speeds, closest approach, or escape conditions, $$\Delta K=-\Delta U$$ sidesteps the vector force entirely—legitimate precisely because the electrostatic force is conservative.
+- **Mind self-energy.** The pairwise sum excludes it; $$\tfrac12\int V\,dq$$ includes it. Decide which one the question wants before plugging in.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A particle of charge $$q$$ and mass $$m$$ is fired straight at a fixed charge $$Q$$ (same sign) from far away with speed $$v_0$$. Find the distance of closest approach.
+
+Forces would require integrating a time-varying acceleration. Energy conservation does it in one line: at closest approach the particle is momentarily at rest, so all its kinetic energy has become potential energy. Taking $$U(\infty)=0$$,
+
+$$
+\tfrac12 m v_0^2=\frac{kQq}{d_{\min}}
+\qquad\Longrightarrow\qquad
+d_{\min}=\frac{2kQq}{m v_0^2}.
+$$
+
+No path detail enters because the force is conservative—only the endpoints matter.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Two thin concentric spherical shells carry charge $$Q_1$$ (radius $$a$$) and $$Q_2$$ (radius $$b>a$$). Find $$V(r)$$ everywhere, with $$V(\infty)=0$$.
+
+*Step 1 — field by Gauss's law in each region.* Only enclosed charge matters:
+
+$$
+E(r)=
+\begin{cases}
+0, & r<a,\\[1mm]
+kQ_1/r^2, & a<r<b,\\[1mm]
+k(Q_1+Q_2)/r^2, & r>b.
+\end{cases}
+$$
+
+*Step 2 — integrate inward from infinity.* For $$r>b$$,
+
+$$
+V(r)=\frac{k(Q_1+Q_2)}{r}.
+$$
+
+*Step 3 — fix the next constant by continuity at $$r=b$$.* In $$a<r<b$$, integrating $$E=kQ_1/r^2$$ gives $$V=kQ_1/r+C$$. Matching to the outer solution at $$r=b$$,
+
+$$
+\frac{kQ_1}{b}+C=\frac{k(Q_1+Q_2)}{b}
+\quad\Longrightarrow\quad
+C=\frac{kQ_2}{b},
+\qquad
+V(r)=\frac{kQ_1}{r}+\frac{kQ_2}{b}.
+$$
+
+*Step 4 — inside the inner shell.* Here $$E=0$$, so $$V$$ is **constant**, equal to its value at $$r=a$$:
+
+$$
+V(r<a)=\frac{kQ_1}{a}+\frac{kQ_2}{b}.
+$$
+
+Each integration constant was pinned down by demanding $$V$$ be continuous at a boundary—the free check from the tips list, now doing real work.
+
+</div>
 
 ### Energy of a charge configuration
 
@@ -428,7 +515,9 @@ for a continuous distribution, where $$V$$ is the potential of the *whole* distr
 
 <div class="theorem-box" markdown="1">
 
-**Example (self-energy of a uniformly charged solid sphere).** Build the sphere up shell by shell at fixed density $$\rho$$. When the assembled charge is $$q$$ at radius $$r$$ (final radius $$R$$), $$q=Q(r/R)^3$$, and the next shell $$dq=Q\,\dfrac{3r^2}{R^3}dr$$ is brought from infinity to the surface, which sits at $$V=kq/r=kQr^2/R^3$$. Hence
+**Example.** What is the self-energy of a solid sphere with raidus $$R$$?
+
+Build the sphere up shell by shell at fixed density $$\rho$$. When the assembled charge is $$q$$ at radius $$r$$ (final radius $$R$$), $$q=Q(r/R)^3$$, and the next shell $$dq=Q\,\dfrac{3r^2}{R^3}dr$$ is brought from infinity to the surface, which sits at $$V=kq/r=kQr^2/R^3$$. Hence
 
 $$
 dU=V\,dq=\frac{kQr^2}{R^3}\cdot\frac{3Qr^2}{R^3}\,dr
@@ -439,52 +528,38 @@ $$
 U=\int_0^R \frac{3kQ^2}{R^6}r^4\,dr=\frac{3}{5}\frac{kQ^2}{R}.
 $$
 
-As a cross-check, integrating the field energy density $$u=\tfrac12\varepsilon_0E^2$$ over all space (using $$E=kQr/R^3$$ inside and $$kQ/r^2$$ outside) gives $$\dfrac{kQ^2}{10R}+\dfrac{kQ^2}{2R}=\dfrac{3}{5}\dfrac{kQ^2}{R}$$—the same result.
+As a cross-check, integrating the field energy density $$u=\tfrac12\varepsilon_0E^2$$ over all space (using $$E=kQr/R^3$$ inside and $$kQ/r^2$$ outside) gives $$\dfrac{kQ^2}{10R}+\dfrac{kQ^2}{2R}=\dfrac{3}{5}\dfrac{kQ^2}{R}$$ which is the same result.
 
 </div>
 
 The field-energy viewpoint, $$U=\int \tfrac12\varepsilon_0E^2\,dV$$, is itself a fourth way to compute configuration energy and is sometimes the only practical one when no symmetry helps with potentials.
 
-## Multipole thinking
-
-If the net charge of a distribution is nonzero, then from far away it behaves approximately like a point charge:
-
-$$
-E\sim \frac{kQ}{r^2}.
-$$
-
-If the net charge is zero but the distribution has separated positive and negative charge, the leading behavior is often **dipole-like**, which falls faster:
-
-$$
-E_{\text{dipole}}\sim \frac{kp}{r^3},
-$$
-
-where $$p=qd$$ is the dipole moment magnitude for charges $$+q$$ and $$-q$$ separated by distance $$d$$. The exact angular dependence is not usually needed unless the problem explicitly asks for it.
-
 <div class="theorem-box" markdown="1">
 
-**Example.** Put $$+q$$ at $$x=a$$ and $$-q$$ at $$x=-a$$. Find the electric field on the positve $$x$$-axis, far away from both charges.
+**Example.** Find the self-energy of a disk of radius $$R$$ with uniform surface density $$\sigma=Q/\pi R^2$$.
 
-On the positive $$x$$-axis, far away from both charges,
-
-$$
-E=kq\left(\frac{1}{(x-a)^2}-\frac{1}{(x+a)^2}\right).
-$$
-
-Combine the fractions:
+*Sub-result — potential at the rim.* First find the potential at a point $$P$$ on the edge of a uniform disk of radius $$s$$. Put the origin at $$P$$ and use plane polar coordinates $$(\rho,\varphi)$$ measured from the line through the center. The far boundary of the disk is the circle of radius $$s$$ centered a distance $$s$$ away, which in these coordinates is $$\rho=2s\cos\varphi$$ for $$\varphi\in[-\tfrac\pi2,\tfrac\pi2]$$. Then
 
 $$
-E=kq\frac{(x+a)^2-(x-a)^2}{(x^2-a^2)^2}
-=kq\frac{4ax}{(x^2-a^2)^2}.
+V_{\text{rim}}(s)=k\sigma\!\int_{-\pi/2}^{\pi/2}\!\!\int_0^{2s\cos\varphi}\frac{1}{\rho}\,\rho\,d\rho\,d\varphi
+=k\sigma\!\int_{-\pi/2}^{\pi/2}\!2s\cos\varphi\,d\varphi
+=4k\sigma s .
 $$
 
-When $$x\gg a$$, the denominator is approximately $$x^4$$, so
+The $$1/\rho$$ from Coulomb cancels the $$\rho$$ in the area element—this cancellation is exactly why the rim point is tractable while a generic interior point gives an elliptic integral.
+
+*Build the disk up from the edge.* Grow the disk at constant $$\sigma$$ by depositing successive rings at the current rim. When the disk has radius $$s$$, the new ring $$dq=\sigma(2\pi s)\,ds$$ lands at potential $$V_{\text{rim}}(s)$$, so
 
 $$
-E\approx \frac{4kqa}{x^3}.
+dU=V_{\text{rim}}(s)\,dq=(4k\sigma s)(2\pi\sigma s\,ds)=8\pi k\sigma^2 s^2\,ds,
 $$
 
-The total charge is zero, so the field falls like $$1/x^3$$ instead of $$1/x^2$$.
+$$
+U=\int_0^R 8\pi k\sigma^2 s^2\,ds=\frac{8\pi k\sigma^2 R^3}{3}
+=\frac{8}{3\pi}\,\frac{kQ^2}{R},
+$$
+
+after substituting $$\sigma=Q/\pi R^2$$. The coefficient $$8/3\pi\approx0.85$$ is larger than the solid sphere's $$3/5$$ and the conducting sphere's $$1/2$$: flattening the same charge into a disk packs it closer together, raising the stored energy. Note the assembly order does not affect the answer—the same $$U$$ comes from $$\tfrac12\int V\,dq$$ over the finished disk, but that route needs the much harder interior potential.
 
 </div>
 
