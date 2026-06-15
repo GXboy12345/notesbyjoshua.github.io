@@ -31,6 +31,18 @@ This mirrors gravitation: the interaction energy depends on $$1/r$$, and you mus
 
 ---
 
+## Potential energy of several charges
+
+For more than two charges, the total potential energy is the sum over **distinct pairs**:
+
+$$
+U = k \sum_{i<j} \frac{q_i q_j}{r_{ij}}.
+$$
+
+The condition $$i<j$$ counts each pair exactly once. A clean way to see this is to assemble the configuration one charge at a time: bringing in the first charge takes no work (empty space), the second is brought in against the first charge’s field, the third against the field of the first two, and so on. The total work needed equals $$U$$, and because the electrostatic force is conservative, the answer does not depend on the order of assembly.
+
+---
+
 ## Electric potential (voltage)
 
 The **electric potential** $$V$$ at a point is potential energy per unit charge for a small positive test charge $$q_0$$ placed at that point:
@@ -48,6 +60,53 @@ V = \frac{1}{4\pi \varepsilon_0} \frac{Q}{r} = \frac{kQ}{r}.
 $$
 
 Potential is a scalar: many-source problems add $$V$$ by ordinary addition (no vector triangles), unlike electric field.
+
+---
+
+## Potential from many charges and distributions
+
+Because potential is a scalar, the potential of several source charges is just the signed algebraic sum
+
+$$
+V = k \sum_i \frac{q_i}{r_i},
+$$
+
+where $$r_i$$ is the distance from source $$i$$ to the field point. For a continuous distribution, integrate over charge elements:
+
+$$
+V = k \int \frac{dq}{r},
+\qquad dq = \lambda\, d\ell,\ \sigma\, dA,\ \text{or}\ \rho\, dV.
+$$
+
+There are no components to track—only distances—so potential integrals are usually easier than field integrals. When the field is already known from symmetry (Gauss's law), it is often faster to integrate the field instead:
+
+$$
+V_b - V_a = -\int_a^b \vec{E} \cdot d\vec{r}.
+$$
+
+### Standard results
+
+For a thin spherical shell of radius $$R$$ and total charge $$Q$$ (with $$V \to 0$$ at infinity),
+
+$$
+V(r) =
+\begin{cases}
+kQ/R, & r \le R,\\
+kQ/r, & r \ge R.
+\end{cases}
+$$
+
+Inside the shell the field is zero, so $$V$$ is **constant**, not zero—no field does not mean no potential. For a uniformly charged solid sphere of radius $$R$$,
+
+$$
+V(r) =
+\begin{cases}
+\dfrac{kQ}{2R}\left(3 - \dfrac{r^2}{R^2}\right), & r \le R,\\[2mm]
+kQ/r, & r \ge R.
+\end{cases}
+$$
+
+In both cases $$V$$ is continuous everywhere, even at a boundary where the field changes abruptly.
 
 ---
 

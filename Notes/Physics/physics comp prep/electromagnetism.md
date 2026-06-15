@@ -269,6 +269,36 @@ The direction is perpendicular to the sheet, away from positive charge and towar
 
 Feel free to derive these yourself, although the procedures are pretty standard.
 
+### Flux tricks (bypassing surface integrals)
+
+The point of these tricks is to use enclosed charge and field-line geometry to avoid integrating over awkward boundaries.
+
+- **The "anchor" trick (1D sheets).** If a layered system is overall neutral—for example a P–N junction with $$\rho_p x_p=\rho_n x_n$$—the field completely outside it is exactly $$0$$. Anchor one end of a Gaussian pillbox in that zero-field region: the outside face then contributes no flux, so the flux equation collapses to "field on the inner face equals enclosed charge over $$\varepsilon_0$$." This turns a messy stack of sheets into a single application of Gauss's law.
+
+- **Self-flux vs. other-flux.** A charge cannot exert a net force on itself, so to get the force on one face of a charged shape you want the field due to *everything except that face*. The clean way: find the total outward flux of the whole shape, then subtract the flat face's own "self-flux" to isolate the contribution from the rest of the object.
+
+$$
+\Phi_{\text{self}}=\frac{\sigma A}{2\varepsilon_0},
+\qquad
+F=\sigma\,\Phi_{\text{other}}.
+$$
+
+This is the same $$1/2$$ that appears in the electrostatic pressure $$P=\sigma^2/2\varepsilon_0$$ below: a surface charge feels the field of the *rest* of the distribution, not the full field including itself.
+
+- **Flux tubes (conserved field lines).** Rotating a single field line about the axis through a point charge sweeps out a cone. Since field lines are neither created nor destroyed in empty space, the flux trapped in the "launch" cone must equal the flux entering the "landing" cone. For a point charge $$q$$ at the apex, the flux through a cone of half-angle $$\theta$$ is the solid-angle fraction of the total $$q/\varepsilon_0$$:
+
+$$
+\Phi=\frac{q}{\varepsilon_0}\left(\frac{1-\cos\theta}{2}\right).
+$$
+
+Equating the trapped flux at the two ends gives the conservation relation
+
+$$
+q_1\,(1-\cos\alpha)=q_2\,(1-\cos\beta),
+$$
+
+which lets you relate launch and landing angles of a field line between two charges without ever solving the field explicitly.
+
 ### Electrostatic equilibrium in conductors
 
 In a conductor at electrostatic equilibrium, charges have stopped moving macroscopically. Therefore:
@@ -295,6 +325,125 @@ P=\frac{\sigma^2}{2\varepsilon_0}.
 $$
 
 One way to remember this is that the surface charge feels the field from the rest of the conductor, not the full field including itself; that gives the factor of $$1/2$$. This is also equal to the energy density of a conductor, although that is rarely used.
+
+## Electric potential and potential energy
+
+The electrostatic force is conservative, which lets us replace vector field bookkeeping with scalar energy bookkeeping. For most olympiad electrostatics this is the single biggest labor-saving move available, so it is worth setting up carefully.
+
+### Review: Conservative forces
+
+A force is **conservative** if the work it does between two points is path-independent, i.e.
+
+$$
+W=\int_A^B \vec F\cdot d\vec\ell
+$$
+
+depends only on the endpoints $$A$$ and $$B$$. Equivalently,
+
+$$
+\oint \vec F\cdot d\vec\ell=0
+\qquad\Longleftrightarrow\qquad
+\vec F=-\nabla U
+$$
+
+for some scalar potential energy $$U$$. Defining $$\Delta U=U(B)-U(A)=-W$$ then guarantees mechanical energy conservation, $$\Delta E_k+\Delta U=0$$, since the work–energy theorem gives $$\Delta E_k=W$$. Only **differences** in $$U$$ are physical; you must fix a reference where $$U=0$$, and that choice is arbitrary.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Coulomb force is conservative).** Move a charge $$q$$ from $$A$$ to $$B$$ in the field of a fixed charge $$Q$$ at the origin. Since $$\hat r\cdot d\vec\ell=dr$$,
+
+$$
+W=\int_A^B k\frac{Qq}{r^2}\hat r\cdot d\vec\ell
+=\int_{r_A}^{r_B} k\frac{Qq}{r^2}\,dr
+=kQq\left(\frac{1}{r_A}-\frac{1}{r_B}\right),
+$$
+
+which depends only on the initial and final distances—not the path. For a system of source charges, superposition makes the total work the sum of pairwise works, each of which is path-independent, so the total is path-independent too.
+
+</div>
+
+### Potential energy and potential
+
+For a charge $$q$$ in the field of a fixed $$Q$$ with the reference at infinity, $$U(r)=kQq/r$$. In a general field, pick a reference point $$O$$ with $$U_O=0$$:
+
+$$
+E_p(A)=-\int_O^A q\vec E\cdot d\vec\ell .
+$$
+
+The **electric potential** is energy per unit charge,
+
+$$
+V(A)=\frac{E_p}{q}=-\int_O^A \vec E\cdot d\vec\ell,
+\qquad V=\frac{kQ}{r}\ \text{(point charge)} .
+$$
+
+Potential superposes by ordinary addition, and for continuous distributions it becomes an integral:
+
+$$
+V=k\sum_i\frac{q_i}{r_i},
+\qquad
+V=k\int\frac{dq}{r}.
+$$
+
+When the field is already known from symmetry, it is usually faster to integrate it: $$\Delta V=-\int \vec E\cdot d\vec\ell$$. A useful consistency fact: $$\vec E$$ may jump across a charged surface, but $$V$$ is always **continuous**, because it is the integral of a bounded field across zero thickness.
+
+### Choosing the reference point
+
+For real (finite) charge distributions, $$V(\infty)=0$$ is always valid. It fails for idealized **infinite** distributions—an infinite line or plane—because $$V=k\int dq/r$$ diverges: the source itself extends out to the reference point. There you must choose a finite reference, and only potential differences in the region of interest carry meaning. The divergence is an artifact of the idealization, not a real physical infinity.
+
+### Potentials worth memorizing
+
+- **Uniform field:** $$\Delta V=-\vec E\cdot \vec d$$.
+- **Center of a uniformly charged hemispherical shell** (radius $$R$$, charge $$Q$$): every element sits at distance $$R$$, so $$V=\frac{k}{R}\int dq=\frac{kQ}{R}$$. The same "constant $$r$$" trick gives the full shell.
+- **Spherical shell:** $$V=kQ/r$$ outside, $$V=kQ/R$$ (constant) inside.
+- **Solid sphere** (radius $$R$$): outside $$kQ/r$$; inside, integrating the interior field $$E=kQr/R^3$$ gives $$V(r)=\dfrac{kQ}{2R}\left(3-\dfrac{r^2}{R^2}\right)$$.
+- **Coaxial cylinders**, linear densities $$\pm\lambda$$, radii $$R_A<R_B$$: $$V_A-V_B=\dfrac{\lambda}{2\pi\varepsilon_0}\ln\dfrac{R_B}{R_A}$$.
+- **Parallel planes** $$\pm\sigma$$ separated by $$d$$: $$\Delta V=\dfrac{\sigma d}{\varepsilon_0}$$.
+
+If you want, it is a good exercise to derive these yourself!
+
+### Energy of a charge configuration
+
+There are three equivalent ways to compute the total energy stored in a configuration; choose whichever matches the problem.
+
+**1. Pairwise sum.** Add the interaction energy of every distinct pair,
+
+$$
+U=\frac{1}{4\pi\varepsilon_0}\sum_{i<j}\frac{q_iq_j}{r_{ij}} .
+$$
+
+This excludes the (infinite) self-energy of idealized point charges.
+
+**2. Charge times potential, halved.** Writing $$\sum_i q_iV_i$$ counts each pair twice, so
+
+$$
+U=\frac{1}{2}\sum_i q_iV_i
+\qquad\Longrightarrow\qquad
+U=\frac{1}{2}\int V\,dq
+$$
+
+for a continuous distribution, where $$V$$ is the potential of the *whole* distribution. Unlike the pairwise sum, this form **includes** self-energy.
+
+**3. Charge it up.** Assemble the charge from zero, tracking $$V$$ as a function of the accumulated charge, and integrate $$U=\int V\,dq$$. This is the cleanest method when symmetry keeps the object near one potential as it charges—for instance a conductor, or a sphere built up shell by shell.
+
+<div class="theorem-box" markdown="1">
+
+**Example (self-energy of a uniformly charged solid sphere).** Build the sphere up shell by shell at fixed density $$\rho$$. When the assembled charge is $$q$$ at radius $$r$$ (final radius $$R$$), $$q=Q(r/R)^3$$, and the next shell $$dq=Q\,\dfrac{3r^2}{R^3}dr$$ is brought from infinity to the surface, which sits at $$V=kq/r=kQr^2/R^3$$. Hence
+
+$$
+dU=V\,dq=\frac{kQr^2}{R^3}\cdot\frac{3Qr^2}{R^3}\,dr
+=\frac{3kQ^2}{R^6}r^4\,dr,
+$$
+
+$$
+U=\int_0^R \frac{3kQ^2}{R^6}r^4\,dr=\frac{3}{5}\frac{kQ^2}{R}.
+$$
+
+As a cross-check, integrating the field energy density $$u=\tfrac12\varepsilon_0E^2$$ over all space (using $$E=kQr/R^3$$ inside and $$kQ/r^2$$ outside) gives $$\dfrac{kQ^2}{10R}+\dfrac{kQ^2}{2R}=\dfrac{3}{5}\dfrac{kQ^2}{R}$$—the same result.
+
+</div>
+
+The field-energy viewpoint, $$U=\int \tfrac12\varepsilon_0E^2\,dV$$, is itself a fourth way to compute configuration energy and is sometimes the only practical one when no symmetry helps with potentials.
 
 ## Multipole thinking
 
