@@ -559,7 +559,7 @@ U=\int_0^R 8\pi k\sigma^2 s^2\,ds=\frac{8\pi k\sigma^2 R^3}{3}
 =\frac{8}{3\pi}\,\frac{kQ^2}{R},
 $$
 
-after substituting $$\sigma=Q/\pi R^2$$. The coefficient $$8/3\pi\approx0.85$$ is larger than the solid sphere's $$3/5$$ and the conducting sphere's $$1/2$$: flattening the same charge into a disk packs it closer together, raising the stored energy. Note the assembly order does not affect the answer—the same $$U$$ comes from $$\tfrac12\int V\,dq$$ over the finished disk, but that route needs the much harder interior potential.
+after substituting $$\sigma=Q/\pi R^2$$. The coefficient $$8/3\pi\approx0.85$$ is larger than the solid sphere's $$3/5$$ and the conducting sphere's $$1/2$$: flattening the same charge into a disk packs it closer together, raising the stored energy. Note the assembly order does not affect the answer — the same $$U$$ comes from $$\tfrac12\int V\,dq$$ over the finished disk, but that route needs the much harder interior potential.
 
 </div>
 

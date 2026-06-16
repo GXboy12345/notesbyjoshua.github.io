@@ -127,7 +127,7 @@ $$
 - $$d_o > 0$$ for a real object in front of the mirror.
 - $$d_i > 0$$ for a real image (same side as object, in front); $$d_i < 0$$ for a virtual image (behind).
 - $$f > 0$$ for a concave (converging) mirror; $$f < 0$$ for convex (diverging).
-- $$m > 0$$ upright, $$m < 0$$ inverted; $$|m| > 1$$ enlarged.
+- $$m > 0$$ upright, $$m < 0$$ inverted; $$\lvert m \rvert > 1$$ enlarged.
 
 The reason a curved mirror focuses at all comes out cleanly for **conic-section** shapes, which have exact reflection properties:
 
