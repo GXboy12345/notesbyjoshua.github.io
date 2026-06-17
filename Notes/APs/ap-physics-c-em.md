@@ -18,6 +18,7 @@ nav_order: 5
 - [Unit 4: Circuits]({{ '/notes/physics/circuits/' | relative_url }})
 - [Unit 5: Magnetic fields and Electromagnetism]({{ '/notes/physics/magnetism/' | relative_url }})
 - [Unit 6: Electromagnetic Induction]({{ '/notes/physics/eminduction/' | relative_url }})
+
 ---
 
 ## Resources

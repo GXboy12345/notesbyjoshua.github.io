@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -nE '\\(^|[^$]\\)\\\\$\\([^$]|$\\)' \"Notes/APs/AP Physics C Mech/oscillations.md\")",
+      "Bash(grep -v '\\\\$\\\\$')"
+    ]
+  }
+}

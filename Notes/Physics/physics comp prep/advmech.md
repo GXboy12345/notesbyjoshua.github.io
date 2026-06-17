@@ -283,36 +283,141 @@ This is what makes a tumbling phone or a wobbling thrown disk behave the way it 
 
 ---
 
-## Non-inertial frames (summary)
+## Non-inertial frames and relative motion
 
-Rotating and accelerating frames are developed in full on the [Techniques]({{ '/notes/physics/techniques/' | relative_url }}) page; the essentials are worth restating because they recur in orbit and rigid-body problems. In a frame rotating at $$\vec\omega$$, Newton's law picks up pseudo-forces,
+Switching to a moving frame is often the difference between a one-line answer and a page of algebra. The basics are also on the [Techniques]({{ '/notes/physics/techniques/' | relative_url }}) page; here we build the full kinematics of relative motion, because olympiad problems frequently combine translation *and* rotation of the observer.
+
+### Translating frames
+
+Let a frame $$S'$$ have its origin at $$\vec R_O(t)$$ relative to an inertial frame $$S$$, with no rotation. A particle's position, velocity, and acceleration relate by simple addition:
+
+$$
+\vec r=\vec R_O+\vec r',\qquad
+\vec v=\vec V_O+\vec v',\qquad
+\vec a=\vec A_O+\vec a' .
+$$
+
+If $$S'$$ accelerates ($$\vec A_O\ne 0$$), then in $$S'$$ Newton's law reads $$m\vec a'=\vec F_{\text{real}}-m\vec A_O$$: every object feels a uniform **pseudo-force** $$-m\vec A_O$$, exactly as if gravity had gained a component. This is why a pendulum in a forward-accelerating car hangs back at angle $$\tan\theta=A_O/g$$, settling along the **effective gravity** $$\vec g_{\text{eff}}=\vec g-\vec A_O$$.
+
+### The transport theorem (rotating frames)
+
+The one identity that generates everything about rotating frames: for **any** vector $$\vec A$$, its rates of change as seen in the inertial frame and in a frame rotating at $$\vec\omega$$ differ by $$\vec\omega\times\vec A$$,
+
+$$
+\boxed{\ \left(\frac{d\vec A}{dt}\right)_{\text{in}}=\left(\frac{d\vec A}{dt}\right)_{\text{rot}}+\vec\omega\times\vec A\ }.
+$$
+
+The first term is how the components change; the $$\vec\omega\times\vec A$$ term is the rotation of the axes themselves. Applying it to the position vector gives the velocity relation, and applying it twice gives the acceleration.
+
+<div class="theorem-box" markdown="1">
+
+**Derivation (velocity and acceleration in a rotating frame).** Apply the transport theorem to $$\vec r$$:
+
+$$
+\vec v_{\text{in}}=\vec v_{\text{rot}}+\vec\omega\times\vec r .
+$$
+
+Differentiate again in the inertial frame, applying the transport theorem to each rotating-frame vector ($$\vec v_{\text{rot}}$$ and $$\vec r$$):
+
+$$
+\vec a_{\text{in}}=\big(\vec a_{\text{rot}}+\vec\omega\times\vec v_{\text{rot}}\big)+\dot{\vec\omega}\times\vec r+\vec\omega\times\big(\vec v_{\text{rot}}+\vec\omega\times\vec r\big).
+$$
+
+Collecting terms,
+
+$$
+\vec a_{\text{in}}=\vec a_{\text{rot}}+2\,\vec\omega\times\vec v_{\text{rot}}+\vec\omega\times(\vec\omega\times\vec r)+\dot{\vec\omega}\times\vec r .
+$$
+
+Solving for the acceleration measured in the rotating frame and multiplying by $$m$$ gives the pseudo-force law below.
+
+</div>
+
+For a frame that both translates and rotates, the full chain is
+
+$$
+\vec a_{\text{in}}=\vec A_O+\vec a_{\text{rot}}+2\,\vec\omega\times\vec v_{\text{rot}}+\vec\omega\times(\vec\omega\times\vec r)+\dot{\vec\omega}\times\vec r .
+$$
+
+### The pseudo-forces
+
+Moving the kinematic terms to the force side, Newton's law in the rotating frame becomes
 
 $$
 m\vec a_{\text{rot}}=\vec F_{\text{real}}
 \underbrace{-m\,\vec\omega\times(\vec\omega\times\vec r)}_{\text{centrifugal}}
 \underbrace{-2m\,\vec\omega\times\vec v_{\text{rot}}}_{\text{Coriolis}}
--m\,\dot{\vec\omega}\times\vec r .
+\underbrace{-m\,\dot{\vec\omega}\times\vec r}_{\text{Euler}}
+-m\vec A_O .
 $$
 
-The **centrifugal** term points outward with magnitude $$m\omega^2\rho$$ and is what flattens planets and sets the shape of a rotating fluid surface; the **Coriolis** term acts only on moving bodies and deflects them sideways, governing cyclones, Foucault pendulums, and the eastward drift of falling objects. When a problem is naturally circular — a bead in a rotating tube, motion near a Lagrange point — switching to the rotating frame often turns a hard dynamics problem into a static balance.
+- **Centrifugal:** points outward from the axis with magnitude $$m\omega^2\rho$$ ($$\rho$$ = distance to the axis). It depends only on position, so it acts like an extra potential $$-\tfrac12 m\omega^2\rho^2$$ — this is what flattens planets, sets a rotating fluid's parabolic surface, and lets you treat a steadily rotating system as a *statics* problem under $$\vec g_{\text{eff}}$$.
+- **Coriolis:** $$-2m\,\vec\omega\times\vec v_{\text{rot}}$$ acts only on bodies *moving* in the rotating frame, always perpendicular to their velocity, so it does no work — it only bends paths. It governs cyclones, ocean gyres, the Foucault pendulum, and the eastward deflection of falling bodies.
+- **Euler:** $$-m\,\dot{\vec\omega}\times\vec r$$ appears only when the spin rate changes; usually zero for steady rotation.
+
+<div class="theorem-box" markdown="1">
+
+**Example (Foucault pendulum).** At latitude $$\lambda$$, the local vertical component of Earth's rotation is $$\omega\sin\lambda$$. A pendulum swinging in a vertical plane feels a horizontal Coriolis force $$-2m\,\vec\omega\times\vec v$$ that slowly rotates its plane of oscillation. Only the vertical part of $$\vec\omega$$ matters for the horizontal swing, so the plane precesses at
+
+$$
+\Omega_{\text{Foucault}}=\omega\sin\lambda,
+$$
+
+clockwise in the northern hemisphere, with period $$T=2\pi/(\omega\sin\lambda)=(24\ \text{h})/\sin\lambda$$. At the pole it tracks the full $$24$$-hour rotation; at the equator it does not precess at all.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example (eastward deflection of a falling body).** Drop a mass from rest at height $$h$$ at latitude $$\lambda$$. To leading order it falls with $$v\approx gt$$ downward; the Coriolis acceleration $$-2\vec\omega\times\vec v$$ then has magnitude $$2\omega g t\cos\lambda$$ pointing **east**. Integrating twice,
+
+$$
+x_{\text{east}}=\int_0^{t_f}\!\!\int_0^{t}2\omega g t'\cos\lambda\,dt'\,dt=\tfrac13\,\omega g\cos\lambda\,t_f^3,\qquad t_f=\sqrt{\tfrac{2h}{g}},
+$$
+
+so the deflection is $$x_{\text{east}}=\dfrac{\omega\cos\lambda}{3}\sqrt{\dfrac{8h^3}{g}}$$ — small, but real, and a favorite exam application of the Coriolis term.
+
+</div>
+
+When a problem is naturally circular — a bead in a rotating tube, a mass near a Lagrange point, a satellite viewed from a co-rotating frame — moving into the rotating frame replaces "what is the trajectory?" with "where does the effective force balance?"
 
 ---
 
 ## Adiabatic invariants
 
-When a system oscillates and a parameter (pendulum length, spring constant, container size) changes **slowly** compared with the oscillation period, the energy is not conserved but a particular combination is. The **adiabatic invariant** is the action integral over one cycle,
+When a system oscillates and a parameter (pendulum length, spring constant, box size, field strength) changes **slowly** compared with the oscillation period, energy is *not* conserved — the slowly changing constraint does work on the system. What survives is a particular combination called the **adiabatic invariant**: the action integral over one cycle,
 
 $$
 J=\oint p\,dq\approx\text{const},
 $$
 
-the area enclosed in phase space. For any harmonic oscillator this gives
+equal to the area enclosed by the orbit in phase space $$(q,p)$$. "Slowly" means the fractional change per period is tiny, $$\dot\epsilon\,T/\epsilon\ll 1$$; under that condition the phase-space area is squeezed and stretched but its enclosed area is preserved.
+
+<div class="theorem-box" markdown="1">
+
+**Why $$E/\omega$$ is invariant for an oscillator.** For a harmonic oscillator $$H=\dfrac{p^2}{2m}+\tfrac12 m\omega^2 q^2=E$$, the phase-space orbit is an ellipse with semi-axes $$p_{\max}=\sqrt{2mE}$$ and $$q_{\max}=\sqrt{2E/m\omega^2}$$. Its area is
 
 $$
-\frac{E}{\omega}=\text{const},
+J=\oint p\,dq=\pi\,p_{\max}q_{\max}=\pi\sqrt{2mE}\,\sqrt{\frac{2E}{m\omega^2}}=\frac{2\pi E}{\omega}=E\,T .
 $$
 
-so slowly shortening a pendulum raises its energy in proportion to its frequency. Adiabatic invariance explains why a ball bouncing in a slowly shrinking box gains energy as $$1/\text{(box size)}$$, why magnetic moments are conserved for charges in slowly varying fields, and it occasionally appears on the USAPhO as the only handle on a system with a changing parameter. The condition for validity is always the same: the fractional change per period must be small.
+So if $$J$$ is conserved while $$\omega$$ drifts slowly,
+
+$$
+\frac{E}{\omega}=\text{const}.
+$$
+
+Slowly shortening a pendulum ($$\omega=\sqrt{g/\ell}\propto \ell^{-1/2}$$) therefore raises its energy as $$E\propto\omega\propto \ell^{-1/2}$$, while its angular amplitude grows as $$\theta_0\propto \ell^{-3/4}$$ — the classic "pendulum pulled slowly through a hole" result (Einstein's favorite at the 1911 Solvay conference).
+
+</div>
+
+The same idea recurs across physics:
+
+- **Ball in a slowly shrinking box.** A ball bounces between walls a distance $$L$$ apart at speed $$v$$. Over one round trip $$J=\oint p\,dx=2mvL$$, so $$vL=\text{const}$$: the speed rises as $$v\propto 1/L$$ and the energy as $$E=\tfrac12 mv^2\propto 1/L^2$$. (This is the mechanical seed of why an adiabatically compressed gas heats up.)
+- **Magnetic moment of a gyrating charge.** A charged particle spiraling in a magnetic field has $$J\propto \mu=\dfrac{mv_\perp^2}{2B}$$, the **first adiabatic invariant** of plasma physics. As the particle drifts into stronger $$B$$, $$v_\perp$$ grows until it reflects — the **magnetic mirror** that traps particles in Earth's radiation belts.
+- **Betatron and slow detuning.** Any slowly tuned oscillator (a circuit, a trapped ion, a planetary orbit perturbed over many revolutions) conserves its action even as energy and frequency wander.
+
+On the USAPhO, reach for an adiabatic invariant whenever a system oscillates and *something about it is changing slowly*: it is often the only conserved quantity available, and $$E/\omega$$ or $$\oint p\,dq$$ turns an intractable time-dependent problem into one algebraic relation.
 
 ---
 

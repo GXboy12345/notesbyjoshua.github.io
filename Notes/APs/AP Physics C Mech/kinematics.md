@@ -63,6 +63,71 @@ $$
 
 and similarly position from velocity.
 
+Be careful to distinguish **average** and **instantaneous** quantities. Average velocity over an interval is the single constant velocity that would produce the same displacement in the same time; it depends only on the endpoints, $$\bar{v}=\Delta x/\Delta t$$. Instantaneous velocity is the limit of that ratio as the interval shrinks to zero, $$v=dx/dt$$. The two agree only when velocity is constant, or, for the special case of constant acceleration, the average velocity happens to equal the midpoint value $$\frac{1}{2}(v_0+v_f)$$. That coincidence is exactly equation 5 below and does **not** hold when acceleration varies.
+
+<div class="theorem-box" markdown="1">
+
+**Example (Integrating a time-dependent acceleration).** A particle starts at $$x_0 = 0$$ with velocity $$v_0 = 2\ \text{m/s}$$ and experiences acceleration $$a(t) = 6t\ \text{m/s}^2$$. Find its velocity and position as functions of time, and its position at $$t = 3\ \text{s}$$.
+
+Because $$a$$ depends on time, the Big Five do not apply. Integrate acceleration to get velocity:
+
+$$
+v(t) = v_0 + \int_0^t 6t'\, dt' = 2 + 3t^2.
+$$
+
+Integrate velocity to get position:
+
+$$
+x(t) = x_0 + \int_0^t (2 + 3t'^2)\, dt' = 2t + t^3.
+$$
+
+At $$t = 3\ \text{s}$$,
+
+$$
+x(3) = 2(3) + (3)^3 = 6 + 27 = 33\ \text{m}.
+$$
+
+The constant-acceleration shortcut $$\Delta x = v_0 t + \frac{1}{2}at^2$$ would have given a wrong answer here, because there is no single constant $$a$$ to plug in.
+
+</div>
+
+---
+
+## Motion graphs
+
+Graphs of position, velocity, and acceleration versus time are linked by the same calculus that links the quantities themselves. Reading them well is half of one-dimensional kinematics.
+
+- **Slopes go down the list.** The slope of an $$x$$-$$t$$ graph at an instant is the velocity, $$v = dx/dt$$. The slope of a $$v$$-$$t$$ graph is the acceleration, $$a = dv/dt$$. A curving $$x$$-$$t$$ graph therefore means nonzero acceleration, and a straight $$x$$-$$t$$ line means constant velocity.
+- **Areas go up the list.** The signed area under a $$v$$-$$t$$ graph between two times is the displacement, $$\Delta x = \int v\, dt$$. The signed area under an $$a$$-$$t$$ graph is the change in velocity, $$\Delta v = \int a\, dt$$. "Signed" matters: area below the axis subtracts.
+
+A few consistency checks worth internalizing: a maximum or minimum of $$x(t)$$ occurs where $$v = 0$$ (the slope is momentarily flat); the object is speeding up when $$v$$ and $$a$$ have the same sign and slowing down when they have opposite signs; and a horizontal $$v$$-$$t$$ line means zero acceleration even if the velocity itself is large.
+
+<div class="theorem-box" markdown="1">
+
+**Example (Reading a velocity-time graph).** A cart moves along a line. Its velocity is $$+4\ \text{m/s}$$ and constant for the first $$3\ \text{s}$$, then ramps linearly down to $$-2\ \text{m/s}$$ over the next $$2\ \text{s}$$. Find the acceleration during each phase, the total displacement, and the distance traveled.
+
+During the first phase the $$v$$-$$t$$ graph is flat, so $$a_1 = 0$$. During the second phase,
+
+$$
+a_2 = \frac{\Delta v}{\Delta t} = \frac{(-2) - (+4)}{2} = -3\ \text{m/s}^2.
+$$
+
+Displacement is the signed area under the $$v$$-$$t$$ graph. The first phase is a rectangle:
+
+$$
+\Delta x_1 = (4)(3) = 12\ \text{m}.
+$$
+
+In the second phase the velocity crosses zero. It hits $$v=0$$ after $$\Delta v / a_2 = (-4)/(-3) = \frac{4}{3}\ \text{s}$$, moving forward, then reverses. The signed area of the triangular region is
+
+$$
+\Delta x_2 = \tfrac{1}{2}(4)\left(\tfrac{4}{3}\right) + \tfrac{1}{2}(-2)\left(2-\tfrac{4}{3}\right) = \tfrac{8}{3} - \tfrac{2}{3} = 2\ \text{m}.
+$$
+
+So total displacement is $$12 + 2 = 14\ \text{m}$$. Distance traveled adds the magnitudes of the forward and backward pieces: $$12 + \tfrac{8}{3} + \tfrac{2}{3} = 12 + \tfrac{10}{3} \approx 15.3\ \text{m}$$. Displacement and distance differ because the cart briefly reverses.
+
+</div>
+
 ---
 
 ## Constant acceleration in one dimension
@@ -189,6 +254,55 @@ That proves equation 5.
 
 Always check that your signs for $$v_0$$, $$v$$, $$a$$, and $$\Delta x$$ match the coordinate system and always be consistent with your definitions (e.g. if you take up as $$+y$$ then gravity has negative acceleration).
 
+<div class="theorem-box" markdown="1">
+
+**Example (Stopping distance).** A car traveling at $$v_0 = 25\ \text{m/s}$$ brakes with constant deceleration and comes to rest in $$40\ \text{m}$$. Find the acceleration and the time it takes to stop.
+
+The final velocity is $$v = 0$$, and we know $$v_0$$ and $$\Delta x$$ but not $$t$$, so use equation 4 (missing $$t$$):
+
+$$
+v^2 = v_0^2 + 2a\Delta x \;\Rightarrow\; 0 = (25)^2 + 2a(40).
+$$
+
+Solve:
+
+$$
+a = -\frac{625}{80} = -7.8\ \text{m/s}^2.
+$$
+
+The negative sign means the acceleration opposes the motion, as expected for braking. For the time, use equation 1:
+
+$$
+v = v_0 + at \;\Rightarrow\; 0 = 25 + (-7.8)t,
+$$
+
+$$
+t = \frac{25}{7.8} \approx 3.2\ \text{s}.
+$$
+
+A quick check with equation 5: $$\Delta x = \frac{v_0 + v}{2}t = \frac{25 + 0}{2}(3.2) \approx 40\ \text{m}$$, which matches.
+
+</div>
+
+---
+
+## When acceleration is not constant
+
+The Big Five fail whenever $$a$$ varies, so you fall back on the defining derivatives and choose your integration variable based on what $$a$$ depends on:
+
+- **$$a$$ depends on time, $$a = a(t)$$.** Integrate directly: $$v = v_0 + \int a(t)\, dt$$, then $$x = x_0 + \int v(t)\, dt$$. This is the most common AP case (see the example above).
+- **$$a$$ depends on position, $$a = a(x)$$.** Time is awkward here, so eliminate it with the chain rule. Writing $$a = dv/dt = (dv/dx)(dx/dt) = v\,dv/dx$$ gives the separable relation
+
+$$
+a(x)\, dx = v\, dv.
+$$
+
+Integrating both sides connects speed to position without ever solving for time, much like how equation 4 was derived. This is the same identity used to build energy methods in [work and energy]({{ '/notes/physics/work/' | relative_url }}).
+
+- **$$a$$ depends on velocity, $$a = a(v)$$.** Separate variables in $$dv/dt = a(v)$$ to get $$dt = dv/a(v)$$, or use $$v\,dv/dx = a(v)$$ if you want $$v$$ as a function of $$x$$.
+
+The tool $$a = v\,dv/dx$$ is worth remembering: it trades the time variable for position whenever time is the inconvenient one to track.
+
 ---
 
 ## Two dimensions and projectile motion
@@ -229,11 +343,117 @@ $$
 
 <div class="theorem-box" markdown="1">
 
-**Extension.** Derive the shortcut formulas using the projectile motion equations.
+**Proof (Range, Max Height, Flight Time).** Take up as $$+y$$, launch from the origin, and write the component equations:
+
+$$
+y = v_0\sin\theta\, t - \tfrac{1}{2}g t^2, \qquad x = v_0\cos\theta\, t,
+$$
+
+$$
+v_y = v_0\sin\theta - gt.
+$$
+
+**Flight time.** On level ground the projectile lands when $$y = 0$$ again:
+
+$$
+0 = v_0\sin\theta\, T - \tfrac{1}{2}g T^2 = T\left(v_0\sin\theta - \tfrac{1}{2}g T\right).
+$$
+
+The root $$T = 0$$ is the launch instant; the landing is the other root:
+
+$$
+T = \frac{2 v_0 \sin\theta}{g}.
+$$
+
+**Maximum height.** At the top of the arc the vertical velocity is zero, $$v_y = 0$$, which happens at $$t = v_0\sin\theta / g$$, exactly half of $$T$$ (the parabola is symmetric). Substitute into $$y$$:
+
+$$
+h = v_0\sin\theta\left(\frac{v_0\sin\theta}{g}\right) - \tfrac{1}{2}g\left(\frac{v_0\sin\theta}{g}\right)^2 = \frac{v_0^2\sin^2\theta}{2g}.
+$$
+
+**Range.** The horizontal distance covered in the full flight time is
+
+$$
+R = v_0\cos\theta\cdot T = v_0\cos\theta\cdot\frac{2v_0\sin\theta}{g} = \frac{2v_0^2\sin\theta\cos\theta}{g}.
+$$
+
+Using the identity $$2\sin\theta\cos\theta = \sin(2\theta)$$,
+
+$$
+R = \frac{v_0^2\sin(2\theta)}{g}.
+$$
+
+Because $$\sin(2\theta)$$ is largest at $$2\theta = 90^\circ$$, range on level ground is maximized at $$\theta = 45^\circ$$, and complementary angles such as $$30^\circ$$ and $$60^\circ$$ give the same range.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example (Range and max height, numeric).** A ball is launched from level ground at $$v_0 = 20\ \text{m/s}$$ and $$\theta = 30^\circ$$. Take $$g = 9.8\ \text{m/s}^2$$. Find the time of flight, range, and maximum height.
+
+With $$\sin 30^\circ = 0.5$$, $$\cos 30^\circ \approx 0.866$$, and $$\sin 60^\circ \approx 0.866$$:
+
+$$
+T = \frac{2(20)(0.5)}{9.8} \approx 2.0\ \text{s},
+$$
+
+$$
+R = \frac{(20)^2(0.866)}{9.8} \approx 35.4\ \text{m},
+$$
+
+$$
+h = \frac{(20)^2(0.5)^2}{2(9.8)} \approx 5.1\ \text{m}.
+$$
+
+As a sanity check, a $$60^\circ$$ launch at the same speed would give the same range $$R$$ but a much greater height, since $$\sin^2 60^\circ = 0.75$$ is three times $$\sin^2 30^\circ$$.
 
 </div>
 
 If launch and landing heights differ, solve the quadratic in $$t$$ from the $$y$$ equation rather than memorizing these shortcuts.
+
+<div class="theorem-box" markdown="1">
+
+**Example (Projectile launched off a cliff).** A projectile is launched from the top of a cliff $$45\ \text{m}$$ tall at $$v_0 = 30\ \text{m/s}$$ and $$\theta = 37^\circ$$ above the horizontal. Take $$g = 10\ \text{m/s}^2$$, $$\sin 37^\circ = 0.6$$, $$\cos 37^\circ = 0.8$$. How long is it in the air, and how far from the base of the cliff does it land?
+
+Put the origin at the launch point with up as $$+y$$. Then the components are
+
+$$
+v_{0x} = 30(0.8) = 24\ \text{m/s}, \qquad v_{0y} = 30(0.6) = 18\ \text{m/s}.
+$$
+
+The ground is $$45\ \text{m}$$ below launch, so landing is at $$y = -45\ \text{m}$$:
+
+$$
+-45 = 18t - \tfrac{1}{2}(10)t^2 = 18t - 5t^2.
+$$
+
+Rearranging into standard form,
+
+$$
+5t^2 - 18t - 45 = 0.
+$$
+
+Apply the quadratic formula:
+
+$$
+t = \frac{18 \pm \sqrt{(-18)^2 - 4(5)(-45)}}{2(5)} = \frac{18 \pm \sqrt{324 + 900}}{10} = \frac{18 \pm 35}{10}.
+$$
+
+The physical (positive) root is
+
+$$
+t = \frac{18 + 35}{10} = 5.3\ \text{s}.
+$$
+
+The negative root is discarded because it corresponds to a time before launch. The horizontal range from the base of the cliff is
+
+$$
+x = v_{0x}\, t = 24(5.3) \approx 127\ \text{m}.
+$$
+
+Note that with unequal launch and landing heights the trajectory is no longer symmetric, which is why the level-ground shortcuts cannot be used here.
+
+</div>
 
 ---
 
@@ -245,4 +465,51 @@ $$
 \vec{v}_{A/C} = \vec{v}_{A/B} + \vec{v}_{B/C}.
 $$
 
-To visualize, you can draw the velocities as vectors, and do vector addition to get your final result. You can find more on the [USAPhO section on mechanics]({{ '/notes/physics/advmech/' | relative_url }}).
+To visualize, you can draw the velocities as vectors, and do vector addition to get your final result. A useful consistency check is that swapping the subscripts negates the vector, $$\vec{v}_{A/B} = -\vec{v}_{B/A}$$.
+
+<div class="theorem-box" markdown="1">
+
+**Example (River crossing).** A boat heads straight across a river, pointing its bow perpendicular to the banks with a speed of $$4\ \text{m/s}$$ relative to the water. The river flows at $$3\ \text{m/s}$$ parallel to the banks, and the river is $$80\ \text{m}$$ wide. Find the boat's velocity relative to the ground, how long the crossing takes, and how far downstream it lands.
+
+Let the boat's velocity relative to the water be $$\vec{v}_{B/W}$$ (across the river) and the water's velocity relative to the ground be $$\vec{v}_{W/G}$$ (downstream). The composition rule gives
+
+$$
+\vec{v}_{B/G} = \vec{v}_{B/W} + \vec{v}_{W/G}.
+$$
+
+These two pieces are perpendicular, so the ground speed is
+
+$$
+v_{B/G} = \sqrt{4^2 + 3^2} = 5\ \text{m/s},
+$$
+
+at an angle $$\arctan(3/4) \approx 37^\circ$$ downstream of straight across.
+
+The crossing time depends only on the across-river component, because the downstream flow does nothing to close the $$80\ \text{m}$$ gap:
+
+$$
+t = \frac{80}{4} = 20\ \text{s}.
+$$
+
+During that time the current carries the boat downstream by
+
+$$
+d = (3)(20) = 60\ \text{m}.
+$$
+
+The key idea is that the perpendicular components are independent, just as in projectile motion: the downstream drift does not change how long the crossing takes.
+
+</div>
+
+You can find more on the [USAPhO section on mechanics]({{ '/notes/physics/advmech/' | relative_url }}).
+
+---
+
+## Common mistakes
+
+- **Using the Big Five when acceleration is not constant.** If $$a$$ depends on $$t$$, $$x$$, or $$v$$, you must integrate; plugging into $$\Delta x = v_0 t + \frac{1}{2}at^2$$ is wrong.
+- **Sign errors with gravity.** Decide once whether up is $$+y$$ and keep $$g$$, $$v_0$$, $$v$$, and $$\Delta y$$ consistent with that choice throughout the problem.
+- **Confusing distance with displacement** (and speed with velocity). They differ whenever the motion reverses direction; only displacement is the area under the signed $$v$$-$$t$$ graph.
+- **Forgetting that $$v_y = 0$$ at the top of a trajectory, not $$v$$.** The horizontal velocity $$v_x$$ is unchanged throughout projectile motion; only the vertical component vanishes at the peak.
+- **Using level-ground range and height shortcuts when launch and landing heights differ.** In that case solve the quadratic in $$t$$ from the $$y$$ equation instead.
+- **Treating average velocity as the midpoint speed in general.** $$\bar{v} = \frac{1}{2}(v_0 + v_f)$$ only holds for constant acceleration.

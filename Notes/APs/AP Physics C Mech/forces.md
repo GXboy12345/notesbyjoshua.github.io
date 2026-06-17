@@ -67,13 +67,13 @@ Good procedure:
 5. Resolve angled forces into components using vector decomposition.
 6. Write Newton's second law separately for each direction.
 
-For a particle in two dimensions,
+For a particle in two dimensions, you should split up force into components using vector decomposition like for velocity:
 
 $$
 \sum F_x = ma_x, \qquad \sum F_y = ma_y.
 $$
 
-If acceleration is zero in one direction, the net force in that direction is zero even if forces are present.
+If acceleration is zero in one direction, the net force in that direction is **zero** even if forces are present.
 
 ---
 
@@ -100,6 +100,8 @@ Weight points downward, toward Earth's center. Mass is not weight: mass is an ob
 ### Normal force
 
 The **normal force** is a contact force **perpendicular** to a surface and opposes gravity. It adjusts to prevent objects from passing through each other, but it is not automatically equal to $$mg$$. For example, on an incline or in an accelerating elevator, the normal force differs from the object's weight. Normally, you need to solve out force equations to get the normal force. The normal force acts along the entire surface of contact but is usually drawn out in the center of the contact plane.
+
+A concrete case where $$F_N \ne mg$$: suppose you push down on a box resting on the floor with an extra downward force $$P$$ at some angle, or simply press straight down. The vertical equation with no vertical acceleration is $$F_N - mg - P = 0$$, so $$F_N = mg + P > mg$$. If instead you pull up on the box with a force $$P$$ (not enough to lift it), then $$F_N = mg - P < mg$$. The normal force only equals $$mg$$ in the special case of a horizontal surface with no other vertical forces and no vertical acceleration. Always get $$F_N$$ from the perpendicular equation, never by assumption, because friction limits like $$\mu_s F_N$$ depend on it.
 
 ### Tension
 
@@ -149,7 +151,7 @@ $$
 \vec{F}_d = c\vec{v}^2
 $$
 
-for high-speed quadratic drag. Linear drag leads naturally to differential equations, so it is a good Physics C extension.
+for high-speed quadratic drag.
 
 ---
 
@@ -170,6 +172,34 @@ For multiple-object systems, you can choose either:
 - Treat several objects as one system to eliminate internal forces.
 
 If the question asks only for acceleration of a connected system, the system approach is often faster. If the question asks for tension or contact force, individual free-body diagrams are usually required.
+
+<div class="theorem-box" markdown="1">
+
+**Example (block on a table connected to a hanging mass).** A block of mass $$m_1 = 3.0\ \text{kg}$$ sits on a frictionless horizontal table. A light string runs from the block, over a frictionless pulley at the edge of the table, to a hanging block of mass $$m_2 = 2.0\ \text{kg}$$. Find the acceleration of the system and the tension in the string.
+
+Both blocks share the same acceleration magnitude $$a$$ because the string is inextensible: as $$m_2$$ falls, $$m_1$$ slides forward by the same amount.
+
+First, the fast way (system method). The only external force along the direction of motion is the weight of the hanging mass, $$m_2 g$$, and the moving mass is $$m_1 + m_2$$:
+
+$$
+m_2 g = (m_1 + m_2)a \quad\Rightarrow\quad a = \frac{m_2 g}{m_1 + m_2} = \frac{(2.0)(9.8)}{5.0} = 3.9\ \text{m/s}^2.
+$$
+
+Now find the tension, which requires an individual free-body diagram. For the block on the table (horizontal direction, frictionless):
+
+$$
+T = m_1 a = (3.0)(3.9) = 11.8\ \text{N}.
+$$
+
+As a check, write Newton's second law for the hanging mass with down positive:
+
+$$
+m_2 g - T = m_2 a \quad\Rightarrow\quad T = m_2(g - a) = (2.0)(9.8 - 3.9) = 11.8\ \text{N}.
+$$
+
+Both routes agree. Notice the system method gave $$a$$ instantly, but the tension only appeared once we cut the system into individual diagrams: tension is an internal force, invisible to the system equation.
+
+</div>
 
 ---
 
@@ -201,9 +231,51 @@ $$
 a = g\sin\theta.
 $$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/inclinedplane.png' | relative_url }}" alt="Inclined plane force components placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/inclinedplane.jpg' | relative_url }}" alt="Inclined plane force components placeholder" loading="lazy" decoding="async" />
 
 With friction, decide whether the block is moving or about to move. If it is moving, use kinetic friction. If it is at rest, static friction takes whatever value is needed up to $$\mu_sF_N$$. It is also helpful to use geometry/similar triangles to determine certain angles for vector decompositions. ALWAYS remember your normal force!
+
+<div class="theorem-box" markdown="1">
+
+**Example (block on a rough incline: does it slide?).** A block of mass $$m = 4.0\ \text{kg}$$ rests on an incline at $$\theta = 30^\circ$$, released from rest. The coefficients are $$\mu_s = 0.50$$ and $$\mu_k = 0.40$$. Determine whether the block slides, and if so, find its acceleration.
+
+First decide between static and kinetic friction by comparing the driving force to the maximum static friction. The component of gravity down the plane is
+
+$$
+F_{g,\parallel} = mg\sin\theta = (4.0)(9.8)\sin 30^\circ = 19.6\ \text{N}.
+$$
+
+The normal force comes from the perpendicular equation (no acceleration perpendicular to the surface):
+
+$$
+F_N = mg\cos\theta = (4.0)(9.8)\cos 30^\circ = 33.9\ \text{N}.
+$$
+
+The maximum static friction is
+
+$$
+f_{s,\text{max}} = \mu_s F_N = (0.50)(33.9) = 17.0\ \text{N}.
+$$
+
+Since the driving force $$19.6\ \text{N}$$ exceeds $$f_{s,\text{max}} = 17.0\ \text{N}$$, static friction cannot hold the block, so it slides. Now use kinetic friction, which acts up the plane (opposing the downhill motion):
+
+$$
+f_k = \mu_k F_N = (0.40)(33.9) = 13.6\ \text{N}.
+$$
+
+Newton's second law along the incline (down the plane positive):
+
+$$
+mg\sin\theta - f_k = ma,
+$$
+
+$$
+a = g\sin\theta - \mu_k g\cos\theta = 9.8(\sin 30^\circ - 0.40\cos 30^\circ) = 9.8(0.500 - 0.346) = 1.5\ \text{m/s}^2.
+$$
+
+The block accelerates down the plane at about $$1.5\ \text{m/s}^2$$. Had $$f_{s,\text{max}}$$ exceeded $$19.6\ \text{N}$$, the block would have stayed put with static friction equal to exactly $$19.6\ \text{N}$$, not $$\mu_s F_N$$.
+
+</div>
 
 ---
 
@@ -229,6 +301,22 @@ $$
 
 This is the maximum angle before sliding for a simple block on a rough incline (rough meaning that there is friction). If external forces or other constraints are present, the slipping condition must be rederived from the free-body diagram.
 
+The result $$\tan\theta_{\max} = \mu_s$$ is notable because the mass cancels: a heavy block and a light block of the same material begin to slide at the same angle. This is also a standard way to *measure* $$\mu_s$$ experimentally — slowly tilt a surface until the object just slips and record the angle.
+
+<div class="theorem-box" markdown="1">
+
+**Example (measuring $$\mu_s$$ from the slip angle).** A coin placed on a flat book starts to slide when the book is tilted to $$\theta_{\max} = 22^\circ$$ from horizontal. Find $$\mu_s$$.
+
+At impending slip the down-plane gravity component equals the maximum static friction:
+
+$$
+mg\sin\theta_{\max} = \mu_s mg\cos\theta_{\max} \quad\Rightarrow\quad \mu_s = \tan\theta_{\max} = \tan 22^\circ \approx 0.40.
+$$
+
+The mass and $$g$$ both cancel, which is why this simple tilt test works regardless of how heavy the coin is.
+
+</div>
+
 ---
 
 ## Connected objects and pulleys
@@ -249,17 +337,53 @@ $$
 T = \frac{2m_1m_2}{m_1 + m_2}g.
 $$
 
-These formulas are worth understanding, not just memorizing. They come from
+<div class="theorem-box" markdown="1">
+
+**Proof (Atwood tension and acceleration).** Two masses $$m_1$$ and $$m_2$$ (with $$m_2 > m_1$$) hang from a massless, inextensible string over a massless, frictionless pulley. Find the acceleration $$a$$ and tension $$T$$.
+
+Because the string is inextensible, whatever distance $$m_2$$ falls, $$m_1$$ rises by the same amount, so both masses have the same acceleration magnitude $$a$$. Take the direction of motion as positive for each mass: $$m_2$$ accelerates downward and $$m_1$$ accelerates upward, with the same $$a$$. The tension $$T$$ is the same on both sides because the string and pulley are ideal.
+
+Free-body diagram for $$m_1$$ (taking up as positive):
 
 $$
-T - m_1g = m_1a,
+T - m_1 g = m_1 a.
 $$
 
+Free-body diagram for $$m_2$$ (taking down as positive):
+
 $$
-m_2g - T = m_2a.
+m_2 g - T = m_2 a.
 $$
 
-For pulley systems with movable pulleys, the acceleration constraints may involve factors of 2. Write the string-length constraint first, then differentiate with respect to time to relate velocities and accelerations.
+Add the two equations to eliminate $$T$$:
+
+$$
+m_2 g - m_1 g = (m_1 + m_2)a,
+$$
+
+so
+
+$$
+a = \frac{(m_2 - m_1)g}{m_1 + m_2}.
+$$
+
+To find $$T$$, substitute $$a$$ back into the first equation:
+
+$$
+T = m_1(g + a) = m_1 g\left(1 + \frac{m_2 - m_1}{m_1 + m_2}\right) = m_1 g\cdot\frac{2m_2}{m_1 + m_2},
+$$
+
+so
+
+$$
+T = \frac{2m_1 m_2}{m_1 + m_2}g.
+$$
+
+As a check, if $$m_1 = m_2$$ the acceleration is zero and $$T = m_1 g$$, as expected for balanced masses. If $$m_2 \gg m_1$$, then $$a \to g$$ (near free fall) and $$T \to 2m_1 g$$, never $$m_2 g$$.
+
+</div>
+
+For pulley systems with movable pulleys, the acceleration constraints may involve factors of 2. Write the string-length constraint (the length of the string is always constant) first, then differentiate with respect to time to relate velocities and accelerations.
 
 ---
 
@@ -280,6 +404,30 @@ F_N = m(g + a).
 $$
 
 If the elevator accelerates upward, $$F_N > mg$$. If it accelerates downward, $$F_N < mg$$. In free fall, $$a = -g$$ and $$F_N = 0$$, so the object is weightless in the apparent-weight sense even though gravity still acts.
+
+<div class="theorem-box" markdown="1">
+
+**Example (scale reading in an elevator).** A person of mass $$m = 70\ \text{kg}$$ stands on a bathroom scale in an elevator. The scale reads the normal force in newtons. Find the reading when (a) the elevator accelerates upward at $$2.0\ \text{m/s}^2$$, and (b) the elevator accelerates downward at $$2.0\ \text{m/s}^2$$.
+
+Take up as positive. The scale reads $$F_N$$, where $$F_N - mg = ma$$, so $$F_N = m(g + a)$$.
+
+(a) Upward acceleration, $$a = +2.0\ \text{m/s}^2$$:
+
+$$
+F_N = 70(9.8 + 2.0) = 70(11.8) = 826\ \text{N}.
+$$
+
+The person feels heavier than their true weight $$mg = 686\ \text{N}$$.
+
+(b) Downward acceleration, $$a = -2.0\ \text{m/s}^2$$:
+
+$$
+F_N = 70(9.8 - 2.0) = 70(7.8) = 546\ \text{N}.
+$$
+
+The person feels lighter. Note the sign of $$a$$ is what matters, not the direction of motion: an elevator moving up but slowing down has $$a < 0$$ and gives the lighter reading.
+
+</div>
 
 ---
 
@@ -323,9 +471,9 @@ $$
 \sum F_r = m\frac{v^2}{r}.
 $$
 
-There is no special "centripetal force." The phrase describes the net inward force required for circular motion. Gravity, tension, friction, the normal force, or a combination of forces can provide the centripetal force.
+There is no special "centripetal force." The phrase describes the net inward force required for circular motion. All forces acting on an object going in uniform circular motion must add up to the centripetal force (as long as the force does not act perpendicular to the vector connecting the object and the center of the circle.).
 
-<!-- <img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/circular-motion-forces.png' | relative_url }}" alt="Circular motion force diagram placeholder" loading="lazy" decoding="async" /> -->
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/circular-motion-forces.png' | relative_url }}" alt="Circular motion force diagram placeholder" loading="lazy" decoding="async" />
 
 Examples:
 
@@ -352,6 +500,64 @@ $$
 v_{\text{max}} = \sqrt{\mu_sgr}.
 $$
 
+<div class="theorem-box" markdown="1">
+
+**Example (car rounding a flat curve).** A car takes a flat (unbanked) curve of radius $$r = 50\ \text{m}$$. The coefficient of static friction between the tires and road is $$\mu_s = 0.60$$. What is the maximum speed at which the car can round the curve without skidding?
+
+On a flat road the only horizontal force available to turn the car is static friction, which must supply the centripetal force. At the maximum speed friction is at its limit:
+
+$$
+\frac{mv_{\max}^2}{r} = \mu_s F_N = \mu_s mg.
+$$
+
+The mass cancels, leaving
+
+$$
+v_{\max} = \sqrt{\mu_s g r} = \sqrt{(0.60)(9.8)(50)} = \sqrt{294} \approx 17\ \text{m/s}.
+$$
+
+That is about $$62\ \text{km/h}$$. Because $$m$$ cancels, a fully loaded truck and a light car can take the same curve at the same maximum speed (assuming equal $$\mu_s$$). Going faster than $$v_{\max}$$ means the required centripetal force exceeds what friction can supply, and the car slides outward.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example (conical pendulum).** A ball of mass $$m$$ on a string of length $$L$$ swings in a horizontal circle, with the string tracing a cone at a constant angle $$\theta$$ from the vertical. Find the period $$\mathcal{T}$$ of the motion.
+
+The ball moves in a horizontal circle of radius $$r = L\sin\theta$$, so its acceleration is purely horizontal and points toward the center. Two forces act: tension $$T$$ along the string and weight $$mg$$ down. There is no vertical acceleration, so the vertical components balance:
+
+$$
+T\cos\theta = mg.
+$$
+
+The horizontal component of tension provides the centripetal force:
+
+$$
+T\sin\theta = \frac{mv^2}{r} = m\omega^2 r.
+$$
+
+Divide the second equation by the first to eliminate $$T$$ and $$m$$:
+
+$$
+\tan\theta = \frac{\omega^2 r}{g} = \frac{\omega^2 L\sin\theta}{g}.
+$$
+
+Cancel $$\sin\theta$$ using $$\tan\theta = \sin\theta/\cos\theta$$:
+
+$$
+\frac{1}{\cos\theta} = \frac{\omega^2 L}{g} \quad\Rightarrow\quad \omega = \sqrt{\frac{g}{L\cos\theta}}.
+$$
+
+Since $$\omega = 2\pi/\mathcal{T}$$,
+
+$$
+\mathcal{T} = 2\pi\sqrt{\frac{L\cos\theta}{g}}.
+$$
+
+As $$\theta \to 0$$ the period approaches $$2\pi\sqrt{L/g}$$, the small-angle pendulum result. As $$\theta \to 90^\circ$$ the period goes to zero — you would need infinite tension to hold the string horizontal, which is why the string can never be perfectly horizontal.
+
+</div>
+
 ---
 
 ## Nonuniform circular motion
@@ -373,6 +579,58 @@ $$
 $$
 
 This is common in vertical circle problems, where gravity has a tangential component except at the top and bottom.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (minimum speed at the top of a vertical loop).** An object travels on the inside of a vertical circular track of radius $$r$$. Find the minimum speed $$v_{\text{top}}$$ at the top of the loop for the object to maintain contact with the track.
+
+At the very top, both the weight $$mg$$ and the normal force $$N$$ point straight down, toward the center of the circle. The radial (inward) form of Newton's second law gives
+
+$$
+N + mg = \frac{mv_{\text{top}}^2}{r}.
+$$
+
+The track can only push, never pull, so $$N \ge 0$$. As the speed decreases, the required centripetal force decreases, and $$N$$ shrinks. The slowest possible speed that still keeps the object on the track is the point where $$N = 0$$, meaning gravity alone supplies the entire centripetal force:
+
+$$
+mg = \frac{mv_{\text{top}}^2}{r}.
+$$
+
+The mass cancels, giving
+
+$$
+v_{\text{top}} = \sqrt{gr}.
+$$
+
+Below this speed, the required inward force is less than $$mg$$, so the object falls away from the track before reaching the top. The same condition describes a ball on a string ($$N$$ replaced by tension $$T \ge 0$$) and water in a swung bucket.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example (loop-the-loop release height).** A small bead slides without friction down a track and around a vertical loop of radius $$r = 0.40\ \text{m}$$. From what minimum height $$h$$ above the bottom of the loop must it be released to complete the loop?
+
+The minimum condition at the top is $$v_{\text{top}}^2 = gr$$ from the proof above. Using energy conservation (frictionless) between the release point at height $$h$$ and the top of the loop at height $$2r$$:
+
+$$
+mgh = mg(2r) + \tfrac{1}{2}mv_{\text{top}}^2.
+$$
+
+Substitute $$v_{\text{top}}^2 = gr$$ and cancel $$m$$:
+
+$$
+gh = 2gr + \tfrac{1}{2}gr = \tfrac{5}{2}gr,
+$$
+
+so
+
+$$
+h = \frac{5}{2}r = \frac{5}{2}(0.40) = 1.0\ \text{m}.
+$$
+
+The classic result is that the release height must be at least $$2.5$$ radii above the bottom of the loop. See [Unit 3: Work, Energy, and Power]({{ '/notes/physics/work/' | relative_url }}) for the energy method used here.
+
+</div>
 
 ---
 
@@ -399,6 +657,62 @@ So the design speed is
 $$
 v = \sqrt{rg\tan\theta}.
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Proof (banked-curve design speed).** A car rounds a curve of radius $$r$$ on a road banked at angle $$\theta$$, with no friction needed. Find the speed at which it can do so.
+
+Only two forces act: the normal force $$N$$, perpendicular to the road surface, and the weight $$mg$$, straight down. Use horizontal and vertical axes (not axes along the incline), because the acceleration is horizontal — it points toward the center of the circle, which lies in the horizontal plane.
+
+The normal force tilts inward by the bank angle $$\theta$$ from vertical. Resolve it: its vertical component is $$N\cos\theta$$ and its horizontal (inward) component is $$N\sin\theta$$.
+
+Vertically, there is no acceleration, so the vertical forces balance:
+
+$$
+N\cos\theta = mg.
+$$
+
+Horizontally, the inward component of the normal force is the entire centripetal force:
+
+$$
+N\sin\theta = \frac{mv^2}{r}.
+$$
+
+Divide the horizontal equation by the vertical equation. Both $$N$$ and $$m$$ cancel:
+
+$$
+\tan\theta = \frac{v^2}{rg}.
+$$
+
+Solving for $$v$$ gives the design speed:
+
+$$
+v = \sqrt{rg\tan\theta}.
+$$
+
+At exactly this speed friction is not required at all. The mass cancels, so the design speed is the same for every vehicle.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example (banking angle for a highway curve).** A highway curve of radius $$r = 120\ \text{m}$$ is to be banked so that a car traveling at $$v = 25\ \text{m/s}$$ (about $$90\ \text{km/h}$$) needs no friction. Find the required bank angle $$\theta$$.
+
+From the design-speed relation,
+
+$$
+\tan\theta = \frac{v^2}{rg} = \frac{(25)^2}{(120)(9.8)} = \frac{625}{1176} = 0.531,
+$$
+
+so
+
+$$
+\theta = \arctan(0.531) \approx 28^\circ.
+$$
+
+A car going faster than $$25\ \text{m/s}$$ on this bank would tend to slide outward and up the slope, so static friction would point down the slope; a slower car would tend to slide inward and down, so friction would point up the slope. Friction therefore widens the safe range of speeds around the design speed.
+
+</div>
 
 With friction, static friction points whichever way prevents slipping: up the slope if the car would slide down, and down the slope if the car would slide up.
 
@@ -452,6 +766,56 @@ $$
 
 This is slightly beyond the most common AP force problems, but it is a classic Physics C use of calculus.
 
+<div class="theorem-box" markdown="1">
+
+**Example (falling with linear drag, solving the differential equation).** An object of mass $$m$$ is released from rest and falls subject to gravity and linear drag $$F_d = -bv$$. Derive $$v(t)$$ and confirm the terminal velocity.
+
+Take down as positive. Newton's second law is
+
+$$
+m\frac{dv}{dt} = mg - bv.
+$$
+
+This is a separable first-order differential equation. Separate variables:
+
+$$
+\frac{dv}{mg - bv} = \frac{dt}{m}.
+$$
+
+Integrate the left side using $$\int \frac{dv}{mg - bv} = -\frac{1}{b}\ln|mg - bv|$$:
+
+$$
+-\frac{1}{b}\ln(mg - bv) = \frac{t}{m} + C.
+$$
+
+Apply the initial condition $$v(0) = 0$$ to find $$C = -\frac{1}{b}\ln(mg)$$. Substitute back and combine the logarithms:
+
+$$
+-\frac{1}{b}\ln\!\left(\frac{mg - bv}{mg}\right) = \frac{t}{m}.
+$$
+
+Multiply by $$-b$$ and exponentiate:
+
+$$
+\frac{mg - bv}{mg} = e^{-bt/m}.
+$$
+
+Solve for $$v$$:
+
+$$
+v(t) = \frac{mg}{b}\left(1 - e^{-bt/m}\right).
+$$
+
+Since the terminal velocity is $$v_t = mg/b$$, this is exactly
+
+$$
+v(t) = v_t\left(1 - e^{-bt/m}\right).
+$$
+
+As $$t \to \infty$$, the exponential vanishes and $$v \to v_t$$, as expected. The quantity $$\tau = m/b$$ is the time constant: after one time constant the speed reaches about $$63\%$$ of terminal velocity. At early times the exponential expands as $$1 - bt/m + \dots$$, giving $$v \approx gt$$, the familiar free-fall limit before drag becomes significant.
+
+</div>
+
 ---
 
 ## Center of mass and systems
@@ -477,6 +841,8 @@ This idea becomes central in [Unit 4: Linear Momentum and Impulse]({{ '/notes/ph
 5. Forgetting that tension can differ if the rope or pulley is not ideal.
 6. Assuming zero velocity means zero acceleration.
 7. Mixing up the direction of friction; friction opposes relative motion or impending relative motion, not always the direction of motion.
+8. Using the wrong axes on a banked curve or conical pendulum; the acceleration is horizontal there, so horizontal/vertical axes are usually cleaner than axes along the surface.
+9. Confusing the direction of motion with the sign of acceleration in elevator problems; a slowing upward elevator has downward acceleration.
 
 ---
 
@@ -490,6 +856,7 @@ This idea becomes central in [Unit 4: Linear Momentum and Impulse]({{ '/notes/ph
 6. Add constraints for ropes, pulleys, or circular motion.
 7. Solve symbolically when possible.
 8. Check limiting cases: frictionless, very large mass, zero angle, or zero acceleration.
+9. For circular motion, point one axis along the radius (toward the center) and set the net radial force equal to $$mv^2/r$$.
 
 ---
 
@@ -507,4 +874,9 @@ This idea becomes central in [Unit 4: Linear Momentum and Impulse]({{ '/notes/ph
 | Uniform circular acceleration | $$a_c = v^2/r = \omega^2r$$ |
 | Radial Newton's second law | $$\sum F_r = mv^2/r$$ |
 | Frictionless banked curve | $$v = \sqrt{rg\tan\theta}$$ |
+| Flat-curve max speed | $$v_{\max} = \sqrt{\mu_s g r}$$ |
+| Atwood machine | $$a = \dfrac{(m_2 - m_1)g}{m_1 + m_2},\quad T = \dfrac{2m_1 m_2}{m_1 + m_2}g$$ |
+| Apparent weight (elevator) | $$F_N = m(g + a)$$ |
+| Top-of-loop minimum speed | $$v_{\text{top}} = \sqrt{gr}$$ |
+| Terminal velocity (linear drag) | $$v_t = mg/b$$ |
 | Center of mass dynamics | $$\sum \vec{F}_{\text{ext}} = M\vec{a}_{\text{CM}}$$ |
