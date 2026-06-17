@@ -92,7 +92,9 @@ This converts many dynamics problems into *statics* problems. A block on an acce
 
 ---
 
-## Reducing a two-body problem to one body
+## Solving two-body problems
+
+### Reduced mass
 
 When two objects interact only with each other (orbits, collisions, two masses on a spring), split the motion into the **center of mass** (which moves at constant velocity, by momentum conservation) and the **relative coordinate** $$\vec r=\vec r_1-\vec r_2$$. The relative motion obeys a single-particle equation with the **reduced mass**
 
@@ -101,3 +103,79 @@ $$
 $$
 
 So two stars orbiting each other, or two atoms vibrating in a molecule, reduce to one effective particle of mass $$\mu$$ in the interaction potential. This is exactly why the full Kepler's third law carries $$G(M_1+M_2)$$ rather than a single mass (see [Stellar Physics]({{ '/notes/physics/stellarphys/' | relative_url }})), and why molecular vibration frequencies use $$\mu$$ instead of either atomic mass.
+
+### Inverse-square forces
+
+If a two-body system obeys a inverse-square law (e.g. gravitational force/Coulombic force), then you can assume that it obeys an elliptical orbit and Kepler's Laws. If two objects are travelling in a straight line, you can take the system as a very very squashed ellipse ($$e=1$$).
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A point charge $$+Q$$ with mass $$M$$ and another point charge $$-q$$ with mass $$m$$ are separated by a distance $$R$$, and then released from rest at $$t=0$$. When do these two charges collide? Neglect the gravitational interaction, and assume that the Coulomb’s law still applies in this case.
+
+**Method 1 (Reduced mass)**
+
+Since the pair is released from rest, the total momentum is zero and the center of mass never moves; the charges meet when the relative coordinate $$r=r_1-r_2$$ shrinks from $$R$$ to $$0$$. The relative motion is that of a single particle of reduced mass
+
+$$
+\mu=\frac{mM}{M+m}
+$$
+
+in the attractive potential $$U(r)=-\dfrac{k}{r}$$, where $$k=\dfrac{Qq}{4\pi\varepsilon_0}$$.
+
+The particle is released from rest at $$r=R$$, so its total energy is $$E=U(R)=-k/R$$. At a later separation $$r$$,
+
+$$
+\tfrac12\mu\dot r^2-\frac{k}{r}=-\frac{k}{R}
+\quad\Longrightarrow\quad
+\dot r^2=\frac{2k}{\mu}\left(\frac1r-\frac1R\right).
+$$
+
+Since $$r$$ is decreasing, $$\dot r=-\sqrt{\dfrac{2k}{\mu}\dfrac{R-r}{rR}}$$. Separating variables and integrating over the whole collapse $$r:R\to 0$$ gives the collision time
+
+$$
+t=\sqrt{\frac{\mu R}{2k}}\int_0^{R}\sqrt{\frac{r}{R-r}}\,dr .
+$$
+
+The substitution $$r=R\sin^2\phi$$ turns the integral into $$2R\displaystyle\int_0^{\pi/2}\sin^2\phi\,d\phi=\dfrac{\pi R}{2}$$, so
+
+$$
+t=\frac{\pi}{2}\sqrt{\frac{\mu R^3}{2k}}
+=\pi\sqrt{\frac{\pi\varepsilon_0\,\mu R^3}{2Qq}}
+=\pi\sqrt{\frac{\pi\varepsilon_0\,mMR^3}{2Qq(M+m)}} ,
+$$
+
+substituting $$k=Qq/4\pi\varepsilon_0$$ and $$\mu=mM/(M+m)$$.
+
+**Method 2 (Squashed orbits)**
+
+First consider the situation where $$M \longrightarrow +\infty$$, and the system becomes a point mass and moves in an attractive central force field that follows the inverse-square-law. Therefore, the motion of the mass follows the Kepler’s laws. If the mass is released at rest, its
+trajectory is a straight line going towards M. This straight-line can be treated as an
+extremely thin elliptical orbit with $$a=\frac{R}{2}$$ and $$b=0$$. The time it takes to collide
+with $$M$$ is half of the period of this orbit. According to Kepler’s 3rd law, the period
+of an elliptical orbit depends only on $$a$$, not $$b$$. Therefore, we can use a circular orbit
+with a radius $$R/2$$ to calculate the period of the elliptical orbit with $$a = R/2$$. Using the
+dynamics equations of a circular orbit, we set the Coulomb force equal to the centripetal force at radius $$R/2$$:
+
+$$
+\frac{1}{4\pi\varepsilon_0}\frac{Qq}{\left(\frac{R}{2}\right)^2}=m\,\frac{R}{2}\,\omega^2 .
+$$
+
+Solving for $$\omega$$ and using $$T=2\pi/\omega$$ gives the period of the orbit,
+
+$$
+T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{\pi\varepsilon_0 mR^3}{2Qq}} .
+$$
+
+The collision happens after half a period, so
+
+$$
+t=\frac{T}{2}=\pi\sqrt{\frac{\pi\varepsilon_0 mR^3}{2Qq}} .
+$$
+
+If $$M$$ is finite, we just replace $$m$$ in the result with the reduced mass $$\mu=\dfrac{mM}{M+m}$$:
+
+$$
+t=\frac{T}{2}=\pi\sqrt{\frac{\pi\varepsilon_0 mMR^3}{2Qq(M+m)}} .
+$$
+
+</div>
