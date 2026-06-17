@@ -121,7 +121,7 @@ the electromagnetic modes of a box with conducting walls. These are exactly the 
 
 <div class="theorem-box" markdown="1">
 
-For a particle inside a harmonic oscillator with $$V(x) = \tfrac{1}{2}kx^2$$, find the energy of the particle.
+*Example.* For a particle inside a harmonic oscillator with $$V(x) = \tfrac{1}{2}kx^2$$, find the energy of the particle.
 
 A particle of energy $$E$$ satisfies $$E = \dfrac{p^2}{2m} + \tfrac{1}{2}kx^2$$. Rearranging,
 
@@ -365,7 +365,9 @@ At $$T = 0$$ this is a step function: every state below $$\mu$$ is filled, every
 
 <div class="theorem-box" markdown="1">
 
-**Fermi energy of a free electron gas.** We fill the lowest states with $$N$$ electrons in a box of volume $$V$$ and ask for the energy $$E_F$$ of the highest occupied state. The number of *spatial* states with energy at most $$E$$ was found above from the density of states,
+**Exanoke.** We fill the lowest states with $$N$$ electrons in a box of volume $$V$$. Find the energy $$E_F$$ of the highest occupied state. 
+
+The number of *spatial* states with energy at most $$E$$ was found above from the density of states,
 
 $$
 N_{\text{spatial}}(E) = \frac{V}{6\pi^2}\left(\frac{2mE}{\hbar^2}\right)^{3/2}.
@@ -476,7 +478,7 @@ and either can be favorable *inside a nucleus* depending on its composition. But
 | energy released in nuclear reactions | $$\sim 0.1\text{–}100\,\text{MeV}$$ |
 | nucleon rest energy | $$\sim 1\,\text{GeV}$$ |
 
-Because nuclear energies dwarf chemical ones, decay rates are usually insensitive to the chemical environment. (Rare exceptions exist, like electron-capture isotopes such as $$^7$$Be.)
+Since nuclear energies dwarf chemical ones, decay rates are usually insensitive to the chemical environment. (Rare exceptions exist, like electron-capture isotopes such as $$^7$$Be.)
 
 ### The radioactive decay law
 
@@ -502,7 +504,7 @@ $$
 \theta = \frac{1}{\hbar}\int p\,dx,
 $$
 
-meaning it **exponentially decays** across the barrier. The escape probability per collision is $$|e^{i\theta}|^2$$, and the decay timescale comes out as
+meaning it **exponentially decays** across the barrier. The escape probability per collision is $$\lvert e^{i\theta} \rvert^2$$, and the decay timescale comes out as
 
 $$
 \tau \sim \tau_{\text{collision}}\, e^{+2|\mathrm{Im}\,\theta|}, \qquad \text{with tunneling probability} \;\sim e^{-\sqrt{E_g/E}}.

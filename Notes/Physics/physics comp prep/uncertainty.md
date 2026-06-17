@@ -8,11 +8,11 @@ permalink: /notes/physics/uncertainty/
 
 # Uncertainty
 
-With every experiment, there will be a source of error, whether you like it or not. Since we aren't perfect, we need to account for the error, which we call uncertainty. A measurement reported without its uncertainty is almost meaningless: "the period is 2.00 s" is a very different claim from "the period is $$2.00\pm0.05$$ s." This page covers how uncertainties **propagate** when you combine measured quantities into a calculated result.
+With every experiment, there will be a source of error, whether you like it or not. Since we aren't perfect, we need to account for the error, which we call uncertainty. A measurement reported without its uncertainty is almost meaningless: "the period is 2.00 s" is a very different claim from "the period is $$2.00\pm0.05$$ s."
 
 A quantity $$x$$ is written $$x\pm\delta x$$, where $$\delta x$$ is the **absolute uncertainty** (same units as $$x$$). The **relative** (or fractional) uncertainty is $$\delta x/x$$, often quoted as a percentage. The central question of error propagation is: if $$f$$ depends on measured quantities $$x,y,\dots$$, how big is $$\delta f$$?
 
-> **A note on the two methods.** There are two conventions. The **worst-case (linear)** method simply adds uncertainties and gives the largest the error could possibly be. The **quadrature (statistical)** method adds them in quadrature (root-sum-of-squares) and is correct when the errors are *independent and random*, since independent errors partly cancel rather than always conspiring. Quadrature is the standard for real lab data; the linear method is a quick conservative bound. Both are shown below — use whichever a problem specifies, defaulting to quadrature.
+> **A note on the two methods.** There are two conventions. The **worst-case (linear)** method simply adds uncertainties and gives the largest the error could possibly be. The **quadrature (statistical)** method adds them in quadrature (root-sum-of-squares) and is correct when the errors are *independent and random*, since independent errors partly cancel rather than always conspiring. Quadrature is the standard for real lab data; the linear method is a quick conservative bound. Both are shown below — use whichever a problem specifies, defaulting to quadrature. MOST problems require quadrature uncertainty calculations.
 
 ---
 
@@ -25,7 +25,7 @@ $$
 \delta f=\sqrt{(\delta x)^2+(\delta y)^2}\quad(\text{quadrature}).
 $$
 
-Note that this holds for subtraction too — uncertainties never subtract. This is why **subtracting two nearly-equal large numbers is dangerous**: the absolute uncertainty stays the same size while the result shrinks, so the *relative* uncertainty can blow up. (For example, measuring a thin film's thickness as the difference of two large lengths.)
+Note that this holds for subtraction too since uncertainties never subtract. This is why **subtracting two nearly-equal large numbers is dangerous**: the absolute uncertainty stays the same size while the result shrinks, so the *relative* uncertainty can blow up. (For example, measuring a thin film's thickness as the difference of two large lengths.)
 
 ---
 
@@ -58,7 +58,9 @@ $$
 
 <div class="theorem-box" markdown="1">
 
-**Example (measuring $$g$$ with a pendulum).** From $$T=2\pi\sqrt{L/g}$$ we solve $$g=4\pi^2 L/T^2$$. Suppose $$L=1.000\pm0.005\ \text{m}$$ (0.5%) and $$T=2.00\pm0.02\ \text{s}$$ (1%). Since $$g\propto L\,T^{-2}$$, the exponents are $$1$$ for $$L$$ and $$2$$ for $$T$$:
+**Example.** Suppose for a simple pendulum $$L=1.000\pm0.005\ \text{m}$$ (0.5%) and $$T=2.00\pm0.02\ \text{s}$$ (1%). Find $$g$$ with uncertainty.
+
+From $$T=2\pi\sqrt{L/g}$$ we solve $$g=4\pi^2 L/T^2$$. Since $$g\propto L\,T^{-2}$$, the exponents are $$1$$ for $$L$$ and $$2$$ for $$T$$:
 
 $$
 \frac{\delta g}{g}=\sqrt{\left(1\cdot 0.005\right)^2+\left(2\cdot 0.01\right)^2}=\sqrt{0.005^2+0.02^2}\approx 0.0206,
@@ -75,19 +77,21 @@ about 2%. With $$g=4\pi^2(1.000)/(2.00)^2=9.87\ \text{m/s}^2$$, the result is $$
 All the rules above are special cases of one **master formula**. If $$f$$ is any function of independent measured quantities $$x_1,x_2,\dots$$, then a small error in each propagates through the partial derivatives:
 
 $$
-\boxed{\ \delta f=\sqrt{\sum_i\left(\frac{\partial f}{\partial x_i}\,\delta x_i\right)^2}\ }
+\ \delta f=\sqrt{\sum_i\left(\frac{\partial f}{\partial x_i}\,\delta x_i\right)^2}\
 $$
 
-(or, in the worst-case version, $$\delta f=\sum_i\left|\dfrac{\partial f}{\partial x_i}\right|\delta x_i$$). The intuition is exactly the linear approximation: $$\partial f/\partial x_i$$ measures how sensitively $$f$$ responds to $$x_i$$, so it acts as the "amplification factor" for that input's error.
+(or, in the worst-case version, $$\delta f=\sum_i\left\lvert\dfrac{\partial f}{\partial x_i}\right\rvert\delta x_i$$). The intuition is exactly the linear approximation: $$\partial f/\partial x_i$$ measures how sensitively $$f$$ responds to $$x_i$$, so it acts as the "amplification factor" for that input's error.
 
-This recovers everything above. For a single variable $$f(x)$$ it reduces to $$\delta f=\left|f'(x)\right|\delta x$$. Applying it to $$f=x^n$$ gives $$\delta f=|n x^{n-1}|\,\delta x$$, i.e. $$\delta f/f=|n|\,\delta x/x$$ — the exponent rule. A slick shortcut for products and powers is to take the logarithm first: since $$\ln f=a\ln x+b\ln y-c\ln z$$, differentiating gives $$\dfrac{\delta f}{f}=a\dfrac{\delta x}{x}+b\dfrac{\delta y}{y}+c\dfrac{\delta z}{z}$$ directly.
+This recovers everything above. For a single variable $$f(x)$$ it reduces to $$\delta f=\left\lvert f'(x) \right\rvert\delta x$$. Applying it to $$f=x^n$$ gives $$\delta f=\lvert n x^{n-1}\rvert\,\delta x$$, i.e. $$\delta f/f=\lvert n \rvert\,\delta x/x$$ — the exponent rule. A slick shortcut for products and powers is to take the logarithm first: since $$\ln f=a\ln x+b\ln y-c\ln z$$, differentiating gives $$\dfrac{\delta f}{f}=a\dfrac{\delta x}{x}+b\dfrac{\delta y}{y}+c\dfrac{\delta z}{z}$$ directly.
 
 <div class="theorem-box" markdown="1">
 
-**Example (a function with no simple rule).** Suppose a refraction experiment gives $$f=\sin\theta$$ with $$\theta=30.0^\circ\pm0.5^\circ$$. There's no add/multiply rule for $$\sin$$, so use the master formula. First convert the angular uncertainty to radians: $$\delta\theta=0.5^\circ=0.0087\ \text{rad}$$. Then
+**Example.** Suppose a refraction experiment gives $$f=\sin\theta$$ with $$\theta=30.0^\circ\pm0.5^\circ$$. Find the value (with uncertainty) of $$f$$.
+
+There's no add/multiply rule for $$\sin$$, so use the master formula. First convert the angular uncertainty to radians: $$\delta\theta=0.5^\circ=0.0087\ \text{rad}$$. Then
 
 $$
-\delta f=\left|\frac{d}{d\theta}\sin\theta\right|\delta\theta=|\cos\theta|\,\delta\theta=\cos(30^\circ)(0.0087)\approx 0.0076.
+\delta f=\left\lvert \frac{d}{d\theta}\sin\theta \right\rvert\delta\theta=lvert \cos\theta \rvert\,\delta\theta=\cos(30^\circ)(0.0087)\approx 0.0076.
 $$
 
 So $$f=\sin30^\circ=0.500\pm0.008$$. The derivative-based method handles *any* function — trig, logs, exponentials — where the elementary rules don't apply.

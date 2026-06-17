@@ -12,7 +12,7 @@ permalink: /notes/physics/relativity/
 
 ---
 
-## 1. Lorentz transformations
+## Lorentz transformations
 
 Special relativity rests on two postulates: the laws of physics are the same in all inertial frames, and the speed of light $$c$$ is the same in all of them. The price is that space and time become entangled.
 
@@ -46,7 +46,7 @@ $$
 
 which is *larger* than $$L$$ — even though the measured frame length $$L/\gamma$$ is smaller. (Viewed from the left, the factor inverts.) Once light-travel time is properly accounted for, moving objects actually appear **rotated** rather than contracted.
 
-## 2. Velocity addition
+## Velocity addition
 
 <div class="theorem-box" markdown="1">
 
@@ -60,7 +60,7 @@ $$
 
 The transverse velocity $$u_y$$ picks up a $$\gamma$$ factor even though $$y' = y$$, because of time dilation in the denominator. No combination of sub-light speeds ever exceeds $$c$$.
 
-## 3. Doppler shift and aberration
+## Doppler shift and aberration
 
 ### Relativistic Doppler effect
 
@@ -82,7 +82,7 @@ $$
 
 For an ultrarelativistic source ($$v \to c$$), almost all the radiation is squeezed into a forward cone of half-angle $$\sim 1/\gamma$$. This **relativistic beaming** is why decay products at the LHC come out in narrow "jets," and the same angle change produces **stellar aberration** — the apparent circular wobble of stars as the Earth orbits.
 
-## 4. Paradoxes
+## Paradoxes
 
 Relativistic "paradoxes" almost always smuggle in a nonrelativistic assumption through clever wording. A few classics:
 
@@ -92,7 +92,7 @@ Relativistic "paradoxes" almost always smuggle in a nonrelativistic assumption t
 
 The real lesson of the long, sad history of people (even accomplished scientists) who rejected relativity over the twin paradox: **the ability to write fluent prose is not the ability to think.** Physicists learn to reason by solving well-defined problems mathematically.
 
-## 5. Four-vectors
+## Four-vectors
 
 The cleanest formalism. A **four-vector** $$V^\mu = (V^0, V^1, V^2, V^3)$$ transforms like $$(ct, x, y, z)$$. The key tool is the **inner product**, which has minus signs:
 
@@ -129,7 +129,7 @@ Other useful four-vector facts:
 
 > **On pop-science.** The slogan "everything moves through spacetime at speed $$c$$" (from $$u \cdot u = 1$$) is misleading — the minus signs in the inner product break the analogy to ordinary speed. Relativity makes sense *with* math and resists being made sense of without it.
 
-## 6. Rapidity and acceleration
+## Rapidity and acceleration
 
 A Lorentz boost is a "rotation" mixing space and time. The generalized angle is the **rapidity** $$\phi = \tanh^{-1}(v/c)$$:
 
@@ -145,7 +145,7 @@ For a rocket with constant **proper acceleration** $$a_0$$ (felt onboard), the l
 
 ---
 
-## 7. Energy and momentum
+## Energy and momentum
 
 <div class="theorem-box" markdown="1">
 
@@ -177,7 +177,7 @@ $$
 
 The shift $$h/m_e c$$ (the Compton wavelength) is fixed, so it matters most for short-wavelength X-rays and $$\gamma$$-rays, where it's a large *fractional* change.
 
-## 8. Optimal collisions
+## Optimal collisions
 
 <div class="theorem-box" markdown="1">
 
@@ -195,7 +195,7 @@ A little above the pion rest energy, because the products carry off kinetic ener
 
 To make a proton–antiproton pair via $$p + p \to p + p + p + \bar{p}$$ on a stationary target, the required *kinetic* energy of the beam scales much worse than the rest energy produced — which is exactly why colliders use **two opposing beams** rather than a fixed target.
 
-## 9. Mass–energy and relativistic systems
+## Mass–energy and relativistic systems
 
 The deep content of $$E = mc^2$$ is that **internal energy is mass**. Heat up a box of gas and it has more mass in every sense: more inertia, more weight, more gravitational pull. A box of photons bouncing inside reflective walls has rest mass $$M_{\text{tot}} = N\hbar\omega_0/c^2$$ even though each photon is massless.
 
@@ -207,7 +207,7 @@ $$
 
 reducing to $$\mathbf{p} = M\mathbf{v}_{\text{CM}}$$ nonrelativistically. A related and very general fact: **momentum density equals energy-flux density** (in EM, the momentum density *is* the Poynting vector, in units $$c=1$$).
 
-## 10. Forces in relativity
+## Forces in relativity
 
 There are two notions of force, and you must keep them straight.
 
@@ -253,7 +253,7 @@ The slick way to express the Lorentz force as a four-force is via the antisymmet
 
 ---
 
-## 11. Electromagnetic field transformations
+## Electromagnetic field transformations
 
 The biggest payoff of relativity for E&M: $$\mathbf{E}$$ and $$\mathbf{B}$$ are two faces of one object, and a boost mixes them.
 
@@ -307,7 +307,7 @@ Consequences: if $$\mathbf{E}\perp\mathbf{B}$$ and $$|E| = c|B|$$ in one frame (
 
 The charge and current densities form a four-vector $$J^\mu = (\rho c, \mathbf{J})$$, charge conservation is $$\partial_\mu J^\mu = 0$$, and all of Maxwell's equations compress to $$\partial_\mu F^{\mu\nu} = \mu_0 J^\nu$$ (with $$F^{\mu\nu} = \partial^\mu A^\nu - \partial^\nu A^\mu$$). Elegant notation is a tool, not a religion — index notation wins because it works whenever indices contract in pairs.
 
-## 12. Charges in fields: potentials and canonical momentum
+## Charges in fields: potentials and canonical momentum
 
 The fields come from a scalar potential $$\phi$$ and vector potential $$\mathbf{A}$$:
 

@@ -1,9 +1,10 @@
 # Notes by Joshua
 Study website created by me! Currently in alpha-1 phase. You can see some of my to-do work here:
 
-## TODO for Alpha-3 Phase
+## TODO for Alpha-4 Phase
 
 - Add tags?
 - Make into study site? Progress bar?
-- Add more notes (Precalc, Physics, Calc)
-- Add practice problems to notes other than precalc
+- Notes to write: Physics C Mech/E&M, Physics competition (update), AP Calculus
+- Add practice problems to notes other than Precalc
+- Maybe integrate Garret's thing

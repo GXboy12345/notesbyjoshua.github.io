@@ -14,15 +14,15 @@ In this section, I will describe some very helpful methods/tools you could use o
 
 ## Virtual Work Method
 
-The virtual work method is a way to find equilibrium conditions (or the force needed to hold something) **without drawing a single free-body diagram or worrying about internal/constraint forces**. It rests on one principle:
+The virtual work method is a way to find equilibrium conditions (or the force needed to hold something) without drawing a single free-body diagram or worrying about internal/constraint forces. It rests on one principle:
 
 > For a system in equilibrium, the total work done by the applied forces under any small displacement consistent with the constraints is zero: $$\;\delta W=0$$.
 
-The magic is that **constraint forces do no virtual work** — normal forces, tensions in inextensible strings, and frictionless contact forces are all perpendicular to the allowed motion (or internal and canceling), so they drop out entirely. You only ever deal with the forces you care about (gravity, applied loads, springs).
+The magic is that **constraint forces do no virtual work**: normal forces, tensions in inextensible strings, and frictionless contact forces are all perpendicular to the allowed motion (or internal and canceling), so they drop out entirely. You only ever deal with the forces you care about (gravity, applied loads, springs).
 
 The recipe:
 
-1. Identify the **degrees of freedom** and pick a single coordinate $$q$$ that captures the allowed motion.
+1. Identify the **degrees of freedom** and pick a single coordinate $$q$$ that captures the allowed motion (e.g. rectangular, polar, etc.).
 2. Write the positions of every point where a force acts in terms of $$q$$.
 3. Give the system a virtual displacement $$\delta q$$ and compute the total work $$\delta W=\sum_i \vec F_i\cdot\delta\vec r_i$$.
 4. Set $$\delta W=0$$ and solve.
@@ -31,7 +31,7 @@ Equivalently, if the forces are conservative, equilibrium is where the potential
 
 <div class="theorem-box" markdown="1">
 
-**Example (mechanical advantage without force diagrams).** A massless lever pivots about a fulcrum, with the input force $$F_1$$ applied a distance $$a$$ from the pivot and the load $$F_2$$ a distance $$b$$ on the other side. Rotate the lever by a tiny angle $$\delta\theta$$. The input point moves $$a\,\delta\theta$$ and the load point moves $$b\,\delta\theta$$, so
+**Example.** A massless lever pivots about a fulcrum, with the input force $$F_1$$ applied a distance $$a$$ from the pivot and the load $$F_2$$ a distance $$b$$ on the other side. Rotate the lever by a tiny angle $$\delta\theta$$. The input point moves $$a\,\delta\theta$$ and the load point moves $$b\,\delta\theta$$, so
 
 $$
 \delta W = F_1(a\,\delta\theta)-F_2(b\,\delta\theta)=0\quad\Longrightarrow\quad F_1 a=F_2 b.
@@ -41,8 +41,6 @@ The lever law falls out in one line, no torque diagram needed. The same method i
 
 </div>
 
-This generalizes into **Lagrangian mechanics** (covered in [Advanced Mechanics]({{ '/notes/physics/advmech/' | relative_url }})), which is virtual work extended to dynamics.
-
 ---
 
 ## Dimensional analysis
@@ -51,7 +49,9 @@ Before solving, ask what combination of the given quantities even *has the right
 
 <div class="theorem-box" markdown="1">
 
-**Example (period of a pendulum).** Suppose you forgot the pendulum formula. The period $$T$$ (units: s) could depend on length $$L$$ (m), mass $$m$$ (kg), and gravity $$g$$ (m/s²). The only way to build a time from these is $$\sqrt{L/g}$$ — mass cannot appear, because there's no other mass to cancel its kg. So $$T=C\sqrt{L/g}$$ for some dimensionless $$C$$ (which turns out to be $$2\pi$$). Dimensional analysis got the entire physical content — including the surprising fact that period is mass-independent — for free.
+**Example.** Derive the formula for the period of a pendulum up to constants.
+
+Suppose you forgot the pendulum formula. The period $$T$$ (units: s) could depend on length $$L$$ (m), mass $$m$$ (kg), and gravity $$g$$ (m/s²). The only way to build a time from these is $$\sqrt{L/g}$$: mass cannot appear, because there's no other mass to cancel its kg. So $$T=C\sqrt{L/g}$$ for some dimensionless $$C$$ (which turns out to be $$2\pi$$). Dimensional analysis got the entire physical content — including the surprising fact that period is mass-independent — for free.
 
 </div>
 
@@ -65,13 +65,13 @@ If a problem has a symmetry, the answer must respect it. This lets you skip enor
 
 - **Cancellation:** in computing a field or force, components that the symmetry maps onto their own negatives must sum to zero. (The field on the axis of a charged ring has no transverse component — every element's transverse contribution is canceled by the element opposite it.)
 - **Gauss's law / Ampère's law:** symmetry is what makes these usable — it forces the field to be constant over a well-chosen surface or loop, pulling it out of the integral.
-- **Superposition tricks:** a charged disk with a hole is a full disk *minus* a small disk; a sphere with an off-center cavity is a full sphere minus a smaller one. Adding back the missing piece restores symmetry and makes each part trivial.
+- **Superposition tricks:** a charged disk with a hole is a full disk *minus* a small disk; a sphere with an off-center cavity is a full sphere minus a smaller one. Adding back the missing piece restores symmetry and makes each part trivial. To solve, just set the would-be cavity to have negative mass/charge/whatever variable you are solving for and solve from there.
 
 Always pause to ask: "what does this setup look the same under?" Reflection, rotation, and translation symmetries each kill some terms before you compute anything.
 
 ---
 
-## Limiting cases and sanity checks
+## Limiting cases
 
 After getting an answer (or to choose between answer choices), test it in extreme cases where you already know what should happen:
 
@@ -80,7 +80,7 @@ After getting an answer (or to choose between answer choices), test it in extrem
 - Check the **units** of the final expression.
 - Check **signs and directions** make physical sense.
 
-For example, the two-body reduced mass $$\mu=\dfrac{m_1 m_2}{m_1+m_2}$$ should reduce to $$m$$ when one mass is infinite (a fixed center) and to $$m/2$$ when the masses are equal — both of which it does. On a multiple-choice exam, limiting cases often eliminate every wrong option in seconds.
+For example, the two-body reduced mass $$\mu=\dfrac{m_1 m_2}{m_1+m_2}$$ (shown later) should reduce to $$m$$ when one mass is infinite (a fixed center) and to $$m/2$$ when the masses are equal — both of which it does. On a multiple-choice exam, limiting cases often eliminate every wrong option in seconds.
 
 ---
 
