@@ -9,8 +9,6 @@ permalink: /notes/physics/oscillations/
 
 # Oscillations
 
-**Oscillation** occurs when a system repeatedly moves around a stable equilibrium. AP Physics C focuses mainly on simple harmonic motion, where the restoring force is proportional to displacement and the resulting motion is sinusoidal. This unit leans heavily on [forces]({{ '/notes/physics/forces/' | relative_url }}) (Hooke's law and Newton's second law set up the equation of motion) and on [work]({{ '/notes/physics/work/' | relative_url }}) (energy methods give max speed, turning points, and the deep reason small oscillations near any potential minimum are harmonic).
-
 ---
 
 ## Useful Variables
@@ -110,7 +108,7 @@ Thus sinusoidal motion is exactly the motion produced by a restoring acceleratio
 
 <div class="theorem-box" markdown="1">
 
-**Example (amplitude and phase from initial conditions).** A $$0.50\ \text{kg}$$ mass on a spring with $$k=200\ \text{N/m}$$ is released so that at $$t=0$$ it is at $$x_0=+0.030\ \text{m}$$ and moving with $$v_0=-0.80\ \text{m/s}$$ (back toward equilibrium). Write $$x(t)=A\cos(\omega t+\phi)$$.
+**Example.** A $$0.50\ \text{kg}$$ mass on a spring with $$k=200\ \text{N/m}$$ is released so that at $$t=0$$ it is at $$x_0=+0.030\ \text{m}$$ and moving with $$v_0=-0.80\ \text{m/s}$$ (back toward equilibrium). Write $$x(t)=A\cos(\omega t+\phi)$$.
 
 First the angular frequency:
 
@@ -310,7 +308,7 @@ Series springs are *softer* than either alone. (Note this is the opposite of how
 
 <div class="theorem-box" markdown="1">
 
-**Example (period of a two-spring system).** A $$2.0\ \text{kg}$$ block is connected to two springs with $$k_1=300\ \text{N/m}$$ and $$k_2=600\ \text{N/m}$$. Find the period (a) if the springs act in parallel and (b) if they act in series.
+**Example.** A $$2.0\ \text{kg}$$ block is connected to two springs with $$k_1=300\ \text{N/m}$$ and $$k_2=600\ \text{N/m}$$. Find the period (a) if the springs act in parallel and (b) if they act in series.
 
 (a) Parallel:
 
@@ -402,7 +400,7 @@ which is exactly the SHM equation with $$\omega=\sqrt{k/m}$$. Energy conservatio
 
 <div class="theorem-box" markdown="1">
 
-**Example (where is KE equal to PE?).** A block oscillates on a spring with amplitude $$A=0.12\ \text{m}$$. At what displacement $$x$$ is the kinetic energy equal to the potential energy, and what fraction of the maximum speed does the block have there?
+**Example.** A block oscillates on a spring with amplitude $$A=0.12\ \text{m}$$. At what displacement $$x$$ is the kinetic energy equal to the potential energy, and what fraction of the maximum speed does the block have there?
 
 Total energy is $$E=\tfrac{1}{2}kA^2$$. When $$K=U$$, each is half the total, so
 
@@ -430,7 +428,7 @@ The equal-energy point sits at about $$71\%$$ of the amplitude, and the speed th
 
 ## Small Oscillations About Any Potential Minimum
 
-The mass-spring system is just the simplest member of a much larger family. Recall from [work]({{ '/notes/physics/work/' | relative_url }}) that a one-dimensional conservative force is $$F_x=-dU/dx$$ and that a **stable equilibrium** sits at a local minimum of $$U(x)$$, where $$U'(x_0)=0$$ and $$U''(x_0)>0$$. The key result is that *any* such minimum looks like a spring for small displacements, with an effective spring constant equal to the curvature of $$U$$:
+The mass-spring system is just the simplest member of a much larger family. Recall that a one-dimensional conservative force is $$F_x=-dU/dx$$ and that a **stable equilibrium** sits at a local minimum of $$U(x)$$, where $$U'(x_0)=0$$ and $$U''(x_0)>0$$. The key result is that *any* such minimum looks like a spring for small displacements, with an effective spring constant equal to the curvature of $$U$$:
 
 $$
 k_{\text{eff}}=U''(x_0),\qquad \omega=\sqrt{\frac{U''(x_0)}{m}}.
@@ -470,7 +468,7 @@ So near the bottom of any smooth potential well, the motion is simple harmonic â
 
 <div class="theorem-box" markdown="1">
 
-**Example (frequency from a potential well).** A particle of mass $$m=0.20\ \text{kg}$$ moves in the potential
+**Example.** A particle of mass $$m=0.20\ \text{kg}$$ moves in the potential
 
 $$
 U(x)=\alpha x^4-\beta x^2,\qquad \alpha=2.0\ \text{J/m}^4,\quad \beta=4.0\ \text{J/m}^2.
@@ -548,7 +546,7 @@ when $$\theta$$ is measured in radians. Like the ideal mass-spring period, the s
 
 <div class="theorem-box" markdown="1">
 
-**Example (length of a one-second pendulum).** How long must a simple pendulum be so that its period is exactly $$T=2.0\ \text{s}$$ (a "seconds pendulum," which ticks once each half-period)? Use $$g=9.8\ \text{m/s}^2$$.
+**Example.** How long must a simple pendulum be so that its period is exactly $$T=2.0\ \text{s}$$ (a "seconds pendulum," which ticks once each half-period)? Use $$g=9.8\ \text{m/s}^2$$.
 
 Start from $$T=2\pi\sqrt{L/g}$$ and solve for $$L$$:
 
@@ -592,7 +590,7 @@ Here $$I$$ is the rotational inertia about the *pivot*, not about the center of 
 
 <div class="theorem-box" markdown="1">
 
-**Example (uniform rod swinging about one end).** A uniform rod of mass $$M$$ and length $$L=1.2\ \text{m}$$ is pivoted at one end and swings as a physical pendulum through small angles. Find its period. Use $$g=9.8\ \text{m/s}^2$$.
+**Example.** A uniform rod of mass $$M$$ and length $$L=1.2\ \text{m}$$ is pivoted at one end and swings as a physical pendulum through small angles. Find its period. Use $$g=9.8\ \text{m/s}^2$$.
 
 The rotational inertia of a uniform rod about one end is
 
@@ -624,7 +622,7 @@ Not every oscillator is a spring or a pendulum. The general recipe is always the
 
 <div class="theorem-box" markdown="1">
 
-**Example (bobbing floating object).** A solid cylinder of cross-sectional area $$A$$, height $$h$$, and density $$\rho_{\text{obj}}$$ floats upright in a liquid of density $$\rho_{\text{liq}}$$. It is pushed down slightly and released. Show the motion is SHM and find $$\omega$$.
+**Example.** A solid cylinder of cross-sectional area $$A$$, height $$h$$, and density $$\rho_{\text{obj}}$$ floats upright in a liquid of density $$\rho_{\text{liq}}$$. It is pushed down slightly and released. Show the motion is SHM and find $$\omega$$.
 
 At equilibrium the object floats with some submerged depth $$d_0$$, where buoyancy balances weight. Now push it down an extra distance $$y$$. The submerged volume increases by $$A\,y$$, so the buoyant force grows by
 
@@ -650,7 +648,7 @@ The area $$A$$ cancels, and the frequency depends only on the density ratio, $$g
 
 <div class="theorem-box" markdown="1">
 
-**Example (liquid oscillating in a U-tube).** A U-shaped tube of uniform cross-sectional area $$A$$ contains a liquid of density $$\rho$$, with total liquid column length $$L$$. The liquid is disturbed so one side rises by $$y$$ while the other falls by $$y$$. Find the period of the resulting oscillation.
+**Example.** A U-shaped tube of uniform cross-sectional area $$A$$ contains a liquid of density $$\rho$$, with total liquid column length $$L$$. The liquid is disturbed so one side rises by $$y$$ while the other falls by $$y$$. Find the period of the resulting oscillation.
 
 When the left surface drops by $$y$$ and the right rises by $$y$$, the height difference between the two columns is $$2y$$. That excess column of height $$2y$$ and cross-section $$A$$ has weight
 
@@ -692,7 +690,7 @@ $$
 m\frac{d^2x}{dt^2}+b\frac{dx}{dt}+kx=0,
 $$
 
-where $$b$$ is the damping coefficient. Solving this equation in full uses complex exponentials and belongs to the [USAPhO mechanics notes]({{ '/notes/physics/advmech/' | relative_url }}); for AP Physics C you only need the *qualitative* behavior and the regimes below.
+where $$b$$ is the damping coefficient. Solving this equation in full uses complex exponentials and for AP Physics C you only need the *qualitative* behavior and the regimes below.
 
 ### Damping regimes
 

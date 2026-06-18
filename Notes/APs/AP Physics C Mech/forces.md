@@ -676,7 +676,7 @@ At exactly this speed friction is not required at all. The mass cancels, so the 
 
 </div>
 
-<div class="theorem-box" markdown="2">
+<div class="theorem-box" markdown="1">
 
 **Example.** A highway curve of radius $$r = 120\ \text{m}$$ is to be banked so that a car traveling at $$v = 25\ \text{m/s}$$ (about $$90\ \text{km/h}$$) needs no friction. Find the required bank angle $$\theta$$.
 
@@ -712,6 +712,12 @@ $$
 
 Pseudo-forces are not interaction forces and do not have third-law partners. They are bookkeeping tools for working in non-inertial frames. AP Physics C usually lets you solve from an inertial frame, but pseudo-forces can be useful for accelerating elevators, accelerating wedges, and rotating-frame intuition.
 
+<div class="theorem-box" markdown="1">
+
+**ADD PROBLEM HERE**
+
+</div>
+
 ---
 
 ## Variable forces and calculus form
@@ -722,35 +728,9 @@ $$
 \vec{F}_{\text{net}} = m\frac{d\vec{v}}{dt} = m\frac{d^2\vec{r}}{dt^2}.
 $$
 
-If force depends on position, velocity, or time, this becomes a differential equation. For example, a falling object with linear drag satisfies
-
-$$
-m\frac{dv}{dt} = mg - bv
-$$
-
-if downward is positive. The terminal velocity occurs when acceleration becomes zero:
-
-$$
-mg - bv_t = 0,
-$$
-
-so
-
-$$
-v_t = \frac{mg}{b}.
-$$
-
-Solving the differential equation from rest gives
-
-$$
-v(t) = v_t\left(1 - e^{-bt/m}\right).
-$$
-
-This is slightly beyond the most common AP force problems, but it is a classic Physics C use of calculus.
-
 <div class="theorem-box" markdown="1">
 
-**Example (falling with linear drag, solving the differential equation).** An object of mass $$m$$ is released from rest and falls subject to gravity and linear drag $$F_d = -bv$$. Derive $$v(t)$$ and confirm the terminal velocity.
+**Example.** An object of mass $$m$$ is released from rest and falls subject to gravity and linear drag $$F_d = -bv$$. Derive $$v(t)$$ and confirm the terminal velocity.
 
 Take down as positive. Newton's second law is
 
@@ -764,7 +744,7 @@ $$
 \frac{dv}{mg - bv} = \frac{dt}{m}.
 $$
 
-Integrate the left side using $$\int \frac{dv}{mg - bv} = -\frac{1}{b}\ln|mg - bv|$$:
+Integrate the left side using $$\int \frac{dv}{mg - bv} = -\frac{1}{b}\ln\lvert mg - bv \rvert$$:
 
 $$
 -\frac{1}{b}\ln(mg - bv) = \frac{t}{m} + C.
@@ -809,8 +789,6 @@ $$
 $$
 
 Internal forces between particles cancel in pairs by Newton's third law when considering the system as a whole. This is why a person cannot accelerate a closed system's center of mass by pushing only on internal parts.
-
-This idea becomes central in [Unit 4: Linear Momentum and Impulse]({{ '/notes/physics/linearmomentum/' | relative_url }}).
 
 ---
 

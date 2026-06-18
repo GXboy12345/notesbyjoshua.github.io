@@ -43,7 +43,7 @@ This form is especially important for rolling objects. The translational term tr
 
 <div class="theorem-box" markdown="1">
 
-**Proof (Splitting Kinetic Energy into Translation and Rotation).** Treat the body as many small masses $$m_i$$. Write each particle's velocity as the center-of-mass velocity plus a velocity relative to the center of mass,
+**Proof (Splitting Kinetic Energy).** Treat the body as many small masses $$m_i$$. Write each particle's velocity as the center-of-mass velocity plus a velocity relative to the center of mass,
 
 $$
 \vec{v}_i = \vec{v}_{\text{cm}} + \vec{v}_i\,',
@@ -183,7 +183,7 @@ It is convenient to write the moment of inertia of a rolling body as $$I_{\text{
 
 <div class="theorem-box" markdown="1">
 
-**Example (rolling race: hoop vs. disk vs. sphere).** A hoop ($$c=1$$), a solid disk ($$c=\tfrac12$$), and a solid sphere ($$c=\tfrac25$$) are released from rest and roll without slipping down a ramp from the same height $$h$$. Find each object's speed at the bottom and rank the finishing order.
+**Example.** A hoop ($$c=1$$), a solid disk ($$c=\tfrac12$$), and a solid sphere ($$c=\tfrac25$$) are released from rest and roll without slipping down a ramp from the same height $$h$$. Find each object's speed at the bottom and rank the finishing order.
 
 Use energy conservation. Static friction does no work on an ideal rolling object (the contact point is instantaneously at rest), so mechanical energy is conserved. With $$I_{\text{cm}} = cMR^2$$ and $$\omega = v_{\text{cm}}/R$$, the kinetic energy at the bottom is
 
@@ -232,13 +232,13 @@ $$
 L = rp\sin\theta.
 $$
 
-Angular momentum depends on the origin. A particle moving in a straight line can have nonzero angular momentum about a point not on its line of motion. Concretely, if a particle of mass $$m$$ moves at constant speed $$v$$ along a straight line, and the chosen origin lies a perpendicular distance $$b$$ from that line, then
+Angular momentum depends on the origin. A particle moving in a straight line can have nonzero angular momentum about a point not on its line of motion. Concretely, if a particle of mass $$m$$ moves at constant speed $$v$$ along a straight line, and the chosen origin lies a perpendicular distance $$r$$ from that line, then
 
 $$
-L = mvb = pb,
+L = mvr = rp,
 $$
 
-which is *constant in time* even though the particle is not rotating about anything — because $$r\sin\theta$$ stays equal to the fixed lever arm $$b$$. This is a useful sanity check: angular momentum is conserved here because no force (hence no torque) acts. Always state the reference point before quoting an angular momentum; the same motion can have any value of $$L$$, including zero (choose the origin on the line of motion), depending on where you measure from.
+which is *constant in time* even though the particle is not rotating about anything — because $$r\sin\theta$$ stays equal to the fixed lever arm $$r$$. This is a useful sanity check: angular momentum is conserved here because no force (hence no torque) acts. Always state the reference point before quoting an angular momentum; the same motion can have any value of $$L$$, including zero (choose the origin on the line of motion), depending on where you measure from.
 
 ---
 
@@ -336,7 +336,7 @@ If rotational inertia decreases, angular speed increases; if rotational inertia 
 
 <div class="theorem-box" markdown="1">
 
-**Example (spinning skater pulls in arms).** A skater spins at $$\omega_i = 2.0\ \text{rad/s}$$ with arms extended, giving a moment of inertia $$I_i = 6.0\ \text{kg}\cdot\text{m}^2$$. She pulls her arms in, reducing her moment of inertia to $$I_f = 2.0\ \text{kg}\cdot\text{m}^2$$. Find her new angular speed and the change in rotational kinetic energy.
+**Example.** A skater spins at $$\omega_i = 2.0\ \text{rad/s}$$ with arms extended, giving a moment of inertia $$I_i = 6.0\ \text{kg}\cdot\text{m}^2$$. She pulls her arms in, reducing her moment of inertia to $$I_f = 2.0\ \text{kg}\cdot\text{m}^2$$. Find her new angular speed and the change in rotational kinetic energy.
 
 The only external torques (gravity, the normal force at the skates) act along or through the vertical spin axis, so the external torque about that axis is zero and angular momentum is conserved:
 
@@ -362,7 +362,7 @@ Kinetic energy *tripled*, increasing by $$24\ \text{J}$$. This energy is not fre
 
 <div class="theorem-box" markdown="1">
 
-**Example (person walks onto a turntable).** A frictionless turntable (a uniform disk) has moment of inertia $$I_d = 200\ \text{kg}\cdot\text{m}^2$$ and rotates at $$\omega_i = 1.5\ \text{rad/s}$$. A person of mass $$m = 60\ \text{kg}$$ steps on at the rim, radius $$R = 2.0\ \text{m}$$, landing gently so as to move with the disk. Find the final angular speed and how much kinetic energy is lost.
+**Example.** A frictionless turntable (a uniform disk) has moment of inertia $$I_d = 200\ \text{kg}\cdot\text{m}^2$$ and rotates at $$\omega_i = 1.5\ \text{rad/s}$$. A person of mass $$m = 60\ \text{kg}$$ steps on at the rim, radius $$R = 2.0\ \text{m}$$, landing gently so as to move with the disk. Find the final angular speed and how much kinetic energy is lost.
 
 Treat the person as a point mass on the rim, $$I_p = mR^2 = 60(2.0)^2 = 240\ \text{kg}\cdot\text{m}^2$$. The person stepping on exerts only internal forces on the (disk + person) system about the fixed vertical axis, so $$L$$ is conserved:
 
@@ -388,7 +388,7 @@ About $$123\ \text{J}$$ is lost to friction between the person's feet and the di
 
 <div class="theorem-box" markdown="1">
 
-**Example (clay drops onto a rotating disk).** A horizontal disk of moment of inertia $$I_0 = 0.40\ \text{kg}\cdot\text{m}^2$$ spins freely at $$\omega_i = 8.0\ \text{rad/s}$$ about a vertical axis. A lump of clay of mass $$m = 0.50\ \text{kg}$$ is dropped straight down and sticks at a distance $$r = 0.30\ \text{m}$$ from the axis. Find the final angular speed.
+**Example.** A horizontal disk of moment of inertia $$I_0 = 0.40\ \text{kg}\cdot\text{m}^2$$ spins freely at $$\omega_i = 8.0\ \text{rad/s}$$ about a vertical axis. A lump of clay of mass $$m = 0.50\ \text{kg}$$ is dropped straight down and sticks at a distance $$r = 0.30\ \text{m}$$ from the axis. Find the final angular speed.
 
 The clay falls vertically, so its velocity is parallel to the spin axis and it carries **zero** angular momentum about that axis before landing. The impact force between clay and disk is internal to the system, so $$L$$ about the vertical axis is conserved. The clay adds moment of inertia $$mr^2$$:
 
@@ -408,7 +408,7 @@ The disk slows slightly because its moment of inertia grew while $$L$$ stayed fi
 
 <div class="theorem-box" markdown="1">
 
-**Example (bullet embeds in a pivoted rod).** A uniform rod of mass $$M = 1.0\ \text{kg}$$ and length $$L = 1.2\ \text{m}$$ hangs vertically and is free to swing about a frictionless pivot at its top end. A bullet of mass $$m = 0.010\ \text{kg}$$ traveling horizontally at $$v = 300\ \text{m/s}$$ strikes and embeds in the rod at a distance $$d = 1.0\ \text{m}$$ below the pivot. Find the angular speed of the rod-plus-bullet just after impact, then find the maximum angle the rod swings up to.
+**Example.** A uniform rod of mass $$M = 1.0\ \text{kg}$$ and length $$L = 1.2\ \text{m}$$ hangs vertically and is free to swing about a frictionless pivot at its top end. A bullet of mass $$m = 0.010\ \text{kg}$$ traveling horizontally at $$v = 300\ \text{m/s}$$ strikes and embeds in the rod at a distance $$d = 1.0\ \text{m}$$ below the pivot. Find the angular speed of the rod-plus-bullet just after impact, then find the maximum angle the rod swings up to.
 
 **Step 1 — Why use angular momentum, not linear momentum.** During the impact the pivot exerts a large, unknown horizontal force on the rod, so linear momentum is *not* conserved. But the pivot force produces no torque about the pivot (its lever arm is zero), so **angular momentum about the pivot is conserved** through the collision. This is the signature move of these problems.
 
@@ -466,7 +466,7 @@ This is the angular version of impulse-momentum. A large torque over a short tim
 
 <div class="theorem-box" markdown="1">
 
-**Example (angular impulse spinning up a wheel).** A grinding wheel is a uniform disk of mass $$M = 4.0\ \text{kg}$$ and radius $$R = 0.20\ \text{m}$$, initially at rest. A motor applies a tangential force at the rim that produces a torque rising linearly from $$0$$ to $$3.0\ \text{N}\cdot\text{m}$$ over $$2.0\ \text{s}$$. Find the wheel's angular speed at $$t = 2.0\ \text{s}$$.
+**Example.** A grinding wheel is a uniform disk of mass $$M = 4.0\ \text{kg}$$ and radius $$R = 0.20\ \text{m}$$, initially at rest. A motor applies a tangential force at the rim that produces a torque rising linearly from $$0$$ to $$3.0\ \text{N}\cdot\text{m}$$ over $$2.0\ \text{s}$$. Find the wheel's angular speed at $$t = 2.0\ \text{s}$$.
 
 The angular impulse is the area under the torque-time graph, a triangle of base $$2.0\ \text{s}$$ and height $$3.0\ \text{N}\cdot\text{m}$$:
 
@@ -528,7 +528,7 @@ Gravity is a central force, so the torque about the Sun is zero and $$L$$ is con
 
 <div class="theorem-box" markdown="1">
 
-**Example (perihelion vs. aphelion speed).** A comet orbits the Sun. At its closest approach (perihelion) it is $$r_p = 0.6\ \text{AU}$$ from the Sun moving at $$v_p = 50\ \text{km/s}$$; the velocity there is perpendicular to the radius. Find its speed at its farthest point (aphelion), $$r_a = 3.0\ \text{AU}$$, where the velocity is again perpendicular to the radius.
+**Example.** A comet orbits the Sun. At its closest approach (perihelion) it is $$r_p = 0.6\ \text{AU}$$ from the Sun moving at $$v_p = 50\ \text{km/s}$$; the velocity there is perpendicular to the radius. Find its speed at its farthest point (aphelion), $$r_a = 3.0\ \text{AU}$$, where the velocity is again perpendicular to the radius.
 
 At perihelion and aphelion the velocity is perpendicular to $$\vec r$$, so $$L = mvr\sin 90^\circ = mvr$$. Angular momentum about the Sun is conserved:
 

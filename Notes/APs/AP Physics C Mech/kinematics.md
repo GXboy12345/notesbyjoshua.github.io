@@ -11,6 +11,8 @@ permalink: /notes/physics/kinematics/
 
 **Kinematics** describes motion—position, velocity, and acceleration as functions of time—without asking what forces cause that motion. From here on, calculus is assumed: instantaneous rates are derivatives of position or velocity, and changes over an interval can be recovered with integrals when you know how acceleration varies.
 
+**ADD PRACTICE TO ALL PHYSICS PAGES**
+
 ---
 
 ## Useful Variables
@@ -29,7 +31,7 @@ permalink: /notes/physics/kinematics/
 
 A **scalar** has magnitude only (examples: speed, distance, time). A **vector** has magnitude and direction (examples: displacement, velocity, acceleration). In one dimension, a sign attached to a scalar component encodes direction along an axis.
 
-Choose an origin and a positive direction along each axis. **Displacement** $$\Delta x$$ is the change in position regardless of what path you take; **distance** is the length of the path traveled and is always nonnegative. **Average velocity** over an interval is
+Choose an origin and a positive direction along each axis. **Displacement** $$\Delta x$$ is the change in position regardless of what path you take (can be negative); **distance** is the length of the path traveled and is always nonnegative. **Average velocity** over an interval is
 
 $$
 \bar{v} = \frac{\Delta x}{\Delta t}.
@@ -67,9 +69,9 @@ Be careful to distinguish **average** and **instantaneous** quantities. Average 
 
 <div class="theorem-box" markdown="1">
 
-**Example (Integrating a time-dependent acceleration).** A particle starts at $$x_0 = 0$$ with velocity $$v_0 = 2\ \text{m/s}$$ and experiences acceleration $$a(t) = 6t\ \text{m/s}^2$$. Find its velocity and position as functions of time, and its position at $$t = 3\ \text{s}$$.
+**Example.** A particle starts at $$x_0 = 0$$ with velocity $$v_0 = 2\ \text{m/s}$$ and experiences acceleration $$a(t) = 6t\ \text{m/s}^2$$. Find its velocity and position as functions of time, and its position at $$t = 3\ \text{s}$$.
 
-Because $$a$$ depends on time, the Big Five do not apply. Integrate acceleration to get velocity:
+Integrate acceleration to get velocity:
 
 $$
 v(t) = v_0 + \int_0^t 6t'\, dt' = 2 + 3t^2.
@@ -87,8 +89,6 @@ $$
 x(3) = 2(3) + (3)^3 = 6 + 27 = 33\ \text{m}.
 $$
 
-The constant-acceleration shortcut $$\Delta x = v_0 t + \frac{1}{2}at^2$$ would have given a wrong answer here, because there is no single constant $$a$$ to plug in.
-
 </div>
 
 ---
@@ -104,7 +104,7 @@ A few consistency checks worth internalizing: a maximum or minimum of $$x(t)$$ o
 
 <div class="theorem-box" markdown="1">
 
-**Example (Reading a velocity-time graph).** A cart moves along a line. Its velocity is $$+4\ \text{m/s}$$ and constant for the first $$3\ \text{s}$$, then ramps linearly down to $$-2\ \text{m/s}$$ over the next $$2\ \text{s}$$. Find the acceleration during each phase, the total displacement, and the distance traveled.
+**Example.** A cart moves along a line. Its velocity is $$+4\ \text{m/s}$$ and constant for the first $$3\ \text{s}$$, then ramps linearly down to $$-2\ \text{m/s}$$ over the next $$2\ \text{s}$$. Find the acceleration during each phase, the total displacement, and the distance traveled.
 
 During the first phase the $$v$$-$$t$$ graph is flat, so $$a_1 = 0$$. During the second phase,
 
@@ -132,7 +132,7 @@ So total displacement is $$12 + 2 = 14\ \text{m}$$. Distance traveled adds the m
 
 ## Constant acceleration in one dimension
 
-Many problems use constant acceleration $$a$$ (free fall near Earth’s surface is a common case with $$a = -g$$ or $$a = +g$$ depending on axis choice). The following equations (known as the **Big Five** (holy niche bro)) are very useful for these types of problems, since they only require 4 out of the 5 useful variables ($$a$$, $$v_f$$, $$v_0$$, $$\Delta x$$, $$t$$). By convention, we set $$t_0 = 0$$, with $$a$$ being acceleration, $$v_0$$ being initial velocity, $$v_f$$ being final velocity, $$\Delta x$$ being displacement, and $$t$$ being time:
+Many problems use **constant** acceleration $$a$$ (free fall near Earth’s surface is a common case with $$a = -g$$ or $$a = +g$$ depending on axis choice). The following equations (known as the **Big Five** (holy niche bro)) are very useful for these types of problems, since they only require 4 out of the 5 useful variables ($$a$$, $$v_f$$, $$v_0$$, $$\Delta x$$, $$t$$). By convention, we set $$t_0 = 0$$, with $$a$$ being acceleration, $$v_0$$ being initial velocity, $$v_f$$ being final velocity, $$\Delta x$$ being displacement, and $$t$$ being time:
 
 1. Missing $$\Delta x$$: $$v_f = v_0 + at$$
 2. Missing $$v_f$$: $$\Delta x = v_0t + \frac{1}{2}at^2$$
@@ -256,7 +256,7 @@ Always check that your signs for $$v_0$$, $$v$$, $$a$$, and $$\Delta x$$ match t
 
 <div class="theorem-box" markdown="1">
 
-**Example (Stopping distance).** A car traveling at $$v_0 = 25\ \text{m/s}$$ brakes with constant deceleration and comes to rest in $$40\ \text{m}$$. Find the acceleration and the time it takes to stop.
+**Example.** A car traveling at $$v_0 = 25\ \text{m/s}$$ brakes with constant deceleration and comes to rest in $$40\ \text{m}$$. Find the acceleration and the time it takes to stop.
 
 The final velocity is $$v = 0$$, and we know $$v_0$$ and $$\Delta x$$ but not $$t$$, so use equation 4 (missing $$t$$):
 
@@ -297,7 +297,7 @@ $$
 a(x)\, dx = v\, dv.
 $$
 
-Integrating both sides connects speed to position without ever solving for time, much like how equation 4 was derived. This is the same identity used to build energy methods in [work and energy]({{ '/notes/physics/work/' | relative_url }}).
+Integrating both sides connects speed to position without ever solving for time, much like how equation 4 was derived.
 
 - **$$a$$ depends on velocity, $$a = a(v)$$.** Separate variables in $$dv/dt = a(v)$$ to get $$dt = dv/a(v)$$, or use $$v\,dv/dx = a(v)$$ if you want $$v$$ as a function of $$x$$.
 
@@ -389,7 +389,7 @@ Because $$\sin(2\theta)$$ is largest at $$2\theta = 90^\circ$$, range on level g
 
 <div class="theorem-box" markdown="1">
 
-**Example (Range and max height, numeric).** A ball is launched from level ground at $$v_0 = 20\ \text{m/s}$$ and $$\theta = 30^\circ$$. Take $$g = 9.8\ \text{m/s}^2$$. Find the time of flight, range, and maximum height.
+**Example.** A ball is launched from level ground at $$v_0 = 20\ \text{m/s}$$ and $$\theta = 30^\circ$$. Take $$g = 9.8\ \text{m/s}^2$$. Find the time of flight, range, and maximum height.
 
 With $$\sin 30^\circ = 0.5$$, $$\cos 30^\circ \approx 0.866$$, and $$\sin 60^\circ \approx 0.866$$:
 
@@ -413,7 +413,7 @@ If launch and landing heights differ, solve the quadratic in $$t$$ from the $$y$
 
 <div class="theorem-box" markdown="1">
 
-**Example (Projectile launched off a cliff).** A projectile is launched from the top of a cliff $$45\ \text{m}$$ tall at $$v_0 = 30\ \text{m/s}$$ and $$\theta = 37^\circ$$ above the horizontal. Take $$g = 10\ \text{m/s}^2$$, $$\sin 37^\circ = 0.6$$, $$\cos 37^\circ = 0.8$$. How long is it in the air, and how far from the base of the cliff does it land?
+**Example.** A projectile is launched from the top of a cliff $$45\ \text{m}$$ tall at $$v_0 = 30\ \text{m/s}$$ and $$\theta = 37^\circ$$ above the horizontal. Take $$g = 10\ \text{m/s}^2$$, $$\sin 37^\circ = 0.6$$, $$\cos 37^\circ = 0.8$$. How long is it in the air, and how far from the base of the cliff does it land?
 
 Put the origin at the launch point with up as $$+y$$. Then the components are
 
@@ -469,7 +469,7 @@ To visualize, you can draw the velocities as vectors, and do vector addition to 
 
 <div class="theorem-box" markdown="1">
 
-**Example (River crossing).** A boat heads straight across a river, pointing its bow perpendicular to the banks with a speed of $$4\ \text{m/s}$$ relative to the water. The river flows at $$3\ \text{m/s}$$ parallel to the banks, and the river is $$80\ \text{m}$$ wide. Find the boat's velocity relative to the ground, how long the crossing takes, and how far downstream it lands.
+**Example.** A boat heads straight across a river, pointing its bow perpendicular to the banks with a speed of $$4\ \text{m/s}$$ relative to the water. The river flows at $$3\ \text{m/s}$$ parallel to the banks, and the river is $$80\ \text{m}$$ wide. Find the boat's velocity relative to the ground, how long the crossing takes, and how far downstream it lands.
 
 Let the boat's velocity relative to the water be $$\vec{v}_{B/W}$$ (across the river) and the water's velocity relative to the ground be $$\vec{v}_{W/G}$$ (downstream). The composition rule gives
 

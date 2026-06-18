@@ -9,8 +9,6 @@ permalink: /notes/physics/torque/
 
 # Torque and Rotational Dynamics
 
-Rotational dynamics is the angular version of Newtonian mechanics. Translational motion asks how force changes linear motion; rotational motion asks how **torque** changes angular motion. The key idea is that the same force can produce different rotational effects depending on where and how it is applied.
-
 ---
 
 ## Useful Variables
@@ -27,7 +25,7 @@ Rotational dynamics is the angular version of Newtonian mechanics. Translational
 
 ## Angular Kinematics
 
-For a rigid body rotating about a fixed axis, angular variables mirror linear variables:
+For a rigid body rotating about a fixed axis, angular variables mirror linear variables, except it applies to rotations instead of linear translation:
 
 $$
 \omega = \frac{d\theta}{dt}, \qquad \alpha = \frac{d\omega}{dt} = \frac{d^2\theta}{dt^2}.
@@ -104,7 +102,7 @@ The direction of torque follows the right-hand rule applied to $$\vec\tau = \vec
 
 <div class="theorem-box" markdown="1">
 
-**Example (lever arm vs. force times distance).** A wrench grips a bolt at the origin. You push on the handle a distance $$r = 0.30\ \text{m}$$ from the bolt with a force $$F = 80\ \text{N}$$ directed $$30^\circ$$ above the handle. Find the torque on the bolt.
+**Example.** A wrench grips a bolt at the origin. You push on the handle a distance $$r = 0.30\ \text{m}$$ from the bolt with a force $$F = 80\ \text{N}$$ directed $$30^\circ$$ above the handle. Find the torque on the bolt.
 
 Using the perpendicular component of the force,
 
@@ -148,6 +146,8 @@ Common results:
 - Solid sphere about diameter: $$I = \frac{2}{5}MR^2$$
 - Thin rod about center: $$I = \frac{1}{12}ML^2$$
 - Thin rod about end: $$I = \frac{1}{3}ML^2$$
+
+**ADD IMAGE HERE**
 
 <div class="theorem-box" markdown="1">
 
@@ -246,25 +246,7 @@ Compared with the hoop, the disk has half the rotational inertia for the same $$
 
 <div class="theorem-box" markdown="1">
 
-**Proof (Thin Rod About One End, via the Parallel-Axis Theorem).** We already know the rod about its center is $$I_{\text{cm}}=\tfrac{1}{12}ML^2$$. The end of the rod is a parallel axis displaced from the center by $$d=L/2$$. The parallel-axis theorem gives
-
-$$
-I_{\text{end}}=I_{\text{cm}}+Md^2=\frac{1}{12}ML^2+M\left(\frac{L}{2}\right)^2=\frac{1}{12}ML^2+\frac{1}{4}ML^2.
-$$
-
-Adding the fractions ($$\tfrac{1}{12}+\tfrac{3}{12}=\tfrac{4}{12}=\tfrac{1}{3}$$),
-
-$$
-I_{\text{end}}=\frac{1}{3}ML^2.
-$$
-
-This matches a direct integration $$\int_0^L x^2\lambda\,dx$$, but the parallel-axis route is faster once $$I_{\text{cm}}$$ is known. The end-axis value is larger than the center-axis value, which makes sense: shifting the axis away from the center of mass always increases $$I$$.
-
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Proof (Solid Sphere About a Diameter — a slightly harder extension).** A uniform solid sphere of mass $$M$$ and radius $$R$$ has volume density
+**Proof (Solid Sphere About a Diameter).** A uniform solid sphere of mass $$M$$ and radius $$R$$ has volume density
 
 $$
 \rho=\frac{M}{\frac{4}{3}\pi R^3}=\frac{3M}{4\pi R^3}.
@@ -316,6 +298,70 @@ $$
 
 ---
 
+### Parallel-Axis Theorem
+
+If $$I_{\text{cm}}$$ is the rotational inertia about an axis through the center of mass, then the rotational inertia about a parallel axis a distance $$d$$ away is
+
+$$
+I = I_{\text{cm}} + Md^2.
+$$
+
+This theorem is useful for rods about one end, rolling bodies about contact points, and composite rigid bodies.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Parallel-Axis Theorem).** Put the center of mass at the origin, and let the new parallel axis be displaced by distance $$d$$ in the $$x$$-direction. For a mass element, the squared distance to the new axis can be written
+
+$$
+r^2=(x-d)^2+y^2.
+$$
+
+The moment of inertia about the new axis is
+
+$$
+I=\int \left[(x-d)^2+y^2\right]\,dm.
+$$
+
+Expand:
+
+$$
+I=\int (x^2+y^2)\,dm-2d\int x\,dm+d^2\int dm.
+$$
+
+The first term is $$I_{\text{cm}}$$. The middle term is zero because the origin is at the center of mass, so $$\int x\,dm=0$$. The final term is $$Md^2$$. Therefore
+
+$$
+I=I_{\text{cm}}+Md^2.
+$$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Thin Rod About One End).** We already know the rod about its center is $$I_{\text{cm}}=\tfrac{1}{12}ML^2$$. The end of the rod is a parallel axis displaced from the center by $$d=L/2$$. The parallel-axis theorem gives
+
+$$
+I_{\text{end}}=I_{\text{cm}}+Md^2=\frac{1}{12}ML^2+M\left(\frac{L}{2}\right)^2=\frac{1}{12}ML^2+\frac{1}{4}ML^2.
+$$
+
+Adding the fractions ($$\tfrac{1}{12}+\tfrac{3}{12}=\tfrac{4}{12}=\tfrac{1}{3}$$),
+
+$$
+I_{\text{end}}=\frac{1}{3}ML^2.
+$$
+
+This matches a direct integration $$\int_0^L x^2\lambda\,dx$$, but the parallel-axis route is faster once $$I_{\text{cm}}$$ is known. The end-axis value is larger than the center-axis value, which makes sense: shifting the axis away from the center of mass always increases $$I$$.
+
+</div>
+
+---
+
+### Perpendicular-Axis Theorem
+
+**ADD THIS PART**
+
+---
+
 ## Newton's Second Law for Rotation
 
 For rotation about a fixed axis,
@@ -342,7 +388,7 @@ Rolling and pulley problems often require both equations at once.
 
 <div class="theorem-box" markdown="1">
 
-**Example (rod falling about a pivoted end).** A uniform rod of mass $$M$$ and length $$L$$ is hinged at one end and held horizontal, then released from rest. Find its angular acceleration just after release, and the linear acceleration of its free end at that instant.
+**Example.** A uniform rod of mass $$M$$ and length $$L$$ is hinged at one end and held horizontal, then released from rest. Find its angular acceleration just after release, and the linear acceleration of its free end at that instant.
 
 The rod rotates about the fixed hinge, so use $$\sum\tau = I\alpha$$ about that hinge. Gravity acts at the center of mass, a distance $$L/2$$ from the hinge. Because the rod is horizontal, gravity is perpendicular to the rod, so the lever arm is the full $$L/2$$:
 
@@ -368,7 +414,7 @@ Strikingly, the tip of the rod accelerates downward faster than $$g$$. A coin pl
 
 <div class="theorem-box" markdown="1">
 
-**Example (Atwood machine with a massive pulley).** Two masses $$m_1$$ and $$m_2$$ (with $$m_2 > m_1$$) hang from a string that runs over a pulley modeled as a solid disk of mass $$M$$ and radius $$R$$, with $$I=\tfrac{1}{2}MR^2$$. The string does not slip on the pulley. Find the acceleration of the masses and the two string tensions.
+**Example.** Two masses $$m_1$$ and $$m_2$$ (with $$m_2 > m_1$$) hang from a string that runs over a pulley modeled as a solid disk of mass $$M$$ and radius $$R$$, with $$I=\tfrac{1}{2}MR^2$$. The string does not slip on the pulley. Find the acceleration of the masses and the two string tensions.
 
 With a massive pulley, the tensions on the two sides are **not** equal: the difference in tension is exactly what supplies the net torque that angularly accelerates the pulley. Call them $$T_1$$ (on the $$m_1$$ side) and $$T_2$$ (on the $$m_2$$ side). Take $$m_2$$ to accelerate down, $$m_1$$ up, with common magnitude $$a$$, and the pulley to spin in the matching sense.
 
@@ -447,7 +493,7 @@ A useful procedure for equilibrium problems:
 
 <div class="theorem-box" markdown="1">
 
-**Example (beam and cable holding a sign).** A uniform horizontal beam of mass $$m = 20\ \text{kg}$$ and length $$L$$ is hinged to a wall at its left end. A cable runs from the far (right) end of the beam up to the wall, making an angle $$\theta = 37^\circ$$ with the beam. A sign of weight $$W = 300\ \text{N}$$ hangs from the right end. Find the tension in the cable and the force the hinge exerts on the beam. Take $$g = 9.8\ \text{m/s}^2$$.
+**Example.** A uniform horizontal beam of mass $$m = 20\ \text{kg}$$ and length $$L$$ is hinged to a wall at its left end. A cable runs from the far (right) end of the beam up to the wall, making an angle $$\theta = 37^\circ$$ with the beam. A sign of weight $$W = 300\ \text{N}$$ hangs from the right end. Find the tension in the cable and the force the hinge exerts on the beam. Take $$g = 9.8\ \text{m/s}^2$$.
 
 Forces on the beam: its weight $$mg = (20)(9.8) = 196\ \text{N}$$ acting down at the center ($$L/2$$); the sign's weight $$W = 300\ \text{N}$$ down at the right end ($$L$$); the cable tension $$T$$ along the cable at the right end; and the hinge force with unknown components $$H_x, H_y$$ at the left end.
 
@@ -487,7 +533,7 @@ The hinge force magnitude is $$\sqrt{H_x^2 + H_y^2} = \sqrt{528^2 + 98^2}\approx
 
 <div class="theorem-box" markdown="1">
 
-**Example (diving board with a person).** A uniform diving board of mass $$m = 30\ \text{kg}$$ and length $$L = 4.0\ \text{m}$$ rests on two supports: support $$A$$ at the left end and support $$B$$ a distance $$d = 1.5\ \text{m}$$ to the right of $$A$$. A diver of weight $$W = 600\ \text{N}$$ stands at the far right end. Find the forces the two supports exert on the board. Take $$g = 9.8\ \text{m/s}^2$$, so the board's weight is $$mg = 294\ \text{N}$$.
+**Example.** A uniform diving board of mass $$m = 30\ \text{kg}$$ and length $$L = 4.0\ \text{m}$$ rests on two supports: support $$A$$ at the left end and support $$B$$ a distance $$d = 1.5\ \text{m}$$ to the right of $$A$$. A diver of weight $$W = 600\ \text{N}$$ stands at the far right end. Find the forces the two supports exert on the board. Take $$g = 9.8\ \text{m/s}^2$$, so the board's weight is $$mg = 294\ \text{N}$$.
 
 The board is in equilibrium under four forces: support force $$N_A$$ up at $$A$$, support force $$N_B$$ up at $$B$$, the board's weight $$294\ \text{N}$$ down at the center ($$2.0\ \text{m}$$ from $$A$$), and the diver's weight $$600\ \text{N}$$ down at the right end ($$4.0\ \text{m}$$ from $$A$$).
 
@@ -510,46 +556,6 @@ N_A + N_B - mg - W = 0\ \Rightarrow\ N_B = mg + W - N_A = 294 + 600 - (-1098) = 
 $$
 
 So support $$B$$ (the fulcrum near the diver) carries a large upward force of about $$1990\ \text{N}$$, while support $$A$$ (the anchored end) is held down with about $$1100\ \text{N}$$. As a check, the net upward force is $$1992 - 1098 = 894\ \text{N}$$, which equals the total downward weight $$294 + 600 = 894\ \text{N}$$.
-
-</div>
-
----
-
-## Parallel-Axis Theorem
-
-If $$I_{\text{cm}}$$ is the rotational inertia about an axis through the center of mass, then the rotational inertia about a parallel axis a distance $$d$$ away is
-
-$$
-I = I_{\text{cm}} + Md^2.
-$$
-
-This theorem is useful for rods about one end, rolling bodies about contact points, and composite rigid bodies.
-
-<div class="theorem-box" markdown="1">
-
-**Proof (Parallel-Axis Theorem).** Put the center of mass at the origin, and let the new parallel axis be displaced by distance $$d$$ in the $$x$$-direction. For a mass element, the squared distance to the new axis can be written
-
-$$
-r^2=(x-d)^2+y^2.
-$$
-
-The moment of inertia about the new axis is
-
-$$
-I=\int \left[(x-d)^2+y^2\right]\,dm.
-$$
-
-Expand:
-
-$$
-I=\int (x^2+y^2)\,dm-2d\int x\,dm+d^2\int dm.
-$$
-
-The first term is $$I_{\text{cm}}$$. The middle term is zero because the origin is at the center of mass, so $$\int x\,dm=0$$. The final term is $$Md^2$$. Therefore
-
-$$
-I=I_{\text{cm}}+Md^2.
-$$
 
 </div>
 
@@ -631,7 +637,7 @@ Smaller $$\beta$$ means less mass far from the axis, less rotational inertia to 
 
 <div class="theorem-box" markdown="1">
 
-**Example (a solid cylinder rolling down an incline — the friction force).** A solid cylinder of mass $$M = 2.0\ \text{kg}$$ and radius $$R = 0.10\ \text{m}$$ rolls without slipping down a $$\theta = 30^\circ$$ incline. Find its center-of-mass acceleration and the static friction force, and state the minimum coefficient of friction needed.
+**Example.** A solid cylinder of mass $$M = 2.0\ \text{kg}$$ and radius $$R = 0.10\ \text{m}$$ rolls without slipping down a $$\theta = 30^\circ$$ incline. Find its center-of-mass acceleration and the static friction force, and state the minimum coefficient of friction needed.
 
 A solid cylinder has $$\beta = I_{\text{cm}}/MR^2 = \tfrac12$$, so
 

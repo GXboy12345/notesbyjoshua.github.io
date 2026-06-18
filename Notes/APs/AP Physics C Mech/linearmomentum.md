@@ -9,8 +9,6 @@ permalink: /notes/physics/linearmomentum/
 
 # Linear Momentum and Impulse
 
-**Momentum** is the quantity conserved when external forces do not significantly affect a system. It is especially useful for collisions, explosions, variable-mass interactions at the AP level only when simplified, and short-duration events where forces may be large but act briefly.
-
 ---
 
 ## Useful Variables
@@ -38,7 +36,7 @@ $$
 \vec{F}_{\text{net}} = \frac{d\vec{p}}{dt}.
 $$
 
-For constant mass, this reduces to $$\vec{F}_{\text{net}} = m\vec{a}$$. The momentum form is the more fundamental statement of [Newton's second law]({{ '/notes/physics/forces/' | relative_url }}), and it is essential whenever mass is not constant, such as a rocket burning fuel or a rope piling onto the ground.
+For constant mass, this reduces to $$\vec{F}_{\text{net}} = m\vec{a}$$. The momentum form is the more fundamental statement of Newton's second law, and it is essential whenever mass is not constant, such as a rocket burning fuel or a rope piling onto the ground.
 
 ---
 
@@ -68,7 +66,7 @@ The average force is the constant force that would deliver the same impulse over
 
 <div class="theorem-box" markdown="1">
 
-**Example (impulse from a force-time graph).** A $$0.50\ \text{kg}$$ ball moving at $$4.0\ \text{m/s}$$ to the right strikes a wall. The wall pushes back with a force that rises linearly from $$0$$ to a peak of $$200\ \text{N}$$ over $$0.010\ \text{s}$$, then falls linearly back to $$0$$ over the next $$0.010\ \text{s}$$. Find the ball's velocity after contact and the average force.
+**Example.** A $$0.50\ \text{kg}$$ ball moving at $$4.0\ \text{m/s}$$ to the right strikes a wall. The wall pushes back with a force that rises linearly from $$0$$ to a peak of $$200\ \text{N}$$ over $$0.010\ \text{s}$$, then falls linearly back to $$0$$ over the next $$0.010\ \text{s}$$. Find the ball's velocity after contact and the average force.
 
 The impulse is the area under the $$F$$-$$t$$ graph, which is a triangle of base $$0.020\ \text{s}$$ and height $$200\ \text{N}$$:
 
@@ -94,7 +92,7 @@ half the peak force, as expected for a triangular pulse. The instantaneous force
 
 <div class="theorem-box" markdown="1">
 
-**Example (force on a wall from a stream of balls).** A stream of identical balls, each of mass $$m = 0.10\ \text{kg}$$, flies horizontally at $$v = 20\ \text{m/s}$$ and strikes a wall. The balls hit at a rate of $$n = 5$$ balls per second and rebound straight back with the same speed (elastic bounce). Find the average force the wall exerts on the stream, and the force the stream exerts on the wall.
+**Example.** A stream of identical balls, each of mass $$m = 0.10\ \text{kg}$$, flies horizontally at $$v = 20\ \text{m/s}$$ and strikes a wall. The balls hit at a rate of $$n = 5$$ balls per second and rebound straight back with the same speed (elastic bounce). Find the average force the wall exerts on the stream, and the force the stream exerts on the wall.
 
 Each ball reverses its velocity, so the change in momentum of one ball is
 
@@ -244,11 +242,9 @@ $$
 
 </div>
 
-This is the same center-of-mass result used in [forces]({{ '/notes/physics/forces/' | relative_url }}); the deeper meaning here is that conservation of momentum is really a statement that $$\vec{v}_{\text{cm}}$$ is constant when no external force acts, no matter how violently the internal parts interact.
-
 <div class="theorem-box" markdown="1">
 
-**Example (center of mass of a uniform triangle by integration).** Find the center of mass of a uniform right-triangular plate with legs along the axes: vertices at $$(0,0)$$, $$(b,0)$$, and $$(0,h)$$.
+**Example.** Find the center of mass of a uniform right-triangular plate with legs along the axes: vertices at $$(0,0)$$, $$(b,0)$$, and $$(0,h)$$.
 
 Let the surface mass density be $$\sigma$$ (mass per area), constant. The total mass is $$M = \sigma \cdot \tfrac{1}{2}bh$$. Slice the triangle into thin vertical strips of width $$dx$$ at position $$x$$. At that $$x$$, the hypotenuse runs from $$(0,h)$$ to $$(b,0)$$, so its height is
 
@@ -280,7 +276,7 @@ By symmetry of the argument (slicing horizontally), $$y_{\text{cm}} = h/3$$. The
 
 <div class="theorem-box" markdown="1">
 
-**Example (rod with varying density).** A thin rod of length $$L$$ lies along the $$x$$-axis from $$x=0$$ to $$x=L$$. Its linear mass density increases as $$\lambda(x) = \lambda_0\,\dfrac{x}{L}$$. Find its center of mass.
+**Example.** A thin rod of length $$L$$ lies along the $$x$$-axis from $$x=0$$ to $$x=L$$. Its linear mass density increases as $$\lambda(x) = \lambda_0\,\dfrac{x}{L}$$. Find its center of mass.
 
 The mass element is $$dm = \lambda(x)\,dx = \lambda_0\dfrac{x}{L}\,dx$$. The total mass is
 
@@ -306,7 +302,7 @@ The center of mass sits at $$2L/3$$, shifted toward the heavy end, as expected. 
 
 <div class="theorem-box" markdown="1">
 
-**Example (the center of mass keeps moving while parts separate).** A firework of mass $$M$$ is launched and, at the top of its arc, is momentarily moving horizontally at $$v_0$$ when it explodes into two equal pieces. One piece is observed to fall straight down with zero horizontal velocity immediately after the burst. Where does the other piece go, and where is the center of mass?
+**Example.** A firework of mass $$M$$ is launched and, at the top of its arc, is momentarily moving horizontally at $$v_0$$ when it explodes into two equal pieces. One piece is observed to fall straight down with zero horizontal velocity immediately after the burst. Where does the other piece go, and where is the center of mass?
 
 The explosion is internal, and over the brief burst gravity's impulse is negligible, so horizontal momentum is conserved across the explosion. Before:
 
@@ -343,10 +339,6 @@ A **perfectly inelastic collision** is the special case where objects stick toge
 $$
 m_1\vec{v}_{1i}+m_2\vec{v}_{2i} = (m_1+m_2)\vec{v}_f.
 $$
-
-Do not use conservation of kinetic energy unless the collision is explicitly elastic.
-
-**Why momentum survives but kinetic energy may not.** Momentum conservation follows directly from Newton's third law: the internal forces during the collision are equal and opposite, so they deliver equal and opposite impulses, and the total momentum change is zero regardless of how the objects deform. Kinetic energy carries no such guarantee. The internal forces do equal and opposite *forces*, but the two objects move through *different* displacements during contact, so the internal work need not cancel. In an inelastic collision, some of that work goes into permanently deforming material, generating heat, or making sound, and that energy does not return as kinetic energy. Momentum is a vector tied to forces and time; kinetic energy is a scalar tied to forces and distance, and only the first is protected by Newton's third law.
 
 The kinetic energy lost in a perfectly inelastic collision can be computed directly:
 
@@ -394,7 +386,7 @@ The **ballistic pendulum** is the classic problem that requires *both* momentum 
 
 <div class="theorem-box" markdown="1">
 
-**Proof (ballistic pendulum).** A bullet of mass $$m$$ moving at speed $$v$$ embeds in a block of mass $$M$$ hanging at rest from a string. The block-plus-bullet then rises to a maximum height $$h$$. Find $$v$$ in terms of $$m$$, $$M$$, $$h$$, and $$g$$.
+**Example.** A bullet of mass $$m$$ moving at speed $$v$$ embeds in a block of mass $$M$$ hanging at rest from a string. The block-plus-bullet then rises to a maximum height $$h$$. Find $$v$$ in terms of $$m$$, $$M$$, $$h$$, and $$g$$.
 
 **Stage 1 — collision (momentum conserved, energy not).** The embedding is fast and perfectly inelastic. During it, momentum is conserved:
 
@@ -435,24 +427,6 @@ v = \frac{m+M}{m}\sqrt{2gh}.
 $$
 
 The two stages must be analyzed separately with the correct conserved quantity for each. Mixing them (e.g. equating the bullet's initial kinetic energy to the final potential energy) gives a wrong, larger answer because it ignores the energy lost in embedding.
-
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example (ballistic pendulum, numeric).** A $$10\ \text{g}$$ bullet embeds in a $$2.0\ \text{kg}$$ block and the pair swings up $$h = 0.15\ \text{m}$$. Find the bullet's speed.
-
-Using the result above with $$m = 0.010\ \text{kg}$$, $$M = 2.0\ \text{kg}$$:
-
-$$
-\sqrt{2gh} = \sqrt{2(9.8)(0.15)} = \sqrt{2.94} = 1.71\ \text{m/s},
-$$
-
-$$
-v = \frac{m+M}{m}\sqrt{2gh} = \frac{2.010}{0.010}(1.71) = 201(1.71) \approx 344\ \text{m/s}.
-$$
-
-A modest $$15\ \text{cm}$$ swing corresponds to a bullet speed of several hundred meters per second, because the heavy block dilutes the bullet's momentum enormously.
 
 </div>
 
@@ -530,7 +504,7 @@ So the relative velocity after the collision is the negative of the relative vel
 
 <div class="theorem-box" markdown="1">
 
-**Example (1D elastic collision, numeric).** A $$2.0\ \text{kg}$$ cart moving right at $$3.0\ \text{m/s}$$ elastically collides head-on with a $$1.0\ \text{kg}$$ cart at rest. Find both final velocities.
+**Example.** A $$2.0\ \text{kg}$$ cart moving right at $$3.0\ \text{m/s}$$ elastically collides head-on with a $$1.0\ \text{kg}$$ cart at rest. Find both final velocities.
 
 Use the relation formulas with $$m_1 = 2.0$$, $$m_2 = 1.0$$, $$v_{1i} = 3.0$$, $$v_{2i} = 0$$:
 
@@ -574,43 +548,7 @@ $$
 \vec{P}'_{\text{sys}} = M(\vec{v}_{\text{cm}} - \vec{v}_{\text{cm}}) = 0.
 $$
 
-Because the total momentum is zero, the objects always have equal and opposite momenta in this frame, both before and after a collision. An elastic collision in the CM frame simply reverses each object's velocity; an inelastic collision brings them to rest in this frame, which makes the maximum-energy-loss statement obvious. The lab-frame results then follow by adding $$\vec{v}_{\text{cm}}$$ back. At the AP level this is mostly a conceptual aid; the heavier use of the CM frame belongs to the [USAPhO mechanics page]({{ '/notes/physics/advmech/' | relative_url }}).
-
----
-
-## Explosions and Recoil
-
-In an explosion, internal energy becomes kinetic energy. Momentum is conserved if external impulse is negligible:
-
-$$
-\sum \vec{p}_{\text{before}} = \sum \vec{p}_{\text{after}}.
-$$
-
-Kinetic energy usually increases because stored chemical, elastic, or nuclear energy is converted into motion. This is the opposite energy pattern from an inelastic collision.
-
-<div class="theorem-box" markdown="1">
-
-**Example (recoil).** A $$60\ \text{kg}$$ skater standing at rest on frictionless ice throws a $$2.0\ \text{kg}$$ ball horizontally at $$15\ \text{m/s}$$. Find the skater's recoil velocity and the kinetic energy released.
-
-The system starts at rest, so total momentum is zero and stays zero. Taking the throw direction as positive,
-
-$$
-0 = m_{\text{ball}}v_{\text{ball}} + m_{\text{skater}}v_{\text{skater}},
-$$
-
-$$
-v_{\text{skater}} = -\frac{m_{\text{ball}}v_{\text{ball}}}{m_{\text{skater}}} = -\frac{(2.0)(15)}{60} = -0.50\ \text{m/s}.
-$$
-
-The skater glides backward at $$0.50\ \text{m/s}$$. The kinetic energy, all released from the skater's muscles, is
-
-$$
-K = \tfrac{1}{2}(2.0)(15)^2 + \tfrac{1}{2}(60)(0.50)^2 = 225 + 7.5 = 232.5\ \text{J}.
-$$
-
-Energy appeared (from chemical energy in the muscles) while total momentum stayed at zero. Notice the light ball carries almost all of the kinetic energy even though both objects carry equal-magnitude momentum: kinetic energy can be written $$K = p^2/2m$$, so for a fixed momentum, the lighter object holds more energy.
-
-</div>
+Since the total momentum is zero, the objects always have equal and opposite momenta in this frame, both before and after a collision. An elastic collision in the CM frame simply reverses each object's velocity; an inelastic collision brings them to rest in this frame, which makes the maximum-energy-loss statement obvious. The lab-frame results then follow by adding $$\vec{v}_{\text{cm}}$$ back.
 
 ---
 
@@ -650,7 +588,7 @@ $$
 v_f - v_0 = -u\ln\frac{m_f}{m_0} = u\ln\frac{m_0}{m_f}.
 $$
 
-This is the **Tsiolkovsky rocket equation**. The change in speed depends only on the exhaust speed and the mass ratio, which is why staging (shedding empty mass) matters so much. Deeper variable-mass and external-force versions belong to the [USAPhO mechanics page]({{ '/notes/physics/advmech/' | relative_url }}).
+This is the **Tsiolkovsky rocket equation**. The change in speed depends only on the exhaust speed and the mass ratio, which is why staging (shedding empty mass) matters so much.
 
 </div>
 

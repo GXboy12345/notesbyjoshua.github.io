@@ -9,8 +9,6 @@ permalink: /notes/physics/work/
 
 # Work, Energy, and Power
 
-**Energy methods** turn many dynamics problems into bookkeeping. Instead of tracking every force through time, we track the work forces do and how that work changes kinetic, potential, and mechanical energy. This unit connects directly to [forces]({{ '/notes/physics/forces/' | relative_url }}) because work is still caused by forces, but it often avoids solving Newton's second law as a differential equation.
-
 ---
 
 ## Useful Variables
@@ -37,7 +35,7 @@ $$
 
 Only the component of force parallel to displacement does work. A perpendicular force can change direction without changing speed, so it does no work at that instant.
 
-For a variable force, use the line integral
+For a variable force, use the line integral (just the integral over the path of an object)
 
 $$
 W = \int_C \vec{F}\cdot d\vec{r}.
@@ -53,17 +51,17 @@ the signed area under the force-position graph.
 
 ### The geometry of the dot product
 
-Because $$W = \vec{F}\cdot\Delta\vec{r} = F\,\Delta r\cos\theta$$, the **sign of the work** is set entirely by the angle $$\theta$$ between the force and the displacement:
+Since $$W = \vec{F}\cdot\Delta\vec{r} = F\,\Delta r\cos\theta$$, the **sign of the work** is set entirely by the angle $$\theta$$ between the force and the displacement:
 
 - **Positive work** ($$0\le\theta<90^\circ$$): the force has a component along the motion and speeds the object up (it transfers energy *into* the object). A horizontal push on a sliding box does positive work.
 - **Negative work** ($$90^\circ<\theta\le180^\circ$$): the force opposes the motion and slows the object (it removes energy). Kinetic friction on a sliding box does negative work.
 - **Zero work** ($$\theta=90^\circ$$): a force perpendicular to the velocity does no work. The normal force on a block sliding along a floor, the tension on a ball in uniform circular motion, and the magnetic force on a charge all do zero work even though they are nonzero forces.
 
-This is why a centripetal force can bend a path without changing speed: it is always perpendicular to $$\vec{v}$$, so it does no work and $$K$$ stays constant (see [forces]({{ '/notes/physics/forces/' | relative_url }})).
+This is why a centripetal force can bend a path without changing speed: it is always perpendicular to $$\vec{v}$$, so it does no work.
 
 <div class="theorem-box" markdown="1">
 
-**Example (work as the area under an $$F$$-vs-$$x$$ graph).** A force directed along the $$x$$-axis varies with position as follows: it is constant at $$F=20\ \text{N}$$ from $$x=0$$ to $$x=3\ \text{m}$$, then ramps linearly down to $$0\ \text{N}$$ at $$x=5\ \text{m}$$. Find the work done from $$x=0$$ to $$x=5\ \text{m}$$.
+**Example.** A force directed along the $$x$$-axis varies with position as follows: it is constant at $$F=20\ \text{N}$$ from $$x=0$$ to $$x=3\ \text{m}$$, then ramps linearly down to $$0\ \text{N}$$ at $$x=5\ \text{m}$$. Find the work done from $$x=0$$ to $$x=5\ \text{m}$$.
 
 The work is the area under the graph. Split it into a rectangle and a triangle:
 
@@ -78,7 +76,7 @@ If the force had pointed in the $$-x$$ direction over some interval, that area w
 
 <div class="theorem-box" markdown="1">
 
-**Example (work done by a variable force via integration).** A position-dependent force $$F(x) = \alpha x^2$$ acts along the $$x$$-axis, with $$\alpha = 6\ \text{N/m}^2$$. Find the work it does on a particle moving from $$x_i = 1\ \text{m}$$ to $$x_f = 3\ \text{m}$$.
+**Example.** A position-dependent force $$F(x) = \alpha x^2$$ acts along the $$x$$-axis, with $$\alpha = 6\ \text{N/m}^2$$. Find the work it does on a particle moving from $$x_i = 1\ \text{m}$$ to $$x_f = 3\ \text{m}$$.
 
 Use $$W = \int_{x_i}^{x_f} F(x)\,dx$$:
 
@@ -94,7 +92,7 @@ Whenever the force is not constant, you cannot use $$W = F\,d$$; you must integr
 
 ## Kinetic Energy and the Work-Energy Theorem
 
-Translational kinetic energy is
+Translational kinetic energy is defined as
 
 $$
 K = \frac{1}{2}mv^2.
@@ -129,7 +127,7 @@ This derivation is worth knowing because it explains why energy methods remain v
 
 <div class="theorem-box" markdown="1">
 
-**Example (block sliding to a stop with friction).** A block of mass $$m = 2.0\ \text{kg}$$ slides across a level floor with initial speed $$v_0 = 6.0\ \text{m/s}$$. The coefficient of kinetic friction is $$\mu_k = 0.30$$. How far does it slide before stopping? Use $$g = 9.8\ \text{m/s}^2$$.
+**Example.** A block of mass $$m = 2.0\ \text{kg}$$ slides across a level floor with initial speed $$v_0 = 6.0\ \text{m/s}$$. The coefficient of kinetic friction is $$\mu_k = 0.30$$. How far does it slide before stopping? Use $$g = 9.8\ \text{m/s}^2$$.
 
 The only horizontal force is kinetic friction, $$f_k = \mu_k F_N = \mu_k mg$$, directed opposite the motion. Over a distance $$d$$ it does negative work
 
@@ -163,7 +161,7 @@ $$
 \oint \vec{F}\cdot d\vec{r} = 0
 $$
 
-around any closed path. For a conservative force, define potential energy $$U$$ by
+around any closed path (You don't need to know the exact integral definition, just a conceptual one). For a conservative force, define potential energy $$U$$ by
 
 $$
 W_{\text{cons}} = -\Delta U.
@@ -181,7 +179,7 @@ $$
 \vec{F} = -\nabla U.
 $$
 
-Potential energy is not an absolute property; it requires a reference level. Only changes in potential energy affect mechanics.
+The $$\nabla$$ symbol is just an extension of a derivative to all three dimensions. Potential energy is not an absolute property; it requires a reference level, which is usually set at some point at infinity or zero. Only changes in potential energy affect mechanics.
 
 ---
 
@@ -253,9 +251,7 @@ $$
 
 </div>
 
-### Work done by gravity is path-independent
-
-That we could even *define* a potential energy depends on gravity being conservative: the work it does between two points does not depend on the route taken.
+The fact that we could even *define* a potential energy depends on gravity being conservative: the work it does between two points does not depend on the route taken.
 
 <div class="theorem-box" markdown="1">
 
@@ -271,7 +267,7 @@ The $$x$$-displacement drops out because $$\hat{y}\cdot\hat{x}=0$$, so only the 
 
 <div class="theorem-box" markdown="1">
 
-**Example (escape speed from energy conservation).** With what speed $$v_{\text{esc}}$$ must a projectile leave a planet's surface (mass $$M$$, radius $$R$$, no air) so that it just barely reaches infinity? Use $$U_g(r) = -GMm/r$$.
+**Example.** With what speed $$v_{\text{esc}}$$ must a projectile leave a planet's surface (mass $$M$$, radius $$R$$, no air) so that it just barely reaches infinity (aka escapes the gravitational pull of the planet)? Use $$U_g(r) = -GMm/r$$.
 
 "Just barely reaches infinity" means the projectile arrives at $$r\to\infty$$ with zero speed. With only gravity acting, mechanical energy is conserved:
 
@@ -355,7 +351,7 @@ $$
 
 <div class="theorem-box" markdown="1">
 
-**Example (work to stretch a spring).** A spring has stiffness $$k = 400\ \text{N/m}$$. How much work must an external agent do to stretch it from its natural length to $$x_1 = 0.10\ \text{m}$$, and then how much *additional* work to stretch it from $$x_1$$ to $$x_2 = 0.20\ \text{m}$$?
+**Example.** A spring has stiffness $$k = 400\ \text{N/m}$$. How much work must an external agent do to stretch it from its natural length to $$x_1 = 0.10\ \text{m}$$, and then how much *additional* work to stretch it from $$x_1$$ to $$x_2 = 0.20\ \text{m}$$?
 
 To stretch the spring slowly, the external force must balance the spring force, so $$F_{\text{ext}}(x) = +kx$$. The work done by this external force is
 
@@ -389,7 +385,7 @@ Stretching the second $$10\ \text{cm}$$ takes three times the work of the first,
 
 ## Conservation of Mechanical Energy
 
-Mechanical energy is
+Mechanical energy is defined as
 
 $$
 E_{\text{mech}} = K + U.
@@ -443,7 +439,7 @@ $$
 
 <div class="theorem-box" markdown="1">
 
-**Example (pendulum / ramp speed by energy conservation).** A bob on a string of length $$L = 1.5\ \text{m}$$ is released from rest at an angle $$\theta = 60^\circ$$ from vertical. Find its speed at the lowest point. Ignore air resistance.
+**Example.** A bob on a string of length $$L = 1.5\ \text{m}$$ is released from rest at an angle $$\theta = 60^\circ$$ from vertical. Find its speed at the lowest point. Ignore air resistance.
 
 The tension is always perpendicular to the bob's velocity, so it does no work; only gravity does work, and mechanical energy is conserved. The bob's height above the lowest point when the string makes angle $$\theta$$ is
 
@@ -479,7 +475,7 @@ $$
 W_{\text{nc}} = \Delta E_{\text{mech}}.
 $$
 
-Friction usually decreases mechanical energy and converts it into thermal energy, so $$W_f$$ is usually negative for a sliding object.
+Friction usually decreases mechanical energy and converts it into thermal energy, so $$W_f$$ is usually negative for a sliding object. If you forgot the signs of a non-conservative force, just think about if the force would add energy or remove energy from the system (e.g. friction releases heat meaning it removes energy).
 
 ### Mechanical energy versus total energy
 
@@ -489,11 +485,11 @@ $$
 \Delta E_{\text{mech}} + \Delta E_{\text{thermal}} + \cdots = 0,
 $$
 
-energy is conserved overall, with $$|W_f| = \mu_k F_N d$$ being the amount converted to heat. In AP problems we usually track $$E_{\text{mech}}$$ and treat friction's effect through $$W_{\text{nc}}$$, but it is conceptually important that energy is never destroyed — only mechanical energy is.
+energy is conserved overall, with $$\lvert W_f \rvert = \mu_k F_N d$$ being the amount converted to heat. In AP problems we usually track $$E_{\text{mech}}$$ and treat friction's effect through $$W_{\text{nc}}$$, but it is conceptually important that energy is never destroyed — only mechanical energy is.
 
 <div class="theorem-box" markdown="1">
 
-**Example (block on an incline with friction).** A block of mass $$m = 3.0\ \text{kg}$$ is released from rest and slides a distance $$d = 4.0\ \text{m}$$ down a $$30^\circ$$ incline with coefficient of kinetic friction $$\mu_k = 0.20$$. Find its speed at the bottom of that slide. Use $$g = 9.8\ \text{m/s}^2$$.
+**Example.** A block of mass $$m = 3.0\ \text{kg}$$ is released from rest and slides a distance $$d = 4.0\ \text{m}$$ down a $$30^\circ$$ incline with coefficient of kinetic friction $$\mu_k = 0.20$$. Find its speed at the bottom of that slide. Use $$g = 9.8\ \text{m/s}^2$$.
 
 Gravity (conservative) and friction (nonconservative) both do work. Use $$K_i + U_i + W_{\text{nc}} = K_f + U_f$$ with the bottom of the slide as $$U = 0$$. The block drops a height $$h = d\sin\theta$$, so $$U_i = mgd\sin\theta$$. The normal force is $$F_N = mg\cos\theta$$, so friction does work
 
@@ -525,7 +521,7 @@ For comparison, a frictionless incline would give $$v = \sqrt{2gd\sin\theta} = \
 
 <div class="theorem-box" markdown="1">
 
-**Example (mixing conservative and nonconservative work: $$W_{\text{nc}} = \Delta E_{\text{mech}}$$).** A $$0.50\ \text{kg}$$ block is pressed against a spring ($$k = 800\ \text{N/m}$$) compressed by $$x = 0.10\ \text{m}$$ on a horizontal surface. After release, the block slides $$L = 1.2\ \text{m}$$ along a rough patch ($$\mu_k = 0.25$$) before reaching a smooth section. Find its speed at the end of the rough patch.
+**Example.** A $$0.50\ \text{kg}$$ block is pressed against a spring ($$k = 800\ \text{N/m}$$) compressed by $$x = 0.10\ \text{m}$$ on a horizontal surface. After release, the block slides $$L = 1.2\ \text{m}$$ along a rough patch ($$\mu_k = 0.25$$) before reaching a smooth section. Find its speed at the end of the rough patch.
 
 The spring force is conservative, so its stored energy $$U_s = \tfrac{1}{2}kx^2$$ is the initial energy. Friction is the only nonconservative force. Apply
 
@@ -575,7 +571,7 @@ $$
 \frac{dU}{dx}=0.
 $$
 
-The equilibrium is **stable** if $$U(x)$$ has a local minimum, **unstable** if it has a local maximum, and **neutral** if small displacements do not change $$U$$ to second order.
+The equilibrium is **stable** if $$U(x)$$ has a local minimum ($$\frac{d^2 U}{dx^2} > 0$$), **unstable** if it has a local maximum ($$\frac{d^2 U}{dx^2} < 0>), and **neutral** if small displacements do not change $$U$$ to second order ($$\frac{d^2 U}{dx^2} = 0$$).
 
 Turning points occur where $$K=0$$, so
 
@@ -587,7 +583,7 @@ The particle can move only in regions where $$E\ge U(x)$$ because kinetic energy
 
 <div class="theorem-box" markdown="1">
 
-**Example (reading an energy diagram).** A particle of mass $$m = 0.20\ \text{kg}$$ moves in one dimension under the potential
+**Example.** A particle of mass $$m = 0.20\ \text{kg}$$ moves in one dimension under the potential
 
 $$
 U(x) = 2x^2 - x^4
@@ -650,7 +646,7 @@ Power is not a new kind of energy; it is how quickly energy is transferred or tr
 
 <div class="theorem-box" markdown="1">
 
-**Example (car climbing a hill at constant speed).** A car of mass $$m = 1200\ \text{kg}$$ drives up a $$5.0^\circ$$ incline at a constant $$v = 25\ \text{m/s}$$. Neglecting friction and drag, what power must the engine deliver? Use $$g = 9.8\ \text{m/s}^2$$.
+**Example.** A car of mass $$m = 1200\ \text{kg}$$ drives up a $$5.0^\circ$$ incline at a constant $$v = 25\ \text{m/s}$$. Neglecting friction and drag, what power must the engine deliver? Use $$g = 9.8\ \text{m/s}^2$$.
 
 At constant speed there is no change in kinetic energy, so the engine's drive force must exactly balance the component of gravity along the incline:
 
@@ -667,8 +663,6 @@ $$
 Equivalently, the engine supplies gravitational potential energy at the rate $$P = mg\,v\sin\theta = mg\,v_y$$, where $$v_y = v\sin\theta$$ is the rate of gain of height. Both routes give the same answer because $$P = \vec{F}\cdot\vec{v}$$ counts only the force component along the motion.
 
 </div>
-
-For more advanced energy methods — Lagrangians, energy in noninertial frames, and harder variable-force integrals — see the USAPhO [advanced mechanics]({{ '/notes/physics/advmech/' | relative_url }}) page. The spring and oscillation energy ideas here connect directly to [Unit 7: Oscillations]({{ '/notes/physics/oscillations/' | relative_url }}), and the kinematic results (like $$v = \sqrt{2gh}$$) overlap with [kinematics]({{ '/notes/physics/kinematics/' | relative_url }}).
 
 ---
 
