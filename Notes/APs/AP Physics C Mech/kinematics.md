@@ -471,7 +471,7 @@ $$
 \vec{v}_{A/C} = \vec{v}_{A/B} + \vec{v}_{B/C}.
 $$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/kinematics/relvelo.gif' | relative_url }}" alt="River-crossing relative velocity vector addition diagram placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/kinematics/relative-velocity.png' | relative_url }}" alt="River-crossing relative velocity vector addition diagram placeholder" loading="lazy" decoding="async" />
 
 To visualize, you can draw the velocities as vectors, and do vector addition to get your final result. A useful consistency check is that swapping the subscripts negates the vector, $$\vec{v}_{A/B} = -\vec{v}_{B/A}$$.
 

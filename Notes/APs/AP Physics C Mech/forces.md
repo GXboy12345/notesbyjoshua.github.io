@@ -642,7 +642,7 @@ $$
 v = \sqrt{rg\tan\theta}.
 $$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/bankedcurve.gif' | relative_url }}" alt="Car on a banked curve with normal force components placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/banked.png' | relative_url }}" alt="Car on a banked curve with normal force components placeholder" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 

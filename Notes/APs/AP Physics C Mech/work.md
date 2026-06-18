@@ -49,7 +49,7 @@ $$
 
 the signed area under the force-position graph.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/work/workgraph.svg' | relative_url }}" alt="force versus position graph with shaded area equal to work placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/work/forcegraph.png' | relative_url }}" alt="force versus position graph with shaded area equal to work placeholder" loading="lazy" decoding="async" />
 
 ### The geometry of the dot product
 

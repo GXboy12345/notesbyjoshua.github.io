@@ -149,7 +149,7 @@ Common results:
 - Thin rod about center: $$I = \frac{1}{12}ML^2$$
 - Thin rod about end: $$I = \frac{1}{3}ML^2$$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/torque/momentofinertia.png' | relative_url }}" alt="common shapes hoop disk rod sphere with moment of inertia values placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/torque/MoI.png' | relative_url }}" alt="common shapes hoop disk rod sphere with moment of inertia values placeholder" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 

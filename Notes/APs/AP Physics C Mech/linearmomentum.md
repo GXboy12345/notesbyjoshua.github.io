@@ -175,7 +175,7 @@ $$
 
 ## Center of Mass
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/linearmomentum/CoM.gif' | relative_url }}" alt="center of mass of a system of particles and a continuous body placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/linearmomentum/CoM.png' | relative_url }}" alt="center of mass of a system of particles and a continuous body placeholder" loading="lazy" decoding="async" />
 
 For discrete particles,
 
@@ -388,9 +388,6 @@ So $$\Delta K = K_f - K_i = -4.3\times10^4\ \text{J}$$ is lost to deformation, h
 ## The Ballistic Pendulum
 
 The **ballistic pendulum** is the classic problem that requires *both* momentum and energy, applied to *different stages*. A bullet embeds in a hanging block; the block then swings up. The trick is recognizing that the embedding (a perfectly inelastic collision) conserves momentum but loses energy, while the subsequent swing (no friction, no collision) conserves mechanical energy.
-
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/linearmomentum/ballistic-pendulum.gif' | relative_url }}" alt="bullet embedding in a block on a pendulum that swings up to height h placeholder" loading="lazy" decoding="async" />
-
 
 <div class="theorem-box" markdown="1">
 
