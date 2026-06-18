@@ -175,7 +175,7 @@ If the question asks only for acceleration of a connected system, the system app
 
 <div class="theorem-box" markdown="1">
 
-**Example (block on a table connected to a hanging mass).** A block of mass $$m_1 = 3.0\ \text{kg}$$ sits on a frictionless horizontal table. A light string runs from the block, over a frictionless pulley at the edge of the table, to a hanging block of mass $$m_2 = 2.0\ \text{kg}$$. Find the acceleration of the system and the tension in the string.
+**Example.** A block of mass $$m_1 = 3.0\ \text{kg}$$ sits on a frictionless horizontal table. A light inextensible string runs from the block, over a frictionless pulley at the edge of the table, to a hanging block of mass $$m_2 = 2.0\ \text{kg}$$. Find the acceleration of the system and the tension in the string.
 
 Both blocks share the same acceleration magnitude $$a$$ because the string is inextensible: as $$m_2$$ falls, $$m_1$$ slides forward by the same amount.
 
@@ -237,7 +237,7 @@ With friction, decide whether the block is moving or about to move. If it is mov
 
 <div class="theorem-box" markdown="1">
 
-**Example (block on a rough incline: does it slide?).** A block of mass $$m = 4.0\ \text{kg}$$ rests on an incline at $$\theta = 30^\circ$$, released from rest. The coefficients are $$\mu_s = 0.50$$ and $$\mu_k = 0.40$$. Determine whether the block slides, and if so, find its acceleration.
+**Example.** A block of mass $$m = 4.0\ \text{kg}$$ rests on an incline at $$\theta = 30^\circ$$, released from rest. The coefficients are $$\mu_s = 0.50$$ and $$\mu_k = 0.40$$. Determine whether the block slides, and if so, find its acceleration.
 
 First decide between static and kinetic friction by comparing the driving force to the maximum static friction. The component of gravity down the plane is
 
@@ -305,7 +305,7 @@ The result $$\tan\theta_{\max} = \mu_s$$ is notable because the mass cancels: a 
 
 <div class="theorem-box" markdown="1">
 
-**Example (measuring $$\mu_s$$ from the slip angle).** A coin placed on a flat book starts to slide when the book is tilted to $$\theta_{\max} = 22^\circ$$ from horizontal. Find $$\mu_s$$.
+**Example).** A coin placed on a flat book starts to slide when the book is tilted to $$\theta_{\max} = 22^\circ$$ from horizontal. Find $$\mu_s$$.
 
 At impending slip the down-plane gravity component equals the maximum static friction:
 
@@ -322,8 +322,8 @@ The mass and $$g$$ both cancel, which is why this simple tilt test works regardl
 ## Connected objects and pulleys
 
 For ideal ropes and pulleys, connected objects share related accelerations. A common Atwood machine has two hanging masses connected by a massless string over a frictionless pulley.
-<!--
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/pulley-system.png' | relative_url }}" alt="Pulley system placeholder" loading="lazy" decoding="async" /> -->
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/pulley-system.png' | relative_url }}" alt="Pulley system placeholder" loading="lazy" decoding="async" />
 
 If $$m_2 > m_1$$, the acceleration magnitude is
 
@@ -389,7 +389,7 @@ For pulley systems with movable pulleys, the acceleration constraints may involv
 
 ## Apparent weight and elevators
 
-**Apparent weight** is the normal force a scale reads. In an elevator,
+A scale does not directly measure your weight, it insteads measures the **apparent weight**, which is the normal force applied to the scale. In an elevator (or any condition with nonzero acceleration),
 
 $$
 F_N - mg = ma
@@ -407,7 +407,7 @@ If the elevator accelerates upward, $$F_N > mg$$. If it accelerates downward, $$
 
 <div class="theorem-box" markdown="1">
 
-**Example (scale reading in an elevator).** A person of mass $$m = 70\ \text{kg}$$ stands on a bathroom scale in an elevator. The scale reads the normal force in newtons. Find the reading when (a) the elevator accelerates upward at $$2.0\ \text{m/s}^2$$, and (b) the elevator accelerates downward at $$2.0\ \text{m/s}^2$$.
+**Example.** A person of mass $$m = 70\ \text{kg}$$ stands on a bathroom scale in an elevator. Find the reading when (a) the elevator accelerates upward at $$2.0\ \text{m/s}^2$$, and (b) the elevator accelerates downward at $$2.0\ \text{m/s}^2$$.
 
 Take up as positive. The scale reads $$F_N$$, where $$F_N - mg = ma$$, so $$F_N = m(g + a)$$.
 
@@ -482,27 +482,9 @@ Examples:
 - A satellite in orbit: gravity provides the inward force.
 - A roller coaster at the bottom of a loop: normal force and gravity combine to give the net inward force.
 
-For a car on a flat curve with static friction,
-
-$$
-f_s \le \mu_sF_N = \mu_smg.
-$$
-
-At the maximum speed before slipping,
-
-$$
-\frac{mv^2}{r} = \mu_smg,
-$$
-
-so
-
-$$
-v_{\text{max}} = \sqrt{\mu_sgr}.
-$$
-
 <div class="theorem-box" markdown="1">
 
-**Example (car rounding a flat curve).** A car takes a flat (unbanked) curve of radius $$r = 50\ \text{m}$$. The coefficient of static friction between the tires and road is $$\mu_s = 0.60$$. What is the maximum speed at which the car can round the curve without skidding?
+**Example.** A car takes a flat (unbanked) curve of radius $$r = 50\ \text{m}$$. The coefficient of static friction between the tires and road is $$\mu_s = 0.60$$. What is the maximum speed at which the car can round the curve without skidding?
 
 On a flat road the only horizontal force available to turn the car is static friction, which must supply the centripetal force. At the maximum speed friction is at its limit:
 
@@ -522,7 +504,7 @@ That is about $$62\ \text{km/h}$$. Because $$m$$ cancels, a fully loaded truck a
 
 <div class="theorem-box" markdown="1">
 
-**Example (conical pendulum).** A ball of mass $$m$$ on a string of length $$L$$ swings in a horizontal circle, with the string tracing a cone at a constant angle $$\theta$$ from the vertical. Find the period $$\mathcal{T}$$ of the motion.
+**Example.** A ball of mass $$m$$ on a string of length $$L$$ swings in a horizontal circle, with the string tracing a cone at a constant angle $$\theta$$ from the vertical. Find the period $$\mathcal{T}$$ of the motion.
 
 The ball moves in a horizontal circle of radius $$r = L\sin\theta$$, so its acceleration is purely horizontal and points toward the center. Two forces act: tension $$T$$ along the string and weight $$mg$$ down. There is no vertical acceleration, so the vertical components balance:
 
@@ -578,7 +560,7 @@ $$
 \sum F_r = m\frac{v^2}{r}, \qquad \sum F_t = m\frac{dv}{dt}.
 $$
 
-This is common in vertical circle problems, where gravity has a tangential component except at the top and bottom.
+This is common in vertical circle problems, where gravity has a tangential component except at the top and bottom. Always remember your normal force as it won't always cancel with gravity!
 
 <div class="theorem-box" markdown="1">
 
@@ -608,7 +590,7 @@ Below this speed, the required inward force is less than $$mg$$, so the object f
 
 <div class="theorem-box" markdown="1">
 
-**Example (loop-the-loop release height).** A small bead slides without friction down a track and around a vertical loop of radius $$r = 0.40\ \text{m}$$. From what minimum height $$h$$ above the bottom of the loop must it be released to complete the loop?
+**Example.** A small bead slides without friction down a track and around a vertical loop of radius $$r = 0.40\ \text{m}$$. From what minimum height $$h$$ above the bottom of the loop must it be released to complete the loop?
 
 The minimum condition at the top is $$v_{\text{top}}^2 = gr$$ from the proof above. Using energy conservation (frictionless) between the release point at height $$h$$ and the top of the loop at height $$2r$$:
 
@@ -636,7 +618,7 @@ The classic result is that the release height must be at least $$2.5$$ radii abo
 
 ## Banked curves
 
-For a frictionless banked curve, the horizontal component of the normal force provides centripetal acceleration, while the vertical component balances weight:
+For a frictionless banked (raised) curve, the horizontal component of the normal force provides centripetal acceleration, while the vertical component balances weight:
 
 $$
 F_N\cos\theta = mg,
@@ -694,9 +676,9 @@ At exactly this speed friction is not required at all. The mass cancels, so the 
 
 </div>
 
-<div class="theorem-box" markdown="1">
+<div class="theorem-box" markdown="2">
 
-**Example (banking angle for a highway curve).** A highway curve of radius $$r = 120\ \text{m}$$ is to be banked so that a car traveling at $$v = 25\ \text{m/s}$$ (about $$90\ \text{km/h}$$) needs no friction. Find the required bank angle $$\theta$$.
+**Example.** A highway curve of radius $$r = 120\ \text{m}$$ is to be banked so that a car traveling at $$v = 25\ \text{m/s}$$ (about $$90\ \text{km/h}$$) needs no friction. Find the required bank angle $$\theta$$.
 
 From the design-speed relation,
 
