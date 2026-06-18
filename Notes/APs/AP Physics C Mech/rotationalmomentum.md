@@ -179,7 +179,7 @@ $$
 K = \frac{1}{2}Mv_{\text{cm}}^2 + \frac{1}{2}I_{\text{cm}}\left(\frac{v_{\text{cm}}}{R}\right)^2.
 $$
 
-It is convenient to write the moment of inertia of a rolling body as $$I_{\text{cm}} = cMR^2$$, where the dimensionless number $$c$$ depends only on shape: $$c = 1$$ for a hoop, $$c = \tfrac12$$ for a solid disk or cylinder, and $$c = \tfrac25$$ for a solid sphere. The factor $$R$$ cancels everywhere, so the geometry enters *only* through $$c$$. Objects with larger $$c = I_{\text{cm}}/(MR^2)$$ put more of their energy into rotation and less into translational speed for the same total energy. That is why a hoop and solid disk released from the same height on a ramp do not reach the bottom with the same speed — and, strikingly, the result is independent of both mass and radius. (For the moment-of-inertia values themselves and their integral derivations, see [torque and rotational dynamics]({{ '/notes/physics/torque/' | relative_url }}).)
+It is convenient to write the moment of inertia of a rolling body as $$I_{\text{cm}} = cMR^2$$, where the dimensionless number $$c$$ depends only on shape: $$c = 1$$ for a hoop, $$c = \tfrac12$$ for a solid disk or cylinder, and $$c = \tfrac25$$ for a solid sphere. The factor $$R$$ cancels everywhere, so the geometry enters *only* through $$c$$. Objects with larger $$c = I_{\text{cm}}/(MR^2)$$ put more of their energy into rotation and less into translational speed for the same total energy. That is why a hoop and solid disk released from the same height on a ramp do not reach the bottom with the same speed — and, strikingly, the result is independent of both mass and radius.
 
 <div class="theorem-box" markdown="1">
 
@@ -334,6 +334,8 @@ $$
 
 If rotational inertia decreases, angular speed increases; if rotational inertia increases, angular speed decreases. Rotational kinetic energy does not have to be conserved during this process because internal work may be done while the mass distribution changes. This is the central subtlety of the topic: $$L$$ is conserved whenever external torque vanishes, but $$K_{\text{rot}}$$ is conserved only when, additionally, no internal work is done and no inelastic merging occurs. The examples below show both behaviors side by side — pulling mass inward *raises* $$K$$, while objects sticking together *lowers* it.
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/rotationalmomentum/MoIskater.jpg' | relative_url }}" alt="spinning skater pulling arms in to speed up placeholder" loading="lazy" decoding="async" />
+
 <div class="theorem-box" markdown="1">
 
 **Example.** A skater spins at $$\omega_i = 2.0\ \text{rad/s}$$ with arms extended, giving a moment of inertia $$I_i = 6.0\ \text{kg}\cdot\text{m}^2$$. She pulls her arms in, reducing her moment of inertia to $$I_f = 2.0\ \text{kg}\cdot\text{m}^2$$. Find her new angular speed and the change in rotational kinetic energy.
@@ -462,7 +464,7 @@ $$
 \int_{t_i}^{t_f}\vec{\tau}_{\text{ext}}\,dt = \Delta \vec{L}.
 $$
 
-This is the angular version of impulse-momentum. A large torque over a short time can significantly change angular momentum even if the interaction is brief. On a torque-time graph, angular impulse is the signed area under the curve, just as linear impulse is the area under a force-time graph in [linear momentum]({{ '/notes/physics/linearmomentum/' | relative_url }}).
+This is the angular version of impulse-momentum. A large torque over a short time can significantly change angular momentum even if the interaction is brief. On a torque-time graph, angular impulse is the signed area under the curve, just as linear impulse is the area under a force-time graph.
 
 <div class="theorem-box" markdown="1">
 
@@ -501,6 +503,8 @@ $$
 $$
 
 Therefore angular momentum about the center is conserved. This is why planets sweep out equal areas in equal times and why orbital speed changes as the distance from the central body changes.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/rotationalmomentum/keplersecond.jpg' | relative_url }}" alt="Kepler equal areas swept in equal times along an orbit placeholder" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 

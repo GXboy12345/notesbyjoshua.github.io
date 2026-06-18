@@ -91,6 +91,8 @@ $$
 
 where $$r_{\perp}$$ is the lever arm, the perpendicular distance from the axis to the line of action of the force. A force applied through the axis produces no torque about that axis.
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/torque/torque.jpg' | relative_url }}" alt="lever arm r-perp and angle between r and F placeholder" loading="lazy" decoding="async" />
+
 There are two equivalent ways to read $$\tau = rF\sin\theta$$, and switching between them is often the key to a clean solution:
 
 - **Lever arm (perpendicular distance).** Group the trig with $$r$$: $$\tau = F(r\sin\theta) = F\,r_\perp$$. Extend the force's line of action into an infinite line and drop a perpendicular from the axis onto it. That perpendicular distance is the lever arm $$r_\perp$$. Sliding the force back and forth along its own line of action never changes the torque, because the lever arm is unchanged.
@@ -147,7 +149,7 @@ Common results:
 - Thin rod about center: $$I = \frac{1}{12}ML^2$$
 - Thin rod about end: $$I = \frac{1}{3}ML^2$$
 
-**ADD IMAGE HERE**
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/torque/momentofinertia.png' | relative_url }}" alt="common shapes hoop disk rod sphere with moment of inertia values placeholder" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -358,7 +360,63 @@ This matches a direct integration $$\int_0^L x^2\lambda\,dx$$, but the parallel-
 
 ### Perpendicular-Axis Theorem
 
-**ADD THIS PART**
+The parallel-axis theorem shifts an axis sideways; the **perpendicular-axis theorem** relates axes that are mutually perpendicular. It applies only to a **planar object** (a flat lamina) lying in a plane. If the lamina lies in the $$xy$$-plane, then the rotational inertia about the $$z$$-axis (perpendicular to the lamina, through a chosen point) equals the sum of the inertias about the two in-plane axes through that same point:
+
+$$
+I_z = I_x + I_y.
+$$
+
+This is often the fastest way to get the inertia of a flat object about an in-plane axis once you know it about the perpendicular axis.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Perpendicular-Axis Theorem).** Let the lamina lie in the $$xy$$-plane, so every mass element has $$z=0$$. For an axis along $$z$$, the distance of a mass element from the axis is its in-plane distance $$r$$, where
+
+$$
+r^2 = x^2 + y^2.
+$$
+
+Therefore
+
+$$
+I_z = \int r^2\,dm = \int (x^2 + y^2)\,dm = \int x^2\,dm + \int y^2\,dm.
+$$
+
+But $$\int y^2\,dm$$ is the inertia about the $$x$$-axis (distance from the $$x$$-axis is $$\lvert y\rvert$$), and $$\int x^2\,dm$$ is the inertia about the $$y$$-axis. So
+
+$$
+I_z = I_y + I_x.
+$$
+
+The flatness ($$z=0$$ everywhere) is essential; the theorem fails for a three-dimensional body.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example (Disk about a diameter).** A uniform disk of mass $$M$$ and radius $$R$$ has $$I_z = \tfrac{1}{2}MR^2$$ about its central perpendicular axis. Find its rotational inertia about a diameter (an in-plane axis through the center).
+
+The disk lies in its own plane, so the perpendicular-axis theorem applies:
+
+$$
+I_z = I_x + I_y.
+$$
+
+By symmetry, the two perpendicular diameters are equivalent, so $$I_x = I_y \equiv I_d$$. Then
+
+$$
+\tfrac{1}{2}MR^2 = 2I_d,
+$$
+
+so
+
+$$
+I_d = \tfrac{1}{4}MR^2.
+$$
+
+The same trick gives a thin ring about a diameter: $$I_z = MR^2$$ gives $$I_d = \tfrac{1}{2}MR^2$$.
+
+</div>
 
 ---
 
@@ -582,6 +640,8 @@ The point of contact is instantaneously at rest relative to the ground, so stati
 ## Rolling Down an Incline
 
 A round object released on an incline rolls without slipping if friction is sufficient. We can find its center-of-mass acceleration in general, then specialize to common shapes.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/torque/rolling-incline.jpg' | relative_url }}" alt="cylinder rolling down an incline with weight normal and friction placeholder" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 

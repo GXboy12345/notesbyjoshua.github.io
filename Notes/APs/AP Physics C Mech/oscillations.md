@@ -40,6 +40,8 @@ $$
 
 The general solution is sinusoidal:
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/oscillations/shm-sinusoid.png' | relative_url }}" alt="position-velocity-acceleration sinusoidal curves versus time in SHM placeholder" loading="lazy" decoding="async" />
+
 $$
 x(t)=A\cos(\omega t+\phi)
 $$
@@ -271,6 +273,9 @@ $$
 ### Combinations of springs
 
 Many AP setups attach a mass to more than one spring. Each combination behaves like a single ideal spring with an **effective spring constant** $$k_{\text{eff}}$$, and the period is then $$T=2\pi\sqrt{m/k_{\text{eff}}}$$.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/oscillations/typessprings.png' | relative_url }}" alt="springs in series versus parallel attached to a mass placeholder" loading="lazy" decoding="async" />
+
 
 <div class="theorem-box" markdown="1">
 
@@ -564,6 +569,8 @@ A pendulum about one meter long swings with a two-second period, which is why ol
 
 A rigid body swinging about a pivot is a **physical pendulum**. If the center of mass is distance $$d$$ from the pivot,
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/oscillations/phypen.png' | relative_url }}" alt="physical pendulum with pivot center of mass distance and restoring torque component placeholder" loading="lazy" decoding="async" />
+
 $$
 \tau \approx -mgd\theta.
 $$
@@ -709,6 +716,8 @@ The **quality factor** $$Q$$ measures how lightly damped an oscillator is — qu
 ### Driving and resonance
 
 A driven oscillator has an external periodic force:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/oscillations/damping.jpg' | relative_url }}" alt="steady-state amplitude versus driving frequency resonance peaks for different damping placeholder" loading="lazy" decoding="async" />
 
 $$
 m\frac{d^2x}{dt^2}+b\frac{dx}{dt}+kx=F_0\cos(\omega_d t).

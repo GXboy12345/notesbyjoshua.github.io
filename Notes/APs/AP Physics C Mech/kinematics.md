@@ -97,6 +97,8 @@ $$
 
 Graphs of position, velocity, and acceleration versus time are linked by the same calculus that links the quantities themselves. Reading them well is half of one-dimensional kinematics.
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/kinematics/motion-graphs.png' | relative_url }}" alt="Position, velocity, and acceleration versus time graphs showing slope and area relationships placeholder" loading="lazy" decoding="async" />
+
 - **Slopes go down the list.** The slope of an $$x$$-$$t$$ graph at an instant is the velocity, $$v = dx/dt$$. The slope of a $$v$$-$$t$$ graph is the acceleration, $$a = dv/dt$$. A curving $$x$$-$$t$$ graph therefore means nonzero acceleration, and a straight $$x$$-$$t$$ line means constant velocity.
 - **Areas go up the list.** The signed area under a $$v$$-$$t$$ graph between two times is the displacement, $$\Delta x = \int v\, dt$$. The signed area under an $$a$$-$$t$$ graph is the change in velocity, $$\Delta v = \int a\, dt$$. "Signed" matters: area below the axis subtracts.
 
@@ -309,6 +311,8 @@ The tool $$a = v\,dv/dx$$ is worth remembering: it trades the time variable for 
 
 In 2D, vectors can be broken down into $$x$$- and $$y$$-components. For **projectile motion** with negligible air resistance (meaning you throw something in the air or something is launched), horizontal acceleration is zero and vertical acceleration is $$g$$ downward (again, signs depend on whether you call “up” positive $$y$$ or not). The motions along $$x$$ and $$y$$ are independent except that they share the same time parameter $$t$$.
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/kinematics/projmotion.png' | relative_url }}" alt="Parabolic projectile trajectory with velocity components labeled placeholder" loading="lazy" decoding="async" />
+
 With initial speed $$v_0$$ at launch angle $$\theta$$ above the horizontal,
 
 $$
@@ -453,6 +457,8 @@ $$
 
 Note that with unequal launch and landing heights the trajectory is no longer symmetric, which is why the level-ground shortcuts cannot be used here.
 
+**ADD INCLINED PLANE PROJECTILE MOTION**
+
 </div>
 
 ---
@@ -464,6 +470,8 @@ The velocity of object $$A$$ relative to object $$B$$ is written $$\vec{v}_{A/B}
 $$
 \vec{v}_{A/C} = \vec{v}_{A/B} + \vec{v}_{B/C}.
 $$
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/kinematics/relvelo.gif' | relative_url }}" alt="River-crossing relative velocity vector addition diagram placeholder" loading="lazy" decoding="async" />
 
 To visualize, you can draw the velocities as vectors, and do vector addition to get your final result. A useful consistency check is that swapping the subscripts negates the vector, $$\vec{v}_{A/B} = -\vec{v}_{B/A}$$.
 

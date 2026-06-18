@@ -323,7 +323,7 @@ The mass and $$g$$ both cancel, which is why this simple tilt test works regardl
 
 For ideal ropes and pulleys, connected objects share related accelerations. A common Atwood machine has two hanging masses connected by a massless string over a frictionless pulley.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/pulley-system.png' | relative_url }}" alt="Pulley system placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/atwood-machine.png' | relative_url }}" alt="Pulley system placeholder" loading="lazy" decoding="async" />
 
 If $$m_2 > m_1$$, the acceleration magnitude is
 
@@ -473,7 +473,7 @@ $$
 
 There is no special "centripetal force." The phrase describes the net inward force required for circular motion. All forces acting on an object going in uniform circular motion must add up to the centripetal force (as long as the force does not act perpendicular to the vector connecting the object and the center of the circle.).
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/circular-motion-forces.png' | relative_url }}" alt="Circular motion force diagram placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/circmotion.jpg' | relative_url }}" alt="Circular motion force diagram placeholder" loading="lazy" decoding="async" />
 
 Examples:
 
@@ -562,6 +562,8 @@ $$
 
 This is common in vertical circle problems, where gravity has a tangential component except at the top and bottom. Always remember your normal force as it won't always cancel with gravity!
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/vertcircle.jpg' | relative_url }}" alt="Ball at the top and bottom of a vertical loop with forces placeholder" loading="lazy" decoding="async" />
+
 <div class="theorem-box" markdown="1">
 
 **Proof (minimum speed at the top of a vertical loop).** An object travels on the inside of a vertical circular track of radius $$r$$. Find the minimum speed $$v_{\text{top}}$$ at the top of the loop for the object to maintain contact with the track.
@@ -639,6 +641,8 @@ So the design speed is
 $$
 v = \sqrt{rg\tan\theta}.
 $$
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/bankedcurve.gif' | relative_url }}" alt="Car on a banked curve with normal force components placeholder" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 

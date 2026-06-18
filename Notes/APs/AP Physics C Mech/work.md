@@ -49,9 +49,13 @@ $$
 
 the signed area under the force-position graph.
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/work/workgraph.svg' | relative_url }}" alt="force versus position graph with shaded area equal to work placeholder" loading="lazy" decoding="async" />
+
 ### The geometry of the dot product
 
 Since $$W = \vec{F}\cdot\Delta\vec{r} = F\,\Delta r\cos\theta$$, the **sign of the work** is set entirely by the angle $$\theta$$ between the force and the displacement:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/work/work-dot-product.png' | relative_url }}" alt="force vector at angle theta to displacement with parallel component shaded placeholder" loading="lazy" decoding="async" />
 
 - **Positive work** ($$0\le\theta<90^\circ$$): the force has a component along the motion and speeds the object up (it transfers energy *into* the object). A horizontal push on a sliding box does positive work.
 - **Negative work** ($$90^\circ<\theta\le180^\circ$$): the force opposes the motion and slows the object (it removes energy). Kinetic friction on a sliding box does negative work.
@@ -560,6 +564,8 @@ The clean strategy: spring energy in, friction energy out, kinetic energy is wha
 ## Energy Diagrams and Equilibrium
 
 In one-dimensional systems, a graph of $$U(x)$$ contains force information:
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/work/equilibriumphys.jpg' | relative_url }}" alt="potential energy curve showing stable and unstable equilibria and turning points placeholder" loading="lazy" decoding="async" />
 
 $$
 F_x = -\frac{dU}{dx}.
