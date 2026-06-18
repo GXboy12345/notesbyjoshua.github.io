@@ -8,10 +8,6 @@ permalink: /notes/physics/advmech/
 
 # Advanced Mechanics
 
-AP Physics C gives you Newton's laws, energy, momentum, and fixed-axis rotation. That toolkit solves an enormous range of problems, but olympiad mechanics regularly hands you systems where it stalls: a bead constrained to a spinning wire, a planet on an eccentric orbit, a molecule with several coupled vibrations, a tumbling rigid body, or a problem most naturally seen from a rotating frame. This page develops the four big tools that handle those cases — **Lagrangian mechanics**, **central-force/orbit theory**, **small-oscillation and normal-mode analysis**, and **rigid-body dynamics with the inertia tensor** — together with the **non-inertial-frame** machinery that ties them together.
-
-The throughline is that each tool replaces brute-force force-tracking with something cheaper: energy and symmetry (Lagrangian), conserved quantities and an effective potential (orbits), linearization around equilibrium (small oscillations), or a smarter choice of frame (rotating frames). Read each section for the *idea* first, then study the worked examples, which are pitched well above AP level and show every step. None of this replaces the AP-level material — it assumes it. Where a result is proved on the AP pages (moment-of-inertia integrals, the work–energy theorem, conservation laws), this page cites it rather than repeating it.
-
 ---
 
 ## Lagrangian mechanics
