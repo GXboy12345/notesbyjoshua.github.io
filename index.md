@@ -6,7 +6,7 @@ nav_order: 1
 
 # Introduction
 
-Welcome to Notes by Joshua! Currently we are in alpha-3 phase.
+Welcome to Notes by Joshua! Currently we are in Alpha-3 phase.
 
 This site is a peek into all of my notes, and it is ***FREE*** for you all to share!
 
@@ -46,10 +46,10 @@ This site is a peek into all of my notes, and it is ***FREE*** for you all to sh
 Here is a list of notes that have been added (in completion)!
 
 1. AP Chem Units 1-9
-2. AP Physics C E&M Units 1-2
-3. AP Stats Units 1-9
-4. AP Physics C Mech Unit 1
-5. AP Precalc Units 1-14
+2. AP Precalc Units 1-14
+3. AP Physics C Mech Units 1-7
+4. AP Physics C E&M Unit 1-2
+5. Physics Competition Prep
 
 ---
 
@@ -57,9 +57,10 @@ Here is a list of notes that have been added (in completion)!
 
 Here is a list of notes I will add!
 
-1. AP Physics C Mech/E&M (Right now it is just AI placeholders)
+1. AP Physics C E&M Units 3-5
 2. AP Calc BC Units 1-10 (Right now it is just AI placeholders)
 3. AP Biology (LUKE BETTER LOCK IN!!!!)
+4. Organic Chemistry
 
 More notes and updates are coming soon!
 

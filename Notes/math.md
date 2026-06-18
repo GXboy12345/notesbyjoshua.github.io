@@ -60,6 +60,7 @@ Through my years of preparing for AMC 10/12, AIME, and USAJMO, here are some imp
 
 ### Combinatorics
 
+- Combinations and Permutations
 - Expected Value
 
 ---
