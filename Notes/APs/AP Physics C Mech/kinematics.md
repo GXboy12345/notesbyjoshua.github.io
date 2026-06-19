@@ -67,6 +67,8 @@ and similarly position from velocity.
 
 Be careful to distinguish **average** and **instantaneous** quantities. Average velocity over an interval is the single constant velocity that would produce the same displacement in the same time; it depends only on the endpoints, $$\bar{v}=\Delta x/\Delta t$$. Instantaneous velocity is the limit of that ratio as the interval shrinks to zero, $$v=dx/dt$$. The two agree only when velocity is constant, or, for the special case of constant acceleration, the average velocity happens to equal the midpoint value $$\frac{1}{2}(v_0+v_f)$$. That coincidence is exactly equation 5 below and does **not** hold when acceleration varies.
 
+Also be careful when taking average speed over a distance of time. Average of two speeds does NOT necessarily mean the average of the whole trip! For example, if you wen $$16$$mph for $$30$$ minutes and then $$4$$mph for $$90$$ minutes your average speed is NOT $$10$$! Always do $$\bar v = \frac{Delta d}{Delta t}$$ (You should get $$7$$mph).
+
 <div class="theorem-box" markdown="1">
 
 **Example.** A particle starts at $$x_0 = 0$$ with velocity $$v_0 = 2\ \text{m/s}$$ and experiences acceleration $$a(t) = 6t\ \text{m/s}^2$$. Find its velocity and position as functions of time, and its position at $$t = 3\ \text{s}$$.

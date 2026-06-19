@@ -12,11 +12,11 @@ permalink: /notes/physics/advmech/
 
 ## Lagrangian mechanics
 
-Newton's laws are written in terms of forces and vectors. For systems with constraints — a bead on a wire, a pendulum, a rolling disk — forces of constraint are unknown and annoying: you must introduce a normal force or tension, solve for it, and then discard it. The **Lagrangian** formulation sidesteps all of that by working with *energy* and a set of *freely chosen* coordinates. You write down a single scalar function, turn a crank, and out fall the equations of motion — with constraint forces never appearing. For olympiad problems with awkward geometry, this is usually the fastest route to a correct answer.
+Newton's laws are written in terms of forces and vectors. For systems with constraints — a bead on a wire, a pendulum, a rolling disk — forces of constraint are unknown and annoying: you must introduce a normal force or tension, solve for it, and then discard it. The **Lagrangian** formulation sidesteps all of that by working with **energy** and a set of *freely chosen* coordinates.
 
 ### Generalized coordinates and degrees of freedom
 
-A system's configuration is specified by a set of **generalized coordinates** $$q_1,\dots,q_n$$ — any convenient parameters (lengths, angles, arc lengths) that pin down where everything is. The number $$n$$ of independent coordinates is the number of **degrees of freedom**: the total number of coordinates minus the number of independent (holonomic) constraints. A pendulum bob in a plane has two Cartesian coordinates but one constraint (fixed string length), so $$n=1$$, and the natural coordinate is the angle $$\theta$$.
+A system's configuration is specified by a set of **generalized coordinates** $$q_1,\dots,q_n$$ (e.g. polar, spherical, etc.) that define convenient parameters (lengths, angles, arc lengths) that pin down where everything is. The number $$n$$ of independent coordinates is the number of **degrees of freedom**: the total number of coordinates minus the number of independent (holonomic) constraints. A pendulum bob in a plane has two Cartesian coordinates but one constraint (fixed string length), so $$n=1$$, and the natural coordinate is the angle $$\theta$$.
 
 The whole point is to choose coordinates that build the constraints in automatically, so constraint forces never appear. A bead confined to a wire of shape $$y=f(x)$$ has one degree of freedom; instead of carrying $$x$$ and $$y$$ plus a normal force, you carry the single arc length (or $$x$$) and the constraint is *already enforced* by the parametrization. This is the structural advantage over Newton: constraints are absorbed into the choice of coordinates rather than fought as unknown forces.
 
@@ -34,7 +34,7 @@ $$
 \ \frac{d}{dt}\!\left(\frac{\partial L}{\partial \dot q_i}\right)-\frac{\partial L}{\partial q_i}=0\ .
 $$
 
-Why the *difference* $$T-V$$ rather than the more natural-looking sum? Heuristically, $$\partial L/\partial \dot q_i$$ plays the role of a momentum and $$\partial L/\partial q_i$$ plays the role of a force; for $$L=\tfrac12 m\dot x^2 - V(x)$$ the equation is literally $$\tfrac{d}{dt}(m\dot x) = -V'(x)$$, i.e. $$ma=F$$. The minus sign is exactly what makes the potential act as a restoring "force" $$-\partial V/\partial q$$ while the kinetic term supplies the inertia. Deeper than the bookkeeping, though, is the **principle of least (stationary) action**: the true motion is the one that makes a certain total integral stationary.
+Why the *difference* $$T-V$$ rather than the more natural-looking sum? Heuristically, $$\partial L/\partial \dot q_i$$ plays the role of a momentum and $$\partial L/\partial q_i$$ plays the role of a force; for $$L=\tfrac12 m\dot x^2 - V(x)$$ the equation is literally $$\tfrac{d}{dt}(m\dot x) = -V'(x)$$, i.e. $$ma=F$$. The minus sign is exactly what makes the potential act as a restoring "force" $$-\partial V/\partial q$$ while the kinetic term supplies the inertia. The formula derives from the **principle of least action**, which states that any process aims to minimize a quantity called **action**.
 
 <div class="theorem-box" markdown="1">
 
@@ -60,18 +60,20 @@ For this to vanish for **every** allowed $$\delta q$$, the bracket must be zero 
 
 </div>
 
-### The recipe
+### General process
 
 1. Pick generalized coordinates that respect the constraints.
 2. Write $$T$$ and $$V$$ in those coordinates; form $$L=T-V$$.
 3. For each coordinate, compute $$\partial L/\partial \dot q_i$$ and $$\partial L/\partial q_i$$ and assemble the Euler–Lagrange equation.
 4. Read off conserved quantities (next section) before grinding through the algebra.
 
-The hardest step in practice is almost always step 2: getting $$T$$ right when the coordinates are curvilinear or the constraint is moving. The reliable method is to write each particle's Cartesian position in terms of the $$q_i$$, differentiate to get $$\dot x,\dot y,\dot z$$, and then form $$T=\tfrac12 m(\dot x^2+\dot y^2+\dot z^2)$$. The following examples drill exactly that.
+The hardest step in practice is almost always step 2: getting $$T$$ right when the coordinates are curvilinear or the constraint is moving. The reliable method is to write each particle's Cartesian position in terms of the $$q_i$$, differentiate to get $$\dot x,\dot y,\dot z$$, and then form $$T=\tfrac12 m(\dot x^2+\dot y^2+\dot z^2)$$.
 
 <div class="theorem-box" markdown="1">
 
-**Example (bead on a rotating hoop).** A bead of mass $$m$$ slides without friction on a circular hoop of radius $$R$$ that is forced to spin about its vertical diameter at constant angular speed $$\Omega$$. Let $$\theta$$ be the angle measured from the bottom of the hoop. Because the hoop's rotation is *imposed*, the azimuthal angle is not a free coordinate ($$\phi=\Omega t$$ is prescribed), so there is just **one** degree of freedom, $$\theta$$.
+**Example.** A bead of mass $$m$$ slides without friction on a circular hoop of radius $$R$$ that is forced to spin about its vertical diameter at constant angular speed $$\Omega$$. Find the angular frequency of the bead's oscillation $$\omega$$, assuming it is at a stable equilibrium.
+
+Let $$\theta$$ be the angle measured from the bottom of the hoop. Since the hoop's rotation is *imposed*, the azimuthal angle is not a free coordinate ($$\phi=\Omega t$$ is prescribed), so there is just **one** degree of freedom, $$\theta$$.
 
 *Setup.* Place the origin at the center. The bead sits at radius $$R\sin\theta$$ from the vertical axis and height $$-R\cos\theta$$ below center. It has two velocity contributions: motion *along* the hoop, of speed $$R\dot\theta$$, and motion *around* the axis carried by the spin, of speed $$(R\sin\theta)\Omega$$. These are perpendicular, so
 
@@ -124,15 +126,13 @@ $$
 \boxed{\;\omega^2=\Omega^2-\frac{g^2}{R^2\Omega^2}\;}
 $$
 
-This is the [oscillations]({{ '/notes/physics/oscillations/' | relative_url }}) angular frequency of wobble about the tilted equilibrium. Note $$\omega\to 0$$ as $$\Omega^2\to g/R$$ (the bifurcation is "soft": the restoring effect vanishes right at threshold), and $$\omega\to\Omega$$ for very fast spin.
+This is the oscillation angular frequency of wobble about the tilted equilibrium. Note $$\omega\to 0$$ as $$\Omega^2\to g/R$$ (the bifurcation is "soft": the restoring effect vanishes right at threshold), and $$\omega\to\Omega$$ for very fast spin.
 
 </div>
 
-The hoop showed how a *moving* constraint injects an effective potential. The next two examples are the canonical multi-coordinate workhorses; both are essentially impossible to set up cleanly with free-body diagrams but fall out almost mechanically from $$L$$.
-
 <div class="theorem-box" markdown="1">
 
-**Example (double pendulum).** Two pendula are hung in series: a bob $$m_1$$ on a rigid massless rod of length $$\ell_1$$ from a fixed pivot, and a second bob $$m_2$$ on a rod of length $$\ell_2$$ hung from $$m_1$$. Use the two angles from vertical, $$\theta_1$$ and $$\theta_2$$, as generalized coordinates ($$n=2$$).
+**Example.** Two pendula are hung in series: a bob $$m_1$$ on a rigid massless rod of length $$\ell_1$$ from a fixed pivot, and a second bob $$m_2$$ on a rod of length $$\ell_2$$ hung from $$m_1$$. Use the two angles from vertical, $$\theta_1$$ and $$\theta_2$$, as generalized coordinates ($$n=2$$) and write a differential equation in terms of the two angles (you need not solve it out).
 
 *Positions.* Measuring $$y$$ downward-negative from the pivot,
 
@@ -203,51 +203,6 @@ $$
 
 </div>
 
-<div class="theorem-box" markdown="1">
-
-**Example (bead on a rotating parabolic wire).** A bead of mass $$m$$ slides frictionlessly on a wire bent into the parabola $$z=c\rho^2$$ (with $$\rho$$ the cylindrical radius), and the wire is spun about the vertical $$z$$-axis at fixed angular rate $$\Omega$$. Gravity $$g$$ acts downward. The single free coordinate is $$\rho$$ (the azimuth is forced: $$\phi=\Omega t$$).
-
-*Setup.* The bead's height is $$z=c\rho^2$$, so $$\dot z=2c\rho\dot\rho$$. Its three velocity components are radial $$\dot\rho$$, vertical $$\dot z=2c\rho\dot\rho$$, and azimuthal $$\rho\Omega$$:
-
-$$
-T=\tfrac12 m\!\left(\dot\rho^2+\dot z^2+\rho^2\Omega^2\right)
-=\tfrac12 m\!\left[(1+4c^2\rho^2)\dot\rho^2+\rho^2\Omega^2\right],
-$$
-
-$$
-V=mgz=mgc\rho^2.
-$$
-
-*Equation of motion.* With $$L=T-V$$,
-
-$$
-\frac{\partial L}{\partial\dot\rho}=m(1+4c^2\rho^2)\dot\rho,
-\qquad
-\frac{\partial L}{\partial\rho}=4mc^2\rho\,\dot\rho^2+m\rho\Omega^2-2mgc\rho.
-$$
-
-Then $$\frac{d}{dt}\big[m(1+4c^2\rho^2)\dot\rho\big]=m(1+4c^2\rho^2)\ddot\rho+8mc^2\rho\dot\rho^2$$, and the Euler–Lagrange equation becomes
-
-$$
-(1+4c^2\rho^2)\ddot\rho+4c^2\rho\,\dot\rho^2-\rho\,\Omega^2+2gc\,\rho=0.
-$$
-
-*Conserved quantities.* Because the wire is *driven*, $$L$$ depends on time only implicitly through the forced rotation; the natural object to examine is the Jacobi integral $$h=\dot\rho\,(\partial L/\partial\dot\rho)-L$$ (below). Since $$L$$ has no *explicit* $$t$$, $$h$$ is conserved:
-
-$$
-h=\tfrac12 m(1+4c^2\rho^2)\dot\rho^2-\tfrac12 m\rho^2\Omega^2+mgc\rho^2=\text{const}.
-$$
-
-Note $$h\ne T+V$$ here — the constraint is time-dependent — so mechanical energy $$T+V$$ is *not* conserved (the motor that spins the wire does work), but this modified $$h$$ is. The combination $$-\tfrac12 m\rho^2\Omega^2+mgc\rho^2$$ acts as an **effective potential**
-
-$$
-V_{\rm eff}(\rho)=m\rho^2\!\left(gc-\tfrac12\Omega^2\right),
-$$
-
-which has a stable minimum at $$\rho=0$$ when $$\Omega^2<2gc$$ and is destabilizing (bead flies outward) when $$\Omega^2>2gc$$. At the magic spin $$\Omega^2=2gc$$ the effective potential is flat and the bead is in neutral equilibrium at *every* radius — the classic "parabolic dish rotates at the right rate" result.
-
-</div>
-
 ### Cyclic coordinates and conservation laws
 
 The Lagrangian formulation makes conservation laws transparent. Define the **generalized (canonical) momentum** conjugate to $$q_i$$:
@@ -256,7 +211,7 @@ $$
 p_i=\frac{\partial L}{\partial \dot q_i}.
 $$
 
-Despite the name, $$p_i$$ need not have units of $$\text{kg·m/s}$$: conjugate to an angle it is an *angular* momentum, conjugate to an area-like coordinate it is something else again. It is whatever quantity the Euler–Lagrange equation says is changed by the corresponding generalized force.
+Despite the name, $$p_i$$ does not have units of $$\text{kg·m/s}$$: conjugate to an angle it is an *angular* momentum, conjugate to an area-like coordinate it is something else again. It is whatever quantity the Euler–Lagrange equation says is changed by the corresponding generalized force.
 
 If a coordinate does **not appear** explicitly in $$L$$ (only its derivative does), it is called **cyclic** or **ignorable**, and its Euler–Lagrange equation immediately gives
 
@@ -266,11 +221,13 @@ $$
 p_i=\text{const}.
 $$
 
-Physically, a cyclic coordinate signals a *symmetry*: if shifting $$q_i$$ leaves $$L$$ unchanged, the system "doesn't care" about that direction, and the associated momentum cannot change. This is the mechanical core of **Noether's theorem**: each continuous symmetry of $$L$$ yields a conserved quantity. Translational invariance ⟶ linear momentum; rotational invariance (no $$\phi$$ dependence) ⟶ angular momentum. Spotting a cyclic coordinate is the single most powerful move in Lagrangian problem-solving: it turns a second-order ODE into a first-order conservation law for free, which you should always cash in *before* grinding algebra.
+Physically, a cyclic coordinate signals a *symmetry*: if shifting $$q_i$$ leaves $$L$$ unchanged, the system "doesn't care" about that direction, and the associated momentum cannot change. This is the mechanical core of **Noether's theorem**: each continuous symmetry of $$L$$ yields a conserved quantity. Translational invariance $$\longrightarrow$$ linear momentum; rotational invariance (no $$\phi$$ dependence) $$\longrightarrow$$ angular momentum. Spotting a cyclic coordinate is the single most powerful move in Lagrangian problem-solving: it turns a second-order ODE into a first-order conservation law for free, which you should always cash in *before* grinding algebra.
 
 <div class="theorem-box" markdown="1">
 
-**Example (spherical pendulum — a cyclic coordinate).** A bob of mass $$m$$ swings on a rigid massless rod of length $$\ell$$ from a fixed pivot, free to move in all three dimensions (not confined to a plane). Use spherical angles: $$\theta$$ measured from the downward vertical, and azimuth $$\phi$$ about the vertical. There are $$n=2$$ degrees of freedom.
+**Example.** A bob of mass $$m$$ swings on a rigid massless rod of length $$\ell$$ from a fixed pivot, free to move in all three dimensions (not confined to a plane). Find a generalized differential equation for the scenario that does NOT include the azimuthal angle and only depends on $$m$$, $$l$$, the downward vertical angle $$\theta$$, and momentum.
+
+Use spherical angles: $$\theta$$ measured from the downward vertical, and azimuth $$\phi$$ about the vertical. There are $$n=2$$ degrees of freedom.
 
 *Lagrangian.* The bob speed has a polar part $$\ell\dot\theta$$ and an azimuthal part $$\ell\sin\theta\,\dot\phi$$ (the radius of the circle of latitude is $$\ell\sin\theta$$), giving
 
@@ -313,76 +270,11 @@ whose first term is the **centrifugal barrier** that keeps the bob from reaching
 
 </div>
 
-The final example is the situation where Lagrangian mechanics most dramatically out-performs Newton: a rolling constraint, where the contact friction does no work and the geometry is curved.
-
-<div class="theorem-box" markdown="1">
-
-**Example (cylinder rolling inside a cylinder).** A solid cylinder of radius $$r$$, mass $$m$$, moment of inertia $$I=\tfrac12 mr^2$$ about its axis, rolls without slipping inside a fixed hollow cylinder of radius $$R>r$$. Let $$\theta$$ be the angle of the line from the big cylinder's center to the small cylinder's center, measured from the bottom. There is **one** degree of freedom.
-
-*Rolling constraint.* The center of the small cylinder moves on a circle of radius $$R-r$$, so its center speed is $$v_{\rm cm}=(R-r)\dot\theta$$. Rolling without slipping means the contact point has zero instantaneous velocity, so the cylinder's spin rate about its own axis (relative to the lab) is fixed by $$v_{\rm cm}=r\dot\psi$$:
-
-$$
-\dot\psi=\frac{(R-r)}{r}\dot\theta.
-$$
-
-(The relevant condition relates the *center* speed $$(R-r)\dot\theta$$ to the spin $$r\dot\psi$$; sloppily using $$R\dot\theta$$ for the center speed is a classic trap.)
-
-*Kinetic energy.* Translation of the center plus rotation about the center, with $$I=\tfrac12 mr^2$$:
-
-$$
-T=\tfrac12 m\,(R-r)^2\dot\theta^2+\tfrac12 I\dot\psi^2
-=\tfrac12 m(R-r)^2\dot\theta^2+\tfrac12\!\left(\tfrac12 mr^2\right)\!\frac{(R-r)^2}{r^2}\dot\theta^2 ,
-$$
-
-$$
-T=\tfrac12 m(R-r)^2\dot\theta^2\!\left(1+\tfrac12\right)=\tfrac{3}{4}m(R-r)^2\dot\theta^2 .
-$$
-
-*Potential energy.* The center's height above the lowest point is $$(R-r)(1-\cos\theta)$$, so
-
-$$
-V=mg(R-r)(1-\cos\theta).
-$$
-
-*Equation of motion.* With $$L=\tfrac34 m(R-r)^2\dot\theta^2-mg(R-r)(1-\cos\theta)$$,
-
-$$
-\frac{\partial L}{\partial\dot\theta}=\tfrac32 m(R-r)^2\dot\theta,\qquad
-\frac{\partial L}{\partial\theta}=-mg(R-r)\sin\theta,
-$$
-
-$$
-\tfrac32 m(R-r)^2\ddot\theta=-mg(R-r)\sin\theta
-\quad\Longrightarrow\quad
-\ddot\theta=-\frac{2g}{3(R-r)}\sin\theta.
-$$
-
-Notice the rolling friction never appeared — it does no work, so the energy method ignores it automatically, whereas a Newtonian treatment would force you to introduce and then eliminate the friction force and the contact normal force.
-
-*Small-oscillation period.* For small $$\theta$$, $$\sin\theta\approx\theta$$, giving SHM with
-
-$$
-\omega^2=\frac{2g}{3(R-r)},\qquad
-\boxed{\,T_{\rm period}=2\pi\sqrt{\frac{3(R-r)}{2g}}\, }.
-$$
-
-The factor $$3/2$$ (versus the bare pendulum $$\sqrt{(R-r)/g}$$) is the rotational inertia of the rolling cylinder slowing it down — the same "$$1+I/mr^2$$" effect seen in rolling on an incline, here baked painlessly into $$L$$.
-
-</div>
-
-Time symmetry gives a conserved **energy function** (the Jacobi integral),
-
-$$
-h=\sum_i \dot q_i\,\frac{\partial L}{\partial \dot q_i}-L,
-$$
-
-which is conserved whenever $$L$$ has no explicit time dependence, and equals the total energy $$T+V$$ whenever the coordinates are tied to the lab frame (time-independent constraints). The rotating hoop and rotating parabola above are precisely the cases where $$h$$ is conserved but is *not* $$T+V$$, because the constraint itself carries energy in and out. This $$h$$ is exactly the **Hamiltonian** $$H(q,p)$$ once it is rewritten in terms of the momenta $$p_i$$ rather than the velocities $$\dot q_i$$ — the starting point of Hamiltonian mechanics and phase-space methods.
-
 ---
 
 ## Central-force motion and orbits
 
-A **central force** points along the line joining two bodies and depends only on their separation, $$\vec F=F(r)\hat r$$. Gravity and the Coulomb force are the headline cases. Two features make these problems tractable: the two-body problem reduces to one body, and the motion is confined to a plane (since $$\vec L$$ is conserved, $$\vec r$$ and $$\vec v$$ always lie in the plane perpendicular to it).
+A **central force** points along the line joining two bodies and depends only on their separation, $$\vec F=F(r)\hat r$$. Gravity and the Coulomb force are the most famous cases. Two features make these problems tractable: the two-body problem reduces to one body, and the motion is confined to a plane (since $$\vec L$$ is conserved, $$\vec r$$ and $$\vec v$$ always lie in the plane perpendicular to it).
 
 ### Reduction to one body and the effective potential
 
@@ -400,7 +292,81 @@ The **effective potential** bundles the real potential with a repulsive **centri
 - If $$E$$ lies between the well bottom and zero, the "particle" oscillates between two **turning points** $$r_{\min}$$ and $$r_{\max}$$ (where $$\dot r=0$$, i.e. $$E=V_{\text{eff}}$$). These are the **perihelion** and **aphelion**; the orbit is **bound**.
 - If $$E$$ exceeds the barrier (or the well has no bound region), there is a single turning point and the body escapes to infinity: an **unbound** orbit.
 
-A subtle point: a bound orbit oscillates radially between $$r_{\min}$$ and $$r_{\max}$$, but it need not be **closed**. The orbit closes only if the angle swept during one radial oscillation (the **apsidal angle**) is a rational multiple of $$2\pi$$. **Bertrand's theorem** states that the *only* central potentials for which every bound orbit closes are the inverse-square force ($$V\propto -1/r$$) and the harmonic force ($$V\propto r^2$$). That gravity is one of these two is the deep reason planetary ellipses do not precess in the idealized two-body problem.
+A subtle point: a bound orbit oscillates radially between $$r_{\min}$$ and $$r_{\max}$$, but it need not be **closed**. The orbit closes only if the angle swept during one radial oscillation (the **apsidal angle**) is a rational multiple of $$2\pi$$. **Bertrand's theorem** states that the *only* central potentials for which every bound orbit closes are the inverse-square force ($$V\propto -1/r$$) and the harmonic force ($$V\propto r^2$$). That gravity is one of these two is the reason planetary ellipses do not precess in the idealized two-body problem.\
+
+A useful trick for central-force problems is to assume that the two objects are in elliptical orbits, where the major axis is the distance between the objects and the minor axis is $$0$$. Still, all of Kepler's laws still apply if the force is an inverse-square force.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A point charge $$+Q$$ with mass $$M$$ and another point charge $$-q$$ with mass $$m$$ are separated by a distance $$R$$, and then released from rest at $$t=0$$. When do these two charges collide? Neglect the gravitational interaction, and assume that the Coulomb’s law still applies in this case.
+
+**Method 1 (Reduced mass)**
+
+Since the pair is released from rest, the total momentum is zero and the center of mass never moves; the charges meet when the relative coordinate $$r=r_1-r_2$$ shrinks from $$R$$ to $$0$$. The relative motion is that of a single particle of reduced mass
+
+$$
+\mu=\frac{mM}{M+m}
+$$
+
+in the attractive potential $$U(r)=-\dfrac{k}{r}$$, where $$k=\dfrac{Qq}{4\pi\varepsilon_0}$$.
+
+The particle is released from rest at $$r=R$$, so its total energy is $$E=U(R)=-k/R$$. At a later separation $$r$$,
+
+$$
+\tfrac12\mu\dot r^2-\frac{k}{r}=-\frac{k}{R}
+\quad\Longrightarrow\quad
+\dot r^2=\frac{2k}{\mu}\left(\frac1r-\frac1R\right).
+$$
+
+Since $$r$$ is decreasing, $$\dot r=-\sqrt{\dfrac{2k}{\mu}\dfrac{R-r}{rR}}$$. Separating variables and integrating over the whole collapse $$r:R\to 0$$ gives the collision time
+
+$$
+t=\sqrt{\frac{\mu R}{2k}}\int_0^{R}\sqrt{\frac{r}{R-r}}\,dr .
+$$
+
+The substitution $$r=R\sin^2\phi$$ turns the integral into $$2R\displaystyle\int_0^{\pi/2}\sin^2\phi\,d\phi=\dfrac{\pi R}{2}$$, so
+
+$$
+t=\frac{\pi}{2}\sqrt{\frac{\mu R^3}{2k}}
+=\pi\sqrt{\frac{\pi\varepsilon_0\,\mu R^3}{2Qq}}
+=\pi\sqrt{\frac{\pi\varepsilon_0\,mMR^3}{2Qq(M+m)}} ,
+$$
+
+substituting $$k=Qq/4\pi\varepsilon_0$$ and $$\mu=mM/(M+m)$$.
+
+**Method 2 (Squashed orbits)**
+
+First consider the situation where $$M \longrightarrow +\infty$$, and the system becomes a point mass and moves in an attractive central force field that follows the inverse-square-law. Therefore, the motion of the mass follows the Kepler’s laws. If the mass is released at rest, its
+trajectory is a straight line going towards M. This straight-line can be treated as an
+extremely thin elliptical orbit with $$a=\frac{R}{2}$$ and $$b=0$$. The time it takes to collide
+with $$M$$ is half of the period of this orbit. According to Kepler’s 3rd law, the period
+of an elliptical orbit depends only on $$a$$, not $$b$$. Therefore, we can use a circular orbit
+with a radius $$R/2$$ to calculate the period of the elliptical orbit with $$a = R/2$$. Using the
+dynamics equations of a circular orbit, we set the Coulomb force equal to the centripetal force at radius $$R/2$$:
+
+$$
+\frac{1}{4\pi\varepsilon_0}\frac{Qq}{\left(\frac{R}{2}\right)^2}=m\,\frac{R}{2}\,\omega^2 .
+$$
+
+Solving for $$\omega$$ and using $$T=2\pi/\omega$$ gives the period of the orbit,
+
+$$
+T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{\pi\varepsilon_0 mR^3}{2Qq}} .
+$$
+
+The collision happens after half a period, so
+
+$$
+t=\frac{T}{2}=\pi\sqrt{\frac{\pi\varepsilon_0 mR^3}{2Qq}} .
+$$
+
+If $$M$$ is finite, we just replace $$m$$ in the result with the reduced mass $$\mu=\dfrac{mM}{M+m}$$:
+
+$$
+t=\frac{T}{2}=\pi\sqrt{\frac{\pi\varepsilon_0 mMR^3}{2Qq(M+m)}} .
+$$
+
+</div>
 
 ### Kepler orbits
 
@@ -408,7 +374,7 @@ For gravity, $$V(r)=-k/r$$ with $$k=Gm_1m_2$$. The orbit equation follows from r
 
 <div class="theorem-box" markdown="1">
 
-**Derivation (Binet equation).** Start from the radial equation of motion for the reduced particle,
+**Proof (Binet equation).** Start from the radial equation of motion for the reduced particle,
 
 $$
 \mu\ddot r-\mu r\dot\theta^2=F(r),
@@ -445,14 +411,14 @@ $$
 For gravity, $$F(r)=-k/r^2=-ku^2$$, so the right side becomes $$+\mu k/L^2$$, a constant:
 
 $$
-\boxed{\ \frac{d^2u}{d\theta^2}+u=\frac{\mu k}{L^2}\ }.
+\ \frac{d^2u}{d\theta^2}+u=\frac{\mu k}{L^2}\ .
 $$
 
 This is the equation of a harmonic oscillator in $$\theta$$ with a constant drive — its solution is a sinusoid offset by a constant, which is precisely a conic section.
 
 </div>
 
-The general solution of the boxed equation is $$u=\mu k/L^2+A\cos(\theta-\theta_0)$$. Choosing $$\theta_0=0$$ (perihelion at $$\theta=0$$) and writing $$A$$ in terms of the constants of motion gives a conic section:
+The general solution of Binet's equation is $$u=\mu k/L^2+A\cos(\theta-\theta_0)$$. Choosing $$\theta_0=0$$ (perihelion at $$\theta=0$$) and writing $$A$$ in terms of the constants of motion gives a conic section (Luke jumpscare):
 
 $$
 r(\theta)=\frac{p}{1+e\cos\theta},\qquad
@@ -468,7 +434,7 @@ The eccentricity $$e$$ sorts the orbit by energy:
 | $$E=0$$ | $$e=1$$ | parabola (just unbound) |
 | $$E>0$$ | $$e>1$$ | hyperbola |
 
-The eccentricity has a clean physical meaning: it measures how far the energy sits above the circular-orbit minimum for a given $$L$$. A circle ($$e=0$$) is the lowest-energy orbit at fixed $$L$$ (the bottom of the well); raising $$E$$ toward zero stretches the ellipse until at $$E=0$$ the far turning point runs off to infinity and the orbit unbinds.
+The eccentricity has a physical meaning beyond the normal definition seen in precalculus: it measures how far the energy sits above the circular-orbit minimum for a given $$L$$. A circle ($$e=0$$) is the lowest-energy orbit at fixed $$L$$ (the bottom of the well); raising $$E$$ toward zero stretches the ellipse until at $$E=0$$ the far turning point runs off to infinity and the orbit unbinds.
 
 For a bound orbit the semi-major axis depends only on energy, $$a=-k/2E$$, and **Kepler's third law** follows from the area law (period = total area $$\pi ab$$ divided by the constant areal rate $$L/2\mu$$):
 
@@ -479,30 +445,18 @@ $$
 The single most useful orbital relation in practice is the **vis-viva equation**, which comes straight from energy conservation with $$a=-k/2E$$:
 
 $$
-\boxed{\ v^2=GM\!\left(\frac{2}{r}-\frac{1}{a}\right)\ }
+\ v^2=GM\!\left(\frac{2}{r}-\frac{1}{a}\right)\ 
 $$
 
-(for a light body orbiting mass $$M$$). It gives the speed anywhere on an orbit from just $$r$$ and $$a$$, and makes transfer-orbit problems almost mechanical.
-
-<div class="theorem-box" markdown="1">
-
-**Example (Hohmann transfer speed).** A spacecraft is in a circular orbit of radius $$r_1$$ and wants to reach a larger circular orbit $$r_2$$. The efficient path is an ellipse tangent to both circles, with $$a=(r_1+r_2)/2$$. At perigee ($$r=r_1$$) vis-viva gives the transfer speed
-
-$$
-v_p=\sqrt{GM\!\left(\frac{2}{r_1}-\frac{2}{r_1+r_2}\right)},
-$$
-
-while the circular speed there is $$v_{\text{circ}}=\sqrt{GM/r_1}$$. The first burn is $$\Delta v=v_p-v_{\text{circ}}$$; a second burn at apogee circularizes at $$r_2$$. No integration of the trajectory is needed — energy bookkeeping does it all.
-
-</div>
+(for a light body orbiting mass $$M$$).
 
 ### Pinning down an orbit from local data
 
-A common olympiad task gives you the speed and distance at one point and asks for the whole orbit. Two conserved quantities — energy and angular momentum — are enough, because at the apsides the velocity is purely tangential and the geometry collapses.
+A common olympiad task gives you the speed and distance at one point and asks for the whole orbit. Two conserved quantities (energy and angular momentum) are enough, because at the apsides the velocity is purely tangential and the geometry collapses.
 
 <div class="theorem-box" markdown="1">
 
-**Example (comet from perihelion and aphelion).** A comet orbits the Sun (mass $$M$$). At perihelion it is at distance $$r_p$$ moving at speed $$v_p$$; the only other thing known is that its aphelion distance is $$r_a$$. Show how to find $$v_p$$ from $$r_p$$ and $$r_a$$ alone, then find the aphelion speed $$v_a$$ and the eccentricity.
+**Example.** A comet orbits the Sun (mass $$M$$). At perihelion it is at distance $$r_p$$ moving at speed $$v_p$$; the only other thing known is that its aphelion distance is $$r_a$$. Show how to find $$v_p$$ from $$r_p$$ and $$r_a$$ alone, then find the aphelion speed $$v_a$$ and the eccentricity.
 
 At both apsides the velocity is perpendicular to the radius, so $$L=\mu r v$$ with no angle factor. Conservation of angular momentum between perihelion and aphelion gives immediately
 
@@ -533,144 +487,13 @@ The whole orbit is fixed by two distances; speeds drop out as a consequence.
 
 </div>
 
-For genuinely hard transfer problems the bi-elliptic maneuver beats the Hohmann transfer when the orbit ratio is large, and the next example shows the energy bookkeeping is no harder — just more steps.
-
-<div class="theorem-box" markdown="1">
-
-**Example (bi-elliptic transfer $$\Delta v$$).** To go from a low circular orbit $$r_1$$ to a high circular orbit $$r_2$$, a *bi-elliptic* path first boosts out to a large radius $$r_b\ge r_2$$ on ellipse 1 ($$a_1=(r_1+r_b)/2$$), then at $$r_b$$ boosts onto ellipse 2 ($$a_2=(r_2+r_b)/2$$) that drops back to $$r_2$$, then circularizes. Compute the three burns.
-
-Let $$\mu_g=GM$$. Every speed is one vis-viva evaluation, $$v=\sqrt{\mu_g(2/r-1/a)}$$.
-
-**Burn 1**, at $$r_1$$, from circular $$v_{c1}=\sqrt{\mu_g/r_1}$$ up to ellipse 1's perigee speed:
-
-$$
-\Delta v_1=\sqrt{\mu_g\!\left(\frac{2}{r_1}-\frac{2}{r_1+r_b}\right)}-\sqrt{\frac{\mu_g}{r_1}}.
-$$
-
-**Burn 2**, at the far point $$r_b$$, from ellipse 1's apogee speed up to ellipse 2's apogee speed (this raises perigee from $$r_1$$ to $$r_2$$):
-
-$$
-\Delta v_2=\sqrt{\mu_g\!\left(\frac{2}{r_b}-\frac{2}{r_2+r_b}\right)}-\sqrt{\mu_g\!\left(\frac{2}{r_b}-\frac{2}{r_1+r_b}\right)}.
-$$
-
-**Burn 3**, at $$r_2$$, *retro*-burn from ellipse 2's perigee speed down to circular $$v_{c2}=\sqrt{\mu_g/r_2}$$:
-
-$$
-\Delta v_3=\sqrt{\mu_g\!\left(\frac{2}{r_2}-\frac{2}{r_2+r_b}\right)}-\sqrt{\frac{\mu_g}{r_2}}\quad(<0\text{, a slowdown}).
-$$
-
-The total cost is $$\Delta v_1+\Delta v_2+|\Delta v_3|$$. The point is structural: each segment is fully determined by its two endpoint radii through its semi-major axis, and the burns are just differences of vis-viva speeds at the junction radii. For $$r_2/r_1\gtrsim 11.94$$, sending $$r_b\to\infty$$ actually beats Hohmann, because the deep-space burn is performed where the orbital speed is tiny and a small $$\Delta v$$ changes the orbit a lot — the same leverage that makes the **Oberth effect** work in reverse.
-
-</div>
-
-### Stability of circular orbits and the apsidal angle
-
-The effective-potential picture answers stability with one derivative test: a circular orbit at the minimum is stable, at a maximum unstable. For a power-law force we can extract both the stability condition and the small-oscillation frequency.
-
-<div class="theorem-box" markdown="1">
-
-**Example (radial oscillations in a power-law force).** A particle moves in an attractive central force $$F(r)=-c\,r^{n}$$ (so the potential is $$V=-\int F\,dr$$). Find the radius $$r_0$$ of a circular orbit of angular momentum $$L$$, the condition on $$n$$ for it to be stable, the frequency $$\omega_r$$ of small radial oscillations, and the apsidal angle. Specialize to gravity ($$n=-2$$).
-
-**Circular orbit.** The effective potential is $$V_{\text{eff}}(r)=\dfrac{L^2}{2\mu r^2}+V(r)$$ with $$V'(r)=-F(r)=c\,r^n$$. A circular orbit sits at $$V_{\text{eff}}'(r_0)=0$$:
-
-$$
--\frac{L^2}{\mu r_0^3}+c\,r_0^{n}=0\quad\Rightarrow\quad c\,r_0^{n+3}=\frac{L^2}{\mu}.
-$$
-
-**Stability.** Stable means $$V_{\text{eff}}''(r_0)>0$$. Compute
-
-$$
-V_{\text{eff}}''(r)=\frac{3L^2}{\mu r^4}+c\,n\,r^{n-1}.
-$$
-
-At $$r_0$$ use $$c\,r_0^{n}=L^2/\mu r_0^3$$, so $$c\,n\,r_0^{n-1}=n\,L^2/\mu r_0^4$$. Then
-
-$$
-V_{\text{eff}}''(r_0)=\frac{L^2}{\mu r_0^4}\,(3+n).
-$$
-
-Stability requires $$\boxed{\,n>-3\,}$$ (equivalently, for $$F\propto -r^n$$ the force must fall off slower than $$1/r^3$$). Gravity has $$n=-2>-3$$: stable, as expected.
-
-**Radial frequency.** Near $$r_0$$, $$\mu\ddot{(\delta r)}=-V_{\text{eff}}''(r_0)\,\delta r$$, so
-
-$$
-\omega_r^2=\frac{V_{\text{eff}}''(r_0)}{\mu}=\frac{L^2}{\mu^2 r_0^4}\,(3+n).
-$$
-
-**Apsidal angle.** The orbital (azimuthal) frequency is $$\omega_\theta=\dot\theta=L/\mu r_0^2$$, so
-
-$$
-\frac{\omega_\theta^2}{\omega_r^2}=\frac{L^2/\mu^2 r_0^4}{(L^2/\mu^2 r_0^4)(3+n)}=\frac{1}{3+n}.
-$$
-
-The **apsidal angle** — the angle swept from perihelion to the next aphelion, i.e. half a radial period — is
-
-$$
-\Phi=\pi\,\frac{\omega_\theta}{\omega_r}=\frac{\pi}{\sqrt{3+n}}.
-$$
-
-For gravity $$n=-2$$, giving $$\Phi=\pi/\sqrt{1}=\pi$$. An apsidal angle of exactly $$\pi$$ means perihelion and aphelion are diametrically opposite and the orbit retraces itself after one full revolution: **the ellipse is closed and does not precess**, recovering Bertrand's result. (For the 3D harmonic force $$n=+1$$, $$\Phi=\pi/2$$, also closed — the other Bertrand case.) Any other exponent gives an irrational $$\Phi/\pi$$ and a rosette that never closes; a small extra $$1/r^3$$ term, for instance, makes the perihelion precess, which is how general-relativistic corrections show up.
-
-</div>
-
-### Scattering and distance of closest approach
-
-For unbound trajectories the same two conservation laws fix the geometry. The natural inputs are the speed far away $$v_\infty$$ and the **impact parameter** $$b$$, the perpendicular offset of the incoming straight-line path from the center.
-
-<div class="theorem-box" markdown="1">
-
-**Example (closest approach of an infalling body).** A small body of mass $$m$$ approaches a fixed planet of mass $$M$$ from very far away with speed $$v_\infty$$ and impact parameter $$b$$. Find the distance of closest approach $$r_{\min}$$. Then find the cross-section for the body to actually strike the planet's surface (radius $$R$$).
-
-Far away the potential energy is zero, so the conserved energy and angular momentum are
-
-$$
-E=\tfrac12 m v_\infty^2,\qquad L=m v_\infty b.
-$$
-
-At closest approach $$\dot r=0$$, so all the kinetic energy is azimuthal and $$E=V_{\text{eff}}(r_{\min})$$:
-
-$$
-\tfrac12 m v_\infty^2=\frac{L^2}{2m r_{\min}^2}-\frac{GMm}{r_{\min}}
-=\frac{m v_\infty^2 b^2}{2 r_{\min}^2}-\frac{GMm}{r_{\min}}.
-$$
-
-Divide by $$m$$ and multiply through by $$2r_{\min}^2/v_\infty^2$$, then rearrange into a quadratic in $$r_{\min}$$:
-
-$$
-r_{\min}^2+\frac{2GM}{v_\infty^2}\,r_{\min}-b^2=0.
-$$
-
-Taking the positive root,
-
-$$
-\boxed{\ r_{\min}=-\frac{GM}{v_\infty^2}+\sqrt{\left(\frac{GM}{v_\infty^2}\right)^2+b^2}\ }.
-$$
-
-In the limit $$GM\to0$$ this gives $$r_{\min}\to b$$, the straight-line miss distance, as it must; gravity pulls the trajectory inward, reducing $$r_{\min}$$ below $$b$$.
-
-**Capture cross-section.** The body grazes the surface when $$r_{\min}=R$$. Solving the quadratic the other way, set $$r_{\min}=R$$ and read off the critical impact parameter $$b_{\max}$$:
-
-$$
-b_{\max}^2=R^2+\frac{2GMR}{v_\infty^2}=R^2\!\left(1+\frac{v_{\text{esc}}^2}{v_\infty^2}\right),
-$$
-
-using the surface escape speed $$v_{\text{esc}}^2=2GM/R$$. The collision cross-section is $$\sigma=\pi b_{\max}^2$$:
-
-$$
-\sigma=\pi R^2\!\left(1+\frac{v_{\text{esc}}^2}{v_\infty^2}\right).
-$$
-
-The factor in parentheses is the **gravitational focusing** enhancement: a slow body ($$v_\infty\ll v_{\text{esc}}$$) is funneled in and the effective target area greatly exceeds the geometric $$\pi R^2$$, while a fast body ($$v_\infty\gg v_{\text{esc}}$$) is barely deflected and $$\sigma\to\pi R^2$$.
-
-</div>
-
 ### Sudden changes to the orbit
 
 Many problems hinge on what an *impulsive* event does: a thruster fires for a negligible time, or the central force abruptly changes. Because the burn is instantaneous, $$r$$ and any velocity component perpendicular to the impulse are unchanged at that instant; only the new $$\{E,L\}$$ — hence the new $$a$$ and $$e$$ — must be recomputed.
 
 <div class="theorem-box" markdown="1">
 
-**Example (sudden change in central force).** A particle is in a circular orbit of radius $$r_0$$ about a star, so its speed is $$v_0=\sqrt{GM/r_0}$$ and its energy is $$E_0=-\tfrac12 GMm/r_0$$ (with $$a=r_0$$). The star suddenly loses a fraction of its mass, $$M\to M'=\alpha M$$ with $$0<\alpha<1$$, while the particle's instantaneous position and velocity are unchanged. Describe the new orbit, and find the condition for the particle to escape.
+**Example.** A particle is in a circular orbit of radius $$r_0$$ about a star, so its speed is $$v_0=\sqrt{GM/r_0}$$ and its energy is $$E_0=-\tfrac12 GMm/r_0$$ (with $$a=r_0$$). The star suddenly loses a fraction of its mass, $$M\to M'=\alpha M$$ with $$0<\alpha<1$$, while the particle's instantaneous position and velocity are unchanged. Describe the new orbit, and find the condition for the particle to escape.
 
 Just after the event, $$r=r_0$$ and $$v=v_0=\sqrt{GM/r_0}$$ still, but the new potential is $$V'=-GM'm/r=-\alpha GMm/r$$. The velocity is still tangential, so $$r_0$$ is an apsis of the new orbit. The new energy per unit mass is
 
@@ -700,7 +523,7 @@ As $$\alpha\to1$$ (no mass lost) we recover $$e\to0$$, the original circle; as $
 
 ## Small oscillations and normal modes
 
-Near a stable equilibrium, almost every system behaves like one or more harmonic oscillators. This is why SHM is everywhere, and the **normal-mode** method is the systematic way to handle coupled systems.
+Near a stable equilibrium, almost every system behaves like one or more harmonic oscillators.
 
 ### Oscillations about equilibrium
 
@@ -720,7 +543,7 @@ For a general coordinate, replace $$m$$ by the effective inertia multiplying $$\
 
 <div class="theorem-box" markdown="1">
 
-**Example (a single-DOF potential where you must hunt for $$x_0$$).** A particle of mass $$m$$ moves radially in the effective potential
+**Example.** A particle of mass $$m$$ moves radially in the effective potential
 
 $$
 V(x)=\frac{\alpha}{x^2}-\frac{\beta}{x},\qquad \alpha,\beta>0,\ x>0,
@@ -764,256 +587,9 @@ Only $$V''$$ at one point was needed; the global shape of the well never entered
 
 </div>
 
-### Coupled oscillators and normal modes
-
-For several coordinates, linearizing gives matrix equations of motion
-
-$$
-\mathbf{M}\ddot{\mathbf q}=-\mathbf{K}\mathbf q,
-$$
-
-with $$\mathbf M$$ the (mass/inertia) matrix and $$\mathbf K$$ the stiffness matrix. Both come straight from the energies: expanding to quadratic order, $$T=\tfrac12\dot{\mathbf q}^{\!\top}\mathbf M\dot{\mathbf q}$$ and $$V=\tfrac12\mathbf q^{\!\top}\mathbf K\mathbf q$$, so $$M_{ij}$$ is the coefficient of $$\tfrac12\dot q_i\dot q_j$$ in the kinetic energy and $$K_{ij}=\partial^2 V/\partial q_i\partial q_j$$ at equilibrium. Both matrices are symmetric. Seeking solutions $$\mathbf q=\mathbf a\,e^{i\omega t}$$ (so $$\ddot{\mathbf q}=-\omega^2\mathbf q$$) turns this into the generalized eigenvalue problem
-
-$$
-(\mathbf K-\omega^2\mathbf M)\,\mathbf a=0
-\quad\Longrightarrow\quad
-\det(\mathbf K-\omega^2\mathbf M)=0 .
-$$
-
-The roots $$\omega^2$$ are the **normal-mode frequencies**; each eigenvector $$\mathbf a$$ is the pattern in which all coordinates oscillate **in phase at a single frequency**.
-
-**What a normal mode physically is.** Generically each coordinate, left to itself, would wobble at a messy mixture of frequencies and feed energy into its neighbors. A normal mode is a special collective motion in which the whole system breathes at *one* frequency: every particle reaches its extreme at the same instant, passes through equilibrium at the same instant, and keeps a fixed ratio of amplitudes forever. The eigenvector $$\mathbf a$$ is exactly that fixed ratio of amplitudes (and signs — a negative entry just means that coordinate moves opposite to the others). A mode is the closest a coupled system comes to behaving like a single simple oscillator.
-
-**Why normal coordinates decouple everything.** Define new coordinates $$\eta_r$$ as the amplitudes of each mode, $$\mathbf q(t)=\sum_r \eta_r(t)\,\mathbf a^{(r)}$$. In these **normal coordinates** the kinetic and potential energies become sums of independent squares, $$T=\tfrac12\sum_r \dot\eta_r^2$$ and $$V=\tfrac12\sum_r \omega_r^2\eta_r^2$$, with no cross terms. The equations of motion split into $$N$$ uncoupled oscillators $$\ddot\eta_r+\omega_r^2\eta_r=0$$. The springs have not been removed; rather, we have chosen combinations of coordinates the springs cannot mix.
-
-**Why any motion is a superposition.** Because $$\mathbf M$$ and $$\mathbf K$$ are symmetric (and $$\mathbf M$$ positive definite), the eigenvectors form a complete basis: any initial configuration and velocity can be written as a sum of modes. Each mode then evolves independently at its own frequency, so the general solution is
-
-$$
-\mathbf q(t)=\sum_r \mathbf a^{(r)}\big(C_r\cos\omega_r t+D_r\sin\omega_r t\big),
-$$
-
-with the $$2N$$ constants fixed by initial conditions. Solving a coupled system therefore reduces to (i) finding the modes once, then (ii) projecting the initial data onto them.
-
-**Using symmetry to guess modes.** When a system is symmetric under some swap of coordinates (left $$\leftrightarrow$$ right, reflection through the center), the normal modes can be chosen to be either symmetric or antisymmetric under that swap. That lets you write down the mode shapes *before* doing any algebra: try the in-phase pattern and the out-of-phase pattern, plug each in, and read off its frequency. This shortcut runs through every example below. (The continuous limit of all this — standing waves on a string — is on the [Waves]({{ '/notes/physics/waves/' | relative_url }}) page; the complex-exponential bookkeeping is in [Math Tricks]({{ '/notes/physics/mathtricks/' | relative_url }}).)
-
-<div class="theorem-box" markdown="1">
-
-**Example (two coupled pendulums).** Two identical pendulums (length $$\ell$$, mass $$m$$) hang side by side and are joined at the bobs by a weak spring $$k$$. For small angles, taking torques about each pivot ($$I=m\ell^2$$) with the spring exerting horizontal force $$k\ell(\theta_1-\theta_2)$$ on the bobs,
-
-$$
-m\ell^2\ddot\theta_1=-mg\ell\,\theta_1-k\ell^2(\theta_1-\theta_2),\qquad
-m\ell^2\ddot\theta_2=-mg\ell\,\theta_2-k\ell^2(\theta_2-\theta_1).
-$$
-
-Divide by $$m\ell^2$$ and read off the matrices in $$\ddot{\boldsymbol\theta}=-\mathbf K'\boldsymbol\theta$$ (here $$\mathbf M=I\,\mathbb 1$$ so we work with $$\mathbf K'=\mathbf M^{-1}\mathbf K$$):
-
-$$
-\mathbf K'=\begin{pmatrix} \dfrac{g}{\ell}+\dfrac{k}{m} & -\dfrac{k}{m}\\[2mm] -\dfrac{k}{m} & \dfrac{g}{\ell}+\dfrac{k}{m}\end{pmatrix}.
-$$
-
-The system is symmetric under $$1\leftrightarrow2$$, so try the symmetric and antisymmetric combinations $$\theta_\pm=\theta_1\pm\theta_2$$. Adding and subtracting the two equations decouples them exactly:
-
-$$
-\ddot\theta_+=-\frac{g}{\ell}\,\theta_+,\qquad
-\ddot\theta_-=-\Big(\frac{g}{\ell}+\frac{2k}{m}\Big)\theta_- .
-$$
-
-Hence the two modes and their shapes are
-
-$$
-\omega_+^2=\frac{g}{\ell},\quad \mathbf a^{(+)}=\begin{pmatrix}1\\1\end{pmatrix}\ (\text{in phase, spring never stretches}),
-$$
-
-$$
-\omega_-^2=\frac{g}{\ell}+\frac{2k}{m},\quad \mathbf a^{(-)}=\begin{pmatrix}1\\-1\end{pmatrix}\ (\text{out of phase, spring maximally stretched}).
-$$
-
-The in-phase mode never stretches the spring, so it has the bare pendulum frequency; the out-of-phase mode stretches it most, so it is stiffer. Starting one pendulum at rest excites both modes equally, and their slow **beating** transfers energy back and forth between the pendulums at the beat (envelope) rate $$\tfrac12(\omega_--\omega_+)$$ — the classic demonstration of weak coupling.
-
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example (two masses, three springs between two walls).** Two equal masses $$m$$ sit on a line between fixed walls, connected wall–mass–mass–wall by three identical springs $$k$$. Let $$x_1,x_2$$ be displacements from equilibrium.
-
-The left mass feels the left wall spring ($$-kx_1$$) and the middle spring, which is stretched by $$x_1-x_2$$; the right mass feels the right wall spring ($$-kx_2$$) and the middle spring:
-
-$$
-m\ddot x_1=-kx_1-k(x_1-x_2),\qquad
-m\ddot x_2=-kx_2-k(x_2-x_1).
-$$
-
-So $$\mathbf M=m\,\mathbb 1$$ and
-
-$$
-\mathbf K=\begin{pmatrix} 2k & -k\\ -k & 2k\end{pmatrix},\qquad
-\det(\mathbf K-\omega^2 m\,\mathbb 1)=\big(2k-m\omega^2\big)^2-k^2=0.
-$$
-
-Thus $$2k-m\omega^2=\pm k$$, giving
-
-$$
-\boxed{\ \omega_S^2=\frac{k}{m},\qquad \omega_A^2=\frac{3k}{m}.\ }
-$$
-
-For each, solve $$(\mathbf K-\omega^2 m\,\mathbb1)\mathbf a=0$$. For $$\omega_S^2=k/m$$ the top row reads $$(2k-k)a_1-ka_2=0\Rightarrow a_1=a_2$$: the **symmetric** mode
-
-$$
-\mathbf a^{(S)}=\begin{pmatrix}1\\1\end{pmatrix},
-$$
-
-both masses move together, the middle spring keeps its length, only the wall springs act — soft, low frequency. For $$\omega_A^2=3k/m$$ the top row gives $$(2k-3k)a_1-ka_2=0\Rightarrow a_2=-a_1$$: the **antisymmetric** mode
-
-$$
-\mathbf a^{(A)}=\begin{pmatrix}1\\-1\end{pmatrix},
-$$
-
-the masses move oppositely, compressing/stretching the middle spring hardest — stiff, high frequency. Note we could have guessed both shapes from the left–right symmetry and only needed the algebra to get the frequencies.
-
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example (the linear triatomic molecule — a CO$$_2$$ model).** Three masses lie on a line, the outer two equal to $$m$$ and the central one $$M$$, joined by two identical springs $$k$$ (no walls — the molecule is free). Let $$x_1,x_2,x_3$$ be the longitudinal displacements. The left spring stretches by $$x_2-x_1$$, the right spring by $$x_3-x_2$$:
-
-$$
-m\ddot x_1=k(x_2-x_1),\qquad
-M\ddot x_2=-k(x_2-x_1)+k(x_3-x_2),\qquad
-m\ddot x_3=-k(x_3-x_2).
-$$
-
-The matrices are
-
-$$
-\mathbf M=\begin{pmatrix} m&0&0\\0&M&0\\0&0&m\end{pmatrix},\qquad
-\mathbf K=\begin{pmatrix} k&-k&0\\ -k&2k&-k\\ 0&-k&k\end{pmatrix}.
-$$
-
-Set $$\mathbf q=\mathbf a\,e^{i\omega t}$$ and demand $$\det(\mathbf K-\omega^2\mathbf M)=0$$:
-
-$$
-\det\begin{pmatrix} k-m\omega^2 & -k & 0\\ -k & 2k-M\omega^2 & -k\\ 0 & -k & k-m\omega^2\end{pmatrix}=0.
-$$
-
-Expanding along the top row,
-
-$$
-(k-m\omega^2)\big[(2k-M\omega^2)(k-m\omega^2)-k^2\big]-(-k)\big[-k(k-m\omega^2)\big]=0,
-$$
-
-$$
-(k-m\omega^2)\big[(2k-M\omega^2)(k-m\omega^2)-k^2\big]-k^2(k-m\omega^2)=0.
-$$
-
-Factor out $$(k-m\omega^2)$$:
-
-$$
-(k-m\omega^2)\Big[(2k-M\omega^2)(k-m\omega^2)-2k^2\Big]=0.
-$$
-
-Expand the bracket: $$(2k-M\omega^2)(k-m\omega^2)-2k^2 = 2k^2-2km\omega^2-Mk\omega^2+Mm\omega^4-2k^2 = \omega^2\big[Mm\omega^2-(2km+Mk)\big].$$ So
-
-$$
-(k-m\omega^2)\;\omega^2\;\big[Mm\,\omega^2-k(2m+M)\big]=0 .
-$$
-
-The three roots are
-
-$$
-\boxed{\ \omega_0^2=0,\qquad \omega_1^2=\frac{k}{m},\qquad \omega_2^2=\frac{k(2m+M)}{Mm}=\frac{k}{m}+\frac{2k}{M}.\ }
-$$
-
-Now the mode shapes from $$(\mathbf K-\omega^2\mathbf M)\mathbf a=0$$:
-
-*Mode $$\omega_0=0$$ — translation.* The rows give $$x_1=x_2=x_3$$:
-
-$$
-\mathbf a^{(0)}=\begin{pmatrix}1\\1\\1\end{pmatrix}.
-$$
-
-All three atoms slide together; no spring stretches, so there is no restoring force and zero frequency. This zero mode is the free molecule's freedom to translate as a whole — a feature of any unanchored system, and a useful check that you set up $$\mathbf K$$ correctly (each row of $$\mathbf K$$ sums to zero).
-
-*Mode $$\omega_1^2=k/m$$ — symmetric stretch.* The middle row $$-k a_1+(2k-M\omega_1^2)a_2-k a_3=0$$ with $$\omega_1^2=k/m$$ becomes $$-k(a_1+a_3)+(2k-Mk/m)a_2=0$$; the top row $$(k-m\omega_1^2)a_1-ka_2=0$$ gives $$-ka_2=0$$, so $$a_2=0$$, and then $$a_3=-a_1$$:
-
-$$
-\mathbf a^{(1)}=\begin{pmatrix}1\\0\\-1\end{pmatrix}.
-$$
-
-The central atom stays fixed while the two outer atoms swing symmetrically in and out. Because $$M$$ does not move, its mass is irrelevant and $$\omega_1^2=k/m$$ depends only on the outer atoms — exactly the IR-inactive symmetric stretch of real CO$$_2$$.
-
-*Mode $$\omega_2^2=k/m+2k/M$$ — antisymmetric stretch.* By momentum conservation the center of mass cannot move, $$m a_1+M a_2+m a_3=0$$. The symmetry (outer atoms equivalent) forces $$a_1=a_3$$, so $$2m a_1=-M a_2$$, i.e. $$a_2=-(2m/M)a_1$$:
-
-$$
-\mathbf a^{(2)}=\begin{pmatrix}1\\ -\dfrac{2m}{M}\\ 1\end{pmatrix}.
-$$
-
-The two outer atoms move together one way while the central atom recoils the other way to keep the center of mass fixed. This is the highest-frequency mode and the strongly IR-active asymmetric stretch of CO$$_2$$. The three modes are mutually orthogonal in the mass-weighted sense $$\mathbf a^{(r)\top}\mathbf M\,\mathbf a^{(s)}=0$$ for $$r\ne s$$, as the symmetry of $$\mathbf M,\mathbf K$$ guarantees.
-
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example (the double pendulum, small angles).** Two equal masses $$m$$ hang on two equal massless rods of length $$\ell$$, the lower bob from the upper one. Let $$\theta_1,\theta_2$$ be the rod angles from vertical. In the small-angle limit the Lagrangian (see the Lagrangian section for the full derivation) expands to
-
-$$
-T=\tfrac12 m\ell^2\big(2\dot\theta_1^2+2\dot\theta_1\dot\theta_2+\dot\theta_2^2\big),\qquad
-V=\tfrac12 mg\ell\big(2\theta_1^2+\theta_2^2\big),
-$$
-
-reading the matrices off the quadratic forms ($$M_{ij}$$ from $$T$$, $$K_{ij}=\partial^2V/\partial\theta_i\partial\theta_j$$):
-
-$$
-\mathbf M=m\ell^2\begin{pmatrix}2&1\\1&1\end{pmatrix},\qquad
-\mathbf K=mg\ell\begin{pmatrix}2&0\\0&1\end{pmatrix}.
-$$
-
-Let $$\lambda=\omega^2\ell/g$$ to clear units; then $$\det(\mathbf K-\omega^2\mathbf M)=0$$ becomes, dividing through by $$mg\ell$$,
-
-$$
-\det\begin{pmatrix} 2-2\lambda & -\lambda\\ -\lambda & 1-\lambda\end{pmatrix}=0
-\;\Longrightarrow\;
-(2-2\lambda)(1-\lambda)-\lambda^2=0.
-$$
-
-Expand: $$2-2\lambda-2\lambda+2\lambda^2-\lambda^2=\lambda^2-4\lambda+2=0$$, so
-
-$$
-\lambda=\frac{4\pm\sqrt{16-8}}{2}=2\pm\sqrt2 .
-$$
-
-Restoring $$\omega^2=\lambda\,g/\ell$$,
-
-$$
-\boxed{\ \omega_\pm^2=\frac{g}{\ell}\big(2\pm\sqrt2\big).\ }
-$$
-
-For the mode shapes, the bottom row $$-\lambda\,a_1+(1-\lambda)a_2=0$$ gives the ratio $$a_2/a_1=\lambda/(1-\lambda)$$.
-
-*Low mode* $$\lambda_-=2-\sqrt2\approx0.586$$: $$a_2/a_1=(2-\sqrt2)/(\sqrt2-1)=\sqrt2$$, so
-
-$$
-\mathbf a^{(-)}=\begin{pmatrix}1\\ \sqrt2\end{pmatrix}\quad(\text{in phase}).
-$$
-
-Both rods swing the same way, the lower bob with larger amplitude — the slow, gentle mode.
-
-*High mode* $$\lambda_+=2+\sqrt2\approx3.414$$: $$a_2/a_1=(2+\sqrt2)/(-1-\sqrt2)=-\sqrt2$$, so
-
-$$
-\mathbf a^{(+)}=\begin{pmatrix}1\\ -\sqrt2\end{pmatrix}\quad(\text{out of phase}).
-$$
-
-The rods swing oppositely (the system folds at the joint), the lower bob again $$\sqrt2$$ times larger but on the other side — the fast mode. Note the inertia coupling lives in the off-diagonal of $$\mathbf M$$ here rather than in $$\mathbf K$$; the eigenvalue machinery $$\det(\mathbf K-\omega^2\mathbf M)=0$$ handles that case without any change.
-
-</div>
-
-These examples share one workflow: write $$T$$ and $$V$$ to quadratic order to get $$\mathbf M$$ and $$\mathbf K$$, exploit any symmetry to anticipate the mode shapes, solve $$\det(\mathbf K-\omega^2\mathbf M)=0$$ for the frequencies, back-substitute for each eigenvector, and finally interpret each mode physically (which springs stretch, what stays fixed, in phase versus out of phase). Once the modes are known, every initial condition evolves as a superposition of them — including the slow energy-sloshing beats that arise whenever two modes have nearly equal frequencies.
-
 ---
 
 ## Rigid-body dynamics
-
-AP-level rotation handles fixed-axis problems with a single moment of inertia $$I$$ (see [torque]({{ '/notes/physics/torque/' | relative_url }}) for $$\vec\tau=I\vec\alpha$$ and [rotational energy and momentum]({{ '/notes/physics/rotationalmomentum/' | relative_url }}) for $$L=I\omega$$ and the moment-of-inertia integrals). Olympiad rigid-body motion drops the single-axis crutch: the axis of rotation can itself move, $$\vec\omega$$ can point one way while $$\vec L$$ points another, and the equation of motion becomes genuinely three-dimensional. The whole subject hangs on one object — the inertia tensor — and one law, $$\vec\tau=d\vec L/dt$$, read as a *vector* equation.
 
 ### The inertia tensor and principal axes
 
@@ -1028,9 +604,9 @@ a real symmetric matrix called the **inertia tensor** $$\mathbf I$$. The diagona
 
 The crucial conceptual break from AP physics: **$$\vec L$$ is generally not parallel to $$\vec\omega$$.** A matrix sends a vector to a parallel vector only along its eigenvectors, so $$\vec L\parallel\vec\omega$$ only for special spin directions.
 
-*What the products of inertia mean physically.* Imagine a rigid body spinning at constant $$\vec\omega$$ on a fixed shaft. If $$I_{xy}\neq0$$ for the shaft axis, then $$\vec L$$ is tilted off the axis and, since the body carries $$\vec L$$ around with it, $$\vec L$$ sweeps out a cone once per revolution. But $$\vec L$$ is constant in the body and rotating in space means $$d\vec L/dt=\vec\omega\times\vec L\neq0$$, which by $$\vec\tau=d\vec L/dt$$ demands a *torque* — supplied by the bearings as a rotating sideways force. This is **dynamic imbalance**: a wheel can be statically balanced (center of mass on the axis) yet still shake the bearings because its products of inertia don't vanish. Tire shops fix it by adding small weights to zero out $$I_{xz}$$ and $$I_{yz}$$.
+*What the products of inertia mean physically.* Imagine a rigid body spinning at constant $$\vec\omega$$ on a fixed shaft. If $$I_{xy}\neq0$$ for the shaft axis, then $$\vec L$$ is tilted off the axis and, since the body carries $$\vec L$$ around with it, $$\vec L$$ sweeps out a cone once per revolution. But $$\vec L$$ is constant in the body and rotating in space means $$d\vec L/dt=\vec\omega\times\vec L\neq0$$, which by $$\vec\tau=d\vec L/dt$$ demands a *torque* — supplied by the bearings as a rotating sideways force. This is dynamic imbalance: a wheel can be statically balanced (center of mass on the axis) yet still shake the bearings because its products of inertia don't vanish. Tire shops fix it by adding small weights to zero out $$I_{xz}$$ and $$I_{yz}$$.
 
-*Principal axes.* Because $$\mathbf I$$ is real symmetric, it has three mutually orthogonal eigenvectors — the **principal axes** — with real eigenvalues $$I_1,I_2,I_3$$, the **principal moments**. In that frame the tensor is diagonal,
+*Principal axes.* Since $$\mathbf I$$ is real symmetric, it has three mutually orthogonal eigenvectors, the **principal axes**, with real eigenvalues $$I_1,I_2,I_3$$, the **principal moments**. In that frame the tensor is diagonal,
 
 $$
 \mathbf I=\begin{pmatrix}I_1&0&0\\0&I_2&0\\0&0&I_3\end{pmatrix},\qquad \vec L=(I_1\omega_1,\,I_2\omega_2,\,I_3\omega_3).
@@ -1040,7 +616,7 @@ Spin purely about a principal axis and $$\vec L\parallel\vec\omega$$: the produc
 
 <div class="theorem-box" markdown="1">
 
-**Example (a cube about an edge versus a body diagonal).** A uniform cube of mass $$M$$ and side $$a$$ has its corner at the origin and edges along $$\hat x,\hat y,\hat z$$. Find its inertia tensor about the corner, then compute $$\vec L$$ when it spins about the edge $$\hat x$$ and when it spins about the body diagonal, and in each case find the angle between $$\vec L$$ and $$\vec\omega$$.
+**Example.** A uniform cube of mass $$M$$ and side $$a$$ has its corner at the origin and edges along $$\hat x,\hat y,\hat z$$. Find its inertia tensor about the corner, then compute $$\vec L$$ when it spins about the edge $$\hat x$$ and when it spins about the body diagonal, and in each case find the angle between $$\vec L$$ and $$\vec\omega$$.
 
 By symmetry of the cube under permuting axes, all three diagonal entries are equal. With uniform density $$\rho=M/a^3$$,
 
@@ -1078,33 +654,11 @@ The body diagonal is an **eigenvector**: $$\vec L=\tfrac16 Ma^2\,\vec\omega$$ is
 
 </div>
 
-The lesson generalizes: to test whether an axis $$\hat n$$ is principal, compute $$\mathbf I\hat n$$ and check parallelism. The diagonal-balanced versus edge-unbalanced contrast is exactly why the choice of spin axis matters for everything from flywheels to figure skaters.
-
 ### Gyroscopic precession
 
 The key rigid-body equation is still $$\vec\tau=d\vec L/dt$$ — but when $$\vec L$$ is large and the torque is *perpendicular* to it, the torque **turns** $$\vec L$$ rather than lengthening it. This is the single most counterintuitive fact in mechanics: a fast-spinning top does not topple under gravity, it goes around.
 
-*Why a fast spin precesses instead of toppling.* A non-spinning top falls because gravity's torque creates angular momentum *in the direction of the torque* — it starts to tip. A fast-spinning top already has a huge $$\vec L$$ along its axis. Gravity's torque $$\tau=mgr\sin\theta$$ is horizontal, perpendicular to $$\vec L$$, so $$d\vec L=\vec\tau\,dt$$ adds a horizontal sliver perpendicular to $$\vec L$$. Adding a perpendicular vector to $$\vec L$$ *rotates* it without changing its length: the axis swings sideways (azimuthally) instead of dropping. The "falling" tendency is continuously converted into sideways circulation. The faster the spin, the smaller the fractional change $$d\vec L/L$$ per unit time, hence the slower the precession.
-
-<div class="theorem-box" markdown="1">
-
-**Example (precessing top).** A symmetric top spins rapidly with spin angular momentum $$L=I\omega$$ along its axis, tilted at angle $$\theta$$ from vertical, pivoting at a point a distance $$r$$ from its center of mass. Gravity exerts a horizontal torque of magnitude $$\tau=mgr\sin\theta$$, perpendicular to the horizontal projection of $$\vec L$$. The horizontal projection of $$\vec L$$ has length $$L\sin\theta$$, and in time $$dt$$ the torque advances it through $$d\phi=\tau\,dt/(L\sin\theta)$$ about the vertical. The axis therefore **precesses** at
-
-$$
-\Omega_p=\frac{\tau}{L\sin\theta}=\frac{mgr\sin\theta}{I\omega\,\sin\theta}=\frac{mgr}{I\omega},
-$$
-
-independent of the tilt angle $$\theta$$ — the $$\sin\theta$$ from the torque cancels the $$\sin\theta$$ from the projection. Faster spin $$\Rightarrow$$ slower precession. Superimposed on this steady drift is a small **nutation** (a nodding of $$\theta$$), which appears whenever the spin is not asymptotically large; in the fast-top limit the nutation amplitude $$\sim\Omega_p/\omega\to0$$ and the motion looks smoothly conical.
-
-</div>
-
-The fast-top formula is only the leading approximation. Demanding *exactly* steady precession (constant $$\theta$$) for a heavy symmetric top gives a quadratic in $$\Omega_p$$,
-
-$$
-I_3\omega_3\,\Omega_p-(I_1)\,\Omega_p^2\cos\theta=mgr,
-$$
-
-whose two roots are the **fast** and **slow** precession rates. For large spin the slow root reduces to $$\Omega_p\approx mgr/(I_3\omega_3)$$ above, while the fast root $$\Omega_p\approx I_3\omega_3/(I_1\cos\theta)$$ is essentially the body's free-precession rate barely perturbed by gravity. Real tops choose the slow branch.
+A non-spinning top falls because gravity's torque creates angular momentum *in the direction of the torque* so it starts to tip. A fast-spinning top already has a huge $$\vec L$$ along its axis. Gravity's torque $$\tau=mgr\sin\theta$$ is horizontal, perpendicular to $$\vec L$$, so $$d\vec L=\vec\tau\,dt$$ adds a horizontal sliver perpendicular to $$\vec L$$. Adding a perpendicular vector to $$\vec L$$ *rotates* it without changing its length: the axis swings sideways (azimuthally) instead of dropping. The "falling" tendency is continuously converted into sideways circulation. The faster the spin, the smaller the fractional change $$d\vec L/L$$ per unit time, hence the slower the precession. This explains all of the viral reels/videos about how spinning wheels can withstand gravitational effects while non-spinning wheels can't.
 
 ### Euler's equations and torque-free motion
 
@@ -1120,7 +674,7 @@ $$
 
 <div class="theorem-box" markdown="1">
 
-**Example (free precession of a symmetric body).** A torque-free symmetric body has $$I_1=I_2\equiv I_\perp$$ and symmetry axis moment $$I_3$$. Find the rate at which the spin axis $$\vec\omega$$ wobbles about the symmetry axis (the "body cone"), and the rate the symmetry axis sweeps about the fixed $$\vec L$$ (the "space cone").
+**Example.** A torque-free symmetric body has $$I_1=I_2\equiv I_\perp$$ and symmetry axis moment $$I_3$$. Find the rate at which the spin axis $$\vec\omega$$ wobbles about the symmetry axis (the "body cone"), and the rate the symmetry axis sweeps about the fixed $$\vec L$$ (the "space cone").
 
 With $$I_1=I_2$$, the third Euler equation gives $$I_3\dot\omega_3=(I_1-I_2)\omega_1\omega_2=0$$, so $$\omega_3=\text{const}$$. The first two become
 
@@ -1181,7 +735,7 @@ $$
 \sqrt\sigma=\Omega\sqrt{\frac{(I_2-I_3)(I_2-I_1)}{I_1 I_3}}.
 $$
 
-For the **largest** axis ($$I_3$$, set $$\omega_3=\Omega$$) or the **smallest** ($$I_1$$), the analogous coefficient is *negative*: $$\sigma<0$$ gives $$\omega\sim e^{\pm i\sqrt{|\sigma|}t}$$, a bounded **oscillation** — the perturbation merely orbits and the spin is stable. Hence stability about the extreme axes, instability about the middle one.
+For the **largest** axis ($$I_3$$, set $$\omega_3=\Omega$$) or the **smallest** ($$I_1$$), the analogous coefficient is *negative*: $$\sigma<0$$ gives $$\omega\sim e^{\pm i\sqrt{\lvert \sigma \rvert}t}$$, a bounded **oscillation** — the perturbation merely orbits and the spin is stable. Hence stability about the extreme axes, instability about the middle one.
 
 </div>
 
@@ -1193,7 +747,7 @@ Olympiad problems often combine the translational momentum law $$\vec F=M\dot{\v
 
 <div class="theorem-box" markdown="1">
 
-**Example (the billiard "natural roll" height).** A uniform ball of mass $$M$$, radius $$R$$, moment $$I=\tfrac25 MR^2$$ rests on a table. A horizontal cue strikes it with impulse $$J$$ at a height $$h$$ *above the table*. Find the $$h$$ for which the ball immediately rolls without slipping, taking no impulse from friction.
+**Example.** A uniform ball of mass $$M$$, radius $$R$$, moment $$I=\tfrac25 MR^2$$ rests on a table. A horizontal cue strikes it with impulse $$J$$ at a height $$h$$ *above the table*. Find the $$h$$ for which the ball immediately rolls without slipping, taking no impulse from friction.
 
 The horizontal impulse sets the center-of-mass speed:
 
@@ -1223,11 +777,11 @@ So the cue must strike at $$\tfrac75R$$ above the cloth — equivalently $$\tfra
 
 </div>
 
-When the strike is *not* at the magic height, friction must reconcile spin and translation. The next example tracks that sliding-to-rolling transition in full.
+When the strike is *not* at the magic height, friction must reconcile spin and translation.
 
 <div class="theorem-box" markdown="1">
 
-**Example (sliding-to-rolling transition).** A ball ($$I=\tfrac25 MR^2$$) is launched along a table with speed $$v_0$$ and zero spin (a "stun shot"). Kinetic friction $$\mu$$ acts backward until rolling begins. Find the final speed, the time to roll, and the distance slid.
+**Example.** A ball ($$I=\tfrac25 MR^2$$) is launched along a table with speed $$v_0$$ and zero spin (a "stun shot"). Kinetic friction $$\mu$$ acts backward until rolling begins. Find the final speed, the time to roll, and the distance slid.
 
 While sliding, the contact point moves forward, so kinetic friction $$f=\mu Mg$$ acts **backward**. Translation:
 
@@ -1264,63 +818,11 @@ $$
 
 </div>
 
-The angular-momentum-about-the-contact-line shortcut is worth internalizing: friction acts *at* the contact, so it exerts no torque about a fixed line through the contact, making $$L$$ there conserved and collapsing the two-equation bookkeeping to a single conservation statement.
-
-### Toppling, pivots, and the falling chimney
-
-Bodies pivoted or hinged about a fixed line obey $$\tau=I_{\text{pivot}}\,\alpha$$, but the *internal* forces such bodies must transmit are where olympiad problems bite — culminating in why a tall chimney snaps as it falls.
-
-<div class="theorem-box" markdown="1">
-
-**Example (rod released from horizontal, and the pivot force).** A uniform rod of mass $$M$$, length $$\ell$$ is hinged at one end and released from rest horizontally. Find the angular acceleration at release, the linear acceleration of the free end, and the hinge force at that instant.
-
-About the pivot, $$I_{\text{pivot}}=\tfrac13 M\ell^2$$ and gravity acts at the center ($$\ell/2$$):
-
-$$
-\tau=Mg\frac{\ell}{2}=I_{\text{pivot}}\alpha=\frac13 M\ell^2\alpha
-\;\Rightarrow\;\alpha=\frac{3g}{2\ell}.
-$$
-
-The free end accelerates at $$a_{\text{tip}}=\alpha\ell=\tfrac32 g$$ — **faster than free fall**, so a coin placed near the tip is left behind (the classic falling-hinged-stick demo). The center of mass at $$\ell/2$$ has tangential (here vertical) acceleration
-
-$$
-a_{\text{cm}}=\alpha\frac{\ell}{2}=\frac{3g}{4}.
-$$
-
-Newton's second law on the center of mass, with hinge force $$(R_x,R_y)$$ and gravity $$-Mg\hat y$$, at the instant of release (velocity zero, so no centripetal term):
-
-$$
-\text{vertical:}\quad R_y-Mg=-Ma_{\text{cm}}=-\frac34 Mg
-\;\Rightarrow\;R_y=\frac14 Mg.
-$$
-
-Horizontally there is no acceleration at this instant ($$\omega=0$$ so no centripetal demand, and $$a_{\text{cm}}$$ is purely vertical), so $$R_x=0$$. The hinge pulls *up* with only $$\tfrac14 Mg$$, less than the rod's weight — the rest of the support is provided by the rod's own rotational "falling away."
-
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example (why the falling chimney snaps).** Model the chimney as a uniform rod pivoting at its base as it topples. Show that the rod cannot fall as a rigid body without internal bending moments, and that the breaking point is partway up — explaining the characteristic mid-height fracture.
-
-The whole chimney has angular acceleration $$\alpha=\dfrac{3g\cos\phi}{2\ell}$$ when tilted $$\phi$$ from vertical (same derivation as above with the lever arm $$\tfrac{\ell}{2}\cos\phi$$). Now consider the *upper portion* from a height $$x$$ to the tip, length $$\ell-x$$, treated as a sub-rod. If the chimney were in free rotation, each mass element at radius $$r$$ from the base would need tangential acceleration $$\alpha r$$, **growing linearly with height**. But a freely falling rigid sub-segment of mass $$m'$$ at its own center would *want* to rotate at its own faster rate; the lower part can only drive it at the common $$\alpha$$. The shortfall must be made up by an internal shear force and **bending moment** at the cut.
-
-Quantitatively, the upper segment of mass $$m'=M\frac{\ell-x}{\ell}$$ has its center of mass at radius $$r_c=\frac{x+\ell}{2}$$ and *requires* tangential acceleration $$a_c=\alpha r_c$$. Gravity alone on that segment produces a torque about the cut that would give it angular acceleration $$\alpha_{\text{free}}=\frac{3g\cos\phi}{2(\ell-x)}>\alpha$$ — the free upper piece wants to swing *faster* than the chimney rotates. To hold it back to the common $$\alpha$$, the lower part must exert a torque on it at the cut: a bending moment
-
-$$
-\mathcal M(x)\propto m'\,(\alpha_{\text{free}}-\alpha)\,(\text{lever})\;\sim\;Mg\cos\phi\cdot\frac{x(\ell-x)^2}{\ell^2}\times(\text{const}),
-$$
-
-which is zero at the base and at the tip and **peaks at intermediate height** (maximizing $$x(\ell-x)^2$$ gives $$x=\ell/3$$). The masonry, weak in tension, cracks where the bending moment is largest — about one-third of the way up — which is exactly where toppling chimneys are observed to break.
-
-</div>
-
-These hinge-and-bending arguments close the loop opened by the inertia tensor: from "$$\vec L$$ need not be parallel to $$\vec\omega$$" to "a rigid body distributes acceleration unevenly, so it must carry internal stresses," the unifying idea is that rotation couples every part of a body together through $$\vec\tau=d\vec L/dt$$, applied consistently to the whole and to every piece.
-
 ---
 
 ## Non-inertial frames and relative motion
 
-Switching to a moving frame is often the difference between a one-line answer and a page of algebra. The basics are also on the [Techniques]({{ '/notes/physics/techniques/' | relative_url }}) page; here we build the full kinematics of relative motion, because olympiad problems frequently combine translation *and* rotation of the observer. The strategic payoff is always the same: a clever choice of frame can turn a hard *dynamics* problem (find the trajectory) into an easy *statics* problem (find where the forces balance).
+Switching to a moving frame is often the difference between a one-line answer and a page of algebra. Here we build the full kinematics of relative motion, because olympiad problems frequently combine translation *and* rotation of the observer. The strategic payoff is always the same: a clever choice of frame can turn a hard *dynamics* problem (find the trajectory) into an easy *statics* problem (find where the forces balance).
 
 ### Translating frames
 
@@ -1348,11 +850,11 @@ $$
 \boxed{\ \left(\frac{d\vec A}{dt}\right)_{\text{in}}=\left(\frac{d\vec A}{dt}\right)_{\text{rot}}+\vec\omega\times\vec A\ }.
 $$
 
-Why this is the *master* identity: any vector can be written in the rotating basis as $$\vec A=A_x\hat e_x+A_y\hat e_y+A_z\hat e_z$$. Differentiating, the product rule splits into two pieces — the components $$\dot A_i$$ changing (which is what the rotating observer sees, the first term), plus the basis vectors $$\hat e_i$$ themselves swinging around. But a unit vector rigidly attached to a body spinning at $$\vec\omega$$ obeys $$\dot{\hat e}_i=\vec\omega\times\hat e_i$$, so $$\sum_i A_i\,\dot{\hat e}_i=\vec\omega\times\vec A$$. That is the entire content of the theorem: **the first term is how the numbers change, the $$\vec\omega\times\vec A$$ term is how the rulers turn.** Because it holds for *every* vector, you apply it to $$\vec r$$ to get velocities, then apply it again to get accelerations — and that single repeated application produces all three pseudo-forces with no extra physics.
+Why this is the *master* identity: any vector can be written in the rotating basis as $$\vec A=A_x\hat e_x+A_y\hat e_y+A_z\hat e_z$$. Differentiating, the product rule splits into two pieces — the components $$\dot A_i$$ changing (which is what the rotating observer sees, the first term), plus the basis vectors $$\hat e_i$$ themselves swinging around. But a unit vector rigidly attached to a body spinning at $$\vec\omega$$ obeys $$\dot{\hat e}_i=\vec\omega\times\hat e_i$$, so $$\sum_i A_i\,\dot{\hat e}_i=\vec\omega\times\vec A$$. That is the entire content of the theorem: **the first term is how the numbers change, the $$\vec\omega\times\vec A$$ term is how the rulers turn.** Since it holds for *every* vector, you apply it to $$\vec r$$ to get velocities, then apply it again to get accelerations — and that single repeated application produces all three pseudo-forces with no extra physics.
 
 <div class="theorem-box" markdown="1">
 
-**Derivation (velocity and acceleration in a rotating frame).** Apply the transport theorem to $$\vec r$$:
+**Proof (velocity and acceleration in a rotating frame).** Apply the transport theorem to $$\vec r$$:
 
 $$
 \vec v_{\text{in}}=\vec v_{\text{rot}}+\vec\omega\times\vec r .
@@ -1396,7 +898,7 @@ $$
 - **Coriolis:** $$-2m\,\vec\omega\times\vec v_{\text{rot}}$$ acts only on bodies *moving* in the rotating frame, always perpendicular to their velocity. Being perpendicular to $$\vec v_{\text{rot}}$$, it satisfies $$\vec F_{\text{Cor}}\cdot\vec v_{\text{rot}}=0$$, so **it does no work and cannot change rotating-frame kinetic energy** — it only bends paths, never speeds them up. This is why a Coriolis-only energy argument is consistent, and why you can ignore Coriolis entirely when you only care about energetics. It governs cyclones, ocean gyres, the Foucault pendulum, and the eastward deflection of falling bodies.
 - **Euler:** $$-m\,\dot{\vec\omega}\times\vec r$$ appears only when the spin rate changes; usually zero for steady rotation. It is the rotational analogue of the translational $$-m\vec A_O$$ — the "jerk-back" you feel when a merry-go-round speeds up.
 
-The deep simplification is this: for **steady** rotation ($$\dot{\vec\omega}=0$$) the only velocity-dependent term is Coriolis, which does no work, so the centrifugal-augmented potential
+The simplification is this: for **steady** rotation ($$\dot{\vec\omega}=0$$) the only velocity-dependent term is Coriolis, which does no work, so the centrifugal-augmented potential
 
 $$
 U_{\text{eff}}=U_{\text{real}}-\tfrac12 m\omega^2\rho^2
@@ -1406,19 +908,9 @@ controls all the energetics. Equilibria of the rotating system are exactly the s
 
 <div class="theorem-box" markdown="1">
 
-**Example (Foucault pendulum).** At latitude $$\lambda$$, the local vertical component of Earth's rotation is $$\omega\sin\lambda$$. A pendulum swinging in a vertical plane feels a horizontal Coriolis force $$-2m\,\vec\omega\times\vec v$$ that slowly rotates its plane of oscillation. Resolve $$\vec\omega$$ into a local-vertical part $$\omega\sin\lambda\,\hat z$$ and a horizontal part: the horizontal part crosses with the (nearly horizontal) swing velocity to give a *vertical* force, which only modifies the effective $$g$$ negligibly. Only the vertical component $$\omega\sin\lambda$$ acts in the horizontal plane of the swing, and it rotates the velocity vector at a constant rate. Hence the plane precesses at
+**Example.** Drop a mass from rest at height $$h$$ at latitude $$\lambda$$. Find the deflection of the object, assuming it's dropped on Earth.
 
-$$
-\Omega_{\text{Foucault}}=\omega\sin\lambda,
-$$
-
-clockwise in the northern hemisphere, with period $$T=2\pi/(\omega\sin\lambda)=(24\ \text{h})/\sin\lambda$$. At the pole it tracks the full $$24$$-hour rotation; at the equator it does not precess at all.
-
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example (eastward deflection of a falling body).** Drop a mass from rest at height $$h$$ at latitude $$\lambda$$. Choose local axes with $$\hat x$$ east, $$\hat y$$ north, $$\hat z$$ up; then $$\vec\omega=\omega(0,\cos\lambda,\sin\lambda)$$. To leading order the body falls with $$\vec v\approx -gt\,\hat z$$. The Coriolis acceleration is
+Choose local axes with $$\hat x$$ east, $$\hat y$$ north, $$\hat z$$ up; then $$\vec\omega=\omega(0,\cos\lambda,\sin\lambda)$$. To leading order the body falls with $$\vec v\approx -gt\,\hat z$$. The Coriolis acceleration is
 
 $$
 -2\vec\omega\times\vec v=-2\,\omega(0,\cos\lambda,\sin\lambda)\times(0,0,-gt)=-2\omega g t\cos\lambda\,(\hat y\times\hat z\text{-component})=+2\omega g t\cos\lambda\,\hat x,
@@ -1436,7 +928,7 @@ $$
 x_{\text{east}}=\frac{\omega\cos\lambda}{3}\sqrt{\frac{8h^3}{g}}
 $$
 
-— small, but real, and a favorite exam application of the Coriolis term. Note it is *eastward* in both hemispheres (it depends on $$\cos\lambda$$, which is positive everywhere), unlike the Foucault sense, which flips with $$\sin\lambda$$.
+Note it is *eastward* in both hemispheres (it depends on $$\cos\lambda$$, which is positive everywhere).
 
 </div>
 
@@ -1446,7 +938,7 @@ When a problem is naturally circular — a bead in a rotating tube, a mass near 
 
 <div class="theorem-box" markdown="1">
 
-**Example (bead in a rotating straight tube).** A frictionless tube lies in a horizontal plane and rotates about a vertical axis through one end at constant angular speed $$\omega$$. A bead of mass $$m$$ slides inside it. At $$t=0$$ the bead is at radius $$r_0$$, at rest *relative to the tube*. Find $$r(t)$$ and the normal force the tube exerts.
+**Example.** A frictionless tube lies in a horizontal plane and rotates about a vertical axis through one end at constant angular speed $$\omega$$. A bead of mass $$m$$ slides inside it. At $$t=0$$ the bead is at radius $$r_0$$, at rest *relative to the tube*. Find $$r(t)$$ and the normal force the tube exerts.
 
 Work in the frame co-rotating with the tube. Let $$r$$ be the distance along the tube (the radial coordinate). Because rotation is steady, $$\dot{\vec\omega}=0$$ and there is no Euler term. The real forces are gravity (vertical, irrelevant in the horizontal plane) and the tube's normal force $$\vec N$$, which is perpendicular to the tube — it has no radial component. The pseudo-forces are centrifugal (radial, outward) and Coriolis (perpendicular to $$\vec v_{\text{rot}}$$, hence perpendicular to the tube).
 
@@ -1474,44 +966,9 @@ Here $$2m\omega\dot r$$ is the magnitude of the Coriolis term $$|{-2m\,\vec\omeg
 
 </div>
 
-The bead shows centrifugal driving the dynamics and Coriolis appearing as a constraint reaction. The next example uses centrifugal as a *potential* to make a statics statement about a spinning planet.
-
 <div class="theorem-box" markdown="1">
 
-**Example (effective gravity and the plumb-line deflection on a rotating planet).** A planet of radius $$R$$ rotates at $$\omega$$. At colatitude measured by *latitude* $$\lambda$$, find the angle $$\delta$$ between a plumb line (which hangs along $$\vec g_{\text{eff}}$$) and the true radial direction (toward the center), and the variation of apparent $$g$$.
-
-In the co-rotating frame a hanging mass is in static equilibrium under true gravity $$\vec g_0$$ (magnitude $$g_0=GM/R^2$$, pointing inward along $$-\hat r$$) and the centrifugal force per mass $$\omega^2\rho$$ pointing *away from the rotation axis*, where $$\rho=R\cos\lambda$$ is the distance to the axis. Decompose the centrifugal acceleration $$\omega^2 R\cos\lambda$$ (directed outward, perpendicular to the axis) into components along the local radial and along the local north/south (tangential) directions. Geometry: the outward-from-axis direction makes angle $$\lambda$$ with the local vertical (radial) direction, so
-
-$$
-a_{\text{cf,radial}}=\omega^2 R\cos\lambda\cdot\cos\lambda=\omega^2 R\cos^2\lambda,\qquad
-a_{\text{cf,tang}}=\omega^2 R\cos\lambda\cdot\sin\lambda=\omega^2 R\cos\lambda\sin\lambda .
-$$
-
-The radial part reduces apparent gravity; the tangential part (pointing toward the equator) tilts the plumb line equatorward. The apparent gravity magnitude is
-
-$$
-g_{\text{eff}}\approx g_0-\omega^2 R\cos^2\lambda,
-$$
-
-maximal at the poles ($$g_{\text{eff}}=g_0$$) and minimal at the equator ($$g_{\text{eff}}=g_0-\omega^2 R$$). The deflection angle satisfies
-
-$$
-\tan\delta=\frac{a_{\text{cf,tang}}}{g_0-a_{\text{cf,radial}}}=\frac{\omega^2 R\cos\lambda\sin\lambda}{g_0-\omega^2 R\cos^2\lambda}.
-$$
-
-Since $$\omega^2 R\ll g_0$$ for real planets, expand to leading order ($$\tan\delta\approx\delta$$, denominator $$\approx g_0\approx g$$):
-
-$$
-\boxed{\,\delta\approx\frac{\omega^2 R}{g}\sin\lambda\cos\lambda=\frac{\omega^2 R}{2g}\sin 2\lambda\,}.
-$$
-
-The deflection vanishes at the poles ($$\lambda=90^\circ$$) and equator ($$\lambda=0$$) — where the tangential centrifugal component dies — and peaks at $$\lambda=45^\circ$$. For Earth, $$\omega^2R/g\approx 3.4\times10^{-3}$$, so the maximum deflection is about $$1.7\times10^{-3}\,\text{rad}\approx 6'$$ of arc, exactly the order of the observed equatorial bulge that makes Earth an oblate spheroid (a fluid planet adjusts its surface to be everywhere perpendicular to $$\vec g_{\text{eff}}$$, so the bulge *is* the integrated effect of this tilt).
-
-</div>
-
-<div class="theorem-box" markdown="1">
-
-**Example (puck thrown across a rotating turntable).** A turntable rotates at constant $$\omega$$ (counterclockwise, $$\vec\omega=\omega\hat z$$). At $$t=0$$ a frictionless puck is launched from the center with inertial-frame velocity $$v_0\,\hat x$$. Describe its path (a) in the inertial frame and (b) in the rotating frame, and verify the rotating-frame path with the pseudo-forces.
+**Example.** A turntable rotates at constant $$\omega$$ (counterclockwise, $$\vec\omega=\omega\hat z$$). At $$t=0$$ a frictionless puck is launched from the center with inertial-frame velocity $$v_0\,\hat x$$. Describe its path (a) in the inertial frame and (b) in the rotating frame, and verify the rotating-frame path with the pseudo-forces.
 
 **(a) Inertial frame.** Nothing touches the puck, so it moves in a *straight line at constant speed*: $$\vec r_{\text{in}}(t)=(v_0 t,\,0)$$. This is the whole point — the "true" motion is trivial.
 
@@ -1545,11 +1002,9 @@ matching the kinematics exactly. So the apparent inward bending near large $$\rh
 
 </div>
 
-The puck made vivid that a force-free straight line maps to a spiral. The capstone example puts a *real* force back in and asks where motion can stay put in the rotating frame — the celestial-mechanics jewel of the Lagrange points.
-
 <div class="theorem-box" markdown="1">
 
-**Example (restricted three-body problem and the Lagrange points).** Two large masses $$M_1>M_2$$ orbit their common center of mass on circular orbits with separation $$a$$ and angular velocity $$\omega$$, where Kepler gives $$\omega^2=G(M_1+M_2)/a^3$$. A test particle of negligible mass moves in their gravity. Work in the frame co-rotating at $$\omega$$, in which $$M_1$$ and $$M_2$$ are fixed. Find the equilibrium points and characterize their stability.
+**Example.** Two large masses $$M_1>M_2$$ orbit their common center of mass on circular orbits with separation $$a$$ and angular velocity $$\omega$$, where Kepler gives $$\omega^2=G(M_1+M_2)/a^3$$. A test particle of negligible mass moves in their gravity. Work in the frame co-rotating at $$\omega$$, in which $$M_1$$ and $$M_2$$ are fixed. Find the equilibrium points and characterize their stability.
 
 Because rotation is steady, the energetics are governed entirely by the **effective potential** (per unit mass) combining the two gravitational wells and the centrifugal term:
 
