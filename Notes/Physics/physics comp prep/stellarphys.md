@@ -27,8 +27,8 @@ $$
 Multiplying by the star's surface area gives its total radiated power, the **luminosity**:
 
 $$
-\ L=4\pi R^2\,\sigma T^4\.
-$$
+\ L=4\pi R^2\,\sigma T^4 \
+$$.
 
 This one equation ties together the three numbers we most want to know about a star: its size $$R$$, surface temperature $$T$$, and energy output $$L$$. Know any two and you have the third.
 
@@ -80,11 +80,159 @@ with redshift ($$\Delta\lambda>0$$) for recession and blueshift for approach. Th
 
 ---
 
+## The celestial sphere and coordinates
+
+Before we can measure a star, we have to say *where it is*. To the eye, every star sits at the same enormous distance, pinned to the inside of a giant sphere centered on the observer — the **celestial sphere**. The sphere is a fiction (stars are at wildly different distances), but it is an extraordinarily useful one: directions to objects are just points on it, and locating a star reduces to giving two angles, exactly like latitude and longitude on Earth. Several coordinate systems exist; they differ in what they take as the "equator" and the "zero of longitude."
+
+### Horizontal (altitude–azimuth) coordinates
+
+The most intuitive system is tied to *you*, the observer, right now. The point straight overhead is the **zenith**; the great circle halfway between zenith and the (hidden) point underfoot is the **horizon**. A star's position is then fixed by
+
+- **altitude** $$a$$: the angle above the horizon, from $$0^\circ$$ (horizon) to $$90^\circ$$ (zenith);
+- **azimuth** $$A$$: the compass bearing of the point on the horizon directly below the star, measured clockwise from north ($$0^\circ=$$ north, $$90^\circ=$$ east, and so on).
+
+Horizontal coordinates are wonderfully concrete — they tell you exactly where to point a telescope — but they are useless as a catalogue, because $$(a,A)$$ for a given star changes continuously as the Earth turns and depends on the observer's location. We need a system fixed to the stars themselves.
+
+### Equatorial coordinates: right ascension and declination
+
+The fix is to project Earth's own coordinate grid onto the sky. Extend Earth's rotation axis until it pierces the celestial sphere at the two **celestial poles**, and project the equator outward to the **celestial equator**. A star's position is then given by two angles directly analogous to latitude and longitude:
+
+- **Declination** $$\delta$$: the angular distance north ($$+$$) or south ($$-$$) of the celestial equator, from $$-90^\circ$$ at the south celestial pole to $$+90^\circ$$ at the north. This is the sky's "latitude."
+- **Right ascension** $$\alpha$$: the sky's "longitude," measured *eastward* along the celestial equator from a fixed zero point. Because the sky appears to turn once in $$24$$ hours, right ascension is traditionally measured in **time units** — hours, minutes, and seconds — with a full circle being $$24^\text{h}$$:
+
+$$
+24^\text{h}=360^\circ,\qquad 1^\text{h}=15^\circ,\qquad 1^\text{m}=15',\qquad 1^\text{s}=15''.
+$$
+
+The zero of right ascension is the **vernal equinox** (the *First Point of Aries*, $$\gamma$$): the point where the Sun, moving along the **ecliptic** (its yearly path against the stars), crosses the celestial equator heading north around March 20. Because $$\alpha$$ and $$\delta$$ are tied to the stars and not to the observer, they are essentially constant for a given star and serve as its permanent catalogue address — for example, Vega sits at $$\alpha\approx18^\text{h}37^\text{m}$$, $$\delta\approx+38.8^\circ$$.
+
+> **[Image placeholder — equatorial coordinates]** The celestial sphere with Earth at center: celestial poles, celestial equator, the ecliptic crossing it at the vernal equinox $$\gamma$$, and a star marked with its right ascension $$\alpha$$ (arc along the equator from $$\gamma$$) and declination $$\delta$$ (arc north of the equator).
+
+### What the observer sees: latitude, culmination, and circumpolar stars
+
+How the fixed equatorial grid maps onto your local horizon depends entirely on your latitude $$\phi$$. The single key fact is:
+
+$$
+\text{altitude of the visible celestial pole}=\lvert \phi \rvert.
+$$
+
+From the north pole ($$\phi=90^\circ$$) the celestial equator lies on the horizon and stars circle parallel to it; from the equator ($$\phi=0$$) the celestial poles sit on the horizon and every star rises straight up and sets.
+
+A star reaches its greatest altitude when it crosses the **meridian** (the north–south great circle through the zenith) — its **upper culmination** or **transit**. Geometry of the meridian gives the transit altitude directly:
+
+$$
+a_{\text{max}}=90^\circ-\lvert\phi-\delta\rvert,
+$$
+
+with the star transiting on the south side of the zenith if $$\delta<\phi$$ and the north side if $$\delta>\phi$$. A star is **circumpolar** — it never sets, circling the pole all night — when even its *lowest* point stays above the horizon, which happens for
+
+$$
+\delta\ge 90^\circ-\phi\quad(\text{northern observer}),
+$$
+
+while a star with $$\delta\le-(90^\circ-\phi)$$ never rises at all. Everything in between rises and sets each day.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Vega has declination $$\delta=+38.8^\circ$$. Find its maximum altitude as seen from New York ($$\phi=40.7^\circ\text{N}$$) and from Sydney ($$\phi=-33.9^\circ\text{S}$$).
+
+From New York,
+
+$$
+a_{\text{max}}=90^\circ-\lvert40.7^\circ-38.8^\circ\rvert=90^\circ-1.9^\circ=88.1^\circ,
+$$
+
+so Vega passes almost exactly overhead. From Sydney,
+
+$$
+a_{\text{max}}=90^\circ-\lvert-33.9^\circ-38.8^\circ\rvert=90^\circ-72.7^\circ=17.3^\circ,
+$$
+
+barely clearing the northern horizon — which is why Vega is a "summer overhead" star in the north but a low, marginal object from the southern hemisphere.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** From London ($$\phi=51.5^\circ\text{N}$$), which stars never set?
+
+A star is circumpolar when $$\delta\ge 90^\circ-\phi=38.5^\circ$$. Vega ($$\delta=+38.8^\circ$$) just clears this, so it never sets from London (though it skims the northern horizon at lower culmination). Conversely, any star with $$\delta\le-38.5^\circ$$ never rises — so the bright southern star Canopus ($$\delta=-52.7^\circ$$) is permanently invisible from London, no matter the season or hour.
+
+</div>
+
+### Hour angle and sidereal time
+
+To track a star *during* the night we use its **hour angle** $$H$$: the angle, measured westward along the celestial equator, from the meridian to the star's hour circle. The hour angle runs from $$0$$ at transit and increases at $$15^\circ$$ per hour as the star moves west. It connects to right ascension through the **local sidereal time** (LST), defined as the hour angle of the vernal equinox:
+
+$$
+\text{LST}=H+\alpha.
+$$
+
+In words: a star transits ($$H=0$$) exactly when the local sidereal time equals its right ascension, $$\text{LST}=\alpha$$. Sidereal time runs slightly faster than ordinary solar time — a sidereal day is about $$23^\text{h}56^\text{m}$$, four minutes short — because the Earth must turn a little *past* one full rotation to face the Sun again after moving along its orbit. This four-minutes-a-day slip is why the constellations rise earlier each night and the visible sky cycles through the year.
+
+### Converting between systems: the astronomical triangle
+
+Converting equatorial $$(\alpha,\delta)$$ to horizontal $$(a,A)$$ for a given time and place is a spherical-trigonometry problem. Draw the **astronomical (or navigational) triangle** on the celestial sphere with vertices at the celestial pole $$P$$, the zenith $$Z$$, and the star $$X$$. Its three sides are co-latitude $$PZ=90^\circ-\phi$$, polar distance $$PX=90^\circ-\delta$$, and zenith distance $$ZX=90^\circ-a$$; the angle at $$P$$ is the hour angle $$H$$ and the angle at $$Z$$ is the azimuth $$A$$. The spherical law of cosines applied to side $$ZX$$ gives the master conversion formula
+
+$$
+\sin a=\sin\phi\,\sin\delta+\cos\phi\,\cos\delta\,\cos H,
+$$
+
+and applying it to side $$PX$$ gives the azimuth,
+
+$$
+\cos A=\frac{\sin\delta-\sin\phi\,\sin a}{\cos\phi\,\cos a}.
+$$
+
+Setting $$H=0$$ in the first formula recovers $$\sin a=\cos(\phi-\delta)$$, i.e. the culmination result $$a_{\text{max}}=90^\circ-\lvert\phi-\delta\rvert$$; setting $$a=0$$ gives the azimuth at which a star rises and sets, $$\cos A=\sin\delta/\cos\phi$$.
+
+> **[Image placeholder — astronomical triangle]** The spherical triangle pole–zenith–star $$(P,Z,X)$$ drawn on the celestial sphere, with sides labelled $$90^\circ-\phi$$, $$90^\circ-\delta$$, $$90^\circ-a$$, the angle $$H$$ at the pole, and the azimuth $$A$$ at the zenith.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** From latitude $$\phi=40^\circ\text{N}$$, a star of declination $$\delta=+20^\circ$$ is observed $$3$$ hours after it transits, so its hour angle is $$H=3^\text{h}=45^\circ$$ (west of the meridian). Find its altitude and azimuth.
+
+Altitude from the master formula:
+
+$$
+\sin a=\sin40^\circ\sin20^\circ+\cos40^\circ\cos20^\circ\cos45^\circ,
+$$
+
+$$
+\sin a=(0.643)(0.342)+(0.766)(0.940)(0.707)=0.220+0.509=0.729,
+$$
+
+so $$a=46.8^\circ$$. Azimuth:
+
+$$
+\cos A=\frac{\sin20^\circ-\sin40^\circ\sin a}{\cos40^\circ\cos a}
+=\frac{0.342-(0.643)(0.729)}{(0.766)(0.684)}=\frac{-0.127}{0.524}=-0.242,
+$$
+
+giving $$A=104^\circ$$ as the principal value. Because the star is *west* of the meridian (positive hour angle), it lies in the western half of the sky, so the correct azimuth is $$360^\circ-104^\circ=256^\circ$$ — roughly west-southwest. (The cosine formula cannot distinguish east from west on its own; the sign of $$H$$ resolves the ambiguity.)
+
+</div>
+
+### Precession, epochs, and proper motion
+
+Right ascension and declination are *nearly* constant, but not perfectly. The Earth's axis slowly wobbles like a spinning top — **precession of the equinoxes** — tracing a cone over about $$26{,}000$$ years and dragging the vernal equinox westward along the ecliptic at roughly $$50''$$ per year. Because the entire $$(\alpha,\delta)$$ grid is pegged to that drifting zero point, catalogued coordinates must be quoted for a specific **epoch**; the modern standard is **J2000.0** (January 1, 2000, 12:00 TT). The same precession is why the "pole star" changes over millennia — Polaris is our pole star now, but Vega will be close to the pole in roughly $$12{,}000$$ years. Distinct from this, a star's genuine motion across the sky (its **proper motion**, typically well under an arcsecond per year) shifts its true coordinates over long baselines, and is itself a clue to the star's distance and space velocity.
+
+### Other coordinate systems
+
+Two further systems appear when the celestial equator is the wrong reference plane:
+
+- **Ecliptic coordinates** $$(\lambda,\beta)$$ use the ecliptic as their equator. They are natural for solar-system bodies, whose orbits lie close to the ecliptic plane, so the Sun, Moon, and planets all have small ecliptic latitude $$\beta$$.
+- **Galactic coordinates** $$(l,b)$$ use the plane of the Milky Way, with longitude $$l$$ measured from the galactic center. They are the system of choice for studying the structure of our Galaxy, where the disk and bulge are the relevant landmarks.
+
+Switching between any of these is again a spherical-trigonometry rotation of the astronomical triangle — only the reference great circle and zero point change.
+
+---
+
 ## Measuring stars
 
 ### Parallax and the parsec
 
-As the Earth orbits the Sun, a nearby star appears to shift against the distant background. Half the angular shift over a 1 AU (astonomical unit, the distance from the Earth to the Sun) baseline is the **parallax angle** $$p$$. For small angles,
+As the Earth orbits the Sun, a nearby star appears to shift against the distant background. Half the angular shift over a 1 AU (astronomical unit, the distance from the Earth to the Sun) baseline is the **parallax angle** $$p$$. For small angles,
 
 $$
 d=\frac{1\ \text{AU}}{p}.
@@ -111,7 +259,7 @@ $$
 The **apparent magnitude** $$m$$ describes how bright a star *looks*; the **absolute magnitude** $$M$$ is defined as the apparent magnitude it *would* have at a standard distance of 10 pc. Combining Pogson with the inverse-square law gives the **distance modulus**:
 
 $$
-\boxed{\ m-M=5\log_{10}\!\frac{d}{10\ \text{pc}}\ }.
+\ m-M=5\log_{10}\!\frac{d}{10\ \text{pc}}\ .
 $$
 
 So $$m-M$$ (the "distance modulus") converts directly to distance, and conversely, if you know a star's intrinsic luminosity (its $$M$$) and measure $$m$$, you get $$d$$ — the logic behind every "standard candle."
@@ -143,7 +291,7 @@ The corresponding **gravitational field** (force per unit mass, similar to how a
 Gravity is an inverse-square field, so it obeys a Gauss's law identical in form to the one for electrostatics, with the source being mass instead of charge. The gravitational flux through any closed surface is proportional to the mass it encloses:
 
 $$
-\ \oint \vec g\cdot d\vec A = -4\pi G\,M_{\text{enc}}\.
+\ \oint \vec g\cdot d\vec A = -4\pi G\,M_{\text{enc}} \.
 $$
 
 The minus sign reflects that gravity is attractive — field lines point *inward*, toward mass, whereas electric field lines point outward from positive charge. The replacement that turns Coulomb into Newton is $$\dfrac{1}{4\pi\varepsilon_0}\to -G$$, i.e. $$\varepsilon_0\to -\dfrac{1}{4\pi G}$$; every electrostatics result with spherical, cylindrical, or planar symmetry carries straight over.
@@ -202,7 +350,7 @@ For a small body orbiting a dominant mass $$M$$:
 3. **Harmonic law.** The period and semi-major axis satisfy $$T^2\propto a^3$$. In full Newtonian form (valid even when both masses are comparable),
 
 $$
-\ T^2=\frac{4\pi^2 a^3}{G(M+m)}\.
+\ T^2=\frac{4\pi^2 a^3}{G(M+m)} \.
 $$
 
 In the limit $$M\gg m$$ and in units of years and AU this collapses to the tidy $$T^2=a^3$$. Kepler's laws are not independent postulates — they are *consequences* of the inverse-square law, and the third law in particular is the workhorse for weighing astronomical masses (see binary stars below).
@@ -281,7 +429,7 @@ The startling corollary: a star has a **negative heat capacity**. If it radiates
 Before fusion was understood, Kelvin and Helmholtz asked: how long could the Sun shine on gravitational contraction alone? If its luminosity is supplied by releasing gravitational potential energy, the characteristic time is
 
 $$
-t_{\text{KH}}\sim\frac{|U|}{L}\sim\frac{GM^2}{R\,L}.
+t_{\text{KH}}\sim\frac{\lvert U \rvert}{L}\sim\frac{GM^2}{R\,L}.
 $$
 
 For the Sun this gives $$\sim 3\times10^{7}$$ years. Geology and biology demanded a far older Sun, and this discrepancy was a genuine 19th-century crisis, and was only resolved when nuclear fusion was identified as the real, vastly larger energy reservoir.
@@ -309,7 +457,7 @@ $$
 In low-mass stars gas pressure dominates; in very massive, hot stars radiation pressure can rival or exceed it. This sets an upper limit on how luminous a star can be while staying bound. The outward radiation force on the surface layers (via electron scattering, opacity $$\kappa$$) must not exceed gravity:
 
 $$
-\ L_{\text{Edd}}=\frac{4\pi G M c}{\kappa}\.
+\ L_{\text{Edd}}=\frac{4\pi G M c}{\kappa} \.
 $$
 
 Above this **Eddington luminosity**, radiation blows the outer layers off. It caps the masses and luminosities of stars and regulates accretion onto compact objects.
@@ -387,7 +535,7 @@ When the collapsing core exceeds the neutron-star limit (the **Tolman–Oppenhei
 A surprisingly good estimate of its size comes from the escape-velocity formula. Ask: at what radius does the escape velocity from a mass $$M$$ reach the speed of light? Setting $$v_{\text{esc}}=\sqrt{2GM/r}=c$$ gives the **Schwarzschild radius**
 
 $$
-\ r_s=\frac{2GM}{c^2}\.
+\ r_s=\frac{2GM}{c^2} \.
 $$
 
 Remarkably, this Newtonian heuristic lands on the *exact* answer that general relativity gives for a non-rotating black hole, even though the reasoning (treating light like a slow projectile) is not legitimate. The sphere at $$r_s$$ is the **event horizon** — a one-way surface. Anything that crosses it, including light, cannot return; the horizon is not a physical wall but a boundary in spacetime.
@@ -408,13 +556,13 @@ Compress the entire Sun inside a 3 km radius and it becomes a black hole. Becaus
 
 > **[Image placeholder — black hole]** A black hole with a bright accretion disk and the dark central "shadow" (the silhouette of the event horizon), e.g. styled after the Event Horizon Telescope image of M87\*. Optionally annotate the event horizon $$r_s$$ and the photon sphere at $$1.5\,r_s$$.
 
-In reality, rotating black holes (which comprise most black holes) are harder to quantify, but there is a really good [Veritasium video](yo put link) on black holes and its consequences.
+In reality, rotating black holes (which comprise most black holes) are harder to quantify, but there is a really good Veritasium video on black holes and its consequences.
 
 ### Spacetime near the horizon
 
 Several effects are worth knowing qualitatively; the quantitative treatment lives in the [Relativity]({{ '/notes/physics/relativity/' | relative_url }}) notes.
 
-- **Gravitational time dilation and redshif.**: Clocks run slower deeper in a gravitational well. Light climbing out of one loses energy and reddens; at the horizon the redshift becomes infinite, so a distant observer sees an infalling object slow, redden, and freeze at the horizon rather than cross it, since the light past the horizon cannot escape the black hole.
+- **Gravitational time dilation and redshift.** Clocks run slower deeper in a gravitational well. Light climbing out of one loses energy and reddens; at the horizon the redshift becomes infinite, so a distant observer sees an infalling object slow, redden, and freeze at the horizon rather than cross it, since the light past the horizon cannot escape the black hole.
 - **Photon sphere**: At $$r=\tfrac{3}{2}r_s$$, gravity bends light so sharply that photons can orbit the black hole on (unstable) circular paths. This ring is the bright edge around the dark "shadow" in black-hole images.
 - **Tidal forces (spaghettification)**: Gravity's gradient stretches an infalling body: the difference in pull between your head and feet scales as $$\sim GM\,\Delta r/r^3$$. Near a small stellar-mass black hole this is lethal *outside* the horizon; near a supermassive one the tidal force at the horizon is mild, so one could cross it unharmed (briefly).
 

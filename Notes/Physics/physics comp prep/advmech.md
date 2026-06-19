@@ -56,7 +56,7 @@ $$
 \delta S=\int_{t_1}^{t_2}\left(\frac{\partial L}{\partial q}-\frac{d}{dt}\frac{\partial L}{\partial \dot q}\right)\delta q\,dt.
 $$
 
-For this to vanish for **every** allowed $$\delta q$$, the bracket must be zero everywhere — that is the Euler–Lagrange equation. For a single particle with $$L=\tfrac12 m\dot x^2-V(x)$$ it reduces to $$m\ddot x=-V'(x)$$, ordinary Newton. The same variational trick — vary a functional, integrate by parts, demand the bracket vanish — recurs all over physics (see the calculus-of-variations material in [Math Tricks]({{ '/notes/physics/mathtricks/' | relative_url }})). I highly recommend watching the Veritasium videos on the principle of least action.
+For this to vanish for **every** allowed $$\delta q$$, the bracket must be zero everywhere — that is the Euler–Lagrange equation. For a single particle with $$L=\tfrac12 m\dot x^2-V(x)$$ it reduces to $$m\ddot x=-V'(x)$$, ordinary Newton. I highly recommend watching the Veritasium videos on the principle of least action.
 
 </div>
 
@@ -105,7 +105,7 @@ $$
 \cos\theta^\star=\frac{g}{R\Omega^2}.
 $$
 
-This off-bottom equilibrium exists only when $$g/(R\Omega^2)\le 1$$, i.e. $$\boxed{\Omega^2>g/R}$$. Below that critical spin the bottom is the only stable point; above it the bottom becomes unstable and the bead climbs to $$\theta^\star=\arccos\!\big(g/(R\Omega^2)\big)$$ — a pitchfork bifurcation.
+This off-bottom equilibrium exists only when $$g/(R\Omega^2)\le 1$$, i.e. $$\Omega^2>g/R$$. Below that critical spin the bottom is the only stable point; above it the bottom becomes unstable and the bead climbs to $$\theta^\star=\arccos\!\big(g/(R\Omega^2)\big)$$ — a pitchfork bifurcation.
 
 *Small oscillations about $$\theta^\star$$ (for $$\Omega^2>g/R$$).* Write $$\theta=\theta^\star+\epsilon$$ and define $$f(\theta)=\sin\theta\,(\Omega^2\cos\theta-g/R)$$ so that $$\ddot\epsilon=f(\theta^\star+\epsilon)\approx f'(\theta^\star)\,\epsilon$$. Differentiate:
 
@@ -123,7 +123,7 @@ $$
 Since this is negative, $$\theta^\star$$ is stable, and $$\ddot\epsilon=-\omega^2\epsilon$$ with
 
 $$
-\boxed{\;\omega^2=\Omega^2-\frac{g^2}{R^2\Omega^2}\;}
+\;\omega^2=\Omega^2-\frac{g^2}{R^2\Omega^2}\;
 $$
 
 This is the oscillation angular frequency of wobble about the tilted equilibrium. Note $$\omega\to 0$$ as $$\Omega^2\to g/R$$ (the bifurcation is "soft": the restoring effect vanishes right at threshold), and $$\omega\to\Omega$$ for very fast spin.
@@ -199,7 +199,7 @@ $$
 \ell_2\ddot\theta_2+\ell_1\ddot\theta_1\cos\Delta-\ell_1\dot\theta_1^2\sin\Delta+g\sin\theta_2=0.
 $$
 
-*Interpretation.* These are nonlinear and famously chaotic. In the **small-angle limit** ($$\sin\theta\approx\theta$$, $$\cos\Delta\approx1$$, drop quadratic-velocity terms) they linearize to a coupled mass–spring system $$\mathbf{M}\ddot{\boldsymbol\theta}=-\mathbf{K}\boldsymbol\theta$$, whose two normal-mode frequencies are found exactly as for coupled oscillators — connecting directly to the normal-modes machinery and to [Waves]({{ '/notes/physics/waves/' | relative_url }}).
+*Interpretation.* These are nonlinear and famously chaotic. In the **small-angle limit** ($$\sin\theta\approx\theta$$, $$\cos\Delta\approx1$$, drop quadratic-velocity terms) they linearize to a coupled mass–spring system $$\mathbf{M}\ddot{\boldsymbol\theta}=-\mathbf{K}\boldsymbol\theta$$, whose two normal-mode frequencies are found exactly as for coupled oscillators.
 
 </div>
 
@@ -639,7 +639,7 @@ $$
 **Spin about the edge** $$\vec\omega=\omega\hat x$$. Then $$\vec L=\mathbf I\vec\omega=Ma^2\omega\left(\tfrac23,-\tfrac14,-\tfrac14\right)$$. This is *not* along $$\hat x$$ — the edge is not a principal axis, so spinning a cube on one of its edges is dynamically unbalanced. The angle between $$\vec L$$ and $$\vec\omega=\hat x$$ is
 
 $$
-\cos\beta=\frac{\vec L\cdot\hat x}{|\vec L|}=\frac{2/3}{\sqrt{(2/3)^2+2(1/4)^2}}=\frac{0.6667}{\sqrt{0.4444+0.125}}=\frac{0.6667}{0.7546}=0.8835,
+\cos\beta=\frac{\vec L\cdot\hat x\lvert \vec L \rvert}=\frac{2/3}{\sqrt{(2/3)^2+2(1/4)^2}}=\frac{0.6667}{\sqrt{0.4444+0.125}}=\frac{0.6667}{0.7546}=0.8835,
 $$
 
 so $$\beta\approx27.9^\circ$$. The bearings must supply a torque to drag this off-axis $$\vec L$$ around.
@@ -770,7 +770,7 @@ $$
 Cancel $$J/M$$:
 
 $$
-1=\frac{5(h-R)}{2R}\;\Rightarrow\;h-R=\frac{2R}{5}\;\Rightarrow\;\boxed{h=\frac{7}{5}R}.
+1=\frac{5(h-R)}{2R}\;\Rightarrow\;h-R=\frac{2R}{5}\;\Rightarrow\;h=\frac{7}{5}R.
 $$
 
 So the cue must strike at $$\tfrac75R$$ above the cloth — equivalently $$\tfrac25R$$ above center. Hit lower and the ball slides forward (friction must then spin it up); hit higher and it overspins ("topspin," friction slows the surplus). The special height $$h-R=I/(MR)=k^2/R$$, the radius of gyration squared over $$R$$, is the **center of percussion** about the contact point: striking there delivers no jolt to the contact.
@@ -805,15 +805,15 @@ $$
 The final (rolling) speed:
 
 $$
-v_f=v_0-\mu g\,t^*=v_0-\mu g\cdot\frac{2v_0}{7\mu g}=\boxed{\frac{5}{7}v_0}.
+v_f=v_0-\mu g\,t^*=v_0-\mu g\cdot\frac{2v_0}{7\mu g}=\frac{5}{7}v_0.
 $$
 
-A clean, friction-independent result — the ball always settles to $$\tfrac57$$ of its launch speed. (Check via angular momentum about the contact line, which friction cannot torque: $$L_{\text{contact}}=Mv_0R$$ initially $$=(I+MR^2)\omega_f=\tfrac75 MR^2\cdot v_f/R$$, giving $$v_f=\tfrac57v_0$$ in one line.) The sliding distance:
+The sliding distance:
 
 $$
 d=v_0 t^*-\tfrac12\mu g\,t^{*2}
 =v_0\frac{2v_0}{7\mu g}-\tfrac12\mu g\frac{4v_0^2}{49\mu^2g^2}
-=\frac{2v_0^2}{7\mu g}-\frac{2v_0^2}{49\mu g}=\boxed{\frac{12\,v_0^2}{49\,\mu g}}.
+=\frac{2v_0^2}{7\mu g}-\frac{2v_0^2}{49\mu g}=\frac{12\,v_0^2}{49\,\mu g}.
 $$
 
 </div>
@@ -840,14 +840,14 @@ $$
 \vec g_{\text{eff}}=\vec g-\vec A_O .
 $$
 
-Once you have $$\vec g_{\text{eff}}$$ you may treat the accelerating box as a stationary lab with a tilted, rescaled gravity: a fluid surface lies perpendicular to $$\vec g_{\text{eff}}$$, a ball rolls "downhill" along it, and oscillation periods use $$g_{\text{eff}}=|\vec g-\vec A_O|$$.
+Once you have $$\vec g_{\text{eff}}$$ you may treat the accelerating box as a stationary lab with a tilted, rescaled gravity: a fluid surface lies perpendicular to $$\vec g_{\text{eff}}$$, a ball rolls "downhill" along it, and oscillation periods use $$g_{\text{eff}}=\lvert \vec g-\vec A_O \rvert$$.
 
 ### The transport theorem (rotating frames)
 
 The one identity that generates everything about rotating frames: for **any** vector $$\vec A$$, its rates of change as seen in the inertial frame and in a frame rotating at $$\vec\omega$$ differ by $$\vec\omega\times\vec A$$,
 
 $$
-\boxed{\ \left(\frac{d\vec A}{dt}\right)_{\text{in}}=\left(\frac{d\vec A}{dt}\right)_{\text{rot}}+\vec\omega\times\vec A\ }.
+\ \left(\frac{d\vec A}{dt}\right)_{\text{in}}=\left(\frac{d\vec A}{dt}\right)_{\text{rot}}+\vec\omega\times\vec A\ .
 $$
 
 Why this is the *master* identity: any vector can be written in the rotating basis as $$\vec A=A_x\hat e_x+A_y\hat e_y+A_z\hat e_z$$. Differentiating, the product rule splits into two pieces — the components $$\dot A_i$$ changing (which is what the rotating observer sees, the first term), plus the basis vectors $$\hat e_i$$ themselves swinging around. But a unit vector rigidly attached to a body spinning at $$\vec\omega$$ obeys $$\dot{\hat e}_i=\vec\omega\times\hat e_i$$, so $$\sum_i A_i\,\dot{\hat e}_i=\vec\omega\times\vec A$$. That is the entire content of the theorem: **the first term is how the numbers change, the $$\vec\omega\times\vec A$$ term is how the rulers turn.** Since it holds for *every* vector, you apply it to $$\vec r$$ to get velocities, then apply it again to get accelerations — and that single repeated application produces all three pseudo-forces with no extra physics.
@@ -951,7 +951,7 @@ $$
 This is the *outward*-pushing analogue of SHM — note the $$+$$ sign — so it has exponential, not oscillatory, solutions. The general solution is $$r(t)=A\cosh(\omega t)+B\sinh(\omega t)$$. Apply $$r(0)=r_0$$ and $$\dot r(0)=0$$: $$A=r_0$$, $$B=0$$. Thus
 
 $$
-\boxed{\,r(t)=r_0\cosh(\omega t)\,},\qquad \dot r(t)=r_0\,\omega\sinh(\omega t).
+\,r(t)=r_0\cosh(\omega t)\,,\qquad \dot r(t)=r_0\,\omega\sinh(\omega t).
 $$
 
 The bead flies outward exponentially; there is no stable equilibrium because the centrifugal "potential" $$-\tfrac12 m\omega^2 r^2$$ is a downward parabola — any displacement runs away. This is the rotating-frame statement of the familiar fact that a bead in a spinning tube is flung out.
@@ -962,7 +962,7 @@ $$
 N - 2m\omega \dot r = 0 \quad\Longrightarrow\quad N = 2m\omega\dot r = 2m\omega^2 r_0\sinh(\omega t).
 $$
 
-Here $$2m\omega\dot r$$ is the magnitude of the Coriolis term $$|{-2m\,\vec\omega\times\vec v_{\text{rot}}}|$$ with $$\vec v_{\text{rot}}=\dot r\,\hat r$$ (radial), which points transversely. The tube must push sideways with exactly this force to keep the bead on the line. **Cross-check in the inertial frame:** the bead has angular momentum $$L=mr^2\dot\theta=mr^2\omega$$ about the axis, and the only torque is $$rN$$, so $$\dot L=rN$$. Compute $$\dot L=m\omega\,\frac{d}{dt}(r^2)=m\omega\cdot 2r\dot r$$, giving $$N=\dot L/r=2m\omega\dot r$$ — identical. The Coriolis pseudo-force in the rotating frame *is* the inertial-frame statement that the tube must supply the torque to spin up the bead's growing angular momentum.
+Here $$2m\omega\dot r$$ is the magnitude of the Coriolis term $$\lvert {-2m\,\vec\omega\times\vec v_{\text{rot}}} \rvert$$ with $$\vec v_{\text{rot}}=\dot r\,\hat r$$ (radial), which points transversely. The tube must push sideways with exactly this force to keep the bead on the line. **Cross-check in the inertial frame:** the bead has angular momentum $$L=mr^2\dot\theta=mr^2\omega$$ about the axis, and the only torque is $$rN$$, so $$\dot L=rN$$. Compute $$\dot L=m\omega\,\frac{d}{dt}(r^2)=m\omega\cdot 2r\dot r$$, giving $$N=\dot L/r=2m\omega\dot r$$ — identical. The Coriolis pseudo-force in the rotating frame *is* the inertial-frame statement that the tube must supply the torque to spin up the bead's growing angular momentum.
 
 </div>
 
@@ -1009,7 +1009,7 @@ matching the kinematics exactly. So the apparent inward bending near large $$\rh
 Because rotation is steady, the energetics are governed entirely by the **effective potential** (per unit mass) combining the two gravitational wells and the centrifugal term:
 
 $$
-\boxed{\,\Phi_{\text{eff}}(\vec\rho)=-\frac{GM_1}{r_1}-\frac{GM_2}{r_2}-\tfrac12\,\omega^2\rho^2\,},
+\,\Phi_{\text{eff}}(\vec\rho)=-\frac{GM_1}{r_1}-\frac{GM_2}{r_2}-\tfrac12\,\omega^2\rho^2\,,
 $$
 
 where $$r_1,r_2$$ are distances to the two masses and $$\rho$$ is distance to the rotation axis through the barycenter. Equilibria (places a particle can sit at rest in the rotating frame) are stationary points $$\nabla\Phi_{\text{eff}}=0$$, because Coriolis $$\propto\vec v_{\text{rot}}$$ vanishes for a particle momentarily at rest. There are five, the **Lagrange points**.
