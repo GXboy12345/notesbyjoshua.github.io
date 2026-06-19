@@ -40,8 +40,6 @@ $$
 
 The general solution is sinusoidal:
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/oscillations/shm-sinusoid.png' | relative_url }}" alt="position-velocity-acceleration sinusoidal curves versus time in SHM placeholder" loading="lazy" decoding="async" />
-
 $$
 x(t)=A\cos(\omega t+\phi)
 $$

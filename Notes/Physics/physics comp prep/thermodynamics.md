@@ -341,9 +341,7 @@ The melting step requires much more heat because latent heats are typically much
 
 </div>
 
-<div class="theorem-box" markdown="1">
-
-**Newton's law of cooling.** When the temperature difference $$\Delta T$$ between a body and its surroundings is small, the cooling rate is proportional to that difference:
+When the temperature difference $$\Delta T$$ between a body and its surroundings is small, the cooling rate is proportional to that difference:
 
 $$
 \frac{d\,\Delta T}{dt} = -A\,\Delta T
@@ -351,9 +349,7 @@ $$
 \Delta T = \Delta T_0\,e^{-At}.
 $$
 
-The excess temperature decays exponentially.
-
-</div>
+The excess temperature decays exponentially. This is **Newton's Law of Cooling**.
 
 ## The First Law of Thermodynamics
 
