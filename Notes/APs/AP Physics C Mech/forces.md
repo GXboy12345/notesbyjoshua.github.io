@@ -56,7 +56,7 @@ Third-law forces act on different objects, so they never cancel for one object. 
 
 A **free-body diagram** is a force diagram for one object or one chosen system. It should show only external forces acting on that object/system, not forces the object applies to something else. Forces are treated as vectors and can be composed accordingly.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/freebodydiagram.png' | relative_url }}" alt="Free body diagram placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/freebodydiagram.png' | relative_url }}" alt="Free-body diagram of an object showing its external forces as arrows" loading="lazy" decoding="async" />
 
 Good procedure:
 
@@ -231,7 +231,7 @@ $$
 a = g\sin\theta.
 $$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/inclinedplane.jpg' | relative_url }}" alt="Inclined plane force components placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/inclinedplane.jpg' | relative_url }}" alt="Block on an inclined plane with weight resolved into components parallel and perpendicular to the surface" loading="lazy" decoding="async" />
 
 With friction, decide whether the block is moving or about to move. If it is moving, use kinetic friction. If it is at rest, static friction takes whatever value is needed up to $$\mu_sF_N$$. It is also helpful to use geometry/similar triangles to determine certain angles for vector decompositions. ALWAYS remember your normal force!
 
@@ -323,7 +323,7 @@ The mass and $$g$$ both cancel, which is why this simple tilt test works regardl
 
 For ideal ropes and pulleys, connected objects share related accelerations. A common Atwood machine has two hanging masses connected by a massless string over a frictionless pulley.
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/atwood-machine.png' | relative_url }}" alt="Pulley system placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/atwood-machine.png' | relative_url }}" alt="Atwood machine: two masses connected by a string over a pulley" loading="lazy" decoding="async" />
 
 If $$m_2 > m_1$$, the acceleration magnitude is
 
@@ -473,7 +473,7 @@ $$
 
 There is no special "centripetal force." The phrase describes the net inward force required for circular motion. All forces acting on an object going in uniform circular motion must add up to the centripetal force (as long as the force does not act perpendicular to the vector connecting the object and the center of the circle.).
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/circmotion.jpg' | relative_url }}" alt="Circular motion force diagram placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/circmotion.jpg' | relative_url }}" alt="Free-body diagram for an object in uniform circular motion, with the net force pointing toward the center" loading="lazy" decoding="async" />
 
 Examples:
 
@@ -562,7 +562,7 @@ $$
 
 This is common in vertical circle problems, where gravity has a tangential component except at the top and bottom. Always remember your normal force as it won't always cancel with gravity!
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/vertcircle.jpg' | relative_url }}" alt="Ball at the top and bottom of a vertical loop with forces placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/vertcircle.jpg' | relative_url }}" alt="Ball at the top and bottom of a vertical loop with the forces acting on it shown" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -642,7 +642,7 @@ $$
 v = \sqrt{rg\tan\theta}.
 $$
 
-<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/banked.png' | relative_url }}" alt="Car on a banked curve with normal force components placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20Mech/forces/banked.png' | relative_url }}" alt="Car on a banked curve with the normal force resolved into horizontal and vertical components" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -718,7 +718,23 @@ Pseudo-forces are not interaction forces and do not have third-law partners. The
 
 <div class="theorem-box" markdown="1">
 
-**ADD PROBLEM HERE**
+**Example (block on an accelerating wedge).** A block of mass $$m$$ rests on a frictionless incline of angle $$\theta$$ built on a cart. How fast must the cart accelerate horizontally (toward the foot of the incline) so that the block does not slide relative to the incline?
+
+Work in the cart's non-inertial frame, where the block is in equilibrium. Three forces act on it: gravity $$mg$$ downward, the normal force $$F_N$$ perpendicular to the incline surface, and the pseudo-force $$ma$$ pointing horizontally backward (opposite the cart's acceleration). Resolve along the incline, taking down-the-slope as positive. Gravity contributes $$mg\sin\theta$$ down the slope, while the pseudo-force contributes $$ma\cos\theta$$ up the slope. For the block not to slide, these must cancel:
+
+$$
+mg\sin\theta = ma\cos\theta,
+$$
+
+so
+
+$$
+a = g\tan\theta.
+$$
+
+The cleanest way to see it: in the cart frame gravity and the pseudo-force combine into an **effective gravity** $$\vec{g}_{\text{eff}} = \vec{g} - \vec{a}_{\text{frame}}$$. When $$a = g\tan\theta$$, this effective gravity points exactly perpendicular to the incline, so the block sits as if on level ground and has no tendency to slide.
+
+As a check, solve it in the inertial ground frame. There the block accelerates horizontally at $$a$$, and only gravity and the normal force act. Vertically there is no acceleration, so $$F_N\cos\theta = mg$$; horizontally the normal force supplies the acceleration, so $$F_N\sin\theta = ma$$. Dividing gives $$\tan\theta = a/g$$, the same result — the pseudo-force was just bookkeeping for the acceleration we put in by hand in the ground frame.
 
 </div>
 

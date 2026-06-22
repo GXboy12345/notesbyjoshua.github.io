@@ -41,7 +41,7 @@ In ordinary matter, charge is transferred by **moving electrons**; ion cores (wi
 
 ### Quantization of charge
 
-Experiments (notably Millikan’s oil-drop work) show that the charge on any isolated object occurs in discrete steps. **Quantization of charge** means the total charge $$q$$ on a body satisfies
+Experiments (notably Millikan’s oil-drop experiment) show that the charge on any isolated object occurs in discrete steps. **Quantization of charge** means the total charge $$q$$ on a body satisfies
 
 $$
 q = n e, \quad n \in \mathbb{Z}.
@@ -109,7 +109,7 @@ Because the charges are opposite, $$q_1$$ is attracted toward $$q_2$$, so the fo
 
 <div class="theorem-box" markdown="1">
 
-**Example (net force in two dimensions).** Two charges $$q_1 = +3.0\,\mu\text{C}$$ and $$q_2 = +3.0\,\mu\text{C}$$ sit at the base corners of an equilateral triangle of side $$d = 0.20\text{ m}$$. A third charge $$q_3 = +2.0\,\mu\text{C}$$ sits at the apex. Find the net force on $$q_3$$.
+**Example.** Two charges $$q_1 = +3.0\,\mu\text{C}$$ and $$q_2 = +3.0\,\mu\text{C}$$ sit at the base corners of an equilateral triangle of side $$d = 0.20\text{ m}$$. A third charge $$q_3 = +2.0\,\mu\text{C}$$ sits at the apex. Find the net force on $$q_3$$.
 
 Each base charge is the same distance $$d$$ from the apex, so the two forces have equal magnitude
 
@@ -137,7 +137,7 @@ The net force on $$q_3$$ is $$2.3\text{ N}$$ pointing straight up, away from the
 
 <div class="theorem-box" markdown="1">
 
-**Example (where is the force/field zero?).** A charge $$q_1 = +4.0\,\mu\text{C}$$ is at $$x = 0$$ and $$q_2 = +1.0\,\mu\text{C}$$ is at $$x = 0.30\text{ m}$$. Where on the line can a third charge be placed so it feels zero net force?
+**Example.** A charge $$q_1 = +4.0\,\mu\text{C}$$ is at $$x = 0$$ and $$q_2 = +1.0\,\mu\text{C}$$ is at $$x = 0.30\text{ m}$$. Where on the line can a third charge be placed so it feels zero net force?
 
 A test charge feels zero net force where the two fields (or forces) are equal in magnitude and opposite in direction. Between two *like* charges there is always such a point between them, because the two fields point in opposite directions there. Let the point be a distance $$x$$ from $$q_1$$, so it is $$0.30 - x$$ from $$q_2$$. Setting the magnitudes equal:
 
