@@ -1,7 +1,7 @@
 ---
 layout: default
 title: How to use these notes
-permalink: /how-to-use-these-notes/
+nav order: 8
 ---
 
 # How to use these notes
