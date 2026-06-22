@@ -108,7 +108,7 @@ solution here
 </div>
 ```
 
-When writing the question statement, always end with what you are trying to find/derive, and don't just state the needed information. For example, say "A is the 1st letter of the alphabet and C is 2 letters after A. Find the position of letter C" instead of "A is the 1st letter of the alphabet and C is 2 letters after A." and going straight to the answer.
+When writing the question statement, always end with what you are trying to find/derive, and don't just state the needed information. For example, say *"A is the 1st letter of the alphabet and C is 2 letters after A. Find the position of letter C."* instead of *"A is the 1st letter of the alphabet and C is 2 letters after A."* and going straight to the answer.
 
 Note that for examples, you NEVER state the main theme of the example. This is done because usually the main idea is already given in the problem and thus will be redundant.
 
@@ -147,5 +147,5 @@ $$
 // CORRECT!
 ```
 
-- Make sure to always use \lvert and \rvert instead of | when doing absolute value, because Mathjax sometimes reads | as a table and messes up the formatting
+- Make sure to always use "\lvert" and "\rvert" instead of "|" when doing absolute value, because Mathjax sometimes reads "|" as a table and messes up the formatting
 - Always remember to have proper spacing in between sections! Always make sure to leave a blank space above and below any separation markers, special headers, theorem boxes, and image links.
