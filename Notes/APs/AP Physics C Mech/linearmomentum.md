@@ -687,18 +687,6 @@ Momentum complements the energy methods of [work and energy]({{ '/notes/physics/
 
 ---
 
-## Common mistakes
-
-1. Using conservation of kinetic energy in a collision that is not stated to be elastic.
-2. Forgetting that momentum is a vector: conserve $$x$$ and $$y$$ components separately, not speeds.
-3. In a ballistic pendulum, equating the bullet's initial kinetic energy to the final potential energy (the embedding stage loses energy).
-4. Dropping signs: an object that rebounds has its velocity *reverse*, so $$\Delta p = -2mv$$, not $$-mv$$.
-5. Treating the average collision force as the peak force; for a triangular pulse they differ by a factor of two.
-6. Assuming the center of mass moves differently after an explosion; with only gravity acting, it follows the same path the intact body would have.
-7. Confusing equal momenta with equal kinetic energies; for fixed momentum, $$K = p^2/2m$$ favors the lighter object.
-
----
-
 ## Key equations
 
 | Idea | Equation |

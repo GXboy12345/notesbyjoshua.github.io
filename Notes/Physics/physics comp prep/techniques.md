@@ -89,3 +89,25 @@ For example, the two-body reduced mass $$\mu=\dfrac{m_1 m_2}{m_1+m_2}$$ (shown l
 It is frequently easier to jump *into* an accelerating frame and add a **pseudo-force** $$-m\vec a_{\text{frame}}$$ to every object than to track motion from the ground. In a frame accelerating with $$\vec a$$, everything feels an extra uniform force as if gravity had tilted; in a rotating frame, you add the **centrifugal** force $$m\omega^2 r$$ (outward) and, for moving objects, the Coriolis force.
 
 This converts many dynamics problems into *statics* problems. A block on an accelerating wedge, a pendulum in an accelerating car, or a bead in a rotating tube all become "find the equilibrium under an effective gravity $$\vec g_{\text{eff}}=\vec g-\vec a_{\text{frame}}$$" — the same trick used for [accelerating and rotating fluids]({{ '/notes/physics/fluiddynamics/' | relative_url }}).
+
+---
+
+## Problem-solving strategy
+
+Since this whole page is a toolbox, the decision tree is a meta one: when a problem looks ugly, which technique do you reach for first?
+
+1. **Asked for an equilibrium force or condition, with messy tensions/normals/constraints**: Virtual work. Pick one coordinate $$q$$, write $$\delta W=\sum_i\vec F_i\cdot\delta\vec r_i=0$$, and the constraint forces drop out — or use $$dU/dq=0$$ if forces are conservative.
+2. **You only need the *form* of the answer, or you're sanity-checking algebra**: Dimensional analysis. Build the unique combination with the right units; e.g. a time from length and gravity can only be $$\sqrt{L/g}$$. Just remember it cannot fix dimensionless constants like the $$2\pi$$.
+3. **Computing a field, force, or integral over a symmetric configuration**: Exploit symmetry. Components mapped to their negatives cancel, and Gauss's/Ampère's law become usable because the field is constant over a chosen surface or loop.
+4. **A shape is "almost" symmetric (a disk with a hole, a sphere with a cavity)**: Superposition — add back the missing piece as negative mass/charge, solve each symmetric part, subtract.
+5. **You have a candidate answer and want to test it (or kill MC options)**: Limiting cases. Send a length, mass, or angle to $$0$$ or $$\infty$$, set two quantities equal, and check units, signs, and directions reduce to something known.
+6. **Dynamics in an accelerating or rotating setting**: Jump into the non-inertial frame. Add the pseudo-force $$-m\vec a_{\text{frame}}$$ (or centrifugal $$m\omega^2 r$$ plus Coriolis), absorb it into an effective gravity $$\vec g_{\text{eff}}=\vec g-\vec a_{\text{frame}}$$, and solve the resulting *statics* problem.
+
+**Common traps:**
+
+- Trusting dimensional analysis for numerical prefactors — it gives the scaling, never the $$2\pi$$ or other dimensionless factors and ratios.
+- Forgetting that virtual work needs the displacement to be *consistent with the constraints*; an arbitrary $$\delta q$$ that violates a constraint reintroduces the forces you tried to eliminate.
+- Claiming a symmetry the setup doesn't actually have — a broken symmetry (off-axis point, non-uniform density) means the "obviously zero" component is not zero.
+- In the superposition trick, mismatching the sign or location of the subtracted piece so it doesn't exactly fill the would-be cavity.
+- In rotating frames, dropping the Coriolis force for *moving* objects, or getting the centrifugal direction (outward) backwards.
+- Reading off a limiting case carelessly: $$0/0$$ or $$\infty-\infty$$ forms need an actual expansion, not a guess.

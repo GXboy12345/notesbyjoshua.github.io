@@ -413,3 +413,27 @@ $$
 There is now a **minimum frequency** $$\omega_0$$: drive the string below it and no traveling wave propagates — the disturbance decays exponentially instead. Reading $$E = \hbar\omega$$ and $$p = \hbar k$$, this is exactly the energy–momentum relation $$E^2 = (mc^2)^2 + (pc)^2$$ of a relativistic *massive* particle, with the minimum frequency playing the role of rest mass. It is a toy model for how a field can acquire mass.
 
 </div>
+
+---
+
+## Problem-solving strategy
+
+Match the situation to the right tool before reaching for algebra:
+
+1. **A pulse or wave travels through a medium and you want its speed**: use the "restoring force over inertia" template — $$v=\sqrt{T/\mu}$$ on a string, $$v=\sqrt{B/\rho}=\sqrt{\gamma RT/M}$$ for sound, $$v=\sqrt{gD}$$ in shallow water. If the tension (hence speed) varies along the path, integrate $$\tau=\int dx/v(x)$$, as for the hanging rope.
+2. **The medium is confined between boundaries (string or pipe)**: it is a normal-mode problem. Fit half-wavelengths to the boundary conditions — node at a fixed/closed end, antinode at a free/open end — to get $$\lambda_n=2L/n$$, $$f_n=nv/2L$$ for symmetric ends, or the odd-only series $$f_n=(2n-1)v/4L$$ for open–closed.
+3. **Two waves overlap and you want loud/quiet spots**: superpose. Convert any path-length difference to phase via $$\delta=\tfrac{2\pi}{\lambda}\Delta r$$; constructive at $$\Delta r=m\lambda$$, destructive at $$\Delta r=(m+\tfrac12)\lambda$$, net amplitude $$2A\cos\tfrac{\delta}{2}$$.
+4. **Two nearly-equal frequencies are sounded together**: beats, heard at $$f_{\text{beat}}=\lvert f_1-f_2\rvert$$ — not an interference-in-space question.
+5. **Source and/or observer move and the pitch changes**: Doppler, $$f'=f\,\dfrac{v\pm v_{\text{obs}}}{v\mp v_{\text{src}}}$$. Fix signs by the physics (approach raises pitch). If $$v_{\text{src}}>v$$, switch to the shock-cone result $$\sin\theta=v/v_{\text{src}}$$.
+6. **A wave hits an interface and you want reflection/transmission**: use impedance $$Z=\mu v=\sqrt{\mu T}$$ with $$r=\dfrac{Z_1-Z_2}{Z_1+Z_2}$$, $$t=\dfrac{2Z_1}{Z_1+Z_2}$$; inversion ($$r<0$$) means a hard/denser boundary, and $$Z_1=Z_2$$ gives zero reflection.
+7. **Intensity, loudness, or how amplitude falls with distance**: spread power over the wavefront, $$I=P/4\pi r^2$$ (so amplitude $$\propto 1/r$$), and convert to decibels with $$\beta=10\log_{10}(I/I_0)$$.
+8. **The medium is dispersive (water waves, springs-loaded string, anything with $$\omega(k)$$ not $$\propto k$$)**: distinguish $$v_p=\omega/k$$ from $$v_g=d\omega/dk$$. Differentiate the dispersion relation for the group (energy/packet) speed, and remember a pulse of width $$\Delta x$$ needs a band $$\Delta k\sim 1/\Delta x$$.
+
+Common traps:
+
+- **Wave speed vs. transverse speed.** $$v$$ is how fast the pattern moves; a point on the string moves at $$u_y=\partial y/\partial t$$ with max $$\omega A$$. They are unrelated quantities.
+- **Pipe-end rules in longitudinal waves.** Track *which* quantity the boundary pins: a hard wall is a displacement node but a pressure antinode; an open end is a pressure node but a displacement antinode. Do not assume "hard = inverted" the way you would for a string.
+- **Open–closed pipe harmonics.** Only odd harmonics exist ($$f_n=(2n-1)v/4L$$); there is no second harmonic — a frequent source of wrong mode spacings.
+- **Doppler sign confusion.** Speeds are measured relative to the *medium*, and source vs. observer motion enter through different parts of the fraction. Sanity-check with "approach raises pitch" rather than memorizing $$\pm$$.
+- **Standing waves carry no net energy.** They are not traveling waves; the kinetic–potential equipartition that holds for a traveling wave fails here, and power does not flow past a node.
+- **Sound speed and pressure.** For an ideal gas $$v$$ depends on temperature, not pressure, since $$P/\rho\propto T$$ — raising the pressure at fixed $$T$$ does nothing.

@@ -4,7 +4,9 @@
       "Bash(grep -nE '\\(^|[^$]\\)\\\\$\\([^$]|$\\)' \"Notes/APs/AP Physics C Mech/oscillations.md\")",
       "Bash(grep -v '\\\\$\\\\$')",
       "Bash(cp /tmp/advmech_final.md \"/Users/joshuabie/notesbyjoshua.github.io/Notes/Physics/physics comp prep/advmech.md\")",
-      "Bash(rm -f /tmp/advmech_0_head.md /tmp/advmech_1.md /tmp/advmech_2.md /tmp/advmech_3.md /tmp/advmech_4.md /tmp/advmech_5.md /tmp/advmech_6_strategy.md /tmp/advmech_final.md)"
+      "Bash(rm -f /tmp/advmech_0_head.md /tmp/advmech_1.md /tmp/advmech_2.md /tmp/advmech_3.md /tmp/advmech_4.md /tmp/advmech_5.md /tmp/advmech_6_strategy.md /tmp/advmech_final.md)",
+      "Bash(awk '/^## Problem-solving strategy/{f=1} f{print} ' \"Notes/Physics/physics comp prep/fluiddynamics.md\")",
+      "Bash(awk '/^## Problem-solving strategy/{f=1} f{print}' \"Notes/Physics/physics comp prep/stellarphys.md\")"
     ],
     "additionalDirectories": [
       "/tmp",

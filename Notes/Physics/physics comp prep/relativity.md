@@ -329,7 +329,7 @@ The term $$q\mathbf{A}$$ is a kind of "potential momentum," analogous to potenti
 
 This is the right tool for adiabatic-invariant problems in magnetic fields (e.g. the betatron, slow changes of $$B$$ on an orbiting charge), and it's the hidden conserved quantity behind several "magic" Olympiad solutions.
 
-## 13. Gravitation and the equivalence principle
+## Gravitation and the equivalence principle
 
 <div class="theorem-box" markdown="1">
 
@@ -359,3 +359,28 @@ For GPS satellites the gravitational effect dominates, and both must be correcte
 ### A note on visualizing GR
 
 In general relativity gravity *is* spacetime curvature: freely falling objects move in straight lines (geodesics), and what we call "gravity" is the constant upward acceleration of the ground pushing us off those geodesics. The rubber-sheet picture is a poor analogy (it secretly assumes gravity to make things roll downhill); the "river model" — space flowing inward, with the event horizon where it flows faster than light — captures more, but no simple analogy *is* the theory. The equations are the theory; analogies are stories we tell our animal-descended minds.
+
+---
+
+## Problem-solving strategy
+
+Match the question to the cleanest invariant or transformation before grinding through algebra:
+
+1. **Compare clocks, lengths, or event coordinates between two frames:** write the Lorentz transformation $$t' = \gamma(t - vx/c^2),\ x' = \gamma(x - vt)$$ and read off time dilation (one clock, two times $$\to \Delta t = \gamma\,\Delta\tau$$) or length contraction (two ends, one time $$\to L/\gamma$$). For anything labeled a "paradox," draw the relativity of simultaneity first: the rear clock leads by $$Lv/c^2$$.
+2. **Combine velocities or transform an emission angle:** use velocity addition $$u_x = \dfrac{u_x' + v}{1 + u_x' v/c^2}$$ (with the $$\gamma$$ in $$u_y$$), and aberration $$\cos\theta = \dfrac{\cos\theta_0 + v/c}{1 + (v/c)\cos\theta_0}$$ for light directions and beaming into the $$\sim 1/\gamma$$ cone.
+3. **Collisions, decays, or "find the unknown mass":** go to four-momenta. Conserve the total $$p^\mu = (E, \mathbf{p})$$, then take the norm $$p\cdot p = E^2 - |\mathbf{p}|^2 = m^2$$ in whatever frame is easiest. Work with $$E$$ and $$\mathbf{p}$$, never velocities.
+4. **Threshold / minimum-energy reaction:** demand the products be at rest in the CM frame. Equate the invariant norm$$^2$$ of the lab four-momentum to $$(\sum m_{\text{products}})^2$$ and solve, as in $$E = m_\pi + m_\pi^2/2m_p$$.
+5. **Frequency or wavelength shifts:** relativistic Doppler $$f = \sqrt{\dfrac{1+v/c}{1-v/c}}\,f'$$ (flip the sign of $$v$$ for recession) for moving sources; Compton $$\lambda' = \lambda + \dfrac{h}{m_e c}(1-\cos\theta)$$ for a photon scattering off a stationary electron.
+6. **Accelerated / repeated-boost motion:** switch to rapidity $$\phi = \tanh^{-1}(v/c)$$, which simply adds. Constant proper acceleration gives $$v = c\tanh(a_0\tau/c)$$ and lab acceleration $$a_0/\gamma^3$$.
+7. **Forces or trajectories:** use $$\mathbf{F} = d\mathbf{p}/dt$$ (not $$m\mathbf{a}$$); transverse force drops by $$\gamma$$. For charges, the Lorentz force is a pure three-force, giving $$B = E/qcR$$ for a ring.
+8. **E and B in a moving frame:** transform the fields ($$\mathbf{E}_\parallel,\mathbf{B}_\parallel$$ fixed; $$\mathbf{E}_\perp' = \gamma(\mathbf{E}_\perp + \mathbf{v}\times\mathbf{B}_\perp)$$, etc.), or use the invariants $$\mathbf{E}\cdot\mathbf{B}$$ and $$E^2 - c^2B^2$$ to decide what *can't* be transformed away. For conserved quantities in fields, reach for the canonical momentum $$\mathbf{p} = \gamma m\mathbf{v} + q\mathbf{A}$$.
+
+**Common traps:**
+
+- Asking for the "real" length or time without naming a frame — every such quantity is frame-dependent; only $$m$$, $$p\cdot p$$, the interval $$(\Delta s)^2$$, and $$\mathbf{E}\cdot\mathbf{B}$$, $$E^2-c^2B^2$$ are invariant.
+- Forgetting simultaneity. Time dilation can be mutual precisely because the two frames disagree on which events are simultaneous; nearly every paradox dissolves once the $$Lv/c^2$$ offset is included.
+- Mixing up the directions: lengths *contract* (compared at one time), clocks *dilate* (compared at two times) — they are not symmetric statements.
+- Confusing what an object *measures* in a frame with how it *looks* to an eye; light-travel time makes a fast train *appear* longer (and rotated), not contracted.
+- Treating rest mass as conserved. In inelastic processes $$E$$ and $$\mathbf{p}$$ are conserved but $$m$$ is not (a hot box weighs more); compute mass only from the total four-momentum's norm.
+- Adding velocities naively or letting any combination exceed $$c$$; add rapidities instead. Likewise, dropping the $$1/\gamma$$ second-order factor in the Doppler shift.
+- Invoking "relativistic mass" $$\gamma m$$ — it fails in 2D because $$\mathbf{F}\not\parallel\mathbf{a}$$. Stick to $$E$$ and $$\mathbf{p}$$.

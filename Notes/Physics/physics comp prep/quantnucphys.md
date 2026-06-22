@@ -596,3 +596,28 @@ $$
 $$
 
 The Sun's spectrum is the reverse situation: a hot continuous (blackbody) source seen through cooler gas, which *absorbs* at its characteristic wavelengths, producing dark **absorption lines** instead of bright emission lines.
+
+---
+
+## Problem-solving strategy
+
+Modern-physics problems usually reduce to "which quantization or conservation rule applies." Match the situation to the right tool:
+
+1. **A particle is trapped and you want its energy levels:** apply the WKB / Bohr–Sommerfeld rule $$\oint p\,dx = \left(n+\tfrac{\alpha}{2\pi}\right)h$$. Count turning points to fix $$\alpha$$ — $$\pi$$ per hard wall, $$\pi/2$$ per soft turning point — then do the loop integral (box gives $$E_n = n^2h^2/8mL^2$$, oscillator gives $$E_n = \hbar\omega_0(n+\tfrac12)$$).
+2. **Rotational / circular-orbit quantization:** use Bohr's condition $$L = n\hbar$$. For hydrogen, pair it with the Coulomb-centripetal balance $$mv^2/r = e^2/4\pi\epsilon_0 r^2$$ to get $$r_n = a_0 n^2$$ and $$E_n = -13.6\,\text{eV}/n^2$$; transitions emit $$\hbar\omega = E_i - E_f$$.
+3. **An order-of-magnitude estimate of a ground-state energy or size:** use the uncertainty principle $$\Delta x\,\Delta p \ge \hbar/2$$, set $$\Delta p \sim \hbar/\Delta x$$, write $$E(\Delta x)$$ and minimize. The same trick gives spectral linewidths and lifetimes via $$\Delta E\,\Delta t \ge \hbar/2$$.
+4. **Counting states / thermodynamics of a gas:** go to momentum space, use the density of states $$N = \frac{V}{6\pi^2}(2mE/\hbar^2)^{3/2}$$, then occupy modes with Bose–Einstein $$\langle n\rangle = (e^{E/k_BT}-1)^{-1}$$ (photons, blackbody) or Fermi–Dirac $$\langle n\rangle = (e^{(E-\mu)/k_BT}+1)^{-1}$$ (electrons, $$E_F$$, degeneracy pressure).
+5. **Identifying the missing particle in a decay:** balance baryon number, electric charge, and electron number simultaneously. Then check it is energetically allowed via $$\Delta E = (\Delta m)c^2 > 0$$.
+6. **How much is left / how fast it decays:** the decay law $$N(t) = N_0 e^{-\lambda t}$$, with $$\tau = 1/\lambda$$ and $$t_{1/2} = \tau\ln 2$$; activity is $$A = \lambda N$$.
+7. **Barrier penetration (alpha decay, fusion):** WKB tunneling, $$\tau \sim \tau_{\text{coll}}\,e^{+2|\mathrm{Im}\,\theta|}$$ with probability $$\sim e^{-\sqrt{E_g/E}}$$ — note the steep dependence of lifetime on energy.
+8. **Nuclear stability / energy release:** the liquid-drop binding energy $$E_B = a_V A - a_S A^{2/3} - a_C Z^2/A^{1/3} - \cdots$$; the peak near iron explains why both fusion (light) and fission (heavy) release energy.
+
+**Common traps:**
+
+- The photoelectric kinetic energy is $$\hbar\omega - E_{\text{bind}}$$, *not* the full photon energy — the work function (binding energy) must be subtracted, and below threshold no electron escapes regardless of intensity.
+- Don't conflate energy and momentum for a photon: $$E = \hbar\omega = pc$$, so $$p = E/c$$ — never $$p^2/2m$$.
+- For the particle in a box $$n$$ starts at $$1$$ (an $$n=0$$ "state at rest" violates uncertainty), while the WKB integer starts at $$0$$; keep the $$\alpha/2\pi$$ offset straight.
+- "Energy is borrowed for time $$\Delta t$$" from $$\Delta E\,\Delta t \ge \hbar/2$$ is a heuristic, not real non-conservation — use it only for estimates.
+- A *free* electron cannot absorb or emit a single photon ($$e^-+\gamma\to e^-$$ is forbidden); energy and momentum cannot both be conserved without a recoiling atom or nucleus.
+- A free proton does not decay (it is lighter than the neutron); $$n\to p$$ and $$p\to n$$ channels are only favorable *inside* a nucleus, set by the rest-mass balance.
+- Hydrogen-like systems need the reduced mass: positronium uses $$\mu = m_e/2$$, halving the binding energies.

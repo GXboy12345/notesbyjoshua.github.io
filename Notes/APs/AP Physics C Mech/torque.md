@@ -723,19 +723,6 @@ If the actual $$\mu_s$$ is smaller than this, the cylinder slips: it then accele
 
 ---
 
-## Common mistakes
-
-1. Using "force times distance" without the $$\sin\theta$$, i.e. forgetting that only $$F_\perp$$ (or equivalently the lever arm $$r_\perp$$) produces torque.
-2. Treating a radial force (one pointing toward or away from the axis) as if it makes torque; it does not.
-3. Assuming the tension is the same on both sides of a pulley that has mass or rotational inertia.
-4. Forgetting the rolling constraint $$a = R\alpha$$ (or $$v = R\omega$$), which is what links the translational and rotational equations.
-5. Plugging in $$I$$ about the wrong axis; use the parallel-axis theorem when the rotation axis is not through the center of mass.
-6. Choosing a poor pivot in equilibrium problems and carrying unknown hinge forces through the torque equation unnecessarily.
-7. Assuming static friction on a rolling object equals $$\mu_s F_N$$; like all static friction, it takes whatever value (up to the maximum) the no-slip constraint demands.
-8. Mixing degrees and radians, or dropping radians where the linear-angular links $$s=r\theta$$, $$v=r\omega$$, $$a=r\alpha$$ require them.
-
----
-
 ## Key equations
 
 | Idea | Equation |

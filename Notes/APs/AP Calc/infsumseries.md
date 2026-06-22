@@ -94,6 +94,26 @@ $$
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the sum of $$\displaystyle\sum_{n=0}^{\infty} 3\left(\tfrac{1}{4}\right)^n.$$
+
+This is geometric with first term $$a=3$$ and ratio $$r=\tfrac14$$. Since $$\lvert r \rvert=\tfrac14<1$$, the series converges and we may apply the formula:
+
+$$
+\sum_{n=0}^{\infty} 3\left(\tfrac{1}{4}\right)^n = \frac{a}{1-r} = \frac{3}{1-\tfrac14} = \frac{3}{\tfrac34}.
+$$
+
+Simplifying,
+
+$$
+\frac{3}{\tfrac34} = 3\cdot\frac{4}{3} = 4.
+$$
+
+So the sum is $$4$$.
+
+</div>
+
 ---
 
 ## Harmonic and p-series
@@ -113,6 +133,34 @@ $$
 $$
 
 converges if and only if $$p>1$$.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Classify each series as convergent or divergent:
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{n^2},\qquad \sum_{n=1}^{\infty}\frac{1}{\sqrt{n}}.
+$$
+
+Each is a p-series, so we only need to read off $$p$$ and compare it to $$1$$.
+
+For the first series, the denominator is $$n^2$$, so $$p=2$$. Since $$p=2>1$$, the series
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{n^2}
+$$
+
+converges.
+
+For the second series, $$\frac{1}{\sqrt{n}}=\frac{1}{n^{1/2}}$$, so $$p=\tfrac12$$. Since $$p=\tfrac12\le1$$, the series
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{\sqrt{n}}
+$$
+
+diverges. The terms shrink to zero, but not fast enough for the sum to stay finite.
+
+</div>
 
 ---
 
@@ -151,6 +199,26 @@ $$
 
 with $$0<c<\infty$$, then $$\sum a_n$$ and $$\sum b_n$$ behave the same.
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Determine whether $$\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$$ converges.
+
+The terms are positive, and for every $$n\ge1$$ we have $$n^2+1>n^2$$, so
+
+$$
+0 \le \frac{1}{n^2+1} \le \frac{1}{n^2}.
+$$
+
+The benchmark series $$\sum \frac{1}{n^2}$$ is a p-series with $$p=2>1$$, so it converges. By direct comparison, the smaller positive series converges as well:
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{n^2+1}
+$$
+
+converges.
+
+</div>
+
 ---
 
 ## Alternating series
@@ -173,6 +241,28 @@ The Alternating Series Test says the series converges if:
 
 - $$b_n$$ decreases eventually,
 - $$b_n \to 0$$.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Show that the alternating harmonic series $$\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}$$ converges.
+
+Write the series as $$\sum (-1)^{n+1} b_n$$ with $$b_n=\frac{1}{n}>0$$. We check the two hypotheses of the Alternating Series Test.
+
+First, the magnitudes decrease, since
+
+$$
+b_{n+1}=\frac{1}{n+1} < \frac{1}{n} = b_n.
+$$
+
+Second, the magnitudes tend to zero:
+
+$$
+\lim_{n\to\infty}\frac{1}{n}=0.
+$$
+
+Both conditions hold, so by the Alternating Series Test the series converges. (Its sum is in fact $$\ln 2$$, and because $$\sum\frac1n$$ diverges, the convergence here is conditional.)
+
+</div>
 
 ---
 
@@ -209,6 +299,32 @@ In either test:
 - if $$L<1$$, converge absolutely,
 - if $$L>1$$ or infinite, diverge,
 - if $$L=1$$, inconclusive.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Use the Ratio Test on $$\displaystyle\sum_{n=0}^{\infty}\frac{2^n}{n!}.$$
+
+Here $$a_n=\dfrac{2^n}{n!}$$. Form the ratio of consecutive terms:
+
+$$
+\frac{a_{n+1}}{a_n} = \frac{2^{n+1}}{(n+1)!}\cdot\frac{n!}{2^n}.
+$$
+
+Now cancel: $$\dfrac{2^{n+1}}{2^n}=2$$ and $$\dfrac{n!}{(n+1)!}=\dfrac{1}{n+1}$$, so
+
+$$
+\frac{a_{n+1}}{a_n} = \frac{2}{n+1}.
+$$
+
+Taking the limit,
+
+$$
+L=\lim_{n\to\infty}\frac{2}{n+1}=0.
+$$
+
+Since $$L=0<1$$, the Ratio Test guarantees the series converges absolutely. (This is the Maclaurin series for $$e^x$$ evaluated at $$x=2$$, so it sums to $$e^2$$.)
+
+</div>
 
 ---
 
@@ -264,6 +380,36 @@ There is a radius of convergence $$R$$:
 
 > [Image Placeholder: number line showing center, radius, and endpoint testing]
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the radius and interval of convergence of $$\displaystyle\sum_{n=1}^{\infty}\frac{x^n}{n}.$$
+
+Apply the Ratio Test to the absolute values of the terms, with $$a_n=\dfrac{x^n}{n}$$:
+
+$$
+\left\lvert\frac{a_{n+1}}{a_n}\right\rvert = \left\lvert\frac{x^{n+1}}{n+1}\cdot\frac{n}{x^n}\right\rvert = \lvert x\rvert\cdot\frac{n}{n+1}.
+$$
+
+Taking the limit,
+
+$$
+L=\lim_{n\to\infty}\lvert x\rvert\cdot\frac{n}{n+1}=\lvert x\rvert.
+$$
+
+The series converges when $$L<1$$, that is when $$\lvert x\rvert<1$$, so the radius of convergence is $$R=1$$. Now test the endpoints.
+
+At $$x=1$$ the series is $$\sum \frac{1}{n}$$, the harmonic series, which diverges.
+
+At $$x=-1$$ the series is $$\sum \frac{(-1)^n}{n}$$, which converges by the Alternating Series Test.
+
+Including only the endpoint that converges, the interval of convergence is
+
+$$
+[-1,\,1).
+$$
+
+</div>
+
 ---
 
 ## Taylor and Maclaurin series
@@ -316,6 +462,32 @@ $$
 \cos x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!}
 $$
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the Maclaurin series for $$e^{-x^2}$$ by substitution.
+
+Start from the known series
+
+$$
+e^u = \sum_{n=0}^{\infty}\frac{u^n}{n!} = 1 + u + \frac{u^2}{2!} + \frac{u^3}{3!} + \cdots,
+$$
+
+which is valid for all $$u$$. Substitute $$u=-x^2$$:
+
+$$
+e^{-x^2} = \sum_{n=0}^{\infty}\frac{(-x^2)^n}{n!} = \sum_{n=0}^{\infty}\frac{(-1)^n x^{2n}}{n!}.
+$$
+
+Writing out the first few terms,
+
+$$
+e^{-x^2} = 1 - x^2 + \frac{x^4}{2!} - \frac{x^6}{3!} + \cdots = 1 - x^2 + \frac{x^4}{2} - \frac{x^6}{6} + \cdots.
+$$
+
+Because the original series converges for all $$u$$, this one converges for all $$x$$.
+
+</div>
+
 ---
 
 ## Taylor polynomial and error
@@ -327,6 +499,26 @@ T_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(c)}{k!}(x-c)^k.
 $$
 
 For alternating Maclaurin series with decreasing term magnitudes, the truncation error is at most the first omitted term in absolute value.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** The Maclaurin series $$\displaystyle\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots$$ is alternating with decreasing magnitudes for small $$x$$. Estimate $$\sin(0.5)$$ using the first two terms and bound the error.
+
+Using the first two terms,
+
+$$
+\sin(0.5) \approx 0.5 - \frac{(0.5)^3}{3!} = 0.5 - \frac{0.125}{6} \approx 0.479167.
+$$
+
+By the alternating series error bound, the error is at most the magnitude of the first omitted term, here the $$x^5$$ term:
+
+$$
+\lvert R \rvert \le \frac{(0.5)^5}{5!} = \frac{0.03125}{120} \approx 0.00026.
+$$
+
+So the true value of $$\sin(0.5)$$ lies within about $$0.00026$$ of the estimate. (The actual value is $$\sin(0.5)\approx0.479426$$, comfortably inside that bound.)
+
+</div>
 
 ---
 

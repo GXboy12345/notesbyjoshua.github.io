@@ -38,6 +38,26 @@ $$
 \int \cos x\,dx = \sin x + C
 $$
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Compute $$\displaystyle\int \bigl(3x^2+4x\bigr)\,dx.$$
+
+Apply the reverse power rule to each term, raising the exponent by one and dividing:
+
+$$
+\int 3x^2\,dx = x^3, \qquad \int 4x\,dx = 2x^2.
+$$
+
+Combining the pieces and adding the constant of integration gives
+
+$$
+\int \bigl(3x^2+4x\bigr)\,dx = x^3 + 2x^2 + C.
+$$
+
+The $$+C$$ is required because every constant has derivative zero, so the antiderivative is only determined up to a constant.
+
+</div>
+
 ---
 
 ## Riemann sums
@@ -62,6 +82,32 @@ Important choices:
 - trapezoidal approximation.
 
 > [Image Placeholder: left, right, midpoint, and trapezoidal approximations on one graph]
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Approximate the accumulation of $$f(x)=x^2$$ on $$[0,2]$$ using a right Riemann sum with $$n=4$$.
+
+First find the width of each subinterval:
+
+$$
+\Delta x = \frac{b-a}{n} = \frac{2-0}{4} = 0.5.
+$$
+
+The right endpoints are $$x=0.5,\,1,\,1.5,\,2$$. Evaluate $$f$$ at each:
+
+$$
+f(0.5)=0.25,\quad f(1)=1,\quad f(1.5)=2.25,\quad f(2)=4.
+$$
+
+Sum the heights and multiply by the width:
+
+$$
+\bigl(0.25+1+2.25+4\bigr)(0.5) = (7.5)(0.5) = 3.75.
+$$
+
+So the right Riemann sum is $$3.75$$. Since $$f$$ is increasing, this overestimates the true value $$\int_0^2 x^2\,dx = \tfrac{8}{3}\approx 2.67$$.
+
+</div>
 
 ---
 
@@ -141,6 +187,26 @@ So the definite integral of a rate of change equals the net change in the origin
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Evaluate $$\displaystyle\int_0^3 x^2\,dx$$ using the Fundamental Theorem of Calculus.
+
+Find an antiderivative of the integrand:
+
+$$
+F(x) = \frac{x^3}{3}, \qquad F'(x) = x^2.
+$$
+
+Now apply $$\int_a^b f(x)\,dx = F(b)-F(a)$$:
+
+$$
+\int_0^3 x^2\,dx = \frac{3^3}{3} - \frac{0^3}{3} = \frac{27}{3} - 0 = 9.
+$$
+
+So the definite integral equals $$9$$.
+
+</div>
+
 ---
 
 ## Integrals with variable limits
@@ -156,6 +222,26 @@ then
 $$
 G'(x) = f(v(x))v'(x) - f(u(x))u'(x).
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find $$\displaystyle\frac{d}{dx}\int_0^{x^2}\cos t\,dt.$$
+
+Here the upper limit is $$v(x)=x^2$$ and the lower limit is the constant $$0$$. By the chain-rule form of the Fundamental Theorem, evaluate the integrand at the upper limit and multiply by its derivative:
+
+$$
+v'(x) = 2x.
+$$
+
+Therefore
+
+$$
+\frac{d}{dx}\int_0^{x^2}\cos t\,dt = \cos\!\bigl(x^2\bigr)\cdot 2x = 2x\cos\!\bigl(x^2\bigr).
+$$
+
+The lower limit contributes nothing because its derivative is zero.
+
+</div>
 
 ---
 
@@ -173,6 +259,30 @@ $$
 \int f(g(x))g'(x)\,dx = \int f(u)\,du.
 $$
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Compute $$\displaystyle\int 2x\bigl(x^2+1\bigr)^3\,dx.$$
+
+The factor $$2x$$ is exactly the derivative of $$x^2+1$$, which suggests the substitution
+
+$$
+u = x^2+1, \qquad du = 2x\,dx.
+$$
+
+Rewriting the integral in terms of $$u$$ removes the $$2x\,dx$$ cleanly:
+
+$$
+\int 2x\bigl(x^2+1\bigr)^3\,dx = \int u^3\,du = \frac{u^4}{4} + C.
+$$
+
+Substituting back $$u = x^2+1$$ gives
+
+$$
+\int 2x\bigl(x^2+1\bigr)^3\,dx = \frac{\bigl(x^2+1\bigr)^4}{4} + C.
+$$
+
+</div>
+
 ---
 
 ## Average value of a function
@@ -182,6 +292,26 @@ On $$[a,b]$$:
 $$
 f_{\text{avg}} = \frac{1}{b-a}\int_a^b f(x)\,dx.
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the average value of $$f(x)=x^2$$ on $$[0,3]$$.
+
+Apply the average value formula with $$a=0$$ and $$b=3$$:
+
+$$
+f_{\text{avg}} = \frac{1}{3-0}\int_0^3 x^2\,dx.
+$$
+
+The definite integral was computed earlier as $$\int_0^3 x^2\,dx = 9$$, so
+
+$$
+f_{\text{avg}} = \frac{1}{3}\cdot 9 = 3.
+$$
+
+The average value is $$3$$: a constant height of $$3$$ would enclose the same area over $$[0,3]$$ as the curve does.
+
+</div>
 
 ---
 
@@ -216,6 +346,32 @@ $$
 \int_a^b f(x)\,dx \approx \frac{\Delta x}{2}
 \left[y_0 + 2y_1 + 2y_2 + \cdots + 2y_{n-1} + y_n\right].
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Approximate $$\displaystyle\int_0^2 x^2\,dx$$ using the trapezoidal rule with $$n=4$$.
+
+The spacing is $$\Delta x = \tfrac{2-0}{4} = 0.5$$, giving nodes $$x=0,\,0.5,\,1,\,1.5,\,2$$ with heights
+
+$$
+y_0=0,\quad y_1=0.25,\quad y_2=1,\quad y_3=2.25,\quad y_4=4.
+$$
+
+Apply the trapezoidal formula, doubling every interior height:
+
+$$
+\int_0^2 x^2\,dx \approx \frac{0.5}{2}\bigl[0 + 2(0.25) + 2(1) + 2(2.25) + 4\bigr].
+$$
+
+Simplify the bracket and multiply:
+
+$$
+\frac{0.5}{2}\bigl[0 + 0.5 + 2 + 4.5 + 4\bigr] = (0.25)(11) = 2.75.
+$$
+
+The trapezoidal estimate is $$2.75$$, slightly above the exact value $$\tfrac{8}{3}\approx 2.67$$ because $$x^2$$ is concave up.
+
+</div>
 
 ---
 

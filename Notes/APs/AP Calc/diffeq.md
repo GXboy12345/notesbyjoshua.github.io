@@ -49,6 +49,39 @@ $$
 \frac{dy}{dx} = f(x,y).
 $$
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Given $$\dfrac{dy}{dx}=x+y$$ with $$y(0)=1$$, use Euler's method with step size $$h=0.5$$ to approximate $$y(1)$$ in two steps.
+
+At each step the new $$y$$ is the old $$y$$ plus $$h$$ times the slope at the current point. Start at $$(x_0,y_0)=(0,1)$$.
+
+Step 1. The slope at $$(0,1)$$ is $$f(0,1)=0+1=1$$, so
+
+$$
+y_1 = y_0 + h\,f(x_0,y_0) = 1 + 0.5(1) = 1.5,\qquad x_1 = 0.5.
+$$
+
+Step 2. The slope at $$(0.5,1.5)$$ is $$f(0.5,1.5)=0.5+1.5=2$$, so
+
+$$
+y_2 = y_1 + h\,f(x_1,y_1) = 1.5 + 0.5(2) = 2.5,\qquad x_2 = 1.
+$$
+
+Collecting the steps in a table:
+
+$$
+\begin{array}{c|c|c|c}
+n & x_n & y_n & f(x_n,y_n) \\ \hline
+0 & 0 & 1 & 1 \\
+1 & 0.5 & 1.5 & 2 \\
+2 & 1 & 2.5 & -
+\end{array}
+$$
+
+So Euler's method gives the approximation $$y(1)\approx 2.5$$.
+
+</div>
+
 ---
 
 ## Separable differential equations
@@ -66,6 +99,42 @@ $$
 $$
 
 and integrate both sides.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Solve $$\dfrac{dy}{dx}=\dfrac{x}{y}$$ with the initial condition $$y(0)=2$$.
+
+Separate the variables, moving all $$y$$ factors with $$dy$$ and all $$x$$ factors with $$dx$$:
+
+$$
+y\,dy = x\,dx.
+$$
+
+Integrate both sides:
+
+$$
+\frac{y^2}{2} = \frac{x^2}{2} + C.
+$$
+
+Multiplying by $$2$$ and renaming the constant gives the general solution
+
+$$
+y^2 = x^2 + C.
+$$
+
+Apply the initial condition $$y(0)=2$$:
+
+$$
+(2)^2 = (0)^2 + C \quad\Longrightarrow\quad C = 4.
+$$
+
+Since $$y(0)=2>0$$, take the positive square root to get the particular solution
+
+$$
+y = \sqrt{x^2 + 4}.
+$$
+
+</div>
 
 ---
 
@@ -113,6 +182,32 @@ So exponentials are the natural functions whose rate of change stays proportiona
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example.** A radioactive sample decays according to $$\dfrac{dy}{dt}=ky$$ and has a half-life of $$5$$ years. Find the decay constant $$k$$, and determine how much of an initial $$80$$-gram sample remains after $$15$$ years.
+
+The solution has the form $$y=Ce^{kt}$$, where $$C$$ is the initial amount. A half-life of $$5$$ years means that after $$t=5$$ the amount is half of $$C$$:
+
+$$
+\tfrac{1}{2}C = Ce^{5k} \quad\Longrightarrow\quad e^{5k} = \tfrac{1}{2}.
+$$
+
+Take the natural log of both sides and solve for $$k$$:
+
+$$
+5k = \ln\tfrac{1}{2} = -\ln 2 \quad\Longrightarrow\quad k = -\frac{\ln 2}{5} \approx -0.1386.
+$$
+
+With $$C=80$$, the amount after $$15$$ years is
+
+$$
+y(15) = 80\,e^{15k} = 80\,e^{-3\ln 2} = 80\cdot 2^{-3} = 80\cdot\tfrac{1}{8} = 10.
+$$
+
+So $$10$$ grams remain. This matches the intuition that $$15$$ years is exactly three half-lives, leaving $$\left(\tfrac{1}{2}\right)^3=\tfrac{1}{8}$$ of the original.
+
+</div>
+
 ---
 
 ## Logistic differential equation
@@ -140,6 +235,32 @@ $$
 $$
 
 measures how much room remains before the carrying capacity. When $$y$$ is small, this factor is close to $$1$$, so the model behaves almost exponentially. When $$y$$ is close to $$L$$, this factor is close to $$0$$, so the growth rate becomes small. At $$y=L$$, the growth rate is exactly $$0$$.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A population is modeled by $$\dfrac{dy}{dt}=0.1\,y\left(1-\dfrac{y}{2000}\right)$$. State the carrying capacity, the population at which growth is fastest, and the value of $$\dfrac{dy}{dt}$$ at that population.
+
+Comparing with the standard form $$\dfrac{dy}{dt}=ky\left(1-\dfrac{y}{L}\right)$$, we read off $$k=0.1$$ and $$L=2000$$. The carrying capacity is therefore
+
+$$
+L = 2000.
+$$
+
+Growth is fastest at half the carrying capacity:
+
+$$
+y = \frac{L}{2} = 1000.
+$$
+
+At $$y=1000$$, the rate of change is
+
+$$
+\frac{dy}{dt} = 0.1(1000)\left(1-\frac{1000}{2000}\right) = 100\cdot\frac{1}{2} = 50.
+$$
+
+So the population grows fastest, at $$50$$ individuals per unit time, when it reaches $$1000$$.
 
 </div>
 

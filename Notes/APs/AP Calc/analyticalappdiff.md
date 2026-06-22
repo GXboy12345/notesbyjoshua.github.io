@@ -46,6 +46,26 @@ If $$f'$$ changes:
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Find and classify the critical points of $$f(x)=x^3-3x^2$$.
+
+Differentiate and factor:
+
+$$
+f'(x)=3x^2-6x=3x(x-2).
+$$
+
+So $$f'(x)=0$$ at $$x=0$$ and $$x=2$$. Test the sign of $$f'$$ on each interval:
+
+$$
+f'(-1)=3(-1)(-3)=9>0,\qquad f'(1)=3(1)(-1)=-3<0,\qquad f'(3)=3(3)(1)=9>0.
+$$
+
+The derivative goes positive to negative at $$x=0$$, so $$f$$ has a local maximum there, with $$f(0)=0$$. The derivative goes negative to positive at $$x=2$$, so $$f$$ has a local minimum there, with $$f(2)=8-12=-4$$.
+
+</div>
+
 ---
 
 ## Concavity and second derivative
@@ -67,6 +87,32 @@ If $$f'(c)=0$$ and:
 - $$f''(c)<0$$, then $$f$$ has a local maximum at $$c$$,
 - $$f''(c)=0$$, the test is inconclusive.
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Use the second derivative test to classify the critical points of $$f(x)=x^3-12x$$.
+
+First find the critical points:
+
+$$
+f'(x)=3x^2-12=3(x^2-4)=3(x-2)(x+2),
+$$
+
+so $$f'(x)=0$$ at $$x=-2$$ and $$x=2$$. The second derivative is
+
+$$
+f''(x)=6x.
+$$
+
+Evaluate at each critical point:
+
+$$
+f''(2)=12>0,\qquad f''(-2)=-12<0.
+$$
+
+Since $$f''(2)>0$$, there is a local minimum at $$x=2$$, with $$f(2)=8-24=-16$$. Since $$f''(-2)<0$$, there is a local maximum at $$x=-2$$, with $$f(-2)=-8+24=16$$.
+
+</div>
+
 ---
 
 ## Absolute extrema on a closed interval
@@ -77,6 +123,26 @@ To find absolute max/min of $$f$$ on $$[a,b]$$:
 2. Evaluate $$f$$ at each critical point.
 3. Evaluate $$f(a)$$ and $$f(b)$$.
 4. Compare all values.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the absolute maximum and minimum of $$f(x)=x^3-3x$$ on $$[0,2]$$.
+
+Differentiate to locate interior critical points:
+
+$$
+f'(x)=3x^2-3=3(x^2-1),
+$$
+
+so $$f'(x)=0$$ at $$x=\pm1$$. Only $$x=1$$ lies inside $$(0,2)$$. Evaluate $$f$$ at this critical point and at both endpoints:
+
+$$
+f(0)=0,\qquad f(1)=1-3=-2,\qquad f(2)=8-6=2.
+$$
+
+Comparing the candidate values, the absolute maximum is $$2$$ at $$x=2$$, and the absolute minimum is $$-2$$ at $$x=1$$.
+
+</div>
 
 ---
 
@@ -93,6 +159,26 @@ Rolle's Theorem is the special case where $$f(a)=f(b)$$.
 <div class="theorem-box" markdown="1">
 
 **Why MVT is true.** Draw the secant line from $$(a,f(a))$$ to $$(b,f(b))$$. Subtract that line from the function to create a new function whose endpoint values are equal. Rolle's Theorem says this new function has a horizontal tangent somewhere inside the interval. At that point, the original function's tangent slope equals the secant slope.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** For $$f(x)=x^2$$ on $$[1,3]$$, find the value $$c$$ guaranteed by the Mean Value Theorem.
+
+The function is a polynomial, so it is continuous on $$[1,3]$$ and differentiable on $$(1,3)$$, and the theorem applies. The average rate of change is
+
+$$
+\frac{f(3)-f(1)}{3-1}=\frac{9-1}{2}=4.
+$$
+
+Since $$f'(x)=2x$$, set the instantaneous rate equal to the average rate:
+
+$$
+2c=4\quad\Longrightarrow\quad c=2.
+$$
+
+The value $$c=2$$ lies in $$(1,3)$$, so it is the value guaranteed by the theorem.
 
 </div>
 
@@ -122,6 +208,36 @@ Standard process:
 4. Differentiate and find critical points.
 5. Test candidates and interpret.
 
+<div class="theorem-box" markdown="1">
+
+**Example.** A rectangular pen is built with $$40$$ meters of fencing. What dimensions maximize the enclosed area?
+
+Let the rectangle have width $$x$$ and height $$y$$. The perimeter constraint is
+
+$$
+2x+2y=40\quad\Longrightarrow\quad y=20-x.
+$$
+
+The area, written as a one-variable function, is
+
+$$
+A(x)=x(20-x)=20x-x^2,\qquad 0<x<20.
+$$
+
+Differentiate and find the critical point:
+
+$$
+A'(x)=20-2x=0\quad\Longrightarrow\quad x=10.
+$$
+
+Since $$A''(x)=-2<0$$, this critical point is a maximum. Then $$y=20-10=10$$, so the pen is a $$10\times10$$ square with maximum area
+
+$$
+A(10)=10\cdot10=100\ \text{square meters}.
+$$
+
+</div>
+
 ---
 
 ## L'Hopital's Rule
@@ -135,6 +251,26 @@ $$
 $$
 
 provided the new limit exists in a usable way.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Evaluate $$\displaystyle\lim_{x\to0}\frac{e^x-1}{x}.$$
+
+Direct substitution gives $$\frac{e^0-1}{0}=\frac{0}{0}$$, an indeterminate form, so L'Hopital's Rule applies. Differentiate the numerator and denominator separately:
+
+$$
+\lim_{x\to0}\frac{e^x-1}{x}=\lim_{x\to0}\frac{e^x}{1}.
+$$
+
+Now substitution works:
+
+$$
+\lim_{x\to0}\frac{e^x}{1}=e^0=1.
+$$
+
+So the limit equals $$1$$.
+
+</div>
 
 ---
 
@@ -153,6 +289,26 @@ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
 $$
 
 > [Image Placeholder: Newton's method tangent-line iteration toward a root]
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Use one step of Newton's method to approximate $$\sqrt{2}$$, starting from $$x_0=1$$.
+
+A root of $$f(x)=x^2-2$$ is $$\sqrt{2}$$. Here $$f'(x)=2x$$, so
+
+$$
+f(x_0)=1^2-2=-1,\qquad f'(x_0)=2(1)=2.
+$$
+
+Apply the iteration:
+
+$$
+x_1=x_0-\frac{f(x_0)}{f'(x_0)}=1-\frac{-1}{2}=1.5.
+$$
+
+So the first iteration gives $$x_1=1.5$$, already close to the true value $$\sqrt{2}\approx1.41421$$.
+
+</div>
 
 ---
 

@@ -25,6 +25,7 @@ This site is a peek into all of my notes, and it is ***FREE*** for you all to sh
 - [AP Notes]({{ '/notes/ap/' | relative_url }})
 - [Math Notes]({{ '/notes/math/' | relative_url }})
 - [Physics Notes]({{ '/notes/physics/' | relative_url }})
+- [Chemistry Notes]({{ '/notes/chemistry/' | relative_url }})
 - [Practice Problems]({{ '/practiceproblems/practice/' | relative_url }})
 - [Resources]({{ '/Resources/resources/' | relative_url }})
 - [Blog]({{ '/blog/' | relative_url }})

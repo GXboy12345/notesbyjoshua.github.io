@@ -727,20 +727,6 @@ After any initial transient dies away, the system settles into a steady oscillat
 - **Damping controls the peak.** Light damping (high $$Q$$) gives a tall, narrow resonance peak; heavy damping (low $$Q$$) gives a short, broad peak and shifts the peak slightly below $$\omega_0$$.
 - Far from resonance, the response is small: drive much slower than $$\omega_0$$ and the mass just tracks the force; drive much faster and the mass can barely keep up.
 
-Resonance is why a child pumps a swing at its natural frequency, why soldiers break step on bridges, and why pushing a swing at the wrong rate does almost nothing.
-
----
-
-## Common mistakes
-
-1. Reading off the phase constant $$\phi$$ from $$\arctan$$ alone without checking the quadrant from the signs of $$x_0$$ and $$v_0$$.
-2. Thinking the period of a mass-spring or simple pendulum depends on amplitude — for ideal SHM it does not.
-3. Using $$I=mL^2$$ for a physical pendulum; that only holds for a point mass. Use the body's actual rotational inertia about the *pivot*.
-4. Forgetting the small-angle approximation: the pendulum formulas fail for large swings.
-5. Confusing $$\omega$$ (angular frequency, rad/s) with $$\omega_d$$ (driving frequency) or with $$f$$ (cycles/s); they differ by factors of $$2\pi$$.
-6. Adding spring constants in series like resistors — series springs add *reciprocals*, parallel springs add directly.
-7. Believing a driven system oscillates at its natural frequency in steady state; it oscillates at the *driving* frequency.
-
 ---
 
 ## Key equations

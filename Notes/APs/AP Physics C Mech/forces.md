@@ -796,20 +796,6 @@ Internal forces between particles cancel in pairs by Newton's third law when con
 
 ---
 
-## Common mistakes
-
-1. Treating $$F_N$$ as always equal to $$mg$$.
-2. Setting static friction equal to $$\mu_sF_N$$ when the object is not at the threshold of slipping.
-3. Drawing third-law partner forces on the same free-body diagram.
-4. Calling $$mv^2/r$$ a force by itself instead of the required net radial force.
-5. Forgetting that tension can differ if the rope or pulley is not ideal.
-6. Assuming zero velocity means zero acceleration.
-7. Mixing up the direction of friction; friction opposes relative motion or impending relative motion, not always the direction of motion.
-8. Using the wrong axes on a banked curve or conical pendulum; the acceleration is horizontal there, so horizontal/vertical axes are usually cleaner than axes along the surface.
-9. Confusing the direction of motion with the sign of acceleration in elevator problems; a slowing upward elevator has downward acceleration.
-
----
-
 ## Working checklist
 
 1. Choose the system carefully.

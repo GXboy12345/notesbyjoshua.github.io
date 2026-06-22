@@ -66,6 +66,30 @@ When velocity and acceleration have opposite signs, velocity moves closer to $$0
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example.** A particle moves along a line with position $$s(t)=t^3-6t^2+9t$$ meters, where $$t$$ is in seconds. Find the velocity and acceleration at $$t=4$$, and determine whether the particle is speeding up or slowing down.
+
+Differentiate to get velocity and acceleration:
+
+$$
+v(t)=s'(t)=3t^2-12t+9,\qquad a(t)=v'(t)=6t-12.
+$$
+
+Evaluate both at $$t=4$$:
+
+$$
+v(4)=3(16)-12(4)+9=48-48+9=9\ \text{m/s},
+$$
+
+$$
+a(4)=6(4)-12=12\ \text{m/s}^2.
+$$
+
+At $$t=4$$ the velocity is $$+9$$ m/s and the acceleration is $$+12$$ m/s$$^2$$. Because velocity and acceleration have the same sign, the velocity is moving farther from zero, so the particle is speeding up.
+
+</div>
+
 ---
 
 ## Rate in, rate out, and accumulation
@@ -81,6 +105,26 @@ If $$R(t)$$ is the rate entering a tank and $$L(t)$$ is the rate leaving, then:
 $$
 V'(t) = R(t) - L(t).
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Water enters a tank at a constant rate $$R(t)=8$$ gallons per minute, and leaves at a rate $$L(t)=t$$ gallons per minute, where $$t$$ is in minutes. Find $$V'(10)$$ and state whether the volume is rising or falling at that instant.
+
+The net rate of change of volume is the rate in minus the rate out:
+
+$$
+V'(t)=R(t)-L(t)=8-t.
+$$
+
+Evaluate at $$t=10$$:
+
+$$
+V'(10)=8-10=-2\ \text{gallons per minute}.
+$$
+
+At $$t=10$$ minutes the volume is changing at $$-2$$ gallons per minute. The negative sign means more water is leaving than entering, so the volume is falling at that instant.
+
+</div>
 
 ---
 
@@ -113,6 +157,38 @@ Related rates problems are mostly about translation. The key source equations us
 - similar triangles.
 
 If the problem asks how fast a quantity is changing, the final answer should usually be a value of a derivative with units.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Air is pumped into a spherical balloon so that its volume increases at $$\frac{dV}{dt}=100$$ cubic centimeters per second. How fast is the radius changing at the moment when $$r=5$$ cm?
+
+The source equation is the volume of a sphere:
+
+$$
+V=\frac{4}{3}\pi r^3.
+$$
+
+Differentiate both sides with respect to time, treating $$r$$ as a function of $$t$$:
+
+$$
+\frac{dV}{dt}=4\pi r^2\,\frac{dr}{dt}.
+$$
+
+Substitute the known values $$\frac{dV}{dt}=100$$ and $$r=5$$:
+
+$$
+100=4\pi(5)^2\,\frac{dr}{dt}=100\pi\,\frac{dr}{dt}.
+$$
+
+Solve for the radius rate:
+
+$$
+\frac{dr}{dt}=\frac{100}{100\pi}=\frac{1}{\pi}\approx 0.318\ \text{cm/s}.
+$$
+
+When the radius is $$5$$ cm, it is increasing at about $$0.318$$ centimeters per second. The rate is positive because the balloon is inflating.
+
+</div>
 
 ---
 
@@ -156,6 +232,32 @@ $$
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Use a linearization to estimate $$\sqrt{27}$$.
+
+Let $$f(x)=\sqrt{x}$$ and choose the nearby easy point $$a=25$$, since $$\sqrt{25}=5$$. The derivative is
+
+$$
+f'(x)=\frac{1}{2\sqrt{x}},\qquad f'(25)=\frac{1}{2\cdot 5}=\frac{1}{10}.
+$$
+
+The linearization at $$a=25$$ is
+
+$$
+L(x)=f(25)+f'(25)(x-25)=5+\frac{1}{10}(x-25).
+$$
+
+Estimate at $$x=27$$:
+
+$$
+\sqrt{27}\approx L(27)=5+\frac{1}{10}(2)=5.2.
+$$
+
+So $$\sqrt{27}\approx 5.2$$. The true value is about $$5.196$$, so the linear estimate is accurate to within a couple thousandths because $$27$$ is close to $$25$$.
+
+</div>
+
 ---
 
 ## Marginal analysis
@@ -173,6 +275,26 @@ Then:
 - marginal profit is $$P'(x)$$.
 
 At large production levels, these are interpreted as approximate change from one additional unit.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** The cost of producing $$x$$ items is $$C(x)=0.01x^2+5x+500$$ dollars. Find the marginal cost at a production level of $$x=100$$ items and interpret it.
+
+Marginal cost is the derivative of the cost function:
+
+$$
+C'(x)=0.02x+5.
+$$
+
+Evaluate at $$x=100$$:
+
+$$
+C'(100)=0.02(100)+5=2+5=7\ \text{dollars per item}.
+$$
+
+The marginal cost at $$100$$ items is $$7$$ dollars per item. This means that when production is at $$100$$ items, producing approximately one additional item costs about $$7$$ dollars.
+
+</div>
 
 ---
 
@@ -196,6 +318,18 @@ A derivative value is not just a number. A complete interpretation usually needs
 - correct units.
 
 If $$H(t)$$ is height in meters and $$H'(3)=-2$$, then at $$t=3$$ the height is decreasing at $$2$$ meters per unit of time. The negative sign means the height is going down; the magnitude $$2$$ describes the speed of that change.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Let $$P(t)$$ be the number of fish in a lake, where $$t$$ is measured in years. Write a full sentence interpreting the statement $$P'(5)=40$$.
+
+The quantity changing is the fish population, measured in fish; the input is time in years; the sign is positive, so the population is growing; and the units of the derivative are fish per year. A complete interpretation is:
+
+At time $$t=5$$ years, the fish population is increasing at a rate of $$40$$ fish per year.
+
+Notice that this is a rate, not a total: it does not say there are $$40$$ fish, but rather that the population is growing by about $$40$$ fish for each additional year near $$t=5$$.
+
+</div>
 
 <div class="theorem-box" markdown="1">
 

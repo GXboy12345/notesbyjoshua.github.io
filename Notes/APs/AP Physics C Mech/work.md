@@ -672,19 +672,6 @@ Equivalently, the engine supplies gravitational potential energy at the rate $$P
 
 ---
 
-## Common mistakes
-
-1. Using $$W = Fd$$ when the force is not constant; a variable force requires $$W = \int F\,dx$$ (the area under the $$F$$-vs-$$x$$ graph).
-2. Forgetting the $$\cos\theta$$: only the force component *along* the displacement does work, and perpendicular forces (normal force, tension in circular motion) do zero work.
-3. Dropping the sign of work — friction and forces opposing motion do *negative* work.
-4. Applying conservation of mechanical energy when friction, drag, or an applied push is present; use $$W_{\text{nc}} = \Delta E_{\text{mech}}$$ instead.
-5. Confusing total mechanical energy (not conserved with friction) with total energy (always conserved).
-6. Mixing potential-energy reference levels within one problem; pick one zero for $$U$$ and stick with it.
-7. Reading force off an energy diagram with the wrong sign; remember $$F_x = -dU/dx$$, so the force points "downhill" on the $$U(x)$$ curve.
-8. Treating power as an energy; power is the *rate* of energy transfer, $$P = dW/dt = \vec{F}\cdot\vec{v}$$.
-
----
-
 ## Key equations
 
 | Idea | Equation |

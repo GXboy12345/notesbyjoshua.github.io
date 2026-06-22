@@ -60,6 +60,32 @@ This is the chain rule rearranged: if $$y$$ changes with $$t$$ and $$x$$ changes
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example.** A curve is given by $$x(t)=t^2$$ and $$y(t)=t^3-3t$$. Find $$\frac{dy}{dx}$$ at $$t=2$$.
+
+Differentiate each coordinate with respect to $$t$$:
+
+$$
+\frac{dx}{dt}=2t,\qquad \frac{dy}{dt}=3t^2-3.
+$$
+
+Form the ratio:
+
+$$
+\frac{dy}{dx}=\frac{3t^2-3}{2t}.
+$$
+
+Now substitute $$t=2$$:
+
+$$
+\frac{dy}{dx}=\frac{3(2)^2-3}{2(2)}=\frac{9}{4}.
+$$
+
+So the slope of the curve at $$t=2$$ is $$\frac{9}{4}$$.
+
+</div>
+
 ---
 
 ## Second derivative for parametric curves
@@ -91,6 +117,48 @@ Arc length from $$t=a$$ to $$t=b$$:
 $$
 L = \int_a^b \sqrt{[x'(t)]^2 + [y'(t)]^2}\,dt.
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A particle moves along the path $$x(t)=t^2$$, $$y(t)=t^3$$ for $$0\le t\le 1$$. Find its speed at $$t=1$$, then find the total distance traveled.
+
+The component velocities are
+
+$$
+x'(t)=2t,\qquad y'(t)=3t^2.
+$$
+
+Speed is the magnitude of the velocity:
+
+$$
+\sqrt{[x'(t)]^2+[y'(t)]^2}=\sqrt{4t^2+9t^4}.
+$$
+
+At $$t=1$$ this gives
+
+$$
+\sqrt{4+9}=\sqrt{13}.
+$$
+
+For the total distance, integrate speed from $$0$$ to $$1$$. Factor $$t^2$$ out of the radical (valid since $$t\ge0$$):
+
+$$
+L=\int_0^1 \sqrt{4t^2+9t^4}\,dt=\int_0^1 t\sqrt{4+9t^2}\,dt.
+$$
+
+Substitute $$u=4+9t^2$$, so $$du=18t\,dt$$ and $$t\,dt=\frac{1}{18}\,du$$. The bounds become $$u=4$$ at $$t=0$$ and $$u=13$$ at $$t=1$$:
+
+$$
+L=\frac{1}{18}\int_4^{13}\sqrt{u}\,du=\frac{1}{18}\cdot\frac{2}{3}u^{3/2}\Big|_4^{13}=\frac{1}{27}\left(13^{3/2}-8\right).
+$$
+
+So the distance traveled is
+
+$$
+L=\frac{13\sqrt{13}-8}{27}\approx 1.44.
+$$
+
+</div>
 
 ---
 
@@ -155,6 +223,32 @@ $$
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the area of the region enclosed by the polar curve $$r=2\sin\theta$$.
+
+This curve is traced exactly once as $$\theta$$ runs from $$0$$ to $$\pi$$, so those are the bounds. Apply the polar area formula:
+
+$$
+A=\frac12\int_0^{\pi}(2\sin\theta)^2\,d\theta=\frac12\int_0^{\pi}4\sin^2\theta\,d\theta=2\int_0^{\pi}\sin^2\theta\,d\theta.
+$$
+
+Use the power-reduction identity $$\sin^2\theta=\frac{1-\cos 2\theta}{2}$$:
+
+$$
+2\int_0^{\pi}\frac{1-\cos 2\theta}{2}\,d\theta=\int_0^{\pi}\bigl(1-\cos 2\theta\bigr)\,d\theta.
+$$
+
+Integrate term by term:
+
+$$
+\left[\theta-\frac{\sin 2\theta}{2}\right]_0^{\pi}=\left(\pi-0\right)-\left(0-0\right)=\pi.
+$$
+
+So the enclosed area is $$\pi$$. This matches the fact that $$r=2\sin\theta$$ is a circle of radius $$1$$.
+
+</div>
+
 ---
 
 ## Arc length in polar form
@@ -194,6 +288,38 @@ $$
 $$
 
 gives acceleration.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A particle has position $$\mathbf{r}(t)=\langle t^2,\,t^3\rangle$$. Find the velocity, the acceleration, and the speed at $$t=2$$.
+
+Differentiate component by component to get velocity:
+
+$$
+\mathbf{r}'(t)=\langle 2t,\,3t^2\rangle.
+$$
+
+Differentiate again to get acceleration:
+
+$$
+\mathbf{r}''(t)=\langle 2,\,6t\rangle.
+$$
+
+Evaluate each at $$t=2$$:
+
+$$
+\mathbf{r}'(2)=\langle 4,\,12\rangle,\qquad \mathbf{r}''(2)=\langle 2,\,12\rangle.
+$$
+
+Speed is the magnitude of the velocity vector:
+
+$$
+|\mathbf{r}'(2)|=\sqrt{4^2+12^2}=\sqrt{16+144}=\sqrt{160}=4\sqrt{10}.
+$$
+
+So at $$t=2$$ the velocity is $$\langle 4,12\rangle$$, the acceleration is $$\langle 2,12\rangle$$, and the speed is $$4\sqrt{10}$$.
+
+</div>
 
 ---
 

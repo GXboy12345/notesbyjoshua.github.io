@@ -169,3 +169,26 @@ You don't need a full ODE course; three patterns cover the overwhelming majority
 - **Separable equations:** if you can get all the $$y$$'s on one side and all the $$t$$'s on the other, $$\int \dfrac{dy}{g(y)}=\int f(t)\,dt$$ and integrate. This handles nonlinear drag, draining tanks, and most "rate" problems.
 
 The meta-skill is **pattern recognition**: rearrange the physics into one of these standard forms, then write down the known solution rather than solving from scratch.
+
+---
+
+## Problem-solving strategy
+
+Once the physics is set up, the question becomes *which mathematical tool to reach for*. A quick decision tree:
+
+1. **A small parameter appears** (a ratio $$x\ll 1$$, a tiny angle, $$v\ll c$$): linearize with the small-value approximations, leading with $$(1+x)^n\approx 1+nx$$. Factor out the large quantity *first* so the leftover is genuinely small.
+2. **You need the next correction, or are near an equilibrium**: Taylor/Maclaurin expand, $$f(x)=f(0)+f'(0)x+\tfrac12 f''(0)x^2+\cdots$$. For small oscillations keep the quadratic term and read off $$\omega=\sqrt{U''(x_0)/m}$$; otherwise the linear term usually suffices.
+3. **A linear ODE with constant coefficients** (oscillations, AC circuits, driven systems): recognize the standard form. Restoring force linear in displacement gives $$\ddot x=-\omega^2 x$$; a single decay/growth rate gives $$\dot y=-ky$$. Write down the known solution instead of re-deriving it.
+4. **Sinusoids, phase lags, or interference**: go complex with $$e^{i\theta}=\cos\theta+i\sin\theta$$, write the signal as $$\mathrm{Re}(Ae^{i\phi}e^{i\omega t})$$, and turn $$d/dt$$ into multiplication by $$i\omega$$. Add same-frequency waves as phasors rather than juggling trig identities.
+5. **A nonlinear or "rate" ODE**: try separation of variables, $$\int dy/g(y)=\int f(t)\,dt$$, then integrate. Handles nonlinear drag, draining tanks, and most rate problems.
+6. **An integral that looks hopeless**: check symmetry first (an odd integrand on a symmetric interval is zero), then try substitution (spot an inner function whose derivative is present), then integration by parts $$\int u\,dv=uv-\int v\,du$$. Recognize the named forms — Gaussian and Gamma — on sight.
+7. **A quantity with direction**: use the dot product when you want "how much of one vector lies along another" (work, flux, projection); use the cross product when a lever arm or right-hand rule is involved (torque, angular momentum, magnetic force).
+
+**Common traps:**
+
+- Expanding *before* factoring out the large quantity, so the "small" term isn't actually small and the approximation is invalid.
+- Keeping only the linear Taylor term for an oscillation problem — at a potential minimum $$U'(x_0)=0$$, so the quadratic term is the *leading* one and dropping it loses all the physics.
+- Forgetting to take $$\mathrm{Re}(\cdots)$$ at the end of a complex-exponential calculation, or mixing real and complex amplitudes midway.
+- Treating the cross product as commutative: $$\vec b\times\vec a=-\vec a\times\vec b$$, and order matters for the right-hand-rule direction.
+- Reaching for brute-force integration when a symmetry argument or a standard form kills the integral instantly.
+- Misidentifying the ODE pattern — e.g. forcing a separable or nonlinear equation into the $$\ddot x=-\omega^2x$$ mold and quoting a sinusoid that doesn't apply.

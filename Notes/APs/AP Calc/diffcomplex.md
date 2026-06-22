@@ -22,6 +22,24 @@ $$
 
 The outside derivative is evaluated at the inside function, and then multiplied by the derivative of the inside function.
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Differentiate $$y=(3x^2+1)^5$$.
+
+The outside function is a fifth power and the inside function is $$3x^2+1$$. Differentiate the outside power, keeping the inside unchanged, then multiply by the derivative of the inside:
+
+$$
+\frac{dy}{dx}=5(3x^2+1)^4\cdot\frac{d}{dx}(3x^2+1).
+$$
+
+Since $$\frac{d}{dx}(3x^2+1)=6x$$,
+
+$$
+\frac{dy}{dx}=5(3x^2+1)^4(6x)=30x(3x^2+1)^4.
+$$
+
+</div>
+
 ---
 
 ## Implicit differentiation
@@ -31,6 +49,32 @@ When a curve is defined by an equation relating $$x$$ and $$y$$, differentiate b
 Every time a derivative hits a term involving $$y$$, multiply by $$dy/dx$$ because $$y$$ is changing as $$x$$ changes.
 
 > [Image Placeholder: circle with tangent line showing slope found implicitly]
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find $$\frac{dy}{dx}$$ for the circle $$x^2+y^2=25$$, then find the slope of the tangent line at the point $$(3,4)$$.
+
+Differentiate both sides with respect to $$x$$, remembering that $$y$$ depends on $$x$$:
+
+$$
+2x+2y\frac{dy}{dx}=0.
+$$
+
+Solve for $$\frac{dy}{dx}$$:
+
+$$
+\frac{dy}{dx}=-\frac{x}{y}.
+$$
+
+Now substitute the point $$(3,4)$$:
+
+$$
+\frac{dy}{dx}\Big|_{(3,4)}=-\frac{3}{4}.
+$$
+
+So the tangent line at $$(3,4)$$ has slope $$-\frac34$$.
+
+</div>
 
 ---
 
@@ -49,6 +93,30 @@ Equivalent formula:
 $$
 (f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}.
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Let $$f(x)=x^3+x$$. Given that $$f(1)=2$$, find $$(f^{-1})'(2)$$.
+
+Here $$a=1$$ and $$b=2$$, since $$f(1)=1^3+1=2$$. First compute the derivative of $$f$$:
+
+$$
+f'(x)=3x^2+1.
+$$
+
+Evaluate it at $$a=1$$:
+
+$$
+f'(1)=3(1)^2+1=4.
+$$
+
+By the inverse function rule,
+
+$$
+(f^{-1})'(2)=\frac{1}{f'(1)}=\frac{1}{4}.
+$$
+
+</div>
 
 ---
 
@@ -73,6 +141,24 @@ $$
 \frac{d}{dx}\arctan(u) = \frac{u'}{1+u^2}.
 $$
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Differentiate $$y=\arctan(x^2)$$.
+
+Use the chain-rule form with inside function $$u=x^2$$, so $$u'=2x$$:
+
+$$
+\frac{dy}{dx}=\frac{u'}{1+u^2}=\frac{2x}{1+(x^2)^2}.
+$$
+
+Simplifying the square gives
+
+$$
+\frac{dy}{dx}=\frac{2x}{1+x^4}.
+$$
+
+</div>
+
 ---
 
 ## Exponential and logarithmic differentiation
@@ -91,6 +177,20 @@ Logarithmic differentiation is especially helpful when powers and products are m
 
 When the variable appears in both the base and the exponent, take the logarithm of both sides first, use logarithm rules to simplify, and then differentiate implicitly.
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Differentiate $$y=\ln(x^2+1)$$.
+
+Use the rule $$\frac{d}{dx}\ln(u)=\frac{u'}{u}$$ with inside function $$u=x^2+1$$, so $$u'=2x$$:
+
+$$
+\frac{dy}{dx}=\frac{u'}{u}=\frac{2x}{x^2+1}.
+$$
+
+Note that $$x^2+1>0$$ for all real $$x$$, so the absolute value is unnecessary here.
+
+</div>
+
 ---
 
 ## Related rates
@@ -104,6 +204,32 @@ Strategy:
 5. Keep units consistent.
 
 > [Image Placeholder: ladder against wall with changing x and y distances]
+
+<div class="theorem-box" markdown="1">
+
+**Example.** The radius of a circle is increasing at a rate of $$2\ \text{cm/s}$$. How fast is the area increasing at the instant the radius is $$5\ \text{cm}$$?
+
+The area of a circle relates to its radius by
+
+$$
+A=\pi r^2.
+$$
+
+Both $$A$$ and $$r$$ change with time, so differentiate implicitly with respect to $$t$$:
+
+$$
+\frac{dA}{dt}=2\pi r\frac{dr}{dt}.
+$$
+
+Substitute the given instant, $$r=5\ \text{cm}$$ and $$\frac{dr}{dt}=2\ \text{cm/s}$$:
+
+$$
+\frac{dA}{dt}=2\pi(5)(2)=20\pi\ \text{cm}^2/\text{s}.
+$$
+
+So the area is increasing at $$20\pi\approx62.8\ \text{cm}^2/\text{s}$$.
+
+</div>
 
 ---
 
@@ -264,6 +390,30 @@ $$
 $$
 
 so the final derivative usually comes from multiplying by $$y$$.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Use logarithmic differentiation to find $$\frac{dy}{dx}$$ for $$y=x^x$$ (with $$x>0$$).
+
+The variable appears in both the base and the exponent, so take the natural logarithm of both sides:
+
+$$
+\ln y=\ln\left(x^x\right)=x\ln x.
+$$
+
+Differentiate both sides with respect to $$x$$. The left side uses the chain rule, and the right side uses the product rule:
+
+$$
+\frac{1}{y}\frac{dy}{dx}=\ln x+x\cdot\frac{1}{x}=\ln x+1.
+$$
+
+Multiply both sides by $$y$$ and substitute $$y=x^x$$:
+
+$$
+\frac{dy}{dx}=x^x(\ln x+1).
+$$
+
+</div>
 
 ---
 

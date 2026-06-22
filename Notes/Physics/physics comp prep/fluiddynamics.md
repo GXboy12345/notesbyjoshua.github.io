@@ -364,17 +364,9 @@ quadratic in speed, with a drag coefficient $$C_D$$. The crossover in a pipe is 
 
 A quick decision tree for what tool to grab:
 
-1. **Nothing moves?** Hydrostatics. Use $$p=p_0+\rho g h$$, equal pressure at equal heights in connected fluid, and Archimedes for floating/submerged bodies.
-2. **Whole fluid accelerates/rotates rigidly?** Effective gravity $$\vec g_{\text{eff}}=\vec g-\vec a$$; surfaces $$\perp$$ to it; rotating ⟶ parabolic surface.
-3. **Steady flow, want a speed or pressure?** Continuity ($$Av=$$const) + Bernoulli. Choose two points on one streamline; know what each pressure and speed is (open surfaces are at $$p_{\text{atm}}$$; wide reservoirs are nearly at rest).
-4. **Want a force on/from moving fluid?** Momentum flux $$F=\dot m\,\Delta v$$, not Bernoulli.
-5. **Friction or small slow object matters?** Viscosity: Poiseuille for pipes, Stokes for spheres, Reynolds number to decide the regime.
-6. **Don't know the governing law?** Dimensional analysis.
-
-Common mistakes to avoid:
-
-- Applying Bernoulli through a pump, a viscous region, or across a shock — its assumptions are violated.
-- Forgetting that the open surface and the exit jet are *both* at atmospheric pressure (they cancel in Torricelli).
-- Using gauge vs. absolute pressure inconsistently — pick one and stay with it.
-- Treating a narrow draining tank as having a stationary surface; if $$A_{\text{hole}}$$ isn't $$\ll A_{\text{tank}}$$ you must keep the surface velocity in Bernoulli.
-- Confusing the buoyant force's *line of action* (center of buoyancy) with the center of gravity in stability problems.
+1. **Nothing moves**: Hydrostatics. Use $$p=p_0+\rho g h$$, equal pressure at equal heights in connected fluid, and Archimedes for floating/submerged bodies.
+2. **Whole fluid accelerates/rotates rigidly**: Effective gravity $$\vec g_{\text{eff}}=\vec g-\vec a$$; surfaces $$\perp$$ to it; rotating ⟶ parabolic surface.
+3. **Steady flow, want a speed or pressure**: Continuity ($$Av=$$const) + Bernoulli. Choose two points on one streamline; know what each pressure and speed is (open surfaces are at $$p_{\text{atm}}$$; wide reservoirs are nearly at rest).
+4. **Want a force on/from moving fluid**: Momentum flux $$F=\dot m\,\Delta v$$, not Bernoulli.
+5. **Friction or small slow object matters**: Viscosity: Poiseuille for pipes, Stokes for spheres, Reynolds number to decide the type of flow.
+6. **Don't know the governing law**: Dimensional analysis.

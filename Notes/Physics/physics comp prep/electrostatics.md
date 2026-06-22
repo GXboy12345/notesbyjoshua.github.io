@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Electromagnetism
+title: Electrostatics
 parent: Physics Competition Prep
 nav_order: 12
 permalink: /notes/physics/electromagnetism/
 ---
 
-# Electromagnetism
+# Electrostatics
 
 ---
 
@@ -68,6 +68,8 @@ $$
 \vec E_{\text{net}}=\sum_i \vec E_i.
 $$
 
+The field is a real physical entity, not just a calculational shorthand: the source charges create it throughout space whether or not a test charge is there, and any charge placed at a point then feels the local field. This also hides a subtlety: the field takes time to establish itself, propagating at the speed of light, which is why Coulomb's law strictly holds only for **static** charges. Once magnetic effects enter, electric and magnetic fields can even sustain and propagate each other with no charges present at all; that is light.
+
 For continuous charge distributions, replace the sum by an integral:
 
 $$
@@ -107,6 +109,32 @@ E_x=2\pi k\sigma\left(1-\frac{x}{\sqrt{x^2+R^2}}\right)
 $$
 
 for $$x>0$$.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the electric field at the center of a uniformly charged hemispherical shell of radius $$R$$ and surface charge density $$\sigma$$.
+
+By symmetry the field at the center points along the axis of the hemisphere. Slice the shell into thin rings at polar angle $$\theta$$ from the axis. A ring at angle $$\theta$$ has radius $$R\sin\theta$$, circumference $$2\pi R\sin\theta$$, and width $$R\,d\theta$$, so
+
+$$
+dq=\sigma\,(2\pi R\sin\theta)(R\,d\theta)=2\pi\sigma R^2\sin\theta\,d\theta.
+$$
+
+Every element of the ring sits at distance $$R$$ from the center, and only the component along the axis survives, contributing a factor $$\cos\theta$$:
+
+$$
+dE=k\frac{dq}{R^2}\cos\theta=2\pi k\sigma\sin\theta\cos\theta\,d\theta.
+$$
+
+Integrating over the hemisphere ($$\theta:0\to\pi/2$$),
+
+$$
+E=2\pi k\sigma\int_0^{\pi/2}\sin\theta\cos\theta\,d\theta=2\pi k\sigma\cdot\tfrac12=\pi k\sigma=\frac{\sigma}{4\varepsilon_0}.
+$$
+
+The clean answer hides a useful cancellation: the $$1/R^2$$ from Coulomb's law exactly kills the $$R^2$$ in the ring's charge, so the radius drops out entirely.
 
 </div>
 
@@ -267,9 +295,33 @@ The direction is perpendicular to the sheet, away from positive charge and towar
 
 Feel free to derive these yourself, although the procedures are pretty standard.
 
+Two of these combine constantly. A **pair of parallel, oppositely charged sheets** $$\pm\sigma$$ superpose to give a uniform field between them and (ideally) zero field outside:
+
+$$
+E_{\text{between}}=\frac{\sigma}{\varepsilon_0},\qquad E_{\text{outside}}=0.
+$$
+
+This is the parallel-plate capacitor field — twice the single-sheet value, because in the gap both sheets push the same way while outside they cancel.
+
+Superposition also cracks a classic that has no symmetry of its own:
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A sphere of uniform charge density $$\rho$$ has a smaller spherical cavity hollowed out of it, the cavity's center displaced by $$\vec d$$ from the big sphere's center. Show that the field everywhere inside the cavity is uniform.
+
+View the hollow object as a **superposition**: a complete solid sphere of density $$+\rho$$, plus a smaller sphere of density $$-\rho$$ filling the cavity. Inside a uniform sphere the field is $$\vec E=\dfrac{\rho}{3\varepsilon_0}\vec r$$ measured from that sphere's *own* center (this is the interior result $$E=kQr/R^3$$ rewritten with $$Q=\rho\cdot\tfrac{4}{3}\pi r^3$$). Let $$\vec r_1$$ and $$\vec r_2$$ be the position of a field point measured from the big-sphere and cavity centers, so $$\vec r_1=\vec r_2+\vec d$$. Adding the two contributions inside the cavity,
+
+$$
+\vec E=\frac{\rho}{3\varepsilon_0}\vec r_1-\frac{\rho}{3\varepsilon_0}\vec r_2=\frac{\rho}{3\varepsilon_0}(\vec r_1-\vec r_2)=\frac{\rho}{3\varepsilon_0}\vec d.
+$$
+
+The field point $$\vec r$$ cancels, leaving the same field everywhere in the cavity: a **uniform** field $$\dfrac{\rho}{3\varepsilon_0}\vec d$$ parallel to the displacement $$\vec d$$.
+
+</div>
+
 ### Flux tricks (bypassing surface integrals)
 
-The point of these tricks is to use enclosed charge and field-line geometry to avoid integrating over awkward boundaries.
+The point of these tricks is to use enclosed charge and field-line geometry to avoid integrating over weird boundaries.
 
 - **The "anchor" trick (1D sheets).** If a layered system is overall neutral—for example a P–N junction with $$\rho_p x_p=\rho_n x_n$$—the field completely outside it is exactly $$0$$. Anchor one end of a Gaussian pillbox in that zero-field region: the outside face then contributes no flux, so the flux equation collapses to "field on the inner face equals enclosed charge over $$\varepsilon_0$$." This turns a messy stack of sheets into a single application of Gauss's law.
 
@@ -324,9 +376,15 @@ $$
 
 One way to remember this is that the surface charge feels the field from the rest of the conductor, not the full field including itself; that gives the factor of $$1/2$$.
 
+Three more facts about conductors recur constantly:
+
+- **Charge concentrates where the surface curves most.** On an isolated conductor, regions of higher curvature (sharper points) carry higher surface charge density and therefore stronger fields just outside. This is why charge "leaks" off sharp points and why lightning rods are pointed.
+- **A conductor shields its interior.** The field inside the conducting material is zero, and the field inside an empty cavity within a conductor is also zero (provided no charge sits in the cavity). A closed conductor thus isolates its interior from outside fields — a **Faraday cage**.
+- **Grounding fixes the potential, not the charge.** Connecting a conductor to ground sets $$V=0$$ (taking $$V_\infty=0$$), but the conductor can still carry induced surface charge; grounding just lets whatever charge is needed flow to or from the Earth to hold $$V=0$$.
+
 ## Electric potential and potential energy
 
-The electrostatic force is conservative, which lets us replace vector field bookkeeping with scalar energy bookkeeping. For most olympiad electrostatics this is the single biggest labor-saving move available, so it is worth setting up carefully.
+The electrostatic force is conservative, which lets us replace vector field bookkeeping with scalar energy.
 
 ### Review: Conservative forces
 
@@ -387,7 +445,7 @@ When the field is already known from symmetry, it is usually faster to integrate
 
 <div class="theorem-box" markdown="1">
 
-**Example (get the field cheaply from the potential).** Find the field on the axis of a uniformly charged ring of radius $$R$$ and charge $$Q$$.
+**Example.** Find the field on the axis of a uniformly charged ring of radius $$R$$ and charge $$Q$$.
 
 The field integral requires projecting every element onto the axis. The *potential* integral does not: every element of the ring is the same distance $$r=\sqrt{x^2+R^2}$$ from the axial point $$x$$, so the "constant $$r$$" shortcut gives the answer with no integration at all,
 
@@ -401,13 +459,13 @@ $$
 E_x=-\frac{dV}{dx}=\frac{kQx}{(x^2+R^2)^{3/2}} .
 $$
 
-This is the same result the vector field integral gives, with far less work. The lesson generalizes: if you only need $$\vec E$$ along a symmetry axis, compute the scalar $$V$$ first and differentiate.
+This is the same result the vector field integral gives, with far less work. The lesson generalizes: if you only need $$\vec E$$ along a symmetry axis, compute the scalar $$V$$ first and differentiate. However, it is important to note that $$V$$ has to be a function in order for the derivative to work.
 
 </div>
 
 ### Choosing the reference point
 
-For real (finite) charge distributions, $$V(\infty)=0$$ is always valid. It fails for idealized **infinite** distributions—an infinite line or plane—because $$V=k\int dq/r$$ diverges: the source itself extends out to the reference point. There you must choose a finite reference, and only potential differences in the region of interest carry meaning. The divergence is an artifact of the idealization, not a real physical infinity.
+For real (finite) charge distributions, $$V(\infty)=0$$ is always valid. It fails for idealized **infinite** distributions (e.g. an infinite line or plane) because $$V=k\int dq/r$$ diverges: the source itself extends out to the reference point. There you must choose a finite reference, and only potential differences in the region of interest carry meaning. The divergence is an artifact of the idealization, not a real physical infinity.
 
 ### Potentials worth memorizing
 
@@ -419,6 +477,23 @@ For real (finite) charge distributions, $$V(\infty)=0$$ is always valid. It fail
 - **Parallel planes** $$\pm\sigma$$ separated by $$d$$: $$\Delta V=\dfrac{\sigma d}{\varepsilon_0}$$.
 
 If you want, it is a good exercise to derive these yourself!
+
+### Equipotential surfaces and the gradient
+
+Writing the potential's total differential and comparing it with $$dV=-\vec E\cdot d\vec\ell$$ recovers the field component by component:
+
+$$
+dV=\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz=-E_x\,dx-E_y\,dy-E_z\,dz,
+$$
+
+so $$E_x=-\partial V/\partial x$$ (and likewise for $$y,z$$), i.e. $$\vec E=-\nabla V$$. The field is the **negative gradient** of the potential: it points in the direction of steepest *decrease* of $$V$$, with magnitude equal to that steepest slope.
+
+An **equipotential surface** is a surface of constant $$V$$ — the second standard way (besides field lines) to picture a field. Two properties make them useful:
+
+- **Field lines cross equipotentials at right angles.** Moving a charge along an equipotential changes $$V$$ by zero, so $$\vec E\cdot d\vec\ell=0$$ for any step within the surface; the field has no tangential component and is therefore perpendicular to the surface. (Equivalently, no work is done moving a charge along an equipotential.)
+- **Closely spaced equipotentials mean a strong field.** Since $$E$$ is the rate of change of $$V$$ with distance, tightly packed surfaces — a large $$\Delta V$$ over a small distance — signal a large gradient and a strong field.
+
+The surface of a conductor in equilibrium is itself an equipotential, which is exactly why field lines always meet a conductor perpendicularly.
 
 ### Problem-solving tips
 
@@ -499,7 +574,7 @@ $$
 U=\frac{1}{4\pi\varepsilon_0}\sum_{i<j}\frac{q_iq_j}{r_{ij}} .
 $$
 
-This excludes the (infinite) self-energy of idealized point charges.
+This excludes the (infinite) self-energy of idealized point charges. However, this method is not typically used bacuse it increases with complexity as you increase the amount of charges.
 
 **2. Charge times potential, halved.** Writing $$\sum_i q_iV_i$$ counts each pair twice, so
 
@@ -536,7 +611,7 @@ The field-energy viewpoint, $$U=\int \tfrac12\varepsilon_0E^2\,dV$$, is itself a
 
 <div class="theorem-box" markdown="1">
 
-**Example.** Find the self-energy of a disk of radius $$R$$ with uniform surface density $$\sigma=Q/\pi R^2$$.
+**Example.** Find the potential energy of a disk of radius $$R$$ with uniform surface density $$\sigma=Q/\pi R^2$$.
 
 *Sub-result — potential at the rim.* First find the potential at a point $$P$$ on the edge of a uniform disk of radius $$s$$. Put the origin at $$P$$ and use plane polar coordinates $$(\rho,\varphi)$$ measured from the line through the center. The far boundary of the disk is the circle of radius $$s$$ centered a distance $$s$$ away, which in these coordinates is $$\rho=2s\cos\varphi$$ for $$\varphi\in[-\tfrac\pi2,\tfrac\pi2]$$. Then
 
@@ -567,9 +642,13 @@ after substituting $$\sigma=Q/\pi R^2$$. The coefficient $$8/3\pi\approx0.85$$ i
 
 The **method of images** replaces certain conductor problems with fake charges placed outside the physical region. The key idea is that a grounded conductor has fixed potential $$V=0$$. If you can place imaginary charges so that the conductor surface is also at $$V=0$$, then the field in the real region matches the actual conductor problem.
 
+This works because of the **uniqueness theorem**: if a region is bounded by surfaces of specified potential (conductors, or infinity) and the charge in the region's interior is specified, then the potential throughout the region is *unique*. So any candidate that (i) obeys Gauss's law and the loop law and (ii) matches every boundary condition must be *the* answer — there is no other. That licenses pure guesswork: if some arrangement of fictitious "image" charges reproduces the correct boundary potential, the field it gives in the real region is guaranteed correct.
+
 <div class="theorem-box" markdown="1">
 
-**Example.** A charge $$+q$$ is a distance $$a$$ above an infinite grounded conducting plane. Replace the plane by an image charge $$-q$$ a distance $$a$$ below the plane.
+**Example.** A charge $$+q$$ is a distance $$a$$ above an infinite grounded conducting plane. Find the force induced on the charge.
+
+Replace the plane by an image charge $$-q$$ a distance $$a$$ below the plane.
 
 At every point on the plane, the distances to $$+q$$ and $$-q$$ are equal, so their potentials cancel:
 
@@ -587,3 +666,52 @@ $$
 directed toward the conducting plane.
 
 </div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A point charge $$q$$ sits a distance $$a$$ from the center of a grounded conducting sphere of radius $$R$$ (with $$a>R$$). Find the force induced on the charge.
+
+A single mirror charge no longer works, but one cleverly placed image does: put
+
+$$
+q'=-\frac{R}{a}\,q
+$$
+
+on the line from the center to $$q$$, at distance
+
+$$
+b=\frac{R^2}{a}
+$$
+
+from the center (inside where the sphere sits). One can check that the surface $$r=R$$ is then exactly the $$V=0$$ surface of the pair $$\{q,q'\}$$: for every point on the sphere the distances to $$q$$ and $$q'$$ are in the constant ratio $$a/R$$, so $$kq/r_q+kq'/r_{q'}=0$$. By uniqueness, the field outside the sphere is just that of $$q$$ and its image. The charge is therefore attracted to the sphere with force
+
+$$
+F=\frac{kqq'}{(a-b)^2}=-\frac{kq^2 Ra}{(a^2-R^2)^2},
+$$
+
+and the total induced charge on the grounded sphere is exactly $$q'=-(R/a)q$$.
+
+</div>
+
+---
+
+## Problem-solving strategy
+
+A short decision tree for which tool to pull off the shelf:
+
+1. **A handful of discrete point charges, want force or field:** Coulomb's law $$\vec F=k\dfrac{q_1q_2}{r^2}\hat r$$ with vector superposition $$\vec E_{\text{net}}=\sum_i\vec E_i$$. Resolve into components or use symmetry to kill a direction before adding — never sum magnitudes.
+2. **The distribution has spherical, cylindrical, or planar symmetry:** Gauss's law $$\oint\vec E\cdot d\vec A=\dfrac{Q_{\text{enc}}}{\varepsilon_0}$$ with the matching Gaussian surface (sphere/cylinder/pillbox). Reach for the memorized shell, solid-sphere, line, and sheet ($$E=\sigma/2\varepsilon_0$$) results rather than re-deriving.
+3. **A continuous blob with no useful symmetry:** Integrate. Set $$dq=\lambda\,d\ell$$, $$\sigma\,dA$$, or $$\rho\,dV$$, pick good coordinates, project the surviving component, then integrate $$dE=k\,dq/r^2$$. You may need to do double or even triple integrals.
+4. **You only need a speed, closest approach, or escape condition:** Energy, not force. The Coulomb force is conservative, so $$\Delta K=-\Delta U$$ with $$U=kQq/r$$ (reference at infinity for localized charge) collapses the problem to its endpoints.
+5. **You need $$\vec E$$ on a symmetry axis, or any field where the geometry is messy:** Compute the scalar $$V=k\int dq/r$$ first (it adds without components), then take $$\vec E=-\nabla V$$. Watch for the "constant $$r$$" shortcut (ring/shell/arc) that makes the integral trivial.
+6. **A conductor is involved:** Inside, $$\vec E=0$$ and the surface is an equipotential; just outside, $$E=\sigma/\varepsilon_0$$ (perpendicular). For a charge near a grounded plane or sphere, replace the conductor with an image charge that pins the surface to $$V=0$$, then treat it as a point-charge problem.
+7. **You need total stored energy:** Pick the form that matches the symmetry — pairwise sum $$\dfrac{1}{4\pi\varepsilon_0}\sum_{i<j}\dfrac{q_iq_j}{r_{ij}}$$ (excludes self-energy), $$\tfrac12\int V\,dq$$ or "charge it up" $$\int V\,dq$$ (includes it), or the field integral $$\int\tfrac12\varepsilon_0E^2\,dV$$ when no symmetry helps with potentials.
+
+**Common traps:**
+
+- **Surface field factors.** Just outside a *conductor* $$E=\sigma/\varepsilon_0$$, but a lone *nonconducting sheet* gives $$E=\sigma/2\varepsilon_0$$. The factor of 2 (and the same $$\tfrac12$$ in the electrostatic pressure $$P=\sigma^2/2\varepsilon_0$$) comes from a charge feeling the field of *everything but itself* — never the full field.
+- **Reference point for infinite sources.** $$V(\infty)=0$$ only works for finite distributions; for an infinite line or plane the integral diverges, so choose a finite reference and track only differences.
+- **$$\vec E$$ jumps, $$V$$ doesn't.** Across a charged surface the field can be discontinuous, but the potential is always continuous — use that continuity to pin integration constants and as a free error check when stitching piecewise regions.
+- **Self-energy bookkeeping.** The pairwise sum drops self-energy; $$\tfrac12\int V\,dq$$ keeps it. Decide which the question wants before plugging in.
+- **Gauss's law is always true but rarely useful.** It only gives $$E$$ cheaply when symmetry makes $$E$$ constant over the surface; otherwise it's an identity, not a solution.
+- **Image charges are fictitious.** The image only reproduces the field in the real region — never use it to compute energy or field on the far side of the conductor, and remember a grounded surface can carry net induced charge.

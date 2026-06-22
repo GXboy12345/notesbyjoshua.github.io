@@ -548,17 +548,6 @@ The comet moves five times slower at aphelion than at perihelion, in exact propo
 
 ---
 
-## Common Mistakes
-
-- **Forgetting to state the reference point for $$L$$.** Angular momentum is meaningless without a specified origin or axis; the same motion gives different $$L$$ about different points.
-- **Assuming kinetic energy is conserved whenever $$L$$ is.** $$L$$ conservation requires only zero external torque. Rotational KE changes whenever internal work is done (skater pulling in arms) or objects merge inelastically (clay, person stepping on, bullet embedding).
-- **Using linear-momentum conservation in a pivoted-collision problem.** The pivot delivers an unknown impulsive force, so linear momentum is not conserved — but angular momentum about the pivot is, because the pivot force has zero lever arm.
-- **Trying to conserve energy through an inelastic rotational collision.** Use $$L$$ conservation for the collision, then switch to energy conservation for the motion afterward.
-- **Writing $$\vec L = I\vec\omega$$ for a non-symmetry axis.** That scalar-like form holds only for fixed or principal axes; the definition $$\vec L = \sum \vec r\times\vec p$$ always holds.
-- **Dropping the $$I_{\text{cm}}\omega^2$$ term for a rolling object.** A rolling body stores energy in both translation and rotation; using only $$\tfrac12 Mv^2$$ overestimates its speed.
-
----
-
 ## Key Equations
 
 | Quantity | Equation |

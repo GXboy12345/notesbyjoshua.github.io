@@ -35,6 +35,38 @@ Interpretations:
 
 > [Image Placeholder: secant lines approaching a tangent line]
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Use the limit definition to find $$f'(x)$$ for $$f(x)=x^2$$.
+
+Start from the definition and substitute $$f(x+h)=(x+h)^2$$:
+
+$$
+f'(x)=\lim_{h\to0}\frac{(x+h)^2-x^2}{h}.
+$$
+
+Expand the numerator:
+
+$$
+(x+h)^2-x^2 = x^2+2xh+h^2-x^2 = 2xh+h^2.
+$$
+
+Divide by $$h$$ (valid since $$h\ne0$$ in the limit):
+
+$$
+\frac{2xh+h^2}{h}=2x+h.
+$$
+
+Now let $$h\to0$$:
+
+$$
+f'(x)=\lim_{h\to0}(2x+h)=2x.
+$$
+
+So the derivative of $$x^2$$ is $$2x$$, matching the power rule.
+
+</div>
+
 ---
 
 ## Differentiability vs continuity
@@ -119,6 +151,56 @@ $$
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Differentiate $$y = x^3 \sin x$$ using the product rule.
+
+Let $$f(x)=x^3$$ and $$g(x)=\sin x$$, so $$f'(x)=3x^2$$ and $$g'(x)=\cos x$$. The product rule gives
+
+$$
+y' = f'(x)g(x) + f(x)g'(x).
+$$
+
+Substitute the pieces:
+
+$$
+y' = 3x^2\sin x + x^3\cos x.
+$$
+
+So $$y' = 3x^2\sin x + x^3\cos x$$.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Differentiate $$\displaystyle y = \frac{x^2}{x+1}$$ using the quotient rule.
+
+Let $$f(x)=x^2$$ and $$g(x)=x+1$$, so $$f'(x)=2x$$ and $$g'(x)=1$$. The quotient rule gives
+
+$$
+y' = \frac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^2}.
+$$
+
+Substitute the pieces:
+
+$$
+y' = \frac{2x(x+1)-x^2(1)}{(x+1)^2}.
+$$
+
+Expand and simplify the numerator:
+
+$$
+2x(x+1)-x^2 = 2x^2+2x-x^2 = x^2+2x.
+$$
+
+Therefore
+
+$$
+y' = \frac{x^2+2x}{(x+1)^2}.
+$$
+
+</div>
+
 ---
 
 ## Derivatives of common functions
@@ -147,6 +229,26 @@ $$
 \frac{d}{dx}(\ln x) = \frac{1}{x}
 $$
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Differentiate $$y = 4e^x - 3\cos x + 2x^5$$.
+
+Differentiate each term separately using the sum rule. The exponential is its own derivative, the derivative of $$\cos x$$ is $$-\sin x$$, and the power rule applies to $$x^5$$:
+
+$$
+\frac{d}{dx}(4e^x) = 4e^x,\qquad
+\frac{d}{dx}(-3\cos x) = 3\sin x,\qquad
+\frac{d}{dx}(2x^5) = 10x^4.
+$$
+
+Combining the terms gives
+
+$$
+y' = 4e^x + 3\sin x + 10x^4.
+$$
+
+</div>
+
 ---
 
 ## Tangent and normal lines
@@ -162,6 +264,36 @@ $$
 
 - normal slope is $$-1/f'(a)$$ when $$f'(a) \ne 0$$.
 
+<div class="theorem-box" markdown="1">
+
+**Example.** Find the equation of the tangent line to $$f(x)=x^2+1$$ at $$x=2$$.
+
+First find the point on the curve:
+
+$$
+f(2)=2^2+1=5,
+$$
+
+so the point of tangency is $$(2,5)$$. Next find the slope from the derivative:
+
+$$
+f'(x)=2x,\qquad f'(2)=2(2)=4.
+$$
+
+Use point-slope form with slope $$4$$ at $$(2,5)$$:
+
+$$
+y-5 = 4(x-2).
+$$
+
+Simplifying gives the tangent line
+
+$$
+y = 4x-3.
+$$
+
+</div>
+
 ---
 
 ## Higher derivatives
@@ -174,6 +306,24 @@ Interpretations:
 - acceleration in motion when $$f$$ is position.
 
 You may also see $$f^{(n)}(x)$$ for the $$n$$th derivative.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Find $$f''(x)$$ for $$f(x)=x^4-5x^2+3x$$.
+
+Differentiate once using the power rule term by term:
+
+$$
+f'(x)=4x^3-10x+3.
+$$
+
+Differentiate again to get the second derivative:
+
+$$
+f''(x)=12x^2-10.
+$$
+
+</div>
 
 ---
 
@@ -193,6 +343,34 @@ Velocity includes sign and direction; speed is $$\lvert v(t) \rvert$$.
 
 When velocity and acceleration have the same sign, speed is increasing. When signs differ, speed is decreasing.
 
+<div class="theorem-box" markdown="1">
+
+**Example.** A particle moves with position $$s(t)=t^3-6t^2+9t$$ (in meters, $$t$$ in seconds). Find $$v(t)$$ and $$a(t)$$, and determine whether the speed is increasing at $$t=4$$.
+
+Differentiate the position to get velocity, then differentiate again for acceleration:
+
+$$
+v(t)=s'(t)=3t^2-12t+9,
+$$
+
+$$
+a(t)=v'(t)=6t-12.
+$$
+
+Evaluate both at $$t=4$$:
+
+$$
+v(4)=3(16)-12(4)+9 = 48-48+9 = 9,
+$$
+
+$$
+a(4)=6(4)-12 = 12.
+$$
+
+Both velocity and acceleration are positive at $$t=4$$, so they share the same sign. Therefore the speed is increasing at $$t=4$$.
+
+</div>
+
 ---
 
 ## Local linearity and linearization preview
@@ -204,6 +382,32 @@ f(x) \approx f(a) + f'(a)(x-a).
 $$
 
 This linearization is a first-order approximation and becomes useful for estimation and error analysis later.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Use a linearization near $$x=4$$ to estimate $$\sqrt{4.1}$$.
+
+Let $$f(x)=\sqrt{x}$$, which is easy to evaluate exactly at $$x=4$$. Compute the value and the slope there:
+
+$$
+f(4)=\sqrt{4}=2,\qquad f'(x)=\frac{1}{2\sqrt{x}},\qquad f'(4)=\frac{1}{2\cdot 2}=\frac14.
+$$
+
+Form the linearization centered at $$a=4$$:
+
+$$
+L(x)=f(4)+f'(4)(x-4)=2+\frac14(x-4).
+$$
+
+Evaluate at $$x=4.1$$:
+
+$$
+L(4.1)=2+\frac14(0.1)=2+0.025=2.025.
+$$
+
+So $$\sqrt{4.1}\approx 2.025$$, which is very close to the true value $$2.0248\ldots$$.
+
+</div>
 
 ---
 
@@ -220,6 +424,33 @@ or a symmetric estimate:
 $$
 f'(a) \approx \frac{f(a+h)-f(a-h)}{2h}.
 $$
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A differentiable function $$f$$ has the values below. Estimate $$f'(2)$$ using a symmetric difference quotient.
+
+$$
+\begin{array}{c|ccc}
+x & 1 & 2 & 3 \\\hline
+f(x) & 3 & 7 & 15
+\end{array}
+$$
+
+Use the values one step on each side of $$x=2$$, so $$a=2$$ and $$h=1$$:
+
+$$
+f'(2)\approx\frac{f(3)-f(1)}{2(1)}=\frac{15-3}{2}.
+$$
+
+This simplifies to
+
+$$
+f'(2)\approx\frac{12}{2}=6.
+$$
+
+The symmetric estimate uses points on both sides, so it usually gives a more accurate approximation than a one-sided difference quotient.
+
+</div>
 
 ---
 

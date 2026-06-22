@@ -67,7 +67,7 @@ and similarly position from velocity.
 
 Be careful to distinguish **average** and **instantaneous** quantities. Average velocity over an interval is the single constant velocity that would produce the same displacement in the same time; it depends only on the endpoints, $$\bar{v}=\Delta x/\Delta t$$. Instantaneous velocity is the limit of that ratio as the interval shrinks to zero, $$v=dx/dt$$. The two agree only when velocity is constant, or, for the special case of constant acceleration, the average velocity happens to equal the midpoint value $$\frac{1}{2}(v_0+v_f)$$. That coincidence is exactly equation 5 below and does **not** hold when acceleration varies.
 
-Also be careful when taking average speed over a distance of time. Average of two speeds does NOT necessarily mean the average of the whole trip! For example, if you wen $$16$$mph for $$30$$ minutes and then $$4$$mph for $$90$$ minutes your average speed is NOT $$10$$! Always do $$\bar v = \frac{Delta d}{Delta t}$$ (You should get $$7$$mph).
+Also be careful when taking average speed over a distance of time. Average of two speeds does NOT necessarily mean the average of the whole trip! For example, if you wen $$16$$mph for $$30$$ minutes and then $$4$$mph for $$90$$ minutes your average speed is NOT $$10$$! Always do $$\bar v = \frac{\Delta d}{\Delta t}$$ (You should get $$7$$mph).
 
 <div class="theorem-box" markdown="1">
 
@@ -290,11 +290,11 @@ A quick check with equation 5: $$\Delta x = \frac{v_0 + v}{2}t = \frac{25 + 0}{2
 
 ---
 
-## When acceleration is not constant
+## Non-constant acceleration
 
 The Big Five fail whenever $$a$$ varies, so you fall back on the defining derivatives and choose your integration variable based on what $$a$$ depends on:
 
-- **$$a$$ depends on time, $$a = a(t)$$.** Integrate directly: $$v = v_0 + \int a(t)\, dt$$, then $$x = x_0 + \int v(t)\, dt$$. This is the most common AP case (see the example above).
+- **$$a$$ depends on time, $$a = a(t)$$.** Integrate directly: $$v = v_0 + \int a(t)\, dt$$, then $$x = x_0 + \int v(t)\, dt$$.
 - **$$a$$ depends on position, $$a = a(x)$$.** Time is awkward here, so eliminate it with the chain rule. Writing $$a = dv/dt = (dv/dx)(dx/dt) = v\,dv/dx$$ gives the separable relation
 
 $$
@@ -515,11 +515,24 @@ You can find more on the [USAPhO section on mechanics]({{ '/notes/physics/advmec
 
 ---
 
-## Common mistakes
+## Key equations
 
-- **Using the Big Five when acceleration is not constant.** If $$a$$ depends on $$t$$, $$x$$, or $$v$$, you must integrate; plugging into $$\Delta x = v_0 t + \frac{1}{2}at^2$$ is wrong.
-- **Sign errors with gravity.** Decide once whether up is $$+y$$ and keep $$g$$, $$v_0$$, $$v$$, and $$\Delta y$$ consistent with that choice throughout the problem.
-- **Confusing distance with displacement** (and speed with velocity). They differ whenever the motion reverses direction; only displacement is the area under the signed $$v$$-$$t$$ graph.
-- **Forgetting that $$v_y = 0$$ at the top of a trajectory, not $$v$$.** The horizontal velocity $$v_x$$ is unchanged throughout projectile motion; only the vertical component vanishes at the peak.
-- **Using level-ground range and height shortcuts when launch and landing heights differ.** In that case solve the quadratic in $$t$$ from the $$y$$ equation instead.
-- **Treating average velocity as the midpoint speed in general.** $$\bar{v} = \frac{1}{2}(v_0 + v_f)$$ only holds for constant acceleration.
+| Idea | Equation |
+| --- | --- |
+| Average velocity / acceleration | $$\bar{v} = \dfrac{\Delta x}{\Delta t},\quad \bar{a} = \dfrac{\Delta v}{\Delta t}$$ |
+| Instantaneous velocity | $$v = \dfrac{dx}{dt}$$ |
+| Instantaneous acceleration | $$a = \dfrac{dv}{dt} = \dfrac{d^2x}{dt^2}$$ |
+| Velocity / position by integration | $$\Delta v = \displaystyle\int a\,dt,\quad \Delta x = \displaystyle\int v\,dt$$ |
+| Acceleration depending on position | $$a = v\dfrac{dv}{dx}$$ |
+| Constant accel: missing $$\Delta x$$ | $$v_f = v_0 + at$$ |
+| Constant accel: missing $$v_f$$ | $$\Delta x = v_0 t + \tfrac{1}{2}at^2$$ |
+| Constant accel: missing $$v_0$$ | $$\Delta x = v_f t - \tfrac{1}{2}at^2$$ |
+| Constant accel: missing $$t$$ | $$v_f^2 = v_0^2 + 2a\Delta x$$ |
+| Constant accel: missing $$a$$ | $$\Delta x = \dfrac{v_0 + v_f}{2}\,t$$ |
+| Projectile launch components | $$v_{0x} = v_0\cos\theta,\quad v_{0y} = v_0\sin\theta$$ |
+| Projectile motion (up is $$+y$$) | $$x = v_{0x}t,\quad y = v_{0y}t - \tfrac{1}{2}gt^2$$ |
+| Projectile velocity | $$v_x = v_{0x},\quad v_y = v_{0y} - gt$$ |
+| Range (level ground) | $$R = \dfrac{v_0^2\sin(2\theta)}{g}$$ |
+| Max height (level ground) | $$h = \dfrac{v_0^2\sin^2\theta}{2g}$$ |
+| Time of flight (level ground) | $$T = \dfrac{2v_0\sin\theta}{g}$$ |
+| Relative velocity | $$\vec{v}_{A/C} = \vec{v}_{A/B} + \vec{v}_{B/C}$$ |

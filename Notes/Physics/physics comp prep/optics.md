@@ -321,3 +321,26 @@ $$
 $$
 
 This is why polarized sunglasses cut glare from horizontal surfaces like water and roads.
+
+---
+
+## Problem-solving strategy
+
+A quick decision tree for picking the right tool:
+
+1. **Features much larger than $$\lambda$$ (mirrors, lenses, shadows)**: Geometric optics. Trace rays, apply the law of reflection $$\theta_i=\theta_r$$ and Snell's law $$n_1\sin\theta_1=n_2\sin\theta_2$$.
+2. **Image formation by a mirror or lens**: Use $$\frac{1}{f}=\frac{1}{d_o}+\frac{1}{d_i}$$ with $$m=-\frac{d_i}{d_o}$$, and $$f=R/2$$ for a mirror or the lensmaker's $$\frac{1}{f}=(n-1)\left(\frac{1}{R_1}-\frac{1}{R_2}\right)$$ for a lens. Pin down every sign before plugging in. For multi-element systems, feed each image forward as the next object and multiply magnifications.
+3. **Dense-to-rare boundary, ask whether light escapes**: Check the critical angle $$\sin\theta_c=n_2/n_1$$; beyond it everything reflects (TIR). Continuously varying $$n$$ (mirages): conserve $$n\sin\theta$$ and bend toward higher $$n$$.
+4. **Two coherent beams, features comparable to $$\lambda$$**: Interference. Double slit $$d\sin\theta=m\lambda$$ (bright), spacing $$\Delta y=\lambda L/d$$; thin film uses the round-trip $$2nt$$ — count $$\pi$$-flips at each surface *first* to fix the constructive/destructive condition.
+5. **Single aperture or obstacle spreading light**: Diffraction. Single slit minima $$a\sin\theta=m\lambda$$; grating maxima $$d\sin\theta=m\lambda$$ with resolving power $$R=\lambda/\Delta\lambda=Nm$$. For a small obstacle, use Babinet and treat it as the complementary hole.
+6. **Resolving two close sources through an aperture**: Rayleigh criterion $$\theta_{\min}=1.22\,\lambda/D$$.
+7. **Intensity through polarizers or polarization by reflection**: Malus's law $$I=I_0\cos^2\theta$$ (halve unpolarized light first); Brewster's angle $$\tan\theta_B=n_2/n_1$$.
+
+Common traps:
+
+- **Sign conventions differ for mirrors and lenses.** For lenses a real image sits on the *opposite* side from the object ($$d_i>0$$ there); for mirrors a real image is on the *same* side as the object. Diverging elements have $$f<0$$.
+- **Bright vs. dark conditions are not universal.** $$d\sin\theta=m\lambda$$ is *bright* for a double slit/grating but *dark* for a single slit — don't reuse the formula blindly.
+- **Forgetting the $$\pi$$ phase flip on reflection off a higher-index medium** in thin films. Always tally flips at both surfaces before deciding constructive vs. destructive.
+- **Using the vacuum wavelength inside a medium.** The path difference in a film is $$2nt$$ because $$\lambda_{\text{medium}}=\lambda_0/n$$; frequency, not wavelength, is conserved across a boundary.
+- **Assuming interference without coherence.** Fringes require a stable phase relationship; two independent sources won't interfere.
+- **Treating $$\lambda\sim d$$ problems with ray optics (or vice versa).** Decide geometric vs. wave optics from the feature size before choosing equations.

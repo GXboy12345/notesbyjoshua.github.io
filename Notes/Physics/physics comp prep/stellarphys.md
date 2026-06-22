@@ -613,11 +613,3 @@ Stellar problems reward a small set of reusable moves:
 4. **Timescale questions:** $$t_{\text{KH}}\sim GM^2/RL$$ (gravitational) versus $$t_{\text{nuc}}\sim\epsilon f Mc^2/L$$ (nuclear); compare them.
 5. **Limits and endpoints:** Eddington luminosity caps brightness; Chandrasekhar mass caps white dwarfs; degeneracy-pressure scaling arguments explain the endpoints.
 6. **Mass measurement:** binary stars + Kepler's third law are the only direct route.
-
-Common pitfalls:
-
-- Mixing up the magnitude scale's direction (smaller = brighter) or forgetting the factor of $$2.5$$ vs. $$5$$ in Pogson's relation.
-- Confusing flux (measured) with luminosity (intrinsic) — always ask whether the distance has entered.
-- Applying Kepler's third law in its Earth-Sun "$$P^2=a^3$$" form to a binary where neither mass is negligible; you need the full $$G(M_1+M_2)$$ version.
-- Treating degeneracy pressure as temperature-dependent — its independence from $$T$$ is the whole point.
-- Forgetting that the virial theorem gives a *negative* heat capacity: losing energy heats a star up.
