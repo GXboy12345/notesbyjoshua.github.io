@@ -3,7 +3,7 @@ layout: default
 title: Magnetism & Electrodynamics
 parent: Physics Competition Prep
 nav_order: 13
-permalink: /notes/physics/magnetism/
+permalink: /notes/physics/electrodynamics/
 ---
 
 # Magnetism & Electrodynamics

@@ -94,7 +94,7 @@ $$
 dq=\sigma(2\pi r\,dr).
 $$
 
-Using the ring result (which you can find in [AP Physics C E&M]({{ '/notes/physics/electrostatics/' | relative_url }})),
+Using the on-axis field of a thin ring — a ring of charge $$dq$$ at radius $$r$$ contributes an axial field $$k\,x\,dq/(x^2+r^2)^{3/2}$$ (this ring result is derived cheaply from the potential in the potential section below),
 
 $$
 dE_x=k\frac{x\,dq}{(x^2+r^2)^{3/2}}
@@ -504,24 +504,6 @@ A few habits that save the most time on potential problems:
 - **If you already have $$\vec E$$, integrate it, don't re-integrate $$dq$$.** Once Gauss's law has given $$\vec E$$, use $$\Delta V=-\int\vec E\cdot d\vec\ell$$ along the simplest path (usually radial, so $$\vec E\cdot d\vec\ell=E\,dr$$).
 - **Choose the reference to kill terms.** Use $$V(\infty)=0$$ for localized charge; for an infinite line or plane pick a convenient finite point and track only differences.
 - **Use continuity of $$V$$ as a free check.** When you stitch together piecewise regions (inside/outside a shell, across a boundary), the pieces must agree in value even where $$\vec E$$ jumps. A mismatch means an algebra error.
-- **For dynamics, use energy, not force.** When a problem asks only for speeds, closest approach, or escape conditions, $$\Delta K=-\Delta U$$ sidesteps the vector force entirely—legitimate precisely because the electrostatic force is conservative.
-- **Mind self-energy.** The pairwise sum excludes it; $$\tfrac12\int V\,dq$$ includes it. Decide which one the question wants before plugging in.
-
-<div class="theorem-box" markdown="1">
-
-**Example.** A particle of charge $$q$$ and mass $$m$$ is fired straight at a fixed charge $$Q$$ (same sign) from far away with speed $$v_0$$. Find the distance of closest approach.
-
-Forces would require integrating a time-varying acceleration. Energy conservation does it in one line: at closest approach the particle is momentarily at rest, so all its kinetic energy has become potential energy. Taking $$U(\infty)=0$$,
-
-$$
-\tfrac12 m v_0^2=\frac{kQq}{d_{\min}}
-\qquad\Longrightarrow\qquad
-d_{\min}=\frac{2kQq}{m v_0^2}.
-$$
-
-No path detail enters because the force is conservative—only the endpoints matter.
-
-</div>
 
 <div class="theorem-box" markdown="1">
 
@@ -566,6 +548,8 @@ Each integration constant was pinned down by demanding $$V$$ be continuous at a 
 
 ### Energy of a charge configuration
 
+**EXPAND bc I am very confused**
+
 There are three equivalent ways to compute the total energy stored in a configuration; choose whichever matches the problem.
 
 **1. Pairwise sum.** Add the interaction energy of every distinct pair,
@@ -584,13 +568,13 @@ U=\frac{1}{2}\sum_i q_iV_i
 U=\frac{1}{2}\int V\,dq
 $$
 
-for a continuous distribution, where $$V$$ is the potential of the *whole* distribution. Unlike the pairwise sum, this form **includes** self-energy.
+for a continuous distribution, where $$V$$ is the potential of the *whole* distribution. Unlike the pairwise sum, this form **includes** self-energy (energy required to assemble the system again electrostatic repulsion).
 
-**3. Charge it up.** Assemble the charge from zero, tracking $$V$$ as a function of the accumulated charge, and integrate $$U=\int V\,dq$$. This is the cleanest method when symmetry keeps the object near one potential as it charges—for instance a conductor, or a sphere built up shell by shell.
+**3. Charge it up.** Assemble the charge from zero, tracking $$V$$ as a function of the accumulated charge, and integrate $$U=\int V\,dq$$. This is the cleanest method when symmetry keeps the object near one potential as it charges: for instance a conductor, or a sphere built up shell by shell.
 
 <div class="theorem-box" markdown="1">
 
-**Example.** What is the self-energy of a solid sphere with raidus $$R$$?
+**Example.** What is the self-energy of a solid sphere with radius $$R$$?
 
 Build the sphere up shell by shell at fixed density $$\rho$$. When the assembled charge is $$q$$ at radius $$r$$ (final radius $$R$$), $$q=Q(r/R)^3$$, and the next shell $$dq=Q\,\dfrac{3r^2}{R^3}dr$$ is brought from infinity to the surface, which sits at $$V=kq/r=kQr^2/R^3$$. Hence
 
@@ -602,8 +586,6 @@ $$
 $$
 U=\int_0^R \frac{3kQ^2}{R^6}r^4\,dr=\frac{3}{5}\frac{kQ^2}{R}.
 $$
-
-As a cross-check, integrating the field energy density $$u=\tfrac12\varepsilon_0E^2$$ over all space (using $$E=kQr/R^3$$ inside and $$kQ/r^2$$ outside) gives $$\dfrac{kQ^2}{10R}+\dfrac{kQ^2}{2R}=\dfrac{3}{5}\dfrac{kQ^2}{R}$$ which is the same result.
 
 </div>
 

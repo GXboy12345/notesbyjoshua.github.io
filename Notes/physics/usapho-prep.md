@@ -28,7 +28,7 @@ A big thanks to Michael Zhao for collaborating with me on this page! Many of the
 - [Waves]({{ '/notes/physics/waves/' | relative_url }})
 - [Optics]({{ '/notes/physics/optics/' | relative_url }})
 - [Electrostatics]({{ '/notes/physics/electromagnetism/' | relative_url }})
-- [Magnetism & Electrodynamics]({{ '/notes/physics/magnetism/' | relative_url }})
+- [Magnetism & Electrodynamics]({{ '/notes/physics/electrodynamics/' | relative_url }})
 
 ---
 

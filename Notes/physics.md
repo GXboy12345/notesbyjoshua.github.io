@@ -34,4 +34,4 @@ The below material are physics olympiad prep outside of the usual AP curriculum.
 - [Thermodynamics]({{ '/notes/physics/thermodynamics/' | relative_url }})
 - [Optics/Waves]({{ '/notes/physics/waves/' | relative_url }})
 - [Electrostatics]({{ '/notes/physics/electromagnetism/' | relative_url }})
-- [Magnetism & Electrodynamics]({{ '/notes/physics/magnetism/' | relative_url }})
+- [Magnetism & Electrodynamics]({{ '/notes/physics/electrodynamics/' | relative_url }})
