@@ -27,8 +27,8 @@ A big thanks to Michael Zhao for collaborating with me on this page! Many of the
 - [Thermodynamics]({{ '/notes/physics/thermodynamics/' | relative_url }})
 - [Waves]({{ '/notes/physics/waves/' | relative_url }})
 - [Optics]({{ '/notes/physics/optics/' | relative_url }})
-- [Electrostatics]({{ '/notes/physics/electromagnetism/' | relative_url }})
-- [Magnetism & Electrodynamics]({{ '/notes/physics/electrodynamics/' | relative_url }})
+- [Electromagnetism (Part 1)]({{ '/notes/physics/electro1/' | relative_url }})
+- [Electromagnetism (Part 2)]({{ '/notes/physics/electro2/' | relative_url }})
 
 ---
 

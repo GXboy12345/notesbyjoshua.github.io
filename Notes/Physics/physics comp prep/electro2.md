@@ -3,7 +3,7 @@ layout: default
 title: Magnetism & Electrodynamics
 parent: Physics Competition Prep
 nav_order: 13
-permalink: /notes/physics/electrodynamics/
+permalink: /notes/physics/electro2/
 ---
 
 # Magnetism & Electrodynamics
@@ -12,7 +12,7 @@ permalink: /notes/physics/electrodynamics/
 
 ## Magnetic force and the motion of charges
 
-A magnetic field exerts a force on moving charge, and on nothing else: a charge at rest in a pure magnetic field feels nothing, no matter how strong the field. This single fact — that the force depends on velocity — is what makes magnetism feel so different from the electrostatics of [Electrostatics]({{ '/notes/physics/electromagnetism/' | relative_url }}), and it is the source of nearly every device in this section, from mass spectrometers to cyclotrons.
+A magnetic field exerts a force on moving charge, and on nothing else: a charge at rest in a pure magnetic field feels nothing, no matter how strong the field. This single fact — that the force depends on velocity — is what makes magnetism feel so different from the electrostatics of [Electrostatics]({{ '/notes/physics/electro1/' | relative_url }}), and it is the source of nearly every device in this section, from mass spectrometers to cyclotrons.
 
 ### The Lorentz force
 
@@ -269,7 +269,7 @@ A final piece of intuition ties the whole subject to the previous page. Magnetis
 
 ## Sources of the magnetic field
 
-Electric charges at rest produce electric fields; charges in motion — currents — produce **magnetic fields**. This section is the magnetic analog of the field-finding machinery from [Electrostatics]({{ '/notes/physics/electromagnetism/' | relative_url }}). There are two tools, and they parallel the electrostatic pair exactly: the **Biot–Savart law** is the magnetic version of "integrate $$d\vec E=k\,dq/r^2$$ over the distribution," and **Ampère's law** is the magnetic version of **Gauss's law** — always true, but only easy to use when symmetry makes the field constant on a clever loop. Keep that analogy in mind; it tells you which tool to reach for and why.
+Electric charges at rest produce electric fields; charges in motion — currents — produce **magnetic fields**. This section is the magnetic analog of the field-finding machinery from [Electrostatics]({{ '/notes/physics/electro1/' | relative_url }}). There are two tools, and they parallel the electrostatic pair exactly: the **Biot–Savart law** is the magnetic version of "integrate $$d\vec E=k\,dq/r^2$$ over the distribution," and **Ampère's law** is the magnetic version of **Gauss's law** — always true, but only easy to use when symmetry makes the field constant on a clever loop. Keep that analogy in mind; it tells you which tool to reach for and why.
 
 ### The Biot–Savart law
 
@@ -486,7 +486,7 @@ $$
 B=0\qquad(r>b).
 $$
 
-The cable is self-shielding: the return current cancels the field outside, which is the whole point of coaxial geometry. This region-by-region bookkeeping is the direct magnetic analog of the concentric-shell Gauss's-law example on the [Electrostatics]({{ '/notes/physics/electromagnetism/' | relative_url }}) page.
+The cable is self-shielding: the return current cancels the field outside, which is the whole point of coaxial geometry. This region-by-region bookkeeping is the direct magnetic analog of the concentric-shell Gauss's-law example on the [Electrostatics]({{ '/notes/physics/electro1/' | relative_url }}) page.
 
 </div>
 
@@ -611,7 +611,7 @@ That persistence shows up as **hysteresis**: plotting $$B$$ against $$H$$ for a 
 
 ## Electromagnetic induction
 
-So far the magnetic field has been a static stage on which charges move. The deep result of this section is that a *changing* magnetic field is itself a source of electric field — and that this new electric field is fundamentally different from the conservative electrostatic field of [Electrostatics]({{ '/notes/physics/electromagnetism/' | relative_url }}). Induction is where electricity and magnetism stop being two separate subjects.
+So far the magnetic field has been a static stage on which charges move. The deep result of this section is that a *changing* magnetic field is itself a source of electric field — and that this new electric field is fundamentally different from the conservative electrostatic field of [Electrostatics]({{ '/notes/physics/electro1/' | relative_url }}). Induction is where electricity and magnetism stop being two separate subjects.
 
 ### Magnetic flux
 
@@ -741,7 +741,7 @@ $$
 \oint \vec E\cdot d\vec\ell=-\frac{d\Phi_B}{dt}.
 $$
 
-This is Faraday's law in its fundamental, field form. The crucial point is the contrast with [Electrostatics]({{ '/notes/physics/electromagnetism/' | relative_url }}): the electrostatic field is **conservative**, with $$\oint\vec E\cdot d\vec\ell=0$$ and a well-defined potential $$\vec E=-\nabla V$$. The induced field is **non-conservative** — its line integral around a closed loop is *not* zero whenever flux through the loop is changing. There is no single-valued potential for it. Field lines of the induced $$\vec E$$ do not begin and end on charges; they form closed loops encircling the region of changing flux, much as magnetic field lines encircle a current.
+This is Faraday's law in its fundamental, field form. The crucial point is the contrast with [Electrostatics]({{ '/notes/physics/electro1/' | relative_url }}): the electrostatic field is **conservative**, with $$\oint\vec E\cdot d\vec\ell=0$$ and a well-defined potential $$\vec E=-\nabla V$$. The induced field is **non-conservative** — its line integral around a closed loop is *not* zero whenever flux through the loop is changing. There is no single-valued potential for it. Field lines of the induced $$\vec E$$ do not begin and end on charges; they form closed loops encircling the region of changing flux, much as magnetic field lines encircle a current.
 
 <div class="theorem-box" markdown="1">
 
@@ -867,7 +867,7 @@ $$
 u=\frac{B^2}{2\mu_0}.
 $$
 
-This stands in exact parallel with the electric energy density $$u=\tfrac12\varepsilon_0 E^2$$ derived in [Electrostatics]({{ '/notes/physics/electromagnetism/' | relative_url }}). Both say the energy lives in the field, with a density quadratic in the field strength; the two combine into the total electromagnetic energy density $$u=\tfrac12\varepsilon_0 E^2+B^2/2\mu_0$$ that flows in electromagnetic waves.
+This stands in exact parallel with the electric energy density $$u=\tfrac12\varepsilon_0 E^2$$ derived in [Electrostatics]({{ '/notes/physics/electro1/' | relative_url }}). Both say the energy lives in the field, with a density quadratic in the field strength; the two combine into the total electromagnetic energy density $$u=\tfrac12\varepsilon_0 E^2+B^2/2\mu_0$$ that flows in electromagnetic waves.
 
 <div class="theorem-box" markdown="1">
 
@@ -1005,7 +1005,7 @@ So $$t=0.2\times 2.303\approx 0.46\text{ s}$$. (A handy benchmark: one $$\tau$$ 
 
 ### RC transients (recap)
 
-The capacitor is defined and analyzed on the [Electrostatics]({{ '/notes/physics/electromagnetism/' | relative_url }}) page; here we only need its circuit behavior, $$Q=CV_C$$ and $$I=dQ/dt$$. Charging a capacitor through a resistor gives the same exponential-approach ODE as the RL case,
+The capacitor is defined and analyzed on the [Electrostatics]({{ '/notes/physics/electro1/' | relative_url }}) page; here we only need its circuit behavior, $$Q=CV_C$$ and $$I=dQ/dt$$. Charging a capacitor through a resistor gives the same exponential-approach ODE as the RL case,
 
 $$
 V=\frac{Q}{C}+R\frac{dQ}{dt}\ \Longrightarrow\ Q(t)=CV\left(1-e^{-t/\tau}\right),\qquad \tau=RC,
@@ -1255,7 +1255,7 @@ $$
 \oint \vec E\cdot d\vec A=\frac{Q_{\text{enc}}}{\varepsilon_0}.
 $$
 
-This is the law established in [Electrostatics]({{ '/notes/physics/electromagnetism/' | relative_url }}); field lines begin and end on charge.
+This is the law established in [Electrostatics]({{ '/notes/physics/electro1/' | relative_url }}); field lines begin and end on charge.
 
 **2. Gauss's law for $$\vec B$$** — there are no magnetic monopoles:
 
@@ -1479,7 +1479,7 @@ A decision tree for which tool to reach for:
 - **Magnetic forces do no work.** $$\vec F=q\vec v\times\vec B\perp\vec v$$, so $$B$$ alone never changes a particle's speed or kinetic energy — it only bends the path. Any speed change traces back to an electric field (including an induced one).
 - **Lenz's law is about opposing the *change*, not the field.** The induced current opposes the change in flux; it can reinforce a *decreasing* field. Get the sign from "which way must induced effects point to fight the change," then sanity-check with energy.
 - **Ampère's law is always true but rarely solvable.** Like Gauss's law, it only yields $$B$$ cheaply when symmetry makes $$\vec B$$ uniform and parallel along the loop; otherwise it is an identity, not a shortcut.
-- **The induced electric field is not conservative.** When $$d\Phi_B/dt\neq0$$, $$\oint\vec E\cdot d\vec\ell\neq0$$, so "voltage" between two points becomes path-dependent — you cannot define a single potential the way you do in [Electrostatics]({{ '/notes/physics/electromagnetism/' | relative_url }}).
+- **The induced electric field is not conservative.** When $$d\Phi_B/dt\neq0$$, $$\oint\vec E\cdot d\vec\ell\neq0$$, so "voltage" between two points becomes path-dependent — you cannot define a single potential the way you do in [Electrostatics]({{ '/notes/physics/electro1/' | relative_url }}).
 - **Reactances are frequency-dependent and don't simply add to resistance.** Combine them as $$\sqrt{R^2+(X_L-X_C)^2}$$, not $$R+X_L+X_C$$, and remember $$X_L$$ and $$X_C$$ act in *opposite* phase.
 - **Don't forget the displacement current.** Ampère's law without the $$\varepsilon_0\,d\Phi_E/dt$$ term is inconsistent wherever $$\vec E$$ changes (e.g. between capacitor plates) — and it is the very term that makes electromagnetic waves possible.
 - **RMS vs. peak.** $$V_{\text{rms}}=V_0/\sqrt2$$ for a sinusoid; power formulas use RMS values, and the average of $$\cos^2$$ over a cycle is $$\tfrac12$$.

@@ -33,5 +33,5 @@ The below material are physics olympiad prep outside of the usual AP curriculum.
 - [Stellar Physics]({{ '/notes/physics/stellarphys/' | relative_url }})
 - [Thermodynamics]({{ '/notes/physics/thermodynamics/' | relative_url }})
 - [Optics/Waves]({{ '/notes/physics/waves/' | relative_url }})
-- [Electrostatics]({{ '/notes/physics/electromagnetism/' | relative_url }})
-- [Magnetism & Electrodynamics]({{ '/notes/physics/electrodynamics/' | relative_url }})
+- [Electrostatics]({{ '/notes/physics/electro1/' | relative_url }})
+- [Magnetism & Electrodynamics]({{ '/notes/physics/electro2/' | relative_url }})

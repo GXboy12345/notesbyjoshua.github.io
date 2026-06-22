@@ -3,7 +3,7 @@ layout: default
 title: Electrostatics
 parent: Physics Competition Prep
 nav_order: 12
-permalink: /notes/physics/electromagnetism/
+permalink: /notes/physics/electro1/
 ---
 
 # Electrostatics

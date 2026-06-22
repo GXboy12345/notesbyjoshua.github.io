@@ -107,6 +107,62 @@ Because the charges are opposite, $$q_1$$ is attracted toward $$q_2$$, so the fo
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example (net force in two dimensions).** Two charges $$q_1 = +3.0\,\mu\text{C}$$ and $$q_2 = +3.0\,\mu\text{C}$$ sit at the base corners of an equilateral triangle of side $$d = 0.20\text{ m}$$. A third charge $$q_3 = +2.0\,\mu\text{C}$$ sits at the apex. Find the net force on $$q_3$$.
+
+Each base charge is the same distance $$d$$ from the apex, so the two forces have equal magnitude
+
+$$
+F = k\frac{q_1 q_3}{d^2}
+= \left(8.99\times10^9\right)\frac{(3.0\times10^{-6})(2.0\times10^{-6})}{(0.20)^2}
+= 1.35\text{ N}.
+$$
+
+Both forces are repulsive, pushing $$q_3$$ directly away from each base charge. By the symmetry of the equilateral triangle, each force makes an angle of $$60^\circ$$ with the horizontal. Resolve into components, putting the apex above the midpoint of the base:
+
+$$
+F_{1x} = -F\cos 60^\circ, \qquad F_{2x} = +F\cos 60^\circ,
+$$
+
+so the horizontal components cancel, $$F_{\text{net},x} = 0$$. The vertical components both point up and add:
+
+$$
+F_{\text{net},y} = 2F\sin 60^\circ = 2(1.35)(0.866) = 2.34\text{ N}.
+$$
+
+The net force on $$q_3$$ is $$2.3\text{ N}$$ pointing straight up, away from the base. Whenever a problem has two or more sources, always resolve each force into $$x$$ and $$y$$ components, add the components separately, then recombine — never add magnitudes directly unless the forces are collinear.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example (where is the force/field zero?).** A charge $$q_1 = +4.0\,\mu\text{C}$$ is at $$x = 0$$ and $$q_2 = +1.0\,\mu\text{C}$$ is at $$x = 0.30\text{ m}$$. Where on the line can a third charge be placed so it feels zero net force?
+
+A test charge feels zero net force where the two fields (or forces) are equal in magnitude and opposite in direction. Between two *like* charges there is always such a point between them, because the two fields point in opposite directions there. Let the point be a distance $$x$$ from $$q_1$$, so it is $$0.30 - x$$ from $$q_2$$. Setting the magnitudes equal:
+
+$$
+k\frac{q_1}{x^2} = k\frac{q_2}{(0.30 - x)^2}.
+$$
+
+Cancel $$k$$ and cross-multiply:
+
+$$
+\frac{q_1}{q_2} = \frac{x^2}{(0.30-x)^2}
+\quad\Rightarrow\quad
+\sqrt{\frac{q_1}{q_2}} = \frac{x}{0.30 - x}.
+$$
+
+Since $$\sqrt{q_1/q_2} = \sqrt{4} = 2$$,
+
+$$
+x = 2(0.30 - x) \quad\Rightarrow\quad 3x = 0.60 \quad\Rightarrow\quad x = 0.20\text{ m}.
+$$
+
+The null point is $$0.20\text{ m}$$ from the larger charge — closer to the *smaller* charge, as expected, since you must move nearer the weaker source to balance it. (Taking the negative square root would place the point outside the segment, where the two fields point the same way and cannot cancel, so it is rejected.) For two charges of *opposite* sign, the null point lies outside the segment, on the side of the smaller-magnitude charge.
+
+</div>
+
 ---
 
 ## Permittivity of free space
@@ -177,6 +233,50 @@ For $$x>0$$ this points right; for $$x<0$$ it points left.
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example (net field from two charges).** A charge $$q_1 = +5.0\,\text{nC}$$ is at the origin and $$q_2 = -5.0\,\text{nC}$$ is at $$(0.40\text{ m}, 0)$$. Find the net electric field at the point $$P = (0.40\text{ m}, 0.30\text{ m})$$.
+
+Treat each charge separately, then add the field vectors. The point $$P$$ is directly above $$q_2$$ at distance $$r_2 = 0.30\text{ m}$$, so the field from $$q_2$$ has magnitude
+
+$$
+E_2 = k\frac{|q_2|}{r_2^2}
+= (8.99\times10^9)\frac{5.0\times10^{-9}}{(0.30)^2}
+= 499\ \text{N/C}.
+$$
+
+Since $$q_2$$ is negative, $$\vec E_2$$ points *toward* $$q_2$$, i.e. straight down: $$\vec E_2 = (0,\,-499)\ \text{N/C}$$.
+
+The distance from $$q_1$$ to $$P$$ is $$r_1 = \sqrt{0.40^2 + 0.30^2} = 0.50\text{ m}$$, so
+
+$$
+E_1 = k\frac{q_1}{r_1^2}
+= (8.99\times10^9)\frac{5.0\times10^{-9}}{(0.50)^2}
+= 180\ \text{N/C}.
+$$
+
+$$\vec E_1$$ points *away* from the positive $$q_1$$, along the direction from the origin to $$P$$. The unit vector is $$(0.40, 0.30)/0.50 = (0.80, 0.60)$$, so
+
+$$
+\vec E_1 = 180\,(0.80,\,0.60) = (144,\,108)\ \text{N/C}.
+$$
+
+Add components:
+
+$$
+\vec E = \vec E_1 + \vec E_2 = (144,\ 108 - 499) = (144,\,-391)\ \text{N/C}.
+$$
+
+The magnitude is
+
+$$
+E = \sqrt{144^2 + 391^2} \approx 417\ \text{N/C},
+$$
+
+directed at $$\arctan(391/144) \approx 70^\circ$$ below the $$+x$$ axis. The whole calculation is just superposition: compute each field's magnitude from $$kq/r^2$$, assign its direction (away from positive, toward negative), break into components, and sum.
+
+</div>
+
 ---
 
 ## Continuous charge distributions
@@ -211,7 +311,7 @@ with $$dq$$ replaced by $$\lambda\, dL$$, $$\sigma\, dA$$, or $$\rho\, dV$$ acco
 
 <div class="theorem-box" markdown="1">
 
-**Example.** A ring of radius $$R$$ carries total charge $$Q$$ uniformly. Find the field a distance $$x$$ from the center along the ring's axis.
+**Proof (on-axis field of a uniformly charged ring).** A ring of radius $$R$$ carries total charge $$Q$$ uniformly. Find the field a distance $$x$$ from the center along the ring's axis.
 
 Every charge element $$dq$$ is the same distance
 
@@ -219,7 +319,7 @@ $$
 r=\sqrt{x^2+R^2}
 $$
 
-from the field point by Pythagorean Theorem. The sideways components cancel around the ring, so only the axial components add:
+from the field point by the Pythagorean theorem. Each $$dq$$ produces a field $$dE = k\,dq/r^2$$ pointing from the element to the axis point. As we go around the ring, the components perpendicular to the axis cancel in pairs (the element on the opposite side cancels them), so only the axial component survives. If $$\theta$$ is the angle the field makes with the axis, then $$\cos\theta = x/r$$, and
 
 $$
 dE_x=dE\cos\theta
@@ -227,14 +327,57 @@ dE_x=dE\cos\theta
 =k\frac{x\,dq}{(x^2+R^2)^{3/2}}.
 $$
 
-Since $$x$$ and $$R$$ are constant over the ring,
+Because $$x$$ and $$R$$ are the same for every element, everything except $$dq$$ pulls out of the integral:
 
 $$
 E_x=k\frac{x}{(x^2+R^2)^{3/2}}\int dq
-=k\frac{Qx}{(x^2+R^2)^{3/2}}.
+=\frac{1}{4\pi\varepsilon_0}\frac{Qx}{(x^2+R^2)^{3/2}}.
 $$
 
+Two checks: at the center ($$x=0$$) the field is zero, as symmetry demands; and far away ($$x\gg R$$) it reduces to $$E\approx kQ/x^2$$, the field of a point charge. The field is also maximized at $$x = R/\sqrt{2}$$ (set $$dE_x/dx = 0$$).
+
 **ADD IMAGE**
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Proof (on-axis field of a uniformly charged disk).** A flat disk of radius $$R$$ carries uniform surface charge density $$\sigma$$. Find the field a distance $$x$$ along its axis.
+
+Treat the disk as a stack of concentric thin rings. A ring of radius $$s$$ and thickness $$ds$$ has area $$dA = 2\pi s\,ds$$, so it carries charge
+
+$$
+dq = \sigma\,dA = \sigma\,(2\pi s\,ds).
+$$
+
+Use the ring result above with $$R\to s$$ and $$Q \to dq$$:
+
+$$
+dE_x = \frac{1}{4\pi\varepsilon_0}\frac{x\,dq}{(x^2+s^2)^{3/2}}
+= \frac{\sigma x}{4\pi\varepsilon_0}\frac{2\pi s\,ds}{(x^2+s^2)^{3/2}}
+= \frac{\sigma x}{2\varepsilon_0}\frac{s\,ds}{(x^2+s^2)^{3/2}}.
+$$
+
+Integrate over all rings, from $$s=0$$ to $$s=R$$. The substitution $$u = x^2 + s^2$$, $$du = 2s\,ds$$ gives $$\int s(x^2+s^2)^{-3/2}\,ds = -(x^2+s^2)^{-1/2}$$:
+
+$$
+E_x = \frac{\sigma x}{2\varepsilon_0}\left[-\frac{1}{\sqrt{x^2+s^2}}\right]_0^R
+= \frac{\sigma x}{2\varepsilon_0}\left(\frac{1}{x} - \frac{1}{\sqrt{x^2+R^2}}\right).
+$$
+
+Therefore
+
+$$
+E = \frac{\sigma}{2\varepsilon_0}\left(1 - \frac{x}{\sqrt{x^2+R^2}}\right).
+$$
+
+This single result contains two famous limits. **Infinite sheet** ($$R\to\infty$$, or equivalently $$x\ll R$$): the fraction $$x/\sqrt{x^2+R^2}\to 0$$, so
+
+$$
+E \to \frac{\sigma}{2\varepsilon_0},
+$$
+
+exactly the infinite-sheet field we will get from Gauss's law below — independent of distance. **Far away** ($$x\gg R$$): expanding $$x/\sqrt{x^2+R^2} \approx 1 - R^2/2x^2$$ gives $$E\approx \sigma R^2/(4\varepsilon_0 x^2) = kQ/x^2$$ with $$Q = \sigma\pi R^2$$, the point-charge field again. One integral, both limiting behaviors.
 
 </div>
 
@@ -357,6 +500,56 @@ Inside the sphere, the field grows linearly with distance from the center.
 
 <div class="theorem-box" markdown="1">
 
+**Example (thin spherical shell).** A thin conducting (or uniformly charged) spherical shell of radius $$R$$ carries total charge $$Q$$. Find $$E$$ inside and outside.
+
+**Outside** ($$r > R$$): a concentric Gaussian sphere encloses all of $$Q$$, exactly like the solid case,
+
+$$
+E(4\pi r^2) = \frac{Q}{\varepsilon_0}
+\quad\Rightarrow\quad
+E = \frac{1}{4\pi\varepsilon_0}\frac{Q}{r^2}.
+$$
+
+From outside, any spherically symmetric charge looks like a point charge at the center.
+
+**Inside** ($$r < R$$): a Gaussian sphere of radius $$r < R$$ encloses no charge, since all the charge is on the surface at radius $$R$$:
+
+$$
+E(4\pi r^2) = \frac{Q_{\text{enc}}}{\varepsilon_0} = 0
+\quad\Rightarrow\quad
+E = 0.
+$$
+
+The field is exactly zero everywhere inside the shell. The field jumps discontinuously at the surface, from $$0$$ to $$kQ/R^2$$.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example (numeric evaluation, solid sphere).** A nonconducting sphere of radius $$R = 0.10\text{ m}$$ carries $$Q = 8.0\,\text{nC}$$ spread uniformly through its volume. Find $$E$$ at $$r = 0.050\text{ m}$$ (inside) and at $$r = 0.20\text{ m}$$ (outside).
+
+**Inside**, use $$E = \dfrac{1}{4\pi\varepsilon_0}\dfrac{Qr}{R^3}$$ from the uniform-sphere result:
+
+$$
+E = (8.99\times10^9)\frac{(8.0\times10^{-9})(0.050)}{(0.10)^3}
+= (8.99\times10^9)\frac{4.0\times10^{-10}}{1.0\times10^{-3}}
+= 3.6\times10^3\ \text{N/C}.
+$$
+
+**Outside**, the sphere acts like a point charge:
+
+$$
+E = \frac{1}{4\pi\varepsilon_0}\frac{Q}{r^2}
+= (8.99\times10^9)\frac{8.0\times10^{-9}}{(0.20)^2}
+= 1.8\times10^3\ \text{N/C}.
+$$
+
+At the surface ($$r = R = 0.10\text{ m}$$) both formulas agree: $$E = kQ/R^2 = 7.2\times10^3\ \text{N/C}$$, the field's maximum value. Inside, $$E$$ rises linearly from the center; outside, it falls off as $$1/r^2$$.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
 **Example.** An infinite line has uniform charge density $$\lambda$$. Find the electric field of the line a distance $$r$$ away from the line.
 
 The field is radial and constant on the curved side. The end caps have zero flux because $$\vec E$$ is parallel to the caps, not perpendicular to them. Therefore
@@ -395,3 +588,122 @@ $$
 </div>
 
 These examples are very common throughout AP Physics C E&M, and are worth memorizing how to do.
+
+---
+
+## The electric dipole
+
+An **electric dipole** is a pair of equal and opposite charges $$+q$$ and $$-q$$ separated by a small displacement $$\vec d$$ (pointing from the negative to the positive charge). It is described by its **dipole moment**
+
+$$
+\vec p = q\vec d,
+$$
+
+a vector pointing from the negative charge to the positive charge, with magnitude $$p = qd$$ (units $$\text{C}\cdot\text{m}$$). Many neutral molecules (like water) behave as dipoles, and the dipole is the simplest charge distribution with zero net charge but a nonzero field.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (far field on the dipole axis).** Place $$+q$$ at $$+d/2$$ and $$-q$$ at $$-d/2$$ on the $$x$$-axis. Find the field at a point on the axis a distance $$r$$ from the center, with $$r \gg d$$.
+
+On the axis, both fields point along $$x$$, so we just subtract magnitudes. The near (positive) charge is at distance $$r - d/2$$ and the far (negative) charge at $$r + d/2$$:
+
+$$
+E = \frac{q}{4\pi\varepsilon_0}\left[\frac{1}{(r-d/2)^2} - \frac{1}{(r+d/2)^2}\right].
+$$
+
+Combine over a common denominator. The numerator is $$(r+d/2)^2 - (r-d/2)^2 = 2rd$$, and the denominator is $$\big(r^2 - d^2/4\big)^2 \approx r^4$$ when $$r \gg d$$:
+
+$$
+E = \frac{q}{4\pi\varepsilon_0}\cdot\frac{2rd}{(r^2 - d^2/4)^2}
+\approx \frac{q}{4\pi\varepsilon_0}\cdot\frac{2rd}{r^4}
+= \frac{1}{4\pi\varepsilon_0}\frac{2qd}{r^3}.
+$$
+
+With $$p = qd$$,
+
+$$
+E \approx \frac{1}{4\pi\varepsilon_0}\frac{2p}{r^3}.
+$$
+
+The key feature is that a dipole's field falls off as $$1/r^3$$, faster than a single charge's $$1/r^2$$, because the two opposite charges nearly cancel at large distance. The field points along $$\vec p$$ on the axis.
+
+</div>
+
+When a dipole sits in a *uniform* external field $$\vec E$$, the forces on $$+q$$ and $$-q$$ are equal and opposite, so the net force is zero — but they form a couple that produces a **torque**:
+
+$$
+\vec\tau = \vec p \times \vec E, \qquad \tau = pE\sin\phi,
+$$
+
+where $$\phi$$ is the angle between $$\vec p$$ and $$\vec E$$. The torque rotates the dipole toward alignment with the field ($$\phi \to 0$$), where the torque vanishes and the energy $$U = -\vec p\cdot\vec E$$ is minimized.
+
+<div class="theorem-box" markdown="1">
+
+**Example (torque on a dipole).** A dipole with moment $$p = 6.2\times10^{-30}\ \text{C}\cdot\text{m}$$ (about that of a water molecule) sits in a uniform field $$E = 3.0\times10^{5}\ \text{N/C}$$, oriented at $$\phi = 30^\circ$$ to the field. Find the torque on it.
+
+$$
+\tau = pE\sin\phi = (6.2\times10^{-30})(3.0\times10^{5})\sin 30^\circ
+= (6.2\times10^{-30})(3.0\times10^{5})(0.5)
+\approx 9.3\times10^{-25}\ \text{N}\cdot\text{m}.
+$$
+
+The torque is maximal when $$\vec p \perp \vec E$$ ($$\phi = 90^\circ$$) and zero when the dipole is aligned ($$\phi = 0$$) or anti-aligned ($$\phi = 180^\circ$$); only $$\phi = 0$$ is stable equilibrium.
+
+</div>
+
+---
+
+## Charges moving in a uniform field
+
+A charge in a field feels a force $$\vec F = q\vec E$$. In a *uniform* field (such as the region between two large parallel charged plates), the force is constant, so the charge undergoes constant acceleration
+
+$$
+\vec a = \frac{\vec F}{m} = \frac{q\vec E}{m},
+$$
+
+and the constant-acceleration kinematics from mechanics apply directly. This is the electrical analog of projectile motion under gravity.
+
+<div class="theorem-box" markdown="1">
+
+**Example (charge released between plates).** An electron ($$q = -e$$, $$m = 9.11\times10^{-31}\ \text{kg}$$) is released from rest next to the negative plate in a uniform field of magnitude $$E = 2.0\times10^{4}\ \text{N/C}$$. The plates are separated by $$d = 1.0\text{ cm}$$. Find the electron's acceleration and its speed when it reaches the other plate.
+
+The force magnitude is $$F = |q|E = eE$$, so
+
+$$
+a = \frac{eE}{m} = \frac{(1.602\times10^{-19})(2.0\times10^{4})}{9.11\times10^{-31}}
+\approx 3.5\times10^{15}\ \text{m/s}^2.
+$$
+
+(The electron, being negative, accelerates *toward* the positive plate, opposite $$\vec E$$.) Treating this as 1-D motion from rest through $$d$$, use $$v^2 = v_0^2 + 2ad$$ with $$v_0 = 0$$:
+
+$$
+v = \sqrt{2ad} = \sqrt{2(3.5\times10^{15})(0.010)}
+= \sqrt{7.0\times10^{13}}
+\approx 8.4\times10^{6}\ \text{m/s}.
+$$
+
+Equivalently, work-energy gives the same answer: the field does work $$W = qEd = \tfrac{1}{2}mv^2$$. The huge acceleration comes from the electron's tiny mass; the same field would push a proton the other way with an acceleration about $$1800$$ times smaller.
+
+</div>
+
+---
+
+## Key equations
+
+| Idea | Equation |
+| --- | --- |
+| Coulomb's law | $$\vec F = \dfrac{1}{4\pi\varepsilon_0}\dfrac{q_1 q_2}{r^2}\hat r$$ |
+| Coulomb constant | $$k = \dfrac{1}{4\pi\varepsilon_0} = 8.99\times10^9\ \text{N}\cdot\text{m}^2/\text{C}^2$$ |
+| Field of a point charge | $$\vec E = \dfrac{1}{4\pi\varepsilon_0}\dfrac{Q}{r^2}\hat r$$ |
+| Force from a field | $$\vec F = q\vec E$$ |
+| Superposition | $$\vec E_{\text{net}} = \sum_i \vec E_i$$ |
+| Field of a continuous distribution | $$\vec E = \dfrac{1}{4\pi\varepsilon_0}\displaystyle\int \dfrac{dq}{r^2}\hat r$$ |
+| On-axis field of a ring | $$E = \dfrac{1}{4\pi\varepsilon_0}\dfrac{Qx}{(x^2+R^2)^{3/2}}$$ |
+| On-axis field of a disk | $$E = \dfrac{\sigma}{2\varepsilon_0}\left(1 - \dfrac{x}{\sqrt{x^2+R^2}}\right)$$ |
+| Field of an infinite line | $$E = \dfrac{\lambda}{2\pi\varepsilon_0 r}$$ |
+| Field of an infinite sheet | $$E = \dfrac{\sigma}{2\varepsilon_0}$$ |
+| Electric flux | $$\Phi_E = \displaystyle\int \vec E\cdot d\vec A$$ |
+| Gauss's law | $$\displaystyle\oint \vec E\cdot d\vec A = \dfrac{Q_{\text{enc}}}{\varepsilon_0}$$ |
+| Dipole moment | $$\vec p = q\vec d$$ |
+| Dipole far field (on axis) | $$E \approx \dfrac{1}{4\pi\varepsilon_0}\dfrac{2p}{r^3}$$ |
+| Torque on a dipole | $$\vec\tau = \vec p \times \vec E,\quad \tau = pE\sin\phi$$ |

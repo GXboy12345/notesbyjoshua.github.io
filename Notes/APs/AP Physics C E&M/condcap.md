@@ -185,6 +185,38 @@ $$
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example.** A parallel-plate capacitor has square plates of side $$10\ \text{cm}$$ (so $$A = 1.0\times10^{-2}\ \text{m}^2$$) separated by $$d = 1.0\ \text{mm}$$ of air. It is connected to a $$V = 50\ \text{V}$$ source. Find the capacitance, the charge stored, and the energy stored. Use $$\varepsilon_0 = 8.85\times10^{-12}\ \text{F/m}$$.
+
+The capacitance is
+
+$$
+C = \frac{\varepsilon_0 A}{d} = \frac{(8.85\times10^{-12})(1.0\times10^{-2})}{1.0\times10^{-3}} = 8.85\times10^{-11}\ \text{F} \approx 88.5\ \text{pF}.
+$$
+
+The charge stored on each plate is
+
+$$
+Q = C\,V = (8.85\times10^{-11})(50) = 4.4\times10^{-9}\ \text{C} = 4.4\ \text{nC}.
+$$
+
+The stored energy is
+
+$$
+U = \tfrac{1}{2}C V^2 = \tfrac{1}{2}(8.85\times10^{-11})(50)^2 = \tfrac{1}{2}(8.85\times10^{-11})(2500) \approx 1.1\times10^{-7}\ \text{J}.
+$$
+
+The field between the plates is $$E = V/d = 50 / (1.0\times10^{-3}) = 5.0\times10^{4}\ \text{V/m}$$. As a cross-check on the energy via the field-energy density,
+
+$$
+U = \tfrac{1}{2}\varepsilon_0 E^2 (Ad) = \tfrac{1}{2}(8.85\times10^{-12})(5.0\times10^4)^2 (1.0\times10^{-2})(1.0\times10^{-3}) \approx 1.1\times10^{-7}\ \text{J},
+$$
+
+which agrees. Typical capacitances are tiny in SI units, which is why microfarads and picofarads are the practical units.
+
+</div>
+
 ---
 
 ## Capacitors in Parallel and Series
@@ -235,6 +267,52 @@ Cancel $$Q$$:
 $$
 \frac{1}{C_{\text{eq}}}=\frac{1}{C_1}+\frac{1}{C_2}+\cdots.
 $$
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A $$12\ \text{V}$$ battery is connected to a network of three capacitors: $$C_1 = 2.0\ \mu\text{F}$$ in series with the parallel combination of $$C_2 = 3.0\ \mu\text{F}$$ and $$C_3 = 6.0\ \mu\text{F}$$. Find the equivalent capacitance, the total charge drawn from the battery, and the charge and voltage on each capacitor.
+
+First collapse the parallel pair $$C_2 \parallel C_3$$:
+
+$$
+C_{23} = C_2 + C_3 = 3.0 + 6.0 = 9.0\ \mu\text{F}.
+$$
+
+Now $$C_1$$ is in series with $$C_{23}$$:
+
+$$
+\frac{1}{C_{\text{eq}}} = \frac{1}{C_1} + \frac{1}{C_{23}} = \frac{1}{2.0} + \frac{1}{9.0} = \frac{9 + 2}{18} = \frac{11}{18}\ \mu\text{F}^{-1},
+$$
+
+so
+
+$$
+C_{\text{eq}} = \frac{18}{11} \approx 1.64\ \mu\text{F}.
+$$
+
+The total charge drawn from the battery is
+
+$$
+Q_{\text{tot}} = C_{\text{eq}}\,\Delta V = (1.64\ \mu\text{F})(12\ \text{V}) \approx 19.6\ \mu\text{C}.
+$$
+
+Because $$C_1$$ and $$C_{23}$$ are in series, each carries this same charge: $$Q_1 = Q_{23} = 19.6\ \mu\text{C}$$. Their voltages are
+
+$$
+\Delta V_1 = \frac{Q_1}{C_1} = \frac{19.6}{2.0} \approx 9.8\ \text{V}, \qquad
+\Delta V_{23} = \frac{Q_{23}}{C_{23}} = \frac{19.6}{9.0} \approx 2.2\ \text{V}.
+$$
+
+As a check, $$\Delta V_1 + \Delta V_{23} = 9.8 + 2.2 = 12\ \text{V}$$, matching the battery. The parallel pair shares the voltage $$\Delta V_{23} = 2.2\ \text{V}$$, so
+
+$$
+Q_2 = C_2\,\Delta V_{23} = (3.0)(2.2) \approx 6.5\ \mu\text{C}, \qquad
+Q_3 = C_3\,\Delta V_{23} = (6.0)(2.2) \approx 13.1\ \mu\text{C}.
+$$
+
+These add to $$Q_2 + Q_3 \approx 19.6\ \mu\text{C} = Q_{23}$$, as they must. The smaller series capacitor takes the larger share of the voltage, while in the parallel branch the larger capacitor takes the larger share of the charge.
 
 </div>
 
@@ -310,6 +388,30 @@ $$
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Proof (Attractive Force Between Capacitor Plates).** The two plates carry opposite charge, so they attract. A natural but wrong guess is $$F = QE$$, where $$E = \sigma/\varepsilon_0$$ is the field between the plates. The subtlety: a plate cannot exert a force on itself. The force on the positive plate comes only from the field produced by the *other* plate, which is half the total:
+
+$$
+E_{\text{single plate}} = \frac{\sigma}{2\varepsilon_0} = \frac{E}{2}.
+$$
+
+So the force on the plate of charge $$Q$$ is
+
+$$
+F = Q\,E_{\text{single plate}} = Q\cdot\frac{E}{2} = \tfrac{1}{2}QE.
+$$
+
+Writing $$E = \sigma/\varepsilon_0 = Q/(\varepsilon_0 A)$$,
+
+$$
+F = \tfrac{1}{2}Q\cdot\frac{Q}{\varepsilon_0 A} = \frac{Q^2}{2\varepsilon_0 A}.
+$$
+
+The same result follows from energy: at fixed charge, $$U = Q^2 d/(2\varepsilon_0 A)$$, and the attractive force is $$F = -\,dU/dd = Q^2/(2\varepsilon_0 A)$$ (the minus sign reflecting that the field pulls the plates together, decreasing $$d$$). Both routes confirm the factor of $$\tfrac12$$.
+
+</div>
+
 ---
 
 ## Dielectrics
@@ -330,6 +432,139 @@ $$
 
 If a charged capacitor is disconnected from a battery, $$Q$$ stays constant when a dielectric is inserted, so $$\Delta V=Q/C$$ decreases. If it remains connected to a battery, $$\Delta V$$ stays constant and additional charge flows onto the plates.
 
+<div class="theorem-box" markdown="1">
+
+**Example.** A capacitor has vacuum capacitance $$C_0 = 4.0\ \mu\text{F}$$ and is charged using a $$V_0 = 100\ \text{V}$$ battery. A dielectric slab with $$\kappa = 2.5$$ is then inserted to fill the gap, raising the capacitance to $$C = \kappa C_0 = 10.0\ \mu\text{F}$$. Analyze two scenarios.
+
+**(a) Battery disconnected before insertion ($$Q$$ fixed).** Initially
+
+$$
+Q = C_0 V_0 = (4.0\ \mu\text{F})(100\ \text{V}) = 400\ \mu\text{C}, \qquad
+U_0 = \tfrac{1}{2}C_0 V_0^2 = \tfrac{1}{2}(4.0)(100)^2 = 2.0\times10^{4}\ \mu\text{J} = 0.020\ \text{J}.
+$$
+
+With the battery gone, $$Q$$ cannot change. The voltage drops:
+
+$$
+V = \frac{Q}{C} = \frac{400\ \mu\text{C}}{10.0\ \mu\text{F}} = 40\ \text{V},
+$$
+
+and the stored energy becomes
+
+$$
+U = \frac{Q^2}{2C} = \frac{U_0}{\kappa} = \frac{0.020}{2.5} = 8.0\times10^{-3}\ \text{J}.
+$$
+
+Energy *decreases* by $$0.012\ \text{J}$$. The dielectric is polarized and pulled into the gap, so the field does positive work on it as it slides in; that energy leaves the capacitor (the slab would have to be held back to keep it from accelerating in).
+
+**(b) Battery left connected ($$V$$ fixed).** Now $$V = V_0 = 100\ \text{V}$$ stays clamped. The charge rises:
+
+$$
+Q' = C V = (10.0\ \mu\text{F})(100\ \text{V}) = 1000\ \mu\text{C} = \kappa Q,
+$$
+
+and the energy becomes
+
+$$
+U' = \tfrac{1}{2}C V^2 = \kappa U_0 = 2.5(0.020) = 0.050\ \text{J}.
+$$
+
+Energy *increases* by $$0.030\ \text{J}$$. The bookkeeping: the battery pushes additional charge $$\Delta Q = Q' - Q = 600\ \mu\text{C}$$ through the potential $$V$$, doing work
+
+$$
+W_{\text{batt}} = V\,\Delta Q = (100)(600\ \mu\text{C}) = 0.060\ \text{J}.
+$$
+
+Of this, $$0.030\ \text{J}$$ is stored in the capacitor and the remaining $$0.030\ \text{J}$$ goes into work done on/by the dielectric as it is drawn in (and dissipation). So whether energy goes up or down depends entirely on *what is held fixed*.
+
+</div>
+
+---
+
+## Cylindrical and Spherical Capacitors
+
+The parallel-plate result is one geometry; the same method — find the field with Gauss's law, then integrate to get $$\Delta V$$, then use $$C = Q/\Delta V$$ — works for any capacitor with enough symmetry.
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Cylindrical Capacitor).** Consider two coaxial conducting cylinders of length $$L$$, inner radius $$a$$ and outer radius $$b$$, with $$L \gg b$$ so end effects are negligible. Put charge $$+Q$$ on the inner cylinder and $$-Q$$ on the outer. By cylindrical symmetry, choose a coaxial Gaussian cylinder of radius $$r$$ (with $$a < r < b$$) and length $$L$$. Only the curved side has flux, so Gauss's law gives
+
+$$
+E(2\pi r L) = \frac{Q}{\varepsilon_0} \quad\Rightarrow\quad E = \frac{Q}{2\pi\varepsilon_0 L\,r},
+$$
+
+pointing radially outward. The potential difference (inner relative to outer) is
+
+$$
+\Delta V = -\int_{b}^{a} E\,dr = \int_{a}^{b} \frac{Q}{2\pi\varepsilon_0 L}\frac{dr}{r} = \frac{Q}{2\pi\varepsilon_0 L}\ln\!\frac{b}{a}.
+$$
+
+Therefore
+
+$$
+C = \frac{Q}{\Delta V} = \frac{2\pi\varepsilon_0 L}{\ln(b/a)}.
+$$
+
+The capacitance grows with length and shrinks as the radius ratio $$b/a$$ increases. This is the model for a coaxial cable.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Proof (Spherical Capacitor).** Consider two concentric conducting spheres of radii $$a < b$$, with $$+Q$$ on the inner sphere and $$-Q$$ on the outer shell. By spherical symmetry, a Gaussian sphere of radius $$r$$ (with $$a < r < b$$) gives
+
+$$
+E(4\pi r^2) = \frac{Q}{\varepsilon_0} \quad\Rightarrow\quad E = \frac{1}{4\pi\varepsilon_0}\frac{Q}{r^2}.
+$$
+
+The potential difference is
+
+$$
+\Delta V = \int_{a}^{b} E\,dr = \frac{Q}{4\pi\varepsilon_0}\int_{a}^{b}\frac{dr}{r^2} = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{a}-\frac{1}{b}\right) = \frac{Q}{4\pi\varepsilon_0}\frac{b-a}{ab}.
+$$
+
+Therefore
+
+$$
+C = \frac{Q}{\Delta V} = 4\pi\varepsilon_0\,\frac{ab}{b-a}.
+$$
+
+**Isolated-sphere limit.** Let the outer sphere recede to infinity, $$b\to\infty$$. Then $$ab/(b-a) = a/(1 - a/b) \to a$$, so
+
+$$
+C = 4\pi\varepsilon_0\,a.
+$$
+
+This is the self-capacitance of an isolated conducting sphere of radius $$a$$, consistent with $$V = Q/(4\pi\varepsilon_0 a)$$ and $$C = Q/V$$.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example.** Two isolated conducting spheres, of radii $$a_1 = 3.0\ \text{cm}$$ and $$a_2 = 1.0\ \text{cm}$$, are far apart. The larger carries $$Q = 8.0\ \text{nC}$$ and the smaller is uncharged. They are then connected by a long thin wire. Find the final charge on each sphere and compare their surface fields.
+
+Once connected, the spheres reach a common potential. Treating each as an isolated sphere (far apart, so each keeps its own $$V = Q/(4\pi\varepsilon_0 a)$$),
+
+$$
+\frac{q_1}{a_1} = \frac{q_2}{a_2} \quad\Rightarrow\quad \frac{q_1}{q_2} = \frac{a_1}{a_2} = 3.0,
+$$
+
+and charge is conserved, $$q_1 + q_2 = 8.0\ \text{nC}$$. Solving,
+
+$$
+q_1 = 6.0\ \text{nC}, \qquad q_2 = 2.0\ \text{nC}.
+$$
+
+So charge splits in proportion to radius. The surface field of each sphere is $$E = q/(4\pi\varepsilon_0 a^2) = V/a$$. Since both share the same $$V$$,
+
+$$
+\frac{E_2}{E_1} = \frac{a_1}{a_2} = 3.0,
+$$
+
+so the *smaller* sphere has the larger surface field, by the factor $$a_1/a_2$$. This is the quantitative version of "charge density is larger at sharp points": a small radius of curvature concentrates the field, which is why sharp tips ionize the surrounding air and discharge first (the principle behind lightning rods).
+
+</div>
+
 ---
 
 ## Boundary Ideas
@@ -345,3 +580,22 @@ Since $$E_{\perp,\text{inside}}=0$$ in the conductor,
 $$
 E_{\perp,\text{outside}}=\frac{\sigma}{\varepsilon_0}.
 $$
+
+---
+
+## Key equations
+
+| Idea | Equation |
+| --- | --- |
+| Definition of capacitance | $$C = \dfrac{Q}{\Delta V}$$ |
+| Parallel-plate capacitor | $$C = \dfrac{\varepsilon_0 A}{d}$$ |
+| Cylindrical capacitor | $$C = \dfrac{2\pi\varepsilon_0 L}{\ln(b/a)}$$ |
+| Spherical capacitor | $$C = 4\pi\varepsilon_0\dfrac{ab}{b-a}$$ |
+| Isolated sphere | $$C = 4\pi\varepsilon_0 a$$ |
+| Capacitors in parallel | $$C_{\text{eq}} = C_1 + C_2 + \cdots$$ |
+| Capacitors in series | $$\dfrac{1}{C_{\text{eq}}} = \dfrac{1}{C_1} + \dfrac{1}{C_2} + \cdots$$ |
+| Stored energy | $$U = \tfrac{1}{2}Q\Delta V = \dfrac{Q^2}{2C} = \tfrac{1}{2}C(\Delta V)^2$$ |
+| Electric energy density | $$u_E = \tfrac{1}{2}\varepsilon_0 E^2$$ |
+| Dielectric-filled capacitor | $$C = \kappa C_0$$ |
+| Field at conductor surface | $$E = \dfrac{\sigma}{\varepsilon_0}$$ |
+| Force between plates | $$F = \dfrac{Q^2}{2\varepsilon_0 A} = \tfrac{1}{2}QE$$ |

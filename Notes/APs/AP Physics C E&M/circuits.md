@@ -98,6 +98,48 @@ where $$\rho$$ is resistivity, $$L$$ is length, and $$A$$ is cross-sectional are
 
 Ohm's law is not a universal law of nature; it is a material/model relationship. Devices such as diodes, light bulbs over large temperature ranges, and capacitors are not simple ohmic resistors.
 
+<div class="theorem-box" markdown="1">
+
+**Proof ($$R = \rho L/A$$ from the microscopic Ohm's law).** The microscopic form of Ohm's law relates the current density $$\vec J$$ to the electric field inside the conductor through the conductivity $$\sigma_c$$:
+
+$$
+\vec J = \sigma_c \vec E.
+$$
+
+Take a uniform wire of length $$L$$ and cross-sectional area $$A$$ carrying current $$I$$. The current density has magnitude
+
+$$
+J = \frac{I}{A},
+$$
+
+and a steady, uniform field along the wire produces a potential difference
+
+$$
+\Delta V = E L \;\Rightarrow\; E = \frac{\Delta V}{L}.
+$$
+
+Substitute both into $$J = \sigma_c E$$:
+
+$$
+\frac{I}{A} = \sigma_c \frac{\Delta V}{L}.
+$$
+
+Solve for $$\Delta V$$ and write resistivity as $$\rho = 1/\sigma_c$$:
+
+$$
+\Delta V = \frac{L}{\sigma_c A}\,I = \frac{\rho L}{A}\,I.
+$$
+
+Comparing with the macroscopic Ohm's law $$\Delta V = IR$$ identifies
+
+$$
+R = \frac{\rho L}{A}.
+$$
+
+Resistance grows with length (carriers travel farther through scattering) and shrinks with cross-section (more parallel paths for charge).
+
+</div>
+
 ---
 
 ## Power in Circuits
@@ -121,6 +163,46 @@ P=\frac{(\Delta V)^2}{R}.
 $$
 
 Resistors convert electrical energy into thermal energy. Batteries or power supplies can deliver energy to charges by raising their electric potential.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** An ideal $$24\ \text{V}$$ battery is connected to $$R_1 = 8\ \Omega$$ in series with a parallel pair $$R_2 = 12\ \Omega$$ and $$R_3 = 6\ \Omega$$. Find the power dissipated in each resistor and the total power delivered by the battery, and verify energy conservation.
+
+First the equivalent resistance. The parallel pair gives
+
+$$
+\frac{1}{R_{23}} = \frac{1}{12} + \frac{1}{6} = \frac{1}{12} + \frac{2}{12} = \frac{3}{12}, \qquad R_{23} = 4\ \Omega,
+$$
+
+so $$R_{\text{eq}} = 8 + 4 = 12\ \Omega$$ and the battery current is $$I = 24/12 = 2\ \text{A}$$. This full current flows through $$R_1$$, while the parallel section sees $$\Delta V_{23} = I R_{23} = (2)(4) = 8\ \text{V}$$. Now compute the power in each resistor.
+
+$$
+P_1 = I^2 R_1 = (2)^2(8) = 32\ \text{W},
+$$
+
+$$
+P_2 = \frac{(\Delta V_{23})^2}{R_2} = \frac{8^2}{12} = \frac{64}{12} \approx 5.33\ \text{W},
+$$
+
+$$
+P_3 = \frac{(\Delta V_{23})^2}{R_3} = \frac{8^2}{6} = \frac{64}{6} \approx 10.67\ \text{W}.
+$$
+
+The total power delivered by the battery is
+
+$$
+P_{\text{battery}} = \mathcal{E} I = (24)(2) = 48\ \text{W}.
+$$
+
+Summing the dissipation,
+
+$$
+\sum P_{\text{resistors}} = 32 + 5.33 + 10.67 = 48\ \text{W} = P_{\text{battery}}.
+$$
+
+Energy is conserved: every joule per second the battery delivers is dissipated as heat in the resistors. Note the smaller parallel resistor $$R_3$$ dissipates more power, since at equal voltage $$P = (\Delta V)^2/R$$ grows as $$R$$ shrinks.
+
+</div>
 
 ---
 
@@ -174,6 +256,44 @@ $$
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example.** A $$12\ \text{V}$$ battery (ideal) drives the network below: $$R_1 = 4\ \Omega$$ in series with a parallel combination of $$R_2 = 6\ \Omega$$ and $$R_3 = 3\ \Omega$$. Find the equivalent resistance, the total current from the battery, and the current through and voltage across each resistor.
+
+First reduce the parallel pair $$R_2 \parallel R_3$$:
+
+$$
+\frac{1}{R_{23}} = \frac{1}{6} + \frac{1}{3} = \frac{1}{6} + \frac{2}{6} = \frac{3}{6} = \frac{1}{2}, \qquad R_{23} = 2\ \Omega.
+$$
+
+Now $$R_1$$ and $$R_{23}$$ are in series:
+
+$$
+R_{\text{eq}} = R_1 + R_{23} = 4 + 2 = 6\ \Omega.
+$$
+
+The total current leaving the battery follows from $$\Delta V = I R_{\text{eq}}$$:
+
+$$
+I = \frac{\mathcal{E}}{R_{\text{eq}}} = \frac{12\ \text{V}}{6\ \Omega} = 2\ \text{A}.
+$$
+
+All of this current passes through the series resistor $$R_1$$, so $$I_1 = 2\ \text{A}$$ and
+
+$$
+\Delta V_1 = I_1 R_1 = (2)(4) = 8\ \text{V}.
+$$
+
+That leaves $$12 - 8 = 4\ \text{V}$$ across the parallel section, which checks against $$\Delta V_{23} = I R_{23} = (2)(2) = 4\ \text{V}$$. Since $$R_2$$ and $$R_3$$ share this same $$4\ \text{V}$$:
+
+$$
+I_2 = \frac{\Delta V_{23}}{R_2} = \frac{4}{6} \approx 0.67\ \text{A}, \qquad I_3 = \frac{\Delta V_{23}}{R_3} = \frac{4}{3} \approx 1.33\ \text{A}.
+$$
+
+As a consistency check, $$I_2 + I_3 = 0.67 + 1.33 = 2\ \text{A} = I$$, exactly the current that entered the junction. The smaller resistor $$R_3$$ carries the larger share of the current, as expected for parallel branches.
+
+</div>
+
 ---
 
 ## Kirchhoff's Rules
@@ -194,6 +314,56 @@ around any closed loop.
 
 When traversing a resistor in the direction of current, the potential change is $$-IR$$. Traversing against current gives $$+IR$$. Across an ideal battery from negative to positive terminal, the potential change is $$+\mathcal{E}$$.
 
+<div class="theorem-box" markdown="1">
+
+**Example.** A two-loop circuit has two batteries. The left branch contains $$\mathcal{E}_1 = 12\ \text{V}$$ in series with $$R_1 = 2\ \Omega$$; the right branch contains $$\mathcal{E}_2 = 6\ \text{V}$$ in series with $$R_2 = 3\ \Omega$$; both branches share a middle resistor $$R_3 = 6\ \Omega$$ that connects the two junctions. Find the current in each branch.
+
+**Label and assume directions.** Let $$I_1$$ flow down the left branch toward the top junction, $$I_2$$ flow down the right branch toward the same junction, and $$I_3$$ flow out of that junction down through the middle resistor. (If a guessed direction is wrong, its current just comes out negative — the algebra self-corrects.)
+
+**Junction rule** at the top node:
+
+$$
+I_1 + I_2 = I_3.
+$$
+
+**Loop rule, left loop** (through $$\mathcal{E}_1$$, $$R_1$$, and $$R_3$$). Going around in the direction of $$I_1$$, we gain $$+\mathcal{E}_1$$ crossing the battery from $$-$$ to $$+$$, drop $$-I_1 R_1$$ across $$R_1$$, and drop $$-I_3 R_3$$ across the shared resistor:
+
+$$
+\mathcal{E}_1 - I_1 R_1 - I_3 R_3 = 0 \;\Rightarrow\; 12 - 2I_1 - 6I_3 = 0.
+$$
+
+**Loop rule, right loop** (through $$\mathcal{E}_2$$, $$R_2$$, and $$R_3$$):
+
+$$
+\mathcal{E}_2 - I_2 R_2 - I_3 R_3 = 0 \;\Rightarrow\; 6 - 3I_2 - 6I_3 = 0.
+$$
+
+**Solve.** Substitute $$I_3 = I_1 + I_2$$ into both loop equations:
+
+$$
+12 - 2I_1 - 6(I_1 + I_2) = 0 \;\Rightarrow\; 12 = 8I_1 + 6I_2,
+$$
+
+$$
+6 - 3I_2 - 6(I_1 + I_2) = 0 \;\Rightarrow\; 6 = 6I_1 + 9I_2.
+$$
+
+From the second equation, $$2 = 2I_1 + 3I_2$$, so $$I_1 = 1 - \tfrac{3}{2}I_2$$. Substitute into $$12 = 8I_1 + 6I_2$$:
+
+$$
+12 = 8\left(1 - \tfrac{3}{2}I_2\right) + 6I_2 = 8 - 12I_2 + 6I_2 = 8 - 6I_2,
+$$
+
+so $$6I_2 = 8 - 12 = -4$$, giving $$I_2 = -\tfrac{2}{3}\ \text{A} \approx -0.67\ \text{A}$$. The negative sign means the current in the right branch actually flows opposite to the assumed direction. Then
+
+$$
+I_1 = 1 - \tfrac{3}{2}\left(-\tfrac{2}{3}\right) = 1 + 1 = 2\ \text{A}, \qquad I_3 = I_1 + I_2 = 2 - \tfrac{2}{3} = \tfrac{4}{3}\ \text{A} \approx 1.33\ \text{A}.
+$$
+
+So battery 1 drives $$2\ \text{A}$$ down its branch, $$1.33\ \text{A}$$ flows through the middle resistor, and the second battery is being charged: current is pushed *into* its $$+$$ terminal against its emf.
+
+</div>
+
 ---
 
 ## Batteries and Internal Resistance
@@ -205,6 +375,40 @@ V_{\text{terminal}}=\mathcal{E}-Ir.
 $$
 
 When charging a battery, current enters the positive terminal and the terminal voltage can exceed the emf.
+
+<div class="theorem-box" markdown="1">
+
+**Example.** A battery has emf $$\mathcal{E} = 9.0\ \text{V}$$ and internal resistance $$r = 1.0\ \Omega$$. It is connected to a load resistor $$R = 5.0\ \Omega$$. Find the current, the terminal voltage, and the power delivered to the load.
+
+The emf drives current through the series combination of $$r$$ and $$R$$, so
+
+$$
+I = \frac{\mathcal{E}}{R + r} = \frac{9.0}{5.0 + 1.0} = \frac{9.0}{6.0} = 1.5\ \text{A}.
+$$
+
+The terminal voltage is the emf minus the drop across the internal resistance:
+
+$$
+V_{\text{terminal}} = \mathcal{E} - Ir = 9.0 - (1.5)(1.0) = 7.5\ \text{V}.
+$$
+
+This $$7.5\ \text{V}$$ is exactly what appears across the external load, so the power delivered to the load is
+
+$$
+P_R = I^2 R = (1.5)^2(5.0) = 11.25\ \text{W},
+$$
+
+or equivalently $$P_R = I\,V_{\text{terminal}} = (1.5)(7.5) = 11.25\ \text{W}$$. The internal resistance wastes $$P_r = I^2 r = (1.5)^2(1.0) = 2.25\ \text{W}$$ inside the battery, and the total $$\mathcal{E}I = (9.0)(1.5) = 13.5\ \text{W}$$ splits as $$11.25 + 2.25\ \text{W}$$.
+
+**Maximum power transfer.** The power delivered to the load is
+
+$$
+P_R = I^2 R = \frac{\mathcal{E}^2 R}{(R+r)^2}.
+$$
+
+Maximizing over $$R$$, set $$dP_R/dR = 0$$. Using the quotient rule, the numerator of the derivative is $$\mathcal{E}^2[(R+r)^2 - R\cdot 2(R+r)] = \mathcal{E}^2(R+r)(r - R)$$, which vanishes when $$R = r$$. So a source delivers maximum power to its load when the load resistance equals the internal resistance. (Here $$R = 5\ \Omega \ne r$$, so this load is not at the maximum-transfer point; matching to $$R = 1\ \Omega$$ would maximize $$P_R$$, though at lower efficiency.)
+
+</div>
 
 ---
 
@@ -328,6 +532,64 @@ $$
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example.** A capacitor $$C = 100\ \mu\text{F}$$ charges through a resistor $$R = 20\ \text{k}\Omega$$ from an emf $$\mathcal{E} = 12\ \text{V}$$. Find the time constant; the charge, capacitor voltage, and current at $$t = \tau$$ and at $$t = 2\tau$$; and the time to reach $$90\%$$ of full charge.
+
+The time constant is
+
+$$
+\tau = RC = (20\,000\ \Omega)(100\times 10^{-6}\ \text{F}) = 2.0\ \text{s}.
+$$
+
+The final charge is $$Q_\infty = C\mathcal{E} = (100\times 10^{-6})(12) = 1.2\times 10^{-3}\ \text{C} = 1.2\ \text{mC}$$, and the initial current is $$I_0 = \mathcal{E}/R = 12/20\,000 = 0.60\ \text{mA}$$.
+
+**At $$t = \tau$$** ($$e^{-1} \approx 0.368$$):
+
+$$
+Q = Q_\infty(1 - e^{-1}) = 1.2(0.632) \approx 0.76\ \text{mC},
+$$
+
+$$
+V_C = \mathcal{E}(1 - e^{-1}) = 12(0.632) \approx 7.6\ \text{V}, \qquad I = I_0 e^{-1} = 0.60(0.368) \approx 0.22\ \text{mA}.
+$$
+
+**At $$t = 2\tau$$** ($$e^{-2} \approx 0.135$$):
+
+$$
+Q = 1.2(1 - 0.135) \approx 1.04\ \text{mC}, \quad V_C = 12(0.865) \approx 10.4\ \text{V}, \quad I = 0.60(0.135) \approx 0.081\ \text{mA}.
+$$
+
+**Time to $$90\%$$ charge.** Set $$Q/Q_\infty = 0.90$$ and invert $$Q = Q_\infty(1 - e^{-t/RC})$$:
+
+$$
+t = -RC\ln\!\left(1 - \frac{Q}{Q_\infty}\right) = -(2.0)\ln(1 - 0.90) = -(2.0)\ln(0.10) \approx (2.0)(2.303) \approx 4.6\ \text{s}.
+$$
+
+That is about $$2.3\tau$$ — a useful rule of thumb is that a capacitor reaches roughly $$95\%$$ of full charge after $$3\tau$$ and is effectively fully charged after about $$5\tau$$.
+
+</div>
+
+<div class="theorem-box" markdown="1">
+
+**Example (discharging half-life).** A charged capacitor discharges through a resistor with $$Q(t) = Q_0 e^{-t/RC}$$. How long until the charge falls to half its initial value?
+
+Set $$Q(t_{1/2}) = \tfrac{1}{2}Q_0$$:
+
+$$
+\tfrac{1}{2}Q_0 = Q_0 e^{-t_{1/2}/RC} \;\Rightarrow\; e^{-t_{1/2}/RC} = \tfrac{1}{2}.
+$$
+
+Take the natural log:
+
+$$
+-\frac{t_{1/2}}{RC} = \ln\tfrac{1}{2} = -\ln 2 \;\Rightarrow\; t_{1/2} = RC\ln 2 \approx 0.693\,RC.
+$$
+
+The half-life is a fixed fraction of $$\tau$$ regardless of the starting charge, exactly like radioactive decay. For the $$\tau = 2.0\ \text{s}$$ circuit above, $$t_{1/2} = 2.0\ln 2 \approx 1.39\ \text{s}$$.
+
+</div>
+
 For discharging,
 
 $$
@@ -376,6 +638,32 @@ $$
 
 </div>
 
+<div class="theorem-box" markdown="1">
+
+**Example (initial vs. steady-state behavior).** An initially uncharged capacitor $$C$$ sits in parallel with a resistor $$R_2 = 6\ \Omega$$; that combination is in series with $$R_1 = 4\ \Omega$$ and an ideal $$\mathcal{E} = 20\ \text{V}$$ battery. The switch closes at $$t = 0$$. Find the current from the battery and the current through $$R_2$$ both immediately after closing and a long time later.
+
+The trick is to use the two limiting behaviors of a capacitor:
+
+- **At $$t = 0^+$$** an uncharged capacitor has zero voltage across it, so it behaves like a plain wire (a short). All the current entering the parallel section flows through the capacitor branch, bypassing $$R_2$$. The circuit is then just $$\mathcal{E}$$ across $$R_1$$:
+
+$$
+I_{\text{battery}}(0) = \frac{\mathcal{E}}{R_1} = \frac{20}{4} = 5\ \text{A}, \qquad I_{R_2}(0) = 0.
+$$
+
+Because the capacitor short-circuits $$R_2$$, no current is "wasted" in $$R_2$$ at the first instant.
+
+- **At $$t \to \infty$$** the capacitor is fully charged, no more charge flows onto it, so $$dQ/dt = 0$$ and its branch carries zero current — it behaves like an open circuit. Now all the current must flow through $$R_2$$, and the circuit is $$R_1$$ in series with $$R_2$$:
+
+$$
+I_{\text{battery}}(\infty) = \frac{\mathcal{E}}{R_1 + R_2} = \frac{20}{4 + 6} = 2\ \text{A} = I_{R_2}(\infty).
+$$
+
+The steady-state capacitor voltage equals the voltage across $$R_2$$: $$V_C = I_{R_2}R_2 = (2)(6) = 12\ \text{V}$$, so the final stored charge is $$Q_\infty = C V_C = 12C$$.
+
+The two limits — **capacitor as a wire at $$t = 0$$, capacitor as an open branch as $$t\to\infty$$** — let you read off the start and end states of any RC circuit without solving the differential equation, which is exactly what most AP free-response questions ask for.
+
+</div>
+
 ---
 
 ## Meters
@@ -383,3 +671,25 @@ $$
 An ideal ammeter has zero resistance and is placed in series with the element whose current is measured. An ideal voltmeter has infinite resistance and is placed in parallel across the element whose potential difference is measured.
 
 Real meters disturb circuits slightly: an ammeter adds small series resistance, and a voltmeter draws small parallel current.
+
+---
+
+## Key equations
+
+| Idea | Equation |
+| --- | --- |
+| Current as charge flow | $$I = \dfrac{dQ}{dt}$$ |
+| Microscopic (drift) current | $$I = nqAv_d$$ |
+| Ohm's law | $$\Delta V = IR$$ |
+| Resistance of a wire | $$R = \dfrac{\rho L}{A}$$ |
+| Power in an element | $$P = I\Delta V = I^2 R = \dfrac{(\Delta V)^2}{R}$$ |
+| Resistors in series | $$R_{\text{eq}} = R_1 + R_2 + \cdots$$ |
+| Resistors in parallel | $$\dfrac{1}{R_{\text{eq}}} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \cdots$$ |
+| Junction rule (charge) | $$\sum I_{\text{in}} = \sum I_{\text{out}}$$ |
+| Loop rule (energy) | $$\sum \Delta V = 0$$ |
+| Terminal voltage | $$V_{\text{terminal}} = \mathcal{E} - Ir$$ |
+| Time constant | $$\tau = RC$$ |
+| Charging capacitor | $$Q(t) = C\mathcal{E}\left(1 - e^{-t/RC}\right)$$ |
+| Charging current | $$I(t) = \dfrac{\mathcal{E}}{R}e^{-t/RC}$$ |
+| Discharging capacitor | $$Q(t) = Q_0 e^{-t/RC}$$ |
+| Discharge half-life | $$t_{1/2} = RC\ln 2$$ |
