@@ -1,32 +1,74 @@
 ---
-// Replaces Starlight's header social-icons slot: an always-visible account
-// indicator, plus the original social icons (rendered via the default).
+// Header account control: a "Sign in" link when signed out, or a dropdown menu
+// (Dashboard / Account / Admin / Sign out) when signed in. Plus social icons.
 import Default from '@astrojs/starlight/components/SocialIcons.astro';
 ---
 
-<a id="header-account-link" class="header-account-link" href="/account/" data-signedin="false">
-  Sign in
-</a>
+<div class="header-account">
+  <a id="ha-signin" class="header-account-link" href="/account/">Sign in</a>
+
+  <div id="ha-menu-wrap" class="header-account-menu-wrap" hidden>
+    <button id="ha-toggle" class="header-account-link" aria-haspopup="true" aria-expanded="false">
+      <span class="header-account-dot"></span>
+      <span id="ha-name">Account</span>
+    </button>
+    <div id="ha-menu" class="header-account-menu" hidden>
+      <a href="/dashboard/">My Dashboard</a>
+      <a href="/account/">Account</a>
+      <a id="ha-admin" href="/admin/" hidden>Admin</a>
+      <button id="ha-signout" type="button">Sign out</button>
+    </div>
+  </div>
+</div>
 <Default><slot /></Default>
 
 <script>
-  import { getSupabase } from '../lib/supabase';
+  import { getSupabase, getRole } from '../lib/supabase';
 
-  const link = document.getElementById('header-account-link') as HTMLAnchorElement | null;
+  const byId = (id: string) => document.getElementById(id)!;
   const sb = getSupabase();
-  if (sb && link) {
+  if (sb) {
+    const signin = byId('ha-signin');
+    const wrap = byId('ha-menu-wrap');
+    const toggle = byId('ha-toggle');
+    const menu = byId('ha-menu');
+
+    const closeMenu = () => {
+      menu.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = menu.hidden;
+      menu.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', (e) => {
+      if (!menu.hidden && !wrap.contains(e.target as Node)) closeMenu();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+    byId('ha-signout').addEventListener('click', async () => {
+      try { await sb.auth.signOut(); } catch (err) { console.error('[header] signout failed:', err); }
+      closeMenu();
+    });
+
     sb.auth.onAuthStateChange((_event, session) => {
       const user = session?.user;
       if (user) {
-        link.textContent = user.email ? user.email.split('@')[0] : 'Account';
-        link.title = user.email ? `Signed in as ${user.email}` : 'Signed in';
-        link.href = '/dashboard/';
-        link.dataset.signedin = 'true';
+        byId('ha-name').textContent = user.email ? user.email.split('@')[0] : 'Account';
+        toggle.title = user.email ? `Signed in as ${user.email}` : 'Signed in';
+        signin.hidden = true;
+        wrap.hidden = false;
+        getRole()
+          .then((role) => { byId('ha-admin').hidden = role !== 'admin'; })
+          .catch(() => { byId('ha-admin').hidden = true; });
       } else {
-        link.textContent = 'Sign in';
-        link.title = 'Sign in';
-        link.href = '/account/';
-        link.dataset.signedin = 'false';
+        signin.hidden = false;
+        wrap.hidden = true;
+        closeMenu();
       }
     });
   }

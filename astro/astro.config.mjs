@@ -27,6 +27,7 @@ export default defineConfig({
 		starlight({
 			title: 'Notes by Joshua',
 			description: 'Math, Physics, and Thoughts',
+			favicon: '/assets/Images/favicon.jpeg',
 			components: {
 				// Show an account indicator in the header (keeps social icons too).
 				SocialIcons: './src/components/HeaderAccount.astro',
@@ -53,6 +54,16 @@ export default defineConfig({
 						rel: 'stylesheet',
 						href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap',
 					},
+				},
+				// Google Analytics (same measurement ID as the old site).
+				{
+					tag: 'script',
+					attrs: { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-868QCS9DJP' },
+				},
+				{
+					tag: 'script',
+					content:
+						"window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-868QCS9DJP');",
 				},
 			],
 			sidebar: [
