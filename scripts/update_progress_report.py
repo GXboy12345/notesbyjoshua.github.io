@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 NOTES_DIR = ROOT / "Notes"
 OUTPUT = NOTES_DIR / "progress.md"
 ADMIN_DATA_OUTPUT = ROOT / "assets" / "data" / "admin-dashboard.json"
+ADMIN_BODY_OUTPUT = ROOT / "_includes" / "admin-dashboard-body.html"
 
 
 STATUS_ORDER = [
@@ -431,13 +432,147 @@ def admin_payload(reports: list[NoteReport]) -> dict[str, object]:
     }
 
 
+def render_admin_body(payload: dict[str, object]) -> str:
+    summary = payload["summary"]
+    courses = payload["courses"]
+    priority_pages = payload["priority_pages"]
+    top_issues = payload["top_issues"]
+
+    def metric(label: str, value: object) -> str:
+        return f'<div class="admin-metric"><strong>{html.escape(str(value))}</strong><span>{html.escape(label)}</span></div>'
+
+    lines = [
+        '<div class="admin-actions">',
+        '  <a class="admin-action" href="{{ \'/notes/progress/\' | relative_url }}">Open Progress Page</a>',
+        '  <a class="admin-action" href="https://analytics.google.com/" rel="noopener" target="_blank">Open Google Analytics</a>',
+        '  <button class="admin-action admin-action--button" id="admin-lock-button" type="button">Lock</button>',
+        "</div>",
+        "",
+        '<section class="admin-section">',
+        "  <h2>Notes Overview</h2>",
+        '  <div class="admin-metric-grid">',
+        f'    {metric("unit pages", summary["unit_pages"])}',
+        f'    {metric("all notes pages", summary["all_pages"])}',
+        f'    {metric("average progress", str(summary["average_progress"]) + "%")}',
+        f'    {metric("complete pages", summary["complete_pages"])}',
+        f'    {metric("below review", summary["below_review_pages"])}',
+        f'    {metric("with placeholders", summary["pages_with_placeholders"])}',
+        f'    {metric("missing practice", summary["missing_practice_pages"])}',
+        f'    {metric("missing solutions", summary["missing_solutions_pages"])}',
+        "  </div>",
+        "</section>",
+        "",
+        '<section class="admin-section">',
+        "  <h2>Course Progress</h2>",
+        '  <div class="admin-course-list">',
+    ]
+
+    for course in courses:
+        lines.extend(
+            [
+                '    <div class="admin-course">',
+                f'      <div class="admin-course__head"><strong>{html.escape(course["name"])}</strong><span>{course["pages"]} pages</span></div>',
+                f'      {progress_bar(course["average_progress"])}',
+                f'      <div class="admin-course__meta">{course["complete_pages"]} complete &middot; {course["below_review_pages"]} below review</div>',
+                "    </div>",
+            ]
+        )
+
+    lines.extend(
+        [
+            "  </div>",
+            "</section>",
+            "",
+            '<section class="admin-section">',
+            "  <h2>Priority Pages</h2>",
+            '  <table class="notes-progress-table admin-priority-table">',
+            "    <thead>",
+            "      <tr>",
+            "        <th>Page</th>",
+            "        <th>Course</th>",
+            "        <th>Status</th>",
+            "        <th>Progress</th>",
+            "        <th>Main Issues</th>",
+            "        <th>Next Step</th>",
+            "      </tr>",
+            "    </thead>",
+            "    <tbody>",
+        ]
+    )
+
+    for page in priority_pages:
+        issues = ", ".join(page["issues"][:3]) if page["issues"] else "none flagged"
+        lines.extend(
+            [
+                "      <tr>",
+                f'        <td><a href="{{{{ \'{page["permalink"]}\' | relative_url }}}}">{html.escape(page["title"])}</a><br><small>{html.escape(page["path"])}</small></td>',
+                f'        <td>{html.escape(page["parent"])}</td>',
+                f'        <td><span class="note-status note-status--{html.escape(page["status"])}">{html.escape(page["status"])}</span></td>',
+                f'        <td>{progress_bar(page["progress"])}</td>',
+                f'        <td>{html.escape(issues)}</td>',
+                f'        <td>{html.escape(page["next_step"])}</td>',
+                "      </tr>",
+            ]
+        )
+
+    lines.extend(
+        [
+            "    </tbody>",
+            "  </table>",
+            "</section>",
+            "",
+            '<section class="admin-section">',
+            "  <h2>Issue Counts</h2>",
+            '  <div class="admin-issue-list">',
+        ]
+    )
+
+    for item in top_issues:
+        lines.append(
+            f'    <div class="admin-issue"><span>{html.escape(item["issue"])}</span><strong>{item["count"]}</strong></div>'
+        )
+
+    lines.extend(
+        [
+            "  </div>",
+            "</section>",
+            "",
+            '<section class="admin-section">',
+            "  <h2>Google Analytics</h2>",
+            '  <div class="admin-ga-panel">',
+            "    <p>Google Analytics tracking is installed through the site tag. Live private analytics cannot be safely pulled into a public GitHub Pages page without exposing credentials.</p>",
+            "    <p>Use the button above to open the GA dashboard, or embed a Looker Studio report here later if you create a shareable report URL.</p>",
+            "    <dl>",
+            "      <div>",
+            "        <dt>Measurement ID</dt>",
+            "        <dd><code>G-868QCS9DJP</code></dd>",
+            "      </div>",
+            "      <div>",
+            "        <dt>Tracking Status</dt>",
+            "        <dd>Tag present in <code>_includes/head_custom.html</code></dd>",
+            "      </div>",
+            "    </dl>",
+            "  </div>",
+            "</section>",
+            "",
+        ]
+    )
+
+    return "\n".join(lines)
+
+
 def main() -> None:
     paths = sorted(NOTES_DIR.rglob("*.md"))
     reports = [report_for(path) for path in paths if path != OUTPUT]
+    payload = admin_payload(reports)
     OUTPUT.write_text(render(reports), encoding="utf-8")
     ADMIN_DATA_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    ADMIN_DATA_OUTPUT.write_text(json.dumps(admin_payload(reports), indent=2) + "\n", encoding="utf-8")
-    print(f"wrote {OUTPUT.relative_to(ROOT)} and {ADMIN_DATA_OUTPUT.relative_to(ROOT)} with {len(reports)} pages")
+    ADMIN_DATA_OUTPUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    ADMIN_BODY_OUTPUT.write_text(render_admin_body(payload), encoding="utf-8")
+    print(
+        f"wrote {OUTPUT.relative_to(ROOT)}, {ADMIN_DATA_OUTPUT.relative_to(ROOT)}, "
+        f"and {ADMIN_BODY_OUTPUT.relative_to(ROOT)} with {len(reports)} pages"
+    )
 
 
 if __name__ == "__main__":

@@ -6,7 +6,7 @@ cd "$repo_root"
 
 python3 scripts/update_progress_report.py
 
-if ! git diff --quiet -- Notes/progress.md assets/data/admin-dashboard.json; then
+if ! git diff --quiet -- Notes/progress.md assets/data/admin-dashboard.json _includes/admin-dashboard-body.html; then
   printf '%s\n' 'Generated dashboard files changed and have unstaged changes.'
   printf '%s\n' 'Commit the updated progress/admin dashboard files before pushing.'
   exit 1
