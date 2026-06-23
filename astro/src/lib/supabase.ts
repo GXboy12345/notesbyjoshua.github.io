@@ -1,10 +1,13 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 // These are PUBLIC values (safe to ship to the browser): the anon key only
-// grants access allowed by Row-Level Security policies. They are inlined at
-// build time from environment variables (see .env.example).
-const url = import.meta.env.PUBLIC_SUPABASE_URL;
-const anonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+// grants access allowed by Row-Level Security policies, and it already appears
+// in the client bundle on every page load. Env vars override the committed
+// defaults, so any host works without extra configuration.
+const url = import.meta.env.PUBLIC_SUPABASE_URL ?? 'https://geqwjrxdbalaviusteeo.supabase.co';
+const anonKey =
+	import.meta.env.PUBLIC_SUPABASE_ANON_KEY ??
+	'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdlcXdqcnhkYmFsYXZpdXN0ZWVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyMzY5MzYsImV4cCI6MjA5NzgxMjkzNn0.YGgu5YWMWFweq92xPpiA1hwe4dcaeh0JdVl4fgDOWO4';
 
 let client: SupabaseClient | null = null;
 
