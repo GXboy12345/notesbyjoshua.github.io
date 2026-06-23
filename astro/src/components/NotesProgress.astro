@@ -1,0 +1,74 @@
+---
+// Admin-only notes-completion report. Data is generated at build time by
+// scripts/notes_progress.py; this page is gated to admins (client-side).
+import data from '../data/notes-progress.json';
+const { summary, pages } = data as {
+  summary: Record<string, number | string>;
+  pages: {
+    title: string; route: string; course: string; kind: string;
+    status: string; progress: number; issues: string[]; next_step: string;
+  }[];
+};
+---
+
+<div class="np">
+  <p id="np-status">Loading…</p>
+
+  <div id="np-denied" hidden>
+    <p>This page is for admins only. <a href="/account/">Go to your account</a> to sign in.</p>
+  </div>
+
+  <div id="np-content" hidden>
+    <p class="np-summary">
+      Generated {summary.generated_at} · <strong>{summary.unit_pages}</strong> unit pages ·
+      <strong>{summary.average_progress}%</strong> average ·
+      <strong>{summary.below_complete}</strong> below complete ·
+      <strong>{summary.with_placeholders}</strong> with placeholders
+    </p>
+    <p class="np-note">Auto-scored from page content (least-done first). Re-run <code>scripts/notes_progress.py</code> to refresh.</p>
+
+    <table class="np-table">
+      <thead>
+        <tr><th>Page</th><th>Course</th><th>Status</th><th>Progress</th><th>Main issues</th><th>Next step</th></tr>
+      </thead>
+      <tbody>
+        {pages.map((p) => (
+          <tr>
+            <td><a href={p.route}>{p.title}</a></td>
+            <td>{p.course}</td>
+            <td><span class={`note-status note-status--${p.status}`}>{p.status}</span></td>
+            <td>
+              <span class="np-bar" aria-label={`${p.progress}%`}>
+                <span class="np-bar__fill" style={`width:${p.progress}%`}></span>
+                <span class="np-bar__label">{p.progress}%</span>
+              </span>
+            </td>
+            <td>{p.issues.length ? p.issues.join(', ') : 'none flagged'}</td>
+            <td>{p.next_step}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  import { getSupabase, getRole } from '../lib/supabase';
+  const byId = (id: string) => document.getElementById(id)!;
+  const show = (id: string) => ['np-status', 'np-denied', 'np-content'].forEach((s) => (byId(s).hidden = s !== id));
+  const sb = getSupabase();
+
+  async function gate(session: any) {
+    if (!session?.user) { show('np-denied'); return; }
+    const role = await getRole().catch(() => 'visitor');
+    show(role === 'admin' ? 'np-content' : 'np-denied');
+  }
+
+  if (!sb) {
+    show('np-denied');
+  } else {
+    let settled = false;
+    sb.auth.onAuthStateChange((_event, session) => { settled = true; gate(session); });
+    setTimeout(() => { if (!settled) show('np-denied'); }, 2500);
+  }
+</script>

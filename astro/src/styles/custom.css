@@ -9,6 +9,16 @@
 		'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+/* --- Higher-contrast body text --- */
+:root[data-theme='light'] {
+	--sl-color-text: #18212f; /* near-black slate (was a lighter gray) */
+	--sl-color-text-accent: #0b3a66;
+}
+
+:root[data-theme='dark'] {
+	--sl-color-text: #eef2f6; /* near-white (was a darker gray) */
+}
+
 /* --- Theorem boxes ---
    Authored in Markdown as <div class="theorem-box">...</div>. */
 .sl-markdown-content .theorem-box {
@@ -98,6 +108,83 @@
 	text-align: left;
 	padding: 0.5rem 0.75rem;
 	border-bottom: 1px solid var(--sl-color-gray-5);
+}
+
+/* --- Notes progress report (admin) --- */
+.np-note {
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-3);
+}
+
+.np-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: var(--sl-text-sm);
+}
+
+.np-table th,
+.np-table td {
+	text-align: left;
+	padding: 0.45rem 0.6rem;
+	border-bottom: 1px solid var(--sl-color-gray-5);
+	vertical-align: middle;
+}
+
+.note-status {
+	display: inline-block;
+	padding: 0.1rem 0.5rem;
+	border-radius: 999px;
+	font-size: 0.72rem;
+	font-weight: 600;
+	text-transform: capitalize;
+	color: #17324d;
+	background: rgba(14, 165, 233, 0.16);
+}
+
+.note-status--stub,
+.note-status--outline,
+.note-status--draft {
+	color: #5b2b16;
+	background: rgba(245, 158, 11, 0.22);
+}
+
+.note-status--developing {
+	color: #17324d;
+	background: rgba(14, 165, 233, 0.2);
+}
+
+.note-status--review,
+.note-status--complete {
+	color: #14532d;
+	background: rgba(34, 197, 94, 0.22);
+}
+
+.np-bar {
+	position: relative;
+	display: block;
+	width: 7rem;
+	height: 1.15rem;
+	overflow: hidden;
+	border-radius: 999px;
+	background: var(--sl-color-gray-6);
+}
+
+.np-bar__fill {
+	display: block;
+	height: 100%;
+	min-width: 0.15rem;
+	background: linear-gradient(90deg, #1d9a72, #46b37f);
+}
+
+.np-bar__label {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.7rem;
+	font-weight: 600;
+	color: var(--sl-color-text);
 }
 
 /* --- Reading dashboard checklist --- */
