@@ -1,0 +1,61 @@
+---
+// Auth UI. All logic runs client-side against Supabase (protected by RLS).
+---
+<div class="account">
+  <p id="account-status">Loading…</p>
+
+  <div id="account-signedout" hidden>
+    <p>Sign in to track your progress and access your dashboard.</p>
+    <button id="google-signin" class="account-btn">Sign in with Google</button>
+  </div>
+
+  <div id="account-signedin" hidden>
+    <p>Signed in as <strong id="account-email"></strong> — role: <span id="account-role"></span>.</p>
+    <p id="admin-links" hidden><a href="/admin/">Open the admin dashboard →</a></p>
+    <button id="signout" class="account-btn account-btn--secondary">Sign out</button>
+  </div>
+
+  <p id="account-disabled" hidden>Accounts aren’t configured yet (missing Supabase credentials).</p>
+</div>
+
+<script>
+  import { getSupabase, getRole } from '../lib/supabase';
+
+  const byId = (id: string) => document.getElementById(id)!;
+  const sb = getSupabase();
+
+  async function render() {
+    byId('account-status').hidden = true;
+    if (!sb) {
+      byId('account-disabled').hidden = false;
+      return;
+    }
+    const { data: { user } } = await sb.auth.getUser();
+    if (user) {
+      const role = await getRole();
+      byId('account-email').textContent = user.email ?? '';
+      byId('account-role').textContent = role ?? 'visitor';
+      byId('admin-links').hidden = role !== 'admin';
+      byId('account-signedin').hidden = false;
+      byId('account-signedout').hidden = true;
+    } else {
+      byId('account-signedout').hidden = false;
+      byId('account-signedin').hidden = true;
+    }
+  }
+
+  byId('google-signin')?.addEventListener('click', () => {
+    sb?.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: window.location.origin + '/account/' },
+    });
+  });
+
+  byId('signout')?.addEventListener('click', async () => {
+    await sb?.auth.signOut();
+    render();
+  });
+
+  sb?.auth.onAuthStateChange(() => render());
+  render();
+</script>

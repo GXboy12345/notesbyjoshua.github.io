@@ -57,6 +57,7 @@ export default defineConfig({
 				{ label: 'Blog', link: '/blog/' },
 				{ label: 'About', link: '/about/' },
 				{ label: 'Feedback', link: '/feedback/' },
+				{ label: 'Account', link: '/account/' },
 			],
 		}),
 	],
