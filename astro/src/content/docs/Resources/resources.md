@@ -1,5 +1,7 @@
 ---
 title: Resources
+prev: false
+next: false
 ---
 
 This section compiles a list of resources that I found very helpful throughout my learning journey. Individual learning documents can be found inside the notes of the corresponding topics, these are just external websites that are very helpful in studying.

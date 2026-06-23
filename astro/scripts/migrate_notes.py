@@ -115,27 +115,38 @@ def build_sidebar(nav: list[dict]) -> tuple[list[dict], set[str], set[str], list
 
     prev_false: set[str] = set()
     next_false: set[str] = set()
+    ordered: list[tuple[str, str]] = []  # (link, topic label) in pagination order
 
-    def build(record: dict) -> tuple[dict, list[str]]:
+    def build(record: dict, topic: str) -> dict:
         kids = children.get(record["title"], [])
         if not kids:
-            return {"label": record["title"], "link": record["link"]}, [record["link"]]
+            ordered.append((record["link"], topic))
+            return {"label": record["title"], "link": record["link"]}
+        # A group: its own label is the topic for its Overview and direct children.
+        label = record["title"]
         items: list[dict] = [{"label": "Overview", "link": record["link"]}]
-        leaves: list[str] = [record["link"]]
+        ordered.append((record["link"], label))
         for kid in kids:
-            node, kid_leaves = build(kid)
-            items.append(node)
-            leaves.extend(kid_leaves)
-        # Topic boundary: first leaf hides prev, last leaf hides next.
-        prev_false.add(leaves[0])
-        next_false.add(leaves[-1])
-        return {"label": record["title"], "items": items}, leaves
+            items.append(build(kid, label))
+        return {"label": label, "items": items}
 
     # Root the tree at the page titled "Notes"; its children are the subjects.
     notes_record = next((r for r in nav if r["title"] == "Notes"), None)
     if notes_record is None:
         return [], prev_false, next_false, orphans
-    notes_group, _ = build(notes_record)
+    notes_group = build(notes_record, "Notes")
+
+    # Pagination follows the sidebar order (the `ordered` list). Hide the link
+    # wherever two consecutive pages sit in different topics, plus the very
+    # first/last page of the whole sequence.
+    if ordered:
+        prev_false.add(ordered[0][0])
+        next_false.add(ordered[-1][0])
+    for (link_a, topic_a), (link_b, topic_b) in zip(ordered, ordered[1:]):
+        if topic_a != topic_b:
+            next_false.add(link_a)
+            prev_false.add(link_b)
+
     return notes_group["items"], prev_false, next_false, orphans
 
 

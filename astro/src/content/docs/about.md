@@ -1,5 +1,7 @@
 ---
 title: About
+prev: false
+next: false
 ---
 
 Hi, I'm Joshua. This site is where I document what I learn.

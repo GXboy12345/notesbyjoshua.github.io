@@ -1,6 +1,7 @@
 ---
 title: "Chemistry"
 prev: false
+next: false
 sidebar:
   order: 4
 ---

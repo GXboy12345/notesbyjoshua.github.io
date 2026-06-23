@@ -1,5 +1,7 @@
 ---
 title: Feedback and Requests
+prev: false
+next: false
 ---
 
 Use the form below to suggest topics, report mistakes, or ask for additions. Responses are collected in a spreadsheet so nothing gets lost in email.

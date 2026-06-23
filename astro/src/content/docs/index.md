@@ -1,6 +1,12 @@
 ---
 title: Notes by Joshua
 description: Math, Physics, and Thoughts
+prev: false
+next: false
+# Override the <title> tag so it isn't "Notes by Joshua | Notes by Joshua".
+head:
+  - tag: title
+    content: Notes by Joshua
 ---
 
 Welcome to Notes by Joshua! Currently we are in Alpha-3 phase.

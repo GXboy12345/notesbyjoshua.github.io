@@ -1,5 +1,6 @@
 ---
 title: "AP Biology"
+next: false
 sidebar:
   order: 0
 ---

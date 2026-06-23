@@ -1,6 +1,7 @@
 ---
 title: "Notes"
 prev: false
+next: false
 sidebar:
   order: 2
 ---

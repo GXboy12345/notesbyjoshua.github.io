@@ -1,5 +1,7 @@
 ---
 title: Practice Problems
+prev: false
+next: false
 ---
 
 Find practice problem based on subject! These links redirect you to the respective hubs and you will find the practuce problems on there.

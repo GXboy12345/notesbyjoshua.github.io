@@ -1,5 +1,7 @@
 ---
 title: How to use these notes
+prev: false
+next: false
 ---
 
 ## Navigation
