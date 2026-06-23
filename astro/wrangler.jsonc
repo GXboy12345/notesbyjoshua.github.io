@@ -1,0 +1,10 @@
+{
+	// Deploys the built Astro site as a Cloudflare Worker serving static assets.
+	// `npm run build` outputs to ./dist, which is uploaded as the asset directory.
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "notesbyjoshua",
+	"compatibility_date": "2026-06-23",
+	"assets": {
+		"directory": "./dist"
+	}
+}
