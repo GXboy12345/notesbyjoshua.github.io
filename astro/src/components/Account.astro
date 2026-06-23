@@ -1,83 +1,120 @@
 ---
-// Auth UI. All logic runs client-side against Supabase (protected by RLS).
+import notesSidebar from '../sidebar.json';
+type Item = { link?: string; items?: Item[] };
+function countLeaves(items: Item[]): number {
+  let n = 0;
+  for (const it of items) {
+    if (it.items) n += countLeaves(it.items);
+    else if (it.link) n += 1;
+  }
+  return n;
+}
+const totalNotes = countLeaves(notesSidebar as Item[]);
 ---
-<div class="account">
+<div class="account" data-total-notes={totalNotes}>
   <p id="account-status">Loading…</p>
 
   <div id="account-signedout" hidden>
-    <p>Sign in to track your progress and access your dashboard.</p>
+    <p>Sign in to track your progress and manage your profile.</p>
     <button id="google-signin" class="account-btn">Sign in with Google</button>
   </div>
 
   <div id="account-signedin" hidden>
-    <p>Signed in as <strong id="account-email"></strong> — role: <span id="account-role"></span>.</p>
-    <p><a href="/dashboard/">View your reading dashboard →</a></p>
+    <h2>Profile</h2>
+    <dl class="profile-fields">
+      <div><dt>Email</dt><dd id="account-email"></dd></div>
+      <div><dt>Role</dt><dd id="account-role"></dd></div>
+    </dl>
+
+    <div class="profile-field">
+      <label for="account-username">Username</label>
+      <div class="profile-row">
+        <input id="account-username" type="text" maxlength="40" placeholder="Your display name" />
+        <button id="account-save" class="account-btn" type="button">Save</button>
+      </div>
+      <p id="account-save-msg" class="profile-save-msg" hidden></p>
+    </div>
+
+    <h2>Your reading progress</h2>
+    <p class="profile-progress"><strong id="account-readcount">0</strong> / {totalNotes} notes read</p>
+    <span class="np-bar profile-bar"><span id="account-readbar" class="np-bar__fill" style="width:0%"></span></span>
+    <p><a href="/dashboard/">Open your reading dashboard →</a></p>
+
     <p id="admin-links" hidden><a href="/admin/">Open the admin dashboard →</a></p>
-    <button id="signout" class="account-btn account-btn--secondary">Sign out</button>
+    <p><button id="signout" class="account-btn account-btn--secondary" type="button">Sign out</button></p>
   </div>
 
   <p id="account-disabled" hidden>Accounts aren’t configured yet (missing Supabase credentials).</p>
 </div>
 
 <script>
-  import { getSupabase, getRole } from '../lib/supabase';
+  import { getSupabase, getProfile } from '../lib/supabase';
 
   const byId = (id: string) => document.getElementById(id)!;
   const STATES = ['account-status', 'account-signedout', 'account-signedin', 'account-disabled'];
-  // Show exactly one top-level state block.
   const show = (id: string) => STATES.forEach((s) => (byId(s).hidden = s !== id));
   const sb = getSupabase();
+  const total = Number(document.querySelector('.account')?.getAttribute('data-total-notes') || 0);
+  let uid: string | null = null;
 
-  function update(session: any) {
-    if (session?.user) {
-      byId('account-email').textContent = session.user.email ?? '';
-      byId('account-role').textContent = '…';
-      show('account-signedin');
-      // Role is best-effort; never let it block the signed-in UI.
-      getRole()
-        .then((role) => {
-          byId('account-role').textContent = role ?? 'visitor';
-          byId('admin-links').hidden = role !== 'admin';
-        })
-        .catch(() => { byId('account-role').textContent = 'visitor'; });
-    } else {
-      show('account-signedout');
+  byId('google-signin')?.addEventListener('click', () => {
+    sb?.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: window.location.origin + '/account/', queryParams: { prompt: 'select_account' } },
+    });
+  });
+
+  byId('signout')?.addEventListener('click', async () => {
+    try { await sb?.auth.signOut(); } catch (err) { console.error('[account] signout failed:', err); }
+    show('account-signedout');
+  });
+
+  async function saveUsername() {
+    if (!sb || !uid) return;
+    const value = (byId('account-username') as HTMLInputElement).value.trim();
+    const msg = byId('account-save-msg');
+    byId('account-save').setAttribute('disabled', 'true');
+    try {
+      const { error } = await sb.from('profiles').update({ display_name: value || null }).eq('id', uid);
+      if (error) throw error;
+      msg.textContent = 'Saved.';
+    } catch (err) {
+      console.error('[account] save failed:', err);
+      msg.textContent = 'Could not save — try again.';
+    } finally {
+      msg.hidden = false;
+      byId('account-save').removeAttribute('disabled');
+      setTimeout(() => { msg.hidden = true; }, 2500);
+    }
+  }
+  byId('account-save')?.addEventListener('click', saveUsername);
+
+  async function loadSignedIn(session: any) {
+    uid = session.user.id;
+    show('account-signedin');
+    const profile = await getProfile().catch(() => null);
+    byId('account-email').textContent = profile?.email ?? session.user.email ?? '';
+    byId('account-role').textContent = profile?.role ?? 'visitor';
+    (byId('account-username') as HTMLInputElement).value = profile?.display_name ?? '';
+    byId('admin-links').hidden = profile?.role !== 'admin';
+    try {
+      const { count } = await sb!.from('read_notes').select('*', { count: 'exact', head: true });
+      const read = count ?? 0;
+      byId('account-readcount').textContent = String(read);
+      byId('account-readbar').style.width = (total ? Math.round((read / total) * 100) : 0) + '%';
+    } catch (err) {
+      console.error('[account] progress snapshot failed:', err);
     }
   }
 
   if (!sb) {
     show('account-disabled');
   } else {
-    // Drive the UI from auth events. onAuthStateChange emits the current session
-    // immediately (INITIAL_SESSION) without using getSession(), which can hang on
-    // the auth lock. A timeout guarantees we never stay stuck on "Loading…".
     let settled = false;
     sb.auth.onAuthStateChange((_event, session) => {
       settled = true;
-      update(session);
+      session?.user ? loadSignedIn(session) : show('account-signedout');
     });
-    setTimeout(() => {
-      if (!settled) {
-        console.warn('[account] auth init slow; defaulting to signed-out');
-        show('account-signedout');
-      }
-    }, 2500);
+    setTimeout(() => { if (!settled) show('account-signedout'); }, 2500);
   }
-
-  byId('google-signin')?.addEventListener('click', () => {
-    sb?.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: window.location.origin + '/account/',
-        // Always show Google's account chooser instead of silently reusing the
-        // last-used account.
-        queryParams: { prompt: 'select_account' },
-      },
-    });
-  });
-
-  byId('signout')?.addEventListener('click', async () => {
-    try { await sb?.auth.signOut(); } catch (err) { console.error('[account] signout failed:', err); }
-    update(null); // onAuthStateChange also fires SIGNED_OUT; this is a safety net
-  });
 </script>

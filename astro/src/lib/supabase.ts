@@ -28,10 +28,30 @@ export function getSupabase(): SupabaseClient | null {
 
 /** The current user's role ('visitor' | 'admin'), or null if signed out. */
 export async function getRole(): Promise<'visitor' | 'admin' | null> {
+	const profile = await getProfile();
+	return profile ? profile.role : null;
+}
+
+export interface Profile {
+	role: 'visitor' | 'admin';
+	display_name: string | null;
+	email: string | null;
+}
+
+/** The current user's profile row, or null if signed out. */
+export async function getProfile(): Promise<Profile | null> {
 	const sb = getSupabase();
 	if (!sb) return null;
 	const { data: { user } } = await sb.auth.getUser();
 	if (!user) return null;
-	const { data } = await sb.from('profiles').select('role').eq('id', user.id).single();
-	return (data?.role as 'visitor' | 'admin') ?? 'visitor';
+	const { data } = await sb
+		.from('profiles')
+		.select('role, display_name, email')
+		.eq('id', user.id)
+		.single();
+	return {
+		role: (data?.role as 'visitor' | 'admin') ?? 'visitor',
+		display_name: data?.display_name ?? null,
+		email: data?.email ?? user.email ?? null,
+	};
 }

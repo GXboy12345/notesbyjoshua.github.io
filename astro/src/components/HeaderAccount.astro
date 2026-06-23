@@ -23,7 +23,7 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
 <Default><slot /></Default>
 
 <script>
-  import { getSupabase, getRole } from '../lib/supabase';
+  import { getSupabase, getProfile } from '../lib/supabase';
 
   const byId = (id: string) => document.getElementById(id)!;
   const sb = getSupabase();
@@ -62,8 +62,11 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
         toggle.title = user.email ? `Signed in as ${user.email}` : 'Signed in';
         signin.hidden = true;
         wrap.hidden = false;
-        getRole()
-          .then((role) => { byId('ha-admin').hidden = role !== 'admin'; })
+        getProfile()
+          .then((p) => {
+            if (p?.display_name) byId('ha-name').textContent = p.display_name;
+            byId('ha-admin').hidden = p?.role !== 'admin';
+          })
           .catch(() => { byId('ha-admin').hidden = true; });
       } else {
         signin.hidden = false;

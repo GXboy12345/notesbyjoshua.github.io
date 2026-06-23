@@ -4,11 +4,15 @@
 
 -- One profile row per auth user, holding their role.
 create table if not exists public.profiles (
-  id         uuid primary key references auth.users (id) on delete cascade,
-  email      text,
-  role       text not null default 'visitor' check (role in ('visitor', 'admin')),
-  created_at timestamptz not null default now()
+  id           uuid primary key references auth.users (id) on delete cascade,
+  email        text,
+  display_name text,
+  role         text not null default 'visitor' check (role in ('visitor', 'admin')),
+  created_at   timestamptz not null default now()
 );
+
+-- If the table already existed, make sure the column is present.
+alter table public.profiles add column if not exists display_name text;
 
 alter table public.profiles enable row level security;
 
