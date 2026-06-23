@@ -34,8 +34,6 @@ progress: 40
 tags: [subject, topic]
 ```
 
-Do not add progress front matter to every file automatically unless asked. When standardizing a page, suggest the metadata first or make a focused edit to the requested file/folder.
-
 ## Progress Conventions
 
 Use `status` and `progress` together. `progress` is a rough 0-100 score, not a grade for quality.

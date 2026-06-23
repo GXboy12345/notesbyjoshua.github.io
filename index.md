@@ -34,6 +34,8 @@ This site is a peek into all of my notes, and it is ***FREE*** for you all to sh
 
 ## News
 
+**June 23rd, 2026**: Alpha-4 has officially launched! A complete revamp of the UI and mechanisms.
+
 **May 19th, 2026**: Alpha-3 has officially launched! Check out the newly added AP Precalculus notes!
 
 **April 2nd, 2026**: Alpha-2 has officially launched! Check out the newly added AP Chemistry, Physics C E&M, and Statistics notes!
