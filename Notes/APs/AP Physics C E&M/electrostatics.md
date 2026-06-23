@@ -71,7 +71,7 @@ An **electroscope** uses thin metal leaves (or a similar mechanical indicator) t
 
 **Polarization** is the separation of positive and negative charge within a neutral object when a charged object is brought nearby. A charged object can polarize a neutral insulator or conductor: internal charge shifts so that one side of the material presents a net excess closer to the inducer. For example, a negative balloon near a wall pushes electrons in the wall slightly away, so the nearer surface acts more positive. The balloon and wall can attract even though the wall’s net charge is still zero—attraction without net charge on the neutral object is the usual signature of polarization.
 
-**ADD IMAGE**
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/electrostatics/polarization-balloon-wall.png' | relative_url }}" alt="Balloon polarization" loading="lazy" decoding="async" />
 
 ---
 
@@ -98,7 +98,7 @@ Like charges give a repulsive force along $$\hat{r}$$; opposite charges attract 
 The magnitude is
 
 $$
-F=k\frac{|q_1q_2|}{r^2}
+F=k\frac{\lvert q_1q_2 \rvert}{r^2}
 =\left(8.99\times10^9\right)\frac{(2.0\times10^{-6})(3.0\times10^{-6})}{(0.50)^2}
 =0.216\text{ N}.
 $$
@@ -167,7 +167,7 @@ The null point is $$0.20\text{ m}$$ from the larger charge — closer to the *sm
 
 ## Permittivity of free space
 
-It is convenient to write
+It is sometimes convenient to write
 
 $$
 k = \frac{1}{4\pi \varepsilon_0},
@@ -235,12 +235,12 @@ For $$x>0$$ this points right; for $$x<0$$ it points left.
 
 <div class="theorem-box" markdown="1">
 
-**Example (net field from two charges).** A charge $$q_1 = +5.0\,\text{nC}$$ is at the origin and $$q_2 = -5.0\,\text{nC}$$ is at $$(0.40\text{ m}, 0)$$. Find the net electric field at the point $$P = (0.40\text{ m}, 0.30\text{ m})$$.
+**Example.** A charge $$q_1 = +5.0\,\text{nC}$$ is at the origin and $$q_2 = -5.0\,\text{nC}$$ is at $$(0.40\text{ m}, 0)$$. Find the net electric field at the point $$P = (0.40\text{ m}, 0.30\text{ m})$$.
 
 Treat each charge separately, then add the field vectors. The point $$P$$ is directly above $$q_2$$ at distance $$r_2 = 0.30\text{ m}$$, so the field from $$q_2$$ has magnitude
 
 $$
-E_2 = k\frac{|q_2|}{r_2^2}
+E_2 = k\frac{\lvert q_2 \rvert}{r_2^2}
 = (8.99\times10^9)\frac{5.0\times10^{-9}}{(0.30)^2}
 = 499\ \text{N/C}.
 $$
@@ -313,6 +313,8 @@ with $$dq$$ replaced by $$\lambda\, dL$$, $$\sigma\, dA$$, or $$\rho\, dV$$ acco
 
 **Proof (on-axis field of a uniformly charged ring).** A ring of radius $$R$$ carries total charge $$Q$$ uniformly. Find the field a distance $$x$$ from the center along the ring's axis.
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/electrostatics/ring-on-axis-field.png' | relative_url }}" alt="Ring electric field derivation" loading="lazy" decoding="async" />
+
 Every charge element $$dq$$ is the same distance
 
 $$
@@ -336,13 +338,13 @@ $$
 
 Two checks: at the center ($$x=0$$) the field is zero, as symmetry demands; and far away ($$x\gg R$$) it reduces to $$E\approx kQ/x^2$$, the field of a point charge. The field is also maximized at $$x = R/\sqrt{2}$$ (set $$dE_x/dx = 0$$).
 
-**ADD IMAGE**
-
 </div>
 
 <div class="theorem-box" markdown="1">
 
 **Proof (on-axis field of a uniformly charged disk).** A flat disk of radius $$R$$ carries uniform surface charge density $$\sigma$$. Find the field a distance $$x$$ along its axis.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/electrostatics/disk-stack-of-rings.png' | relative_url }}" alt="Disk is a stack of rings" loading="lazy" decoding="async" />
 
 Treat the disk as a stack of concentric thin rings. A ring of radius $$s$$ and thickness $$ds$$ has area $$dA = 2\pi s\,ds$$, so it carries charge
 
@@ -401,7 +403,7 @@ $$
 
 The field points away from the rod if $$\lambda>0$$ and toward the rod if $$\lambda<0$$.
 
-**ADD IMAGE**
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/electrostatics/rod-field-off-axis.png' | relative_url }}" alt="Rod electric field" loading="lazy" decoding="async" />
 
 </div>
 
@@ -409,9 +411,9 @@ The field points away from the rod if $$\lambda>0$$ and toward the rod if $$\lam
 
 ## Field lines
 
-Field lines are a pictorial tool: they leave positive charge, terminate on negative charge, and their spacing indicates field strength (closer lines mean larger $$|\vec{E}|$$). Field lines never cross, because the field at a point has a single direction.
+Field lines are a pictorial tool: they leave positive charge, terminate on negative charge, and their spacing indicates field strength (closer lines mean larger $$\lvert \vec{E} \rvert$$). Field lines never cross, because the field at a point has a single direction.
 
-**ADD IMAGE**
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/electrostatics/field-lines-charges.png' | relative_url }}" alt="Electric field lines" loading="lazy" decoding="async" />
 
 ---
 
@@ -423,7 +425,7 @@ $$
 \Phi_E = \vec{E} \cdot \vec{A} = EA\cos\theta,
 $$
 
-where $$\theta$$ is the angle between $$\vec{E}$$ and the normal. When $$\vec{E}$$ is parallel to the surface, flux through that surface is zero; when perpendicular, $$|\Phi_E|$$ is maximal for fixed $$E$$ and $$A$$.
+where $$\theta$$ is the angle between $$\vec{E}$$ and the normal. When $$\vec{E}$$ is parallel to the surface, flux through that surface is zero; when perpendicular, $$\lvert \Phi_E \rvert$$ is maximal for fixed $$E$$ and $$A$$.
 
 For a general surface,
 
@@ -500,7 +502,7 @@ Inside the sphere, the field grows linearly with distance from the center.
 
 <div class="theorem-box" markdown="1">
 
-**Example (thin spherical shell).** A thin conducting (or uniformly charged) spherical shell of radius $$R$$ carries total charge $$Q$$. Find $$E$$ inside and outside.
+**Example.** A thin conducting (or uniformly charged) spherical shell of radius $$R$$ carries total charge $$Q$$. Find $$E$$ inside and outside.
 
 **Outside** ($$r > R$$): a concentric Gaussian sphere encloses all of $$Q$$, exactly like the solid case,
 
@@ -526,7 +528,7 @@ The field is exactly zero everywhere inside the shell. The field jumps discontin
 
 <div class="theorem-box" markdown="1">
 
-**Example (numeric evaluation, solid sphere).** A nonconducting sphere of radius $$R = 0.10\text{ m}$$ carries $$Q = 8.0\,\text{nC}$$ spread uniformly through its volume. Find $$E$$ at $$r = 0.050\text{ m}$$ (inside) and at $$r = 0.20\text{ m}$$ (outside).
+**Example.** A nonconducting sphere of radius $$R = 0.10\text{ m}$$ carries $$Q = 8.0\,\text{nC}$$ spread uniformly through its volume. Find $$E$$ at $$r = 0.050\text{ m}$$ (inside) and at $$r = 0.20\text{ m}$$ (outside).
 
 **Inside**, use $$E = \dfrac{1}{4\pi\varepsilon_0}\dfrac{Qr}{R^3}$$ from the uniform-sphere result:
 
@@ -565,6 +567,8 @@ E(2\pi rL)=\frac{\lambda L}{\varepsilon_0}
 \quad\Rightarrow\quad
 E=\frac{\lambda}{2\pi\varepsilon_0 r}.
 $$
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/electrostatics/gaussian-cylinder-line.png' | relative_url }}" alt="Line Gaussian cylinder" loading="lazy" decoding="async" />
 </div>
 
 <div class="theorem-box" markdown="1">
@@ -585,6 +589,8 @@ $$
 E=\frac{\sigma}{2\varepsilon_0}.
 $$
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/electrostatics/gaussian-pillbox-sheet.png' | relative_url }}" alt="An infinite charged sheet crossed by a short cylindrical pillbox Gaussian surface, showing the uniform field exiting both flat faces perpendicularly and zero flux through the curved side placeholder" loading="lazy" decoding="async" />
+
 </div>
 
 These examples are very common throughout AP Physics C E&M, and are worth memorizing how to do.
@@ -600,6 +606,8 @@ $$
 $$
 
 a vector pointing from the negative charge to the positive charge, with magnitude $$p = qd$$ (units $$\text{C}\cdot\text{m}$$). Many neutral molecules (like water) behave as dipoles, and the dipole is the simplest charge distribution with zero net charge but a nonzero field.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/electrostatics/dipole-moment-geometry.png' | relative_url }}" alt="electric dipoles" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -629,7 +637,7 @@ The key feature is that a dipole's field falls off as $$1/r^3$$, faster than a s
 
 </div>
 
-When a dipole sits in a *uniform* external field $$\vec E$$, the forces on $$+q$$ and $$-q$$ are equal and opposite, so the net force is zero — but they form a couple that produces a **torque**:
+When a dipole sits in a *uniform* external field $$\vec E$$, the forces on $$+q$$ and $$-q$$ are equal and opposite, so the net force is zero — but they form a couple that produces a torque:
 
 $$
 \vec\tau = \vec p \times \vec E, \qquad \tau = pE\sin\phi,
@@ -639,7 +647,7 @@ where $$\phi$$ is the angle between $$\vec p$$ and $$\vec E$$. The torque rotate
 
 <div class="theorem-box" markdown="1">
 
-**Example (torque on a dipole).** A dipole with moment $$p = 6.2\times10^{-30}\ \text{C}\cdot\text{m}$$ (about that of a water molecule) sits in a uniform field $$E = 3.0\times10^{5}\ \text{N/C}$$, oriented at $$\phi = 30^\circ$$ to the field. Find the torque on it.
+**Example.** A dipole with moment $$p = 6.2\times10^{-30}\ \text{C}\cdot\text{m}$$ (about that of a water molecule) sits in a uniform field $$E = 3.0\times10^{5}\ \text{N/C}$$, oriented at $$\phi = 30^\circ$$ to the field. Find the torque on it.
 
 $$
 \tau = pE\sin\phi = (6.2\times10^{-30})(3.0\times10^{5})\sin 30^\circ
@@ -665,9 +673,9 @@ and the constant-acceleration kinematics from mechanics apply directly. This is 
 
 <div class="theorem-box" markdown="1">
 
-**Example (charge released between plates).** An electron ($$q = -e$$, $$m = 9.11\times10^{-31}\ \text{kg}$$) is released from rest next to the negative plate in a uniform field of magnitude $$E = 2.0\times10^{4}\ \text{N/C}$$. The plates are separated by $$d = 1.0\text{ cm}$$. Find the electron's acceleration and its speed when it reaches the other plate.
+**Example.** An electron ($$q = -e$$, $$m = 9.11\times10^{-31}\ \text{kg}$$) is released from rest next to the negative plate in a uniform field of magnitude $$E = 2.0\times10^{4}\ \text{N/C}$$. The plates are separated by $$d = 1.0\text{ cm}$$. Find the electron's acceleration and its speed when it reaches the other plate.
 
-The force magnitude is $$F = |q|E = eE$$, so
+The force magnitude is $$F = \lvert q \rvert E = eE$$, so
 
 $$
 a = \frac{eE}{m} = \frac{(1.602\times10^{-19})(2.0\times10^{4})}{9.11\times10^{-31}}

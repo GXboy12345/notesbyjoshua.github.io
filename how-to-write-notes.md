@@ -17,7 +17,7 @@ For any notes page, it always follow this basic format:
 layout: default
 title: Page title
 parent: Parent folder
-nav_order: Hierarchal order on website
+nav_order: Hierarichal order on website
 permalink: Reference link
 ---
 
@@ -141,11 +141,11 @@ $$
 - Always remember to add text BEFORE numbers/formulas to start off bullet points, since if you don't do that the text will automatically pop up in the middle. An example is below:
 
 ``` markdown
-- $$R=8.314 \frac{J}{\circK}
+- $$R=8.314 \frac{J}{\circ K}
 // WRONG!!!
-- Ideal gas constant: $$R=8.314 \frac{J}{\circK}
+- Ideal gas constant: $$R=8.314 \frac{J}{\circ K}
 // CORRECT!
 ```
 
-- Make sure to always use "\lvert" and "\rvert" instead of "|" when doing absolute value, because Mathjax sometimes reads "|" as a table and messes up the formatting
+- Make sure to always use \lvert and \rvert instead of vertical bars when doing absolute value, because Mathjax sometimes reads vertical bars as a table and messes up the formatting (I avoid using the character because it messes up the formatting here as well)
 - Always remember to have proper spacing in between sections! Always make sure to leave a blank space above and below any separation markers, special headers, theorem boxes, and image links.

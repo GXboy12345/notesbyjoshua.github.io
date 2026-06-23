@@ -37,6 +37,8 @@ Important consequences:
 - The electric field just outside a conducting surface is perpendicular to that surface.
 - Charge gathers more densely near sharp points, where the surface curvature is larger.
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/condcap/conductor-equilibrium.png' | relative_url }}" alt="Conductor in electrostatic equilibrium" loading="lazy" decoding="async" />
+
 <div class="theorem-box" markdown="1">
 
 **Proof (Excess charge must be on the surface).** Imagine a Gaussian surface entirely inside the metal of a conductor, just below its actual surface, and assume there are no charges inside cavities. Since $$E=0$$ everywhere on that Gaussian surface,
@@ -51,23 +53,9 @@ Gauss's law gives $$Q_{\text{enc}}/\varepsilon_0=0$$, so $$Q_{\text{enc}}=0$$. A
 
 <div class="theorem-box" markdown="1">
 
-**Example.** Near a small patch of a conductor's surface, use a tiny pillbox with one face just outside the conductor and one face just inside.
-
-Inside the conductor, $$E=0$$. The side wall contributes negligible flux as the pillbox becomes very thin. If the local surface charge density is $$\sigma$$, then
-
-$$
-EA=\frac{\sigma A}{\varepsilon_0}
-\quad\Rightarrow\quad
-E=\frac{\sigma}{\varepsilon_0}.
-$$
-
-This differs from the infinite nonconducting sheet result by a factor of $$2$$ because the conductor has zero field on the inside.
-
-</div>
-
-<div class="theorem-box" markdown="1">
-
 **Proof (Field Just Outside a Conductor).** Use a tiny cylindrical Gaussian surface, often called a pillbox, crossing the conductor surface. Let the pillbox have area $$A$$ on each flat face.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/condcap/gaussian-pillbox-surface.png' | relative_url }}" alt="Conductor's Gaussian pillbox" loading="lazy" decoding="async" />
 
 Inside the conductor,
 
@@ -155,7 +143,9 @@ $$
 C = \frac{Q}{\Delta V}=\frac{Q}{Ed}=\frac{\varepsilon_0 A}{d}.
 $$
 
-Edge effects are usually ignored in AP Physics C unless the problem explicitly focuses on them.
+Edge effects are usually ignored in AP Physics C unless the problem explicitly metnions them.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/condcap/parallel-plate-field-lines.png' | relative_url }}" alt="Parallel plate capacitors" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -234,6 +224,8 @@ $$
 $$
 
 Series combinations have an equivalent capacitance smaller than any individual capacitor in the chain. Parallel combinations have an equivalent capacitance larger than any individual capacitor in the group.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/condcap/series-vs-parallel-capacitors.png' | relative_url }}" alt="Schematic comparing capacitors connected in series versus in parallel" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -432,6 +424,8 @@ $$
 
 If a charged capacitor is disconnected from a battery, $$Q$$ stays constant when a dielectric is inserted, so $$\Delta V=Q/C$$ decreases. If it remains connected to a battery, $$\Delta V$$ stays constant and additional charge flows onto the plates.
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/condcap/dielectric-slab-polarization.png' | relative_url }}" alt="Dielectrics" loading="lazy" decoding="async" />
+
 <div class="theorem-box" markdown="1">
 
 **Example.** A capacitor has vacuum capacitance $$C_0 = 4.0\ \mu\text{F}$$ and is charged using a $$V_0 = 100\ \text{V}$$ battery. A dielectric slab with $$\kappa = 2.5$$ is then inserted to fill the gap, raising the capacitance to $$C = \kappa C_0 = 10.0\ \mu\text{F}$$. Analyze two scenarios.
@@ -487,7 +481,11 @@ The parallel-plate result is one geometry; the same method — find the field wi
 
 <div class="theorem-box" markdown="1">
 
-**Proof (Cylindrical Capacitor).** Consider two coaxial conducting cylinders of length $$L$$, inner radius $$a$$ and outer radius $$b$$, with $$L \gg b$$ so end effects are negligible. Put charge $$+Q$$ on the inner cylinder and $$-Q$$ on the outer. By cylindrical symmetry, choose a coaxial Gaussian cylinder of radius $$r$$ (with $$a < r < b$$) and length $$L$$. Only the curved side has flux, so Gauss's law gives
+**Proof (Cylindrical Capacitor).** Consider two coaxial conducting cylinders of length $$L$$, inner radius $$a$$ and outer radius $$b$$, with $$L \gg b$$ so end effects are negligible.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/condcap/cylindrical-capacitor-geometry.png' | relative_url }}" alt="Coaxial cylinders forming a cylindrical capacitor with inner radius a and outer radius b" loading="lazy" decoding="async" /> 
+
+Put charge $$+Q$$ on the inner cylinder and $$-Q$$ on the outer. By cylindrical symmetry, choose a coaxial Gaussian cylinder of radius $$r$$ (with $$a < r < b$$) and length $$L$$. Only the curved side has flux, so Gauss's law gives
 
 $$
 E(2\pi r L) = \frac{Q}{\varepsilon_0} \quad\Rightarrow\quad E = \frac{Q}{2\pi\varepsilon_0 L\,r},
@@ -511,7 +509,11 @@ The capacitance grows with length and shrinks as the radius ratio $$b/a$$ increa
 
 <div class="theorem-box" markdown="1">
 
-**Proof (Spherical Capacitor).** Consider two concentric conducting spheres of radii $$a < b$$, with $$+Q$$ on the inner sphere and $$-Q$$ on the outer shell. By spherical symmetry, a Gaussian sphere of radius $$r$$ (with $$a < r < b$$) gives
+**Proof (Spherical Capacitor).** Consider two concentric conducting spheres of radii $$a < b$$, with $$+Q$$ on the inner sphere and $$-Q$$ on the outer shell.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/condcap/spherical-capacitor-geometry.png' | relative_url }}" alt="Concentric spheres forming a spherical capacitor with inner radius a and outer radius b placeholder" loading="lazy" decoding="async" /> 
+
+By spherical symmetry, a Gaussian sphere of radius $$r$$ (with $$a < r < b$$) gives
 
 $$
 E(4\pi r^2) = \frac{Q}{\varepsilon_0} \quad\Rightarrow\quad E = \frac{1}{4\pi\varepsilon_0}\frac{Q}{r^2}.

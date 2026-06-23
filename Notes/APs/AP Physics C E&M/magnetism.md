@@ -36,7 +36,7 @@ $$
 The magnitude is
 
 $$
-F_B = |q|vB\sin\theta.
+F_B = \lvert q \rvert vB\sin\theta.
 $$
 
 The force is perpendicular to both $$\vec{v}$$ and $$\vec{B}$$. For positive charges, use the right-hand rule for $$\vec{v}\times\vec{B}$$. For negative charges, reverse the direction.
@@ -47,7 +47,9 @@ $$
 \vec{F}=q\vec{E}+q\vec{v}\times\vec{B}.
 $$
 
-Because $$\vec{F}_B$$ is always perpendicular to $$\vec{v}$$, it does no work: $$P = \vec{F}_B\cdot\vec{v} = q(\vec{v}\times\vec{B})\cdot\vec{v} = 0$$, since $$\vec{v}\times\vec{B}$$ is perpendicular to $$\vec{v}$$. A magnetic field can change a charge's *direction* but never its *speed*.
+Since $$\vec{F}_B$$ is always perpendicular to $$\vec{v}$$, it does no work: $$P = \vec{F}_B\cdot\vec{v} = q(\vec{v}\times\vec{B})\cdot\vec{v} = 0$$, since $$\vec{v}\times\vec{B}$$ is perpendicular to $$\vec{v}$$. A magnetic field can change a charge's *direction* but never its *speed*.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/magnetism/right-hand-rule-vxb.png' | relative_url }}" alt="Right-hand rule of Lorentz force" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -70,7 +72,7 @@ For the direction, evaluate $$\vec{v}\times\vec{B} = (v\hat{x})\times(B\hat{y}) 
 If a charge moves perpendicular to a uniform magnetic field, the magnetic force provides centripetal force:
 
 $$
-|q|vB=\frac{mv^2}{r}.
+\lvert q \rvert vB=\frac{mv^2}{r}.
 $$
 
 Thus
@@ -82,13 +84,13 @@ $$
 The angular frequency is
 
 $$
-\omega=\frac{|q|B}{m},
+\omega=\frac{\lvert q \rvert B}{m},
 $$
 
 and the period is
 
 $$
-T=\frac{2\pi m}{|q|B}.
+T=\frac{2\pi m}{\lvert q \rvert B}.
 $$
 
 If the velocity has a component parallel to $$\vec{B}$$, that component is unchanged and the path becomes a helix.
@@ -140,8 +142,10 @@ pass through undeflected. This is the basic idea of a velocity selector.
 After velocity selection, a magnetic field can separate particles by mass-to-charge ratio because
 
 $$
-r=\frac{mv}{|q|B}.
+r=\frac{mv}{\lvert q \rvert B}.
 $$
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/magnetism/velocity-selector-mass-spectrometer.png' | relative_url }}" alt="Velocity selector with crossed electric and magnetic fields feeding into a mass spectrometer region where isotopes curve on different radii" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -186,6 +190,8 @@ F=ILB\sin\theta.
 $$
 
 This force comes from the magnetic forces on the moving charges inside the wire: each carrier feels $$q\vec{v}_d\times\vec{B}$$, and summing over all carriers in a length $$L$$ (with $$I = nqv_d A_{\text{cross}}$$) gives $$\vec{F} = I\vec{L}\times\vec{B}$$.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/magnetism/force-on-current-wire.png' | relative_url }}" alt="Force on a current-carrying wire in a magnetic field" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -274,6 +280,8 @@ B=\frac{\mu_0 I}{2\pi r}.
 $$
 
 The direction follows the right-hand rule: thumb in the direction of conventional current, curled fingers show the magnetic field direction.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/magnetism/right-hand-rule-b-around-wire.png' | relative_url }}" alt="Right-hand rule for the magnetic field circling a straight current-carrying wire" loading="lazy" decoding="async" />
 
 At the center of a circular loop of radius $$R$$,
 
@@ -415,6 +423,8 @@ matching the Biot–Savart result with far less work — symmetry did the integr
 
 **Proof (Solenoid field from Ampère's law).** An ideal solenoid has $$n$$ turns per unit length carrying current $$I$$, with a uniform axial field inside and (ideally) zero field outside. Choose a rectangular Amperian loop with one side of length $$\ell$$ inside the solenoid parallel to the axis, the opposite side outside, and two short sides crossing the wall.
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/magnetism/solenoid-amperian-loop.png' | relative_url }}" alt="Solenoid with a uniform interior field and a rectangular Amperian loop straddling the wall" loading="lazy" decoding="async" />
+
 Split $$\oint\vec{B}\cdot d\vec{\ell}$$ into the four legs:
 
 - Inside leg (parallel to $$\vec{B}$$): contributes $$B\ell$$.
@@ -445,7 +455,7 @@ independent of position inside — confirming the field is uniform.
 
 <div class="theorem-box" markdown="1">
 
-**Example (Field inside a solid conducting cylinder).** A long cylindrical wire of radius $$a$$ carries a total current $$I$$ spread uniformly over its cross-section, so the current density is $$J = I/(\pi a^2)$$. Find $$B$$ at radius $$r < a$$ inside the conductor.
+**Example.** A long cylindrical wire of radius $$a$$ carries a total current $$I$$ spread uniformly over its cross-section, so the current density is $$J = I/(\pi a^2)$$. Find $$B$$ at radius $$r < a$$ inside the conductor.
 
 By symmetry the field is again circular, so for an Amperian circle of radius $$r < a$$, $$\oint\vec{B}\cdot d\vec{\ell} = B(2\pi r)$$. But this loop encloses only the fraction of current inside radius $$r$$:
 
@@ -474,6 +484,8 @@ $$
 $$
 
 Currents in the same direction attract. Currents in opposite directions repel.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/magnetism/parallel-wires-force.png' | relative_url }}" alt="Two parallel current-carrying wires" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 

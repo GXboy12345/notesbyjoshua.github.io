@@ -36,6 +36,8 @@ $$
 
 Conventional current is defined as the direction positive charge would move. In metal wires, the mobile charges are electrons, so electron drift is opposite conventional current.
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/circuits/drift-velocity-carriers.png' | relative_url }}" alt="Current going through wire" loading="lazy" decoding="async" />
+
 For a wire with charge-carrier number density $$n$$, charge magnitude $$q$$, cross-sectional area $$A$$, and drift speed $$v_d$$,
 
 $$
@@ -100,7 +102,7 @@ Ohm's law is not a universal law of nature; it is a material/model relationship.
 
 <div class="theorem-box" markdown="1">
 
-**Proof ($$R = \rho L/A$$ from the microscopic Ohm's law).** The microscopic form of Ohm's law relates the current density $$\vec J$$ to the electric field inside the conductor through the conductivity $$\sigma_c$$:
+**Proof (Resistance formula).** The microscopic form of Ohm's law relates the current density $$\vec J$$ to the electric field inside the conductor through the conductivity $$\sigma_c$$:
 
 $$
 \vec J = \sigma_c \vec E.
@@ -222,6 +224,8 @@ $$
 
 Adding a parallel branch lowers the equivalent resistance because it gives charge another path.
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/circuits/series-vs-parallel-resistors.png' | relative_url }}" alt="Schematic comparing resistors in series versus resistors in parallel" loading="lazy" decoding="async" />
+
 <div class="theorem-box" markdown="1">
 
 **Proof (Resistors in Series and Parallel).** In series, the same current $$I$$ passes through each resistor. The total voltage drop is
@@ -259,6 +263,8 @@ $$
 <div class="theorem-box" markdown="1">
 
 **Example.** A $$12\ \text{V}$$ battery (ideal) drives the network below: $$R_1 = 4\ \Omega$$ in series with a parallel combination of $$R_2 = 6\ \Omega$$ and $$R_3 = 3\ \Omega$$. Find the equivalent resistance, the total current from the battery, and the current through and voltage across each resistor.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/circuits/resistor-network-example.png' | relative_url }}" alt="Picture of circuit #1" loading="lazy" decoding="async" />
 
 First reduce the parallel pair $$R_2 \parallel R_3$$:
 
@@ -317,6 +323,8 @@ When traversing a resistor in the direction of current, the potential change is 
 <div class="theorem-box" markdown="1">
 
 **Example.** A two-loop circuit has two batteries. The left branch contains $$\mathcal{E}_1 = 12\ \text{V}$$ in series with $$R_1 = 2\ \Omega$$; the right branch contains $$\mathcal{E}_2 = 6\ \text{V}$$ in series with $$R_2 = 3\ \Omega$$; both branches share a middle resistor $$R_3 = 6\ \Omega$$ that connects the two junctions. Find the current in each branch.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/circuits/kirchhoff-two-loop.png' | relative_url }}" alt="Picture of circuit #2" loading="lazy" decoding="async" />
 
 **Label and assume directions.** Let $$I_1$$ flow down the left branch toward the top junction, $$I_2$$ flow down the right branch toward the same junction, and $$I_3$$ flow out of that junction down through the middle resistor. (If a guessed direction is wrong, its current just comes out negative — the algebra self-corrects.)
 
@@ -457,6 +465,8 @@ I(t)=-\frac{V_0}{R}e^{-t/RC}
 $$
 
 if positive current is defined in the original charging direction.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/circuits/rc-charging-circuit.png' | relative_url }}" alt="RC circuit" loading="lazy" decoding="async" />
 
 ---
 
@@ -669,6 +679,8 @@ The two limits — **capacitor as a wire at $$t = 0$$, capacitor as an open bran
 ## Meters
 
 An ideal ammeter has zero resistance and is placed in series with the element whose current is measured. An ideal voltmeter has infinite resistance and is placed in parallel across the element whose potential difference is measured.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/circuits/ammeter-voltmeter-placement.png' | relative_url }}" alt="Types of meters" loading="lazy" decoding="async" />
 
 Real meters disturb circuits slightly: an ammeter adds small series resistance, and a voltmeter draws small parallel current.
 

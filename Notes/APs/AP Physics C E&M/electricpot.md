@@ -9,8 +9,6 @@ permalink: /notes/physics/electricpot/
 
 # Electric Potential
 
-Where [Unit 1]({{ '/notes/physics/electrostatics/' | relative_url }}) emphasized electric field and force, this unit uses **electric potential** and **electric potential energy**: scalar quantities that often simplify multi-charge problems and connect directly to work and circuits. The electrostatic field is **conservative**, so potential is well-defined: path does not matter, only endpoints.
-
 ---
 
 ## Useful Variables
@@ -55,6 +53,8 @@ U = k \sum_{i<j} \frac{q_i q_j}{r_{ij}}.
 $$
 
 The condition $$i<j$$ counts each pair exactly once. A clean way to see this is to assemble the configuration one charge at a time: bringing in the first charge takes no work (empty space), the second is brought in against the first charge’s field, the third against the field of the first two, and so on. The total work needed equals $$U$$, and because the electrostatic force is conservative, the answer does not depend on the order of assembly.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/electricpot/triangle-charge-assembly.png' | relative_url }}" alt="Triangle of charges" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -150,7 +150,7 @@ By superposition, any electrostatic field is a sum of point-charge fields, and a
 
 ## Potential from many charges and distributions
 
-Because potential is a scalar, the potential of several source charges is just the signed algebraic sum
+Since potential is a scalar, the potential of several source charges is just the signed algebraic sum
 
 $$
 V = k \sum_i \frac{q_i}{r_i},
@@ -163,7 +163,7 @@ V = k \int \frac{dq}{r},
 \qquad dq = \lambda\, d\ell,\ \sigma\, dA,\ \text{or}\ \rho\, dV.
 $$
 
-There are no components to track—only distances—so potential integrals are usually easier than field integrals. When the field is already known from symmetry (Gauss's law), it is often faster to integrate the field instead:
+There are no components to track, only distances, so potential integrals are usually easier than field integrals. When the field is already known from symmetry (Gauss's law), it is often faster to integrate the field instead:
 
 $$
 V_b - V_a = -\int_a^b \vec{E} \cdot d\vec{r}.
@@ -196,7 +196,7 @@ $$
 V_P = 8.99\times10^{9}\,(1.0\times10^{-8} - 1.0\times10^{-8}) = 0\ \text{V}.
 $$
 
-The potential at $$P$$ is exactly zero. Crucially, this does **not** mean the field is zero there—$$\vec{E}$$ is a vector sum of two nonzero, non-collinear contributions and is generally nonzero on the $$V=0$$ surface. Adding scalars (with sign) is far easier than adding the vector fields, which is the whole reason potential is convenient.
+The potential at $$P$$ is exactly zero. Crucially, this does **not** mean the field is zero there: $$\vec{E}$$ is a vector sum of two nonzero, non-collinear contributions and is generally nonzero on the $$V=0$$ surface. Adding scalars (with sign) is far easier than adding the vector fields, which is the whole reason potential is convenient.
 
 </div>
 
@@ -222,7 +222,7 @@ kQ/r, & r \ge R.
 \end{cases}
 $$
 
-In both cases $$V$$ is continuous everywhere, even at a boundary where the field changes abruptly.
+In both cases $$V$$ is continuous everywhere, even at a boundary where the field changes abruptly. 
 
 <div class="theorem-box" markdown="1">
 
@@ -310,7 +310,7 @@ Signs matter: a positive charge moving toward lower potential loses potential en
 
 **Example.** An electron (charge $$-e$$, mass $$m_e = 9.11\times10^{-31}\ \text{kg}$$) starts from rest and is accelerated through a potential difference of $$\Delta V = 500\ \text{V}$$, gaining energy. Find its final kinetic energy in both eV and joules, then its final speed.
 
-Because the electron is negative, it speeds up when moving toward *higher* potential. The magnitude of the energy gained equals the charge magnitude times the potential difference. By the work–energy theorem (only the electric force acts), all of that energy becomes kinetic:
+Since the electron is negatively charged, it speeds up when moving toward *higher* potential. The magnitude of the energy gained equals the charge magnitude times the potential difference. By the work–energy theorem (only the electric force acts), all of that energy becomes kinetic:
 
 $$
 \tfrac{1}{2}m_e v^2 = e\,\Delta V.
@@ -348,7 +348,7 @@ $$
 \vec{E} = -\nabla V
 $$
 
-in differential form. Along a path, the line integral gives the potential difference:
+in differential form ($$\nabla$$ is just a 3D differential operator, for most purposes, just remember that it is the derivative along an axis). Along a path, the line integral gives the potential difference:
 
 $$
 V_b - V_a = -\int_a^b \vec{E} \cdot d\vec{r}.
@@ -367,6 +367,8 @@ In one dimension the gradient is just an ordinary derivative, so the axial compo
 $$
 E_x = -\frac{dV}{dx}.
 $$
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/electricpot/e-field-as-slope-of-v.png' | relative_url }}" alt="E is the derivative of V" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -400,6 +402,8 @@ This is exactly the on-axis field of a uniformly charged disk obtained the hard 
 
 An **equipotential** is a surface (or curve in 2D diagrams) on which $$V$$ is constant. No work is required to move a charge along an equipotential, because $$\Delta V = 0$$. For that reason, $$\vec{E}$$ is everywhere perpendicular to equipotentials (except where $$\vec{E} = 0$$): a component of $$\vec{E}$$ tangent to the surface would do nonzero work over a small step along the surface, contradicting constant $$V$$.
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/electricpot/equipotentiallines.png' | relative_url }}" alt="equipotential lines" loading="lazy" decoding="async" />
+
 A clean special case is the **uniform field between two large parallel plates**. The plates themselves are equipotentials, and intermediate equipotentials are evenly spaced planes parallel to them. With the field magnitude $$E$$ and plate separation $$d$$, integrating $$\Delta V = -\int \vec{E}\cdot d\vec{r}$$ along the field direction gives the simple magnitude relation $$|\Delta V| = Ed$$.
 
 <div class="theorem-box" markdown="1">
@@ -409,7 +413,7 @@ A clean special case is the **uniform field between two large parallel plates**.
 Between large plates the field is uniform, so $$|\Delta V| = Ed$$ gives
 
 $$
-E = \frac{|\Delta V|}{d} = \frac{120\ \text{V}}{0.020\ \text{m}} = 6.0\times10^{3}\ \text{V/m}.
+E = \frac{\lvert \Delta V \rvert}{d} = \frac{120\ \text{V}}{0.020\ \text{m}} = 6.0\times10^{3}\ \text{V/m}.
 $$
 
 For the proton moving from high to low potential, $$\Delta V = V_b - V_a = -120\ \text{V}$$ (potential drops). The work done by the field is

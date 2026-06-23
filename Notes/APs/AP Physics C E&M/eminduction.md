@@ -37,6 +37,7 @@ $$
 
 For a uniform field through a flat loop of area $$A$$, this is just $$\Phi_B = BA\cos\theta$$, where $$\theta$$ is the angle between $$\vec{B}$$ and the area normal $$\hat{n}$$.
 
+
 Faraday's law says the induced emf around a loop is
 
 $$
@@ -50,6 +51,9 @@ $$
 $$
 
 Changing flux can come from changing magnetic field strength, changing loop area, changing the angle between field and area vector, or moving a circuit through a nonuniform field.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/eminduction/faraday-changing-flux.png' | relative_url }}" alt="Faraday's law demo" loading="lazy" decoding="async" />
+
 
 <div class="theorem-box" markdown="1">
 
@@ -79,7 +83,7 @@ Each turn contributes the same $$d\Phi_B/dt$$, so the $$N$$ turns multiply the e
 
 <div class="theorem-box" markdown="1">
 
-**Example (changing area).** A conducting loop in the shape of a square sits in a uniform field $$B = 0.40\ \text{T}$$ pointing into the page. The loop is stretched so that its side length grows at $$\dfrac{d s}{dt} = 0.030\ \text{m/s}$$ at the instant the side is $$s = 0.20\ \text{m}$$. Find the induced emf.
+**Example.** A conducting loop in the shape of a square sits in a uniform field $$B = 0.40\ \text{T}$$ pointing into the page. The loop is stretched so that its side length grows at $$\dfrac{d s}{dt} = 0.030\ \text{m/s}$$ at the instant the side is $$s = 0.20\ \text{m}$$. Find the induced emf.
 
 Here $$B$$ is constant but the area $$A = s^2$$ changes. The flux is $$\Phi_B = B s^2$$, so
 
@@ -113,7 +117,7 @@ To determine induced current direction:
 
 <div class="theorem-box" markdown="1">
 
-**Example (Lenz's law, two cases).** A circular loop lies flat in the plane of the page with a magnetic field pointing **into** the page passing through it.
+**Example (Lenz's law).** A circular loop lies flat in the plane of the page with a magnetic field pointing **into** the page passing through it. Find the direction of the induced current in two cases:
 
 **Case 1 — field increasing.** The into-the-page flux is growing. The induced current must oppose the increase, so it must create a field pointing **out of the page** inside the loop. By the right-hand rule (curl fingers in the current direction, thumb points along the field the loop makes), the induced current flows **counterclockwise**.
 
@@ -125,9 +129,11 @@ The rule of thumb: the induced current always "fights the change." It reinforces
 
 <div class="theorem-box" markdown="1">
 
-**Example (Lenz's law, approaching magnet).** A bar magnet is pushed with its north pole first toward a stationary conducting ring. As the magnet approaches, the flux through the ring (pointing away from the magnet's north pole, toward the ring) increases.
+**Example.** A bar magnet is pushed with its north pole first toward a stationary conducting ring. As the magnet approaches, the flux through the ring (pointing away from the magnet's north pole, toward the ring) increases.
 
 By Lenz's law, the ring's induced current opposes the increase, so the ring acts like a magnet presenting a **north pole** back toward the incoming magnet — like poles repel, so the ring pushes the magnet away. Conversely, if the magnet is pulled away, the flux decreases and the ring presents a **south pole** to attract it, again opposing the motion. In both cases the induced current resists the relative motion, and the work done against that resistance is exactly the electrical energy dissipated in the ring — energy conservation made manifest.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/eminduction/lenz-bar-magnet-ring.png' | relative_url }}" alt="Lenz's law with a bar magnet" loading="lazy" decoding="async" />
 
 </div>
 
@@ -165,7 +171,9 @@ for moving conductors.
 
 <div class="theorem-box" markdown="1">
 
-**Example (sliding bar on rails).** A conducting bar of length $$\ell = 0.50\ \text{m}$$ slides without friction at constant speed $$v = 4.0\ \text{m/s}$$ along two horizontal rails separated by $$\ell$$, in a uniform field $$B = 0.80\ \text{T}$$ pointing vertically (perpendicular to the plane of the rails). The rails are connected by a resistor $$R = 2.0\ \Omega$$. Find (a) the motional emf, (b) the induced current, (c) the retarding force on the bar, and (d) the power dissipated, and confirm it equals the mechanical power input.
+**Example.** A conducting bar of length $$\ell = 0.50\ \text{m}$$ slides without friction at constant speed $$v = 4.0\ \text{m/s}$$ along two horizontal rails separated by $$\ell$$, in a uniform field $$B = 0.80\ \text{T}$$ pointing vertically (perpendicular to the plane of the rails). The rails are connected by a resistor $$R = 2.0\ \Omega$$. Find (a) the motional emf, (b) the induced current, (c) the retarding force on the bar, and (d) the power dissipated, and confirm it equals the mechanical power input.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/eminduction/sliding-bar-rails.png' | relative_url }}" alt="Sliding conducting bar on two rails" loading="lazy" decoding="async" />
 
 **(a) Motional emf.** The bar sweeps out area at rate $$\ell v$$, so the flux changes at rate $$d\Phi_B/dt = B\ell v$$:
 
@@ -203,7 +211,7 @@ equivalently $$P = \mathcal{E}I = (1.6)(0.80) = 1.28\ \text{W}$$. The mechanical
 
 <div class="theorem-box" markdown="1">
 
-**Example (terminal velocity on an incline).** The same bar and rails are now tilted at angle $$\theta$$ so that gravity drives the bar down the incline, with the field $$B$$ still vertical. Find the terminal speed.
+**Example.** The same bar and rails are now tilted at angle $$\theta$$ so that gravity drives the bar down the incline, with the field $$B$$ still vertical. Find the terminal speed.
 
 As the bar speeds up, the induced retarding force grows. Terminal velocity is reached when the net force is zero, i.e. the component of gravity along the incline balances the magnetic retarding force. The emf is $$\mathcal{E} = B_\perp \ell v$$ where $$B_\perp = B\cos\theta$$ is the field component perpendicular to the inclined plane, and the retarding force along the incline is $$F = B_\perp I\ell = \dfrac{B_\perp^2 \ell^2 v}{R}$$. Setting this equal to $$mg\sin\theta$$:
 
@@ -235,9 +243,12 @@ $$
 
 The emf oscillates sinusoidally with peak value $$\mathcal{E}_0 = NBA\omega$$ — this is the principle of the AC generator.
 
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/eminduction/ac-generator-rotating-loop.png' | relative_url }}" alt="Rotating loop AC generator emf" loading="lazy" decoding="async" />
+
+
 <div class="theorem-box" markdown="1">
 
-**Example (simple AC generator).** A rectangular coil of $$N = 100$$ turns, area $$A = 0.020\ \text{m}^2$$, spins at $$f = 60\ \text{Hz}$$ in a uniform field $$B = 0.25\ \text{T}$$. Find the peak emf and write $$\mathcal{E}(t)$$.
+**Example.** A rectangular coil of $$N = 100$$ turns, area $$A = 0.020\ \text{m}^2$$, spins at $$f = 60\ \text{Hz}$$ in a uniform field $$B = 0.25\ \text{T}$$. Find the peak emf and write $$\mathcal{E}(t)$$.
 
 The angular frequency is
 
@@ -291,9 +302,10 @@ $$
 
 Unlike electrostatic fields, induced electric fields can have closed field lines. Because the field is nonconservative, a single scalar electric potential cannot fully describe it around a closed loop.
 
+
 <div class="theorem-box" markdown="1">
 
-**Example (induced E field inside a solenoid).** A long solenoid of radius $$r_0 = 4.0\ \text{cm}$$ has a uniform field along its axis that increases at $$\dfrac{dB}{dt} = 0.50\ \text{T/s}$$. Find the magnitude of the induced electric field at radius $$r = 2.0\ \text{cm}$$ from the axis (inside the solenoid).
+**Example.** A long solenoid of radius $$r_0 = 4.0\ \text{cm}$$ has a uniform field along its axis that increases at $$\dfrac{dB}{dt} = 0.50\ \text{T/s}$$. Find the magnitude of the induced electric field at radius $$r = 2.0\ \text{cm}$$ from the axis (inside the solenoid).
 
 By symmetry the induced $$\vec{E}$$ forms circles concentric with the axis, so $$\oint \vec{E}\cdot d\vec{\ell} = E(2\pi r)$$ around a circle of radius $$r$$. The flux enclosed is $$\Phi_B = B(\pi r^2)$$, so
 
@@ -318,6 +330,7 @@ The induced field grows linearly with $$r$$ inside the solenoid; this is the fie
 ## Inductance
 
 An inductor stores energy in a magnetic field. Its inductance is defined by the flux linkage per current:
+
 
 $$
 N\Phi_B=LI.
@@ -446,6 +459,7 @@ If the current were doubled to $$6.0\ \text{A}$$, the stored energy would quadru
 
 For a resistor and inductor in series connected to a battery,
 
+
 $$
 \mathcal{E}-IR-L\frac{dI}{dt}=0.
 $$
@@ -469,6 +483,8 @@ I(t)=I_0e^{-Rt/L}.
 $$
 
 At the instant a switch changes, an ideal inductor prevents an instantaneous jump in current.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/eminduction/lr-circuit-current-graph.png' | relative_url }}" alt="LR circuit + current vs time" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
@@ -564,6 +580,7 @@ After one time constant the current has reached about $$63\%$$ of its final valu
 
 An ideal capacitor-inductor circuit oscillates between electric field energy in the capacitor and magnetic field energy in the inductor:
 
+
 $$
 \frac{1}{2}\frac{Q^2}{C}+\frac{1}{2}LI^2=\text{constant}.
 $$
@@ -587,6 +604,8 @@ T=2\pi\sqrt{LC}.
 $$
 
 Resistance damps the oscillation by converting electromagnetic energy into thermal energy.
+
+<img class="note-img note-img--w480" src="{{ '/assets/APs/AP%20Physics%20C%20EM/eminduction/lc-circuit-energy-oscillation.png' | relative_url }}" alt="LC circuit with charge vs time" loading="lazy" decoding="async" />
 
 <div class="theorem-box" markdown="1">
 
