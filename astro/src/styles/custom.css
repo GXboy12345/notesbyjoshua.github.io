@@ -1,0 +1,65 @@
+/* Ported from the Jekyll site's _sass/custom/custom.scss.
+   Starlight handles sidebar, dark-mode toggle, and list markers natively, so only
+   the portable visual pieces are carried over: font, theorem boxes, note images. */
+
+/* --- Font family --- */
+:root {
+	--sl-font:
+		'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* --- Theorem boxes ---
+   Authored in Markdown as <div class="theorem-box">...</div>. */
+.sl-markdown-content .theorem-box {
+	margin: 1.25rem 0;
+	padding: 0.95rem 1.1rem;
+	border: 1px solid rgba(15, 23, 42, 0.14);
+	border-radius: 10px;
+	background: rgba(14, 165, 233, 0.06);
+}
+
+.sl-markdown-content .theorem-box > :first-child {
+	margin-top: 0;
+}
+
+.sl-markdown-content .theorem-box > :last-child {
+	margin-bottom: 0;
+}
+
+:root[data-theme='dark'] .sl-markdown-content .theorem-box {
+	border-color: rgba(255, 255, 255, 0.12);
+	background: rgba(14, 165, 233, 0.12);
+}
+
+/* --- Note figures: <img class="note-img note-img--w480"> --- */
+.sl-markdown-content img.note-img {
+	display: block;
+	margin: 1.25rem auto;
+	height: auto;
+}
+
+.sl-markdown-content img.note-img--w480 {
+	max-width: min(480px, 100%);
+	width: auto;
+}
+
+.sl-markdown-content img.note-img--w640 {
+	max-width: min(640px, 100%);
+	width: auto;
+}
+
+/* --- Feedback form embed (Google Form iframe) --- */
+.feedback-form-embed {
+	margin-top: 1.25rem;
+	width: 100%;
+	max-width: 40rem;
+}
+
+.feedback-form-embed iframe {
+	display: block;
+	width: 100%;
+	min-height: 56rem;
+	border: 0;
+	border-radius: 4px;
+}

@@ -1,0 +1,24 @@
+---
+title: "AP Biology"
+sidebar:
+  order: 0
+---
+
+AP Biology studies life through a few big ideas: evolution, energy, information, and interactions. The course moves from molecules and cells to genetics, natural selection, and ecology, but the AP exam usually asks you to connect those ideas with data, experiments, and evidence.
+
+A strong way to study is to keep asking four questions:
+
+1. What biological system is being described?
+2. What structure, process, or interaction explains the observation?
+3. What evidence from the graph, table, experiment, or model supports the claim?
+4. How would changing one variable affect the system?
+
+AP Biology free-response questions often reward clear claims, careful use of experimental evidence, and explanations that connect mechanisms to outcomes. Vocabulary matters, but it works best when paired with cause-and-effect reasoning.
+
+---
+
+## Resources
+
+- [Resources](/Resources/resources/) - general AP prep links, College Board, and books.
+- [AP Biology Course Page](https://apstudents.collegeboard.org/courses/ap-biology)
+- [Released AP Biology Free-Response Questions](https://apcentral.collegeboard.org/courses/ap-biology/exam/past-exam-questions)

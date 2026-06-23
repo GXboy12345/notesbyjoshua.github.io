@@ -1,0 +1,450 @@
+/*
+  Theme overrides for Just the Docs.
+  Default (light): built-in light color_scheme + tweaks below.
+  Dark: same palette as before, toggled via html[data-site-theme="dark"] (see nav footer + custom.js).
+*/
+
+/* Links: no underline (theme underlines `a:not([class])` for markdown links) */
+body a,
+body a:hover,
+body a:visited,
+body a:active,
+body a:focus,
+body a:not([class]),
+body a:not([class]):hover {
+  text-decoration: none !important;
+  text-underline-offset: unset !important;
+}
+
+html {
+  --site-link-accent: #0ea5e9;
+}
+
+/* One link / accent color in both themes (main content, header chrome, footer, search — not sidebar nav) */
+html[data-site-theme="light"] .main-content a,
+html[data-site-theme="light"] .main-content a:link,
+html[data-site-theme="light"] .main-content a:visited,
+html[data-site-theme="light"] .main-content a:active,
+html[data-site-theme="dark"] .main-content a,
+html[data-site-theme="dark"] .main-content a:link,
+html[data-site-theme="dark"] .main-content a:visited,
+html[data-site-theme="dark"] .main-content a:active,
+html[data-site-theme="light"] .breadcrumb-nav a,
+html[data-site-theme="dark"] .breadcrumb-nav a,
+html[data-site-theme="light"] .aux-nav a,
+html[data-site-theme="dark"] .aux-nav a,
+html[data-site-theme="light"] .search-results .search-results-list a,
+html[data-site-theme="dark"] .search-results .search-results-list a,
+html[data-site-theme="light"] .site-footer a,
+html[data-site-theme="dark"] .site-footer a,
+html[data-site-theme="light"] a.site-title,
+html[data-site-theme="dark"] a.site-title,
+html[data-site-theme="light"] .main-content .anchor-heading svg,
+html[data-site-theme="dark"] .main-content .anchor-heading svg,
+html[data-site-theme="light"] .icon,
+html[data-site-theme="dark"] .icon {
+  color: var(--site-link-accent) !important;
+}
+
+/* Sidebar nav colors: _includes/sidebar-nav-custom.html (inline, after this sheet) */
+
+/* --- Light theme: black body copy; darker blue links; sidebar matches mode --- */
+html[data-site-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-site-theme="light"] .main-header,
+html[data-site-theme="light"] .site-header {
+  color: #000 !important;
+}
+
+/* Main column + chrome: pure black text (theme defaults are gray) */
+html[data-site-theme="light"] body {
+  color: #000 !important;
+}
+
+html[data-site-theme="light"] .main-content-wrap,
+html[data-site-theme="light"] .main .main-content,
+html[data-site-theme="light"] .main-content {
+  color: #000 !important;
+}
+
+html[data-site-theme="light"] .main-content p,
+html[data-site-theme="light"] .main-content li,
+html[data-site-theme="light"] .main-content dt,
+html[data-site-theme="light"] .main-content dd,
+html[data-site-theme="light"] .main-content td,
+html[data-site-theme="light"] .main-content th,
+html[data-site-theme="light"] .main-content blockquote,
+html[data-site-theme="light"] .main-content address,
+html[data-site-theme="light"] .main-content summary,
+html[data-site-theme="light"] .main-content figcaption {
+  color: #000 !important;
+}
+
+html[data-site-theme="light"] .main-content h1,
+html[data-site-theme="light"] .main-content h2,
+html[data-site-theme="light"] .main-content h3,
+html[data-site-theme="light"] .main-content h4,
+html[data-site-theme="light"] .main-content h5,
+html[data-site-theme="light"] .main-content h6,
+html[data-site-theme="light"] #toctitle {
+  color: #000 !important;
+}
+
+html[data-site-theme="light"] .main-content ul > li::before,
+html[data-site-theme="light"] .main-content ol > li::before {
+  color: #000 !important;
+}
+
+html[data-site-theme="light"] .main #markdown-toc,
+html[data-site-theme="light"] .main .text-delta {
+  color: #000 !important;
+}
+
+html[data-site-theme="light"] .breadcrumb-nav {
+  color: #000 !important;
+}
+
+html[data-site-theme="light"] .breadcrumb-nav-list-item::after {
+  color: #000 !important;
+}
+
+html[data-site-theme="light"] .search-input {
+  color: #000 !important;
+}
+
+html[data-site-theme="light"] .search-results-list .search-result-doc,
+html[data-site-theme="light"] .search-results-list .search-result-preview,
+html[data-site-theme="light"] .search-results-list .search-result-doc .search-result-highlight {
+  color: #000 !important;
+}
+
+html[data-site-theme="light"] .footnotes,
+html[data-site-theme="light"] .page-content,
+html[data-site-theme="light"] .sect1,
+html[data-site-theme="light"] .sect2 {
+  color: #000 !important;
+}
+
+html[data-site-theme="light"] thead,
+html[data-site-theme="light"] tbody,
+html[data-site-theme="light"] tbody td,
+html[data-site-theme="light"] tbody th {
+  color: #000 !important;
+}
+
+html[data-site-theme="light"] .site-footer,
+html[data-site-theme="light"] .nav-footer-inner,
+html[data-site-theme="light"] .nav-footer-credit {
+  color: #000 !important;
+}
+
+html[data-site-theme="light"] mjx-container[jax="CHTML"] {
+  color: #000 !important;
+}
+
+/* Inline code only (skip Rouge / highlight blocks) */
+html[data-site-theme="light"] .main-content p code,
+html[data-site-theme="light"] .main-content li code,
+html[data-site-theme="light"] .main-content td code,
+html[data-site-theme="light"] .main-content th code {
+  color: #000 !important;
+}
+
+/* Light sidebar: strip theme gradient “pill”; row hover wash (colors in sidebar-nav-custom.html) */
+html[data-site-theme="light"] .side-bar .nav-list-link {
+  background-image: none !important;
+}
+
+html[data-site-theme="light"] .side-bar .nav-list .nav-list-link:hover,
+html[data-site-theme="light"] .side-bar .nav-list .nav-list-link.active,
+html[data-site-theme="light"] .side-bar .nav-list-item.active > .nav-list-link {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+html[data-site-theme="light"] .site-theme-switch__btn:focus-visible {
+  outline: 2px solid var(--site-link-accent);
+  outline-offset: 2px;
+}
+
+/* --- Dark theme (previous site-wide overrides) --- */
+html[data-site-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-site-theme="dark"] body {
+  font-family: "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #202123 !important;
+  color: #ecece8 !important;
+}
+
+html[data-site-theme="dark"] .side-bar {
+  background-color: #202123 !important;
+}
+
+html[data-site-theme="dark"] .nav-list .nav-list-expander {
+  color: #d8d8d4 !important;
+}
+
+/* Drop light-theme white “pill” / image behind links so text stays readable */
+html[data-site-theme="dark"] .side-bar .nav-list-link {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+html[data-site-theme="dark"] .side-bar .nav-list-link:hover,
+html[data-site-theme="dark"] .side-bar .nav-list-item.active > .nav-list-link,
+html[data-site-theme="dark"] .side-bar .nav-list-link.active {
+  background-color: #343536 !important;
+  background-image: none !important;
+}
+
+html[data-site-theme="dark"] .side-bar .nav-list-expander:hover {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-site-theme="dark"] .side-bar .nav-list-expander svg {
+  color: #d8d8d4 !important;
+  fill: currentColor !important;
+}
+
+html[data-site-theme="dark"] .main {
+  background-color: #202123 !important;
+}
+
+html[data-site-theme="dark"] .main-content-wrap {
+  background-color: #202123 !important;
+}
+
+html[data-site-theme="dark"] .main-content-wrap,
+html[data-site-theme="dark"] .main .main-content,
+html[data-site-theme="dark"] .main-content {
+  color: #ecece8 !important;
+}
+
+html[data-site-theme="dark"] .main-content p,
+html[data-site-theme="dark"] .main-content li,
+html[data-site-theme="dark"] .main-content dt,
+html[data-site-theme="dark"] .main-content dd,
+html[data-site-theme="dark"] .main-content td,
+html[data-site-theme="dark"] .main-content th,
+html[data-site-theme="dark"] .main-content blockquote,
+html[data-site-theme="dark"] .main-content address,
+html[data-site-theme="dark"] .main-content summary,
+html[data-site-theme="dark"] .main-content figcaption {
+  color: #ecece8 !important;
+}
+
+html[data-site-theme="dark"] .main-content ul > li::before,
+html[data-site-theme="dark"] .main-content ol > li::before {
+  color: #c8c8c4 !important;
+}
+
+html[data-site-theme="dark"] .main #markdown-toc,
+html[data-site-theme="dark"] .main .text-delta {
+  color: #ecece8 !important;
+}
+
+html[data-site-theme="dark"] .breadcrumb-nav {
+  color: #ecece8 !important;
+}
+
+html[data-site-theme="dark"] .search-results-list .search-result-doc,
+html[data-site-theme="dark"] .search-results-list .search-result-preview,
+html[data-site-theme="dark"] .search-results-list .search-result-doc .search-result-highlight {
+  color: #ecece8 !important;
+}
+
+html[data-site-theme="dark"] .main-content h1,
+html[data-site-theme="dark"] .main-content h2,
+html[data-site-theme="dark"] .main-content h3,
+html[data-site-theme="dark"] .main-content h4,
+html[data-site-theme="dark"] .main-content h5,
+html[data-site-theme="dark"] .main-content h6,
+html[data-site-theme="dark"] #toctitle {
+  color: #f6f6f3 !important;
+}
+
+html[data-site-theme="dark"] .main-header,
+html[data-site-theme="dark"] .site-header {
+  background-color: #202123 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-site-theme="dark"] .search-input {
+  background-color: #2e2f31 !important;
+  color: #f7f5f8 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html[data-site-theme="dark"] .search {
+  background-color: #202123 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-site-theme="dark"] .breadcrumb-nav-list-item::after {
+  color: #b5b5b1 !important;
+}
+
+html[data-site-theme="dark"] hr {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-site-theme="dark"] blockquote {
+  border-left-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html[data-site-theme="dark"] .nav-category {
+  color: #f6f6f3 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-site-theme="dark"] .site-footer {
+  color: #d2d2cd !important;
+}
+
+html[data-site-theme="dark"] mjx-container[jax="CHTML"] {
+  color: #ecece8 !important;
+}
+
+html[data-site-theme="dark"] .highlight,
+html[data-site-theme="dark"] div.highlighter-rouge,
+html[data-site-theme="dark"] figure.highlight {
+  background-color: #0d1117 !important;
+}
+
+html[data-site-theme="dark"] .highlight .highlight {
+  background-color: transparent !important;
+}
+
+html[data-site-theme="dark"] code {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #f4f2f6 !important;
+}
+
+html[data-site-theme="dark"] .footnotes,
+html[data-site-theme="dark"] .page-content,
+html[data-site-theme="dark"] .sect1,
+html[data-site-theme="dark"] .sect2 {
+  color: #ecece8 !important;
+}
+
+html[data-site-theme="dark"] thead,
+html[data-site-theme="dark"] tbody,
+html[data-site-theme="dark"] tbody td,
+html[data-site-theme="dark"] tbody th {
+  color: #ecece8 !important;
+}
+
+/* Tables: force dark gray surfaces (light theme sets white cell backgrounds) */
+html[data-site-theme="dark"] .main-content table {
+  background-color: #252628 !important;
+  border-collapse: collapse !important;
+}
+
+html[data-site-theme="dark"] .main-content .table-wrapper {
+  background-color: #252628 !important;
+}
+
+html[data-site-theme="dark"] .main-content th,
+html[data-site-theme="dark"] .main-content td {
+  background-color: #2d2e30 !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  color: #ecece8 !important;
+}
+
+html[data-site-theme="dark"] .main-content thead th,
+html[data-site-theme="dark"] .main-content thead td {
+  background-color: #353638 !important;
+}
+
+html[data-site-theme="dark"] .main-content tbody tr:nth-child(even) td,
+html[data-site-theme="dark"] .main-content tbody tr:nth-child(even) th {
+  background-color: #26282a !important;
+}
+
+html[data-site-theme="dark"] .main-content tfoot th,
+html[data-site-theme="dark"] .main-content tfoot td {
+  background-color: #323638 !important;
+}
+
+html[data-site-theme="dark"] .site-theme-switch__btn:focus-visible {
+  outline: 2px solid var(--site-link-accent);
+  outline-offset: 2px;
+}
+
+/* --- Sidebar nav: spacing (both themes) --- */
+.side-bar #site-nav .nav-list-item {
+  position: relative;
+  padding-bottom: 1px;
+}
+
+.side-bar #site-nav .nav-list-item > .nav-list-expander {
+  top: 0 !important;
+  z-index: 2;
+}
+
+.side-bar #site-nav .nav-list-item > .nav-list-link {
+  position: relative;
+  z-index: 1;
+}
+
+.side-bar #site-nav .nav-list-item > .nav-list {
+  margin-top: 0.35rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.side-bar #site-nav > .nav-list > .nav-list-item:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+/* --- Footer: theme toggle (both themes) --- */
+.nav-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+.site-theme-switch {
+  display: inline-flex;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  font-size: 0.75rem;
+}
+
+html[data-site-theme="dark"] .site-theme-switch {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.site-theme-switch__btn {
+  margin: 0;
+  padding: 0.3rem 0.55rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  line-height: 1.2;
+}
+
+.site-theme-switch__btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+html[data-site-theme="dark"] .site-theme-switch__btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.site-theme-switch__btn[aria-pressed="true"] {
+  background: rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+html[data-site-theme="dark"] .site-theme-switch__btn[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.14);
+}

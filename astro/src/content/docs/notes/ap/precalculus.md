@@ -1,0 +1,28 @@
+---
+title: "AP Precalculus"
+sidebar:
+  order: 6
+---
+
+**Note**: The AP curriculum is a bit basic, I will add some extra units that are part of precalculus but do not show up on the AP. The units are organized according to the HW Honors Precalculus Curriculum. This curriculum will roughly follow [Precalculus by Cohen, 13th Edition](https://www.cengage.com/c/precalculus-7e-cohen-lee-sklar/9780840069429/).
+
+---
+
+## Units
+
+- [Unit 1 & 2: Fundamentals, Equations, and Inequalities](/notes/ap/precalc/fundeqineq/)
+- [Unit 3: Functions](/notes/ap/precalc/functions/)
+- [Unit 4 & 13: Polynomial & Rational Functions and Applications to Optimization](/notes/ap/precalc/polyratopt/)
+- [Unit 5: Exponential & Logarithmic Functions](/notes/ap/precalc/explog/)
+- [Unit 6 & 7: Trigonometric Functions](/notes/ap/precalc/trigfunc/)
+- [Unit 8 & 9: Graphs and Analytics of Trig Functions](/notes/ap/precalc/graphanalyticaltrig/)
+- [Unit 10: Additional Topics in Trigonometry (Triangle Laws, Parametric, Polar, and Vectors)](/notes/ap/precalc/additionaltrig/)
+- [Unit 11: Matrices and Systems](/notes/ap/precalc/matrices/)
+- [Unit 12: Conic Sections](/notes/ap/precalc/conicsections/)
+- [Unit 13 & 14: Additional Topics in Algebra](/notes/ap/precalc/addtopics/)
+
+---
+
+## Resources
+
+- [Resources](/Resources/resources/) — general AP prep links, College Board, and books.
