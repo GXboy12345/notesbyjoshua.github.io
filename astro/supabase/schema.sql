@@ -83,3 +83,21 @@ create trigger on_auth_user_created
 
 -- To make yourself admin after signing up, run (with your email):
 --   update public.profiles set role = 'admin' where email = 'you@example.com';
+
+
+-- ---------------------------------------------------------------------------
+-- Per-user reading progress: one row per note a user has marked as read.
+-- ---------------------------------------------------------------------------
+create table if not exists public.read_notes (
+  user_id uuid not null references auth.users (id) on delete cascade,
+  slug    text not null,                       -- note route, e.g. /notes/ap/stats/univardata/
+  read_at timestamptz not null default now(),
+  primary key (user_id, slug)
+);
+
+alter table public.read_notes enable row level security;
+
+-- Each user can only see and modify their own reading progress.
+drop policy if exists "own read_notes" on public.read_notes;
+create policy "own read_notes" on public.read_notes
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);

@@ -1,0 +1,110 @@
+---
+import notesSidebar from '../sidebar.json';
+
+// Flatten the sidebar tree into sections (one per course/group) of note links.
+type Item = { label: string; link?: string; items?: Item[] };
+function collect(items: Item[], heading: string) {
+  const sections: { heading: string; notes: { label: string; slug: string }[] }[] = [];
+  const direct: { label: string; slug: string }[] = [];
+  const groups: Item[] = [];
+  for (const it of items) {
+    if (it.items) groups.push(it);
+    else if (it.link) direct.push({ label: it.label, slug: it.link });
+  }
+  if (direct.length) sections.push({ heading, notes: direct });
+  for (const g of groups) sections.push(...collect(g.items!, g.label));
+  return sections;
+}
+const sections = collect(notesSidebar as Item[], 'Notes');
+const total = sections.reduce((n, s) => n + s.notes.length, 0);
+---
+<div class="dash">
+  <p id="dash-status">Loading…</p>
+
+  <div id="dash-signedout" hidden>
+    <p>Sign in to track which notes you’ve read. <a href="/account/">Go to your account →</a></p>
+  </div>
+
+  <div id="dash-content" hidden>
+    <p class="dash-progress"><strong id="dash-count">0</strong> / {total} notes read</p>
+    {sections.map((s) => (
+      <section class="dash-section">
+        <h2>{s.heading}</h2>
+        <ul class="dash-list">
+          {s.notes.map((n) => (
+            <li class="dash-item">
+              <input type="checkbox" data-slug={n.slug} disabled />
+              <a href={n.slug}>{n.label}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</div>
+
+<script>
+  import { getSupabase } from '../lib/supabase';
+
+  const byId = (id: string) => document.getElementById(id)!;
+  const STATES = ['dash-status', 'dash-signedout', 'dash-content'];
+  const show = (id: string) => STATES.forEach((s) => (byId(s).hidden = s !== id));
+  const sb = getSupabase();
+  let uid: string | null = null;
+
+  function boxes() {
+    return Array.from(document.querySelectorAll<HTMLInputElement>('input[data-slug]'));
+  }
+
+  function updateCount() {
+    byId('dash-count').textContent = String(boxes().filter((b) => b.checked).length);
+  }
+
+  async function toggle(cb: HTMLInputElement) {
+    const slug = cb.dataset.slug!;
+    cb.disabled = true;
+    try {
+      if (cb.checked) {
+        const { error } = await sb!.from('read_notes').upsert({ user_id: uid, slug });
+        if (error) throw error;
+      } else {
+        const { error } = await sb!.from('read_notes').delete().eq('user_id', uid).eq('slug', slug);
+        if (error) throw error;
+      }
+      updateCount();
+    } catch (err) {
+      console.error('[dashboard] toggle failed:', err);
+      cb.checked = !cb.checked; // revert on failure
+    } finally {
+      cb.disabled = false;
+    }
+  }
+
+  async function load(session: any) {
+    if (!session?.user) { show('dash-signedout'); return; }
+    uid = session.user.id;
+    try {
+      const { data, error } = await sb!.from('read_notes').select('slug');
+      if (error) throw error;
+      const readSet = new Set((data ?? []).map((r: any) => r.slug));
+      for (const cb of boxes()) {
+        cb.checked = readSet.has(cb.dataset.slug);
+        cb.disabled = false;
+        cb.addEventListener('change', () => toggle(cb));
+      }
+      updateCount();
+      show('dash-content');
+    } catch (err) {
+      console.error('[dashboard] load failed:', err);
+      show('dash-signedout');
+    }
+  }
+
+  if (!sb) {
+    show('dash-signedout');
+  } else {
+    let settled = false;
+    sb.auth.onAuthStateChange((_event, session) => { settled = true; load(session); });
+    setTimeout(() => { if (!settled) show('dash-signedout'); }, 2500);
+  }
+</script>
