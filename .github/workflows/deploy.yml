@@ -29,15 +29,8 @@ jobs:
           cache: npm
           cache-dependency-path: astro/package-lock.json
       - run: npm ci
-      - name: Write .env from secrets
-        env:
-          PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
-          PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
-        run: |
-          echo "url length: ${#PUBLIC_SUPABASE_URL}"   # 0 means the secret is missing/misnamed
-          echo "key length: ${#PUBLIC_SUPABASE_ANON_KEY}"
-          printf 'PUBLIC_SUPABASE_URL=%s\n' "$PUBLIC_SUPABASE_URL" >> .env
-          printf 'PUBLIC_SUPABASE_ANON_KEY=%s\n' "$PUBLIC_SUPABASE_ANON_KEY" >> .env
+      # Supabase URL/anon key are committed as public defaults in src/lib/supabase.ts,
+      # so no build-time secrets are needed.
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
