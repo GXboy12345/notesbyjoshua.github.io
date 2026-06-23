@@ -8,8 +8,8 @@ import notesSidebar from './src/sidebar.json' with { type: 'json' };
 
 // https://astro.build/config
 export default defineConfig({
-	// Cloudflare Workers static-assets URL (swap for a custom domain later).
-	site: 'https://notesbyjoshua.joshuabie2010.workers.dev',
+	// Primary site is GitHub Pages at the existing domain.
+	site: 'https://notesbyjoshua.github.io',
 	// Pre-bundle the Supabase SDK so the dev server doesn't re-optimize it
 	// mid-session (the cause of "504 Outdated Optimize Dep").
 	vite: {
