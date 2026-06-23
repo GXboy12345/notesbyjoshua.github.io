@@ -27,6 +27,10 @@ export default defineConfig({
 		starlight({
 			title: 'Notes by Joshua',
 			description: 'Math, Physics, and Thoughts',
+			components: {
+				// Show an account indicator in the header (keeps social icons too).
+				SocialIcons: './src/components/HeaderAccount.astro',
+			},
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/notesbyjoshua' }],
 			customCss: [
 				// KaTeX stylesheet (math rendering).

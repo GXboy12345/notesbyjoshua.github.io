@@ -1,0 +1,33 @@
+---
+// Replaces Starlight's header social-icons slot: an always-visible account
+// indicator, plus the original social icons (rendered via the default).
+import Default from '@astrojs/starlight/components/SocialIcons.astro';
+---
+
+<a id="header-account-link" class="header-account-link" href="/account/" data-signedin="false">
+  Sign in
+</a>
+<Default><slot /></Default>
+
+<script>
+  import { getSupabase } from '../lib/supabase';
+
+  const link = document.getElementById('header-account-link') as HTMLAnchorElement | null;
+  const sb = getSupabase();
+  if (sb && link) {
+    sb.auth.onAuthStateChange((_event, session) => {
+      const user = session?.user;
+      if (user) {
+        link.textContent = user.email ? user.email.split('@')[0] : 'Account';
+        link.title = user.email ? `Signed in as ${user.email}` : 'Signed in';
+        link.href = '/dashboard/';
+        link.dataset.signedin = 'true';
+      } else {
+        link.textContent = 'Sign in';
+        link.title = 'Sign in';
+        link.href = '/account/';
+        link.dataset.signedin = 'false';
+      }
+    });
+  }
+</script>
