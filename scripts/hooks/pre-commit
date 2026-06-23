@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+set -eu
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+python3 scripts/update_progress_report.py
+git add Notes/progress.md

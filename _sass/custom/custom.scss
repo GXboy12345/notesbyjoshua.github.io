@@ -107,6 +107,149 @@ html[data-site-theme="dark"] .main-content .theorem-box {
   background: rgba(14, 165, 233, 0.12);
 }
 
+.progress-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.progress-summary > div {
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 6px;
+  background: rgba(15, 23, 42, 0.035);
+}
+
+.progress-summary strong {
+  display: block;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.progress-summary span {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  color: rgba(15, 23, 42, 0.72);
+}
+
+.notes-progress-table {
+  display: table;
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.notes-progress-table th,
+.notes-progress-table td {
+  vertical-align: middle;
+}
+
+.notes-progress-table small {
+  color: rgba(15, 23, 42, 0.58);
+  font-size: 0.75rem;
+}
+
+.note-progress {
+  position: relative;
+  display: block;
+  width: 8.5rem;
+  height: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.08);
+}
+
+.note-progress__fill {
+  display: block;
+  height: 100%;
+  min-width: 0.18rem;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #1d9a72, #46b37f);
+}
+
+.note-progress__label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111827;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.note-status {
+  display: inline-block;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #17324d;
+  background: rgba(14, 165, 233, 0.14);
+}
+
+.note-status--stub,
+.note-status--outline,
+.note-status--draft {
+  color: #5b2b16;
+  background: rgba(245, 158, 11, 0.18);
+}
+
+.note-status--developing {
+  color: #17324d;
+  background: rgba(14, 165, 233, 0.16);
+}
+
+.note-status--review,
+.note-status--complete {
+  color: #17452f;
+  background: rgba(34, 197, 94, 0.16);
+}
+
+.note-page-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: -0.25rem 0 1.25rem;
+}
+
+.note-page-progress__status {
+  color: rgba(15, 23, 42, 0.7);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+html[data-site-theme="dark"] .progress-summary > div {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+html[data-site-theme="dark"] .progress-summary span,
+html[data-site-theme="dark"] .notes-progress-table small,
+html[data-site-theme="dark"] .note-page-progress__status {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+html[data-site-theme="dark"] .note-progress {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+html[data-site-theme="dark"] .note-progress__fill {
+  background: linear-gradient(90deg, #22c55e, #5ee1ff);
+}
+
+html[data-site-theme="dark"] .note-progress__label {
+  color: #f8fafc;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+
 // --- Markdown lists (bullets / numbers) ---
 // The remote theme draws markers with `li::before` + absolute positioning, which often
 // sits visually "high" compared to body text and especially next to MathJax.

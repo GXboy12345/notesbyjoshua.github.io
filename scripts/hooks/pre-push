@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+set -eu
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+python3 scripts/update_progress_report.py
+
+if ! git diff --quiet -- Notes/progress.md; then
+  printf '%s\n' 'Notes/progress.md was regenerated and has unstaged changes.'
+  printf '%s\n' 'Commit the updated progress page before pushing.'
+  exit 1
+fi

@@ -500,7 +500,7 @@ The surface of a conductor in equilibrium is itself an equipotential, which is e
 A few habits that save the most time on potential problems:
 
 - **Reach for the scalar first.** Potential adds without components, so $$V=k\int dq/r$$ is almost always easier than the field integral. If you ultimately need $$\vec E$$ on a symmetry axis, find $$V$$ and take $$-\nabla V$$ (as in the ring example above).
-- **Look for "constant $$r$$."** If every charge element is equidistant from the field point—center of a ring, shell, arc, or hemisphere—the integral collapses to $$V=kQ/r$$ with no work.
+- **Look for "constant $$r$$."** If every charge element is equidistant from the field point (e.g. the center of a ring, shell, arc, or hemisphere) the integral collapses to $$V=kQ/r$$ with no work.
 - **If you already have $$\vec E$$, integrate it, don't re-integrate $$dq$$.** Once Gauss's law has given $$\vec E$$, use $$\Delta V=-\int\vec E\cdot d\vec\ell$$ along the simplest path (usually radial, so $$\vec E\cdot d\vec\ell=E\,dr$$).
 - **Choose the reference to kill terms.** Use $$V(\infty)=0$$ for localized charge; for an infinite line or plane pick a convenient finite point and track only differences.
 - **Use continuity of $$V$$ as a free check.** When you stitch together piecewise regions (inside/outside a shell, across a boundary), the pieces must agree in value even where $$\vec E$$ jumps. A mismatch means an algebra error.
@@ -548,9 +548,7 @@ Each integration constant was pinned down by demanding $$V$$ be continuous at a 
 
 ### Energy of a charge configuration
 
-**EXPAND bc I am very confused**
-
-There are three equivalent ways to compute the total energy stored in a configuration; choose whichever matches the problem.
+There are three equivalent ways to compute the total potential energy stored in a configuration; choose whichever matches the problem.
 
 **1. Pairwise sum.** Add the interaction energy of every distinct pair,
 
@@ -558,7 +556,7 @@ $$
 U=\frac{1}{4\pi\varepsilon_0}\sum_{i<j}\frac{q_iq_j}{r_{ij}} .
 $$
 
-This excludes the (infinite) self-energy of idealized point charges. However, this method is not typically used bacuse it increases with complexity as you increase the amount of charges.
+This excludes the (infinite) self-energy of idealized point charges. The method works because due to the conservativeness of the Coulomb force it doesn't matter what order you bring in the charges. However, this method is not typically used bacuse it increases with complexity as you increase the amount of charges.
 
 **2. Charge times potential, halved.** Writing $$\sum_i q_iV_i$$ counts each pair twice, so
 
@@ -572,9 +570,11 @@ for a continuous distribution, where $$V$$ is the potential of the *whole* distr
 
 **3. Charge it up.** Assemble the charge from zero, tracking $$V$$ as a function of the accumulated charge, and integrate $$U=\int V\,dq$$. This is the cleanest method when symmetry keeps the object near one potential as it charges: for instance a conductor, or a sphere built up shell by shell.
 
+**4. Field energy** The field-energy viewpoint, $$U=\int \tfrac12\varepsilon_0E^2\,dV$$, is itself a fourth way to compute configuration energy and is sometimes the only practical one when no symmetry helps with potentials.
+
 <div class="theorem-box" markdown="1">
 
-**Example.** What is the self-energy of a solid sphere with radius $$R$$?
+**Example.** What is the potential energy of a solid sphere with radius $$R$$ and total charge $$Q$$ (evenly distributed)?
 
 Build the sphere up shell by shell at fixed density $$\rho$$. When the assembled charge is $$q$$ at radius $$r$$ (final radius $$R$$), $$q=Q(r/R)^3$$, and the next shell $$dq=Q\,\dfrac{3r^2}{R^3}dr$$ is brought from infinity to the surface, which sits at $$V=kq/r=kQr^2/R^3$$. Hence
 
@@ -588,8 +588,6 @@ U=\int_0^R \frac{3kQ^2}{R^6}r^4\,dr=\frac{3}{5}\frac{kQ^2}{R}.
 $$
 
 </div>
-
-The field-energy viewpoint, $$U=\int \tfrac12\varepsilon_0E^2\,dV$$, is itself a fourth way to compute configuration energy and is sometimes the only practical one when no symmetry helps with potentials.
 
 <div class="theorem-box" markdown="1">
 
@@ -688,12 +686,3 @@ A short decision tree for which tool to pull off the shelf:
 5. **You need $$\vec E$$ on a symmetry axis, or any field where the geometry is messy:** Compute the scalar $$V=k\int dq/r$$ first (it adds without components), then take $$\vec E=-\nabla V$$. Watch for the "constant $$r$$" shortcut (ring/shell/arc) that makes the integral trivial.
 6. **A conductor is involved:** Inside, $$\vec E=0$$ and the surface is an equipotential; just outside, $$E=\sigma/\varepsilon_0$$ (perpendicular). For a charge near a grounded plane or sphere, replace the conductor with an image charge that pins the surface to $$V=0$$, then treat it as a point-charge problem.
 7. **You need total stored energy:** Pick the form that matches the symmetry — pairwise sum $$\dfrac{1}{4\pi\varepsilon_0}\sum_{i<j}\dfrac{q_iq_j}{r_{ij}}$$ (excludes self-energy), $$\tfrac12\int V\,dq$$ or "charge it up" $$\int V\,dq$$ (includes it), or the field integral $$\int\tfrac12\varepsilon_0E^2\,dV$$ when no symmetry helps with potentials.
-
-**Common traps:**
-
-- **Surface field factors.** Just outside a *conductor* $$E=\sigma/\varepsilon_0$$, but a lone *nonconducting sheet* gives $$E=\sigma/2\varepsilon_0$$. The factor of 2 (and the same $$\tfrac12$$ in the electrostatic pressure $$P=\sigma^2/2\varepsilon_0$$) comes from a charge feeling the field of *everything but itself* — never the full field.
-- **Reference point for infinite sources.** $$V(\infty)=0$$ only works for finite distributions; for an infinite line or plane the integral diverges, so choose a finite reference and track only differences.
-- **$$\vec E$$ jumps, $$V$$ doesn't.** Across a charged surface the field can be discontinuous, but the potential is always continuous — use that continuity to pin integration constants and as a free error check when stitching piecewise regions.
-- **Self-energy bookkeeping.** The pairwise sum drops self-energy; $$\tfrac12\int V\,dq$$ keeps it. Decide which the question wants before plugging in.
-- **Gauss's law is always true but rarely useful.** It only gives $$E$$ cheaply when symmetry makes $$E$$ constant over the surface; otherwise it's an identity, not a solution.
-- **Image charges are fictitious.** The image only reproduces the field in the real region — never use it to compute energy or field on the far side of the conductor, and remember a grounded surface can carry net induced charge.

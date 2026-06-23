@@ -15,6 +15,7 @@ Here are my notes! Feel free to look through them to find what you like 😁!
 - [Math Notes]({{ '/notes/math/' | relative_url }})
 - [Physics Notes]({{ '/notes/physics/' | relative_url }})
 - [Chemistry Notes]({{ '/notes/chemistry/' | relative_url }})
+- [Notes Progress]({{ '/notes/progress/' | relative_url }})
 
 ---
 

@@ -49,4 +49,29 @@
 
 <link rel="stylesheet" href="{{ '/assets/css/dark-overrides.css' | relative_url }}">
 
+{% if page.progress %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var main = document.querySelector(".main-content");
+    var heading = main && main.querySelector("h1");
+    if (!main || !heading) return;
+
+    var progress = {{ page.progress | default: 0 | jsonify }};
+    var status = {{ page.status | default: "progress" | jsonify }};
+    var progressValue = Math.max(0, Math.min(100, parseInt(progress, 10) || 0));
+
+    var wrapper = document.createElement("div");
+    wrapper.className = "note-page-progress";
+    wrapper.innerHTML =
+      '<span class="note-page-progress__status">' + status + '</span>' +
+      '<div class="note-progress" aria-label="Progress: ' + progressValue + '%">' +
+      '<span class="note-progress__fill" style="width: ' + progressValue + '%"></span>' +
+      '<span class="note-progress__label">' + progressValue + '%</span>' +
+      '</div>';
+
+    heading.insertAdjacentElement("afterend", wrapper);
+  });
+</script>
+{% endif %}
+
 {% include sidebar-nav-custom.html %}
