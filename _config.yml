@@ -6,6 +6,9 @@ color_scheme: light
 plugins:
   - jekyll-remote-theme
 
+exclude:
+  - AGENTS.md
+
 url: "https://notesbyjoshua.github.io"
 
 # Google Form embedded on /feedback/ — paste the iframe src from Form → Send → <> embed

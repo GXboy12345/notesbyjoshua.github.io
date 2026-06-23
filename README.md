@@ -10,4 +10,4 @@ Study website created by me! Currently in alpha-3 phase. You can see some of my 
 - Maybe integrate Garret's thing
 - Improve the consistency of notes over the pages
 - Practice problems also coalesce on one page (so like it's not just a dud)
-- Add AI agent?
+- Host on a non-github page? Add password things for logins/admin pages?
