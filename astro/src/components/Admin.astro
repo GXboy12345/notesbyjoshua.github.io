@@ -1,0 +1,72 @@
+---
+// Admin-only dashboard. Access is enforced by RLS (admins can read all
+// profiles; visitors cannot), with this client-side gate for UX.
+---
+<div class="admin-dash">
+  <p id="admin-status">Loading…</p>
+
+  <div id="admin-denied" hidden>
+    <p>This page is for admins only. <a href="/account/">Go to your account</a> to sign in.</p>
+  </div>
+
+  <div id="admin-content" hidden>
+    <p id="admin-summary"></p>
+    <table class="admin-users">
+      <thead>
+        <tr><th>Email</th><th>Role</th><th>Joined</th></tr>
+      </thead>
+      <tbody id="admin-users-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  import { getSupabase, getRole } from '../lib/supabase';
+
+  const byId = (id: string) => document.getElementById(id)!;
+  const STATES = ['admin-status', 'admin-denied', 'admin-content'];
+  const show = (id: string) => STATES.forEach((s) => (byId(s).hidden = s !== id));
+  const sb = getSupabase();
+
+  async function loadUsers() {
+    const { data, error } = await sb!
+      .from('profiles')
+      .select('email, role, created_at')
+      .order('created_at', { ascending: true });
+    if (error) throw error;
+    const body = byId('admin-users-body');
+    body.innerHTML = '';
+    for (const u of data ?? []) {
+      const joined = u.created_at ? new Date(u.created_at).toLocaleDateString() : '';
+      const tr = document.createElement('tr');
+      for (const value of [u.email ?? '', u.role, joined]) {
+        const td = document.createElement('td');
+        td.textContent = value;
+        tr.appendChild(td);
+      }
+      body.appendChild(tr);
+    }
+    byId('admin-summary').textContent = `${data?.length ?? 0} registered user(s).`;
+  }
+
+  async function gate(session: any) {
+    if (!session?.user) { show('admin-denied'); return; }
+    const role = await getRole().catch(() => 'visitor');
+    if (role !== 'admin') { show('admin-denied'); return; }
+    try {
+      await loadUsers();
+      show('admin-content');
+    } catch (err) {
+      console.error('[admin] load failed:', err);
+      show('admin-denied');
+    }
+  }
+
+  if (!sb) {
+    show('admin-denied');
+  } else {
+    let settled = false;
+    sb.auth.onAuthStateChange((_event, session) => { settled = true; gate(session); });
+    setTimeout(() => { if (!settled) show('admin-denied'); }, 2500);
+  }
+</script>

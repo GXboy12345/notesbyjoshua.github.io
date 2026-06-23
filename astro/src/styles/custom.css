@@ -87,3 +87,15 @@
 .account-btn:hover {
 	opacity: 0.9;
 }
+
+.admin-users {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.admin-users th,
+.admin-users td {
+	text-align: left;
+	padding: 0.5rem 0.75rem;
+	border-bottom: 1px solid var(--sl-color-gray-5);
+}

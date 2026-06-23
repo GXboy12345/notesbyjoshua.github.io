@@ -1,0 +1,15 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import Admin from '../components/Admin.astro';
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Admin Dashboard',
+    prev: false,
+    next: false,
+    head: [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex' } }],
+  }}
+>
+  <Admin />
+</StarlightPage>

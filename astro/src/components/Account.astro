@@ -22,40 +22,61 @@
   import { getSupabase, getRole } from '../lib/supabase';
 
   const byId = (id: string) => document.getElementById(id)!;
+  const STATES = ['account-status', 'account-signedout', 'account-signedin', 'account-disabled'];
+  // Show exactly one top-level state block.
+  const show = (id: string) => STATES.forEach((s) => (byId(s).hidden = s !== id));
   const sb = getSupabase();
 
-  async function render() {
-    byId('account-status').hidden = true;
-    if (!sb) {
-      byId('account-disabled').hidden = false;
-      return;
-    }
-    const { data: { user } } = await sb.auth.getUser();
-    if (user) {
-      const role = await getRole();
-      byId('account-email').textContent = user.email ?? '';
-      byId('account-role').textContent = role ?? 'visitor';
-      byId('admin-links').hidden = role !== 'admin';
-      byId('account-signedin').hidden = false;
-      byId('account-signedout').hidden = true;
+  function update(session: any) {
+    if (session?.user) {
+      byId('account-email').textContent = session.user.email ?? '';
+      byId('account-role').textContent = '…';
+      show('account-signedin');
+      // Role is best-effort; never let it block the signed-in UI.
+      getRole()
+        .then((role) => {
+          byId('account-role').textContent = role ?? 'visitor';
+          byId('admin-links').hidden = role !== 'admin';
+        })
+        .catch(() => { byId('account-role').textContent = 'visitor'; });
     } else {
-      byId('account-signedout').hidden = false;
-      byId('account-signedin').hidden = true;
+      show('account-signedout');
     }
+  }
+
+  if (!sb) {
+    show('account-disabled');
+  } else {
+    // Drive the UI from auth events. onAuthStateChange emits the current session
+    // immediately (INITIAL_SESSION) without using getSession(), which can hang on
+    // the auth lock. A timeout guarantees we never stay stuck on "Loading…".
+    let settled = false;
+    sb.auth.onAuthStateChange((_event, session) => {
+      settled = true;
+      update(session);
+    });
+    setTimeout(() => {
+      if (!settled) {
+        console.warn('[account] auth init slow; defaulting to signed-out');
+        show('account-signedout');
+      }
+    }, 2500);
   }
 
   byId('google-signin')?.addEventListener('click', () => {
     sb?.auth.signInWithOAuth({
       provider: 'google',
-      options: { redirectTo: window.location.origin + '/account/' },
+      options: {
+        redirectTo: window.location.origin + '/account/',
+        // Always show Google's account chooser instead of silently reusing the
+        // last-used account.
+        queryParams: { prompt: 'select_account' },
+      },
     });
   });
 
   byId('signout')?.addEventListener('click', async () => {
-    await sb?.auth.signOut();
-    render();
+    try { await sb?.auth.signOut(); } catch (err) { console.error('[account] signout failed:', err); }
+    update(null); // onAuthStateChange also fires SIGNED_OUT; this is a safety net
   });
-
-  sb?.auth.onAuthStateChange(() => render());
-  render();
 </script>

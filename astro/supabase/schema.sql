@@ -44,7 +44,12 @@ security definer
 set search_path = public
 as $$
 begin
-  if new.role is distinct from old.role and not public.is_admin() then
+  -- Block role changes from authenticated end-users who aren't admins.
+  -- auth.uid() is null for service-role / SQL Editor calls, so the first admin
+  -- can still be bootstrapped there.
+  if new.role is distinct from old.role
+     and auth.uid() is not null
+     and not public.is_admin() then
     raise exception 'only admins can change roles';
   end if;
   return new;
