@@ -1,5 +1,6 @@
 ---
 title: "Unit 9: Inference for Quantitative Data: Slopes"
+next: false
 sidebar:
   order: 9
 ---

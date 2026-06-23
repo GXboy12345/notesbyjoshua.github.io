@@ -1,5 +1,6 @@
 ---
 title: "AP Physics C Mechanics"
+prev: false
 sidebar:
   order: 4
 ---
@@ -20,4 +21,4 @@ sidebar:
 
 ## Resources
 
-- [Resources](/Resources/resources/) — general AP prep links, College Board, and books.
+- [Resources](/resources/resources/) — general AP prep links, College Board, and books.

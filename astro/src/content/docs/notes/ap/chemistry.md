@@ -1,5 +1,6 @@
 ---
 title: "AP Chemistry"
+prev: false
 sidebar:
   order: 2
 ---

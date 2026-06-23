@@ -1,5 +1,6 @@
 ---
 title: "Recursion"
+next: false
 sidebar:
   order: 6
 ---

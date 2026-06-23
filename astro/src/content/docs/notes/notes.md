@@ -1,5 +1,6 @@
 ---
 title: "Notes"
+prev: false
 sidebar:
   order: 2
 ---
@@ -12,7 +13,6 @@ Here are my notes! Feel free to look through them to find what you like 😁!
 - [Math Notes](/notes/math/)
 - [Physics Notes](/notes/physics/)
 - [Chemistry Notes](/notes/chemistry/)
-- [Notes Progress](/notes/progress/)
 
 ---
 

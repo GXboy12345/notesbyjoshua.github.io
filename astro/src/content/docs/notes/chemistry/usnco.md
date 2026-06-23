@@ -1,5 +1,6 @@
 ---
 title: "Chemistry Competition Prep"
+prev: false
 sidebar:
   order: 3
 ---

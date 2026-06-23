@@ -1,5 +1,6 @@
 ---
 title: "Magnetism & Electrodynamics"
+next: false
 sidebar:
   order: 13
 ---

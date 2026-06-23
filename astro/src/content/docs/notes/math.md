@@ -1,5 +1,6 @@
 ---
 title: "Math"
+prev: false
 sidebar:
   order: 2
 ---

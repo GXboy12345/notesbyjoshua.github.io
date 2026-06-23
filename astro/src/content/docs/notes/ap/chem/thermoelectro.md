@@ -1,5 +1,6 @@
 ---
 title: "Unit 9: Thermodynamics and Electrochemistry"
+next: false
 sidebar:
   order: 9
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Chemistry"
+prev: false
 sidebar:
   order: 4
 ---

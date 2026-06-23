@@ -1,5 +1,6 @@
 ---
 title: "Unit 13 & 14: Additional Topics in Algebra"
+next: false
 sidebar:
   order: 10
 ---

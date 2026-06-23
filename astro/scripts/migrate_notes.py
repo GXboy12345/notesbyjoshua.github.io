@@ -15,8 +15,10 @@ Idempotent: rewrites the docs/notes tree from scratch each run.
 
 from __future__ import annotations
 
+import json
 import re
 import shutil
+from collections import defaultdict
 from pathlib import Path
 
 ASTRO = Path(__file__).resolve().parents[1]
@@ -53,8 +55,22 @@ def yaml_quote(value: str) -> str:
 
 
 def dest_for(permalink: str) -> Path:
-    slug = permalink.strip("/")
+    # Astro lowercases route slugs, so normalize here to keep files, links, and
+    # routes consistent (e.g. /Resources/resources/ -> /resources/resources/).
+    slug = permalink.strip("/").lower()
     return DOCS_OUT / (slug + ".md")
+
+
+# Internal links/srcs that point at a route (not a case-sensitive /assets/ file)
+# must be lowercased to match Astro's lowercased routes.
+INTERNAL_LINK = re.compile(r'(\]\(|href="|src=")(/[^)"\s]*)')
+
+
+def _lower_internal(match: re.Match) -> str:
+    prefix, path = match.group(1), match.group(2)
+    if path.startswith("/assets/"):
+        return prefix + path
+    return prefix + path.lower()
 
 
 REDIRECT_TARGET = re.compile(r"['\"]([^'\"]+)['\"]\s*\|\s*relative_url")
@@ -67,9 +83,81 @@ def transform_body(body: str) -> str:
     # \[ ... \] display delimiters are unused here; every \[ in the corpus is \\[Npt]
     # line-spacing inside math, which must be left untouched.
     body = body.replace(r"\(", "$").replace(r"\)", "$")
+    body = INTERNAL_LINK.sub(_lower_internal, body)
+    # Drop links to the deferred progress dashboard (not migrated yet).
+    body = re.sub(r"^.*\(/notes/progress/\).*$\n?", "", body, flags=re.MULTILINE)
     # Drop the first H1; Starlight renders the page title itself.
     body = FIRST_H1.sub("", body, count=1).lstrip("\n")
     return body
+
+
+def build_sidebar(nav: list[dict]) -> tuple[list[dict], set[str], set[str], list[str]]:
+    """Reconstruct the sidebar tree from `parent`/`nav_order` (not folder layout).
+
+    Returns (notes_items, prev_false_links, next_false_links, orphan_titles):
+      * notes_items: Starlight sidebar entries for the Notes group.
+      * prev_false / next_false: links that should hide their prev/next pagination
+        button because they are the first/last page of a topic (group).
+      * orphan_titles: pages whose parent has no matching page (dropped from nav).
+    """
+    children: dict[str, list[dict]] = defaultdict(list)
+    for record in nav:
+        children[record["parent"]].append(record)
+    for group in children.values():
+        group.sort(key=lambda r: (r["order"], r["title"].lower()))
+
+    titles = {record["title"] for record in nav}
+    orphans = [
+        record["title"]
+        for record in nav
+        if record["parent"] and record["parent"] not in titles
+    ]
+
+    prev_false: set[str] = set()
+    next_false: set[str] = set()
+
+    def build(record: dict) -> tuple[dict, list[str]]:
+        kids = children.get(record["title"], [])
+        if not kids:
+            return {"label": record["title"], "link": record["link"]}, [record["link"]]
+        items: list[dict] = [{"label": "Overview", "link": record["link"]}]
+        leaves: list[str] = [record["link"]]
+        for kid in kids:
+            node, kid_leaves = build(kid)
+            items.append(node)
+            leaves.extend(kid_leaves)
+        # Topic boundary: first leaf hides prev, last leaf hides next.
+        prev_false.add(leaves[0])
+        next_false.add(leaves[-1])
+        return {"label": record["title"], "items": items}, leaves
+
+    # Root the tree at the page titled "Notes"; its children are the subjects.
+    notes_record = next((r for r in nav if r["title"] == "Notes"), None)
+    if notes_record is None:
+        return [], prev_false, next_false, orphans
+    notes_group, _ = build(notes_record)
+    return notes_group["items"], prev_false, next_false, orphans
+
+
+def patch_pagination(prev_false: set[str], next_false: set[str]) -> None:
+    """Insert `prev: false` / `next: false` into the front matter of boundary pages."""
+    for link in prev_false | next_false:
+        dest = dest_for(link)
+        if not dest.exists():
+            continue
+        text = dest.read_text(encoding="utf-8")
+        lines = text.split("\n")
+        extra = []
+        if link in prev_false:
+            extra.append("prev: false")
+        if link in next_false:
+            extra.append("next: false")
+        # Insert right after the `title:` line (keeps them top-level in the YAML).
+        for i, line in enumerate(lines):
+            if line.startswith("title:"):
+                lines[i + 1:i + 1] = extra
+                break
+        dest.write_text("\n".join(lines), encoding="utf-8")
 
 
 def main() -> None:
@@ -81,6 +169,7 @@ def main() -> None:
     skipped: list[str] = []
     flags: list[str] = []
     redirects: dict[str, str] = {}
+    nav: list[dict] = []  # {title, parent, order, link} for sidebar reconstruction
 
     for path in notes:
         text = path.read_text(encoding="utf-8")
@@ -100,8 +189,8 @@ def main() -> None:
         if "window.location.replace" in body:
             match = REDIRECT_TARGET.search(body)
             if match:
-                redirects[permalink] = match.group(1)
-                skipped.append(f"{rel} (redirect -> {match.group(1)})")
+                redirects[permalink.lower()] = match.group(1).lower()
+                skipped.append(f"{rel} (redirect -> {match.group(1).lower()})")
                 continue
 
         title = fm.get("title") or path.stem
@@ -123,6 +212,14 @@ def main() -> None:
         if re.search(r"\\\(|\\\[", new_body):
             flags.append(f"{rel} -> backslash-delimiter math (\\( or \\[)")
 
+        order = int(nav_order) if nav_order.strip().lstrip("-").isdigit() else 999
+        nav.append({
+            "title": title,
+            "parent": fm.get("parent", "").strip(),
+            "order": order,
+            "link": permalink.lower(),
+        })
+
         dest = dest_for(permalink)
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(out, encoding="utf-8")
@@ -134,14 +231,26 @@ def main() -> None:
             shutil.rmtree(ASSETS_OUT)
         shutil.copytree(ASSETS_SRC, ASSETS_OUT)
 
-    # Emit redirects for astro.config.mjs to import.
-    import json
+    # Reconstruct the sidebar from parent/nav_order, then hide prev/next at
+    # topic boundaries so pagination never crosses into a different course.
+    notes_items, prev_false, next_false, orphans = build_sidebar(nav)
+    patch_pagination(prev_false, next_false)
+
     (ASTRO / "src" / "redirects.json").write_text(
         json.dumps(redirects, indent=2) + "\n", encoding="utf-8"
+    )
+    (ASTRO / "src" / "sidebar.json").write_text(
+        json.dumps(notes_items, indent=2) + "\n", encoding="utf-8"
     )
 
     print(f"wrote {written} notes to {DOCS_OUT.relative_to(ASTRO)}/notes")
     print(f"wrote {len(redirects)} redirects to src/redirects.json")
+    print(f"wrote sidebar.json ({len(notes_items)} top-level Notes entries)")
+    print(f"pagination: {len(prev_false)} pages hide prev, {len(next_false)} hide next")
+    if orphans:
+        print(f"\norphans (parent not found, dropped from nav): {len(orphans)}")
+        for title in orphans:
+            print(f"  - {title}")
     if skipped:
         print("\nskipped:")
         for s in skipped:

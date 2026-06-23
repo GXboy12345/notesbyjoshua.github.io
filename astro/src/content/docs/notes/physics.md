@@ -1,5 +1,6 @@
 ---
 title: "Physics"
+prev: false
 sidebar:
   order: 3
 ---

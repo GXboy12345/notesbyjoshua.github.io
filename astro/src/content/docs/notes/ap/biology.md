@@ -19,6 +19,6 @@ AP Biology free-response questions often reward clear claims, careful use of exp
 
 ## Resources
 
-- [Resources](/Resources/resources/) - general AP prep links, College Board, and books.
+- [Resources](/resources/resources/) - general AP prep links, College Board, and books.
 - [AP Biology Course Page](https://apstudents.collegeboard.org/courses/ap-biology)
 - [Released AP Biology Free-Response Questions](https://apcentral.collegeboard.org/courses/ap-biology/exam/past-exam-questions)

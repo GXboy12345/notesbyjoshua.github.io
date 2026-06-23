@@ -1,5 +1,6 @@
 ---
 title: "Solid-State Chemistry"
+next: false
 sidebar:
   order: 5
 ---

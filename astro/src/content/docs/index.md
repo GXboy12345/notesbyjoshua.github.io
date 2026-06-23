@@ -24,7 +24,7 @@ This site is a peek into all of my notes, and it is ***FREE*** for you all to sh
 - [Physics Notes](/notes/physics/)
 - [Chemistry Notes](/notes/chemistry/)
 - [Practice Problems](/practiceproblems/practice/)
-- [Resources](/Resources/resources/)
+- [Resources](/resources/resources/)
 - [Blog](/blog/)
 
 ---

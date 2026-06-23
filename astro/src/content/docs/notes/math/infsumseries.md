@@ -1,5 +1,6 @@
 ---
 title: "Unit 10: Infinite Sums and Series (BC-only)"
+next: false
 sidebar:
   order: 10
 ---

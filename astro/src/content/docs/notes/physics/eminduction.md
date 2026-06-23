@@ -1,5 +1,6 @@
 ---
 title: "Electromagnetic Induction"
+next: false
 sidebar:
   order: 6
 ---

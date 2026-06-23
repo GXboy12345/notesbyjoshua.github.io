@@ -1,5 +1,6 @@
 ---
 title: "Physics Competition Prep"
+prev: false
 sidebar:
   order: 3
 ---

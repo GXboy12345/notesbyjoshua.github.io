@@ -4,6 +4,7 @@ import starlight from '@astrojs/starlight';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import redirects from './src/redirects.json' with { type: 'json' };
+import notesSidebar from './src/sidebar.json' with { type: 'json' };
 
 // https://astro.build/config
 export default defineConfig({
@@ -48,18 +49,11 @@ export default defineConfig({
 			sidebar: [
 				{ label: 'Home', link: '/' },
 				{ label: 'How to use these notes', link: '/how-to-use-these-notes/' },
-				{
-					label: 'Notes',
-					items: [
-						{ label: 'Overview', link: '/notes/notes/' },
-						{ label: 'AP', items: [{ autogenerate: { directory: 'notes/ap' } }] },
-						{ label: 'Math', items: [{ autogenerate: { directory: 'notes/math' } }] },
-						{ label: 'Physics', items: [{ autogenerate: { directory: 'notes/physics' } }] },
-						{ label: 'Chemistry', items: [{ autogenerate: { directory: 'notes/chemistry' } }] },
-					],
-				},
+				// Built from parent/nav_order by scripts/migrate_notes.py (src/sidebar.json),
+				// so units group under their real course regardless of URL folder.
+				{ label: 'Notes', items: notesSidebar },
 				{ label: 'Practice Problems', link: '/practiceproblems/practice/' },
-				{ label: 'Resources', link: '/Resources/resources/' },
+				{ label: 'Resources', link: '/resources/resources/' },
 				{ label: 'Blog', link: '/blog/' },
 				{ label: 'About', link: '/about/' },
 				{ label: 'Feedback', link: '/feedback/' },

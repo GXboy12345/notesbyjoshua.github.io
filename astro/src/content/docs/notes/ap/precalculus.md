@@ -1,5 +1,6 @@
 ---
 title: "AP Precalculus"
+prev: false
 sidebar:
   order: 6
 ---
@@ -25,4 +26,4 @@ sidebar:
 
 ## Resources
 
-- [Resources](/Resources/resources/) — general AP prep links, College Board, and books.
+- [Resources](/resources/resources/) — general AP prep links, College Board, and books.

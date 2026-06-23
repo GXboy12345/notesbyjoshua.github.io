@@ -1,5 +1,6 @@
 ---
 title: "Oscillations"
+next: false
 sidebar:
   order: 7
 ---
