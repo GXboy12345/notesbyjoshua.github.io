@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import html
+import json
 import re
+from collections import Counter, defaultdict
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
@@ -13,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 NOTES_DIR = ROOT / "Notes"
 OUTPUT = NOTES_DIR / "progress.md"
+ADMIN_DATA_OUTPUT = ROOT / "assets" / "data" / "admin-dashboard.json"
 
 
 STATUS_ORDER = [
@@ -363,11 +366,78 @@ def render(reports: list[NoteReport]) -> str:
     return "\n".join(lines)
 
 
+def admin_payload(reports: list[NoteReport]) -> dict[str, object]:
+    unit_reports = [report for report in reports if report.kind == "unit"]
+    by_parent: dict[str, list[NoteReport]] = defaultdict(list)
+    status_counts = Counter(report.status for report in unit_reports)
+    issue_counts = Counter(issue for report in unit_reports for issue in report.issues)
+
+    for report in unit_reports:
+        by_parent[report.parent].append(report)
+
+    avg = round(sum(report.progress for report in unit_reports) / len(unit_reports)) if unit_reports else 0
+    complete = sum(1 for report in unit_reports if report.progress >= 95)
+    below_review = sum(1 for report in unit_reports if report.progress < 80)
+    placeholders = sum(1 for report in unit_reports if any("placeholder" in issue.lower() for issue in report.issues))
+    missing_practice = sum(1 for report in unit_reports if "missing practice" in report.issues)
+    missing_solutions = sum(1 for report in unit_reports if "missing solutions" in report.issues or "practice without solutions" in report.issues)
+
+    courses = []
+    for parent, items in sorted(by_parent.items()):
+        course_avg = round(sum(item.progress for item in items) / len(items))
+        courses.append(
+            {
+                "name": parent,
+                "pages": len(items),
+                "average_progress": course_avg,
+                "complete_pages": sum(1 for item in items if item.progress >= 95),
+                "below_review_pages": sum(1 for item in items if item.progress < 80),
+            }
+        )
+
+    pages = []
+    for report in sorted(unit_reports, key=lambda item: (item.progress, item.parent.lower(), item.title.lower())):
+        pages.append(
+            {
+                "title": report.title,
+                "parent": report.parent,
+                "path": report.path.relative_to(ROOT).as_posix(),
+                "permalink": report.permalink,
+                "kind": report.kind,
+                "status": report.status,
+                "progress": report.progress,
+                "issues": report.issues,
+                "next_step": report.next_step,
+            }
+        )
+
+    return {
+        "generated_at": date.today().isoformat(),
+        "summary": {
+            "unit_pages": len(unit_reports),
+            "all_pages": len(reports),
+            "average_progress": avg,
+            "complete_pages": complete,
+            "below_review_pages": below_review,
+            "pages_with_placeholders": placeholders,
+            "missing_practice_pages": missing_practice,
+            "missing_solutions_pages": missing_solutions,
+        },
+        "status_counts": dict(sorted(status_counts.items())),
+        "top_issues": [{"issue": issue, "count": count} for issue, count in issue_counts.most_common(10)],
+        "courses": courses,
+        "priority_pages": pages[:15],
+        "pages": pages,
+    }
+
+
 def main() -> None:
     paths = sorted(NOTES_DIR.rglob("*.md"))
     reports = [report_for(path) for path in paths if path != OUTPUT]
     OUTPUT.write_text(render(reports), encoding="utf-8")
-    print(f"wrote {OUTPUT.relative_to(ROOT)} with {len(reports)} pages")
+    ADMIN_DATA_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    ADMIN_DATA_OUTPUT.write_text(json.dumps(admin_payload(reports), indent=2) + "\n", encoding="utf-8")
+    print(f"wrote {OUTPUT.relative_to(ROOT)} and {ADMIN_DATA_OUTPUT.relative_to(ROOT)} with {len(reports)} pages")
 
 
 if __name__ == "__main__":

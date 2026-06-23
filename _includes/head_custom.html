@@ -49,6 +49,10 @@
 
 <link rel="stylesheet" href="{{ '/assets/css/dark-overrides.css' | relative_url }}">
 
+{% if page.noindex %}
+<meta name="robots" content="noindex, nofollow">
+{% endif %}
+
 {% if page.progress %}
 <script>
   document.addEventListener("DOMContentLoaded", function () {

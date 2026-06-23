@@ -138,6 +138,62 @@ What not to do:
 - Do not change permalinks or navigation order unless the user explicitly requests it.
 - Do not mark pages complete just because formatting was fixed.
 
+### `write notes`
+
+Purpose: Write or expand a notes page with good content and proper formatting.
+
+Default scope:
+- Use the file/folder named by the user.
+- If no scope is given, ask for the target before editing.
+
+What to do:
+- Read the target page first.
+- Read `how-to-write-notes.md`.
+- Read at least one filled-out notes page in the same folder when available.
+- If the folder has no filled-out notes page, use the closest similar pages as style models:
+  - AP science pages can model each other.
+  - Physics and chemistry competition pages can model each other when the structure is similar.
+  - AP math pages can model other AP math pages.
+  - Index pages should model other index pages, not unit notes.
+- If the target page already has content, expand it instead of replacing it.
+- Preserve existing front matter, permalink, title, navigation order, and any useful existing explanations.
+- Add missing sections in the natural order for that topic.
+- Use theorem boxes for examples, proofs, derivations, and worked problem explanations.
+- Add diagrams as image placeholders only when a visual would materially help.
+- Add practice and solutions only if the user asks for a full page or asks for practice.
+- Keep the tone clear, student-facing, and close to nearby notes.
+- After writing, briefly report what was added and what still needs review.
+
+What not to do:
+- Do not overwrite existing content wholesale unless the user explicitly asks for a rewrite.
+- Do not invent external facts, data, curriculum requirements, or contest rules if unsure.
+- Do not add fake citations or fake image paths.
+- Do not change permalinks or navigation order unless asked.
+- Do not mark the page `complete` just because content was added.
+
+### `write section`
+
+Purpose: Write or expand one specific section of a notes page.
+
+Default scope:
+- Use the file and section named by the user.
+- If the file is clear but the section is missing, create that section in the most natural location.
+- If either the file or section is unclear, ask for the missing target before editing.
+
+What to do:
+- Read the target page first.
+- Read nearby sections so the new section transitions naturally.
+- Read filled-out notes in the same folder or similar pages if needed for style.
+- Preserve the existing heading level unless a different level is clearly required.
+- Expand the section with explanations, equations, examples, proofs, and diagrams only as appropriate.
+- Use the local theorem-box conventions for examples/proofs.
+- Keep the section scoped; do not rewrite unrelated sections.
+- If the new section creates a need for practice or solutions, mention that after editing rather than silently adding a large practice set.
+
+Output:
+- State which section was written or expanded.
+- Mention any follow-up work, such as practice problems, diagrams, or accuracy review.
+
 ### `progress report`
 
 Purpose: Summarize progress across notes.
@@ -401,6 +457,40 @@ Steps:
 - Add or update only the progress-related front matter fields requested.
 - Do not pretend a page is complete because it is long; missing practice, solutions, diagrams, or placeholders should lower the score.
 
+### 9. Write or Expand Notes
+
+Use this when asked to write notes, fill out a draft, expand an existing page, or write a specific section.
+
+Style model priority:
+- First, use filled-out notes from the same folder as the target page.
+- Second, use filled-out notes from the same course or parent page.
+- Third, use similar subject pages:
+  - physics can model chemistry and chemistry can model physics for science-note structure,
+  - AP science pages can model other AP science pages,
+  - AP math pages can model other AP math pages,
+  - competition-prep pages can model other competition-prep pages.
+- Last, use `how-to-write-notes.md` alone if no good model exists.
+
+Steps:
+- Read the target file and identify whether it is empty, outlined, partially written, or already substantial.
+- Read `how-to-write-notes.md`.
+- Read one to three style-model pages based on the priority list above.
+- Preserve existing useful content and expand around it.
+- Keep headings, formulas, examples, and prose consistent with the target page's subject level.
+- Use `---` section dividers consistently with nearby notes.
+- Use theorem boxes for examples, proofs, derivations, and worked explanations.
+- Use image placeholders only when the section really needs a future diagram.
+- If writing a full page, include practice and solutions only when requested or when the page is meant to be completed in one pass.
+- If writing a section, keep edits limited to that section and its immediate transitions.
+- After editing, run a quick consistency pass against `how-to-write-notes.md`.
+
+Content standards:
+- Explain ideas before using formulas heavily.
+- Prefer worked examples over abstract rules when a student would likely need to see the method.
+- Make examples end with what the reader is trying to find or derive.
+- Avoid overclaiming; flag facts that need verification instead of presenting uncertain content as final.
+- Keep the user's voice: direct, clear, and study-oriented.
+
 ## Preferred Commands
 
 - Use `rg --files -g '*.md'` to list Markdown files.
@@ -415,6 +505,8 @@ The agent can be asked to:
 - audit one subject folder
 - create a progress report
 - find unfinished pages
+- write or expand a notes page
+- write a specific section of a notes page
 - suggest missing practice problems
 - standardize front matter
 - check consistency against `how-to-write-notes.md`
