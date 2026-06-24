@@ -513,7 +513,7 @@ $$
 T_1=m_1(g+a),\qquad T_2=m_2(g-a).
 $$
 
-As a check, setting $$M=0$$ recovers the ideal-pulley result $$a=\dfrac{(m_2-m_1)g}{m_1+m_2}$$ with $$T_1=T_2$$, exactly as in the massless-pulley Atwood machine in [Unit 2](/notes/physics/forces/).
+As a check, setting $$M=0$$ recovers the ideal-pulley result $$a=\dfrac{(m_2-m_1)g}{m_1+m_2}$$ with $$T_1=T_2$$, exactly as in the massless-pulley Atwood machine in [Unit 2](/notes/ap/ap-physics-c-mechanics/forces/).
 
 </div>
 
@@ -712,7 +712,7 @@ $$
 \mu_{s,\min}=\frac{f}{Mg\cos\theta}=\frac{\tfrac13 Mg\sin\theta}{Mg\cos\theta}=\frac{1}{3}\tan\theta=\frac{1}{3}\tan 30^\circ=0.19.
 $$
 
-If the actual $$\mu_s$$ is smaller than this, the cylinder slips: it then accelerates faster than $$\tfrac23 g\sin\theta$$ translationally but spins up more slowly, and you must use kinetic friction $$f_k = \mu_k Mg\cos\theta$$ with $$a \ne R\alpha$$. For the pure energy-method companion to this problem (using $$K = \tfrac12 Mv_{\text{cm}}^2 + \tfrac12 I\omega^2$$ to find the speed at the bottom), see [Unit 6](/notes/physics/rotationalmomentum/); rotational kinetic energy and angular-momentum conservation are developed there.
+If the actual $$\mu_s$$ is smaller than this, the cylinder slips: it then accelerates faster than $$\tfrac23 g\sin\theta$$ translationally but spins up more slowly, and you must use kinetic friction $$f_k = \mu_k Mg\cos\theta$$ with $$a \ne R\alpha$$. For the pure energy-method companion to this problem (using $$K = \tfrac12 Mv_{\text{cm}}^2 + \tfrac12 I\omega^2$$ to find the speed at the bottom), see [Unit 6](/notes/ap/ap-physics-c-mechanics/rotationalmomentum/); rotational kinetic energy and angular-momentum conservation are developed there.
 
 </div>
 

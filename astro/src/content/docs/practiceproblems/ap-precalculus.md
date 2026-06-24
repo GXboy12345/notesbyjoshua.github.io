@@ -1860,7 +1860,7 @@ $$
 For $$n=0$$, this says $$f(0)=0$$. For negative $$n$$, use part (A):
 
 $$
-f(nx)=f(-(|n|x))=-f(|n|x)=-|n|f(x)=nf(x).
+f(nx)=f(-(\lvert n\rvert x))=-f(\lvert n\rvert x)=-\lvert n\rvert f(x)=nf(x).
 $$
 
 Therefore
@@ -3369,7 +3369,7 @@ $$
 Use the power rule:
 
 $$
-\boxed{4\log_3|x|+\frac12\log_3(y-2)-3\log_3(x^2+1)-\log_3(5-y)}.
+\boxed{4\log_3\lvert x\rvert+\frac12\log_3(y-2)-3\log_3(x^2+1)-\log_3(5-y)}.
 $$
 
 For restrictions, the square root requires
@@ -7670,7 +7670,7 @@ $$
 K=\frac12ab\sin B+\frac12cd\sin D.
 $$
 
-$Since $$ABCD$$ is cyclic, opposite angles are supplementary:
+Since $$ABCD$$ is cyclic, opposite angles are supplementary:
 
 $$
 B+D=180^\circ.

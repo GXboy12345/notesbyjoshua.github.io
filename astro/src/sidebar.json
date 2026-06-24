@@ -23,43 +23,43 @@
           },
           {
             "label": "Unit 1: Limits and Continuity",
-            "link": "/notes/math/limits/"
+            "link": "/notes/ap/calculus/limits/"
           },
           {
             "label": "Unit 2: Differentiation: Definition and Fundamental Properties",
-            "link": "/notes/math/diffdeffund/"
+            "link": "/notes/ap/calculus/diffdeffund/"
           },
           {
             "label": "Unit 3: Differentiation: Composite, Implicit, and Inverse Differentiation",
-            "link": "/notes/math/diffcomplex/"
+            "link": "/notes/ap/calculus/diffcomplex/"
           },
           {
             "label": "Unit 4: Contextual Applications of Differentiation",
-            "link": "/notes/math/contextappdiff/"
+            "link": "/notes/ap/calculus/contextappdiff/"
           },
           {
             "label": "Unit 5: Analytical Applications of Differentiation",
-            "link": "/notes/math/analyticalappdiff/"
+            "link": "/notes/ap/calculus/analyticalappdiff/"
           },
           {
             "label": "Unit 6: Integration and Accumulation of Change",
-            "link": "/notes/math/integration/"
+            "link": "/notes/ap/calculus/integration/"
           },
           {
             "label": "Unit 7: Differential Equations",
-            "link": "/notes/math/diffeq/"
+            "link": "/notes/ap/calculus/diffeq/"
           },
           {
             "label": "Unit 8: Applications of Integration",
-            "link": "/notes/math/appintegration/"
+            "link": "/notes/ap/calculus/appintegration/"
           },
           {
             "label": "Unit 9: Parametric, Polar, and Vector-Valued Functions (BC-only)",
-            "link": "/notes/math/ppvvfunc/"
+            "link": "/notes/ap/calculus/ppvvfunc/"
           },
           {
             "label": "Unit 10: Infinite Sums and Series (BC-only)",
-            "link": "/notes/math/infsumseries/"
+            "link": "/notes/ap/calculus/infsumseries/"
           }
         ]
       },
@@ -170,31 +170,31 @@
           },
           {
             "label": "1D and 2D Kinematics",
-            "link": "/notes/physics/kinematics/"
+            "link": "/notes/ap/ap-physics-c-mechanics/kinematics/"
           },
           {
             "label": "Force and Translational Dynamics",
-            "link": "/notes/physics/forces/"
+            "link": "/notes/ap/ap-physics-c-mechanics/forces/"
           },
           {
             "label": "Work, Energy, and Power",
-            "link": "/notes/physics/work/"
+            "link": "/notes/ap/ap-physics-c-mechanics/work/"
           },
           {
             "label": "Linear Momentum and Impulse",
-            "link": "/notes/physics/linearmomentum/"
+            "link": "/notes/ap/ap-physics-c-mechanics/linearmomentum/"
           },
           {
             "label": "Torque and Rotational Dynamics",
-            "link": "/notes/physics/torque/"
+            "link": "/notes/ap/ap-physics-c-mechanics/torque/"
           },
           {
             "label": "Energy and Momentum of Rotating Systems",
-            "link": "/notes/physics/rotationalmomentum/"
+            "link": "/notes/ap/ap-physics-c-mechanics/rotationalmomentum/"
           },
           {
             "label": "Oscillations",
-            "link": "/notes/physics/oscillations/"
+            "link": "/notes/ap/ap-physics-c-mechanics/oscillations/"
           }
         ]
       },
@@ -207,27 +207,27 @@
           },
           {
             "label": "Electric Fields and Forces",
-            "link": "/notes/physics/electrostatics/"
+            "link": "/notes/ap/ap-physics-c-em/electrostatics/"
           },
           {
             "label": "Electric Potential",
-            "link": "/notes/physics/electricpot/"
+            "link": "/notes/ap/ap-physics-c-em/electricpot/"
           },
           {
             "label": "Conductors and Capacitors",
-            "link": "/notes/physics/condcap/"
+            "link": "/notes/ap/ap-physics-c-em/condcap/"
           },
           {
             "label": "Circuits",
-            "link": "/notes/physics/circuits/"
+            "link": "/notes/ap/ap-physics-c-em/circuits/"
           },
           {
             "label": "Magnetic Fields and Electromagnetism",
-            "link": "/notes/physics/magnetism/"
+            "link": "/notes/ap/ap-physics-c-em/magnetism/"
           },
           {
             "label": "Electromagnetic Induction",
-            "link": "/notes/physics/eminduction/"
+            "link": "/notes/ap/ap-physics-c-em/eminduction/"
           }
         ]
       },

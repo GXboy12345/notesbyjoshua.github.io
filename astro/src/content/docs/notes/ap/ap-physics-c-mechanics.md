@@ -9,13 +9,13 @@ sidebar:
 
 ## Units
 
-- [Unit 1: 1D and 2D Kinematics](/notes/physics/kinematics/)
-- [Unit 2: Force and Translational Dynamics](/notes/physics/forces/)
-- [Unit 3: Work, Energy, and Power](/notes/physics/work/)
-- [Unit 4: Linear Momentum and Impulse](/notes/physics/linearmomentum/)
-- [Unit 5: Torque and Rotational Dynamics](/notes/physics/torque/)
-- [Unit 6: Energy and Momentum of Rotating Systems](/notes/physics/rotationalmomentum/)
-- [Unit 7: Oscillations](/notes/physics/oscillations/)
+- [Unit 1: 1D and 2D Kinematics](/notes/ap/ap-physics-c-mechanics/kinematics/)
+- [Unit 2: Force and Translational Dynamics](/notes/ap/ap-physics-c-mechanics/forces/)
+- [Unit 3: Work, Energy, and Power](/notes/ap/ap-physics-c-mechanics/work/)
+- [Unit 4: Linear Momentum and Impulse](/notes/ap/ap-physics-c-mechanics/linearmomentum/)
+- [Unit 5: Torque and Rotational Dynamics](/notes/ap/ap-physics-c-mechanics/torque/)
+- [Unit 6: Energy and Momentum of Rotating Systems](/notes/ap/ap-physics-c-mechanics/rotationalmomentum/)
+- [Unit 7: Oscillations](/notes/ap/ap-physics-c-mechanics/oscillations/)
 
 ---
 

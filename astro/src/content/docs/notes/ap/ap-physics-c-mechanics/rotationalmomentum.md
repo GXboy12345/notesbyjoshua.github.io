@@ -4,7 +4,7 @@ sidebar:
   order: 6
 ---
 
-This unit completes the rotation picture by adding rotational energy and angular momentum. The translational ideas from [work and energy](/notes/physics/work/) and [linear momentum](/notes/physics/linearmomentum/) have close angular analogs, but the axis choice matters more than it did before.
+This unit completes the rotation picture by adding rotational energy and angular momentum. The translational ideas from [work and energy](/notes/ap/ap-physics-c-mechanics/work/) and [linear momentum](/notes/ap/ap-physics-c-mechanics/linearmomentum/) have close angular analogs, but the axis choice matters more than it did before.
 
 ---
 
@@ -263,7 +263,7 @@ $$
 \sum \tau = I\alpha.
 $$
 
-This form explains why angular momentum is conserved when the net external torque about the chosen axis is zero. The relation $$\sum\tau = I\alpha$$ is developed further on the [torque and rotational dynamics](/notes/physics/torque/) page; here the more general statement $$\sum\vec\tau_{\text{ext}} = d\vec L/dt$$ is the one to remember, because it still holds when $$I$$ changes (a spinning skater) — a case where $$\sum\tau = I\alpha$$ alone would be misleading.
+This form explains why angular momentum is conserved when the net external torque about the chosen axis is zero. The relation $$\sum\tau = I\alpha$$ is developed further on the [torque and rotational dynamics](/notes/ap/ap-physics-c-mechanics/torque/) page; here the more general statement $$\sum\vec\tau_{\text{ext}} = d\vec L/dt$$ is the one to remember, because it still holds when $$I$$ changes (a spinning skater) — a case where $$\sum\tau = I\alpha$$ alone would be misleading.
 
 <div class="theorem-box">
 
@@ -415,7 +415,7 @@ $$
 L_i = (0.010)(300)(1.0) = 3.0\ \text{kg}\cdot\text{m}^2/\text{s}.
 $$
 
-**Step 3 — Moment of inertia after impact.** The rod about its end is $$I_{\text{rod}} = \tfrac13 ML^2$$ (see [torque and rotational dynamics](/notes/physics/torque/)), and the embedded bullet adds $$md^2$$:
+**Step 3 — Moment of inertia after impact.** The rod about its end is $$I_{\text{rod}} = \tfrac13 ML^2$$ (see [torque and rotational dynamics](/notes/ap/ap-physics-c-mechanics/torque/)), and the embedded bullet adds $$md^2$$:
 
 $$
 I = \tfrac13 ML^2 + md^2 = \tfrac13(1.0)(1.2)^2 + (0.010)(1.0)^2 = 0.480 + 0.010 = 0.490\ \text{kg}\cdot\text{m}^2.

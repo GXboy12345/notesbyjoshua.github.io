@@ -62,7 +62,7 @@ $$
 
 ## Taylor expansions
 
-**NOTE**: If you haven't learned about Taylor expansions, please visit the [infinite sequences and series](/notes/math/infsumseries/) section in AP Calculus BC.
+**NOTE**: If you haven't learned about Taylor expansions, please visit the [infinite sequences and series](/notes/ap/calculus/infsumseries/) section in AP Calculus BC.
 
 Sometimes, when you have $$a \ll b$$, you can perform a Taylor expansion at $$x = 0$$ (this is how we derive all of the small value approximations above!). The general expansion of a function about $$x=0$$ (a *Maclaurin series*) is
 

@@ -534,7 +534,7 @@ $$
 \Phi_B=BA\cos\theta.
 $$
 
-Magnetic flux becomes central in [electromagnetic induction](/notes/physics/eminduction/).
+Magnetic flux becomes central in [electromagnetic induction](/notes/ap/ap-physics-c-em/eminduction/).
 
 ---
 

@@ -49,7 +49,7 @@ $$
 \vec{J} = \vec{F}_{\text{net}}\Delta t.
 $$
 
-On a force-time graph, impulse is the signed area under the curve. This is the time-domain analog of how work is the area under a force-position graph in [work and energy](/notes/physics/work/). During a collision, the peak force may be hard to model, but the impulse can often be found from the initial and final momenta, since $$\vec{J}=\Delta\vec{p}$$ does not care about the detailed shape of $$\vec{F}(t)$$.
+On a force-time graph, impulse is the signed area under the curve. This is the time-domain analog of how work is the area under a force-position graph in [work and energy](/notes/ap/ap-physics-c-mechanics/work/). During a collision, the peak force may be hard to model, but the impulse can often be found from the initial and final momenta, since $$\vec{J}=\Delta\vec{p}$$ does not care about the detailed shape of $$\vec{F}(t)$$.
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20Mech/linearmomentum/impulsegraph.png" alt="force-versus-time graph with shaded area equal to impulse placeholder" loading="lazy" decoding="async" />
 
@@ -678,7 +678,7 @@ The struck puck recoils to the opposite side, balancing the $$y$$-momentum that 
 
 ## Connections to Other Units
 
-Momentum complements the energy methods of [work and energy](/notes/physics/work/): momentum tracks force over *time*, energy tracks force over *distance*, and collision problems often need both. The rotational analog of linear momentum, angular momentum, is developed in [rotational momentum](/notes/physics/rotationalmomentum/), where $$\vec{L}$$ plays the role of $$\vec{p}$$ and torque plays the role of force. The kinematics of the resulting motion is handled in [kinematics](/notes/physics/kinematics/).
+Momentum complements the energy methods of [work and energy](/notes/ap/ap-physics-c-mechanics/work/): momentum tracks force over *time*, energy tracks force over *distance*, and collision problems often need both. The rotational analog of linear momentum, angular momentum, is developed in [rotational momentum](/notes/ap/ap-physics-c-mechanics/rotationalmomentum/), where $$\vec{L}$$ plays the role of $$\vec{p}$$ and torque plays the role of force. The kinematics of the resulting motion is handled in [kinematics](/notes/ap/ap-physics-c-mechanics/kinematics/).
 
 ---
 

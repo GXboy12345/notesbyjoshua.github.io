@@ -587,7 +587,7 @@ $$
 T=2\pi\sqrt{\frac{I}{mgd}}.
 $$
 
-Here $$I$$ is the rotational inertia about the *pivot*, not about the center of mass; use the parallel-axis theorem when needed (see [rotational dynamics](/notes/physics/torque/)). The simple pendulum is the special case where all mass sits at distance $$L$$ from the pivot, giving $$I=mL^2$$ and $$d=L$$, which reduces $$T$$ back to $$2\pi\sqrt{L/g}$$.
+Here $$I$$ is the rotational inertia about the *pivot*, not about the center of mass; use the parallel-axis theorem when needed (see [rotational dynamics](/notes/ap/ap-physics-c-mechanics/torque/)). The simple pendulum is the special case where all mass sits at distance $$L$$ from the pivot, giving $$I=mL^2$$ and $$d=L$$, which reduces $$T$$ back to $$2\pi\sqrt{L/g}$$.
 
 <div class="theorem-box">
 

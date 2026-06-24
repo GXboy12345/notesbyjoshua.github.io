@@ -130,7 +130,7 @@ $$
 \vec{F}_s = -k\vec{x},
 $$
 
-where $$\vec{x}$$ is displacement from equilibrium. The negative sign means the spring force points opposite the displacement. This force is more relevant in [Unit 7: Oscillations](/notes/physics/oscillations/).
+where $$\vec{x}$$ is displacement from equilibrium. The negative sign means the spring force points opposite the displacement. This force is more relevant in [Unit 7: Oscillations](/notes/ap/ap-physics-c-mechanics/oscillations/).
 
 ### Drag and resistive forces
 
@@ -448,7 +448,7 @@ $$
 \sum \tau = 0.
 $$
 
-Torque is treated in [Unit 5](/notes/physics/torque/), but it is useful to remember that translational equilibrium alone is not enough to prevent rotation.
+Torque is treated in [Unit 5](/notes/ap/ap-physics-c-mechanics/torque/), but it is useful to remember that translational equilibrium alone is not enough to prevent rotation.
 
 ---
 
@@ -607,7 +607,7 @@ $$
 h = \frac{5}{2}r = \frac{5}{2}(0.40) = 1.0\ \text{m}.
 $$
 
-The classic result is that the release height must be at least $$2.5$$ radii above the bottom of the loop. See [Unit 3: Work, Energy, and Power](/notes/physics/work/) for the energy method used here.
+The classic result is that the release height must be at least $$2.5$$ radii above the bottom of the loop. See [Unit 3: Work, Energy, and Power](/notes/ap/ap-physics-c-mechanics/work/) for the energy method used here.
 
 </div>
 

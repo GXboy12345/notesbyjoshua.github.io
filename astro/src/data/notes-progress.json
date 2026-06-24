@@ -243,7 +243,7 @@
     },
     {
       "title": "1D and 2D Kinematics",
-      "route": "/notes/physics/kinematics/",
+      "route": "/notes/ap/ap-physics-c-mechanics/kinematics/",
       "course": "AP Physics C Mechanics",
       "kind": "unit",
       "status": "developing",
@@ -256,7 +256,7 @@
     },
     {
       "title": "Oscillations",
-      "route": "/notes/physics/oscillations/",
+      "route": "/notes/ap/ap-physics-c-mechanics/oscillations/",
       "course": "AP Physics C Mechanics",
       "kind": "unit",
       "status": "developing",
@@ -269,7 +269,7 @@
     },
     {
       "title": "Torque and Rotational Dynamics",
-      "route": "/notes/physics/torque/",
+      "route": "/notes/ap/ap-physics-c-mechanics/torque/",
       "course": "AP Physics C Mechanics",
       "kind": "unit",
       "status": "developing",
@@ -282,7 +282,7 @@
     },
     {
       "title": "Work, Energy, and Power",
-      "route": "/notes/physics/work/",
+      "route": "/notes/ap/ap-physics-c-mechanics/work/",
       "course": "AP Physics C Mechanics",
       "kind": "unit",
       "status": "developing",
@@ -319,7 +319,7 @@
     },
     {
       "title": "Unit 1: Limits and Continuity",
-      "route": "/notes/math/limits/",
+      "route": "/notes/ap/calculus/limits/",
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
@@ -332,7 +332,7 @@
     },
     {
       "title": "Unit 3: Differentiation: Composite, Implicit, and Inverse Differentiation",
-      "route": "/notes/math/diffcomplex/",
+      "route": "/notes/ap/calculus/diffcomplex/",
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
@@ -345,7 +345,7 @@
     },
     {
       "title": "Unit 5: Analytical Applications of Differentiation",
-      "route": "/notes/math/analyticalappdiff/",
+      "route": "/notes/ap/calculus/analyticalappdiff/",
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
@@ -358,7 +358,7 @@
     },
     {
       "title": "Unit 8: Applications of Integration",
-      "route": "/notes/math/appintegration/",
+      "route": "/notes/ap/calculus/appintegration/",
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
@@ -371,7 +371,7 @@
     },
     {
       "title": "Unit 9: Parametric, Polar, and Vector-Valued Functions (BC-only)",
-      "route": "/notes/math/ppvvfunc/",
+      "route": "/notes/ap/calculus/ppvvfunc/",
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
@@ -384,7 +384,7 @@
     },
     {
       "title": "Energy and Momentum of Rotating Systems",
-      "route": "/notes/physics/rotationalmomentum/",
+      "route": "/notes/ap/ap-physics-c-mechanics/rotationalmomentum/",
       "course": "AP Physics C Mechanics",
       "kind": "unit",
       "status": "developing",
@@ -397,7 +397,7 @@
     },
     {
       "title": "Linear Momentum and Impulse",
-      "route": "/notes/physics/linearmomentum/",
+      "route": "/notes/ap/ap-physics-c-mechanics/linearmomentum/",
       "course": "AP Physics C Mechanics",
       "kind": "unit",
       "status": "developing",
@@ -434,7 +434,7 @@
     },
     {
       "title": "Unit 10: Infinite Sums and Series (BC-only)",
-      "route": "/notes/math/infsumseries/",
+      "route": "/notes/ap/calculus/infsumseries/",
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
@@ -447,7 +447,7 @@
     },
     {
       "title": "Unit 2: Differentiation: Definition and Fundamental Properties",
-      "route": "/notes/math/diffdeffund/",
+      "route": "/notes/ap/calculus/diffdeffund/",
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
@@ -460,7 +460,7 @@
     },
     {
       "title": "Unit 4: Contextual Applications of Differentiation",
-      "route": "/notes/math/contextappdiff/",
+      "route": "/notes/ap/calculus/contextappdiff/",
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
@@ -473,7 +473,7 @@
     },
     {
       "title": "Unit 6: Integration and Accumulation of Change",
-      "route": "/notes/math/integration/",
+      "route": "/notes/ap/calculus/integration/",
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
@@ -486,7 +486,7 @@
     },
     {
       "title": "Unit 7: Differential Equations",
-      "route": "/notes/math/diffeq/",
+      "route": "/notes/ap/calculus/diffeq/",
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
@@ -499,7 +499,7 @@
     },
     {
       "title": "Conductors and Capacitors",
-      "route": "/notes/physics/condcap/",
+      "route": "/notes/ap/ap-physics-c-em/condcap/",
       "course": "AP Physics C E&M",
       "kind": "unit",
       "status": "developing",
@@ -512,7 +512,7 @@
     },
     {
       "title": "Electric Fields and Forces",
-      "route": "/notes/physics/electrostatics/",
+      "route": "/notes/ap/ap-physics-c-em/electrostatics/",
       "course": "AP Physics C E&M",
       "kind": "unit",
       "status": "developing",
@@ -550,7 +550,7 @@
     },
     {
       "title": "Circuits",
-      "route": "/notes/physics/circuits/",
+      "route": "/notes/ap/ap-physics-c-em/circuits/",
       "course": "AP Physics C E&M",
       "kind": "unit",
       "status": "developing",
@@ -562,7 +562,7 @@
     },
     {
       "title": "Electric Potential",
-      "route": "/notes/physics/electricpot/",
+      "route": "/notes/ap/ap-physics-c-em/electricpot/",
       "course": "AP Physics C E&M",
       "kind": "unit",
       "status": "developing",
@@ -574,7 +574,7 @@
     },
     {
       "title": "Electromagnetic Induction",
-      "route": "/notes/physics/eminduction/",
+      "route": "/notes/ap/ap-physics-c-em/eminduction/",
       "course": "AP Physics C E&M",
       "kind": "unit",
       "status": "developing",
@@ -586,7 +586,7 @@
     },
     {
       "title": "Magnetic Fields and Electromagnetism",
-      "route": "/notes/physics/magnetism/",
+      "route": "/notes/ap/ap-physics-c-em/magnetism/",
       "course": "AP Physics C E&M",
       "kind": "unit",
       "status": "developing",
@@ -598,7 +598,7 @@
     },
     {
       "title": "Force and Translational Dynamics",
-      "route": "/notes/physics/forces/",
+      "route": "/notes/ap/ap-physics-c-mechanics/forces/",
       "course": "AP Physics C Mechanics",
       "kind": "unit",
       "status": "developing",
@@ -754,7 +754,7 @@
       "course": "AP Physics C E&M",
       "kind": "index",
       "status": "developing",
-      "progress": 78,
+      "progress": 79,
       "issues": [],
       "next_step": "Review for accuracy"
     },
@@ -784,7 +784,7 @@
       "course": "AP Calculus AB/BC",
       "kind": "index",
       "status": "review",
-      "progress": 81,
+      "progress": 82,
       "issues": [],
       "next_step": "Review for accuracy"
     },
