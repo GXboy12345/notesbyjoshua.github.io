@@ -50,6 +50,8 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMenu();
     });
+    // Close the menu when any item in it is clicked (e.g. navigating to Dashboard).
+    menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
     byId('ha-signout').addEventListener('click', async () => {
       try { await sb.auth.signOut(); } catch (err) { console.error('[header] signout failed:', err); }
       closeMenu();
