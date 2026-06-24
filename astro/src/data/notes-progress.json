@@ -2,7 +2,7 @@
   "summary": {
     "generated_at": "2026-06-24",
     "unit_pages": 74,
-    "all_pages": 81,
+    "all_pages": 80,
     "average_progress": 66,
     "below_complete": 61,
     "with_placeholders": 35
@@ -725,16 +725,6 @@
         "has TODOs/placeholders"
       ],
       "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Chemistry Competition Prep",
-      "route": "/notes/chemistry/usnco/",
-      "course": "Notes",
-      "kind": "index",
-      "status": "developing",
-      "progress": 77,
-      "issues": [],
-      "next_step": "Review for accuracy"
     },
     {
       "title": "Physics Competition Prep",
