@@ -35,6 +35,8 @@ export default defineConfig({
 				SocialIcons: './src/components/HeaderAccount.astro',
 				// Add a Bookmark toggle next to the title on note pages.
 				PageTitle: './src/components/PageTitle.astro',
+				// Add a "Report an issue with this note" link in the page footer.
+				Footer: './src/components/Footer.astro',
 			},
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/notesbyjoshua' }],
 			customCss: [

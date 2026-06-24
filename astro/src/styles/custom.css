@@ -184,7 +184,8 @@
 }
 
 .fb-form textarea,
-.fb-form input {
+.fb-form input,
+.fb-form select {
 	padding: 0.5rem 0.65rem;
 	border: 1px solid var(--sl-color-gray-5);
 	border-radius: 0.5rem;
@@ -196,6 +197,19 @@
 .fb-form button {
 	align-self: flex-start;
 	margin-top: 0.75rem;
+}
+
+.fb-context {
+	margin-top: 0.5rem;
+	font-size: 0.85rem;
+	color: var(--sl-color-gray-3);
+}
+
+/* "Report an issue with this note" link in the note footer. */
+.note-report {
+	margin-top: 1rem;
+	font-size: 0.85rem;
+	color: var(--sl-color-gray-3);
 }
 
 .fb-msg {
@@ -229,6 +243,12 @@
 	font-size: var(--sl-text-sm);
 	color: var(--sl-color-gray-3);
 	margin-bottom: 0.3rem !important;
+}
+
+.afb-context {
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-3);
+	margin-top: 0.3rem !important;
 }
 
 .admin-users {

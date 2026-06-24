@@ -1,0 +1,6 @@
+project_id = "geqwjrxdbalaviusteeo"
+
+# The feedback-to-linear function is called by a Database Webhook with a shared
+# secret header, not a user JWT, so JWT verification is disabled for it.
+[functions.feedback-to-linear]
+verify_jwt = false

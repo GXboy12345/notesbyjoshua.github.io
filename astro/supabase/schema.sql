@@ -138,6 +138,23 @@ create table if not exists public.feedback (
   user_id    uuid references auth.users (id) on delete set null
 );
 
+-- New columns (added after the fact, so guarded for existing projects).
+-- category: what kind of feedback this is. Drives whether a Linear ticket is
+-- created (everything except 'praise') and which Linear label it gets.
+alter table public.feedback add column if not exists category text;
+-- page_url / page_title: which note the feedback is about, when submitted from a
+-- per-note "Report an issue" link. Null for the general feedback page.
+alter table public.feedback add column if not exists page_url text;
+alter table public.feedback add column if not exists page_title text;
+-- linear_issue_url: written back by the feedback-to-linear Edge Function once a
+-- ticket is created, so the admin viewer can link straight to it.
+alter table public.feedback add column if not exists linear_issue_url text;
+
+-- Constrain category to the known set (drop first so re-runs can widen it).
+alter table public.feedback drop constraint if exists feedback_category_check;
+alter table public.feedback add constraint feedback_category_check
+  check (category is null or category in ('note-to-add', 'correction', 'bug', 'question', 'praise'));
+
 alter table public.feedback enable row level security;
 
 drop policy if exists "anyone can submit feedback" on public.feedback;

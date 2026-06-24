@@ -1,0 +1,28 @@
+---
+// Override of Starlight's Footer. Renders the default footer (last-updated,
+// prev/next), and on note pages adds a "Report an issue" link that opens the
+// feedback form pre-filled with this note's path + title, so any ticket the
+// feedback-to-linear Edge Function creates points straight back here.
+import Default from '@astrojs/starlight/components/Footer.astro';
+const path = Astro.url.pathname;
+const isNote = path.startsWith('/notes/');
+---
+<Default><slot /></Default>
+{isNote && (
+  <p class="note-report">
+    Spot a mistake or something missing?
+    <a id="note-report-link" href="/feedback/">Report an issue with this note</a>
+  </p>
+)}
+
+<script>
+  // Build the feedback link from the live page so it carries the note's path
+  // and title (read-only context shown in the form, stored on the row).
+  const link = document.getElementById('note-report-link') as HTMLAnchorElement | null;
+  if (link) {
+    const title = document.querySelector('h1')?.textContent?.trim() || '';
+    const qs = new URLSearchParams({ from: location.pathname });
+    if (title) qs.set('title', title);
+    link.href = `/feedback/?${qs.toString()}`;
+  }
+</script>

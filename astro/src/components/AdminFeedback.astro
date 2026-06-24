@@ -20,10 +20,18 @@
   const show = (id: string) => ['afb-status', 'afb-denied', 'afb-content'].forEach((s) => (byId(s).hidden = s !== id));
   const sb = getSupabase();
 
+  const CATEGORY_LABELS: Record<string, string> = {
+    'note-to-add': 'Note to add',
+    'correction': 'Correction',
+    'bug': 'Bug',
+    'question': 'Question',
+    'praise': 'Praise',
+  };
+
   async function loadFeedback() {
     const { data, error } = await sb!
       .from('feedback')
-      .select('created_at, message, name')
+      .select('created_at, message, name, category, page_url, page_title, linear_issue_url')
       .order('created_at', { ascending: false });
     if (error) throw error;
     const list = byId('afb-list');
@@ -34,10 +42,31 @@
       const meta = document.createElement('p');
       meta.className = 'afb-meta';
       const when = f.created_at ? new Date(f.created_at).toLocaleString() : '';
-      meta.textContent = `${f.name || 'Anonymous'} · ${when}`;
+      const cat = f.category ? CATEGORY_LABELS[f.category] ?? f.category : null;
+      meta.textContent = [cat, f.name || 'Anonymous', when].filter(Boolean).join(' · ');
       const body = document.createElement('p');
       body.textContent = f.message;
       card.append(meta, body);
+      if (f.page_url) {
+        const ctx = document.createElement('p');
+        ctx.className = 'afb-context';
+        const a = document.createElement('a');
+        a.href = f.page_url;
+        a.textContent = f.page_title || f.page_url;
+        ctx.append(document.createTextNode('About: '), a);
+        card.appendChild(ctx);
+      }
+      if (f.linear_issue_url) {
+        const lk = document.createElement('p');
+        lk.className = 'afb-context';
+        const a = document.createElement('a');
+        a.href = f.linear_issue_url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = 'View Linear ticket →';
+        lk.appendChild(a);
+        card.appendChild(lk);
+      }
       list.appendChild(card);
     }
     byId('afb-summary').textContent = `${data?.length ?? 0} submission(s).`;
