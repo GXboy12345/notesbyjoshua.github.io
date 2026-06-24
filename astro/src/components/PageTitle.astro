@@ -16,6 +16,7 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
   <Default><slot /></Default>
   {isNote && (
     <div class="page-actions">
+      <span class="page-meta" id="page-meta" hidden></span>
       {editHref && (
         <a class="edit-note-btn" href={editHref} title="Edit this note" aria-label="Edit this note" hidden>
           <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -35,7 +36,6 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
     </div>
   )}
 </div>
-{isNote && <p class="page-meta" id="page-meta" hidden></p>}
 
 <script>
   import { getSupabase, getRole } from '../lib/supabase';

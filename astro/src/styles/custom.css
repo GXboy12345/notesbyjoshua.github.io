@@ -693,11 +693,12 @@
 	border-color: var(--sl-color-text-accent);
 }
 
-/* Estimated reading time under the title. */
+/* Estimated reading time, shown inline with the action buttons (right of title). */
 .page-meta {
-	margin: 0.75rem 0 0.75rem;
+	margin: 0;
 	font-size: var(--sl-text-sm);
 	color: var(--sl-color-gray-3);
+	white-space: nowrap;
 }
 
 /* Attempt-first practice solutions: a toggle inserted before each solution box. */
