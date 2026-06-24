@@ -1,0 +1,25 @@
+#!/bin/sh
+# Lint staged note markdown (KaTeX/math, theorem boxes, front matter) before a
+# commit. Errors block the commit; warnings are printed but allowed.
+# Installed via `sh scripts/install-hooks.sh` (sets core.hooksPath).
+set -eu
+
+root="$(git rev-parse --show-toplevel)"
+
+# Staged, added/copied/modified markdown under the Astro docs content,
+# excluding the auto-generated practice pages.
+files=$(git diff --cached --name-only --diff-filter=ACM \
+  | { grep -E '^astro/src/content/docs/.*\.md$' || true; } \
+  | { grep -vE '^astro/src/content/docs/practiceproblems/' || true; })
+
+[ -z "$files" ] && exit 0
+
+echo "check-notes: linting staged notes…"
+# Word-splitting is intended; note paths have no spaces.
+# shellcheck disable=SC2086
+if ! python3 "$root/astro/scripts/check_notes.py" $files; then
+  echo
+  echo "✗ Note formatting errors found (see above). Fix them, or commit with"
+  echo "  'git commit --no-verify' to bypass. See how-to-write-notes.md."
+  exit 1
+fi

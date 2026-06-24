@@ -1,21 +1,30 @@
 # How to write notes
 
+The style guide for note pages. `AGENTS.md` treats this file as the source of
+truth for note structure and formatting.
+
+Notes now live in `astro/src/content/docs/notes/**/*.md` and render with
+**Astro + Starlight**, using **remark-math + rehype-katex** (KaTeX, not MathJax).
+A linter — [`astro/scripts/check_notes.py`](astro/scripts/check_notes.py) — checks
+the mechanical rules below and runs on every commit and push (see
+[Automated checks](#automated-checks)).
+
+> Migrated from Jekyll: there is **no** `# Page title` H1 in the body (Starlight
+> uses the front-matter `title`), theorem boxes drop `markdown="1"`, images use
+> plain `/assets/...` paths (no `relative_url`), and math is KaTeX.
+
 ---
 
 ## Basic format
 
-For any notes page, it always follow this basic format:
+Every notes page follows this basic format:
 
 ``` markdown
 ---
-layout: default
-title: Page title
-parent: Parent folder
-nav_order: Hierarichal order on website
-permalink: Reference link
+title: "Page title"
+sidebar:
+  order: 1            # position within its sidebar group (optional: label, prev, next)
 ---
-
-# Page title
 
 ---
 
@@ -26,14 +35,14 @@ content content content
 ### Sub-header 1
 
 //image example
-<img class="note-img note-img--w480" src="{{ 'image path in repo' | relative_url }}" alt="Free body diagram placeholder" loading="lazy" decoding="async" />
+<img class="note-img note-img--w480" src="/assets/image/path/in/repo.png" alt="Free body diagram placeholder" loading="lazy" decoding="async" />
 
 //link example
-[link](link) //if you need to link to another page, use that page's permalink
+[link](/notes/category/page/)  //link to another page by its route
 
 ### Sub-header 2
 
-<div class="theorem-box" markdown="1">
+<div class="theorem-box">
 
 proof/example here (refer to section below for guidance)
 
@@ -58,7 +67,7 @@ proof/example here (refer to section below for guidance)
 
 ## Solutions
 
-<div class="theorem-box" markdown="1">
+<div class="theorem-box">
 
 ### Solution 1
 
@@ -70,16 +79,38 @@ solution here
 
 ```
 
+The page title comes from the front-matter `title` — don't add a separate `#`
+heading in the body. Start sections at `##`.
+
+---
+
+## Math
+
+**Always use `$$…$$`** for math — both display and inline. Never single `$…$`
+(remark-math renders it, but we keep one convention; the linter treats a lone `$`
+as an error).
+
+- **Display math** — `$$ … $$` on its own lines.
+- **Inline math** — `$$x$$` inside text.
+
+Keep these balanced or the page silently breaks: `$$` delimiters, `{ }`,
+`\left`/`\right`, and `\begin{env}`/`\end{env}`. Use `$$…$$`, never LaTeX's
+`\( … \)` or `\[ … \]` (remark-math won't render those).
+
 ---
 
 ## Theorem boxes
+
+The opening tag is exactly `<div class="theorem-box">` — **no** `markdown="1"`.
+Always leave a blank line right after the opening tag and right before `</div>`,
+and make sure every box is closed.
 
 ### Proofs
 
 When writing proofs, always follow this format:
 
 ``` markdown
-<div class="theorem-box" markdown="1">
+<div class="theorem-box">
 
 **Proof (What identity/formula you are proving).** Proof statement
 
@@ -93,7 +124,7 @@ NEVER box the final identity!
 When writing examples, always follow this format:
 
 ``` markdown
-<div class="theorem-box" markdown="1">
+<div class="theorem-box">
 
 **Example.** question statement
 
@@ -115,7 +146,7 @@ idk I might do this I might not
 When writing solutions, always follow this format:
 
 ``` markdown
-<div class="theorem-box" markdown="1">
+<div class="theorem-box">
 
 ### Solution number
 
@@ -130,16 +161,51 @@ $$
 
 ---
 
-## Jekyll/Mathjax formatting tips
+## Formatting tips
 
 - Always remember to add text BEFORE numbers/formulas to start off bullet points, since if you don't do that the text will automatically pop up in the middle. An example is below:
 
 ``` markdown
-- $$R=8.314 \frac{J}{\circ K}
+- $$R=8.314 \frac{J}{\circ K}$$
 // WRONG!!!
-- Ideal gas constant: $$R=8.314 \frac{J}{\circ K}
+- Ideal gas constant: $$R=8.314 \frac{J}{\circ K}$$
 // CORRECT!
 ```
 
-- Make sure to always use \lvert and \rvert instead of vertical bars when doing absolute value, because Mathjax sometimes reads vertical bars as a table and messes up the formatting (I avoid using the character because it messes up the formatting here as well)
+- Make sure to always use `\lvert` and `\rvert` instead of vertical bars when doing absolute value, because the renderer sometimes reads vertical bars as a table and messes up the formatting. (Use `\left|`/`\right|` for tall bars and `\mid` for "such that"/conditional probability.)
 - Always remember to have proper spacing in between sections! Always make sure to leave a blank space above and below any separation markers, special headers, theorem boxes, and image links.
+
+---
+
+## Automated checks
+
+The linter enforces the mechanical rules above on the notes you touch:
+
+``` sh
+# from the repo root
+python3 astro/scripts/check_notes.py                 # all notes
+python3 astro/scripts/check_notes.py path/to/note.md # specific files
+python3 astro/scripts/check_notes.py --strict        # warnings fail too
+python3 astro/scripts/check_notes.py --quiet         # errors only
+
+# or, from astro/
+npm run check:notes
+```
+
+**Errors** — single `$` math (use `$$`), unclosed `$$`, unbalanced `{ }` /
+`\left`-`\right` / `\begin`-`\end`, unbalanced `<div>`, missing front matter or
+`title` — block commits and pushes.
+**Warnings** — bare `|` in math, missing blank lines around boxes, `markdown="1"`
+or `relative_url` leftovers — are reported but don't block (use `--strict` to fail on them).
+
+Install the git hooks once so this runs automatically on commit and push:
+
+``` sh
+sh scripts/install-hooks.sh
+```
+
+To exempt a generated or special file, put this anywhere in it:
+
+``` markdown
+<!-- check-notes: disable -->
+```

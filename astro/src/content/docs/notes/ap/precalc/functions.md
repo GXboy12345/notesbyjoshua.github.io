@@ -139,6 +139,7 @@ Therefore $$-1<y<1$$. The value $$y=0$$ occurs at $$x=-4$$ and $$x=0$$, while $$
 $$
 range=(-1,1).
 $$
+
 </div>
 
 ---

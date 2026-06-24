@@ -408,8 +408,6 @@ $$
 
 There is now a **minimum frequency** $$\omega_0$$: drive the string below it and no traveling wave propagates — the disturbance decays exponentially instead. Reading $$E = \hbar\omega$$ and $$p = \hbar k$$, this is exactly the energy–momentum relation $$E^2 = (mc^2)^2 + (pc)^2$$ of a relativistic *massive* particle, with the minimum frequency playing the role of rest mass. It is a toy model for how a field can acquire mass.
 
-</div>
-
 ---
 
 ## Problem-solving strategy

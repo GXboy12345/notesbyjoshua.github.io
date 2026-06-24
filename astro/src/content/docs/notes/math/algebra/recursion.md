@@ -211,11 +211,13 @@ $$
 For example, when $$n=3$$, there are $$5$$ such paths.
 
 <div class="theorem-box">
+
 **Theorem 4.2 (Catalan Numbers).** The $$n$$th Catalan number has explicit formula
 
 $$
 C_n=\frac{1}{n+1}\binom{2n}{n}.
 $$
+
 </div>
 
 We will not prove the closed form here, but it is one of the most important counting sequences in olympiad combinatorics.
@@ -325,6 +327,7 @@ $$
 $$
 
 <div class="theorem-box">
+
 **Theorem 5.4 (Closed Form for Lucas Numbers).** Let
 
 $$
@@ -338,6 +341,7 @@ Then
 $$
 L_n=\alpha^n+\beta^n.
 $$
+
 </div>
 
 **Proof.** Consider the generating function
@@ -428,6 +432,7 @@ $$
 The next result gives many more useful expansions.
 
 <div class="theorem-box">
+
 **Theorem 5.6 (Generalized Binomial Theorem).** For any real number $$r$$,
 
 $$
@@ -439,6 +444,7 @@ where
 $$
 \binom{r}{n} = \frac{r(r-1)\cdots(r-n+1)}{n!}.
 $$
+
 </div>
 
 **Proof sketch.** Write

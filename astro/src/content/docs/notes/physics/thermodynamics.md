@@ -566,8 +566,6 @@ $$
 
 with equality only for reversible processes. Equivalently, heat flows spontaneously from hot to cold, and energy does not spontaneously concentrate.
 
-</div>
-
 <div class="theorem-box">
 
 **Example.** One mole of an ideal gas free-expands into a vacuum until its volume doubles. Find the entropy change of the gas and of the universe.

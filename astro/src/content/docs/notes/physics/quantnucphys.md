@@ -254,8 +254,6 @@ $$
 \Delta x\,\Delta p \ge \frac{\hbar}{2}.
 $$
 
-</div>
-
 The semiclassical limit is just the regime where the required uncertainty is small compared to the scales involved, reached for $$n \gg 1$$.
 
 <div class="theorem-box">

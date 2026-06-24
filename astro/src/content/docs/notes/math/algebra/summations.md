@@ -17,6 +17,7 @@ Olympiad-style summation problems usually fall into a few categories:
 However, one idea that resonates through all three categories is **swapping the order of summation**.
 
 <div class="theorem-box">
+
 **Theorem 1.1 (Swapping the Order of Summation).** Let $$f(a,b)$$ be a function. Then
 
 $$
@@ -32,6 +33,7 @@ $$
 =
 \sum_{k \ge 0} \sum_{\substack{a,b \ge 0 \\ a+b=k}} f(a,b).
 $$
+
 </div>
 
 ## Algebraic Manipulation
@@ -145,11 +147,13 @@ $$
 This is philosophically a double-summation argument.
 
 <div class="theorem-box">
+
 **Lemma 2.4.** For every positive integer $$n$$,
 
 $$
 \sum_{d \mid n} \varphi(d) = n.
 $$
+
 </div>
 
 Note that $$\varphi$$ is Euler's totient function, look more in the **number theory** section (replace).
@@ -284,11 +288,13 @@ $$
 When working modulo a prime $$p$$, many ordinary summation tricks still work, but now the finite nature of $$\mathbb F_p$$ creates extra symmetry.
 
 <div class="theorem-box">
+
 **Lemma 3.1 (Fermat's Little Theorem).** If $$p$$ is prime and $$\gcd(a,p)=1$$, then
 
 $$
 a^{p-1} \equiv 1 \pmod p.
 $$
+
 </div>
 
 **Proof idea.** Multiplication by $$a$$ permutes the nonzero residue classes modulo $$p$$, so
@@ -300,16 +306,19 @@ $$
 Cancel $$ (p-1)! $$.
 
 <div class="theorem-box">
+
 **Lemma 3.2 (Wilson's Theorem).** For any prime $$p$$,
 
 $$
 (p-1)! \equiv -1 \pmod p.
 $$
+
 </div>
 
 **Exercise 3.3.** Prove Wilson's theorem if you have not already seen it.
 
 <div class="theorem-box">
+
 **Lemma 3.4 (Sums of Powers Modulo $$p$$).** Let $$p$$ be prime and let $$m$$ be an integer. Then
 
 $$
@@ -319,6 +328,7 @@ $$
 -1 \pmod p & \text{if } p-1 \mid m.
 \end{cases}
 $$
+
 </div>
 
 **Proof sketch.** If $$g$$ is a primitive root modulo $$p$$, then
@@ -370,11 +380,13 @@ $$
 which vanishes by Lemma 3.4.
 
 <div class="theorem-box">
+
 **Lemma 3.6 (Harmonic Modulo $$p$$ Trick).** For $$k=1,2,\dots,p-1$$,
 
 $$
 \frac1k \equiv (-1)^{k-1}\frac{1}{p}\binom{p}{k} \pmod p.
 $$
+
 </div>
 
 This converts harmonic-looking expressions into binomial expressions, which are often easier to manipulate.
@@ -498,11 +510,13 @@ $$
 $$
 
 <div class="theorem-box">
+
 **Lemma 4.7.** The Möbius function is the inverse of $$1$$ under Dirichlet convolution:
 
 $$
 \mu * 1 = \delta.
 $$
+
 </div>
 
 **Exercise 4.8.** Prove this by checking prime powers.
@@ -510,6 +524,7 @@ $$
 ### Möbius Inversion
 
 <div class="theorem-box">
+
 **Theorem 4.9 (Möbius Inversion Formula).** Let $$f$$ and $$g$$ be arithmetic functions. Then
 
 $$
@@ -519,6 +534,7 @@ f(n) = \sum_{d \mid n} \mu(d)\,g(n/d).
 $$
 
 Equivalently, if $$g=f*1$$ then $$f=g*\mu$$.
+
 </div>
 
 **Proof.** If $$g=f*1$$, then

@@ -58,13 +58,13 @@ The sign of $$r$$ matches the direction of the linear trend: $$r > 0$$ for posit
 
 ### Formula
 
-For paired data $$(x_i, y_i)$$ with sample means $\bar{x}$ and $\bar{y}$:
+For paired data $$(x_i, y_i)$$ with sample means $$\bar{x}$$ and $$\bar{y}$$:
 
 $$
 r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}
 $$
 
-Intuitively, $r$ compares covariation (do $x$ and $y$ tend to be on the same side of their means together?) to how spread out $x$ and $y$ are individually.
+Intuitively, $$r$$ compares covariation (do $$x$$ and $$y$$ tend to be on the same side of their means together?) to how spread out $$x$$ and $$y$$ are individually.
 
 ### Interpreting $$|r|$$
 
@@ -80,7 +80,7 @@ Correlation is unitless and unchanged by linear rescaling (multiplying either va
 
 ### The linear model
 
-A linear regression model describes how a response variable $Y$ depends on an explanatory variable $X$ (also called a predictor or independent variable, depending on the textbook). A population-style statement often looks like
+A linear regression model describes how a response variable $$Y$$ depends on an explanatory variable $$X$$ (also called a predictor or independent variable, depending on the textbook). A population-style statement often looks like
 
 $$
 Y = \beta_0 + \beta_1 X + \epsilon
@@ -98,7 +98,7 @@ $$
 \hat{y} = b_0 + b_1 x
 $$
 
-using the least-squares estimates $b_0$ and $b_1$ from your data (notation varies).
+using the least-squares estimates $$b_0$$ and $$b_1$$ from your data (notation varies).
 
 The residual for that case is
 
@@ -110,7 +110,7 @@ the observed response minus the predicted response. Residuals are the data’s w
 
 ### Why “least squares”?
 
-The least-squares regression line is the line that minimizes the sum of squared residuals, $\sum e_i^2$. That criterion is mathematically tractable and penalizes large misses heavily, which is why a few influential points can pull the line. In addition, it only compares the magnitudes of error, so direction does not matter
+The least-squares regression line is the line that minimizes the sum of squared residuals, $$\sum e_i^2$$. That criterion is mathematically tractable and penalizes large misses heavily, which is why a few influential points can pull the line. In addition, it only compares the magnitudes of error, so direction does not matter
 
 Useful facts for AP work:
 
@@ -121,7 +121,7 @@ $$
 b_1 = r \left( \frac{s_y}{s_x} \right)
 $$
 
-where $s_x$ and $s_y$ are the sample standard deviations of $x$ and $y$. So the sign of $b_1$ matches the sign of $r$, and the steepness scales with how spread out $y$ is relative to $x$.
+where $$s_x$$ and $$s_y$$ are the sample standard deviations of $$x$$ and $$y$$. So the sign of $$b_1$$ matches the sign of $$r$$, and the steepness scales with how spread out $$y$$ is relative to $$x$$.
 
 ### Coefficient of determination
 
@@ -131,19 +131,19 @@ High $$R^2$$ does not prove the model is appropriate (nonlinearity can still hid
 
 ### Influential observations and outliers
 
-An outlier in regression is often a point with an unusually large residual: the line misses it badly. An influential observation is one whose removal would substantially change the estimated slope or intercept—often a point that is extreme in $x$ (high leverage) and also off the trend. Not every outlier is influential, and not every influential point looks like a vertical outlier; inspect the plot and, when possible, recompute the line without suspect cases (sensibly and transparently).
+An outlier in regression is often a point with an unusually large residual: the line misses it badly. An influential observation is one whose removal would substantially change the estimated slope or intercept—often a point that is extreme in $$x$$ (high leverage) and also off the trend. Not every outlier is influential, and not every influential point looks like a vertical outlier; inspect the plot and, when possible, recompute the line without suspect cases (sensibly and transparently).
 
 ---
 
 ## Residual plots
 
-A residual plot graphs residuals (usually on the vertical axis) against either the predicted values $\hat{y}$ or the explanatory variable $x$. The purpose is to diagnose the fit of a linear model.
+A residual plot graphs residuals (usually on the vertical axis) against either the predicted values $$\hat{y}$$ or the explanatory variable $$x$$. The purpose is to diagnose the fit of a linear model.
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Stats/bivardata/residual-plots.png" alt="Residual plots placeholder" loading="lazy" decoding="async" />
 
-What you hope to see is a formless cloud: points scattered randomly around the horizontal axis at $$\epsilon = 0$$, with roughly constant spread across values of $x$ or $\hat{y}$.
+What you hope to see is a formless cloud: points scattered randomly around the horizontal axis at $$\epsilon = 0$$, with roughly constant spread across values of $$x$$ or $$\hat{y}$$.
 
-Curved patterns mean the relationship is probably nonlinear; a linear model is a poor summary. Fan shapes (spread grows or shrinks as $x$ changes) suggest nonconstant variance, which matters more when you move into formal inference, but is still worth mentioning when you describe real data.
+Curved patterns mean the relationship is probably nonlinear; a linear model is a poor summary. Fan shapes (spread grows or shrinks as $$x$$ changes) suggest nonconstant variance, which matters more when you move into formal inference, but is still worth mentioning when you describe real data.
 
 ---
 
@@ -151,7 +151,7 @@ Curved patterns mean the relationship is probably nonlinear; a linear model is a
 
 When a scatterplot shows a nonlinear trend, one strategy is to transform one or both variables so that the new relationship is more nearly linear. You then fit the line to the transformed scale and interpret conclusions in original units when you report results.
 
-Example: if $y$ grows exponentially with $x$, plotting $\ln(y)$ against $x$ may straighten the cloud. Symbolically, if $$y = a e^{kx}$$ in an idealized world, then $$ln(y) = ln(a) + kx$$ is linear in $$x$$.
+Example: if $$y$$ grows exponentially with $$x$$, plotting $$\ln(y)$$ against $$x$$ may straighten the cloud. Symbolically, if $$y = a e^{kx}$$ in an idealized world, then $$ln(y) = ln(a) + kx$$ is linear in $$x$$.
 
 ### Common transformations
 

@@ -564,6 +564,7 @@ E=\frac{\lambda}{2\pi\varepsilon_0 r}.
 $$
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/electrostatics/gaussian-cylinder-line.png" alt="Line Gaussian cylinder" loading="lazy" decoding="async" />
+
 </div>
 
 <div class="theorem-box">
