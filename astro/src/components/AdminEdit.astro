@@ -198,6 +198,13 @@ const notes = docs
     }
     if (role !== 'admin') { show('ed-denied'); return; }
     show('ed-content');
+    // Deep-link from a note's pencil: ?path=astro/src/content/docs/... — select
+    // and load that note automatically if it matches a known option.
+    const wanted = new URLSearchParams(location.search).get('path');
+    if (wanted) {
+      fileSel.value = wanted;
+      if (fileSel.value === wanted) { reloadBtn.disabled = false; loadFile(); }
+    }
   }
 
   if (!sb) {

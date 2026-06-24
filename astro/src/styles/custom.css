@@ -670,6 +670,26 @@
 	cursor: default;
 }
 
+/* Admin-only pencil: opens the in-browser editor pre-loaded with this note. */
+.edit-note-btn {
+	flex: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 999px;
+	background: var(--sl-color-bg);
+	color: var(--sl-color-text-accent);
+	cursor: pointer;
+}
+
+.edit-note-btn:hover {
+	background: var(--sl-color-gray-6);
+	border-color: var(--sl-color-text-accent);
+}
+
 /* Estimated reading time under the title. */
 .page-meta {
 	margin: -0.25rem 0 0.75rem;

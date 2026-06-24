@@ -6,11 +6,24 @@
 import Default from '@astrojs/starlight/components/PageTitle.astro';
 const path = Astro.url.pathname;
 const isNote = path.startsWith('/notes/');
+// Source file of this note, repo-root relative (e.g. astro/src/content/docs/...),
+// so the pencil can open the editor pre-loaded with this exact file. filePath is
+// project-root relative (src/content/docs/...), so prefix astro/.
+const filePath = (Astro.locals as any).starlightRoute?.entry?.filePath as string | undefined;
+const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`astro/${filePath}`)}` : null;
 ---
 <div class="page-title-row">
   <Default><slot /></Default>
   {isNote && (
     <div class="page-actions">
+      {editHref && (
+        <a class="edit-note-btn" href={editHref} title="Edit this note" aria-label="Edit this note" hidden>
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 20h9" />
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+          </svg>
+        </a>
+      )}
       <button class="readmark-btn" type="button" data-slug={path} aria-pressed="false" hidden>
         <span class="readmark-check" aria-hidden="true">○</span>
         <span class="readmark-label">Mark read</span>
@@ -25,7 +38,7 @@ const isNote = path.startsWith('/notes/');
 {isNote && <p class="page-meta" id="page-meta" hidden></p>}
 
 <script>
-  import { getSupabase } from '../lib/supabase';
+  import { getSupabase, getRole } from '../lib/supabase';
 
   // --- Theorem boxes: colour-code by type; make solutions attempt-first. -----
   const TYPES: [RegExp, string][] = [
@@ -69,6 +82,20 @@ const isNote = path.startsWith('/notes/');
     const mins = Math.max(1, Math.round(words / 200));
     meta.textContent = `${mins} min read`;
     meta.hidden = false;
+  }
+
+  // --- Edit pencil (note pages, admins only). --------------------------------
+  const sbEdit = getSupabase();
+  const editBtn = document.querySelector<HTMLAnchorElement>('.edit-note-btn');
+  if (sbEdit && editBtn) {
+    sbEdit.auth.onAuthStateChange(async (_event, session) => {
+      if (!session?.user) { editBtn.hidden = true; return; }
+      try {
+        if ((await getRole(session.user)) === 'admin') editBtn.hidden = false;
+      } catch (err) {
+        // Transient role-read failure: leave the pencil hidden (fail closed).
+      }
+    });
   }
 
   // --- Bookmark + Mark-as-read (note pages, signed in). ----------------------
