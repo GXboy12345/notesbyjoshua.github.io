@@ -1,5 +1,6 @@
 ---
 title: "Physics"
+description: "Physics notes — AP Physics C and competition prep (F=ma, USAPhO)."
 prev: false
 next: false
 sidebar:

@@ -1,5 +1,6 @@
 ---
 title: How to use these notes
+description: "How to navigate and get the most out of these study notes."
 prev: false
 next: false
 ---

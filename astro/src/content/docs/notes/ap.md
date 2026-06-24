@@ -1,5 +1,6 @@
 ---
 title: "AP"
+description: "AP course notes — Chemistry, Precalculus, Physics C, Calculus, Statistics, and more."
 prev: false
 sidebar:
   order: 1

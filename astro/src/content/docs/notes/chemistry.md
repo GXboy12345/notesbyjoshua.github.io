@@ -1,5 +1,6 @@
 ---
 title: "Chemistry"
+description: "Chemistry notes and USNCO competition preparation."
 prev: false
 next: false
 sidebar:

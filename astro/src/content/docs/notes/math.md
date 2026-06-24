@@ -1,5 +1,6 @@
 ---
 title: "Math"
+description: "Competition math notes — algebra, geometry, and calculus topics."
 prev: false
 sidebar:
   order: 2

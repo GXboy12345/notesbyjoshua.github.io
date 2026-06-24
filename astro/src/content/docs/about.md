@@ -1,5 +1,6 @@
 ---
 title: About
+description: "About Joshua and the mission behind these free study notes."
 prev: false
 next: false
 ---

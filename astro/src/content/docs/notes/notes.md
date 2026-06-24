@@ -1,5 +1,6 @@
 ---
 title: "Notes"
+description: "Study notes by subject — AP courses plus math, physics, and chemistry competition prep."
 prev: false
 next: false
 sidebar:
