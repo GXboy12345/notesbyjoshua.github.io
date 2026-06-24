@@ -55,7 +55,16 @@
 
   async function gate(session: any) {
     if (!session?.user) { show('admin-denied'); return; }
-    const role = await getRole().catch(() => 'visitor');
+    // Pass the session user (no auth-method call inside this callback, which can
+    // deadlock) and retry a transient role read before denying.
+    let role: string | null = null;
+    for (let i = 0; i < 3; i++) {
+      try { role = await getRole(session.user); break; }
+      catch (err) {
+        if (i === 2) { console.error('[admin] role check failed:', err); show('admin-denied'); return; }
+        await new Promise((r) => setTimeout(r, 400));
+      }
+    }
     if (role !== 'admin') { show('admin-denied'); return; }
     try {
       await loadUsers();

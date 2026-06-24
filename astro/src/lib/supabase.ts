@@ -29,9 +29,13 @@ export function getSupabase(): SupabaseClient | null {
 	return g.__notesSupabase;
 }
 
+/** A minimal user shape — pass `session.user` from an onAuthStateChange callback
+ * so we don't call an auth method (which can deadlock) inside that callback. */
+export type SessionUser = { id: string; email?: string | null };
+
 /** The current user's role ('visitor' | 'admin'), or null if signed out. */
-export async function getRole(): Promise<'visitor' | 'admin' | null> {
-	const profile = await getProfile();
+export async function getRole(user?: SessionUser): Promise<'visitor' | 'admin' | null> {
+	const profile = await getProfile(user);
 	return profile ? profile.role : null;
 }
 
@@ -45,13 +49,20 @@ export interface Profile {
 
 /** The current user's profile row.
  *
+ * Pass `session.user` (from an onAuthStateChange callback) to avoid calling
+ * `auth.getUser()` inside that callback — doing so can deadlock on Supabase's
+ * auth lock (hangs the page). Without an argument it resolves the user itself.
+ *
  * Returns `null` only when genuinely signed out. THROWS on a transient read
  * failure (network blip, or RLS briefly seeing no row during a token refresh)
  * so callers keep the last-known state instead of mistaking it for a visitor. */
-export async function getProfile(): Promise<Profile | null> {
+export async function getProfile(user?: SessionUser): Promise<Profile | null> {
 	const sb = getSupabase();
 	if (!sb) return null;
-	const { data: { user } } = await sb.auth.getUser();
+	if (!user) {
+		const { data } = await sb.auth.getUser();
+		user = data.user ?? undefined;
+	}
 	if (!user) return null;
 	// Core columns only — these always exist, so role/auth reads never break.
 	const { data, error } = await sb

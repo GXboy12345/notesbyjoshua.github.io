@@ -162,9 +162,9 @@ const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
 
   // getProfile rejects on a transient read failure; retry a couple of times
   // before giving up so the page doesn't briefly assert "visitor".
-  async function loadProfile(tries = 3) {
+  async function loadProfile(user: any, tries = 3) {
     for (let i = 0; i < tries; i++) {
-      try { return await getProfile(); }
+      try { return await getProfile(user); }
       catch (err) {
         if (i === tries - 1) { console.error('[account] profile load failed:', err); return null; }
         await new Promise((r) => setTimeout(r, 500));
@@ -176,7 +176,7 @@ const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
   async function loadSignedIn(session: any) {
     uid = session.user.id;
     show('account-signedin');
-    const profile = await loadProfile();
+    const profile = await loadProfile(session.user);
     const email = profile?.email ?? session.user.email ?? '';
     byId('account-email').textContent = email;
     // Only assert a role once we actually read the profile; otherwise leave the

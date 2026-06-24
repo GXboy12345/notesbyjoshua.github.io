@@ -127,7 +127,7 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
       // getProfile() rejects on a transient read failure; only OVERWRITE the
       // cached state on a confident success, so a hiccup never demotes you to
       // "visitor"/the email prefix and then persists it via localStorage.
-      Promise.all([getProfile(), readCount().catch(() => null)])
+      Promise.all([getProfile(user), readCount().catch(() => null)])
         .then(([p, cnt]) => {
           if (!p) return; // signed out between events — leave it to the next event
           const pct = cnt != null && total ? Math.round((cnt / total) * 100) : cached?.pct;

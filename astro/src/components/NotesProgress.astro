@@ -121,8 +121,18 @@ const sections = orderedCourses
 
   async function gate(session: any) {
     if (!session?.user) { show('np-denied'); return; }
-    const role = await getRole().catch(() => 'visitor');
-    show(role === 'admin' ? 'np-content' : 'np-denied');
+    // Pass the session user (no auth-method call inside this callback) and retry
+    // a transient read so we never get stuck on "Loading…" or wrongly deny.
+    for (let i = 0; i < 3; i++) {
+      try {
+        const role = await getRole(session.user);
+        show(role === 'admin' ? 'np-content' : 'np-denied');
+        return;
+      } catch (err) {
+        if (i === 2) { console.error('[np] role check failed:', err); show('np-denied'); }
+        else await new Promise((r) => setTimeout(r, 400));
+      }
+    }
   }
 
   if (!sb) {
