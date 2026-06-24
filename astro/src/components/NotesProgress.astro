@@ -101,7 +101,7 @@ const sections = orderedCourses
                     </span>
                   </td>
                   <td>{p.issues.length ? p.issues.join(', ') : 'none flagged'}</td>
-                  <td>{p.next_step}</td>
+                  <td>{p.next_step || '—'}</td>
                 </tr>
               ))}
             </tbody>

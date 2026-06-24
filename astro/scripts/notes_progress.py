@@ -255,7 +255,8 @@ def main() -> None:
             "status": status_for(progress),
             "progress": progress,
             "issues": issues[:3],
-            "next_step": next_step(issues),
+            # A fully-complete note has nothing left to do.
+            "next_step": "" if progress >= 100 else next_step(issues),
         })
 
     units = [e for e in entries if e["kind"] == "unit"]
