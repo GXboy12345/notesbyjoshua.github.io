@@ -29,10 +29,17 @@ const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
 
   <div id="account-signedin" hidden>
     <div class="acct-id">
-      <img id="account-avatar" class="acct-avatar" alt="" hidden />
+      <div class="acct-avatar-wrap">
+        <img id="account-avatar" class="acct-avatar" alt="" hidden />
+        <label class="acct-avatar-edit">
+          Change
+          <input id="account-avatar-input" type="file" accept="image/*" hidden />
+        </label>
+      </div>
       <div>
         <strong id="account-name" class="acct-name"></strong>
         <span id="account-since" class="acct-since"></span>
+        <span id="account-avatar-msg" class="profile-save-msg" hidden></span>
       </div>
     </div>
 
@@ -118,6 +125,38 @@ const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
   }
   byId('account-save')?.addEventListener('click', saveUsername);
 
+  // Upload a custom profile picture to the avatars bucket, then save its URL.
+  byId('account-avatar-input')?.addEventListener('change', async (e) => {
+    const input = e.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file || !sb || !uid) return;
+    const msg = byId('account-avatar-msg');
+    msg.textContent = 'Uploading…';
+    msg.hidden = false;
+    try {
+      const ext = (file.name.split('.').pop() || 'png').toLowerCase();
+      const path = `${uid}/avatar.${ext}`;
+      const { error: upErr } = await sb.storage
+        .from('avatars')
+        .upload(path, file, { upsert: true, contentType: file.type });
+      if (upErr) throw upErr;
+      const { data: pub } = sb.storage.from('avatars').getPublicUrl(path);
+      const url = `${pub.publicUrl}?t=${Date.now()}`; // cache-bust on change
+      const { error: updErr } = await sb.from('profiles').update({ avatar_url: url }).eq('id', uid);
+      if (updErr) throw updErr;
+      const avatar = byId('account-avatar') as HTMLImageElement;
+      avatar.src = url;
+      avatar.hidden = false;
+      msg.textContent = 'Picture updated.';
+    } catch (err) {
+      console.error('[account] avatar upload failed:', err);
+      msg.textContent = 'Upload failed — make sure the “avatars” storage bucket exists.';
+    } finally {
+      input.value = '';
+      setTimeout(() => { msg.hidden = true; }, 3500);
+    }
+  });
+
   async function loadSignedIn(session: any) {
     uid = session.user.id;
     show('account-signedin');
@@ -129,9 +168,9 @@ const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
     byId('account-name').textContent = profile?.display_name || email.split('@')[0] || 'Account';
     byId('admin-links').hidden = profile?.role !== 'admin';
 
-    // Avatar from the OAuth provider (Google), if present.
+    // Avatar: custom upload wins, else the OAuth provider (Google) picture.
     const meta = session.user.user_metadata || {};
-    const avatarUrl = meta.avatar_url || meta.picture;
+    const avatarUrl = profile?.avatar_url || meta.avatar_url || meta.picture;
     const avatar = byId('account-avatar') as HTMLImageElement;
     if (avatarUrl) { avatar.src = avatarUrl; avatar.hidden = false; }
 

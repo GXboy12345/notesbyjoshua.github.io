@@ -1,7 +1,8 @@
 ---
-// Override of Starlight's PageTitle: renders the default <h1> and, on note
-// pages, a Bookmark toggle next to it. The button is hidden until we know the
-// visitor is signed in.
+// Override of Starlight's PageTitle. Renders the default <h1>, and on note
+// pages adds Bookmark + Mark-as-read toggles and an estimated reading time.
+// A small client enhancement also colour-codes theorem boxes and turns
+// practice "Solution" boxes into attempt-first collapsibles (all pages).
 import Default from '@astrojs/starlight/components/PageTitle.astro';
 const path = Astro.url.pathname;
 const isNote = path.startsWith('/notes/');
@@ -9,37 +10,97 @@ const isNote = path.startsWith('/notes/');
 <div class="page-title-row">
   <Default><slot /></Default>
   {isNote && (
-    <button class="bookmark-btn" type="button" data-slug={path} aria-pressed="false" hidden>
-      <span class="bookmark-star" aria-hidden="true">☆</span>
-      <span class="bookmark-label">Bookmark</span>
-    </button>
+    <div class="page-actions">
+      <button class="readmark-btn" type="button" data-slug={path} aria-pressed="false" hidden>
+        <span class="readmark-check" aria-hidden="true">○</span>
+        <span class="readmark-label">Mark read</span>
+      </button>
+      <button class="bookmark-btn" type="button" data-slug={path} aria-pressed="false" hidden>
+        <span class="bookmark-star" aria-hidden="true">☆</span>
+        <span class="bookmark-label">Bookmark</span>
+      </button>
+    </div>
   )}
 </div>
+{isNote && <p class="page-meta" id="page-meta" hidden></p>}
 
 <script>
   import { getSupabase } from '../lib/supabase';
 
+  // --- Theorem boxes: colour-code by type; make solutions attempt-first. -----
+  const TYPES: [RegExp, string][] = [
+    [/^definition\b/i, 'def'],
+    [/^theorem\b/i, 'thm'],
+    [/^lemma\b/i, 'thm'],
+    [/^corollary\b/i, 'thm'],
+    [/^example\b/i, 'ex'],
+    [/^proof\b/i, 'proof'],
+    [/^solution\b/i, 'solution'],
+  ];
+  document.querySelectorAll<HTMLElement>('.theorem-box').forEach((box) => {
+    const h = box.querySelector('h1,h2,h3,h4,h5,h6');
+    const heading = h?.textContent?.trim() ?? '';
+    const match = TYPES.find(([re]) => re.test(heading));
+    if (match) box.classList.add('tb--' + match[1]);
+    // Practice solutions start hidden behind a "Show solution" toggle.
+    if (match && match[1] === 'solution') {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'solution-toggle';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.textContent = 'Show ' + heading;
+      box.hidden = true;
+      box.parentNode?.insertBefore(btn, box);
+      btn.addEventListener('click', () => {
+        const opening = box.hidden;
+        box.hidden = !opening;
+        btn.textContent = (opening ? 'Hide ' : 'Show ') + heading;
+        btn.setAttribute('aria-expanded', String(opening));
+        btn.classList.toggle('is-open', opening);
+      });
+    }
+  });
+
+  // --- Reading time (note pages). --------------------------------------------
+  const meta = document.getElementById('page-meta');
+  if (meta) {
+    const content = document.querySelector('.sl-markdown-content');
+    const words = (content?.textContent || '').trim().split(/\s+/).filter(Boolean).length;
+    const mins = Math.max(1, Math.round(words / 200));
+    meta.textContent = `${mins} min read`;
+    meta.hidden = false;
+  }
+
+  // --- Bookmark + Mark-as-read (note pages, signed in). ----------------------
   const sb = getSupabase();
-  const btn = document.querySelector<HTMLButtonElement>('.bookmark-btn');
-  if (sb && btn) {
-    const slug = btn.dataset.slug!;
+  const bookmarkBtn = document.querySelector<HTMLButtonElement>('.bookmark-btn');
+  const readBtn = document.querySelector<HTMLButtonElement>('.readmark-btn');
+  if (sb && bookmarkBtn && readBtn) {
+    const slug = bookmarkBtn.dataset.slug!;
     const title = document.querySelector('h1')?.textContent?.trim() || slug;
-    const star = btn.querySelector<HTMLElement>('.bookmark-star')!;
-    const label = btn.querySelector<HTMLElement>('.bookmark-label')!;
+    const star = bookmarkBtn.querySelector<HTMLElement>('.bookmark-star')!;
+    const bLabel = bookmarkBtn.querySelector<HTMLElement>('.bookmark-label')!;
+    const check = readBtn.querySelector<HTMLElement>('.readmark-check')!;
+    const rLabel = readBtn.querySelector<HTMLElement>('.readmark-label')!;
     let bookmarked = false;
+    let read = false;
     let uid: string | null = null;
 
     const render = () => {
       star.textContent = bookmarked ? '★' : '☆';
-      label.textContent = bookmarked ? 'Bookmarked' : 'Bookmark';
-      btn.setAttribute('aria-pressed', String(bookmarked));
-      btn.classList.toggle('is-on', bookmarked);
+      bLabel.textContent = bookmarked ? 'Bookmarked' : 'Bookmark';
+      bookmarkBtn.setAttribute('aria-pressed', String(bookmarked));
+      bookmarkBtn.classList.toggle('is-on', bookmarked);
+      check.textContent = read ? '●' : '○';
+      rLabel.textContent = read ? 'Read' : 'Mark read';
+      readBtn.setAttribute('aria-pressed', String(read));
+      readBtn.classList.toggle('is-on', read);
     };
 
-    btn.addEventListener('click', async () => {
+    bookmarkBtn.addEventListener('click', async () => {
       if (!uid) return;
       const next = !bookmarked;
-      btn.disabled = true;
+      bookmarkBtn.disabled = true;
       try {
         if (next) {
           const { error } = await sb.from('bookmarks').upsert({ user_id: uid, slug, title });
@@ -53,20 +114,46 @@ const isNote = path.startsWith('/notes/');
       } catch (err) {
         console.error('[bookmark] toggle failed:', err);
       } finally {
-        btn.disabled = false;
+        bookmarkBtn.disabled = false;
+      }
+    });
+
+    readBtn.addEventListener('click', async () => {
+      if (!uid) return;
+      const next = !read;
+      readBtn.disabled = true;
+      try {
+        if (next) {
+          const { error } = await sb.from('read_notes').upsert({ user_id: uid, slug });
+          if (error) throw error;
+        } else {
+          const { error } = await sb.from('read_notes').delete().eq('user_id', uid).eq('slug', slug);
+          if (error) throw error;
+        }
+        read = next;
+        render();
+      } catch (err) {
+        console.error('[read] toggle failed:', err);
+      } finally {
+        readBtn.disabled = false;
       }
     });
 
     sb.auth.onAuthStateChange(async (_event, session) => {
-      if (!session?.user) { btn.hidden = true; return; }
+      if (!session?.user) { bookmarkBtn.hidden = true; readBtn.hidden = true; return; }
       uid = session.user.id;
-      btn.hidden = false;
+      bookmarkBtn.hidden = false;
+      readBtn.hidden = false;
       try {
-        const { data } = await sb.from('bookmarks').select('slug').eq('slug', slug).maybeSingle();
-        bookmarked = !!data;
+        const [bm, rn] = await Promise.all([
+          sb.from('bookmarks').select('slug').eq('slug', slug).maybeSingle(),
+          sb.from('read_notes').select('slug').eq('slug', slug).maybeSingle(),
+        ]);
+        bookmarked = !!bm.data;
+        read = !!rn.data;
         render();
       } catch (err) {
-        console.error('[bookmark] load failed:', err);
+        console.error('[page] state load failed:', err);
       }
     });
   }

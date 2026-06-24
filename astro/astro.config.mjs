@@ -27,6 +27,8 @@ export default defineConfig({
 		starlight({
 			title: 'Notes by Joshua',
 			description: 'Math, Physics, and Thoughts',
+			// Show "Last updated" (from git history) in the page footer.
+			lastUpdated: true,
 			favicon: '/assets/Images/favicon.jpeg',
 			components: {
 				// Show an account indicator in the header (keeps social icons too).

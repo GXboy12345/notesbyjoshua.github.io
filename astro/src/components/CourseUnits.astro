@@ -1,0 +1,69 @@
+---
+// A grid of unit cards for a course hub page. Units come from the sidebar group
+// whose label matches `course`; status/progress come from the generated
+// notes-progress data. Read/unread is filled in client-side for signed-in users.
+import notesSidebar from '../sidebar.json';
+import progress from '../data/notes-progress.json';
+
+interface Props { course: string }
+const { course } = Astro.props;
+
+type Item = { label?: string; link?: string; items?: Item[] };
+function findGroup(items: Item[], label: string): Item[] | null {
+  for (const it of items) {
+    if (it.items) {
+      if (it.label === label) return it.items;
+      const found = findGroup(it.items, label);
+      if (found) return found;
+    }
+  }
+  return null;
+}
+
+const groupItems = findGroup(notesSidebar as Item[], course) ?? [];
+const units = groupItems
+  .filter((it) => it.link && !it.label?.endsWith(' Home'))
+  .map((it) => ({ label: it.label!, link: it.link! }));
+
+const byRoute = new Map((progress.pages as any[]).map((p) => [p.route, p]));
+const cards = units.map((u) => {
+  const p = byRoute.get(u.link);
+  return { ...u, status: (p?.status as string) ?? 'stub', progress: (p?.progress as number) ?? 0 };
+});
+---
+{cards.length > 0 && (
+  <nav class="course-units" aria-label={`${course} units`}>
+    {cards.map((c) => (
+      <a class="unit-card" href={c.link} data-slug={c.link}>
+        <span class="unit-card-top">
+          <span class="unit-card-title">{c.label}</span>
+          <span class="unit-card-read" aria-hidden="true"></span>
+        </span>
+        <span class="unit-card-meta">
+          <span class={`note-status note-status--${c.status}`}>{c.status}</span>
+          <span class="np-bar unit-card-bar" aria-label={`${c.progress}% complete`}>
+            <span class="np-bar__fill" style={`width:${c.progress}%`}></span>
+            <span class="np-bar__label">{c.progress}%</span>
+          </span>
+        </span>
+      </a>
+    ))}
+  </nav>
+  <script>
+    import { getSupabase } from '../lib/supabase';
+    const sb = getSupabase();
+    if (sb) {
+      sb.auth.onAuthStateChange(async (_event, session) => {
+        const cards = Array.from(document.querySelectorAll<HTMLElement>('.unit-card[data-slug]'));
+        if (!session?.user || !cards.length) { cards.forEach((c) => c.classList.remove('is-read')); return; }
+        try {
+          const { data } = await sb.from('read_notes').select('slug');
+          const read = new Set((data ?? []).map((r: any) => r.slug));
+          cards.forEach((c) => c.classList.toggle('is-read', read.has(c.dataset.slug)));
+        } catch (err) {
+          console.error('[course-units] read state failed:', err);
+        }
+      });
+    }
+  </script>
+)}

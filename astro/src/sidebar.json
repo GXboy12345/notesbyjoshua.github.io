@@ -385,29 +385,20 @@
         "link": "/notes/chemistry/organic/"
       },
       {
-        "label": "Chemistry Competition Prep",
-        "items": [
-          {
-            "label": "Chemistry Competition Prep Home",
-            "link": "/notes/chemistry/usnco/"
-          },
-          {
-            "label": "Coordination Chemistry",
-            "link": "/notes/chemistry/coordination/"
-          },
-          {
-            "label": "Spectroscopy",
-            "link": "/notes/chemistry/spectroscopy/"
-          },
-          {
-            "label": "Advanced Kinetics",
-            "link": "/notes/chemistry/advkinetics/"
-          },
-          {
-            "label": "Solid-State Chemistry",
-            "link": "/notes/chemistry/solidstate/"
-          }
-        ]
+        "label": "Coordination Chemistry",
+        "link": "/notes/chemistry/coordination/"
+      },
+      {
+        "label": "Spectroscopy",
+        "link": "/notes/chemistry/spectroscopy/"
+      },
+      {
+        "label": "Advanced Kinetics",
+        "link": "/notes/chemistry/advkinetics/"
+      },
+      {
+        "label": "Solid-State Chemistry",
+        "link": "/notes/chemistry/solidstate/"
       }
     ]
   }

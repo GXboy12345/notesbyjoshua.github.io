@@ -40,6 +40,7 @@ export interface Profile {
 	display_name: string | null;
 	email: string | null;
 	created_at: string | null;
+	avatar_url: string | null;
 }
 
 /** The current user's profile row, or null if signed out. */
@@ -50,7 +51,7 @@ export async function getProfile(): Promise<Profile | null> {
 	if (!user) return null;
 	const { data } = await sb
 		.from('profiles')
-		.select('role, display_name, email, created_at')
+		.select('role, display_name, email, created_at, avatar_url')
 		.eq('id', user.id)
 		.single();
 	return {
@@ -58,5 +59,6 @@ export async function getProfile(): Promise<Profile | null> {
 		display_name: data?.display_name ?? null,
 		email: data?.email ?? user.email ?? null,
 		created_at: data?.created_at ?? null,
+		avatar_url: data?.avatar_url ?? null,
 	};
 }

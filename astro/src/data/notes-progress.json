@@ -2,7 +2,7 @@
   "summary": {
     "generated_at": "2026-06-24",
     "unit_pages": 74,
-    "all_pages": 88,
+    "all_pages": 81,
     "average_progress": 66,
     "below_complete": 61,
     "with_placeholders": 35
@@ -729,7 +729,7 @@
     {
       "title": "Chemistry Competition Prep",
       "route": "/notes/chemistry/usnco/",
-      "course": "Chemistry",
+      "course": "Notes",
       "kind": "index",
       "status": "developing",
       "progress": 77,
@@ -749,46 +749,6 @@
       "next_step": "Resolve placeholders"
     },
     {
-      "title": "AP Physics C E&M",
-      "route": "/notes/ap/ap-physics-c-em/",
-      "course": "AP Physics C E&M",
-      "kind": "index",
-      "status": "developing",
-      "progress": 79,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "AP Physics C Mechanics",
-      "route": "/notes/ap/ap-physics-c-mechanics/",
-      "course": "AP Physics C Mechanics",
-      "kind": "index",
-      "status": "developing",
-      "progress": 79,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "Chemistry",
-      "route": "/notes/chemistry/",
-      "course": "Chemistry",
-      "kind": "index",
-      "status": "review",
-      "progress": 80,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "AP Calculus AB/BC",
-      "route": "/notes/ap/calculus/",
-      "course": "AP Calculus AB/BC",
-      "kind": "index",
-      "status": "review",
-      "progress": 82,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
       "title": "Physics",
       "route": "/notes/physics/",
       "course": "Physics",
@@ -805,36 +765,6 @@
       "kind": "index",
       "status": "review",
       "progress": 83,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "AP Precalculus",
-      "route": "/notes/ap/precalculus/",
-      "course": "AP Precalculus",
-      "kind": "index",
-      "status": "review",
-      "progress": 84,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "AP Statistics",
-      "route": "/notes/ap/statistics/",
-      "course": "AP Statistics",
-      "kind": "index",
-      "status": "review",
-      "progress": 86,
-      "issues": [],
-      "next_step": "Review for accuracy"
-    },
-    {
-      "title": "AP Chemistry",
-      "route": "/notes/ap/chemistry/",
-      "course": "AP Chemistry",
-      "kind": "index",
-      "status": "review",
-      "progress": 87,
       "issues": [],
       "next_step": "Review for accuracy"
     },
