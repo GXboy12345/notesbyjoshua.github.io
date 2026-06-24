@@ -623,8 +623,11 @@
 	flex: none;
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
 	gap: 0.4rem;
 	flex-wrap: wrap;
+	/* Keep the buttons pinned to the right even when the title wraps to its own line. */
+	margin-left: auto;
 }
 
 .bookmark-btn,
@@ -692,7 +695,7 @@
 
 /* Estimated reading time under the title. */
 .page-meta {
-	margin: -0.25rem 0 0.75rem;
+	margin: 0.75rem 0 0.75rem;
 	font-size: var(--sl-text-sm);
 	color: var(--sl-color-gray-3);
 }

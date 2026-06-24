@@ -237,11 +237,22 @@ const notes = docs
 <style>
   .ed-bar { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.75rem; }
   .ed-bar label { display: flex; gap: 0.4rem; align-items: center; flex: 1; min-width: 0; }
-  .ed-bar select, .ed-bar input { padding: 0.35rem 0.5rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.3rem; background: var(--sl-color-black); color: var(--sl-color-white); }
-  .ed-bar select { flex: 1; min-width: 0; }
+  /* Shared sizing so the select, inputs and buttons are all the same height and line up. */
+  .ed-bar select, .ed-bar input, .ed-bar button { height: 2.25rem; box-sizing: border-box; border-radius: 0.3rem; font: inherit; line-height: 1.2; }
+  .ed-bar select, .ed-bar input { padding: 0 0.6rem; border: 1px solid var(--sl-color-gray-5); background-color: var(--sl-color-black); color: var(--sl-color-white); }
+  /* Custom dropdown chevron, inset from the right edge so it isn't crammed against the border. */
+  .ed-bar select {
+    flex: 1; min-width: 0;
+    appearance: none; -webkit-appearance: none;
+    padding-right: 2rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 0.7rem;
+  }
   .ed-save-bar { margin-top: 0.75rem; }
   .ed-save-bar input { flex: 1; min-width: 8rem; }
-  .ed-bar button { padding: 0.4rem 0.9rem; border: 1px solid var(--sl-color-accent); background: var(--sl-color-accent); color: var(--sl-color-white); border-radius: 0.3rem; cursor: pointer; }
+  .ed-bar button { padding: 0 0.9rem; border: 1px solid var(--sl-color-accent); background: var(--sl-color-accent); color: var(--sl-color-white); cursor: pointer; }
   .ed-bar button:disabled { opacity: 0.5; cursor: not-allowed; }
   .ed-bar button.ed-secondary { background: transparent; color: var(--sl-color-white); border-color: var(--sl-color-gray-5); }
   .ed-bar button.ed-secondary:hover:not(:disabled) { background: var(--sl-color-gray-6); }
