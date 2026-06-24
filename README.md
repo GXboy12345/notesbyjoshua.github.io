@@ -6,7 +6,7 @@ Live at **https://notesbyjoshua.github.io**.
 ## Stack
 
 - **[Astro](https://astro.build) + [Starlight](https://starlight.astro.build)** — static site, in `astro/`
-- **Math:** KaTeX (`$…$` inline, `$$…$$` display)
+- **Math:** KaTeX (`$$…$$` inline/display)
 - **Auth + data:** [Supabase](https://supabase.com) (Google sign-in, `visitor`/`admin` roles, RLS) — client-side
 - **Hosting:** GitHub Pages, deployed by `.github/workflows/deploy.yml` on every push to `main`
 
@@ -35,7 +35,7 @@ publish — GitHub Actions builds and deploys automatically.
    title: "Unit 3: Some Topic"
    ---
 
-   Body in Markdown. Math with $x^2$ or $$\int_0^1 x\,dx$$.
+   Body in Markdown. Math with $$\int_0^1 x\,dx$$.
    ```
 
 2. **Add it to the sidebar:** edit `astro/src/sidebar.json` (an ordered tree of
