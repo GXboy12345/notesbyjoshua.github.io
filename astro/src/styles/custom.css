@@ -396,6 +396,12 @@
 	font-weight: 600;
 }
 
+/* Starlight outdents the caret with a negative inline-start margin; inside the
+   bordered box that puts it almost on the edge, so nudge it back inward. */
+.dash-section summary::before {
+	margin-inline-start: 0.3rem;
+}
+
 .dash-section-name {
 	flex: 1;
 }
