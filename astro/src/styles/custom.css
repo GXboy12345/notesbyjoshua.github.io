@@ -223,6 +223,38 @@
 	background: rgba(34, 197, 94, 0.22);
 }
 
+/* Dark mode: light tag text so it's readable on the dark background. */
+:root[data-theme='dark'] .note-status {
+	color: #bae6fd;
+}
+
+:root[data-theme='dark'] .note-status--stub,
+:root[data-theme='dark'] .note-status--outline,
+:root[data-theme='dark'] .note-status--draft {
+	color: #fcd9a8;
+}
+
+:root[data-theme='dark'] .note-status--developing {
+	color: #bae6fd;
+}
+
+:root[data-theme='dark'] .note-status--review,
+:root[data-theme='dark'] .note-status--complete {
+	color: #bbf7d0;
+}
+
+.np-section h2 {
+	display: flex;
+	align-items: baseline;
+	gap: 0.6rem;
+}
+
+.np-section-avg {
+	font-size: var(--sl-text-sm);
+	font-weight: 400;
+	color: var(--sl-color-gray-3);
+}
+
 .np-bar {
 	position: relative;
 	display: block;

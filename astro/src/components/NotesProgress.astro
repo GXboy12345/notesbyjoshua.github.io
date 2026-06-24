@@ -1,14 +1,40 @@
 ---
-// Admin-only notes-completion report. Data is generated at build time by
-// scripts/notes_progress.py; this page is gated to admins (client-side).
+// Admin-only notes-completion report, grouped by course/topic. Data is generated
+// at build time by scripts/notes_progress.py; this page is gated to admins.
 import data from '../data/notes-progress.json';
-const { summary, pages } = data as {
-  summary: Record<string, number | string>;
-  pages: {
-    title: string; route: string; course: string; kind: string;
-    status: string; progress: number; issues: string[]; next_step: string;
-  }[];
+import notesSidebar from '../sidebar.json';
+
+type Page = {
+  title: string; route: string; course: string; kind: string;
+  status: string; progress: number; issues: string[]; next_step: string;
 };
+const { summary, pages } = data as { summary: Record<string, number | string>; pages: Page[] };
+
+// Course order as it appears in the sidebar.
+const courseOrder: string[] = [];
+(function walk(items: any[], label: string) {
+  let hasLeaf = false;
+  for (const it of items) {
+    if (it.items) walk(it.items, it.label);
+    else if (it.link) hasLeaf = true;
+  }
+  if (hasLeaf && label && !courseOrder.includes(label)) courseOrder.push(label);
+})(notesSidebar as any[], 'Notes');
+
+// Group pages by course, least-done first within each group.
+const byCourse: Record<string, Page[]> = {};
+for (const p of pages) (byCourse[p.course] ||= []).push(p);
+for (const list of Object.values(byCourse)) list.sort((a, b) => a.progress - b.progress);
+
+const orderedCourses = [
+  ...courseOrder.filter((c) => byCourse[c]),
+  ...Object.keys(byCourse).filter((c) => !courseOrder.includes(c)),
+];
+const sections = orderedCourses.map((name) => {
+  const list = byCourse[name];
+  const avg = Math.round(list.reduce((n, p) => n + p.progress, 0) / list.length);
+  return { name, avg, pages: list };
+});
 ---
 
 <div class="np">
@@ -25,30 +51,34 @@ const { summary, pages } = data as {
       <strong>{summary.below_complete}</strong> below complete ·
       <strong>{summary.with_placeholders}</strong> with placeholders
     </p>
-    <p class="np-note">Auto-scored from page content (least-done first). Re-run <code>scripts/notes_progress.py</code> to refresh.</p>
+    <p class="np-note">Auto-scored from page content. Grouped by topic; least-done first within each.</p>
 
-    <table class="np-table">
-      <thead>
-        <tr><th>Page</th><th>Course</th><th>Status</th><th>Progress</th><th>Main issues</th><th>Next step</th></tr>
-      </thead>
-      <tbody>
-        {pages.map((p) => (
-          <tr>
-            <td><a href={p.route}>{p.title}</a></td>
-            <td>{p.course}</td>
-            <td><span class={`note-status note-status--${p.status}`}>{p.status}</span></td>
-            <td>
-              <span class="np-bar" aria-label={`${p.progress}%`}>
-                <span class="np-bar__fill" style={`width:${p.progress}%`}></span>
-                <span class="np-bar__label">{p.progress}%</span>
-              </span>
-            </td>
-            <td>{p.issues.length ? p.issues.join(', ') : 'none flagged'}</td>
-            <td>{p.next_step}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    {sections.map((section) => (
+      <section class="np-section">
+        <h2>{section.name} <span class="np-section-avg">{section.avg}% avg</span></h2>
+        <table class="np-table">
+          <thead>
+            <tr><th>Page</th><th>Status</th><th>Progress</th><th>Main issues</th><th>Next step</th></tr>
+          </thead>
+          <tbody>
+            {section.pages.map((p) => (
+              <tr>
+                <td><a href={p.route}>{p.title}</a></td>
+                <td><span class={`note-status note-status--${p.status}`}>{p.status}</span></td>
+                <td>
+                  <span class="np-bar" aria-label={`${p.progress}%`}>
+                    <span class="np-bar__fill" style={`width:${p.progress}%`}></span>
+                    <span class="np-bar__label">{p.progress}%</span>
+                  </span>
+                </td>
+                <td>{p.issues.length ? p.issues.join(', ') : 'none flagged'}</td>
+                <td>{p.next_step}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    ))}
   </div>
 </div>
 
