@@ -1,0 +1,9 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import FeedbackForm from '../components/FeedbackForm.astro';
+---
+
+<StarlightPage frontmatter={{ title: 'Feedback and Requests', prev: false, next: false }}>
+  <p>Use the form below to suggest topics, report mistakes, or ask for additions. Submissions go straight to me.</p>
+  <FeedbackForm />
+</StarlightPage>

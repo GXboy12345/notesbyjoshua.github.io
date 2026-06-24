@@ -1,0 +1,53 @@
+---
+// Native feedback form -> Supabase `feedback` table (anyone may submit; admins read).
+---
+<form id="fb-form" class="fb-form">
+  <label for="fb-message">Your feedback, question, or request</label>
+  <textarea id="fb-message" rows="5" required placeholder="What's on your mind?"></textarea>
+
+  <label for="fb-name">Name (optional)</label>
+  <input id="fb-name" type="text" maxlength="80" placeholder="So I know who to thank" />
+
+  <button type="submit" class="account-btn">Send feedback</button>
+  <p id="fb-msg" class="fb-msg" hidden></p>
+</form>
+
+<script>
+  import { getSupabase } from '../lib/supabase';
+  const sb = getSupabase();
+  const form = document.getElementById('fb-form') as HTMLFormElement;
+  const msg = document.getElementById('fb-msg')!;
+  const message = document.getElementById('fb-message') as HTMLTextAreaElement;
+  const name = document.getElementById('fb-name') as HTMLInputElement;
+
+  function notify(text: string, ok: boolean) {
+    msg.textContent = text;
+    msg.dataset.ok = String(ok);
+    msg.hidden = false;
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!sb) { notify('Feedback is temporarily unavailable.', false); return; }
+    const text = message.value.trim();
+    if (!text) return;
+    const btn = form.querySelector('button')!;
+    btn.setAttribute('disabled', 'true');
+    try {
+      const { data: { user } } = await sb.auth.getUser();
+      const { error } = await sb.from('feedback').insert({
+        message: text,
+        name: name.value.trim() || null,
+        user_id: user?.id ?? null,
+      });
+      if (error) throw error;
+      form.reset();
+      notify('Thanks! Your feedback was submitted.', true);
+    } catch (err) {
+      console.error('[feedback] submit failed:', err);
+      notify('Sorry, that didn’t go through. Please try again.', false);
+    } finally {
+      btn.removeAttribute('disabled');
+    }
+  });
+</script>

@@ -162,6 +162,67 @@
 	height: 1.25rem;
 }
 
+/* --- Feedback form --- */
+.fb-form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+	max-width: 36rem;
+}
+
+.fb-form label {
+	font-weight: 600;
+	margin-top: 0.5rem;
+}
+
+.fb-form textarea,
+.fb-form input {
+	padding: 0.5rem 0.65rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.5rem;
+	background: var(--sl-color-bg);
+	color: var(--sl-color-text);
+	font: inherit;
+}
+
+.fb-form button {
+	align-self: flex-start;
+	margin-top: 0.75rem;
+}
+
+.fb-msg {
+	margin-top: 0.5rem;
+	font-weight: 600;
+	color: #16a34a;
+}
+
+.fb-msg[data-ok='false'] {
+	color: #dc2626;
+}
+
+/* --- Admin feedback list --- */
+.afb-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.afb-card {
+	padding: 0.75rem 0.9rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.5rem;
+}
+
+.afb-card p {
+	margin: 0;
+}
+
+.afb-meta {
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-3);
+	margin-bottom: 0.3rem !important;
+}
+
 .admin-users {
 	width: 100%;
 	border-collapse: collapse;

@@ -1,0 +1,15 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import AdminFeedback from '../../components/AdminFeedback.astro';
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Feedback (Admin)',
+    prev: false,
+    next: false,
+    head: [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex' } }],
+  }}
+>
+  <AdminFeedback />
+</StarlightPage>

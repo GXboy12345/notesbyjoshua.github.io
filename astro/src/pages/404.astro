@@ -1,0 +1,14 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+
+<StarlightPage frontmatter={{ title: 'Page not found', template: 'splash', prev: false, next: false }}>
+  <p>Sorry, that page doesn’t exist (or may have moved).</p>
+  <p>Try one of these:</p>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/notes/notes/">Browse the notes</a></li>
+    <li><a href="/practiceproblems/practice/">Practice problems</a></li>
+  </ul>
+  <p>Or use the search box at the top of the page.</p>
+</StarlightPage>

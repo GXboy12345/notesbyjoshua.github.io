@@ -65,6 +65,10 @@ export default defineConfig({
 					content:
 						"window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-868QCS9DJP');",
 				},
+				// Social-share image (Starlight already emits og:title/description + canonical).
+				{ tag: 'meta', attrs: { property: 'og:image', content: 'https://notesbyjoshua.github.io/assets/Images/favicon.jpeg' } },
+				{ tag: 'meta', attrs: { name: 'twitter:image', content: 'https://notesbyjoshua.github.io/assets/Images/favicon.jpeg' } },
+				{ tag: 'meta', attrs: { name: 'twitter:card', content: 'summary' } },
 			],
 			sidebar: [
 				{ label: 'Home', link: '/' },
