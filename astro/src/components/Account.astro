@@ -133,40 +133,60 @@ const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
     const msg = byId('account-avatar-msg');
     msg.textContent = 'Uploading…';
     msg.hidden = false;
+    const detail = (err: any) => err?.message || err?.error_description || String(err);
     try {
       const ext = (file.name.split('.').pop() || 'png').toLowerCase();
       const path = `${uid}/avatar.${ext}`;
       const { error: upErr } = await sb.storage
         .from('avatars')
         .upload(path, file, { upsert: true, contentType: file.type });
-      if (upErr) throw upErr;
+      // Surface the real reason: a missing upload policy reads as a row-level
+      // security error; a missing bucket reads as "Bucket not found".
+      if (upErr) throw new Error('Storage upload failed — ' + detail(upErr));
       const { data: pub } = sb.storage.from('avatars').getPublicUrl(path);
       const url = `${pub.publicUrl}?t=${Date.now()}`; // cache-bust on change
       const { error: updErr } = await sb.from('profiles').update({ avatar_url: url }).eq('id', uid);
-      if (updErr) throw updErr;
+      if (updErr) throw new Error('Saving avatar_url failed — ' + detail(updErr));
       const avatar = byId('account-avatar') as HTMLImageElement;
       avatar.src = url;
       avatar.hidden = false;
       msg.textContent = 'Picture updated.';
     } catch (err) {
       console.error('[account] avatar upload failed:', err);
-      msg.textContent = 'Upload failed — make sure the “avatars” storage bucket exists.';
+      msg.textContent = detail(err);
     } finally {
       input.value = '';
-      setTimeout(() => { msg.hidden = true; }, 3500);
+      setTimeout(() => { msg.hidden = true; }, 8000);
     }
   });
+
+  // getProfile rejects on a transient read failure; retry a couple of times
+  // before giving up so the page doesn't briefly assert "visitor".
+  async function loadProfile(tries = 3) {
+    for (let i = 0; i < tries; i++) {
+      try { return await getProfile(); }
+      catch (err) {
+        if (i === tries - 1) { console.error('[account] profile load failed:', err); return null; }
+        await new Promise((r) => setTimeout(r, 500));
+      }
+    }
+    return null;
+  }
 
   async function loadSignedIn(session: any) {
     uid = session.user.id;
     show('account-signedin');
-    const profile = await getProfile().catch(() => null);
+    const profile = await loadProfile();
     const email = profile?.email ?? session.user.email ?? '';
     byId('account-email').textContent = email;
-    byId('account-role').textContent = profile?.role ?? 'visitor';
-    (byId('account-username') as HTMLInputElement).value = profile?.display_name ?? '';
+    // Only assert a role once we actually read the profile; otherwise leave the
+    // current text rather than flashing "visitor".
+    if (profile) {
+      byId('account-role').textContent = profile.role;
+      (byId('account-username') as HTMLInputElement).value = profile.display_name ?? '';
+      byId('admin-links').hidden = profile.role !== 'admin';
+    }
     byId('account-name').textContent = profile?.display_name || email.split('@')[0] || 'Account';
-    byId('admin-links').hidden = profile?.role !== 'admin';
 
     // Avatar: custom upload wins, else the OAuth provider (Google) picture.
     const meta = session.user.user_metadata || {};

@@ -43,18 +43,26 @@ export interface Profile {
 	avatar_url: string | null;
 }
 
-/** The current user's profile row, or null if signed out. */
+/** The current user's profile row.
+ *
+ * Returns `null` only when genuinely signed out. THROWS on a transient read
+ * failure (network blip, or RLS briefly seeing no row during a token refresh)
+ * so callers keep the last-known state instead of mistaking it for a visitor. */
 export async function getProfile(): Promise<Profile | null> {
 	const sb = getSupabase();
 	if (!sb) return null;
 	const { data: { user } } = await sb.auth.getUser();
 	if (!user) return null;
 	// Core columns only — these always exist, so role/auth reads never break.
-	const { data } = await sb
+	const { data, error } = await sb
 		.from('profiles')
 		.select('role, display_name, email, created_at')
 		.eq('id', user.id)
-		.single();
+		.maybeSingle();
+	if (error) throw error;
+	// A signed-in user always has a profile row (created by a trigger). No row
+	// here means a transient/permissions hiccup — treat it as such, not visitor.
+	if (!data) throw new Error('profile row not readable (transient)');
 	// avatar_url is best-effort: the column may not exist until schema.sql is
 	// re-run, and a missing column must not break the profile (and role) read.
 	let avatar_url: string | null = null;
@@ -62,13 +70,13 @@ export async function getProfile(): Promise<Profile | null> {
 		.from('profiles')
 		.select('avatar_url')
 		.eq('id', user.id)
-		.single();
+		.maybeSingle();
 	if (!avatarErr) avatar_url = (avatarRow as any)?.avatar_url ?? null;
 	return {
-		role: (data?.role as 'visitor' | 'admin') ?? 'visitor',
-		display_name: data?.display_name ?? null,
-		email: data?.email ?? user.email ?? null,
-		created_at: data?.created_at ?? null,
+		role: (data.role as 'visitor' | 'admin') ?? 'visitor',
+		display_name: data.display_name ?? null,
+		email: data.email ?? user.email ?? null,
+		created_at: data.created_at ?? null,
 		avatar_url,
 	};
 }

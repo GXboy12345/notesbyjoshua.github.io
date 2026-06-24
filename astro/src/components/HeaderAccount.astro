@@ -124,12 +124,16 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
       const prefix = user.email ? user.email.split('@')[0] : 'Account';
       // Show immediately using the cached values (avoids the email-prefix flash).
       apply({ in: true, name: cached?.name || prefix, admin: cached?.admin, pct: cached?.pct });
-      Promise.all([getProfile().catch(() => null), readCount().catch(() => null)])
+      // getProfile() rejects on a transient read failure; only OVERWRITE the
+      // cached state on a confident success, so a hiccup never demotes you to
+      // "visitor"/the email prefix and then persists it via localStorage.
+      Promise.all([getProfile(), readCount().catch(() => null)])
         .then(([p, cnt]) => {
+          if (!p) return; // signed out between events — leave it to the next event
           const pct = cnt != null && total ? Math.round((cnt / total) * 100) : cached?.pct;
-          save({ in: true, name: p?.display_name || prefix, admin: p?.role === 'admin', pct });
+          save({ in: true, name: p.display_name || prefix, admin: p.role === 'admin', pct });
         })
-        .catch(() => save({ in: true, name: cached?.name || prefix, admin: cached?.admin, pct: cached?.pct }));
+        .catch((err) => console.warn('[header] profile refresh failed; keeping cached state', err));
     });
   }
 </script>
