@@ -466,7 +466,16 @@
 	width: 0.5rem;
 	height: 0.5rem;
 	border-radius: 50%;
-	background: #22c55e; /* green dot = signed in */
+	background: #22c55e; /* green dot = signed in (shown when no avatar) */
+}
+
+/* Profile picture in the header button (replaces the dot when available). */
+.header-account-avatar {
+	width: 1.4rem;
+	height: 1.4rem;
+	border-radius: 50%;
+	object-fit: cover;
+	background: var(--sl-color-gray-6);
 }
 
 .header-account-menu-wrap {
