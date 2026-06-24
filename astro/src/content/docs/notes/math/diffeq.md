@@ -165,7 +165,7 @@ $$
 Integrating gives
 
 $$
-\ln|y|=kt+C.
+\ln\lvert y\rvert=kt+C.
 $$
 
 Exponentiating both sides gives

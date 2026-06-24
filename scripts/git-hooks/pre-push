@@ -1,0 +1,15 @@
+#!/bin/sh
+# Full sweep of all notes before pushing — a safety net in case something was
+# committed with --no-verify or changed outside the pre-commit path.
+# Errors block the push; warnings are printed but allowed.
+set -eu
+
+root="$(git rev-parse --show-toplevel)"
+
+echo "check-notes: linting all notes before push…"
+if ! python3 "$root/astro/scripts/check_notes.py"; then
+  echo
+  echo "✗ Note formatting errors found (see above). Fix them, or push with"
+  echo "  'git push --no-verify' to bypass. See how-to-write-notes.md."
+  exit 1
+fi

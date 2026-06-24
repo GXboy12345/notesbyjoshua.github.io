@@ -53,7 +53,7 @@ Since $$\vec{F}_B$$ is always perpendicular to $$\vec{v}$$, it does no work: $$P
 The velocity is perpendicular to the field ($$\theta = 90^\circ$$), so the magnitude is
 
 $$
-F_B = |q|vB\sin 90^\circ = (1.6\times10^{-19})(4.0\times10^5)(0.50) = 3.2\times10^{-14}\ \text{N}.
+F_B = \lvert q\rvert vB\sin 90^\circ = (1.6\times10^{-19})(4.0\times10^5)(0.50) = 3.2\times10^{-14}\ \text{N}.
 $$
 
 For the direction, evaluate $$\vec{v}\times\vec{B} = (v\hat{x})\times(B\hat{y}) = vB\,(\hat{x}\times\hat{y}) = vB\,\hat{z}$$. Since the charge is positive, $$\vec{F}_B$$ points in $$+z$$ (out of the page if $$x$$ is right and $$y$$ is up). For an electron with the same velocity, the force would point in $$-z$$.
@@ -73,7 +73,7 @@ $$
 Thus
 
 $$
-r=\frac{mv}{|q|B}.
+r=\frac{mv}{\lvert q\rvert B}.
 $$
 
 The angular frequency is
@@ -90,28 +90,28 @@ $$
 
 If the velocity has a component parallel to $$\vec{B}$$, that component is unchanged and the path becomes a helix.
 
-Notice that the period $$T = 2\pi m/(|q|B)$$ does not depend on the speed or the radius: a faster particle simply travels a proportionally larger circle in the same time. This speed-independence is the principle behind the cyclotron.
+Notice that the period $$T = 2\pi m/(\lvert q\rvert B)$$ does not depend on the speed or the radius: a faster particle simply travels a proportionally larger circle in the same time. This speed-independence is the principle behind the cyclotron.
 
 <div class="theorem-box">
 
-**Example.** An electron ($$m = 9.11\times10^{-31}\ \text{kg}$$, $$|q| = 1.6\times10^{-19}\ \text{C}$$) moves at $$v = 2.0\times10^6\ \text{m/s}$$ perpendicular to a uniform field $$B = 1.5\times10^{-3}\ \text{T}$$. Find the radius of its circular path, the period, and the frequency.
+**Example.** An electron ($$m = 9.11\times10^{-31}\ \text{kg}$$, $$\lvert q\rvert = 1.6\times10^{-19}\ \text{C}$$) moves at $$v = 2.0\times10^6\ \text{m/s}$$ perpendicular to a uniform field $$B = 1.5\times10^{-3}\ \text{T}$$. Find the radius of its circular path, the period, and the frequency.
 
-The magnetic force supplies the centripetal force, $$|q|vB = mv^2/r$$, so
+The magnetic force supplies the centripetal force, $$\lvert q\rvert vB = mv^2/r$$, so
 
 $$
-r = \frac{mv}{|q|B} = \frac{(9.11\times10^{-31})(2.0\times10^6)}{(1.6\times10^{-19})(1.5\times10^{-3})} = \frac{1.82\times10^{-24}}{2.4\times10^{-22}} \approx 7.6\times10^{-3}\ \text{m}.
+r = \frac{mv}{\lvert q\rvert B} = \frac{(9.11\times10^{-31})(2.0\times10^6)}{(1.6\times10^{-19})(1.5\times10^{-3})} = \frac{1.82\times10^{-24}}{2.4\times10^{-22}} \approx 7.6\times10^{-3}\ \text{m}.
 $$
 
 The period is independent of $$v$$:
 
 $$
-T = \frac{2\pi m}{|q|B} = \frac{2\pi(9.11\times10^{-31})}{(1.6\times10^{-19})(1.5\times10^{-3})} = \frac{5.72\times10^{-30}}{2.4\times10^{-22}} \approx 2.4\times10^{-8}\ \text{s}.
+T = \frac{2\pi m}{\lvert q\rvert B} = \frac{2\pi(9.11\times10^{-31})}{(1.6\times10^{-19})(1.5\times10^{-3})} = \frac{5.72\times10^{-30}}{2.4\times10^{-22}} \approx 2.4\times10^{-8}\ \text{s}.
 $$
 
 The frequency (the cyclotron frequency) is
 
 $$
-f = \frac{1}{T} = \frac{|q|B}{2\pi m} \approx 4.2\times10^{7}\ \text{Hz}.
+f = \frac{1}{T} = \frac{\lvert q\rvert B}{2\pi m} \approx 4.2\times10^{7}\ \text{Hz}.
 $$
 
 </div>
@@ -348,7 +348,7 @@ $$
 
 <div class="theorem-box">
 
-**Proof (On-axis field of a circular loop from Biot–Savart).** A circular loop of radius $$R$$ carries current $$I$$. Find $$\vec{B}$$ at a point $$P$$ on the axis, a distance $$x$$ from the center. Each element $$I\,d\vec{\ell}$$ is perpendicular to the line of length $$s = \sqrt{x^2 + R^2}$$ joining it to $$P$$, so $$|d\vec{\ell}\times\hat{r}| = d\ell$$ and
+**Proof (On-axis field of a circular loop from Biot–Savart).** A circular loop of radius $$R$$ carries current $$I$$. Find $$\vec{B}$$ at a point $$P$$ on the axis, a distance $$x$$ from the center. Each element $$I\,d\vec{\ell}$$ is perpendicular to the line of length $$s = \sqrt{x^2 + R^2}$$ joining it to $$P$$, so $$\lvert d\vec{\ell}\times\hat{r} \rvert = d\ell$$ and
 
 $$
 dB = \frac{\mu_0 I}{4\pi}\frac{d\ell}{x^2 + R^2}.
@@ -543,9 +543,9 @@ Magnetic flux becomes central in [electromagnetic induction](/notes/physics/emin
 | Idea | Equation |
 | --- | --- |
 | Lorentz force | $$\vec{F} = q\vec{E} + q\vec{v}\times\vec{B}$$ |
-| Magnetic force magnitude | $$F = |q|vB\sin\theta$$ |
-| Radius in a $$B$$ field | $$r = \dfrac{mv}{|q|B}$$ |
-| Period / cyclotron frequency | $$T = \dfrac{2\pi m}{|q|B}, \quad f = \dfrac{|q|B}{2\pi m}$$ |
+| Magnetic force magnitude | $$F = \lvert q\rvert vB\sin\theta$$ |
+| Radius in a $$B$$ field | $$r = \dfrac{mv}{\lvert q\rvert B}$$ |
+| Period / cyclotron frequency | $$T = \dfrac{2\pi m}{\lvert q\rvert B}, \quad f = \dfrac{\lvert q\rvert B}{2\pi m}$$ |
 | Velocity selector | $$v = \dfrac{E}{B}$$ |
 | Force on a wire | $$\vec{F} = I\vec{L}\times\vec{B}, \quad F = ILB\sin\theta$$ |
 | Magnetic moment | $$\vec{\mu} = NI\vec{A}$$ |

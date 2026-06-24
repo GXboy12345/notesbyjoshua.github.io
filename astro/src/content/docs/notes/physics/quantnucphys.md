@@ -254,8 +254,6 @@ $$
 \Delta x\,\Delta p \ge \frac{\hbar}{2}.
 $$
 
-</div>
-
 The semiclassical limit is just the regime where the required uncertainty is small compared to the scales involved, reached for $$n \gg 1$$.
 
 <div class="theorem-box">
@@ -503,7 +501,7 @@ $$
 meaning it **exponentially decays** across the barrier. The escape probability per collision is $$\lvert e^{i\theta} \rvert^2$$, and the decay timescale comes out as
 
 $$
-\tau \sim \tau_{\text{collision}}\, e^{+2|\mathrm{Im}\,\theta|}, \qquad \text{with tunneling probability} \;\sim e^{-\sqrt{E_g/E}}.
+\tau \sim \tau_{\text{collision}}\, e^{+2\lvert\mathrm{Im}\,\theta\rvert}, \qquad \text{with tunneling probability} \;\sim e^{-\sqrt{E_g/E}}.
 $$
 
 The strong exponential dependence of lifetime on energy (the Geiger–Nuttall law) is the key feature, and matches experiment. Run in reverse, the same barrier governs **fusion** in stars: averaging the tunneling rate $$e^{-\sqrt{E_g/E}}$$ over a Boltzmann distribution $$e^{-E/k_B T}$$ gives a sharply peaked **Gamow window** of optimal energies.
@@ -605,7 +603,7 @@ Modern-physics problems usually reduce to "which quantization or conservation ru
 4. **Counting states / thermodynamics of a gas:** go to momentum space, use the density of states $$N = \frac{V}{6\pi^2}(2mE/\hbar^2)^{3/2}$$, then occupy modes with Bose–Einstein $$\langle n\rangle = (e^{E/k_BT}-1)^{-1}$$ (photons, blackbody) or Fermi–Dirac $$\langle n\rangle = (e^{(E-\mu)/k_BT}+1)^{-1}$$ (electrons, $$E_F$$, degeneracy pressure).
 5. **Identifying the missing particle in a decay:** balance baryon number, electric charge, and electron number simultaneously. Then check it is energetically allowed via $$\Delta E = (\Delta m)c^2 > 0$$.
 6. **How much is left / how fast it decays:** the decay law $$N(t) = N_0 e^{-\lambda t}$$, with $$\tau = 1/\lambda$$ and $$t_{1/2} = \tau\ln 2$$; activity is $$A = \lambda N$$.
-7. **Barrier penetration (alpha decay, fusion):** WKB tunneling, $$\tau \sim \tau_{\text{coll}}\,e^{+2|\mathrm{Im}\,\theta|}$$ with probability $$\sim e^{-\sqrt{E_g/E}}$$ — note the steep dependence of lifetime on energy.
+7. **Barrier penetration (alpha decay, fusion):** WKB tunneling, $$\tau \sim \tau_{\text{coll}}\,e^{+2\lvert\mathrm{Im}\,\theta\rvert}$$ with probability $$\sim e^{-\sqrt{E_g/E}}$$ — note the steep dependence of lifetime on energy.
 8. **Nuclear stability / energy release:** the liquid-drop binding energy $$E_B = a_V A - a_S A^{2/3} - a_C Z^2/A^{1/3} - \cdots$$; the peak near iron explains why both fusion (light) and fission (heavy) release energy.
 
 **Common traps:**

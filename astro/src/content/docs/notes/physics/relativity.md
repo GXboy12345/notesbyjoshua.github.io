@@ -109,7 +109,7 @@ $$
 where $$E = \gamma m$$ and $$\mathbf{p} = \gamma m\mathbf{v}$$. Their norms are pure invariants:
 
 $$
-u \cdot u = 1, \qquad p \cdot p = E^2 - |\mathbf{p}|^2 = m^2.
+u \cdot u = 1, \qquad p \cdot p = E^2 - \lvert\mathbf{p}\rvert^2 = m^2.
 $$
 
 </div>
@@ -118,7 +118,7 @@ The relation $$E^2 = p^2 + m^2$$ (restoring $$c$$: $$E^2 = (pc)^2 + (mc^2)^2$$) 
 
 Other useful four-vector facts:
 
-- For a **photon**, $$m = 0$$ so $$E = |\mathbf{p}|c$$, and $$p^\mu = \hbar k^\mu$$ where $$k^\mu = (\omega/c, \mathbf{k})$$.
+- For a **photon**, $$m = 0$$ so $$E = \lvert\mathbf{p}\rvert c$$, and $$p^\mu = \hbar k^\mu$$ where $$k^\mu = (\omega/c, \mathbf{k})$$.
 - An observer with four-velocity $$u^\mu$$ measures a particle's energy as $$p \cdot u$$.
 - The inner product of two momenta, $$p_1 \cdot p_2 = m_1 m_2/\sqrt{1 - v^2}$$, depends only on their **relative** speed $$v$$.
 - A system's **center-of-mass frame** is where total $$\mathbf{p} = 0$$; it moves at $$\mathbf{v} = \mathbf{p}c^2/E$$.
@@ -295,7 +295,7 @@ $$
 \mathbf{E}\cdot\mathbf{B} \qquad \text{and} \qquad E^2 - c^2 B^2.
 $$
 
-Consequences: if $$\mathbf{E}\perp\mathbf{B}$$ and $$|E| = c|B|$$ in one frame (a light wave), that holds in all frames. If $$\mathbf{E} = 0$$ but $$\mathbf{B}\neq 0$$ somewhere, no boost can make $$\mathbf{B}$$ vanish there (since $$E^2 - c^2B^2 < 0$$ is invariant).
+Consequences: if $$\mathbf{E}\perp\mathbf{B}$$ and $$\lvert E\rvert = c\lvert B\rvert$$ in one frame (a light wave), that holds in all frames. If $$\mathbf{E} = 0$$ but $$\mathbf{B}\neq 0$$ somewhere, no boost can make $$\mathbf{B}$$ vanish there (since $$E^2 - c^2B^2 < 0$$ is invariant).
 
 > **Is magnetism "real"?** Purcell famously shows magnetism *must* exist given Coulomb's law plus relativity: electric forces alone wouldn't transform correctly between frames, and the gap is exactly the magnetic force. But this does **not** mean magnetism is "just an error" or "all electric fields." You can sometimes trade one for the other by changing frames, but in any given frame both are perfectly real — and there are configurations (nonzero invariants) where you can't remove $$\mathbf{B}$$ at all. The lesson is that $$\mathbf{E}$$ and $$\mathbf{B}$$ are as inseparable as space and time.
 
@@ -364,7 +364,7 @@ Match the question to the cleanest invariant or transformation before grinding t
 
 1. **Compare clocks, lengths, or event coordinates between two frames:** write the Lorentz transformation $$t' = \gamma(t - vx/c^2),\ x' = \gamma(x - vt)$$ and read off time dilation (one clock, two times $$\to \Delta t = \gamma\,\Delta\tau$$) or length contraction (two ends, one time $$\to L/\gamma$$). For anything labeled a "paradox," draw the relativity of simultaneity first: the rear clock leads by $$Lv/c^2$$.
 2. **Combine velocities or transform an emission angle:** use velocity addition $$u_x = \dfrac{u_x' + v}{1 + u_x' v/c^2}$$ (with the $$\gamma$$ in $$u_y$$), and aberration $$\cos\theta = \dfrac{\cos\theta_0 + v/c}{1 + (v/c)\cos\theta_0}$$ for light directions and beaming into the $$\sim 1/\gamma$$ cone.
-3. **Collisions, decays, or "find the unknown mass":** go to four-momenta. Conserve the total $$p^\mu = (E, \mathbf{p})$$, then take the norm $$p\cdot p = E^2 - |\mathbf{p}|^2 = m^2$$ in whatever frame is easiest. Work with $$E$$ and $$\mathbf{p}$$, never velocities.
+3. **Collisions, decays, or "find the unknown mass":** go to four-momenta. Conserve the total $$p^\mu = (E, \mathbf{p})$$, then take the norm $$p\cdot p = E^2 - \lvert\mathbf{p}\rvert^2 = m^2$$ in whatever frame is easiest. Work with $$E$$ and $$\mathbf{p}$$, never velocities.
 4. **Threshold / minimum-energy reaction:** demand the products be at rest in the CM frame. Equate the invariant norm$$^2$$ of the lab four-momentum to $$(\sum m_{\text{products}})^2$$ and solve, as in $$E = m_\pi + m_\pi^2/2m_p$$.
 5. **Frequency or wavelength shifts:** relativistic Doppler $$f = \sqrt{\dfrac{1+v/c}{1-v/c}}\,f'$$ (flip the sign of $$v$$ for recession) for moving sources; Compton $$\lambda' = \lambda + \dfrac{h}{m_e c}(1-\cos\theta)$$ for a photon scattering off a stationary electron.
 6. **Accelerated / repeated-boost motion:** switch to rapidity $$\phi = \tanh^{-1}(v/c)$$, which simply adds. Constant proper acceleration gives $$v = c\tanh(a_0\tau/c)$$ and lab acceleration $$a_0/\gamma^3$$.

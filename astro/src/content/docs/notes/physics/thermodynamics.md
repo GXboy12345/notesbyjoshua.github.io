@@ -566,8 +566,6 @@ $$
 
 with equality only for reversible processes. Equivalently, heat flows spontaneously from hot to cold, and energy does not spontaneously concentrate.
 
-</div>
-
 <div class="theorem-box">
 
 **Example.** One mole of an ideal gas free-expands into a vacuum until its volume doubles. Find the entropy change of the gas and of the universe.
@@ -723,10 +721,10 @@ Read the process first, then pick the constraint that turns the first law into s
 1. **Heating/cooling or a phase change, no gas process**: Stack $$Q = mc\,\Delta T$$ for each temperature change and $$Q = Lm$$ for each phase change, and add (do the stages separately — never melt and warm in one step). For mixtures set $$\sum Q = 0$$.
 2. **Conduction / steady-state heat flow**: Use $$H = kA(T_H - T_L)/L$$, treat layers as thermal resistances $$R = L/k$$ in series (add $$L_i/k_i$$) and areas in parallel; the same $$H$$ flows through every series layer.
 3. **A named gas process**: Apply $$\Delta E_{\text{int}} = Q + W$$ with the matching constraint — isochoric $$W=0$$, isobaric $$W=-p\,\Delta V$$, isothermal $$\Delta E_{\text{int}}=0$$ so $$W=-nRT\ln(V_f/V_i)$$, adiabatic $$Q=0$$ with $$pV^\gamma=\text{const}$$ and $$W=(p_fV_f-p_iV_i)/(\gamma-1)$$. Always $$\Delta E_{\text{int}} = nC_V\Delta T$$.
-4. **Cycle on a $$pV$$ diagram**: $$\Delta E_{\text{int}}=0$$ over the cycle, so net $$|W|$$ = enclosed area = net heat; add up $$Q$$ leg by leg for efficiency.
+4. **Cycle on a $$pV$$ diagram**: $$\Delta E_{\text{int}}=0$$ over the cycle, so net $$\lvert W\rvert$$ = enclosed area = net heat; add up $$Q$$ leg by leg for efficiency.
 5. **Kinetic-theory / microscopic quantity**: Use $$\tfrac12 m\langle v^2\rangle = \tfrac32 k_BT$$, $$v_{\text{rms}}=\sqrt{3RT/M}$$ (and the $$v_p:v_{\text{av}}:v_{\text{rms}} = 1:1.128:1.225$$ ratio), $$E_{\text{int}}=\tfrac f2 nRT$$ with the right $$f$$, or mean free path $$\lambda = k_BT/(\sqrt2\,\pi d^2 p)$$.
 6. **Entropy change**: $$\Delta S = \int dQ/T$$; for an ideal gas use $$\Delta S = nC_V\ln(T_f/T_i) + nR\ln(V_f/V_i)$$. For an irreversible process (free expansion), invent any reversible path between the same endpoints.
-7. **Engine, refrigerator, or heat pump**: $$\epsilon = |W|/|Q_H| = 1 - |Q_L|/|Q_H|$$; for the reversible bound use $$\epsilon_{\text{Carnot}} = 1 - T_L/T_H$$, and $$K_L = T_L/(T_H-T_L)$$, $$K_H = T_H/(T_H-T_L) = K_L+1$$.
+7. **Engine, refrigerator, or heat pump**: $$\epsilon = \lvert W\rvert/\lvert Q_H\rvert = 1 - \lvert Q_L\rvert/\lvert Q_H\rvert$$; for the reversible bound use $$\epsilon_{\text{Carnot}} = 1 - T_L/T_H$$, and $$K_L = T_L/(T_H-T_L)$$, $$K_H = T_H/(T_H-T_L) = K_L+1$$.
 
 **Common traps:**
 

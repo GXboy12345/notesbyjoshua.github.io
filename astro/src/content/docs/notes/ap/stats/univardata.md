@@ -160,13 +160,13 @@ Numerical summaries compress a distribution into a few interpretable numbers. Al
 
 **Mean (average)** balances all values, but it is sensitive to outliers and skew.
 
-For a population of size $N$ with values $x_1,\ldots,X_N$:
+For a population of size $$N$$ with values $$x_1,\ldots,X_N$$:
 
 $$
 \mu = \frac{\sum_{i=1}^{N} x_i}{N}
 $$
 
-For a sample of size $n$:
+For a sample of size $$n$$:
 
 $$
 \bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}
@@ -174,8 +174,8 @@ $$
 
 **Median** is the middle value when data are ordered: half the values lie at or below it and half at or above it.
 
-- If there are **$n$** ordered observations and **$n$** is **odd**, the median is the value at position $\frac{n+1}{2}$.
-- If **$n$** is **even**, the median is the **average** of the values at positions $\frac{n}{2}$ and $\frac{n}{2}+1$.
+- If there are **$$n$$** ordered observations and **$$n$$** is **odd**, the median is the value at position $$\frac{n+1}{2}$$.
+- If **$$n$$** is **even**, the median is the **average** of the values at positions $$\frac{n}{2}$$ and $$\frac{n}{2}+1$$.
 
 The median is **resistant** (robust) to outliers, meaning extreme values barely move it, which makes it a measure of central tendency for skewed data or data with outliers.
 
@@ -203,7 +203,7 @@ $$
 \sigma = \sqrt{\frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}}
 $$
 
-For a sample, we divide by **$$n - 1$$** (Bessel’s correction) so that $s^2$ is an unbiased estimator of population variance in the usual setup:
+For a sample, we divide by **$$n - 1$$** (Bessel’s correction) so that $$s^2$$ is an unbiased estimator of population variance in the usual setup:
 
 $$
 s = \sqrt{\frac{\sum_{i=1}^{n} (X_i - \bar{x})^2}{n-1}}
@@ -215,19 +215,19 @@ Larger standard deviation means **more** spread and zero standard deviation mean
 
 ## Measures of position
 
-**Percentiles** generalize the median. The **$k$**th percentile is a value such that about **$k$%** of observations fall at or below it. A common position rule for the location of the $k$th percentile in ordered data of size $n$ is:
+**Percentiles** generalize the median. The **$$k$$**th percentile is a value such that about **$$k$$%** of observations fall at or below it. A common position rule for the location of the $$k$$th percentile in ordered data of size $$n$$ is:
 
 $$
 l = \frac{(n+1)k}{100}
 $$
 
-If $l$ is not an integer, interpolate between adjacent ordered values. Calculator or software conventions may differ slightly, so be consistent and explain your method when needed.
+If $$l$$ is not an integer, interpolate between adjacent ordered values. Calculator or software conventions may differ slightly, so be consistent and explain your method when needed.
 
 **Quartiles** are special percentiles:
 
-- $Q_1$: **25**th percentile  
-- $Q_2$: **50**th percentile (the median)  
-- $Q_3$: **75**th percentile  
+- $$Q_1$$: **25**th percentile  
+- $$Q_2$$: **50**th percentile (the median)  
+- $$Q_3$$: **75**th percentile  
 
 **Standardized scores (z-scores)** compare a value to the distribution’s center and spread:
 
@@ -235,7 +235,7 @@ $$
 z = \frac{x - \mu}{\sigma}
 $$
 
-With a **sample**, use $\bar{x}$ and $s$ in the same pattern. A z-score answers: “How many standard deviations above or below the mean is this value?” Values with a large $$z$$-score are unusual relative to that distribution. Note that for future chapters, z-score will likely apply to a [normal/Gaussian distribution](/notes/ap/stats/samplingdistr/))
+With a **sample**, use $$\bar{x}$$ and $$s$$ in the same pattern. A z-score answers: “How many standard deviations above or below the mean is this value?” Values with a large $$z$$-score are unusual relative to that distribution. Note that for future chapters, z-score will likely apply to a [normal/Gaussian distribution](/notes/ap/stats/samplingdistr/))
 
 ---
 

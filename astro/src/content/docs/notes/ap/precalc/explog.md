@@ -1306,7 +1306,7 @@ $$
 Use the power rule:
 
 $$
-\boxed{4\log_3|x|+\frac12\log_3(y-2)-3\log_3(x^2+1)-\log_3(5-y)}.
+\boxed{4\log_3\lvert x\rvert+\frac12\log_3(y-2)-3\log_3(x^2+1)-\log_3(5-y)}.
 $$
 
 For restrictions, the square root requires

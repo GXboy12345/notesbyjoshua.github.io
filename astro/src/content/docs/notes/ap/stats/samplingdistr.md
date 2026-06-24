@@ -186,7 +186,7 @@ $$
 and
 
 $$
-\sigma_{a+bX} = |b|\sigma_X.
+\sigma_{a+bX} = \lvert b\rvert\sigma_X.
 $$
 
 ---

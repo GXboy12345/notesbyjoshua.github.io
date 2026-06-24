@@ -83,7 +83,7 @@ $$
 S_N=\frac{a(1-r^{N+1})}{1-r}.
 $$
 
-If $$|r|<1$$, then $$r^{N+1}\to0$$, leaving
+If $$\lvert r\rvert<1$$, then $$r^{N+1}\to0$$, leaving
 
 $$
 \frac{a}{1-r}.
@@ -571,8 +571,8 @@ For positive-term series, convergence is about whether the sum of positive amoun
 
 For alternating series, positive and negative terms can cancel. That creates two levels of convergence:
 
-- absolute convergence: $$\sum |a_n|$$ converges,
-- conditional convergence: $$\sum a_n$$ converges but $$\sum |a_n|$$ diverges.
+- absolute convergence: $$\sum \lvert a_n\rvert$$ converges,
+- conditional convergence: $$\sum a_n$$ converges but $$\sum \lvert a_n\rvert$$ diverges.
 
 Absolute convergence is stronger. If a series converges absolutely, it converges.
 
@@ -583,7 +583,7 @@ Absolute convergence is stronger. If a series converges absolutely, it converges
 For an alternating series satisfying the Alternating Series Test, the error after using $$n$$ terms is at most the magnitude of the first omitted term:
 
 $$
-|R_n|\le b_{n+1}.
+\lvert R_n\rvert\le b_{n+1}.
 $$
 
 This works because the partial sums trap the true value from alternating sides, and each new term makes the trap smaller.
@@ -591,9 +591,9 @@ This works because the partial sums trap the true value from alternating sides, 
 For Taylor polynomials, the Lagrange error bound has the form
 
 $$
-|R_n(x)|
+\lvert R_n(x)\rvert
 \le
-\frac{M}{(n+1)!}|x-c|^{n+1},
+\frac{M}{(n+1)!}\lvert x-c\rvert^{n+1},
 $$
 
 where $$M$$ bounds the absolute value of the next derivative on the interval between $$c$$ and $$x$$.

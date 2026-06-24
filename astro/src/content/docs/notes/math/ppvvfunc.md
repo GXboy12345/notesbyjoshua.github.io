@@ -310,7 +310,7 @@ $$
 Speed is the magnitude of the velocity vector:
 
 $$
-|\mathbf{r}'(2)|=\sqrt{4^2+12^2}=\sqrt{16+144}=\sqrt{160}=4\sqrt{10}.
+\lvert\mathbf{r}'(2)\rvert=\sqrt{4^2+12^2}=\sqrt{16+144}=\sqrt{160}=4\sqrt{10}.
 $$
 
 So at $$t=2$$ the velocity is $$\langle 4,12\rangle$$, the acceleration is $$\langle 2,12\rangle$$, and the speed is $$4\sqrt{10}$$.
@@ -463,7 +463,7 @@ $$
 Speed is the magnitude of velocity:
 
 $$
-|\mathbf v(t)|.
+\lvert\mathbf v(t)\rvert.
 $$
 
 The direction of motion is given by the velocity vector, while acceleration describes how the velocity vector changes.
