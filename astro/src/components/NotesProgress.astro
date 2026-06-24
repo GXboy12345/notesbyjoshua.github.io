@@ -16,21 +16,35 @@ const courseRename: Record<string, string> = {
   'Chemistry Competition Prep': 'Chemistry',
 };
 
+// Subject landing pages are labelled "<Subject> Home" in the sidebar; collect
+// their routes so they can be dropped from the report (they aren't units).
+const isHomeLabel = (label: string) => label.endsWith(' Home');
+const homeRoutes = new Set<string>();
+(function collectHomes(items: any[]) {
+  for (const it of items) {
+    if (it.items) collectHomes(it.items);
+    else if (it.link && isHomeLabel(it.label)) homeRoutes.add(it.link);
+  }
+})(notesSidebar as any[]);
+
 // Course order as it appears in the sidebar.
 const courseOrder: string[] = [];
 (function walk(items: any[], label: string) {
   let hasLeaf = false;
   for (const it of items) {
     if (it.items) walk(it.items, it.label);
-    else if (it.link) hasLeaf = true;
+    else if (it.link && !isHomeLabel(it.label)) hasLeaf = true;
   }
   const name = courseRename[label] ?? label;
   if (hasLeaf && name && !courseOrder.includes(name)) courseOrder.push(name);
 })(notesSidebar as any[], 'Notes');
 
-// Group pages by course, least-done first within each group.
+// Group pages by course, least-done first within each group; skip home pages.
 const byCourse: Record<string, Page[]> = {};
-for (const p of pages) (byCourse[p.course] ||= []).push(p);
+for (const p of pages) {
+  if (homeRoutes.has(p.route)) continue;
+  (byCourse[p.course] ||= []).push(p);
+}
 for (const list of Object.values(byCourse)) list.sort((a, b) => a.progress - b.progress);
 
 const orderedCourses = [

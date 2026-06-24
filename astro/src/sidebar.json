@@ -1,13 +1,13 @@
 [
   {
-    "label": "Overview",
+    "label": "Notes Home",
     "link": "/notes/notes/"
   },
   {
     "label": "AP",
     "items": [
       {
-        "label": "Overview",
+        "label": "AP Home",
         "link": "/notes/ap/"
       },
       {
@@ -18,7 +18,7 @@
         "label": "AP Calculus AB/BC",
         "items": [
           {
-            "label": "Overview",
+            "label": "AP Calculus AB/BC Home",
             "link": "/notes/ap/calculus/"
           },
           {
@@ -67,7 +67,7 @@
         "label": "AP Chemistry",
         "items": [
           {
-            "label": "Overview",
+            "label": "AP Chemistry Home",
             "link": "/notes/ap/chemistry/"
           },
           {
@@ -116,7 +116,7 @@
         "label": "AP Statistics",
         "items": [
           {
-            "label": "Overview",
+            "label": "AP Statistics Home",
             "link": "/notes/ap/statistics/"
           },
           {
@@ -165,7 +165,7 @@
         "label": "AP Physics C Mechanics",
         "items": [
           {
-            "label": "Overview",
+            "label": "AP Physics C Mechanics Home",
             "link": "/notes/ap/ap-physics-c-mechanics/"
           },
           {
@@ -202,7 +202,7 @@
         "label": "AP Physics C E&M",
         "items": [
           {
-            "label": "Overview",
+            "label": "AP Physics C E&M Home",
             "link": "/notes/ap/ap-physics-c-em/"
           },
           {
@@ -235,7 +235,7 @@
         "label": "AP Precalculus",
         "items": [
           {
-            "label": "Overview",
+            "label": "AP Precalculus Home",
             "link": "/notes/ap/precalculus/"
           },
           {
@@ -286,7 +286,7 @@
     "label": "Math",
     "items": [
       {
-        "label": "Overview",
+        "label": "Math Home",
         "link": "/notes/math/"
       },
       {
@@ -307,14 +307,14 @@
     "label": "Physics",
     "items": [
       {
-        "label": "Overview",
+        "label": "Physics Home",
         "link": "/notes/physics/"
       },
       {
         "label": "Physics Competition Prep",
         "items": [
           {
-            "label": "Overview",
+            "label": "Physics Competition Prep Home",
             "link": "/notes/physics/usapho/"
           },
           {
@@ -377,19 +377,19 @@
     "label": "Chemistry",
     "items": [
       {
-        "label": "Overview",
+        "label": "Chemistry Home",
         "link": "/notes/chemistry/"
+      },
+      {
+        "label": "Organic Chemistry",
+        "link": "/notes/chemistry/organic/"
       },
       {
         "label": "Chemistry Competition Prep",
         "items": [
           {
-            "label": "Overview",
+            "label": "Chemistry Competition Prep Home",
             "link": "/notes/chemistry/usnco/"
-          },
-          {
-            "label": "Organic Chemistry",
-            "link": "/notes/chemistry/organic/"
           },
           {
             "label": "Coordination Chemistry",

@@ -1,11 +1,12 @@
 ---
 import notesSidebar from '../sidebar.json';
-type Item = { link?: string; items?: Item[] };
+type Item = { label?: string; link?: string; items?: Item[] };
 function countLeaves(items: Item[]): number {
   let n = 0;
   for (const it of items) {
     if (it.items) n += countLeaves(it.items);
-    else if (it.link) n += 1;
+    // Match the dashboard: subject landing pages ("<Subject> Home") aren't tracked.
+    else if (it.link && !it.label?.endsWith(' Home')) n += 1;
   }
   return n;
 }

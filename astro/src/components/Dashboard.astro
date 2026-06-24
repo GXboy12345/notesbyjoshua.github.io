@@ -9,7 +9,8 @@ function collect(items: Item[], heading: string) {
   const groups: Item[] = [];
   for (const it of items) {
     if (it.items) groups.push(it);
-    else if (it.link) direct.push({ label: it.label, slug: it.link });
+    // Skip subject landing pages ("<Subject> Home") — not trackable reading.
+    else if (it.link && !it.label.endsWith(' Home')) direct.push({ label: it.label, slug: it.link });
   }
   if (direct.length) sections.push({ heading, notes: direct });
   for (const g of groups) sections.push(...collect(g.items!, g.label));
