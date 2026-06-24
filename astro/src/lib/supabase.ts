@@ -49,16 +49,26 @@ export async function getProfile(): Promise<Profile | null> {
 	if (!sb) return null;
 	const { data: { user } } = await sb.auth.getUser();
 	if (!user) return null;
+	// Core columns only — these always exist, so role/auth reads never break.
 	const { data } = await sb
 		.from('profiles')
-		.select('role, display_name, email, created_at, avatar_url')
+		.select('role, display_name, email, created_at')
 		.eq('id', user.id)
 		.single();
+	// avatar_url is best-effort: the column may not exist until schema.sql is
+	// re-run, and a missing column must not break the profile (and role) read.
+	let avatar_url: string | null = null;
+	const { data: avatarRow, error: avatarErr } = await sb
+		.from('profiles')
+		.select('avatar_url')
+		.eq('id', user.id)
+		.single();
+	if (!avatarErr) avatar_url = (avatarRow as any)?.avatar_url ?? null;
 	return {
 		role: (data?.role as 'visitor' | 'admin') ?? 'visitor',
 		display_name: data?.display_name ?? null,
 		email: data?.email ?? user.email ?? null,
 		created_at: data?.created_at ?? null,
-		avatar_url: data?.avatar_url ?? null,
+		avatar_url,
 	};
 }
