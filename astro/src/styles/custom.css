@@ -395,6 +395,14 @@
 	background: var(--sl-color-gray-6);
 }
 
+/* These set `display`, which overrides the `hidden` attribute — restore it so
+   toggling .hidden actually shows/hides them. */
+.header-account-link[hidden],
+.header-account-menu[hidden],
+.header-account-menu-wrap[hidden] {
+	display: none;
+}
+
 .header-account-dot {
 	width: 0.5rem;
 	height: 0.5rem;
