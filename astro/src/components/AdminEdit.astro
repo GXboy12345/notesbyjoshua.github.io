@@ -36,7 +36,8 @@ const notes = docs
           {notes.map((n) => <option value={n.path}>{n.title} — {n.id}</option>)}
         </select>
       </label>
-      <button type="button" id="ed-reload" disabled>Reload</button>
+      <button type="button" id="ed-reload" class="ed-secondary" disabled>Reload</button>
+      <button type="button" id="ed-exit" class="ed-secondary">Exit editor</button>
     </div>
 
     <div class="ed-split">
@@ -72,6 +73,7 @@ const notes = docs
 
   const fileSel = byId('ed-file') as HTMLSelectElement;
   const reloadBtn = byId('ed-reload') as HTMLButtonElement;
+  const exitBtn = byId('ed-exit') as HTMLButtonElement;
   const srcEl = byId('ed-src') as HTMLTextAreaElement;
   const previewEl = byId('ed-preview');
   const msgEl = byId('ed-msg') as HTMLInputElement;
@@ -181,6 +183,22 @@ const notes = docs
   reloadBtn.addEventListener('click', loadFile);
   pwEl.addEventListener('input', refreshSaveState);
   saveBtn.addEventListener('click', save);
+
+  // Exit the editor. Warn first if there are unsaved changes, then return to the
+  // page you came from (same-origin only), falling back to the admin dashboard.
+  exitBtn.addEventListener('click', () => {
+    const dirty = srcEl.value !== loadedContent;
+    if (dirty && !confirm('You have unsaved changes. Leave the editor without saving?')) return;
+    loadedContent = srcEl.value; // clear dirty so beforeunload doesn't prompt again
+    let target = '/admin/';
+    try {
+      if (document.referrer && new URL(document.referrer).origin === location.origin) {
+        const ref = new URL(document.referrer);
+        if (!ref.pathname.startsWith('/admin/edit')) target = ref.pathname; // avoid bouncing to ourselves
+      }
+    } catch {}
+    location.href = target;
+  });
   // Warn before navigating away with unsaved changes.
   window.addEventListener('beforeunload', (e) => {
     if (srcEl.value !== loadedContent) { e.preventDefault(); e.returnValue = ''; }
@@ -225,6 +243,8 @@ const notes = docs
   .ed-save-bar input { flex: 1; min-width: 8rem; }
   .ed-bar button { padding: 0.4rem 0.9rem; border: 1px solid var(--sl-color-accent); background: var(--sl-color-accent); color: var(--sl-color-white); border-radius: 0.3rem; cursor: pointer; }
   .ed-bar button:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ed-bar button.ed-secondary { background: transparent; color: var(--sl-color-white); border-color: var(--sl-color-gray-5); }
+  .ed-bar button.ed-secondary:hover:not(:disabled) { background: var(--sl-color-gray-6); }
   .ed-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   @media (max-width: 50rem) { .ed-split { grid-template-columns: 1fr; } }
   .ed-pane { display: flex; flex-direction: column; min-width: 0; }
