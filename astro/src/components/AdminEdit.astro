@@ -1,0 +1,231 @@
+---
+// Admin-only in-browser note editor. Lists every note, loads its markdown
+// source (via the commit-note Edge Function — never via a public CDN, so edits
+// aren't masked by stale caches), shows a live KaTeX+theorem-box preview, and
+// commits changes straight to the repo. Saving requires the edit password (a
+// second factor on top of the admin login). After a save, GitHub Actions
+// rebuilds the site and the live page updates in ~1–2 minutes.
+import { getCollection } from 'astro:content';
+
+// Build the note picker at build time. `filePath` is repo-relative from the
+// astro/ project root (e.g. src/content/docs/notes/physics.md); the function
+// expects a path from the repo root, so we prefix astro/.
+const docs = await getCollection('docs');
+const notes = docs
+  .map((entry) => {
+    const fp = (entry as any).filePath as string | undefined;
+    const rel = fp ?? `src/content/docs/${entry.id}`;
+    return { path: `astro/${rel}`, title: entry.data.title || entry.id, id: entry.id };
+  })
+  .sort((a, b) => a.id.localeCompare(b.id));
+---
+
+<div class="note-editor">
+  <p id="ed-status">Loading…</p>
+
+  <div id="ed-denied" hidden>
+    <p>This page is for admins only. <a href="/account/">Go to your account</a> to sign in.</p>
+  </div>
+
+  <div id="ed-content" hidden>
+    <div class="ed-bar">
+      <label>
+        Note
+        <select id="ed-file">
+          <option value="">— choose a note —</option>
+          {notes.map((n) => <option value={n.path}>{n.title} — {n.id}</option>)}
+        </select>
+      </label>
+      <button type="button" id="ed-reload" disabled>Reload</button>
+    </div>
+
+    <div class="ed-split">
+      <div class="ed-pane">
+        <div class="ed-pane-head">Markdown source</div>
+        <textarea id="ed-src" spellcheck="false" placeholder="Choose a note above to start editing…" disabled></textarea>
+      </div>
+      <div class="ed-pane">
+        <div class="ed-pane-head">Live preview</div>
+        <div id="ed-preview" class="ed-preview sl-markdown-content"></div>
+      </div>
+    </div>
+
+    <div class="ed-bar ed-save-bar">
+      <input id="ed-msg" type="text" placeholder="Commit message (optional)" />
+      <input id="ed-pw" type="password" placeholder="Edit password" autocomplete="current-password" />
+      <button type="button" id="ed-save" disabled>Save &amp; publish</button>
+      <span id="ed-result" class="ed-result"></span>
+    </div>
+    <p class="ed-hint">Saving commits to GitHub; the live page refreshes after the ~1–2&nbsp;min rebuild.</p>
+  </div>
+</div>
+
+<script>
+  import { getSupabase, getRole } from '../lib/supabase';
+  import { marked } from 'marked';
+  import renderMathInElement from 'katex/contrib/auto-render';
+
+  const byId = (id: string) => document.getElementById(id)!;
+  const STATES = ['ed-status', 'ed-denied', 'ed-content'];
+  const show = (id: string) => STATES.forEach((s) => (byId(s).hidden = s !== id));
+  const sb = getSupabase();
+
+  const fileSel = byId('ed-file') as HTMLSelectElement;
+  const reloadBtn = byId('ed-reload') as HTMLButtonElement;
+  const srcEl = byId('ed-src') as HTMLTextAreaElement;
+  const previewEl = byId('ed-preview');
+  const msgEl = byId('ed-msg') as HTMLInputElement;
+  const pwEl = byId('ed-pw') as HTMLInputElement;
+  const saveBtn = byId('ed-save') as HTMLButtonElement;
+  const resultEl = byId('ed-result');
+
+  let loadedContent = ''; // last content fetched/saved, to detect "dirty"
+
+  // Strip YAML front matter so the preview shows the body (front matter still
+  // saves — we only hide it from the rendered preview).
+  function stripFrontmatter(md: string): string {
+    return md.replace(/^---\n[\s\S]*?\n---\n?/, '');
+  }
+
+  function renderPreview() {
+    const html = marked.parse(stripFrontmatter(srcEl.value), { async: false }) as string;
+    previewEl.innerHTML = html;
+    try {
+      renderMathInElement(previewEl, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+        ],
+        throwOnError: false,
+      });
+    } catch (e) {
+      console.warn('[editor] math render failed:', e);
+    }
+  }
+
+  function setResult(text: string, kind: 'ok' | 'err' | '') {
+    resultEl.textContent = text;
+    resultEl.className = 'ed-result' + (kind ? ` ed-${kind}` : '');
+  }
+
+  function refreshSaveState() {
+    const dirty = srcEl.value !== loadedContent;
+    saveBtn.disabled = !fileSel.value || !dirty || !pwEl.value;
+  }
+
+  // Call the Edge Function with the current admin session attached automatically.
+  async function callFn(body: Record<string, unknown>) {
+    const { data, error } = await sb!.functions.invoke('commit-note', { body });
+    if (error) {
+      // Surface the function's JSON error message when present.
+      let detail = error.message;
+      try { detail = (await (error as any).context?.json())?.error || detail; } catch {}
+      throw new Error(detail);
+    }
+    return data as any;
+  }
+
+  async function loadFile() {
+    const path = fileSel.value;
+    if (!path) return;
+    srcEl.disabled = true;
+    setResult('Loading…', '');
+    try {
+      const data = await callFn({ action: 'read', path });
+      loadedContent = data.content ?? '';
+      srcEl.value = loadedContent;
+      srcEl.disabled = false;
+      renderPreview();
+      setResult(data.exists ? '' : 'New file (does not exist yet).', '');
+      refreshSaveState();
+    } catch (err: any) {
+      setResult(`Load failed: ${err.message}`, 'err');
+    }
+  }
+
+  async function save() {
+    const path = fileSel.value;
+    if (!path) return;
+    saveBtn.disabled = true;
+    setResult('Saving…', '');
+    try {
+      const data = await callFn({
+        action: 'write',
+        path,
+        content: srcEl.value,
+        editPassword: pwEl.value,
+        message: msgEl.value || undefined,
+      });
+      loadedContent = srcEl.value;
+      const link = data.commit ? ` (committed)` : '';
+      setResult(`Saved${link}. Live in ~1–2 min.`, 'ok');
+      msgEl.value = '';
+      refreshSaveState();
+    } catch (err: any) {
+      setResult(`Save failed: ${err.message}`, 'err');
+      refreshSaveState();
+    }
+  }
+
+  // Debounced live preview.
+  let t: ReturnType<typeof setTimeout>;
+  srcEl.addEventListener('input', () => {
+    refreshSaveState();
+    clearTimeout(t);
+    t = setTimeout(renderPreview, 150);
+  });
+  fileSel.addEventListener('change', () => {
+    reloadBtn.disabled = !fileSel.value;
+    loadFile();
+  });
+  reloadBtn.addEventListener('click', loadFile);
+  pwEl.addEventListener('input', refreshSaveState);
+  saveBtn.addEventListener('click', save);
+  // Warn before navigating away with unsaved changes.
+  window.addEventListener('beforeunload', (e) => {
+    if (srcEl.value !== loadedContent) { e.preventDefault(); e.returnValue = ''; }
+  });
+
+  async function gate(session: any) {
+    if (!session?.user) { show('ed-denied'); return; }
+    let role: string | null = null;
+    for (let i = 0; i < 3; i++) {
+      try { role = await getRole(session.user); break; }
+      catch (err) {
+        if (i === 2) { console.error('[editor] role check failed:', err); show('ed-denied'); return; }
+        await new Promise((r) => setTimeout(r, 400));
+      }
+    }
+    if (role !== 'admin') { show('ed-denied'); return; }
+    show('ed-content');
+  }
+
+  if (!sb) {
+    show('ed-denied');
+  } else {
+    let settled = false;
+    sb.auth.onAuthStateChange((_event, session) => { settled = true; gate(session); });
+    setTimeout(() => { if (!settled) show('ed-denied'); }, 2500);
+  }
+</script>
+
+<style>
+  .ed-bar { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.75rem; }
+  .ed-bar label { display: flex; gap: 0.4rem; align-items: center; flex: 1; min-width: 0; }
+  .ed-bar select, .ed-bar input { padding: 0.35rem 0.5rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.3rem; background: var(--sl-color-black); color: var(--sl-color-white); }
+  .ed-bar select { flex: 1; min-width: 0; }
+  .ed-save-bar { margin-top: 0.75rem; }
+  .ed-save-bar input { flex: 1; min-width: 8rem; }
+  .ed-bar button { padding: 0.4rem 0.9rem; border: 1px solid var(--sl-color-accent); background: var(--sl-color-accent); color: var(--sl-color-white); border-radius: 0.3rem; cursor: pointer; }
+  .ed-bar button:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ed-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 50rem) { .ed-split { grid-template-columns: 1fr; } }
+  .ed-pane { display: flex; flex-direction: column; min-width: 0; }
+  .ed-pane-head { font-size: 0.8rem; font-weight: 600; color: var(--sl-color-gray-2); margin-bottom: 0.3rem; }
+  #ed-src { width: 100%; min-height: 60vh; resize: vertical; padding: 0.75rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem; background: var(--sl-color-black); color: var(--sl-color-white); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85rem; line-height: 1.5; tab-size: 2; }
+  .ed-preview { min-height: 60vh; max-height: 80vh; overflow: auto; padding: 0.75rem 1rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem; }
+  .ed-result { font-size: 0.85rem; }
+  .ed-ok { color: var(--sl-color-green-high, #4ade80); }
+  .ed-err { color: var(--sl-color-red-high, #f87171); }
+  .ed-hint { font-size: 0.8rem; color: var(--sl-color-gray-3); margin-top: 0.5rem; }
+</style>

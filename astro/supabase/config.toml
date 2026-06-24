@@ -4,3 +4,9 @@ project_id = "geqwjrxdbalaviusteeo"
 # secret header, not a user JWT, so JWT verification is disabled for it.
 [functions.feedback-to-linear]
 verify_jwt = false
+
+# The commit-note function (web note editor) does its own auth: it reads the
+# caller's id from their Supabase JWT and confirms the admin role, which the
+# platform's generic JWT check can't do. So verification is disabled here too.
+[functions.commit-note]
+verify_jwt = false

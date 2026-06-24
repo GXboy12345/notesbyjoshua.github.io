@@ -1,0 +1,17 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import AdminEdit from '../../components/AdminEdit.astro';
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Edit Notes',
+    prev: false,
+    next: false,
+    // Wider than the default content column so the side-by-side editor fits.
+    template: 'splash',
+    head: [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex' } }],
+  }}
+>
+  <AdminEdit />
+</StarlightPage>

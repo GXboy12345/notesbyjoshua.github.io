@@ -117,3 +117,85 @@ supabase functions serve feedback-to-linear --no-verify-jwt --env-file ./supabas
 
 with a `supabase/.env.local` holding `LINEAR_API_KEY`, `LINEAR_TEAM_ID`,
 `WEBHOOK_SECRET` (git-ignored — never commit real keys).
+
+---
+
+## `commit-note`
+
+Backs the in-browser note editor at **`/admin/edit`**. An admin picks a note,
+edits its markdown with a live preview, and clicks save — the function commits
+the file to GitHub, which triggers the normal Pages rebuild.
+
+```
+/admin/edit → this function → GitHub commit → deploy.yml → live site (~1–2 min)
+```
+
+**Security model (two factors):**
+
+1. The browser sends the admin's Supabase session JWT (attached automatically by
+   `supabase.functions.invoke`). The function verifies it and confirms the
+   user's `profiles.role = 'admin'` — same admin role used everywhere else.
+2. **Saving** additionally requires the secret **edit password** (`EDIT_PASSWORD`).
+   This is the "password system" — a second factor on top of the login, so a
+   stolen browser session still can't publish edits.
+
+The GitHub token **never** reaches the browser; it lives only as a function
+secret. The function also refuses any path outside `astro/src/content/docs/` or
+not ending in `.md`, so it can only ever touch note source.
+
+### 1. Create a GitHub token
+
+GitHub → Settings → Developer settings → **Fine-grained personal access tokens**
+→ *Generate new token*:
+
+- **Repository access:** Only select repositories → `notesbyjoshua/notesbyjoshua.github.io`
+- **Permissions:** Repository permissions → **Contents: Read and write**
+- **Expiration:** your choice (max 1 year — set a calendar reminder to rotate it;
+  when it expires, saving fails with a GitHub 401 and you just mint a new one).
+
+Copy the token (starts with `github_pat_...`).
+
+### 2. Pick an edit password
+
+Any passphrase you'll remember — this is what you'll type to save.
+
+### 3. Set the secrets and deploy
+
+```bash
+supabase secrets set \
+  GITHUB_TOKEN=github_pat_xxx \
+  EDIT_PASSWORD='your edit passphrase' \
+  GITHUB_REPO=notesbyjoshua/notesbyjoshua.github.io \
+  GITHUB_BRANCH=main
+supabase functions deploy commit-note --no-verify-jwt
+```
+
+`--no-verify-jwt` is required because the function does its own auth (it must
+read the user id from the JWT and check the admin role). `SUPABASE_URL` and
+`SUPABASE_SERVICE_ROLE_KEY` are injected automatically — don't set them.
+
+**Dashboard alternative:** Edge Functions → *Deploy a new function* → name it
+`commit-note` → paste `commit-note/index.ts` → disable "Verify JWT" → add the
+four secrets under *Manage secrets*.
+
+### 4. Use it
+
+Sign in as an admin, open **Account menu → Admin → Edit notes in the browser**
+(or go to `/admin/edit`). Pick a note, edit, enter the edit password, and save.
+The live page updates after the GitHub Actions rebuild (~1–2 min); watch progress
+under the repo's **Actions** tab.
+
+> Edits land directly on `main`, exactly like editing the file locally — so the
+> same notes linter (`scripts/check_notes.py`) runs in CI. If a save breaks the
+> linter, the **build fails** and the site keeps the last good version until you
+> fix it. Keep the preview in mind for math/theorem-box formatting.
+
+### Local development
+
+```bash
+supabase functions serve commit-note --no-verify-jwt --env-file ./supabase/.env.local
+```
+
+with `GITHUB_TOKEN`, `EDIT_PASSWORD`, `GITHUB_REPO`, `GITHUB_BRANCH` in
+`supabase/.env.local` (git-ignored). The dev site runs on `http://localhost:4321`,
+which is already in the function's CORS allow-list.
