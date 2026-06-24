@@ -94,6 +94,31 @@ FENCED_CODE = re.compile(r"(?ms)^[ \t]*(`{3,}|~{3,}).*?^[ \t]*\1[ \t]*$")
 INLINE_CODE = re.compile(r"`[^`\n]+`")
 FRONT_MATTER = re.compile(r"(?s)\A---\n.*?\n---")
 
+# Column separators in \begin{array}{ccc|c} / \begin{tabular}{…} preambles are
+# NOT absolute value — they must never be flagged or rewritten.
+ARRAY_COLSPEC = re.compile(r"\\begin\{(?:array|tabular)\}\s*\{[^{}]*\}")
+# A '|' that belongs to a sized/paired delimiter, not a bare absolute value.
+_BAR_PREFIX = re.compile(
+    r"\\(?:left|right|big|Big|bigg|Bigg|biggl|Biggl|biggr|Biggr)$")
+
+
+def abs_value_pipes(content: str) -> list[int]:
+    """Offsets within a math span of '|' used as absolute value.
+
+    Excludes: escaped '\\|', sized/paired bars (\\left| \\right| \\big| …), and
+    column separators inside \\begin{array}{…}/\\begin{tabular}{…} preambles.
+    """
+    masked = ARRAY_COLSPEC.sub(lambda m: m.group(0).replace("|", " "), content)
+    res: list[int] = []
+    for m in re.finditer(r"\|", masked):
+        before = content[:m.start()]
+        if before.endswith("\\"):           # \| (norm) or escaped pipe
+            continue
+        if _BAR_PREFIX.search(before):       # \left| … \right|, \big| …
+            continue
+        res.append(m.start())
+    return res
+
 
 # --------------------------------------------------------------------------- #
 # Checks
@@ -164,17 +189,12 @@ def _check_math_span(content: str, base: int, starts: list[int], out: list[Findi
                             "\\begin/\\end environment mismatch in math"))
 
     # Absolute value via raw pipes; the style guide wants \lvert … \rvert.
-    # Skip pipes that are part of \left| … \right|, \|, \mid, \lvert, etc.
-    for m in re.finditer(r"\|", content):
-        before = content[:m.start()]
-        if before.endswith("\\"):            # \| (norm) or escaped pipe
-            continue
-        if re.search(r"\\(left|right)$", before):  # \left| … \right|
-            continue
+    # (Column separators and \left|/\big| bars are not flagged — see
+    # abs_value_pipes. Auto-fixable with --fix.)
+    if abs_value_pipes(content):
         out.append(Finding(line, col, WARN, "W405",
-                            "raw '|' in math — use \\lvert … \\rvert "
-                            "(or \\left| … \\right|, \\mid for conditionals)"))
-        break  # one note per span is enough
+                            "raw '|' for absolute value — use \\lvert … \\rvert "
+                            "(\\left|…\\right| for tall bars); fixable with --fix"))
 
 
 def check_math(text: str, starts: list[int], out: list[Finding]) -> None:
@@ -336,6 +356,38 @@ def fix_text(text: str) -> tuple[str, int]:
     # … and before any closing tag.
     text, c = re.subn(r"([^\n])\n(</div\s*>)", r"\1\n\n\2", text)
     edits += c
+
+    # W405: absolute-value '|…|' → \lvert … \rvert, inside '$$' math spans only.
+    # Genuine bars are paired left-to-right (open→\lvert, close→\rvert). A span
+    # with an odd count of genuine bars is left untouched (ambiguous). Column
+    # separators, table pipes, and \left|/\big| bars are never touched.
+    prot = _protected_ranges(text)
+    dollars = [m.start() for m in re.finditer(r"\$\$", text) if not protected(m.start())]
+    if len(dollars) >= 2:
+        pieces: list[str] = []
+        cur = 0
+        for k in range(0, len(dollars) - 1, 2):
+            open_pos, close_pos = dollars[k], dollars[k + 1]
+            pieces.append(text[cur:open_pos + 2])      # text + opening '$$'
+            span = text[open_pos + 2:close_pos]
+            pipes = abs_value_pipes(span)
+            if pipes and len(pipes) % 2 == 0:
+                buf: list[str] = []
+                last = 0
+                for idx, p in enumerate(pipes):
+                    buf.append(span[last:p])
+                    delim = "\\lvert" if idx % 2 == 0 else "\\rvert"
+                    nxt = span[p + 1] if p + 1 < len(span) else ""
+                    # A trailing letter would merge into the command name.
+                    buf.append(delim + " " if nxt.isalpha() else delim)
+                    last = p + 1
+                buf.append(span[last:])
+                span = "".join(buf)
+                edits += len(pipes) // 2
+            pieces.append(span)
+            cur = close_pos                            # next slice starts at closing '$$'
+        pieces.append(text[cur:])
+        text = "".join(pieces)
 
     return (text, edits) if text != before else (before, 0)
 

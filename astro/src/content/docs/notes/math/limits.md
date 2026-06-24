@@ -239,7 +239,7 @@ $$
 
 **Example.** Show that $$\displaystyle\lim_{x\to0}x\sin\frac{1}{x}=0.$$ 
 
-The sine factor is bounded by $$-1\le\sin\frac{1}{x}\le1$$ for all nonzero $$x$$. Multiply through by $$|x|$$ to obtain
+The sine factor is bounded by $$-1\le\sin\frac{1}{x}\le1$$ for all nonzero $$x$$. Multiply through by $$\lvert x\rvert$$ to obtain
 
 $$
 -\lvert x\rvert \le x\sin\frac{1}{x} \le \lvert x\rvert.

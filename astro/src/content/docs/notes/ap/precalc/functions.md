@@ -119,7 +119,7 @@ $$
 From the domain, $$x\le -4$$ or $$x\ge 0$$, so
 
 $$
-|x+2|\ge 2.
+\lvert x+2\rvert\ge 2.
 $$
 
 That means
@@ -409,7 +409,7 @@ The input changes happen in the opposite direction from how they look. For examp
 For $$f(x)= \lvert x \rvert$$, the vertex form
 
 $$
-y=a|x-h|+k
+y=a\lvert x-h\rvert+k
 $$
 
 has vertex $$(h,k)$$.
@@ -1741,7 +1741,7 @@ $$
 For $$n=0$$, this says $$f(0)=0$$. For negative $$n$$, use part (A):
 
 $$
-f(nx)=f(-(|n|x))=-f(|n|x)=-|n|f(x)=nf(x).
+f(nx)=f(-(\lvert n\rvert x))=-f(\lvert n\rvert x)=-\lvert n\rvert f(x)=nf(x).
 $$
 
 Therefore

@@ -780,7 +780,7 @@ $$
 The distance to the directrix $$x=4$$ is
 
 $$
-d(P,\ell)=|x-4|.
+d(P,\ell)=\lvert x-4\rvert.
 $$
 
 For points on the side of the directrix containing the focus, this is $$4-x$$. Since $$e=\frac12$$,

@@ -43,7 +43,7 @@ The rule is the same whether you multiply or divide. The practical takeaway: **t
 A power multiplies the relative uncertainty by the exponent. For $$f=x^n$$ (where $$n$$ can be negative or fractional):
 
 $$
-\frac{\delta f}{f}=|n|\,\frac{\delta x}{x}.
+\frac{\delta f}{f}=\lvert n\rvert\,\frac{\delta x}{x}.
 $$
 
 So squaring a quantity *doubles* its relative uncertainty, while a square root *halves* it. For a combination like $$f=\dfrac{x^a y^b}{z^c}$$, the relative uncertainties add with their exponents as weights:
@@ -101,8 +101,8 @@ So $$f=\sin30^\circ=0.500\pm0.008$$. The derivative-based method handles *any* f
 A quick decision tree for picking the right propagation rule (default to quadrature unless told otherwise):
 
 1. **Adding or subtracting measured quantities** ($$f=x\pm y$$): combine **absolute** uncertainties, $$\delta f=\sqrt{(\delta x)^2+(\delta y)^2}$$ (or $$\delta f=\delta x+\delta y$$ worst case). Subtraction never subtracts errors — watch for two nearly-equal numbers blowing up the relative error.
-2. **Multiplying, dividing, or taking powers** ($$f=x^a y^b/z^c$$): combine **relative** uncertainties weighted by exponents, $$\dfrac{\delta f}{f}=\sqrt{\left(a\dfrac{\delta x}{x}\right)^2+\left(b\dfrac{\delta y}{y}\right)^2+\left(c\dfrac{\delta z}{z}\right)^2}$$. For a single power $$f=x^n$$, $$\dfrac{\delta f}{f}=|n|\dfrac{\delta x}{x}$$.
-3. **Any other function** (trig, log, exp, mixed): drop to the **master formula** $$\delta f=\sqrt{\sum_i\left(\dfrac{\partial f}{\partial x_i}\,\delta x_i\right)^2}$$; for one variable, $$\delta f=|f'(x)|\,\delta x$$. Convert angles to radians before differentiating.
+2. **Multiplying, dividing, or taking powers** ($$f=x^a y^b/z^c$$): combine **relative** uncertainties weighted by exponents, $$\dfrac{\delta f}{f}=\sqrt{\left(a\dfrac{\delta x}{x}\right)^2+\left(b\dfrac{\delta y}{y}\right)^2+\left(c\dfrac{\delta z}{z}\right)^2}$$. For a single power $$f=x^n$$, $$\dfrac{\delta f}{f}=\lvert n\rvert\dfrac{\delta x}{x}$$.
+3. **Any other function** (trig, log, exp, mixed): drop to the **master formula** $$\delta f=\sqrt{\sum_i\left(\dfrac{\partial f}{\partial x_i}\,\delta x_i\right)^2}$$; for one variable, $$\delta f=\lvert f'(x)\rvert\,\delta x$$. Convert angles to radians before differentiating.
 4. **Products and powers, but the algebra is messy:** take logs first — $$\ln f=a\ln x+b\ln y-c\ln z$$ differentiates straight to the weighted relative-error sum.
 5. **One error source dominates** (e.g. an exponent of 2 amplifies it): don't waste effort on the small terms — quadrature suppresses them anyway, since the largest contribution sets the scale. Improve the dominant measurement instead.
 6. **Worst-case vs. quadrature:** use **quadrature** for independent random errors (the lab default), **linear sum** only when a problem asks for the worst case or the errors are correlated.

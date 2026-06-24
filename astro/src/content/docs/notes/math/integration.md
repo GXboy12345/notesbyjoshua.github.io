@@ -405,7 +405,7 @@ The definite integral gives signed area:
 Geometric area is always nonnegative, so it may require
 
 $$
-\int_a^b |f(x)|\,dx
+\int_a^b \lvert f(x)\rvert\,dx
 $$
 
 or splitting at zeros of $$f$$.
@@ -472,7 +472,7 @@ This is a chain-rule version of the Fundamental Theorem. The derivative of each 
 Basic antiderivatives come from reversing derivative rules. A good first scan:
 
 - powers use the reverse power rule,
-- $$1/x$$ gives $$\ln|x|$$,
+- $$1/x$$ gives $$\ln\lvert x\rvert$$,
 - exponentials stay exponential,
 - trig functions reverse according to derivative pairs,
 - chain-rule patterns suggest $$u$$-substitution.

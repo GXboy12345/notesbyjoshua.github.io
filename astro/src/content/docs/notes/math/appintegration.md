@@ -458,7 +458,7 @@ $$
 $$
 
 $$
-\text{total distance}=\int_a^b |v(t)|\,dt.
+\text{total distance}=\int_a^b \lvert v(t)\rvert\,dt.
 $$
 
 Displacement keeps direction. Total distance counts all movement as positive. Split total-distance integrals at times when velocity changes sign.

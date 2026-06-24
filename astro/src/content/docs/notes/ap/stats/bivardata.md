@@ -54,7 +54,7 @@ $$
 -1 \le r \le 1
 $$
 
-The sign of $$r$$ matches the direction of the linear trend: $$r > 0$$ for positive association, $$r < 0$$ for negative association. The magnitude $$|r|$$ relates to strength for linear association only.
+The sign of $$r$$ matches the direction of the linear trend: $$r > 0$$ for positive association, $$r < 0$$ for negative association. The magnitude $$\lvert r\rvert$$ relates to strength for linear association only.
 
 ### Formula
 
@@ -66,11 +66,11 @@ $$
 
 Intuitively, $$r$$ compares covariation (do $$x$$ and $$y$$ tend to be on the same side of their means together?) to how spread out $$x$$ and $$y$$ are individually.
 
-### Interpreting $$|r|$$
+### Interpreting $$\lvert r\rvert$$
 
-Values with $$|r| = 1$$ mean all points fall exactly on a single straight line (perfect linear fit). As $$|r|$$ moves toward 0, the linear trend weakens.
+Values with $$\lvert r\rvert = 1$$ mean all points fall exactly on a single straight line (perfect linear fit). As $$\lvert r\rvert$$ moves toward 0, the linear trend weakens.
 
-Textbooks sometimes give rough cutoffs such as $$|r| < 0.1$$ as very weak, 0.1 to 0.5 as weak-to-moderate, 0.5 to 0.85 as strong, and |r| > 0.85 as very strong. Treat these as rules of thumb, not laws: context, sample size, and outliers matter. Sometimes a $$|r|$$ value of 0.4 can be classified as strong, and sometimes a $$|r|$$ value of 0.8 may be classified as weak. Correlation is not causation; confounding and lurking variables can produce strong $$|r|$$ without a direct cause-and-effect link.
+Textbooks sometimes give rough cutoffs such as $$\lvert r\rvert < 0.1$$ as very weak, 0.1 to 0.5 as weak-to-moderate, 0.5 to 0.85 as strong, and |r| > 0.85 as very strong. Treat these as rules of thumb, not laws: context, sample size, and outliers matter. Sometimes a $$\lvert r\rvert$$ value of 0.4 can be classified as strong, and sometimes a $$\lvert r\rvert$$ value of 0.8 may be classified as weak. Correlation is not causation; confounding and lurking variables can produce strong $$\lvert r\rvert$$ without a direct cause-and-effect link.
 
 Correlation is unitless and unchanged by linear rescaling (multiplying either variable by a positive constant, or adding a constant), which makes it handy for comparing relationships measured in different units.
 

@@ -267,7 +267,7 @@ $$
 V = \frac{\sigma}{2\varepsilon_0}\left(\sqrt{x^2 + R^2} - x\right).
 $$
 
-We took $$x > 0$$; for a point on the other side replace $$x$$ with $$|x|$$. The disk's potential is built entirely from scalar ring potentials—no components ever appear.
+We took $$x > 0$$; for a point on the other side replace $$x$$ with $$\lvert x\rvert$$. The disk's potential is built entirely from scalar ring potentials—no components ever appear.
 
 </div>
 
@@ -399,13 +399,13 @@ An **equipotential** is a surface (or curve in 2D diagrams) on which $$V$$ is co
 
 <img class="note-img note-img--w480" src="/assets/APs/AP%20Physics%20C%20EM/electricpot/equipotentiallines.png" alt="equipotential lines" loading="lazy" decoding="async" />
 
-A clean special case is the **uniform field between two large parallel plates**. The plates themselves are equipotentials, and intermediate equipotentials are evenly spaced planes parallel to them. With the field magnitude $$E$$ and plate separation $$d$$, integrating $$\Delta V = -\int \vec{E}\cdot d\vec{r}$$ along the field direction gives the simple magnitude relation $$|\Delta V| = Ed$$.
+A clean special case is the **uniform field between two large parallel plates**. The plates themselves are equipotentials, and intermediate equipotentials are evenly spaced planes parallel to them. With the field magnitude $$E$$ and plate separation $$d$$, integrating $$\Delta V = -\int \vec{E}\cdot d\vec{r}$$ along the field direction gives the simple magnitude relation $$\lvert\Delta V\rvert = Ed$$.
 
 <div class="theorem-box">
 
 **Example.** Two large parallel plates are separated by $$d = 2.0\ \text{cm} = 0.020\ \text{m}$$ and connected to a battery so the potential difference between them is $$\Delta V = 120\ \text{V}$$. Find the magnitude of the uniform field between the plates, and the work the field does on a proton ($$q = +e$$) that travels from the high-potential plate to the low-potential plate.
 
-Between large plates the field is uniform, so $$|\Delta V| = Ed$$ gives
+Between large plates the field is uniform, so $$\lvert\Delta V\rvert = Ed$$ gives
 
 $$
 E = \frac{\lvert \Delta V \rvert}{d} = \frac{120\ \text{V}}{0.020\ \text{m}} = 6.0\times10^{3}\ \text{V/m}.

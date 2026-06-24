@@ -56,7 +56,7 @@ Speed increasing:
 
 <div class="theorem-box">
 
-**Why same signs mean speed increases.** Speed is $$|v(t)|$$, so it measures how far velocity is from $$0$$. If $$v>0$$ and $$a=v'>0$$, then velocity is positive and getting larger, so $$|v|$$ increases. If $$v<0$$ and $$a<0$$, then velocity is negative and becoming more negative, so it is moving farther from $$0$$, and $$|v|$$ also increases.
+**Why same signs mean speed increases.** Speed is $$\lvert v(t)\rvert$$, so it measures how far velocity is from $$0$$. If $$v>0$$ and $$a=v'>0$$, then velocity is positive and getting larger, so $$\lvert v\rvert$$ increases. If $$v<0$$ and $$a<0$$, then velocity is negative and becoming more negative, so it is moving farther from $$0$$, and $$\lvert v\rvert$$ also increases.
 
 When velocity and acceleration have opposite signs, velocity moves closer to $$0$$, so speed decreases.
 
@@ -368,7 +368,7 @@ $$
 includes direction. Speed:
 
 $$
-|v(t)|
+\lvert v(t)\rvert
 $$
 
 does not include direction.

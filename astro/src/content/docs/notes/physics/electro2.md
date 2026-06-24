@@ -32,7 +32,7 @@ is new, and its cross-product structure controls everything. Three consequences 
 **It is perpendicular to both $$\vec v$$ and $$\vec B$$.** The direction is set by the right-hand rule: point the fingers along $$\vec v$$, curl toward $$\vec B$$, and the thumb gives $$\vec v\times\vec B$$ — then flip the result if $$q<0$$. The magnitude is
 
 $$
-F_B=|q|\,vB\sin\theta,
+F_B=\lvert q\rvert\,vB\sin\theta,
 $$
 
 where $$\theta$$ is the angle between $$\vec v$$ and $$\vec B$$; the force vanishes when the charge moves parallel to the field and is largest when it moves across it.
@@ -98,28 +98,28 @@ This is exactly $$I\vec L\times\vec B$$ with $$\vec L$$ the straight chord of le
 
 ### Circular and helical motion in a uniform field
 
-Send a charge into a uniform $$\vec B$$ with velocity perpendicular to the field. The force $$q\vec v\times\vec B$$ has constant magnitude $$|q|vB$$ (speed is constant, since $$\vec B$$ does no work) and always points perpendicular to the motion — exactly the condition for uniform circular motion. Setting the magnetic force equal to the centripetal requirement,
+Send a charge into a uniform $$\vec B$$ with velocity perpendicular to the field. The force $$q\vec v\times\vec B$$ has constant magnitude $$\lvert q\rvert vB$$ (speed is constant, since $$\vec B$$ does no work) and always points perpendicular to the motion — exactly the condition for uniform circular motion. Setting the magnetic force equal to the centripetal requirement,
 
 $$
-|q|vB=\frac{mv^2}{r}
+\lvert q\rvert vB=\frac{mv^2}{r}
 \quad\Longrightarrow\quad
-r=\frac{mv}{|q|B}=\frac{p}{|q|B}.
+r=\frac{mv}{\lvert q\rvert B}=\frac{p}{\lvert q\rvert B}.
 $$
 
 The radius grows with momentum and shrinks with field strength. The angular frequency of the orbit, the **cyclotron frequency**, is
 
 $$
-\omega_c=\frac{v}{r}=\frac{|q|B}{m},
+\omega_c=\frac{v}{r}=\frac{\lvert q\rvert B}{m},
 \qquad
-T=\frac{2\pi}{\omega_c}=\frac{2\pi m}{|q|B}.
+T=\frac{2\pi}{\omega_c}=\frac{2\pi m}{\lvert q\rvert B}.
 $$
 
 The remarkable feature is that $$\omega_c$$ and $$T$$ **do not depend on the speed or the radius** — a fast particle traces a big circle and a slow one a small circle, but both complete a revolution in the same time. This speed-independence is precisely what makes the cyclotron work.
 
-If the velocity also has a component $$v_\parallel$$ along $$\vec B$$, the field exerts no force on that component ($$\vec v_\parallel\times\vec B=0$$), so it coasts unchanged while the perpendicular part $$v_\perp$$ circles. The superposition is a **helix**: a circle of radius $$r=mv_\perp/(|q|B)$$ drifting steadily along the field lines. The distance advanced per revolution, the **pitch**, is
+If the velocity also has a component $$v_\parallel$$ along $$\vec B$$, the field exerts no force on that component ($$\vec v_\parallel\times\vec B=0$$), so it coasts unchanged while the perpendicular part $$v_\perp$$ circles. The superposition is a **helix**: a circle of radius $$r=mv_\perp/(\lvert q\rvert B)$$ drifting steadily along the field lines. The distance advanced per revolution, the **pitch**, is
 
 $$
-p_{\text{pitch}}=v_\parallel T=\frac{2\pi m\,v_\parallel}{|q|B}.
+p_{\text{pitch}}=v_\parallel T=\frac{2\pi m\,v_\parallel}{\lvert q\rvert B}.
 $$
 
 This helical guiding of charges along field lines is why charged particles from the Sun spiral down Earth's field lines toward the poles, producing the aurorae.
@@ -1101,10 +1101,10 @@ An inductor's reactance grows with frequency (it chokes off fast currents), whil
 For a series RLC circuit the impedances add, so $$Z=R+i(X_L-X_C)$$, with magnitude and phase
 
 $$
-|Z|=\sqrt{R^2+(X_L-X_C)^2},\qquad \tan\phi=\frac{X_L-X_C}{R}.
+\lvert Z\rvert=\sqrt{R^2+(X_L-X_C)^2},\qquad \tan\phi=\frac{X_L-X_C}{R}.
 $$
 
-The current amplitude is $$I_0=V_0/|Z|$$, and $$\phi$$ is the angle by which the source voltage leads the current. The **phasor picture** makes this geometric: draw $$R$$ along the real axis, $$X_L$$ up, $$X_C$$ down; the impedance is their vector sum, and $$\phi$$ is the angle it makes with the resistive axis. Adding voltages of the same frequency is just adding these phasors tip-to-tail, exactly the superposition trick from Math Tricks.
+The current amplitude is $$I_0=V_0/\lvert Z\rvert$$, and $$\phi$$ is the angle by which the source voltage leads the current. The **phasor picture** makes this geometric: draw $$R$$ along the real axis, $$X_L$$ up, $$X_C$$ down; the impedance is their vector sum, and $$\phi$$ is the angle it makes with the resistive axis. Adding voltages of the same frequency is just adding these phasors tip-to-tail, exactly the superposition trick from Math Tricks.
 
 ### Series RLC resonance
 
@@ -1116,7 +1116,7 @@ $$
 
 the same as the free LC frequency. At resonance the impedance is purely resistive, $$Z=R$$, the current peaks at $$V_0/R$$, and the source voltage and current are in phase ($$\phi=0$$). Off resonance the inductive and capacitive voltages partly cancel, and far from it one reactance dominates.
 
-How sharply the current peaks is again set by the quality factor. Defining the **bandwidth** $$\Delta\omega$$ as the width between the two frequencies where the average power drops to half its peak ($$|Z|^2=2R^2$$),
+How sharply the current peaks is again set by the quality factor. Defining the **bandwidth** $$\Delta\omega$$ as the width between the two frequencies where the average power drops to half its peak ($$\lvert Z\rvert^2=2R^2$$),
 
 $$
 \Delta\omega=\frac{R}{L},\qquad Q_{\text{factor}}=\frac{\omega_0}{\Delta\omega}=\frac{\omega_0 L}{R}.
@@ -1137,13 +1137,13 @@ $$
 Since $$X_C>X_L$$ the circuit is net capacitive. The impedance magnitude is
 
 $$
-|Z|=\sqrt{R^2+(X_L-X_C)^2}=\sqrt{20^2+(100-250)^2}=\sqrt{400+22500}=\sqrt{22900}\approx 151\ \Omega.
+\lvert Z\rvert=\sqrt{R^2+(X_L-X_C)^2}=\sqrt{20^2+(100-250)^2}=\sqrt{400+22500}=\sqrt{22900}\approx 151\ \Omega.
 $$
 
 The current amplitude and phase are
 
 $$
-I_0=\frac{V_0}{|Z|}=\frac{100}{151}\approx 0.66\text{ A},\qquad \tan\phi=\frac{X_L-X_C}{R}=\frac{-150}{20}=-7.5\ \Longrightarrow\ \phi\approx -82^\circ.
+I_0=\frac{V_0}{\lvert Z\rvert}=\frac{100}{151}\approx 0.66\text{ A},\qquad \tan\phi=\frac{X_L-X_C}{R}=\frac{-150}{20}=-7.5\ \Longrightarrow\ \phi\approx -82^\circ.
 $$
 
 The negative phase means the current *leads* the voltage (capacitive). Finally the resonant frequency is
@@ -1166,7 +1166,7 @@ $$
 
 where the **root-mean-square** values are $$V_{\text{rms}}=V_0/\sqrt2$$ and $$I_{\text{rms}}=I_0/\sqrt2$$. The factor $$\cos\phi$$ is the **power factor**: only the in-phase component of the current carries real, time-averaged power.
 
-This is why **reactive elements dissipate no average power**. For a pure inductor or capacitor $$\phi=\pm90^\circ$$, so $$\cos\phi=0$$: over each cycle they absorb energy for a quarter period and hand all of it back the next quarter, with zero net transfer. All the average power is dissipated in the resistance, and indeed $$\bar P=I_{\text{rms}}^2R$$ since $$\cos\phi=R/|Z|$$. A low power factor (a strongly reactive load) means large currents flow while delivering little real power — wasteful, because those currents still heat the transmission-line resistance, which is why power companies penalize it.
+This is why **reactive elements dissipate no average power**. For a pure inductor or capacitor $$\phi=\pm90^\circ$$, so $$\cos\phi=0$$: over each cycle they absorb energy for a quarter period and hand all of it back the next quarter, with zero net transfer. All the average power is dissipated in the resistance, and indeed $$\bar P=I_{\text{rms}}^2R$$ since $$\cos\phi=R/\lvert Z\rvert$$. A low power factor (a strongly reactive load) means large currents flow while delivering little real power — wasteful, because those currents still heat the transmission-line resistance, which is why power companies penalize it.
 
 <div class="theorem-box">
 

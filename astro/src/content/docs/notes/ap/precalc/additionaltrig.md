@@ -538,37 +538,37 @@ $$
 Using the magnitude formula,
 
 $$
-|\mathbf A-\mathbf B|^2=(x_1-x_2)^2+(y_1-y_2)^2.
+\lvert\mathbf A-\mathbf B\rvert^2=(x_1-x_2)^2+(y_1-y_2)^2.
 $$
 
 Expanding gives
 
 $$
-|\mathbf A-\mathbf B|^2=x_1^2+y_1^2+x_2^2+y_2^2-2(x_1x_2+y_1y_2).
+\lvert\mathbf A-\mathbf B\rvert^2=x_1^2+y_1^2+x_2^2+y_2^2-2(x_1x_2+y_1y_2).
 $$
 
 Since
 
 $$
-|\mathbf A|^2=x_1^2+y_1^2,\qquad |\mathbf B|^2=x_2^2+y_2^2,
+\lvert\mathbf A\rvert^2=x_1^2+y_1^2,\qquad \lvert\mathbf B\rvert^2=x_2^2+y_2^2,
 $$
 
 this becomes
 
 $$
-|\mathbf A-\mathbf B|^2=|\mathbf A|^2+|\mathbf B|^2-2(\mathbf A\cdot \mathbf B).
+\lvert\mathbf A-\mathbf B\rvert^2=\lvert\mathbf A\rvert^2+\lvert\mathbf B\rvert^2-2(\mathbf A\cdot \mathbf B).
 $$
 
 Now use the Law of Cosines on the triangle formed by $$\mathbf A$$, $$\mathbf B$$, and $$\mathbf A-\mathbf B$$:
 
 $$
-|\mathbf A-\mathbf B|^2=|\mathbf A|^2+|\mathbf B|^2-2|\mathbf A||\mathbf B|\cos\theta.
+\lvert\mathbf A-\mathbf B\rvert^2=\lvert\mathbf A\rvert^2+\lvert\mathbf B\rvert^2-2\lvert\mathbf A\rvert\lvert\mathbf B\rvert\cos\theta.
 $$
 
 Comparing the two equations,
 
 $$
-\mathbf A\cdot \mathbf B=|\mathbf A||\mathbf B|\cos\theta.
+\mathbf A\cdot \mathbf B=\lvert\mathbf A\rvert\lvert\mathbf B\rvert\cos\theta.
 $$
 
 </div>
@@ -626,7 +626,7 @@ $$
 Also,
 
 $$
-|\mathbf A|=5,\qquad |\mathbf B|=5.
+\lvert\mathbf A\rvert=5,\qquad \lvert\mathbf B\rvert=5.
 $$
 
 So
@@ -1425,7 +1425,7 @@ $$
 The magnitude, or **modulus**, of $$z$$ is
 
 $$
-|z|=\sqrt{a^2+b^2}.
+\lvert z\rvert=\sqrt{a^2+b^2}.
 $$
 
 This is the distance from the origin to the point $$(a,b)$$.
@@ -1445,7 +1445,7 @@ $$
 Multiplying a complex number by its conjugate gives
 
 $$
-z\overline z=(a+bi)(a-bi)=a^2+b^2=|z|^2.
+z\overline z=(a+bi)(a-bi)=a^2+b^2=\lvert z\rvert^2.
 $$
 
 ### Operations with complex numbers
@@ -1523,7 +1523,7 @@ Since $$a+bi$$ corresponds to the point $$(a,b)$$, a complex number can also be 
 Let
 
 $$
-r=|z|=\sqrt{a^2+b^2}.
+r=\lvert z\rvert=\sqrt{a^2+b^2}.
 $$
 
 Let $$\theta$$ be the angle the point makes with the positive real axis. Then
