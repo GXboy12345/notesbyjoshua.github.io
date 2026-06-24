@@ -304,33 +304,13 @@
 	color: #bbf7d0;
 }
 
-/* Collapsible course sections: the <summary> is the clickable header row,
-   the caret rotates when open, and the native disclosure triangle is hidden. */
+/* Collapsible course sections: the <summary> is the clickable header row.
+   Starlight supplies the disclosure caret (its built-in summary::before). */
 .np-collapse > summary {
 	display: flex;
-	align-items: baseline;
-	gap: 0.5rem;
+	align-items: center;
+	gap: 0.4rem;
 	cursor: pointer;
-	list-style: none;
-}
-
-.np-collapse > summary::-webkit-details-marker {
-	display: none;
-}
-
-.np-caret {
-	flex: none;
-	align-self: center;
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 0.32rem 0 0.32rem 0.5rem;
-	border-color: transparent transparent transparent var(--sl-color-gray-3);
-	transition: transform 0.15s ease;
-}
-
-.np-collapse[open] > summary .np-caret {
-	transform: rotate(90deg);
 }
 
 .np-section h2 {
@@ -405,34 +385,15 @@
 	padding: 0.25rem 0.75rem;
 }
 
+/* Starlight's built-in summary caret sits at the left; the section name reads
+   left-aligned beside it and the count is pushed to the far right. */
 .dash-section summary {
 	display: flex;
 	align-items: center;
-	gap: 0.6rem;
+	gap: 0.4rem;
 	padding: 0.5rem 0;
 	cursor: pointer;
 	font-weight: 600;
-	list-style: none;
-}
-
-.dash-section summary::-webkit-details-marker {
-	display: none;
-}
-
-/* Caret sits at the left; the section name reads left-aligned beside it and the
-   count is pushed to the far right. */
-.dash-caret {
-	flex: none;
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 0.32rem 0 0.32rem 0.5rem;
-	border-color: transparent transparent transparent var(--sl-color-gray-3);
-	transition: transform 0.15s ease;
-}
-
-.dash-section[open] > summary .dash-caret {
-	transform: rotate(90deg);
 }
 
 .dash-section-name {
@@ -540,4 +501,166 @@
 
 :root[data-theme='dark'] .header-account-menu .ha-signout {
 	color: #f87171;
+}
+
+/* "% read" line at the top of the account menu. */
+.ha-stats {
+	display: block;
+	padding: 0.1rem 0.75rem 0.4rem;
+	font-size: var(--sl-text-xs);
+	color: var(--sl-color-gray-3);
+	border-bottom: 1px solid var(--sl-color-gray-5);
+	margin-bottom: 0.25rem;
+}
+
+/* --- Progress bars (reading dashboard) --- */
+.dash-bar {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 0.5rem;
+	margin: 0.35rem 0 1.25rem;
+	overflow: hidden;
+	border-radius: 999px;
+	background: var(--sl-color-gray-6);
+}
+
+.dash-bar--mini {
+	width: 5rem;
+	height: 0.4rem;
+	margin: 0;
+	flex: none;
+}
+
+.dash-bar__fill {
+	display: block;
+	height: 100%;
+	min-width: 0;
+	border-radius: 999px;
+	background: linear-gradient(90deg, #1d9a72, #46b37f);
+	transition: width 0.2s ease;
+}
+
+/* --- Bookmarks (dashboard) --- */
+.dash-bm-item {
+	justify-content: space-between;
+}
+
+.dash-bm-remove {
+	flex: none;
+	border: none;
+	background: none;
+	color: var(--sl-color-gray-3);
+	font-size: 1.1rem;
+	line-height: 1;
+	cursor: pointer;
+	padding: 0 0.25rem;
+}
+
+.dash-bm-remove:hover {
+	color: #dc2626;
+}
+
+.dash-bm-empty {
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-3);
+	margin: 0.25rem 0;
+}
+
+/* --- Bookmark toggle next to a note title --- */
+.page-title-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.bookmark-btn {
+	flex: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	padding: 0.3rem 0.7rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 999px;
+	background: var(--sl-color-bg);
+	color: var(--sl-color-text-accent);
+	font-size: var(--sl-text-sm);
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.bookmark-btn:hover {
+	background: var(--sl-color-gray-6);
+}
+
+.bookmark-btn.is-on {
+	border-color: var(--sl-color-text-accent);
+	color: var(--sl-color-text-accent);
+}
+
+.bookmark-star {
+	font-size: 1rem;
+	line-height: 1;
+}
+
+.bookmark-btn[disabled] {
+	opacity: 0.6;
+	cursor: default;
+}
+
+/* --- Account: identity header + per-subject breakdown --- */
+.acct-id {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 1rem;
+}
+
+.acct-avatar {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.acct-name {
+	display: block;
+	font-size: 1.15rem;
+}
+
+.acct-since {
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-3);
+}
+
+.acct-breakdown {
+	margin: 0.75rem 0 1.25rem;
+}
+
+.acct-subj {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 0.2rem 0;
+	font-size: var(--sl-text-sm);
+}
+
+.acct-subj-name {
+	flex: 1;
+}
+
+.acct-subj-bar {
+	width: 6rem;
+	height: 0.6rem;
+	flex: none;
+}
+
+.acct-subj-count {
+	flex: none;
+	width: 4rem;
+	text-align: right;
+	color: var(--sl-color-gray-3);
+	white-space: nowrap;
 }

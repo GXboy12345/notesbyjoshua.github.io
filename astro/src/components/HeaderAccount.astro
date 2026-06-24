@@ -6,9 +6,17 @@
 // applied synchronously on load to avoid a flash of "Sign in"/wrong name on each
 // page navigation.
 import Default from '@astrojs/starlight/components/SocialIcons.astro';
+import notesSidebar from './../sidebar.json';
+
+// Total trackable notes (excludes "<Subject> Home" landing pages), used for the
+// "% read" line in the menu.
+type Item = { label?: string; link?: string; items?: Item[] };
+const countLeaves = (items: Item[]): number =>
+  items.reduce((n, it) => n + (it.items ? countLeaves(it.items) : it.link && !it.label?.endsWith(' Home') ? 1 : 0), 0);
+const totalNotes = countLeaves(notesSidebar as Item[]);
 ---
 
-<div class="header-account">
+<div class="header-account" data-total={totalNotes}>
   <a class="header-account-link ha-signin" href="/account/" hidden>Sign in</a>
 
   <div class="header-account-menu-wrap ha-wrap" hidden>
@@ -17,7 +25,10 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
       <span class="ha-name">Account</span>
     </button>
     <div class="header-account-menu ha-menu" hidden>
+      <span class="ha-stats" hidden></span>
       <a href="/dashboard/">My Dashboard</a>
+      <a href="/practiceproblems/practice/">Practice Problems</a>
+      <a href="/feedback/">Feedback</a>
       <a href="/account/">Account</a>
       <a class="ha-admin" href="/admin/" hidden>Admin</a>
       <button type="button" class="ha-signout">Sign out</button>
@@ -30,10 +41,11 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
   import { getSupabase, getProfile } from '../lib/supabase';
 
   const CACHE_KEY = 'notes-hdr';
-  type State = { in: boolean; name?: string; admin?: boolean };
+  type State = { in: boolean; name?: string; admin?: boolean; pct?: number };
 
   const sb = getSupabase();
   const roots = Array.from(document.querySelectorAll<HTMLElement>('.header-account'));
+  const total = Number(roots[0]?.dataset.total || 0);
 
   function wire(root: HTMLElement) {
     const signin = root.querySelector<HTMLElement>('.ha-signin')!;
@@ -41,6 +53,7 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
     const toggle = root.querySelector<HTMLElement>('.ha-toggle')!;
     const menu = root.querySelector<HTMLElement>('.ha-menu')!;
     const nameEl = root.querySelector<HTMLElement>('.ha-name')!;
+    const statsEl = root.querySelector<HTMLElement>('.ha-stats')!;
     const adminEl = root.querySelector<HTMLElement>('.ha-admin')!;
     const signout = root.querySelector<HTMLElement>('.ha-signout')!;
     const close = () => { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); };
@@ -56,7 +69,7 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
       try { await sb!.auth.signOut(); } catch (err) { console.error('[header] signout failed:', err); }
       close();
     });
-    return { signin, wrap, toggle, menu, nameEl, adminEl, close };
+    return { signin, wrap, toggle, menu, nameEl, statsEl, adminEl, close };
   }
 
   if (sb && roots.length) {
@@ -69,6 +82,8 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
           i.wrap.hidden = false;
           i.nameEl.textContent = s.name || 'Account';
           i.adminEl.hidden = !s.admin;
+          if (typeof s.pct === 'number') { i.statsEl.textContent = `${s.pct}% read`; i.statsEl.hidden = false; }
+          else i.statsEl.hidden = true;
         } else if (s) {
           i.signin.hidden = false;
           i.wrap.hidden = true;
@@ -98,15 +113,23 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
       try { localStorage.setItem(CACHE_KEY, JSON.stringify(s)); } catch {}
     };
 
+    const readCount = async () => {
+      const { count } = await sb.from('read_notes').select('*', { count: 'exact', head: true });
+      return count ?? 0;
+    };
+
     sb.auth.onAuthStateChange((_event, session) => {
       const user = session?.user;
       if (!user) { save({ in: false }); return; }
       const prefix = user.email ? user.email.split('@')[0] : 'Account';
-      // Show immediately using the cached name (avoids the email-prefix flash).
-      apply({ in: true, name: cached?.name || prefix, admin: cached?.admin });
-      getProfile()
-        .then((p) => save({ in: true, name: p?.display_name || prefix, admin: p?.role === 'admin' }))
-        .catch(() => save({ in: true, name: cached?.name || prefix, admin: cached?.admin }));
+      // Show immediately using the cached values (avoids the email-prefix flash).
+      apply({ in: true, name: cached?.name || prefix, admin: cached?.admin, pct: cached?.pct });
+      Promise.all([getProfile().catch(() => null), readCount().catch(() => null)])
+        .then(([p, cnt]) => {
+          const pct = cnt != null && total ? Math.round((cnt / total) * 100) : cached?.pct;
+          save({ in: true, name: p?.display_name || prefix, admin: p?.role === 'admin', pct });
+        })
+        .catch(() => save({ in: true, name: cached?.name || prefix, admin: cached?.admin, pct: cached?.pct }));
     });
   }
 </script>

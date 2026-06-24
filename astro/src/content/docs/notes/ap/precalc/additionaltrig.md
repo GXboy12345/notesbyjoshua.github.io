@@ -1671,7 +1671,7 @@ Euler's formula states that
 
 $$
 e^{i\theta}=\cos\theta+i\sin\theta
-$$.
+$$
 
 A proof of this does require calculus/linear algebra and won't be discussed here.
 
@@ -2900,7 +2900,7 @@ $$
 K=\frac12ab\sin B+\frac12cd\sin D.
 $$
 
-$Since $$ABCD$$ is cyclic, opposite angles are supplementary:
+Since $$ABCD$$ is cyclic, opposite angles are supplementary:
 
 $$
 B+D=180^\circ.

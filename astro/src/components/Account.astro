@@ -1,16 +1,23 @@
 ---
 import notesSidebar from '../sidebar.json';
 type Item = { label?: string; link?: string; items?: Item[] };
-function countLeaves(items: Item[]): number {
-  let n = 0;
+
+// Flatten the sidebar into sections of trackable notes (same rule as the
+// dashboard: subject landing pages "<Subject> Home" aren't tracked).
+function collect(items: Item[], heading: string) {
+  const sections: { heading: string; slugs: string[] }[] = [];
+  const direct: string[] = [];
+  const groups: Item[] = [];
   for (const it of items) {
-    if (it.items) n += countLeaves(it.items);
-    // Match the dashboard: subject landing pages ("<Subject> Home") aren't tracked.
-    else if (it.link && !it.label?.endsWith(' Home')) n += 1;
+    if (it.items) groups.push(it);
+    else if (it.link && !it.label?.endsWith(' Home')) direct.push(it.link);
   }
-  return n;
+  if (direct.length) sections.push({ heading, slugs: direct });
+  for (const g of groups) sections.push(...collect(g.items!, g.label ?? ''));
+  return sections;
 }
-const totalNotes = countLeaves(notesSidebar as Item[]);
+const sections = collect(notesSidebar as Item[], 'Notes');
+const totalNotes = sections.reduce((n, s) => n + s.slugs.length, 0);
 ---
 <div class="account" data-total-notes={totalNotes}>
   <p id="account-status">Loading…</p>
@@ -21,6 +28,14 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
   </div>
 
   <div id="account-signedin" hidden>
+    <div class="acct-id">
+      <img id="account-avatar" class="acct-avatar" alt="" hidden />
+      <div>
+        <strong id="account-name" class="acct-name"></strong>
+        <span id="account-since" class="acct-since"></span>
+      </div>
+    </div>
+
     <h2>Profile</h2>
     <dl class="profile-fields">
       <div><dt>Email</dt><dd id="account-email"></dd></div>
@@ -39,6 +54,17 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
     <h2>Your reading progress</h2>
     <p class="profile-progress"><strong id="account-readcount">0</strong> / {totalNotes} notes read</p>
     <span class="np-bar profile-bar"><span id="account-readbar" class="np-bar__fill" style="width:0%"></span></span>
+
+    <div class="acct-breakdown">
+      {sections.map((s) => (
+        <div class="acct-subj" data-slugs={JSON.stringify(s.slugs)}>
+          <span class="acct-subj-name">{s.heading}</span>
+          <span class="np-bar acct-subj-bar"><span class="np-bar__fill" style="width:0%"></span></span>
+          <span class="acct-subj-count">0 / {s.slugs.length}</span>
+        </div>
+      ))}
+    </div>
+
     <p><a href="/dashboard/">Open your reading dashboard →</a></p>
 
     <p id="admin-links" hidden><a href="/admin/">Open the admin dashboard →</a></p>
@@ -56,6 +82,7 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
   const show = (id: string) => STATES.forEach((s) => (byId(s).hidden = s !== id));
   const sb = getSupabase();
   const total = Number(document.querySelector('.account')?.getAttribute('data-total-notes') || 0);
+  const pct = (read: number, all: number) => (all ? Math.round((read / all) * 100) : 0);
   let uid: string | null = null;
 
   byId('google-signin')?.addEventListener('click', () => {
@@ -79,6 +106,7 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
       const { error } = await sb.from('profiles').update({ display_name: value || null }).eq('id', uid);
       if (error) throw error;
       msg.textContent = 'Saved.';
+      byId('account-name').textContent = value || (byId('account-email').textContent || '').split('@')[0];
     } catch (err) {
       console.error('[account] save failed:', err);
       msg.textContent = 'Could not save — try again.';
@@ -94,15 +122,42 @@ const totalNotes = countLeaves(notesSidebar as Item[]);
     uid = session.user.id;
     show('account-signedin');
     const profile = await getProfile().catch(() => null);
-    byId('account-email').textContent = profile?.email ?? session.user.email ?? '';
+    const email = profile?.email ?? session.user.email ?? '';
+    byId('account-email').textContent = email;
     byId('account-role').textContent = profile?.role ?? 'visitor';
     (byId('account-username') as HTMLInputElement).value = profile?.display_name ?? '';
+    byId('account-name').textContent = profile?.display_name || email.split('@')[0] || 'Account';
     byId('admin-links').hidden = profile?.role !== 'admin';
+
+    // Avatar from the OAuth provider (Google), if present.
+    const meta = session.user.user_metadata || {};
+    const avatarUrl = meta.avatar_url || meta.picture;
+    const avatar = byId('account-avatar') as HTMLImageElement;
+    if (avatarUrl) { avatar.src = avatarUrl; avatar.hidden = false; }
+
+    // Member since.
+    if (profile?.created_at) {
+      const d = new Date(profile.created_at);
+      byId('account-since').textContent =
+        'Member since ' + d.toLocaleDateString(undefined, { year: 'numeric', month: 'short' });
+    }
+
+    // Reading progress, overall + per subject.
     try {
-      const { count } = await sb!.from('read_notes').select('*', { count: 'exact', head: true });
-      const read = count ?? 0;
+      const { data, error } = await sb!.from('read_notes').select('slug');
+      if (error) throw error;
+      const readSet = new Set((data ?? []).map((r: any) => r.slug));
+      const read = readSet.size;
       byId('account-readcount').textContent = String(read);
-      byId('account-readbar').style.width = (total ? Math.round((read / total) * 100) : 0) + '%';
+      byId('account-readbar').style.width = pct(read, total) + '%';
+      document.querySelectorAll<HTMLElement>('.acct-subj').forEach((row) => {
+        const slugs: string[] = JSON.parse(row.dataset.slugs || '[]');
+        const r = slugs.filter((s) => readSet.has(s)).length;
+        const countEl = row.querySelector('.acct-subj-count');
+        if (countEl) countEl.textContent = `${r} / ${slugs.length}`;
+        const fill = row.querySelector<HTMLElement>('.np-bar__fill');
+        if (fill) fill.style.width = pct(r, slugs.length) + '%';
+      });
     } catch (err) {
       console.error('[account] progress snapshot failed:', err);
     }

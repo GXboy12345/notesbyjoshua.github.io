@@ -314,9 +314,9 @@ where $$\varepsilon$$ is the molar absorptivity, $$l$$ the path length, and $$c$
 
 $$
 A = -\log_{10}(T)
-$$,
+$$
 
-but transmittance rarely shows up on the AP exam. Beer's law is very applicable for measuring equilibrium/kinetics, since absorbance is directly proportional to concentration. When doing colorimetry, always calibrate beforehand and set the wavelength to the wavelength that is closest to the OPPOSITE of the color of the solution to get maximum absorbance.
+Transmittance rarely shows up on the AP exam. Beer's law is very applicable for measuring equilibrium/kinetics, since absorbance is directly proportional to concentration. When doing colorimetry, always calibrate beforehand and set the wavelength to the wavelength that is closest to the OPPOSITE of the color of the solution to get maximum absorbance.
 
 ---
 

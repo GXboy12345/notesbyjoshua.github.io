@@ -305,7 +305,9 @@ A useful asymptotic idea is:
 
 $$
 \sqrt{x^2 + C} \sim \lvert x \rvert
-$$ (where C is a constant)
+$$
+
+(where $$C$$ is a constant)
 
 for large $$\lvert x \rvert$$, but be careful with the sign when $$x \to -\infty$$.
 
@@ -378,7 +380,7 @@ On $$[a,b]$$, the average rate of change is modeled by
 
 $$
 \frac{f(b) - f(a)}{b-a}
-$$.
+$$
 
 This is also the slope of the secant line. The derivative will be the limit of this expression as the interval shrinks toward a single point. This will be explored more in Unit 2.
 

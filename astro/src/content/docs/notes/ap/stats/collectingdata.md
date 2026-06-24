@@ -89,7 +89,9 @@ A survey is **biased** when design or execution systematically favors particular
 
 $$
 3 \times 2 = 6
-$$ (assuming each treatment is made of one dose and one exercise)
+$$
+
+(assuming each treatment is made of one dose and one exercise)
 
 When there is only one factor, each level is a treatment.
 

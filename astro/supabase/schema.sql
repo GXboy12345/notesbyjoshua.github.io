@@ -108,6 +108,25 @@ create policy "own read_notes" on public.read_notes
 
 
 -- ---------------------------------------------------------------------------
+-- Per-user bookmarks: one row per note a user has saved to revisit.
+-- ---------------------------------------------------------------------------
+create table if not exists public.bookmarks (
+  user_id    uuid not null references auth.users (id) on delete cascade,
+  slug       text not null,                       -- note route, e.g. /notes/ap/chem/kinetics/
+  title      text,                                -- page title captured when bookmarked
+  created_at timestamptz not null default now(),
+  primary key (user_id, slug)
+);
+
+alter table public.bookmarks enable row level security;
+
+-- Each user can only see and modify their own bookmarks.
+drop policy if exists "own bookmarks" on public.bookmarks;
+create policy "own bookmarks" on public.bookmarks
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+
+-- ---------------------------------------------------------------------------
 -- Feedback: anyone may submit; only admins may read.
 -- ---------------------------------------------------------------------------
 create table if not exists public.feedback (

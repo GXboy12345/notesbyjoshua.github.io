@@ -39,6 +39,7 @@ export interface Profile {
 	role: 'visitor' | 'admin';
 	display_name: string | null;
 	email: string | null;
+	created_at: string | null;
 }
 
 /** The current user's profile row, or null if signed out. */
@@ -49,12 +50,13 @@ export async function getProfile(): Promise<Profile | null> {
 	if (!user) return null;
 	const { data } = await sb
 		.from('profiles')
-		.select('role, display_name, email')
+		.select('role, display_name, email, created_at')
 		.eq('id', user.id)
 		.single();
 	return {
 		role: (data?.role as 'visitor' | 'admin') ?? 'visitor',
 		display_name: data?.display_name ?? null,
 		email: data?.email ?? user.email ?? null,
+		created_at: data?.created_at ?? null,
 	};
 }

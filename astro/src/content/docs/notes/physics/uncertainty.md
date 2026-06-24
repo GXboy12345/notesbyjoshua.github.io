@@ -73,7 +73,7 @@ about 2%. With $$g=4\pi^2(1.000)/(2.00)^2=9.87\ \text{m/s}^2$$, the result is $$
 All the rules above are special cases of one **master formula**. If $$f$$ is any function of independent measured quantities $$x_1,x_2,\dots$$, then a small error in each propagates through the partial derivatives:
 
 $$
-\ \delta f=\sqrt{\sum_i\left(\frac{\partial f}{\partial x_i}\,\delta x_i\right)^2}\
+\ \delta f=\sqrt{\sum_i\left(\frac{\partial f}{\partial x_i}\,\delta x_i\right)^2}
 $$
 
 (or, in the worst-case version, $$\delta f=\sum_i\left\lvert\dfrac{\partial f}{\partial x_i}\right\rvert\delta x_i$$). The intuition is exactly the linear approximation: $$\partial f/\partial x_i$$ measures how sensitively $$f$$ responds to $$x_i$$, so it acts as the "amplification factor" for that input's error.

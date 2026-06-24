@@ -208,9 +208,9 @@ The **Aufbau principle** directs you to fill orbitals in order of increasing ene
 
 $$
 \Delta x \Delta p \ge \frac{h}{4\pi}
-$$,
+$$
 
-meaning that the uncertainty in position and momentum are always above some constant, implying that both cannot be known at a time. This is why we have electron clouds instead of set orbits.
+This means that the uncertainty in position and momentum are always above some constant, implying that both cannot be known at a time. This is why we have electron clouds instead of set orbits.
 
 **Abbreviated configurations** use the previous noble gas core in brackets, e.g.
 

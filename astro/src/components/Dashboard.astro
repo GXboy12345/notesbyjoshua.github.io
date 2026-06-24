@@ -28,11 +28,22 @@ const total = sections.reduce((n, s) => n + s.notes.length, 0);
 
   <div id="dash-content" hidden>
     <p class="dash-progress"><strong id="dash-count">0</strong> / {total} notes read</p>
+    <span class="dash-bar" aria-hidden="true"><span id="dash-bar-fill" class="dash-bar__fill" style="width:0%"></span></span>
+
+    <details class="dash-section dash-bookmarks" id="dash-bookmarks" open hidden>
+      <summary>
+        <span class="dash-section-name">★ Bookmarks</span>
+        <span class="dash-section-count" id="dash-bm-count">0</span>
+      </summary>
+      <ul class="dash-list" id="dash-bm-list"></ul>
+      <p class="dash-bm-empty" id="dash-bm-empty">No bookmarks yet. Use the <strong>☆ Bookmark</strong> button on any note.</p>
+    </details>
+
     {sections.map((s) => (
       <details class="dash-section" open>
         <summary>
-          <span class="dash-caret" aria-hidden="true"></span>
           <span class="dash-section-name">{s.heading}</span>
+          <span class="dash-bar dash-bar--mini" aria-hidden="true"><span class="dash-bar__fill" style="width:0%"></span></span>
           <span class="dash-section-count">0 / {s.notes.length}</span>
         </summary>
         <ul class="dash-list">
@@ -61,13 +72,20 @@ const total = sections.reduce((n, s) => n + s.notes.length, 0);
     return Array.from(document.querySelectorAll<HTMLInputElement>('input[data-slug]'));
   }
 
+  const pct = (read: number, all: number) => (all ? Math.round((read / all) * 100) : 0);
+
   function updateCount() {
-    byId('dash-count').textContent = String(boxes().filter((b) => b.checked).length);
+    const all = boxes();
+    const readTotal = all.filter((b) => b.checked).length;
+    byId('dash-count').textContent = String(readTotal);
+    (byId('dash-bar-fill') as HTMLElement).style.width = pct(readTotal, all.length) + '%';
     document.querySelectorAll<HTMLElement>('.dash-section').forEach((sec) => {
       const cbs = Array.from(sec.querySelectorAll<HTMLInputElement>('input[data-slug]'));
       const read = cbs.filter((c) => c.checked).length;
       const countEl = sec.querySelector('.dash-section-count');
       if (countEl) countEl.textContent = `${read} / ${cbs.length}`;
+      const fill = sec.querySelector<HTMLElement>('.dash-bar__fill');
+      if (fill) fill.style.width = pct(read, cbs.length) + '%';
     });
   }
 
@@ -91,6 +109,52 @@ const total = sections.reduce((n, s) => n + s.notes.length, 0);
     }
   }
 
+  async function removeBookmark(slug: string) {
+    try {
+      const { error } = await sb!.from('bookmarks').delete().eq('user_id', uid).eq('slug', slug);
+      if (error) throw error;
+      await loadBookmarks();
+    } catch (err) {
+      console.error('[dashboard] remove bookmark failed:', err);
+    }
+  }
+
+  async function loadBookmarks() {
+    const wrap = byId('dash-bookmarks');
+    const list = byId('dash-bm-list');
+    try {
+      const { data, error } = await sb!
+        .from('bookmarks')
+        .select('slug, title')
+        .order('created_at', { ascending: false });
+      if (error) throw error;
+      const rows = data ?? [];
+      byId('dash-bm-count').textContent = String(rows.length);
+      byId('dash-bm-empty').hidden = rows.length > 0;
+      list.innerHTML = '';
+      for (const b of rows) {
+        const li = document.createElement('li');
+        li.className = 'dash-item dash-bm-item';
+        const a = document.createElement('a');
+        a.href = b.slug;
+        a.textContent = b.title || b.slug;
+        const rm = document.createElement('button');
+        rm.type = 'button';
+        rm.className = 'dash-bm-remove';
+        rm.title = 'Remove bookmark';
+        rm.setAttribute('aria-label', 'Remove bookmark');
+        rm.textContent = '×';
+        rm.addEventListener('click', () => removeBookmark(b.slug));
+        li.append(a, rm);
+        list.appendChild(li);
+      }
+      wrap.hidden = false;
+    } catch (err) {
+      console.error('[dashboard] load bookmarks failed:', err);
+      wrap.hidden = true;
+    }
+  }
+
   async function load(session: any) {
     if (!session?.user) { show('dash-signedout'); return; }
     uid = session.user.id;
@@ -105,6 +169,7 @@ const total = sections.reduce((n, s) => n + s.notes.length, 0);
       }
       updateCount();
       show('dash-content');
+      loadBookmarks();
     } catch (err) {
       console.error('[dashboard] load failed:', err);
       show('dash-signedout');

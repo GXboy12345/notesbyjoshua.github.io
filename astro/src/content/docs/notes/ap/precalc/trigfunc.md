@@ -321,7 +321,7 @@ and
 $$
 \cot\theta=\frac{1}{\tan\theta}
 =\frac{\text{adjacent}}{\text{opposite}}
-$$.
+$$
 
 The three functions are called cosecant, secant, and cotangent, respectively. To memorize, remember that you have to add co- to any trig function without a co- and do not add one otherwise.
 

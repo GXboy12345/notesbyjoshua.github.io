@@ -23,8 +23,8 @@ $$
 Multiplying by the star's surface area gives its total radiated power, the **luminosity**:
 
 $$
-\ L=4\pi R^2\,\sigma T^4 \
-$$.
+\ L=4\pi R^2\,\sigma T^4
+$$
 
 This one equation ties together the three numbers we most want to know about a star: its size $$R$$, surface temperature $$T$$, and energy output $$L$$. Know any two and you have the third.
 
@@ -238,7 +238,9 @@ This *defines* the **parsec**: the distance at which $$1\ \text{AU}$$ subtends $
 
 $$
 d\,[\text{pc}]=\frac{1}{p\,['']},\qquad 1\ \text{pc}=3.086\times10^{16}\ \text{m}=3.26\ \text{ly}
-$$ (ly = lightyear).
+$$
+
+(ly = lightyear).
 
 Parallax is the only *direct* (geometric) distance method and the foundation on which all the others are calibrated.
 
@@ -287,7 +289,7 @@ The corresponding **gravitational field** (force per unit mass, similar to how a
 Gravity is an inverse-square field, so it obeys a Gauss's law identical in form to the one for electrostatics, with the source being mass instead of charge. The gravitational flux through any closed surface is proportional to the mass it encloses:
 
 $$
-\ \oint \vec g\cdot d\vec A = -4\pi G\,M_{\text{enc}} \.
+\ \oint \vec g\cdot d\vec A = -4\pi G\,M_{\text{enc}}
 $$
 
 The minus sign reflects that gravity is attractive — field lines point *inward*, toward mass, whereas electric field lines point outward from positive charge. The replacement that turns Coulomb into Newton is $$\dfrac{1}{4\pi\varepsilon_0}\to -G$$, i.e. $$\varepsilon_0\to -\dfrac{1}{4\pi G}$$; every electrostatics result with spherical, cylindrical, or planar symmetry carries straight over.
@@ -346,7 +348,7 @@ For a small body orbiting a dominant mass $$M$$:
 3. **Harmonic law.** The period and semi-major axis satisfy $$T^2\propto a^3$$. In full Newtonian form (valid even when both masses are comparable),
 
 $$
-\ T^2=\frac{4\pi^2 a^3}{G(M+m)} \.
+\ T^2=\frac{4\pi^2 a^3}{G(M+m)}
 $$
 
 In the limit $$M\gg m$$ and in units of years and AU this collapses to the tidy $$T^2=a^3$$. Kepler's laws are not independent postulates — they are *consequences* of the inverse-square law, and the third law in particular is the workhorse for weighing astronomical masses (see binary stars below).
@@ -453,7 +455,7 @@ $$
 In low-mass stars gas pressure dominates; in very massive, hot stars radiation pressure can rival or exceed it. This sets an upper limit on how luminous a star can be while staying bound. The outward radiation force on the surface layers (via electron scattering, opacity $$\kappa$$) must not exceed gravity:
 
 $$
-\ L_{\text{Edd}}=\frac{4\pi G M c}{\kappa} \.
+\ L_{\text{Edd}}=\frac{4\pi G M c}{\kappa}
 $$
 
 Above this **Eddington luminosity**, radiation blows the outer layers off. It caps the masses and luminosities of stars and regulates accretion onto compact objects.
@@ -531,7 +533,7 @@ When the collapsing core exceeds the neutron-star limit (the **Tolman–Oppenhei
 A surprisingly good estimate of its size comes from the escape-velocity formula. Ask: at what radius does the escape velocity from a mass $$M$$ reach the speed of light? Setting $$v_{\text{esc}}=\sqrt{2GM/r}=c$$ gives the **Schwarzschild radius**
 
 $$
-\ r_s=\frac{2GM}{c^2} \.
+\ r_s=\frac{2GM}{c^2}
 $$
 
 Remarkably, this Newtonian heuristic lands on the *exact* answer that general relativity gives for a non-rotating black hole, even though the reasoning (treating light like a slow projectile) is not legitimate. The sphere at $$r_s$$ is the **event horizon** — a one-way surface. Anything that crosses it, including light, cannot return; the horizon is not a physical wall but a boundary in spacetime.

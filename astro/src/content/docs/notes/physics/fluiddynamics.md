@@ -188,7 +188,7 @@ Smaller bubbles have higher internal pressure — which is why, if you connect a
 Where liquid, solid, and air meet, the liquid makes a **contact angle** $$\theta$$ set by the balance of the three surface tensions (Young's relation). In a thin tube of radius $$r$$, the curved meniscus produces a Laplace pressure that lifts (or depresses) a column of height $$h$$. Balancing the upward surface-tension force $$2\pi r\gamma\cos\theta$$ against the weight $$\rho g \pi r^2 h$$ of the lifted column gives Jurin's law:
 
 $$
-\ h=\frac{2\gamma\cos\theta}{\rho g r}\
+\ h=\frac{2\gamma\cos\theta}{\rho g r}
 $$
 
 Water ($$\theta\approx 0$$) climbs; mercury ($$\theta>90^\circ$$) is pushed down. Rise is inversely proportional to tube radius, the basis of capillary action in plants and paper towels.
@@ -239,7 +239,7 @@ $$
 Hence along a streamline,
 
 $$
-\ p+\tfrac12\rho v^2+\rho g y=\text{const}\.
+\ p+\tfrac12\rho v^2+\rho g y=\text{const}
 $$
 
 Each term is an energy per unit volume: $$p$$ is "flow work," $$\tfrac12\rho v^2$$ is kinetic, $$\rho g y$$ is potential. The headline physics: **where a fluid moves faster, its pressure is lower** (at the same height). That single sentence explains lift, the Venturi meter, the curveball, and why shower curtains billow inward.
@@ -315,7 +315,7 @@ A fluid obeying this with constant $$\mu$$ is a **Newtonian** (water, air) fluid
 For steady laminar flow of a Newtonian fluid through a circular pipe of radius $$R$$ and length $$L$$ under pressure difference $$\Delta p$$, balancing the pressure force on a coaxial cylinder of radius $$r$$ against the viscous drag on its surface gives a **parabolic velocity profile** $$v(r)=\frac{\Delta p}{4\mu L}(R^2-r^2)$$. Integrating over the cross-section gives the volume flow rate (**Poiseuille's law**):
 
 $$
-\ Q=\frac{\pi R^4\,\Delta p}{8\mu L}\.
+\ Q=\frac{\pi R^4\,\Delta p}{8\mu L}
 $$
 
 ### Stokes' law and terminal velocity
@@ -330,7 +330,7 @@ A sphere falling through fluid reaches **terminal velocity** when drag + buoyanc
 
 $$
 \tfrac{4}{3}\pi a^3\rho_{\text{sphere}}g = 6\pi\mu a v_t + \tfrac{4}{3}\pi a^3\rho_{\text{fluid}}g
-\ \Longrightarrow\
+\ \Longrightarrow
 v_t=\frac{2a^2 g(\rho_{\text{sphere}}-\rho_{\text{fluid}})}{9\mu}.
 $$
 

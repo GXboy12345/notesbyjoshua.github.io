@@ -31,6 +31,8 @@ export default defineConfig({
 			components: {
 				// Show an account indicator in the header (keeps social icons too).
 				SocialIcons: './src/components/HeaderAccount.astro',
+				// Add a Bookmark toggle next to the title on note pages.
+				PageTitle: './src/components/PageTitle.astro',
 			},
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/notesbyjoshua' }],
 			customCss: [

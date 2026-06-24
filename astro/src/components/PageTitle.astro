@@ -1,0 +1,73 @@
+---
+// Override of Starlight's PageTitle: renders the default <h1> and, on note
+// pages, a Bookmark toggle next to it. The button is hidden until we know the
+// visitor is signed in.
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+const path = Astro.url.pathname;
+const isNote = path.startsWith('/notes/');
+---
+<div class="page-title-row">
+  <Default><slot /></Default>
+  {isNote && (
+    <button class="bookmark-btn" type="button" data-slug={path} aria-pressed="false" hidden>
+      <span class="bookmark-star" aria-hidden="true">☆</span>
+      <span class="bookmark-label">Bookmark</span>
+    </button>
+  )}
+</div>
+
+<script>
+  import { getSupabase } from '../lib/supabase';
+
+  const sb = getSupabase();
+  const btn = document.querySelector<HTMLButtonElement>('.bookmark-btn');
+  if (sb && btn) {
+    const slug = btn.dataset.slug!;
+    const title = document.querySelector('h1')?.textContent?.trim() || slug;
+    const star = btn.querySelector<HTMLElement>('.bookmark-star')!;
+    const label = btn.querySelector<HTMLElement>('.bookmark-label')!;
+    let bookmarked = false;
+    let uid: string | null = null;
+
+    const render = () => {
+      star.textContent = bookmarked ? '★' : '☆';
+      label.textContent = bookmarked ? 'Bookmarked' : 'Bookmark';
+      btn.setAttribute('aria-pressed', String(bookmarked));
+      btn.classList.toggle('is-on', bookmarked);
+    };
+
+    btn.addEventListener('click', async () => {
+      if (!uid) return;
+      const next = !bookmarked;
+      btn.disabled = true;
+      try {
+        if (next) {
+          const { error } = await sb.from('bookmarks').upsert({ user_id: uid, slug, title });
+          if (error) throw error;
+        } else {
+          const { error } = await sb.from('bookmarks').delete().eq('user_id', uid).eq('slug', slug);
+          if (error) throw error;
+        }
+        bookmarked = next;
+        render();
+      } catch (err) {
+        console.error('[bookmark] toggle failed:', err);
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    sb.auth.onAuthStateChange(async (_event, session) => {
+      if (!session?.user) { btn.hidden = true; return; }
+      uid = session.user.id;
+      btn.hidden = false;
+      try {
+        const { data } = await sb.from('bookmarks').select('slug').eq('slug', slug).maybeSingle();
+        bookmarked = !!data;
+        render();
+      } catch (err) {
+        console.error('[bookmark] load failed:', err);
+      }
+    });
+  }
+</script>

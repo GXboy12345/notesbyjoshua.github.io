@@ -13,7 +13,7 @@ This page is a high-yield AP Chemistry reference sheet. It collects the most imp
 - Avogadro's Number: $$N_A = 6.022 \times 10^{23}\ \text{mol}^{-1}$$
 - Ideal Gas Constant: $$R = 0.08206\ \text{L·atm/(mol·K)} = 8.314\ \text{J/(mol·K)}$$
 - Faraday's Constant: $$F = 96485\ \text{C/mol e}^-$$
-- Specific heat of water: $$c_{\text{water}} \approx 4.18\ \text{J/(g·^\circ C)}$$
+- Specific heat of water: $$c_{\text{water}} \approx 4.18\ \text{J/(g·}^\circ\text{C)}$$
 - Pressure conversions: $$1\ \text{atm} = 760\ \text{mmHg} = 760\ \text{torr} = 101.325\ \text{kPa}$$
 - STP for AP Chem: $$273.15\ \text{K}$$ and $$1\ \text{atm}$$
 - Molar volume of an ideal gas at STP: about $$22.4\ \text{L/mol}$$
