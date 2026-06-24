@@ -1,13 +1,15 @@
 ---
 // Header account control: a "Sign in" link when signed out, or a dropdown menu
 // (Dashboard / Account / Admin / Sign out) when signed in. Plus social icons.
-// NOTE: Starlight renders this slot more than once (desktop + mobile), so we use
-// classes (not ids) and wire every instance independently.
+// Starlight renders this slot twice (desktop + mobile), so we use classes (not
+// ids) and wire every instance. The resolved state is cached in localStorage and
+// applied synchronously on load to avoid a flash of "Sign in"/wrong name on each
+// page navigation.
 import Default from '@astrojs/starlight/components/SocialIcons.astro';
 ---
 
 <div class="header-account">
-  <a class="header-account-link ha-signin" href="/account/">Sign in</a>
+  <a class="header-account-link ha-signin" href="/account/" hidden>Sign in</a>
 
   <div class="header-account-menu-wrap ha-wrap" hidden>
     <button class="header-account-link ha-toggle" aria-haspopup="true" aria-expanded="false">
@@ -27,6 +29,9 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
 <script>
   import { getSupabase, getProfile } from '../lib/supabase';
 
+  const CACHE_KEY = 'notes-hdr';
+  type State = { in: boolean; name?: string; admin?: boolean };
+
   const sb = getSupabase();
   const roots = Array.from(document.querySelectorAll<HTMLElement>('.header-account'));
 
@@ -38,7 +43,6 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
     const nameEl = root.querySelector<HTMLElement>('.ha-name')!;
     const adminEl = root.querySelector<HTMLElement>('.ha-admin')!;
     const signout = root.querySelector<HTMLElement>('.ha-signout')!;
-
     const close = () => { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); };
 
     toggle.addEventListener('click', (e) => {
@@ -52,47 +56,57 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
       try { await sb!.auth.signOut(); } catch (err) { console.error('[header] signout failed:', err); }
       close();
     });
-
     return { signin, wrap, toggle, menu, nameEl, adminEl, close };
   }
 
   if (sb && roots.length) {
     const instances = roots.map(wire);
 
-    // Click anywhere outside an open menu closes it; Escape closes all.
-    document.addEventListener('click', (e) => {
+    const apply = (s: State | null) => {
       for (const i of instances) {
-        if (!i.menu.hidden && !i.wrap.contains(e.target as Node)) i.close();
+        if (s?.in) {
+          i.signin.hidden = true;
+          i.wrap.hidden = false;
+          i.nameEl.textContent = s.name || 'Account';
+          i.adminEl.hidden = !s.admin;
+        } else if (s) {
+          i.signin.hidden = false;
+          i.wrap.hidden = true;
+          i.close();
+        } else {
+          // Unknown yet: keep both hidden so we never flash the wrong control.
+          i.signin.hidden = true;
+          i.wrap.hidden = true;
+        }
       }
+    };
+
+    // Apply last-known state immediately (no flash on navigation).
+    let cached: State | null = null;
+    try { cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null'); } catch {}
+    apply(cached);
+
+    document.addEventListener('click', (e) => {
+      for (const i of instances) if (!i.menu.hidden && !i.wrap.contains(e.target as Node)) i.close();
     });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') instances.forEach((i) => i.close());
     });
 
+    const save = (s: State) => {
+      apply(s);
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify(s)); } catch {}
+    };
+
     sb.auth.onAuthStateChange((_event, session) => {
       const user = session?.user;
-      for (const i of instances) {
-        if (user) {
-          i.nameEl.textContent = user.email ? user.email.split('@')[0] : 'Account';
-          i.toggle.title = user.email ? `Signed in as ${user.email}` : 'Signed in';
-          i.signin.hidden = true;
-          i.wrap.hidden = false;
-        } else {
-          i.signin.hidden = false;
-          i.wrap.hidden = true;
-          i.close();
-        }
-      }
-      if (user) {
-        getProfile()
-          .then((p) => {
-            for (const i of instances) {
-              if (p?.display_name) i.nameEl.textContent = p.display_name;
-              i.adminEl.hidden = p?.role !== 'admin';
-            }
-          })
-          .catch(() => instances.forEach((i) => (i.adminEl.hidden = true)));
-      }
+      if (!user) { save({ in: false }); return; }
+      const prefix = user.email ? user.email.split('@')[0] : 'Account';
+      // Show immediately using the cached name (avoids the email-prefix flash).
+      apply({ in: true, name: cached?.name || prefix, admin: cached?.admin });
+      getProfile()
+        .then((p) => save({ in: true, name: p?.display_name || prefix, admin: p?.role === 'admin' }))
+        .catch(() => save({ in: true, name: cached?.name || prefix, admin: cached?.admin }));
     });
   }
 </script>
