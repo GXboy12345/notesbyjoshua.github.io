@@ -150,30 +150,9 @@ create policy "admins read feedback" on public.feedback
 
 
 -- ---------------------------------------------------------------------------
--- Avatars: a public Storage bucket where each user manages files under a
--- folder named after their own user id (e.g. avatars/<uid>/avatar.png).
+-- Profile-picture storage lives in a SEPARATE file: supabase/storage.sql.
+-- It is kept apart because creating policies on storage.objects can fail with
+-- "must be owner of table objects" depending on the project, and the SQL editor
+-- runs a script as ONE transaction — so a failure there would roll back this
+-- whole schema. Run storage.sql on its own (or set storage up in the dashboard).
 -- ---------------------------------------------------------------------------
-insert into storage.buckets (id, name, public)
-values ('avatars', 'avatars', true)
-on conflict (id) do update set public = true;
-
--- Public read (the bucket is public, but an explicit select policy is harmless).
-drop policy if exists "avatars public read" on storage.objects;
-create policy "avatars public read" on storage.objects
-  for select using (bucket_id = 'avatars');
-
--- A signed-in user may write/replace/delete only files in their own folder.
-drop policy if exists "avatars write own" on storage.objects;
-create policy "avatars write own" on storage.objects
-  for insert to authenticated
-  with check (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
-
-drop policy if exists "avatars update own" on storage.objects;
-create policy "avatars update own" on storage.objects
-  for update to authenticated
-  using (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
-
-drop policy if exists "avatars delete own" on storage.objects;
-create policy "avatars delete own" on storage.objects
-  for delete to authenticated
-  using (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
