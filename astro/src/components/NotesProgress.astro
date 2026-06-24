@@ -10,6 +10,12 @@ type Page = {
 };
 const { summary, pages } = data as { summary: Record<string, number | string>; pages: Page[] };
 
+// Kept in sync with COURSE_RENAME in scripts/notes_progress.py.
+const courseRename: Record<string, string> = {
+  'Physics Competition Prep': 'Physics',
+  'Chemistry Competition Prep': 'Chemistry',
+};
+
 // Course order as it appears in the sidebar.
 const courseOrder: string[] = [];
 (function walk(items: any[], label: string) {
@@ -18,7 +24,8 @@ const courseOrder: string[] = [];
     if (it.items) walk(it.items, it.label);
     else if (it.link) hasLeaf = true;
   }
-  if (hasLeaf && label && !courseOrder.includes(label)) courseOrder.push(label);
+  const name = courseRename[label] ?? label;
+  if (hasLeaf && name && !courseOrder.includes(name)) courseOrder.push(name);
 })(notesSidebar as any[], 'Notes');
 
 // Group pages by course, least-done first within each group.
@@ -30,11 +37,15 @@ const orderedCourses = [
   ...courseOrder.filter((c) => byCourse[c]),
   ...Object.keys(byCourse).filter((c) => !courseOrder.includes(c)),
 ];
-const sections = orderedCourses.map((name) => {
-  const list = byCourse[name];
-  const avg = Math.round(list.reduce((n, p) => n + p.progress, 0) / list.length);
-  return { name, avg, pages: list };
-});
+const sections = orderedCourses
+  // Drop catch-all groups that hold only landing/overview pages (e.g. "AP",
+  // "Notes") — they aren't real courses to track.
+  .filter((name) => byCourse[name].some((p) => p.kind !== 'index'))
+  .map((name) => {
+    const list = byCourse[name];
+    const avg = Math.round(list.reduce((n, p) => n + p.progress, 0) / list.length);
+    return { name, avg, pages: list };
+  });
 ---
 
 <div class="np">
@@ -55,30 +66,35 @@ const sections = orderedCourses.map((name) => {
 
     {sections.map((section) => (
       <section class="np-section">
-        <h2>{section.name} <span class="np-section-avg">{section.avg}% avg</span></h2>
-        <div class="table-scroll">
-        <table class="np-table">
-          <thead>
-            <tr><th>Page</th><th>Status</th><th>Progress</th><th>Main issues</th><th>Next step</th></tr>
-          </thead>
-          <tbody>
-            {section.pages.map((p) => (
-              <tr>
-                <td><a href={p.route}>{p.title}</a></td>
-                <td><span class={`note-status note-status--${p.status}`}>{p.status}</span></td>
-                <td>
-                  <span class="np-bar" aria-label={`${p.progress}%`}>
-                    <span class="np-bar__fill" style={`width:${p.progress}%`}></span>
-                    <span class="np-bar__label">{p.progress}%</span>
-                  </span>
-                </td>
-                <td>{p.issues.length ? p.issues.join(', ') : 'none flagged'}</td>
-                <td>{p.next_step}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        </div>
+        <details class="np-collapse" open>
+          <summary class="np-section-head">
+            <span class="np-caret" aria-hidden="true"></span>
+            <h2>{section.name} <span class="np-section-avg">{section.avg}% avg</span></h2>
+          </summary>
+          <div class="table-scroll">
+          <table class="np-table">
+            <thead>
+              <tr><th>Page</th><th>Status</th><th>Progress</th><th>Main issues</th><th>Next step</th></tr>
+            </thead>
+            <tbody>
+              {section.pages.map((p) => (
+                <tr>
+                  <td><a href={p.route}>{p.title}</a></td>
+                  <td><span class={`note-status note-status--${p.status}`}>{p.status}</span></td>
+                  <td>
+                    <span class="np-bar" aria-label={`${p.progress}%`}>
+                      <span class="np-bar__fill" style={`width:${p.progress}%`}></span>
+                      <span class="np-bar__label">{p.progress}%</span>
+                    </span>
+                  </td>
+                  <td>{p.issues.length ? p.issues.join(', ') : 'none flagged'}</td>
+                  <td>{p.next_step}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          </div>
+        </details>
       </section>
     ))}
   </div>

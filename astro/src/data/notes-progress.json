@@ -1,11 +1,11 @@
 {
   "summary": {
-    "generated_at": "2026-06-23",
+    "generated_at": "2026-06-24",
     "unit_pages": 74,
     "all_pages": 88,
     "average_progress": 66,
     "below_complete": 61,
-    "with_placeholders": 29
+    "with_placeholders": 35
   },
   "pages": [
     {
@@ -13,14 +13,72 @@
       "route": "/notes/math/geometry/homothety/",
       "course": "Math",
       "kind": "unit",
-      "status": "outline",
-      "progress": 25,
+      "status": "stub",
+      "progress": 0,
       "issues": [
-        "thin explanations",
-        "missing practice",
-        "missing solutions"
+        "empty/stub page"
       ],
-      "next_step": "Expand core explanations"
+      "next_step": "Run a focused review"
+    },
+    {
+      "title": "Advanced Kinetics",
+      "route": "/notes/chemistry/advkinetics/",
+      "course": "Chemistry",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 2,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Run a focused review"
+    },
+    {
+      "title": "Solid-State Chemistry",
+      "route": "/notes/chemistry/solidstate/",
+      "course": "Chemistry",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 2,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Run a focused review"
+    },
+    {
+      "title": "Spectroscopy",
+      "route": "/notes/chemistry/spectroscopy/",
+      "course": "Chemistry",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 2,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Run a focused review"
+    },
+    {
+      "title": "Coordination Chemistry",
+      "route": "/notes/chemistry/coordination/",
+      "course": "Chemistry",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 3,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Run a focused review"
+    },
+    {
+      "title": "Organic Chemistry",
+      "route": "/notes/chemistry/organic/",
+      "course": "Chemistry",
+      "kind": "unit",
+      "status": "stub",
+      "progress": 3,
+      "issues": [
+        "empty/stub page"
+      ],
+      "next_step": "Run a focused review"
     },
     {
       "title": "Unit 7: Inference for Quantitative Data: Means",
@@ -28,24 +86,9 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 35,
+      "progress": 33,
       "issues": [
         "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Unit 8: Inference for Categorical Data: Chi-Square",
-      "route": "/notes/ap/stats/catchi/",
-      "course": "AP Statistics",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 37,
-      "issues": [
-        "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -56,13 +99,26 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 38,
+      "progress": 35,
       "issues": [
         "few or no worked boxes",
         "missing practice",
-        "missing solutions"
+        "has TODOs/placeholders"
       ],
       "next_step": "Add worked examples"
+    },
+    {
+      "title": "Unit 8: Inference for Categorical Data: Chi-Square",
+      "route": "/notes/ap/stats/catchi/",
+      "course": "AP Statistics",
+      "kind": "unit",
+      "status": "draft",
+      "progress": 35,
+      "issues": [
+        "missing practice",
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Add practice problems"
     },
     {
       "title": "Unit 6: Inference for Categorical Data: Proportions",
@@ -70,11 +126,11 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 38,
+      "progress": 37,
       "issues": [
         "few or no worked boxes",
         "missing practice",
-        "missing solutions"
+        "has TODOs/placeholders"
       ],
       "next_step": "Add worked examples"
     },
@@ -84,10 +140,9 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 39,
+      "progress": 37,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -102,74 +157,9 @@
       "issues": [
         "few or no worked boxes",
         "missing practice",
-        "missing solutions"
+        "has TODOs/placeholders"
       ],
       "next_step": "Add worked examples"
-    },
-    {
-      "title": "Advanced Kinetics",
-      "route": "/notes/chemistry/advkinetics/",
-      "course": "Chemistry Competition Prep",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 43,
-      "issues": [
-        "thin explanations",
-        "practice without solutions"
-      ],
-      "next_step": "Expand core explanations"
-    },
-    {
-      "title": "Coordination Chemistry",
-      "route": "/notes/chemistry/coordination/",
-      "course": "Chemistry Competition Prep",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 43,
-      "issues": [
-        "thin explanations",
-        "practice without solutions"
-      ],
-      "next_step": "Expand core explanations"
-    },
-    {
-      "title": "Organic Chemistry",
-      "route": "/notes/chemistry/organic/",
-      "course": "Chemistry Competition Prep",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 43,
-      "issues": [
-        "thin explanations",
-        "practice without solutions"
-      ],
-      "next_step": "Expand core explanations"
-    },
-    {
-      "title": "Solid-State Chemistry",
-      "route": "/notes/chemistry/solidstate/",
-      "course": "Chemistry Competition Prep",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 43,
-      "issues": [
-        "thin explanations",
-        "practice without solutions"
-      ],
-      "next_step": "Expand core explanations"
-    },
-    {
-      "title": "Spectroscopy",
-      "route": "/notes/chemistry/spectroscopy/",
-      "course": "Chemistry Competition Prep",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 43,
-      "issues": [
-        "thin explanations",
-        "practice without solutions"
-      ],
-      "next_step": "Expand core explanations"
     },
     {
       "title": "Unit 1: Exploring Univariate Data",
@@ -177,11 +167,11 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 44,
+      "progress": 46,
       "issues": [
         "few or no worked boxes",
         "missing practice",
-        "missing solutions"
+        "has TODOs/placeholders"
       ],
       "next_step": "Add worked examples"
     },
@@ -191,11 +181,11 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 46,
+      "progress": 49,
       "issues": [
         "few or no worked boxes",
         "missing practice",
-        "missing solutions"
+        "has TODOs/placeholders"
       ],
       "next_step": "Add worked examples"
     },
@@ -205,11 +195,11 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 46,
+      "progress": 49,
       "issues": [
         "few or no worked boxes",
         "missing practice",
-        "missing solutions"
+        "has TODOs/placeholders"
       ],
       "next_step": "Add worked examples"
     },
@@ -219,37 +209,35 @@
       "course": "AP Statistics",
       "kind": "unit",
       "status": "draft",
-      "progress": 50,
+      "progress": 55,
       "issues": [
         "few or no worked boxes",
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add worked examples"
     },
     {
       "title": "Math Tricks",
       "route": "/notes/physics/mathtricks/",
-      "course": "Physics Competition Prep",
+      "course": "Physics",
       "kind": "unit",
-      "status": "draft",
-      "progress": 55,
+      "status": "developing",
+      "progress": 60,
       "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
-      "title": "Uncertainty",
-      "route": "/notes/physics/uncertainty/",
-      "course": "Physics Competition Prep",
+      "title": "Stellar Physics",
+      "route": "/notes/physics/stellarphys/",
+      "course": "Physics",
       "kind": "unit",
-      "status": "draft",
-      "progress": 57,
+      "status": "developing",
+      "progress": 60,
       "issues": [
         "missing practice",
-        "missing solutions"
+        "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
     },
@@ -258,11 +246,10 @@
       "route": "/notes/physics/kinematics/",
       "course": "AP Physics C Mechanics",
       "kind": "unit",
-      "status": "draft",
-      "progress": 59,
+      "status": "developing",
+      "progress": 61,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -272,11 +259,10 @@
       "route": "/notes/physics/oscillations/",
       "course": "AP Physics C Mechanics",
       "kind": "unit",
-      "status": "draft",
-      "progress": 59,
+      "status": "developing",
+      "progress": 61,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -286,11 +272,10 @@
       "route": "/notes/physics/torque/",
       "course": "AP Physics C Mechanics",
       "kind": "unit",
-      "status": "draft",
-      "progress": 59,
+      "status": "developing",
+      "progress": 61,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -300,39 +285,35 @@
       "route": "/notes/physics/work/",
       "course": "AP Physics C Mechanics",
       "kind": "unit",
-      "status": "draft",
-      "progress": 59,
+      "status": "developing",
+      "progress": 61,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
+      ],
+      "next_step": "Add practice problems"
+    },
+    {
+      "title": "Uncertainty",
+      "route": "/notes/physics/uncertainty/",
+      "course": "Physics",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 61,
+      "issues": [
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Problem Solving Techniques",
       "route": "/notes/physics/techniques/",
-      "course": "Physics Competition Prep",
+      "course": "Physics",
       "kind": "unit",
-      "status": "draft",
-      "progress": 59,
+      "status": "developing",
+      "progress": 62,
       "issues": [
-        "missing practice",
-        "missing solutions"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Stellar Physics",
-      "route": "/notes/physics/stellarphys/",
-      "course": "Physics Competition Prep",
-      "kind": "unit",
-      "status": "draft",
-      "progress": 59,
-      "issues": [
-        "missing practice",
-        "missing solutions",
-        "has TODOs/placeholders"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
@@ -342,10 +323,9 @@
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
-      "progress": 61,
+      "progress": 64,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -356,10 +336,9 @@
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
-      "progress": 61,
+      "progress": 64,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -370,10 +349,9 @@
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
-      "progress": 61,
+      "progress": 64,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -384,10 +362,9 @@
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
-      "progress": 61,
+      "progress": 64,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -398,10 +375,9 @@
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
-      "progress": 61,
+      "progress": 64,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -412,10 +388,9 @@
       "course": "AP Physics C Mechanics",
       "kind": "unit",
       "status": "developing",
-      "progress": 61,
+      "progress": 64,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -426,26 +401,36 @@
       "course": "AP Physics C Mechanics",
       "kind": "unit",
       "status": "developing",
-      "progress": 61,
+      "progress": 64,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
     },
     {
-      "title": "Electrostatics",
-      "route": "/notes/physics/electro1/",
-      "course": "Physics Competition Prep",
+      "title": "Recursion",
+      "route": "/notes/math/algebra/recursion/",
+      "course": "Math",
       "kind": "unit",
       "status": "developing",
-      "progress": 62,
+      "progress": 64,
       "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
+    },
+    {
+      "title": "AP Chemistry Cheat Sheet",
+      "route": "/notes/ap/chem/cheatsheet/",
+      "course": "AP Chemistry",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 66,
+      "issues": [
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Resolve placeholders"
     },
     {
       "title": "Unit 10: Infinite Sums and Series (BC-only)",
@@ -453,10 +438,9 @@
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
-      "progress": 63,
+      "progress": 67,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -467,10 +451,9 @@
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
-      "progress": 63,
+      "progress": 67,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -481,10 +464,9 @@
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
-      "progress": 63,
+      "progress": 67,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -495,10 +477,9 @@
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
-      "progress": 63,
+      "progress": 67,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -509,10 +490,9 @@
       "course": "AP Calculus AB/BC",
       "kind": "unit",
       "status": "developing",
-      "progress": 63,
+      "progress": 67,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -523,10 +503,9 @@
       "course": "AP Physics C E&M",
       "kind": "unit",
       "status": "developing",
-      "progress": 63,
+      "progress": 67,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -537,10 +516,9 @@
       "course": "AP Physics C E&M",
       "kind": "unit",
       "status": "developing",
-      "progress": 63,
+      "progress": 67,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -551,10 +529,9 @@
       "course": "Math",
       "kind": "unit",
       "status": "developing",
-      "progress": 63,
+      "progress": 67,
       "issues": [
         "missing practice",
-        "missing solutions",
         "has TODOs/placeholders"
       ],
       "next_step": "Add practice problems"
@@ -562,39 +539,12 @@
     {
       "title": "Fluid Dynamics",
       "route": "/notes/physics/fluiddynamics/",
-      "course": "Physics Competition Prep",
+      "course": "Physics",
       "kind": "unit",
       "status": "developing",
-      "progress": 63,
+      "progress": 68,
       "issues": [
-        "missing practice",
-        "missing solutions"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Advanced Mechanics",
-      "route": "/notes/physics/advmech/",
-      "course": "Physics Competition Prep",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 64,
-      "issues": [
-        "missing practice",
-        "missing solutions"
-      ],
-      "next_step": "Add practice problems"
-    },
-    {
-      "title": "Magnetism & Electrodynamics",
-      "route": "/notes/physics/electro2/",
-      "course": "Physics Competition Prep",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 64,
-      "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
@@ -604,10 +554,9 @@
       "course": "AP Physics C E&M",
       "kind": "unit",
       "status": "developing",
-      "progress": 65,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
@@ -617,10 +566,9 @@
       "course": "AP Physics C E&M",
       "kind": "unit",
       "status": "developing",
-      "progress": 65,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
@@ -630,10 +578,9 @@
       "course": "AP Physics C E&M",
       "kind": "unit",
       "status": "developing",
-      "progress": 65,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
@@ -643,10 +590,9 @@
       "course": "AP Physics C E&M",
       "kind": "unit",
       "status": "developing",
-      "progress": 65,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
@@ -656,75 +602,105 @@
       "course": "AP Physics C Mechanics",
       "kind": "unit",
       "status": "developing",
-      "progress": 65,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
+      ],
+      "next_step": "Add practice problems"
+    },
+    {
+      "title": "Advanced Mechanics",
+      "route": "/notes/physics/advmech/",
+      "course": "Physics",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "missing practice"
+      ],
+      "next_step": "Add practice problems"
+    },
+    {
+      "title": "Electrostatics",
+      "route": "/notes/physics/electro1/",
+      "course": "Physics",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "missing practice"
+      ],
+      "next_step": "Add practice problems"
+    },
+    {
+      "title": "Magnetism & Electrodynamics",
+      "route": "/notes/physics/electro2/",
+      "course": "Physics",
+      "kind": "unit",
+      "status": "developing",
+      "progress": 70,
+      "issues": [
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Modern Physics",
       "route": "/notes/physics/quantnucphys/",
-      "course": "Physics Competition Prep",
+      "course": "Physics",
       "kind": "unit",
       "status": "developing",
-      "progress": 65,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Optics",
       "route": "/notes/physics/optics/",
-      "course": "Physics Competition Prep",
+      "course": "Physics",
       "kind": "unit",
       "status": "developing",
-      "progress": 65,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Relativity",
       "route": "/notes/physics/relativity/",
-      "course": "Physics Competition Prep",
+      "course": "Physics",
       "kind": "unit",
       "status": "developing",
-      "progress": 65,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Thermodynamics",
       "route": "/notes/physics/thermodynamics/",
-      "course": "Physics Competition Prep",
+      "course": "Physics",
       "kind": "unit",
       "status": "developing",
-      "progress": 65,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
     {
       "title": "Waves",
       "route": "/notes/physics/waves/",
-      "course": "Physics Competition Prep",
+      "course": "Physics",
       "kind": "unit",
       "status": "developing",
-      "progress": 65,
+      "progress": 70,
       "issues": [
-        "missing practice",
-        "missing solutions"
+        "missing practice"
       ],
       "next_step": "Add practice problems"
     },
@@ -751,21 +727,9 @@
       "next_step": "Resolve placeholders"
     },
     {
-      "title": "Recursion",
-      "route": "/notes/math/algebra/recursion/",
-      "course": "Math",
-      "kind": "unit",
-      "status": "developing",
-      "progress": 72,
-      "issues": [
-        "practice without solutions"
-      ],
-      "next_step": "Add matching solutions"
-    },
-    {
       "title": "Chemistry Competition Prep",
       "route": "/notes/chemistry/usnco/",
-      "course": "Chemistry Competition Prep",
+      "course": "Chemistry",
       "kind": "index",
       "status": "developing",
       "progress": 77,
@@ -775,7 +739,7 @@
     {
       "title": "Physics Competition Prep",
       "route": "/notes/physics/usapho/",
-      "course": "Physics Competition Prep",
+      "course": "Physics",
       "kind": "index",
       "status": "developing",
       "progress": 77,
@@ -835,18 +799,6 @@
       "next_step": "Review for accuracy"
     },
     {
-      "title": "AP Chemistry Cheat Sheet",
-      "route": "/notes/ap/chem/cheatsheet/",
-      "course": "AP Chemistry",
-      "kind": "unit",
-      "status": "review",
-      "progress": 83,
-      "issues": [
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
       "title": "Math",
       "route": "/notes/math/",
       "course": "Math",
@@ -902,30 +854,6 @@
       "course": "AP Chemistry",
       "kind": "unit",
       "status": "review",
-      "progress": 89,
-      "issues": [
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Unit 2: Compound Structure and Properties",
-      "route": "/notes/ap/chem/compounds/",
-      "course": "AP Chemistry",
-      "kind": "unit",
-      "status": "review",
-      "progress": 91,
-      "issues": [
-        "has TODOs/placeholders"
-      ],
-      "next_step": "Resolve placeholders"
-    },
-    {
-      "title": "Unit 3: Substances and Mixtures",
-      "route": "/notes/ap/chem/submix/",
-      "course": "AP Chemistry",
-      "kind": "unit",
-      "status": "review",
       "progress": 91,
       "issues": [
         "has TODOs/placeholders"
@@ -938,9 +866,33 @@
       "course": "AP Chemistry",
       "kind": "unit",
       "status": "review",
-      "progress": 91,
+      "progress": 92,
       "issues": [],
       "next_step": "Review for accuracy"
+    },
+    {
+      "title": "Unit 2: Compound Structure and Properties",
+      "route": "/notes/ap/chem/compounds/",
+      "course": "AP Chemistry",
+      "kind": "unit",
+      "status": "review",
+      "progress": 94,
+      "issues": [
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Resolve placeholders"
+    },
+    {
+      "title": "Unit 3: Substances and Mixtures",
+      "route": "/notes/ap/chem/submix/",
+      "course": "AP Chemistry",
+      "kind": "unit",
+      "status": "review",
+      "progress": 94,
+      "issues": [
+        "has TODOs/placeholders"
+      ],
+      "next_step": "Resolve placeholders"
     },
     {
       "title": "Unit 7: Equilibrium",
@@ -948,7 +900,7 @@
       "course": "AP Chemistry",
       "kind": "unit",
       "status": "review",
-      "progress": 91,
+      "progress": 94,
       "issues": [
         "has TODOs/placeholders"
       ],
@@ -960,7 +912,7 @@
       "course": "AP Chemistry",
       "kind": "unit",
       "status": "review",
-      "progress": 91,
+      "progress": 94,
       "issues": [
         "has TODOs/placeholders"
       ],
@@ -972,7 +924,7 @@
       "course": "AP Chemistry",
       "kind": "unit",
       "status": "complete",
-      "progress": 95,
+      "progress": 100,
       "issues": [],
       "next_step": "Review for accuracy"
     },
@@ -982,7 +934,7 @@
       "course": "AP Chemistry",
       "kind": "unit",
       "status": "complete",
-      "progress": 95,
+      "progress": 100,
       "issues": [],
       "next_step": "Review for accuracy"
     },
@@ -992,7 +944,7 @@
       "course": "AP Chemistry",
       "kind": "unit",
       "status": "complete",
-      "progress": 95,
+      "progress": 100,
       "issues": [],
       "next_step": "Review for accuracy"
     },
@@ -1002,7 +954,7 @@
       "course": "AP Precalculus",
       "kind": "unit",
       "status": "complete",
-      "progress": 95,
+      "progress": 100,
       "issues": [],
       "next_step": "Review for accuracy"
     },
@@ -1012,7 +964,7 @@
       "course": "AP Precalculus",
       "kind": "unit",
       "status": "complete",
-      "progress": 95,
+      "progress": 100,
       "issues": [],
       "next_step": "Review for accuracy"
     },
@@ -1022,7 +974,7 @@
       "course": "AP Precalculus",
       "kind": "unit",
       "status": "complete",
-      "progress": 95,
+      "progress": 100,
       "issues": [],
       "next_step": "Review for accuracy"
     },
@@ -1032,7 +984,7 @@
       "course": "AP Precalculus",
       "kind": "unit",
       "status": "complete",
-      "progress": 95,
+      "progress": 100,
       "issues": [],
       "next_step": "Review for accuracy"
     },
@@ -1042,7 +994,7 @@
       "course": "AP Precalculus",
       "kind": "unit",
       "status": "complete",
-      "progress": 95,
+      "progress": 100,
       "issues": [],
       "next_step": "Review for accuracy"
     },
@@ -1052,7 +1004,7 @@
       "course": "AP Precalculus",
       "kind": "unit",
       "status": "complete",
-      "progress": 95,
+      "progress": 100,
       "issues": [],
       "next_step": "Review for accuracy"
     },
@@ -1062,7 +1014,7 @@
       "course": "AP Precalculus",
       "kind": "unit",
       "status": "complete",
-      "progress": 95,
+      "progress": 100,
       "issues": [],
       "next_step": "Review for accuracy"
     },
@@ -1072,7 +1024,7 @@
       "course": "AP Precalculus",
       "kind": "unit",
       "status": "complete",
-      "progress": 95,
+      "progress": 100,
       "issues": [],
       "next_step": "Review for accuracy"
     },
@@ -1082,7 +1034,7 @@
       "course": "AP Precalculus",
       "kind": "unit",
       "status": "complete",
-      "progress": 95,
+      "progress": 100,
       "issues": [],
       "next_step": "Review for accuracy"
     },
@@ -1092,7 +1044,7 @@
       "course": "AP Precalculus",
       "kind": "unit",
       "status": "complete",
-      "progress": 95,
+      "progress": 100,
       "issues": [],
       "next_step": "Review for accuracy"
     }

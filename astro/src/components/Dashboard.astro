@@ -30,6 +30,7 @@ const total = sections.reduce((n, s) => n + s.notes.length, 0);
     {sections.map((s) => (
       <details class="dash-section" open>
         <summary>
+          <span class="dash-caret" aria-hidden="true"></span>
           <span class="dash-section-name">{s.heading}</span>
           <span class="dash-section-count">0 / {s.notes.length}</span>
         </summary>

@@ -66,6 +66,28 @@ def has_section(body: str, names: tuple[str, ...]) -> bool:
     return bool(re.search(pattern, body, flags=re.IGNORECASE | re.MULTILINE))
 
 
+def section_body(body: str, names: tuple[str, ...]) -> str:
+    """Text under the first matching H2, up to the next H2 (or end)."""
+    pattern = r"^##\s+(?:" + "|".join(re.escape(n) for n in names) + r")\s*$"
+    m = re.search(pattern, body, flags=re.IGNORECASE | re.MULTILINE)
+    if not m:
+        return ""
+    rest = body[m.end():]
+    nxt = re.search(r"^##\s", rest, flags=re.MULTILINE)
+    return rest[: nxt.start()] if nxt else rest
+
+
+def count_problems(section: str) -> int:
+    """Numbered problems (`1.`, `2.`, …) in a Practice/Solutions section."""
+    return len(re.findall(r"(?m)^\s*\d+\.\s", section))
+
+
+def count_solutions(section: str) -> int:
+    """Worked solutions: `### Solution N` headings, else theorem boxes."""
+    headings = len(re.findall(r"(?mi)^#{2,4}\s*Solution\b", section))
+    return headings or len(re.findall(r'theorem-box', section))
+
+
 def count_links(body: str) -> int:
     return len(re.findall(r"\[[^\]]+\]\([^)]+\)", body))
 
@@ -105,15 +127,32 @@ def score_unit(fm: str, body: str) -> tuple[int, list[str]]:
     theorem_boxes = len(re.findall(r'<div class="theorem-box"', body))
     examples = len(re.findall(r"\*\*Example\.\*\*", body))
     proofs = len(re.findall(r"\*\*Proof \(.+?\)\.\*\*", body))
-    placeholders = len(re.findall(r"Placeholder|TODO", body, re.IGNORECASE))
-    practice = has_section(body, ("Practice", "Practice Problems"))
-    solutions = has_section(body, ("Solutions",))
+    placeholders = len(re.findall(r"Placeholder|TODO|work in progress", body, re.IGNORECASE))
 
-    # Front matter is uniform in Astro (title always present), so structure is a
-    # flat baseline; content components below do the differentiating.
-    structure = 15 if fm_title(fm) else 5
+    # Practice/Solutions credit is based on actual problems present, not just the
+    # heading: an empty "## Practice Problems" outline earns nothing.
+    practice_sec = section_body(body, ("Practice", "Practice Problems"))
+    solutions_sec = section_body(body, ("Solutions",))
+    n_problems = count_problems(practice_sec)
+    n_solutions = count_solutions(solutions_sec)
 
-    coverage = min(25, round(min(word_count, 1400) / 1400 * 18) + min(headings, 7))
+    # An essentially empty page (outline of headings, little or no prose, no real
+    # problems) is a stub: cap it low and scale by the little content it has,
+    # rather than handing out a structure/polish baseline.
+    if word_count < 150 and theorem_boxes == 0 and n_problems == 0:
+        issues.append("empty/stub page")
+        return clamp(round(word_count / 150 * 12)), issues
+
+    # Structure/metadata (up to 20): title, ordering front matter, real scaffolding.
+    structure = 0
+    if fm_title(fm):
+        structure += 5
+    if re.search(r"^\s*order:\s*\d+", fm, flags=re.MULTILINE):
+        structure += 3
+    if word_count >= 150 and headings >= 3:
+        structure += 12
+
+    coverage = min(25, round(min(word_count, 1600) / 1600 * 25))
     if word_count < 450:
         issues.append("thin explanations")
 
@@ -121,18 +160,19 @@ def score_unit(fm: str, body: str) -> tuple[int, list[str]]:
     if theorem_boxes == 0 and word_count > 700:
         issues.append("few or no worked boxes")
 
-    practice_score = 15 if practice else 0
-    solutions_score = 15 if solutions else 0
-    if not practice:
+    # ~8 problems / ~8 worked solutions earns full marks.
+    practice_score = min(15, n_problems * 2)
+    solutions_score = min(15, n_solutions * 2)
+    if n_problems == 0:
         issues.append("missing practice")
-    if practice and not solutions:
+    if n_problems and n_solutions == 0:
         issues.append("practice without solutions")
-    elif not solutions:
-        issues.append("missing solutions")
+    elif n_problems and n_solutions < n_problems:
+        issues.append("solutions incomplete")
 
-    polish = 10
+    polish = 10 if word_count >= 150 else 0
     if placeholders:
-        polish -= min(6, placeholders * 2)
+        polish -= min(10, placeholders * 3)
         issues.append("has TODOs/placeholders")
 
     total = structure + coverage + example_score + practice_score + solutions_score + max(0, polish)
@@ -162,18 +202,29 @@ def route_for(path: Path) -> str:
     return "/" + rel + "/"
 
 
+# The competition-prep groups are the only Physics/Chemistry content, so report
+# them under the plain subject name instead of the longer sidebar label.
+COURSE_RENAME = {
+    "Physics Competition Prep": "Physics",
+    "Chemistry Competition Prep": "Chemistry",
+}
+
+
 def course_map() -> dict[str, str]:
     """route -> course label, from the generated sidebar tree."""
     mapping: dict[str, str] = {}
     if not SIDEBAR.exists():
         return mapping
 
+    def label_for(name: str) -> str:
+        return COURSE_RENAME.get(name, name)
+
     def walk(items, label):
         for it in items:
             if "items" in it:
                 walk(it["items"], it["label"])
             elif "link" in it:
-                mapping[it["link"]] = label
+                mapping[it["link"]] = label_for(label)
 
     for it in json.loads(SIDEBAR.read_text()):
         if "items" in it:
