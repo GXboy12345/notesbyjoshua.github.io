@@ -56,6 +56,7 @@ const sections = orderedCourses.map((name) => {
     {sections.map((section) => (
       <section class="np-section">
         <h2>{section.name} <span class="np-section-avg">{section.avg}% avg</span></h2>
+        <div class="table-scroll">
         <table class="np-table">
           <thead>
             <tr><th>Page</th><th>Status</th><th>Progress</th><th>Main issues</th><th>Next step</th></tr>
@@ -77,6 +78,7 @@ const sections = orderedCourses.map((name) => {
             ))}
           </tbody>
         </table>
+        </div>
       </section>
     ))}
   </div>
