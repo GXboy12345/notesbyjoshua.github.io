@@ -439,13 +439,13 @@
 	background: var(--sl-color-gray-6);
 }
 
-.header-account-menu #ha-signout {
+.header-account-menu .ha-signout {
 	margin-top: 0.25rem;
 	border-top: 1px solid var(--sl-color-gray-5);
 	color: #dc2626;
 	font-weight: 600;
 }
 
-:root[data-theme='dark'] .header-account-menu #ha-signout {
+:root[data-theme='dark'] .header-account-menu .ha-signout {
 	color: #f87171;
 }

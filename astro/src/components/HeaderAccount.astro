@@ -1,22 +1,24 @@
 ---
 // Header account control: a "Sign in" link when signed out, or a dropdown menu
 // (Dashboard / Account / Admin / Sign out) when signed in. Plus social icons.
+// NOTE: Starlight renders this slot more than once (desktop + mobile), so we use
+// classes (not ids) and wire every instance independently.
 import Default from '@astrojs/starlight/components/SocialIcons.astro';
 ---
 
 <div class="header-account">
-  <a id="ha-signin" class="header-account-link" href="/account/">Sign in</a>
+  <a class="header-account-link ha-signin" href="/account/">Sign in</a>
 
-  <div id="ha-menu-wrap" class="header-account-menu-wrap" hidden>
-    <button id="ha-toggle" class="header-account-link" aria-haspopup="true" aria-expanded="false">
+  <div class="header-account-menu-wrap ha-wrap" hidden>
+    <button class="header-account-link ha-toggle" aria-haspopup="true" aria-expanded="false">
       <span class="header-account-dot"></span>
-      <span id="ha-name">Account</span>
+      <span class="ha-name">Account</span>
     </button>
-    <div id="ha-menu" class="header-account-menu" hidden>
+    <div class="header-account-menu ha-menu" hidden>
       <a href="/dashboard/">My Dashboard</a>
       <a href="/account/">Account</a>
-      <a id="ha-admin" href="/admin/" hidden>Admin</a>
-      <button id="ha-signout" type="button">Sign out</button>
+      <a class="ha-admin" href="/admin/" hidden>Admin</a>
+      <button type="button" class="ha-signout">Sign out</button>
     </div>
   </div>
 </div>
@@ -25,55 +27,71 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
 <script>
   import { getSupabase, getProfile } from '../lib/supabase';
 
-  const byId = (id: string) => document.getElementById(id)!;
   const sb = getSupabase();
-  if (sb) {
-    const signin = byId('ha-signin');
-    const wrap = byId('ha-menu-wrap');
-    const toggle = byId('ha-toggle');
-    const menu = byId('ha-menu');
+  const roots = Array.from(document.querySelectorAll<HTMLElement>('.header-account'));
 
-    const closeMenu = () => {
-      menu.hidden = true;
-      toggle.setAttribute('aria-expanded', 'false');
-    };
+  function wire(root: HTMLElement) {
+    const signin = root.querySelector<HTMLElement>('.ha-signin')!;
+    const wrap = root.querySelector<HTMLElement>('.ha-wrap')!;
+    const toggle = root.querySelector<HTMLElement>('.ha-toggle')!;
+    const menu = root.querySelector<HTMLElement>('.ha-menu')!;
+    const nameEl = root.querySelector<HTMLElement>('.ha-name')!;
+    const adminEl = root.querySelector<HTMLElement>('.ha-admin')!;
+    const signout = root.querySelector<HTMLElement>('.ha-signout')!;
+
+    const close = () => { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); };
 
     toggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      const open = menu.hidden;
-      menu.hidden = !open;
-      toggle.setAttribute('aria-expanded', String(open));
+      const willOpen = menu.hidden;
+      menu.hidden = !willOpen;
+      toggle.setAttribute('aria-expanded', String(willOpen));
     });
+    menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
+    signout.addEventListener('click', async () => {
+      try { await sb!.auth.signOut(); } catch (err) { console.error('[header] signout failed:', err); }
+      close();
+    });
+
+    return { signin, wrap, toggle, menu, nameEl, adminEl, close };
+  }
+
+  if (sb && roots.length) {
+    const instances = roots.map(wire);
+
+    // Click anywhere outside an open menu closes it; Escape closes all.
     document.addEventListener('click', (e) => {
-      if (!menu.hidden && !wrap.contains(e.target as Node)) closeMenu();
+      for (const i of instances) {
+        if (!i.menu.hidden && !i.wrap.contains(e.target as Node)) i.close();
+      }
     });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-    // Close the menu when any item in it is clicked (e.g. navigating to Dashboard).
-    menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
-    byId('ha-signout').addEventListener('click', async () => {
-      try { await sb.auth.signOut(); } catch (err) { console.error('[header] signout failed:', err); }
-      closeMenu();
+      if (e.key === 'Escape') instances.forEach((i) => i.close());
     });
 
     sb.auth.onAuthStateChange((_event, session) => {
       const user = session?.user;
+      for (const i of instances) {
+        if (user) {
+          i.nameEl.textContent = user.email ? user.email.split('@')[0] : 'Account';
+          i.toggle.title = user.email ? `Signed in as ${user.email}` : 'Signed in';
+          i.signin.hidden = true;
+          i.wrap.hidden = false;
+        } else {
+          i.signin.hidden = false;
+          i.wrap.hidden = true;
+          i.close();
+        }
+      }
       if (user) {
-        byId('ha-name').textContent = user.email ? user.email.split('@')[0] : 'Account';
-        toggle.title = user.email ? `Signed in as ${user.email}` : 'Signed in';
-        signin.hidden = true;
-        wrap.hidden = false;
         getProfile()
           .then((p) => {
-            if (p?.display_name) byId('ha-name').textContent = p.display_name;
-            byId('ha-admin').hidden = p?.role !== 'admin';
+            for (const i of instances) {
+              if (p?.display_name) i.nameEl.textContent = p.display_name;
+              i.adminEl.hidden = p?.role !== 'admin';
+            }
           })
-          .catch(() => { byId('ha-admin').hidden = true; });
-      } else {
-        signin.hidden = false;
-        wrap.hidden = true;
-        closeMenu();
+          .catch(() => instances.forEach((i) => (i.adminEl.hidden = true)));
       }
     });
   }
