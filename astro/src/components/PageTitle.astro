@@ -51,23 +51,34 @@ const editHref = isNote && filePath ? `/admin/edit?path=${encodeURIComponent(`as
     [/^solution\b/i, 'solution'],
   ];
   document.querySelectorAll<HTMLElement>('.theorem-box').forEach((box) => {
-    const h = box.querySelector('h1,h2,h3,h4,h5,h6');
-    const heading = h?.textContent?.trim() ?? '';
-    const match = TYPES.find(([re]) => re.test(heading));
+    // A box is labelled either by a leading heading (## Proof) or — the more
+    // common convention here — a bold lead-in starting the first paragraph
+    // (**Proof.**, **Example 4.3.** …). Read whichever is present.
+    const headingEl = box.querySelector('h1,h2,h3,h4,h5,h6');
+    let label = headingEl?.textContent?.trim() ?? '';
+    if (!label) {
+      const lead = box.querySelector('p')?.firstElementChild;
+      if (lead && (lead.tagName === 'STRONG' || lead.tagName === 'B')) {
+        label = lead.textContent?.trim() ?? '';
+      }
+    }
+    const match = TYPES.find(([re]) => re.test(label));
     if (match) box.classList.add('tb--' + match[1]);
-    // Practice solutions start hidden behind a "Show solution" toggle.
-    if (match && match[1] === 'solution') {
+    // Practice solutions start hidden behind a "Show solution" toggle. Only
+    // heading-style solutions (#### Solution) collapse — bold inline solutions
+    // in notes stay visible, so this is gated on an actual heading.
+    if (match && match[1] === 'solution' && headingEl) {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'solution-toggle';
       btn.setAttribute('aria-expanded', 'false');
-      btn.textContent = 'Show ' + heading;
+      btn.textContent = 'Show ' + label;
       box.hidden = true;
       box.parentNode?.insertBefore(btn, box);
       btn.addEventListener('click', () => {
         const opening = box.hidden;
         box.hidden = !opening;
-        btn.textContent = (opening ? 'Hide ' : 'Show ') + heading;
+        btn.textContent = (opening ? 'Hide ' : 'Show ') + label;
         btn.setAttribute('aria-expanded', String(opening));
         btn.classList.toggle('is-open', opening);
       });
