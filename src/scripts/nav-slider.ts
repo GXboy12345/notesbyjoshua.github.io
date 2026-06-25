@@ -13,6 +13,44 @@ function ensureSlider(nav: HTMLElement): HTMLElement {
   return slider;
 }
 
+function linkOffsets(active: HTMLElement, nav: HTMLElement) {
+  let left = 0;
+  let top = 0;
+  let el: HTMLElement | null = active;
+
+  while (el && el !== nav) {
+    left += el.offsetLeft;
+    top += el.offsetTop;
+    el = el.offsetParent as HTMLElement | null;
+  }
+
+  if (el === nav) {
+    return { left, top, width: active.offsetWidth, height: active.offsetHeight };
+  }
+
+  const navRect = nav.getBoundingClientRect();
+  const activeRect = active.getBoundingClientRect();
+  return {
+    left: activeRect.left - navRect.left,
+    top: activeRect.top - navRect.top,
+    width: activeRect.width,
+    height: activeRect.height,
+  };
+}
+
+function markSliderReady(nav: HTMLElement, instant: boolean) {
+  if (!instant) {
+    nav.classList.add('nav-slider--ready');
+    return;
+  }
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      nav.classList.remove('nav-slider--instant');
+      nav.classList.add('nav-slider--ready');
+    });
+  });
+}
+
 /** Set data-nav-active on the best-matching link within a nav track (longest prefix wins). */
 export function syncTrackActive(nav: HTMLElement, currentPath = window.location.pathname) {
   const links = [...nav.querySelectorAll<HTMLAnchorElement>('a[href]')];
@@ -44,39 +82,56 @@ export function syncNavSlider(nav: HTMLElement, instant = false) {
 
   if (!active) {
     slider.style.opacity = '0';
-    if (instant) {
-      requestAnimationFrame(() => {
-        nav.classList.remove('nav-slider--instant');
-        nav.classList.add('nav-slider--ready');
-      });
-    }
+    markSliderReady(nav, instant);
     return;
   }
 
-  const navRect = nav.getBoundingClientRect();
-  const activeRect = active.getBoundingClientRect();
+  const { left, top, width, height } = linkOffsets(active, nav);
 
-  slider.style.width = `${activeRect.width}px`;
-  slider.style.height = `${activeRect.height}px`;
-  slider.style.transform = `translate(${activeRect.left - navRect.left}px, ${activeRect.top - navRect.top}px)`;
+  slider.style.width = `${width}px`;
+  slider.style.height = `${height}px`;
+  slider.style.transform = `translate(${left}px, ${top}px)`;
   slider.style.opacity = '1';
 
-  if (instant) {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        nav.classList.remove('nav-slider--instant');
-        nav.classList.add('nav-slider--ready');
-      });
-    });
+  markSliderReady(nav, instant);
+}
+
+/** Re-sync active state and slider position after layout settles. */
+export function syncNavTrack(
+  nav: HTMLElement,
+  options: { instant?: boolean; path?: string; waitForLayout?: boolean } = {},
+) {
+  const { instant = false, path = window.location.pathname, waitForLayout = false } = options;
+  syncTrackActive(nav, path);
+
+  const run = () => syncNavSlider(nav, instant);
+  if (waitForLayout) {
+    requestAnimationFrame(() => requestAnimationFrame(run));
   } else {
-    nav.classList.add('nav-slider--ready');
+    run();
   }
 }
 
 function observeNav(nav: HTMLElement) {
-  const ro = new ResizeObserver(() => syncNavSlider(nav));
+  // Layout-driven resyncs snap instantly—animated width/transform mid-reflow reads stale.
+  const resync = () => syncNavSlider(nav, true);
+
+  const ro = new ResizeObserver(resync);
   ro.observe(nav);
   nav.querySelectorAll('a').forEach((link) => ro.observe(link));
+
+  const header = nav.closest('.site-header');
+  const actions = header?.querySelector('.header-actions');
+  if (header) ro.observe(header);
+  if (actions) ro.observe(actions);
+
+  const sidebar = nav.closest('.doc-sidebar, .doc-sidebar-column, .sidebar-inner');
+  if (sidebar) ro.observe(sidebar);
+}
+
+function bindLayoutResync(nav: HTMLElement) {
+  window.addEventListener('resize', () => syncNavSlider(nav, true), { passive: true });
+  document.fonts?.ready.then(() => syncNavSlider(nav, true));
 }
 
 /** Attach slider behavior to a nav track (idempotent). */
@@ -86,7 +141,7 @@ export function initNavSlider(nav: HTMLElement | null) {
   nav.classList.add('nav-slider-track');
 
   if (nav.dataset.sliderInit === '1') {
-    syncNavSlider(nav);
+    syncNavSlider(nav, true);
     return;
   }
   nav.dataset.sliderInit = '1';
@@ -94,10 +149,5 @@ export function initNavSlider(nav: HTMLElement | null) {
   ensureSlider(nav);
   syncNavSlider(nav, true);
   observeNav(nav);
-
-  window.addEventListener(
-    'resize',
-    () => syncNavSlider(nav),
-    { passive: true },
-  );
+  bindLayoutResync(nav);
 }

@@ -122,15 +122,12 @@ const notesTree = buildNotesTree(await allDocEntries());
 
 <script>
   import { initSidebar, syncSidebarActive } from '../scripts/sidebar.ts';
-  import { initNavSlider, syncNavSlider, syncTrackActive } from '../scripts/nav-slider';
+  import { initNavSlider, syncNavTrack } from '../scripts/nav-slider';
 
   function syncSidebarNav() {
     syncSidebarActive();
     const primary = document.querySelector<HTMLElement>('.sidebar-primary');
-    if (primary) {
-      syncTrackActive(primary);
-      syncNavSlider(primary);
-    }
+    if (primary) syncNavTrack(primary, { waitForLayout: true });
   }
 
   document.addEventListener(
