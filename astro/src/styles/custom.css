@@ -50,6 +50,16 @@
 .sl-markdown-content .theorem-box.tb--proof    { border-left: 4px solid #94a3b8; background: rgba(148, 163, 184, 0.10); }
 .sl-markdown-content .theorem-box.tb--solution { border-left: 4px solid #22c55e; background: rgba(34, 197, 94, 0.07); }
 
+/* Dark mode: the generic dark .theorem-box rule above is more specific than the
+   type rules, so it would otherwise wash them all to the same blue. These match
+   its specificity (and add the modifier class) to restore per-type accents, with
+   brighter borders + slightly stronger tints for contrast on the dark surface. */
+:root[data-theme='dark'] .sl-markdown-content .theorem-box.tb--def      { border-left-color: #38bdf8; background: rgba(56, 189, 248, 0.14); }
+:root[data-theme='dark'] .sl-markdown-content .theorem-box.tb--thm      { border-left-color: #4ade80; background: rgba(74, 222, 128, 0.13); }
+:root[data-theme='dark'] .sl-markdown-content .theorem-box.tb--ex       { border-left-color: #fbbf24; background: rgba(251, 191, 36, 0.13); }
+:root[data-theme='dark'] .sl-markdown-content .theorem-box.tb--proof    { border-left-color: #cbd5e1; background: rgba(148, 163, 184, 0.16); }
+:root[data-theme='dark'] .sl-markdown-content .theorem-box.tb--solution { border-left-color: #4ade80; background: rgba(74, 222, 128, 0.13); }
+
 /* --- Note figures: <img class="note-img note-img--w480"> --- */
 .sl-markdown-content img.note-img {
 	display: block;
