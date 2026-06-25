@@ -12,4 +12,5 @@ This page is dedicated to equations/concepts of stellar physics that will show u
 
 :::under-construction
 **Add photo of star trails**???
+
 :::

@@ -28,6 +28,7 @@ Polar molecules possess a permanent dipole moment, since the more electronegativ
 
 :::tip
 **Hydrogen bonding** is an especially strong dipole–dipole interaction (often treated as its own category) when hydrogen is bonded to F, O, or N: small, very electronegative atoms that leave a highly exposed proton. It explains the anomalously high boiling points of $$\text{H}_2\text{O}$$, alcohols ( $$\text{-OH}$$ ), and amines in appropriate contexts, since they all include hydrogen bonds.
+
 :::
 
 ### Ion–dipole interactions
@@ -82,6 +83,7 @@ The main crystalline types behave differently in simple tests, so a short flowch
 5. **Hexane solubility (confirmation for molecular solids)**: **Hexane** is **nonpolar**. If the solid **dissolves** in hexane, it behaves like a **nonpolar** species (**nonpolar molecular**). If it **does not** dissolve in hexane but **did** dissolve in water, that matches **polar molecular**. If it dissolves in neither, reconsider **ionic** (if it never dissolved), **network** covalent, or a very high–molar-mass molecular solid.
 
 **Caveat:** **Covalent network** solids are easy to confuse with **nonpolar molecular** solids in water/hexane tests alone: hardness, melting behavior, and structure from other evidence matter.
+
 :::
 
 ---
@@ -108,6 +110,7 @@ Temperature (in Kelvin) is proportional to the average translational kinetic ene
 
 :::figure{width=480}
 ![Maxwell Boltzmann Distribution](/assets/APs/AP%20Chem/submix/maxwellboltzmann.png)
+
 :::
 
 ---
@@ -126,6 +129,7 @@ Kinetic molecular theory sets down some assumptions for an ideal gas:
 $$
 KE_{avg} = \frac{3}{2}RT.
 $$
+
 :::
 
 Per molecule, the equation becomes
@@ -166,6 +170,7 @@ There are many gas laws that are useful for the AP exam (Remember to **ALWAYS** 
 
 :::warning
 Use **Kelvin** for all gas-law temperature calculations.
+
 :::
 
 - **Boyle’s law**: $$P_1 V_1 = P_2 V_2$$ (or equivalently $$P \propto \frac{1}{V}$$) at fixed $$n$$ and $$T$$.
@@ -179,6 +184,7 @@ The combined gas laws can merge to form the **Ideal Gas Law (IGL)**:
 $$
 PV = nRT.
 $$
+
 :::
 
 Use a value of $$R$$ whose pressure and volume units match the problem:
@@ -222,6 +228,7 @@ where $$x_i$$ is the mole fraction of gas $$i$$. When collecting a gas over wate
 $$
 P_{\text{total}} = P_{\text{gas}} + P_{\text{H}_2\text{O}}.
 $$
+
 :::
 
 ---
@@ -236,6 +243,7 @@ $$
 $$
 
 where $$M$$ is molar mass. Graham's Law basically states that lighter molecules move faster on average and effuse faster.
+
 :::
 
 ---
@@ -264,6 +272,7 @@ which equals $$1$$ for an ideal gas (by Ideal Gas Law). $$Z < 1$$ often reflects
 
 :::figure{width=480}
 ![Phase Diagram](/assets/APs/AP%20Chem/submix/phasediagram.jpg)
+
 :::
 
 ---
@@ -286,6 +295,7 @@ $$
 $$
 
 $$K_b$$ and $$K_f$$ are solvent constants. The **van’t Hoff factor** $$i$$ is the moles of dissolved particles produced per mole of formula units added (for molecular solids $$i = 1$$). Although this is not always the case, for ionic solids, you can assume that $$i$$ is the number of ions that result after one molecule of the solid dissolves.
+
 :::
 
 ---
@@ -306,6 +316,7 @@ P_{\text{total}} = x_A P^\circ_A + x_B P^\circ_B
 $$
 
 when the mixture is ideal. *Positive deviations* from Raoult’s law mean weaker attractions between unlike molecules than the average of like–like interactions; *negative deviations* mean stronger attractions between unlike partners.
+
 :::
 
 **Henry’s law** relates gas solubility in a liquid to partial pressure:
@@ -316,6 +327,7 @@ C = k_H P,
 $$
 
 with $$k_H$$ a constant for a given solute–solvent pair at fixed $$T$$.
+
 :::
 
 ---
@@ -330,10 +342,12 @@ $$
 $$
 
 with $$M$$ in $$\text{mol/L}$$ and $$R$$ matched to the units of $$\Pi$$ (commonly $$0.0821 \text{ L}\cdot\text{atm}/(\text{mol}\cdot\text{K})$$ when $$\Pi$$ is in atm). Osmosis is net flow of solvent through a semipermeable membrane toward higher solute concentration.
+
 :::
 
 :::exam
 Note that this will likely not appear on the AP Chemistry exam.
+
 :::
 
 ---
@@ -354,10 +368,12 @@ A = -\log_{10}(T)
 $$,
 
 but transmittance rarely shows up on the AP exam. Beer's law is very applicable for measuring equilibrium/kinetics, since absorbance is directly proportional to concentration.
+
 :::
 
 :::tip
 When doing colorimetry, always calibrate beforehand and set the wavelength to the wavelength that is closest to the OPPOSITE of the color of the solution to get maximum absorbance.
+
 :::
 
 ---
@@ -381,6 +397,7 @@ $$\text{CH}_3\text{OH}$$ can form hydrogen bonds because it has an O-H bond. The
 $$
 \boxed{\text{C}}
 $$
+
 :::
 :::
 
@@ -410,6 +427,7 @@ So the answer is
 $$
 \boxed{\text{C}}.
 $$
+
 :::
 :::
 
@@ -427,6 +445,7 @@ Ethanol and water are both polar and can hydrogen bond with each other, so they 
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -444,6 +463,7 @@ Henry's law says gas solubility increases as the partial pressure of the gas abo
 $$
 \boxed{\text{A}}
 $$
+
 :::
 :::
 
@@ -461,6 +481,7 @@ Gases behave most ideally at low pressure and high temperature, especially when 
 $$
 \boxed{\text{C}}
 $$
+
 :::
 :::
 
@@ -478,6 +499,7 @@ Boiling-point elevation depends on total dissolved particle concentration. $$\te
 $$
 \boxed{\text{C}}
 $$
+
 :::
 :::
 
@@ -514,6 +536,7 @@ c=\frac{0.420}{15.0}=0.0280\ \text{mol/L}.
 $$
 
 $$(C)$$ Choosing a strongly absorbed wavelength gives a larger absorbance change for a given concentration change, which makes the measurement more sensitive. If the wavelength is poorly absorbed, the absorbance values may be too small and close together, making it harder to distinguish concentrations accurately.
+
 :::
 :::
 
@@ -545,6 +568,7 @@ $$(C)$$ The $$0.040\ M$$ solution has twice the concentration, so an equal-volum
 
 :::placeholder
 Equal-volume particle diagrams showing the $$0.040\ M$$ solution with twice as many colored ions as the $$0.020\ M$$ solution.
+
 :::
 
 :::

@@ -28,6 +28,7 @@ The **Second Law of Thermodynamics** says that for any spontaneous process, the 
 $$
 \Delta S_{\text{universe}} > 0.
 $$
+
 :::
 
 - **Entropy** $$S$$ is a measure of *energy dispersal* and the number of possible microscopic arrangements available to a system. A common shorthand is "chaos," but the more precise AP idea is that higher entropy means more accessible **microstates**.
@@ -55,6 +56,7 @@ Heat leaving the system increases surrounding entropy; heat entering the system 
 $$
 \Delta S_{\text{surroundings}} = -\frac{\Delta H_{\text{system}}}{T}.
 $$
+
 :::
 
 This equation explains why exothermic reactions often help spontaneity: if $$\Delta H_{\text{system}} < 0$$, then $$\Delta S_{\text{surroundings}} > 0$$.
@@ -96,6 +98,7 @@ The **Third Law of Thermodynamics** says that a perfect crystal at $$0\ \text{K}
 $$
 S = 0 \quad \text{for a perfect crystal at } 0\ \text{K}.
 $$
+
 :::
 
 Unlike standard enthalpies of formation, standard molar entropies are not usually zero for elements at $$298\ \text{K}$$. Real substances have motion and energy distributions above absolute zero, so they have positive entropy.
@@ -108,6 +111,7 @@ $$
 $$
 
 where $$n_p$$ and $$n_r$$ are the stoichiometric coefficients of products and reactants. Entropy is commonly tabulated in $$\text{J}/(\text{mol}\cdot\text{K})$$, not $$\text{kJ}/(\text{mol}\cdot\text{K})$$, so unit conversion matters when combining entropy with enthalpy or Gibbs free energy.
+
 :::
 
 ---
@@ -126,6 +130,7 @@ Here $$T$$ must be in Kelvin. If $$\Delta H$$ is in $$\text{kJ/mol}$$, then $$T\
 $$
 1\ \text{kJ} = 1000\ \text{J}.
 $$
+
 :::
 
 The sign of $$\Delta G$$ determines thermodynamic favorability:
@@ -227,6 +232,7 @@ Remember:
 
 - **ANOX**: oxidation occurs at the anode.
 - **REDCAT**: reduction occurs at the cathode.
+
 :::
 
 Electrons flow through the external wire from anode to cathode. Ions move through the solution or salt bridge to maintain charge balance.
@@ -278,6 +284,7 @@ For a redox reaction,
 $$
 \Delta G = -nFE_{\text{cell}}.
 $$
+
 :::
 
 Important sign connection:
@@ -328,6 +335,7 @@ E^\circ_{\text{cell}} = E^\circ_{\text{red}} + E^\circ_{\text{ox}},
 $$
 
 then you must reverse the anode half-reaction and change its sign.
+
 :::
 
 Simply stated, you can think of a high cell potential as a river with a lot of electrons, where the more electrons you have the higher the river is. Thus, this river will flow from high to low, just like how electrons will flow from high reduction potential to a low cell potential.
@@ -362,6 +370,7 @@ The **Nernst equation** relates cell potential to *nonstandard concentrations or
 $$
 E_{\text{cell}} = E^\circ_{\text{cell}} - \frac{RT}{nF}\ln Q.
 $$
+
 :::
 
 At $$25^\circ\text{C}$$, this becomes
@@ -429,6 +438,7 @@ Oxidation still occurs at the anode and reduction still occurs at the cathode. T
 
 :::warning
 In an electrolytic cell, the anode is positive and the cathode is negative—the opposite of a galvanic cell.
+
 :::
 
 | Cell type    | Anode    | Cathode  | Spontaneity                            |
@@ -522,6 +532,7 @@ $$
 $$
 
 So $$n = 2$$ in the mass equation.
+
 :::
 
 ---
@@ -535,6 +546,7 @@ So $$n = 2$$ in the mass equation.
 6. Use reduction potential tables carefully: values are intensive, and tabulated half-reactions are written as reductions.
 7. For nonstandard cells, write $$Q$$ correctly before using the Nernst equation.
 8. For electrolysis, convert current and time into charge, then into moles of electrons.
+
 :::
 
 ---
@@ -557,6 +569,7 @@ Since this unit is very equation-heavy, below is a list of all important equatio
 | Nernst at $$25^\circ\text{C}$$             | $$E_{\text{cell}} = E^\circ_{\text{cell}} - \frac{0.0592}{n}\log Q$$                                                     |
 | Charge                                     | $$q = nF = It$$                                                                                                          |
 | Faraday's law mass form                    | $$m = \frac{MIt}{nF}$$                                                                                                   |
+
 :::
 
 ---
@@ -586,6 +599,7 @@ Spontaneous means $$\Delta G^\circ<0$$, which requires $$E^\circ_{\text{cell}}>0
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -603,6 +617,7 @@ Sublimation changes a solid directly into a gas. Gas particles have many more ac
 $$
 \boxed{\text{C}}
 $$
+
 :::
 :::
 
@@ -626,6 +641,7 @@ When both $$\Delta H^\circ$$ and $$\Delta S^\circ$$ are positive, high temperatu
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -643,6 +659,7 @@ Oxidation always occurs at the anode, in both galvanic and electrolytic cells.
 $$
 \boxed{\text{A}}
 $$
+
 :::
 :::
 
@@ -666,6 +683,7 @@ a negative $$\Delta G^\circ$$ means $$\ln K>0$$, so $$K>1$$.
 $$
 \boxed{\text{C}}
 $$
+
 :::
 :::
 
@@ -687,6 +705,7 @@ $$
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -756,6 +775,7 @@ $$(D)$$ Electrons are produced at the zinc anode and consumed at the copper cath
 
 :::placeholder
 Galvanic cell diagram with Zn anode, Cu cathode, electron flow from Zn to Cu, and ion flow through the salt bridge.
+
 :::
 
 :::
@@ -800,6 +820,7 @@ $$
 This is about $$25.3\ \text{min}$$ if converted to minutes.
 
 $$(C)$$ Metal ions gain electrons and become solid metal on the object, so reduction occurs at the object being plated. The object being plated acts as the cathode in the electrolytic cell.
+
 :::
 :::
 :::

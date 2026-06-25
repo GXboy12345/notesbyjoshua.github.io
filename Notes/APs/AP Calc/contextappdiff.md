@@ -19,10 +19,12 @@ If $$Q(t)$$ is a quantity depending on time, then:
 
 - $$Q'(t)$$ is the instantaneous rate of change of $$Q$$,
 - units of $$Q'(t)$$ are units of $$Q$$ per unit of $$t$$.
+
 :::
 
 :::tip
 Always interpret both sign and units.
+
 :::
 
 ---
@@ -41,6 +43,7 @@ Instantaneous rate at $$t=a$$:
 $$
 Q'(a).
 $$
+
 :::
 
 ---
@@ -59,6 +62,7 @@ Interpret carefully:
 - $$v(t) > 0$$ means motion in the positive direction,
 - $$v(t) < 0$$ means motion in the negative direction,
 - speed is $$\lvert v(t) \rvert$$.
+
 :::
 
 :::tip
@@ -66,6 +70,7 @@ Speed increasing:
 
 - $$v(t) > 0$$ and $$a(t) > 0$$, or
 - $$v(t) < 0$$ and $$a(t) < 0$$.
+
 :::
 
 ---
@@ -84,6 +89,7 @@ If $$R(t)$$ is the rate entering a tank and $$L(t)$$ is the rate leaving, then:
 $$
 V'(t) = R(t) - L(t).
 $$
+
 :::
 
 ---
@@ -105,6 +111,7 @@ Given a graph of a derivative:
 
 :::placeholder
 [Image Placeholder: contextual graph with slope interpretation at several labeled points]
+
 :::
 
 ---
@@ -120,6 +127,7 @@ Related rates problems are mostly about translation. The key source equations us
 
 :::tip
 If the problem asks how fast a quantity is changing, the final answer should usually be a value of a derivative with units.
+
 :::
 
 ---
@@ -132,6 +140,7 @@ Near $$x=a$$,
 $$
 L(x) = f(a) + f'(a)(x-a)
 $$
+
 :::
 
 approximates $$f(x)$$.
@@ -142,6 +151,7 @@ Differentials use the same idea:
 $$
 dy = f'(x)\,dx.
 $$
+
 :::
 
 If a measured input has small error $$dx$$, then the output error is approximately $$dy$$.
@@ -162,6 +172,7 @@ Then:
 - marginal cost is $$C'(x)$$,
 - marginal revenue is $$R'(x)$$,
 - marginal profit is $$P'(x)$$.
+
 :::
 
 At large production levels, these are interpreted as approximate change from one additional unit.
@@ -176,6 +187,7 @@ At large production levels, these are interpreted as approximate change from one
 - at what rate means derivative value,
 - how fast often means magnitude, but read carefully,
 - changing more rapidly compares derivative magnitudes or second derivatives depending on context.
+
 :::
 
 ---
@@ -185,4 +197,5 @@ At large production levels, these are interpreted as approximate change from one
 - Giving a derivative without units.
 - Using the wrong variable as the independent variable.
 - Forgetting to evaluate at the specified time or input.
+
 :::

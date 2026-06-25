@@ -10,6 +10,7 @@ permalink: /notes/ap/precalc/functions/
 
 :::summary{title="Unit overview"}
 This unit covers function notation, domain and range, transformations, composition, inverses, and piecewise functions—the core language of AP Precalculus modeling.
+
 :::
 
 ---
@@ -51,6 +52,7 @@ Most domain work comes from asking what operations are legal.
 - Even roots (e.g. square roots) require the inside expression to be nonnegative.
 - Logarithms require the input to be positive.
 - Contextual functions like parametrics may have extra restrictions, such as time $$t\ge 0$$ or length $$x>0$$.
+
 :::
 
 Always keep track of domain restrictions, and the legal domain is everything that is not part of the domain restriction.
@@ -148,6 +150,7 @@ Therefore $$-1<y<1$$. The value $$y=0$$ occurs at $$x=-4$$ and $$x=0$$, while $$
 $$
 range=(-1,1).
 $$
+
 :::
 
 ---
@@ -170,6 +173,7 @@ Knowing these shapes makes it much easier to sketch transformed functions quickl
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/parfunc.png)
+
 :::
 
 ---
@@ -654,10 +658,12 @@ f^{-1}(x)\ne \frac{1}{f(x)}
 $$
 
 in general. The expression $$x^{-1}$$ means $$1/x$$, but $$f^{-1}$$ means an inverse function. Sometimes you will see the inverse written as $$fp$$, but this can be confused with the derivative notation (used in calculus) and is seldom used.
+
 :::
 
 :::theorem{name="Extension"}
 **Extension.** Prove that the graph of $$f(x)$$ and $$f^{-1}(x)$$ are reflections of each other over the line $$y=x$$.
+
 :::
 
 ---
@@ -673,6 +679,7 @@ To find the inverse of a function:
 
 :::note
 It is very improtant to note that the domain of $$f$$ becomes the range of $$f^{-1}$$, and the range of $$f$$ becomes the domain of $$f^{-1}$$.
+
 :::
 
 :::example{title="Inverse of a rational function"}
@@ -786,6 +793,7 @@ A quick map of bijectivity, surjectivity, and injectivity is shown below (this i
 
 :::figure{width=480}
 ![BIS](/assets/APs/AP%20Precalc/BIS.png)
+
 :::
 
 ---
@@ -830,6 +838,7 @@ For $$t>0$$, the outputs cover $$[0,\infty)$$. For $$t<0$$, the outputs cover $$
 $$
 \boxed{\text{range}=(-\infty,\infty)}.
 $$
+
 :::
 :::
 
@@ -878,6 +887,7 @@ Therefore
 $$
 \boxed{a=3,\qquad b=-5,\qquad c=45}.
 $$
+
 :::
 :::
 
@@ -960,6 +970,7 @@ This simplifies to $$x^2\le 4$$, so both branches have domain
 $$
 \boxed{[-2,2]}.
 $$
+
 :::
 :::
 
@@ -1043,6 +1054,7 @@ $$
 $$
 
 each with domain $$[-1,\infty)$$.
+
 :::
 :::
 
@@ -1091,6 +1103,7 @@ The range of $$f^{-1}$$ is the domain of $$f$$:
 $$
 \boxed{[3,\infty)}.
 $$
+
 :::
 :::
 
@@ -1119,6 +1132,7 @@ Since $$f$$ is both injective and surjective,
 $$
 \boxed{f\text{ is bijective}}.
 $$
+
 :::
 :::
 
@@ -1159,6 +1173,7 @@ $$
 =\frac{\frac{-2h}{(x+h-1)(x-1)}}{h}
 =\boxed{\frac{-2}{(x+h-1)(x-1)}}.
 $$
+
 :::
 :::
 
@@ -1224,6 +1239,7 @@ but that is an extra assumption. Therefore the correct conclusion from the state
 $$
 \boxed{\text{the range is not determined by the given data}}.
 $$
+
 :::
 :::
 
@@ -1268,6 +1284,7 @@ So
 $$
 \boxed{f^{-1}(3)=-\frac83}.
 $$
+
 :::
 :::
 
@@ -1328,6 +1345,7 @@ h(x)=
 $$
 
 The graph is symmetric about $$x=1$$, has endpoints $$(-3,0)$$ and $$(5,0)$$, and reaches its maximum at $$(1,2)$$.
+
 :::
 :::
 
@@ -1409,6 +1427,7 @@ with
 $$
 \boxed{\text{domain of }g\circ f=\left[-\frac52,\infty\right)\setminus\{2\}}.
 $$
+
 :::
 :::
 
@@ -1463,6 +1482,7 @@ f(3)=2.
 $$
 
 Since two different inputs give the same output, the function does not have an inverse function on all of $$\mathbb{R}$$.
+
 :::
 :::
 
@@ -1529,6 +1549,7 @@ Therefore
 $$
 \boxed{a=5,\qquad b=6,\qquad c=\frac{16}{3}}.
 $$
+
 :::
 :::
 
@@ -1613,6 +1634,7 @@ So
 $$
 \boxed{g(-1)=-2}.
 $$
+
 :::
 :::
 
@@ -1669,6 +1691,7 @@ Therefore
 $$
 \boxed{g\text{ is surjective onto }C}.
 $$
+
 :::
 :::
 
@@ -1786,6 +1809,7 @@ f(x+y)=c(x+y)=cx+cy=f(x)+f(y).
 $$
 
 For part (E), the proof works over $$\mathbb{Q}$$ because every rational number is a rational multiple of $$1$$. It does not extend to all real numbers because not every real number can be built from $$1$$ using only integer multiplication and division. Over $$\mathbb{R}$$, there are many wild additive functions if no conditions like continuity, monotonicity, or boundedness are required.
+
 :::
 :::
 :::

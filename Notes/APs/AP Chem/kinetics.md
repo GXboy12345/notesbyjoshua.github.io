@@ -20,6 +20,7 @@ permalink: /notes/ap/chem/kinetics/
 $$
 \text{rate} \propto N \times f_E \times f_O.
 $$
+
 :::
 
 Here $$N$$ is roughly the number of collisions per unit time (collision frequency), $$f_E$$ is the fraction of collisions with enough energy to surmount the barrier, and $$f_O$$ is the fraction with favorable orientation (sometimes folded into a steric factor in $$A$$).
@@ -50,6 +51,7 @@ a common convention ties all species to one rate expression:
 $$
 \text{rate} = -\frac{1}{a}\frac{d[\text{A}]}{dt} = -\frac{1}{b}\frac{d[\text{B}]}{dt} = +\frac{1}{c}\frac{d[\text{C}]}{dt} = +\frac{1}{d}\frac{d[\text{D}]}{dt}.
 $$
+
 :::
 
 The negative sign on reactants makes rate a positive quantity as written. Note that $$d$$ represents the derivative, or the measure of the rate of change. If you watch one species by itself, the sign of $$d[\text{X}]/dt$$ tells you whether it is being used up (negative for a reactant whose concentration falls) or formed (positive for a product). The stoichiometric factors convert those individual slopes into a single rate for the whole reaction.
@@ -66,12 +68,14 @@ Experiment determines how rate depends on concentration. The differential rate l
 $$
 \text{rate} = k[\text{A}]^m[\text{B}]^n[\text{C}]^p \cdots
 $$
+
 :::
 
 Here $$k$$ is the **rate constant** (units depend on overall order), and $$m, n, p, \ldots$$ are the orders with respect to each reactant.
 
 :::warning
 Those exponents are *not* taken from the balanced equation unless the reaction is a single **elementary step** (see mechanisms below). Overall reaction order is the sum $$m + n + p + \cdots$$.
+
 :::
 
 Important distinction: at fixed temperature (and without changing catalyst), $$k$$ does not depend on concentrations or, for gases, on pressure as a separate knob—concentration enters only through the powers $$[\text{A}]^m$$ etc. Changing pressure in a gas-phase system often changes concentrations and therefore rate, but it does not change $$k$$ itself. Temperature and catalysts change $$k$$.
@@ -84,6 +88,7 @@ m = \frac{\ln(\text{rate}_1 / \text{rate}_2)}{\ln([\text{A}]_1 / [\text{A}]_2)},
 $$
 
 with nearest-integer order a common simplification on exams when data are clean. Repeat for each reactant, then substitute any one run’s data to solve for $$k$$.
+
 :::
 
 Units of $$k$$ follow from $$\text{rate}$$ in $$\text{M/s}$$ (molarity per second) and the concentration powers. Examples for a single reactant $$\text{A}$$:
@@ -124,6 +129,7 @@ $$
 $$
 
 A plot of $$1/[\text{A}]$$ versus $$t$$ is linear with slope $$k$$.
+
 :::
 
 Which graph is linear is a standard way to infer order from concentration–time data. **Half-life** $$t_{1/2}$$ is the time for $$[\text{A}]$$ to drop to half its initial value:
@@ -143,6 +149,7 @@ $$
 $$
 
 For zero order, half-life **shrinks** as $$[\text{A}]_0$$ decreases. For first order (including many nuclear decay kinetics), $$t_{1/2}$$ is constant throughout the reaction—independent of $$[\text{A}]_0$$. For second order, half-life **grows** as $$[\text{A}]_0$$ decreases.
+
 :::
 
 ---
@@ -155,6 +162,7 @@ The **Arrhenius equation** relates the rate constant to temperature:
 $$
 k = A e^{-E_a/(RT)}.
 $$
+
 :::
 
 $$A$$ is the pre-exponential factor (collision frequency and orientation factors); $$R = 8.314 \text{ J/(mol}\cdot\text{K)}$$ when $$E_a$$ is in $$\text{J/mol}$$; $$T$$ is kelvin.
@@ -185,6 +193,7 @@ The **rate-determining step** (RDS) is the slowest step; it has the highest acti
 
 :::note
 If the experimental rate law does not match the stoichiometry of the overall equation, you infer multiple steps and a slow step that controls rate.
+
 :::
 
 ---
@@ -247,6 +256,7 @@ A **reaction coordinate** diagram plots energy versus progress from reactants to
 $$
 E_{a,\text{fwd}} - E_{a,\text{rev}} = \Delta H.
 $$
+
 :::
 
 A catalyst lowers $$E_{a,\text{fwd}}$$ and $$E_{a,\text{rev}}$$ by about the same amount (same pathway lowering for forward and reverse), so it speeds approach to equilibrium but does not change $$\Delta H$$ or the equilibrium constant at fixed $$T$$.
@@ -302,6 +312,7 @@ So the answer is
 $$
 \boxed{\text{B}}.
 $$
+
 :::
 :::
 
@@ -319,6 +330,7 @@ A catalyst provides an alternate pathway with lower activation energy. It does n
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -342,6 +354,7 @@ so $$\ln[A]$$ versus time is linear.
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -363,6 +376,7 @@ $$
 $$
 \boxed{\text{C}}
 $$
+
 :::
 :::
 
@@ -384,6 +398,7 @@ $$
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -401,6 +416,7 @@ At higher temperature, particles have greater kinetic energy on average, so a la
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 :::
@@ -456,6 +472,7 @@ $$
 $$
 
 The negative slope shows that $$[A]$$ decreases as time increases. The magnitude of the slope gives the rate constant, so a steeper negative line means a faster first-order reaction.
+
 :::
 :::
 
@@ -486,5 +503,6 @@ t_{1/2}=\frac{0.693}{k}=\frac{0.693}{0.0150}=46.2\ \text{s}.
 $$
 
 For a first-order reaction, this half-life is constant, meaning every $$46.2\ \text{s}$$ the concentration is cut in half regardless of the starting concentration.
+
 :::
 :::

@@ -29,6 +29,7 @@ y = x^3 + C.
 $$
 
 If an initial condition is given, such as $$y(1)=5$$, you solve for the constant to get the particular solution.
+
 :::
 
 ---
@@ -44,10 +45,12 @@ To analyze a slope field:
 - look for where slopes are positive/negative,
 - identify equilibrium solutions,
 - sketch a solution curve that follows the segment directions.
+
 :::
 
 :::placeholder
 [Image Placeholder: slope field with equilibrium solution and sample integral curves]
+
 :::
 
 ---
@@ -66,6 +69,7 @@ where
 $$
 \frac{dy}{dx} = f(x,y).
 $$
+
 :::
 
 ---
@@ -86,6 +90,7 @@ $$
 $$
 
 and integrate both sides.
+
 :::
 
 ---
@@ -104,6 +109,7 @@ then
 $$
 y = Ce^{kt}.
 $$
+
 :::
 
 ---
@@ -118,6 +124,7 @@ $$
 $$
 
 where $$L$$ is the carrying capacity.
+
 :::
 
 Behavior:
@@ -137,10 +144,12 @@ Stability:
 
 - stable if nearby solutions move toward it,
 - unstable if nearby solutions move away.
+
 :::
 
 :::tip
 For autonomous equations $$dy/dx = f(y)$$, a sign chart on $$f(y)$$ is an efficient way to classify equilibria.
+
 :::
 
 ---
@@ -167,6 +176,7 @@ $$
 =
 \frac{d}{dx}[f(x,y)].
 $$
+
 :::
 
 This helps determine concavity of solution curves.
@@ -178,4 +188,5 @@ This helps determine concavity of solution curves.
 - Forgetting the constant of integration.
 - Solving for the constant before using the initial condition carefully.
 - Sketching slope-field solutions that cross each other or violate the displayed slope directions.
+
 :::

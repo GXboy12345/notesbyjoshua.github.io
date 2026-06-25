@@ -33,10 +33,12 @@ Interpretations:
 - slope of the tangent line,
 - limit of secant slopes,
 - local sensitivity of output to input.
+
 :::
 
 :::placeholder
 [Image Placeholder: secant lines approaching a tangent line]
+
 :::
 
 ---
@@ -45,6 +47,7 @@ Interpretations:
 
 :::theorem{name="Differentiability implies continuity"}
 If $$f$$ is differentiable at $$a$$, then $$f$$ is continuous at $$a$$.
+
 :::
 
 The converse is false. A function can be continuous but not differentiable because of:
@@ -54,6 +57,7 @@ The converse is false. A function can be continuous but not differentiable becau
 - cusp,
 - vertical tangent,
 - discontinuity.
+
 :::
 
 ---
@@ -90,6 +94,7 @@ $$
 $$
 
 for $$g(x) \ne 0$$.
+
 :::
 
 ---
@@ -120,6 +125,7 @@ $$
 $$
 \frac{d}{dx}(\ln x) = \frac{1}{x}
 $$
+
 :::
 
 ---
@@ -137,6 +143,7 @@ y - f(a) = f'(a)(x-a),
 $$
 
 - normal slope is $$-1/f'(a)$$ when $$f'(a) \ne 0$$.
+
 :::
 
 ---
@@ -150,6 +157,7 @@ Interpretations:
 
 - concavity in pure math,
 - acceleration in motion when $$f$$ is position.
+
 :::
 
 You may also see $$f^{(n)}(x)$$ for the $$n$$th derivative.
@@ -168,12 +176,14 @@ $$
 $$
 a(t) = v'(t) = s''(t)
 $$
+
 :::
 
 Velocity includes sign and direction; speed is $$\lvert v(t) \rvert$$.
 
 :::tip
 When velocity and acceleration have the same sign, speed is increasing. When signs differ, speed is decreasing.
+
 :::
 
 ---
@@ -186,6 +196,7 @@ Near $$x=a$$,
 $$
 f(x) \approx f(a) + f'(a)(x-a).
 $$
+
 :::
 
 This linearization is a first-order approximation and becomes useful for estimation and error analysis later.
@@ -206,6 +217,7 @@ or a symmetric estimate:
 $$
 f'(a) \approx \frac{f(a+h)-f(a-h)}{2h}.
 $$
+
 :::
 
 ---
@@ -215,4 +227,5 @@ $$
 - Forgetting the product rule and differentiating term-by-term incorrectly.
 - Using the quotient rule with the wrong sign in the numerator.
 - Treating speed and velocity as the same thing.
+
 :::

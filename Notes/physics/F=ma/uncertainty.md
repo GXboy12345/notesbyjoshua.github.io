@@ -13,19 +13,23 @@ With every experiment, there will be a source of error, whether you like it or n
 ## Addition/Subtraction
 
 :::under-construction
+
 :::
 
 ## Multiplication/Division
 
 :::under-construction
+
 :::
 
 ## Exponent Rules
 
 :::under-construction
+
 :::
 
 ## Calculus-related Uncertainty
 
 :::under-construction
+
 :::

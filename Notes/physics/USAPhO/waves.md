@@ -10,12 +10,15 @@ permalink: /notes/physics/waves/
 
 :::note
 **Note**: This section will be split up into two, one section about waves and one about optics.
+
 :::
 
 :::under-construction
+
 :::
 
 # Optics
 
 :::under-construction
+
 :::

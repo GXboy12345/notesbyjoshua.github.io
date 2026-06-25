@@ -42,6 +42,7 @@ q_{\text{sys}} = -q_{\text{surr}}
 $$
 
 when no other work or losses matter (Conservation of energy/matter).
+
 :::
 
 ---
@@ -60,6 +61,7 @@ for work done on the system (AP-style). **Internal energy** change obeys the **F
 $$
 \Delta U = q + W.
 $$
+
 :::
 
 At constant volume (isochoric processes), $$\Delta V = 0$$ so $$W = 0$$ and $$\Delta U = q$$.
@@ -106,6 +108,7 @@ In an **endothermic** reaction, the system draws heat in: $$\Delta H > 0$$, $$q_
 
 :::warning
 Always label whether $$q$$ refers to system or surroundings when you compare signs across textbooks.
+
 :::
 
 ### State functions and path
@@ -126,6 +129,7 @@ $$
 $$
 
 where $$\nu$$ are stoichiometric coefficients. Thermochemical equations can be scaled; $$\Delta H$$ scales with the mole amounts written in the equation.
+
 :::
 
 ---
@@ -134,6 +138,7 @@ where $$\nu$$ are stoichiometric coefficients. Thermochemical equations can be s
 
 :::theorem{name="Hess's law"}
 **Hess’s law** states that $$\Delta H$$ for an overall process is the sum of $$\Delta H$$ values for steps that add up to the same net reaction—because $$H$$ is a state function. Reverse a step → flip the sign of $$\Delta H$$. Multiply a step by a factor → multiply $$\Delta H$$ by the same factor.
+
 :::
 
 ---
@@ -148,6 +153,7 @@ $$
 $$
 
 using positive bond energies for each bond listed. This ignores liquids, solvents, and exact environments, so it is less accurate than calorimetry or formation cycles.
+
 :::
 
 ---
@@ -170,6 +176,7 @@ Higher $$T$$ increases vapor pressure; stronger IMFs tend to lower vapor pressur
 
 :::exam
 This formula will likely not appear on the AP test, but is good to know
+
 :::
 
 ---
@@ -193,6 +200,7 @@ A negative $$\Delta H$$ means heat is released by the system. The reaction is ex
 $$
 \boxed{\text{C}}
 $$
+
 :::
 :::
 
@@ -220,6 +228,7 @@ $$
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -237,6 +246,7 @@ Vaporization requires energy to overcome intermolecular attractions in the liqui
 $$
 \boxed{\text{D}}
 $$
+
 :::
 :::
 
@@ -254,6 +264,7 @@ If the solution temperature increases, the solution absorbed heat. The reaction 
 $$
 \boxed{\text{A}}
 $$
+
 :::
 :::
 
@@ -271,6 +282,7 @@ Hess's law says enthalpy is a state function, so the enthalpy change for an over
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -296,6 +308,7 @@ $$
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -332,6 +345,7 @@ $$
 $$
 
 $$(C)$$ Energy must be added to separate bonded atoms, so bond breaking is endothermic. The overall reaction is exothermic because forming the O-H bonds in water releases more energy than was required to break the H-H and O=O bonds. In bond-enthalpy language, $$\Delta H_{\text{rxn}}$$ is negative because the energy released by bonds formed is greater than the energy absorbed by bonds broken.
+
 :::
 :::
 
@@ -360,6 +374,7 @@ $$
 So $$414\ \text{kJ}$$ of heat is released.
 
 $$(C)$$ Formation enthalpy measures formation from elements in their standard states. An element already in its standard state requires no formation reaction, so its assigned value is zero. This is a reference convention that lets formation enthalpies be added and subtracted consistently in Hess's law calculations.
+
 :::
 :::
 :::

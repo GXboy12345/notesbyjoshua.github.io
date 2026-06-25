@@ -9,4 +9,5 @@ permalink: /notes/physics/fluiddynamics/
 # Fluid Dynamics
 
 :::under-construction
+
 :::

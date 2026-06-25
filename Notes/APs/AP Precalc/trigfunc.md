@@ -10,6 +10,7 @@ permalink: /notes/ap/precalc/trigfunc/
 
 :::summary{title="Unit overview"}
 This unit covers angle measure, the unit circle, right-triangle trigonometry, and the six trigonometric functions and their identities.
+
 :::
 
 ---
@@ -26,6 +27,7 @@ An angle is in **standard position** if:
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/standpos.jpg)
+
 :::
 
 By definition, counterclockwise rotations are positive, and clockwise rotations are negative.
@@ -54,10 +56,12 @@ $$
 \qquad
 180^\circ=\pi\text{ radians}.
 $$
+
 :::
 
 :::theorem{name="Extension"}
 **Extension.** The radian is a unitless measure, meaning that it is not arbitrarily set. Why is there always $$2\pi$$ radians in a circle?
+
 :::
 
 :::example{title="Convert $$225^\circ$$ to radians."}
@@ -76,6 +80,7 @@ Thus
 $$
 225^\circ=\frac{5\pi}{4}.
 $$
+
 :::
 
 :::example{title="Convert $$-\frac{4\pi}{3}$$ radians to degrees."}
@@ -93,6 +98,7 @@ Thus
 $$
 -\frac{4\pi}{3}=-240^\circ.
 $$
+
 :::
 
 ### Common angles
@@ -163,6 +169,7 @@ So the arc length is
 $$
 2\pi\text{ meters}.
 $$
+
 :::
 
 :::example{title="Find the radius of a circle whose arc length is $$6$$ meters and whose central angle is..."}
@@ -185,6 +192,7 @@ Thus
 $$
 r=24\text{ meters}.
 $$
+
 :::
 
 ### Sector area
@@ -223,6 +231,7 @@ Thus
 $$
 15\pi.
 $$
+
 :::
 
 ---
@@ -280,6 +289,7 @@ So the linear speed is
 $$
 600\pi\text{ cm/sec}.
 $$
+
 :::
 
 ---
@@ -369,6 +379,7 @@ and
 $$
 \cot\theta=\frac13.
 $$
+
 :::
 
 ### Cofunction identities
@@ -403,6 +414,7 @@ $$
 
 :::theorem{name="Extension — Prove the six theorems above."}
 **Extension.** Prove the six theorems above.
+
 :::
 
 ---
@@ -565,6 +577,7 @@ Thus
 $$
 \cos 315^\circ=\frac{\sqrt2}{2}.
 $$
+
 :::
 
 :::example{title="Evaluate $$\sin\left(\frac{4\pi}{3}\right)$$."}
@@ -589,12 +602,14 @@ Thus
 $$
 \sin\left(\frac{4\pi}{3}\right)=-\frac{\sqrt3}{2}.
 $$
+
 :::
 
 An image of the unit circle is shown below (with filled in values as described later):
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/unitcircle.png)
+
 :::
 
 ### Coterminal angles
@@ -780,6 +795,7 @@ Thus
 $$
 \tan\beta=-\frac1{\sqrt{15}}.
 $$
+
 :::
 
 ### Proving identities
@@ -840,6 +856,7 @@ Thus
 $$
 \tan\theta\sin\theta=\sec\theta-\cos\theta.
 $$
+
 :::
 
 :::example{title="Prove that"}
@@ -897,6 +914,7 @@ Thus
 $$
 \frac{\sin A}{1+\cos A}+\frac{1+\cos A}{\sin A}=2\csc A.
 $$
+
 :::
 
 ---
@@ -957,6 +975,7 @@ Therefore
 $$
 \sin(-t)=-\frac23.
 $$
+
 :::
 
 ---
@@ -1041,6 +1060,7 @@ Thus
 $$
 x\approx0.848\quad\text{or}\quad x\approx2.294.
 $$
+
 :::
 
 :::example{title="Solve $$\cos x=-0.35$$ on $$[0,2\pi)$$."}
@@ -1063,6 +1083,7 @@ Thus
 $$
 x\approx1.928\quad\text{or}\quad x\approx4.355.
 $$
+
 :::
 
 REMEMBER to always check for multiple solutions using the trig rules!
@@ -1151,6 +1172,7 @@ $$
 \qquad
 \cot\theta=\sqrt3.
 $$
+
 :::
 :::
 
@@ -1221,6 +1243,7 @@ Therefore
 $$
 \boxed{A=\frac{24000\pi}{(12+5\pi)^2}\text{ cm}^2}.
 $$
+
 :::
 :::
 
@@ -1285,35 +1308,43 @@ Thus
 $$
 \boxed{v=27\pi\text{ cm/sec}}.
 $$
+
 :::
 :::
 
 :::frq{id=precalc-trigfunc-4}
 4. A pulley system has two wheels connected by a belt without slipping. Wheel A has radius $$4$$ inches and rotates at $$150$$ revolutions per minute. Wheel B rotates at $$60$$ revolutions per minute. Find the radius of Wheel B. Then find the linear belt speed in inches per second.
+
 :::
 
 :::frq{id=precalc-trigfunc-5}
 5. Let $$\theta$$ be in Quadrant II and suppose $$\tan\theta=-\frac{8}{15}$$. Find exact values of $$\sin\theta$$, $$\cos\theta$$, $$\sec\theta$$, $$\csc\theta$$, and $$\cot\theta$$. Then evaluate $$\sin(\pi-\theta)$$ and $$\cos(\theta+\pi)$$.
+
 :::
 
 :::frq{id=precalc-trigfunc-6}
 6. Let $$P=(x,y)$$ be a point on the unit circle in Quadrant III. If $$x-y=\frac{\sqrt2}{2}$$, find $$P$$ and the angle $$\theta\in[0,2\pi)$$ whose terminal side passes through $$P$$.
+
 :::
 
 :::frq{id=precalc-trigfunc-7}
 7. Evaluate exactly: $$6\sin\left(-\frac{7\pi}{6}\right)-4\cos\left(\frac{11\pi}{3}\right)+3\tan\left(-\frac{13\pi}{4}\right)-2\sec\left(\frac{17\pi}{6}\right).$$
+
 :::
 
 :::frq{id=precalc-trigfunc-8}
 8. Solve exactly on $$[0,4\pi)$$: $$2\sin^2x-\sin x-1=0.$$
+
 :::
 
 :::frq{id=precalc-trigfunc-9}
 9. Solve exactly on $$[0,2\pi)$$:$$2\cos^2x+\sqrt3\cos x-1=0.$$
+
 :::
 
 :::frq{id=precalc-trigfunc-10}
 10. Solve exactly on $$[0,3\pi)$$:$$\tan^2x-3=0.$$
+
 :::
 
 :::frq{id=precalc-trigfunc-11}
@@ -1321,15 +1352,18 @@ $$
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/cirtri1.png)
+
 :::
 :::
 
 :::frq{id=precalc-trigfunc-12}
 12. Prove the identity: $$\frac{1-\cos\theta}{\sin\theta}+\frac{\sin\theta}{1-\cos\theta}=2\csc\theta.$$ Then state all values of $$\theta$$ in $$[0,2\pi)$$ for which the original identity is undefined.
+
 :::
 
 :::frq{id=precalc-trigfunc-13}
 13. Prove the identity: $$1-\frac{\sin^2\theta}{1+\cot\theta}-\frac{\cos^2\theta}{1+\tan\theta}=\sin\theta\cos\theta.$$
+
 :::
 
 :::frq{id=precalc-trigfunc-14}
@@ -1337,11 +1371,13 @@ $$
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/cirtri2.png)
+
 :::
 :::
 
 :::frq{id=precalc-trigfunc-15}
 15. On $$[0,2\pi)$$, solve the equation numerically to three decimal places: $$3\sin x-2\cos x=1.$$ (Hint: Try the substitution $$t=\tan(x/2)$$, and solve for $$x$$ using the $$\tan^{-1}$$ button on the calculator.)
+
 :::
 
 :::frq{id=precalc-trigfunc-16}
@@ -1359,5 +1395,6 @@ $$
    $$(C)$$ Explain why every rational value of $$m$$ gives a rational point on the unit circle.
    $$(D)$$ Use your formula to find a rational point on the unit circle when $$m=\frac23$$, then interpret that point as $$(\cos\theta,\sin\theta)$$ for some angle $$\theta$$.
    $$(E)$$ Why does this method not produce the point $$(-1,0)$$ as the second intersection point? What slope would be needed to reach the point $$(1,0)$$?
+
 :::
 :::

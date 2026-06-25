@@ -10,6 +10,7 @@ nav_order: 1
 
 :::note
 **Note**: If you are only looking for AP Calculus AB prep, do NOT look at the files/sections labeled "BC-only".
+
 :::
 
 ---
@@ -34,6 +35,7 @@ nav_order: 1
 :::practice
 :::tip
 Practice? Never heard of it.
+
 :::
 :::
 

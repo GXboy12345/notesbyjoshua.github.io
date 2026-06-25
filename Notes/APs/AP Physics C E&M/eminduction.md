@@ -10,4 +10,5 @@ permalink: /notes/ap/ap-physics-c-em/eminduction/
 # Electromagnetic Induction
 
 :::under-construction
+
 :::

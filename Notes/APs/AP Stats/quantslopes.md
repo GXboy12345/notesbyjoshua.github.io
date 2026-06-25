@@ -26,6 +26,7 @@ Here:
 - $$\alpha$$ is the population intercept.
 - $$\beta$$ is the population slope.
 - $$\epsilon$$ is random error around the line.
+
 :::
 
 The sample least-squares line is
@@ -50,10 +51,12 @@ Use the acronym **LINER**:
 3. **Normal**: residuals are approximately normally distributed for each value of $$x$$.
 4. **Equal variance**: vertical spread of residuals is roughly constant across $$x$$.
 5. **Random**: data come from a random sample or randomized experiment.
+
 :::
 
-:::figure{width=480}
-![Regression residual plots placeholder](/assets/APs/AP%20Stats/quantslopes/regression-residuals.png)
+:::placeholder
+Regression residual plots
+
 :::
 
 ---
@@ -70,6 +73,7 @@ The residual standard deviation is often written $$s$$:
 $$
 s = \sqrt{\frac{\sum (y_i-\hat{y}_i)^2}{n-2}}.
 $$
+
 :::
 
 :::key{name="Degrees of freedom"}
@@ -78,6 +82,7 @@ The degrees of freedom for regression inference are
 $$
 df = n-2.
 $$
+
 :::
 
 ---
@@ -96,12 +101,14 @@ Use
 $$
 df=n-2.
 $$
+
 :::
 
 :::note
 Interpretation: "We are ___% confident that the true slope of the population regression line relating [x-context] to [y-context] is between ___ and ___ [y-units per x-unit]."
 
 If the interval contains 0, then 0 is a plausible true slope at that confidence level. If it does not contain 0, there is evidence of a linear relationship.
+
 :::
 
 ---
@@ -132,6 +139,7 @@ with
 $$
 df=n-2.
 $$
+
 :::
 
 A small p-value gives evidence that the true slope is not 0 in the direction of the alternative.
@@ -152,6 +160,7 @@ Technology output often includes:
 
 :::warning
 Remember: $$R^2$$ is descriptive, while the p-value for slope is inferential. A small p-value does not prove causation, especially with observational data.
+
 :::
 
 ---
@@ -165,10 +174,12 @@ Before inference, check:
 - Residual plot for randomness around 0.
 - Residual plot for equal spread.
 - Normal probability plot or histogram of residuals for approximate normality.
+
 :::
 
 :::warning
 Curvature suggests the linear model is wrong. Fanning suggests unequal variance. Outliers or high-leverage points can strongly affect the slope and p-value.
+
 :::
 
 ---
@@ -187,6 +198,7 @@ b \pm t^*SE_b
 $$
 
 from the regression output.
+
 :::
 
 ---
@@ -199,6 +211,7 @@ from the regression output.
 5. Compute the confidence interval or t-test for slope.
 6. Interpret slope in units of $$y$$ per one unit of $$x$$.
 7. Avoid causal language unless the data come from a randomized experiment.
+
 :::
 
 ---
@@ -212,4 +225,5 @@ from the regression output.
 | Confidence interval for slope | $$b\pm t^*SE_b$$ |
 | Test statistic for slope | $$t=(b-0)/SE_b$$ |
 | Degrees of freedom | $$df=n-2$$ |
+
 :::

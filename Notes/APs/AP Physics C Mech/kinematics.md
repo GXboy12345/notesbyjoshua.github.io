@@ -11,6 +11,7 @@ permalink: /notes/ap/ap-physics-c-mechanics/kinematics/
 
 :::theorem{name="Kinematics"}
 **Kinematics** describes motion—position, velocity, and acceleration as functions of time—without asking what forces cause that motion. From here on, calculus is assumed: instantaneous rates are derivatives of position or velocity, and changes over an interval can be recovered with integrals when you know how acceleration varies.
+
 :::
 
 ---
@@ -65,6 +66,7 @@ v(t_2) - v(t_1) = \int_{t_1}^{t_2} a(t)\, dt,
 $$
 
 and similarly position from velocity.
+
 :::
 
 ---
@@ -81,12 +83,14 @@ Many problems use constant acceleration $$a$$ (free fall near Earth’s surface 
 5. $$v^2 = v_0^2 + 2a(\Delta x)$$
 
 These are algebraic consequences of $$a = dv/dt$$ constant and $$v = dx/dt$$. The five equations are sometimes called the Big Five.
+
 :::
 
 Equation 5 is useful when time is unknown but initial and final velocities are known.
 
 :::warning
 Always check that your signs for $$v_0$$ and $$a$$ match the coordinate system.
+
 :::
 
 ---
@@ -113,6 +117,7 @@ $$
 
 :::warning
 Remember: ALWAYS make sure you know which direction you define as positive y!
+
 :::
 
 The trajectory in the vertical plane is a parabola until the object hits something.
@@ -133,10 +138,12 @@ and
 $$
 t = \frac{v_0 \sin(\theta)}{g},
 $$
+
 :::
 
 :::note
 If launch and landing heights differ, solve the quadratic in $$t$$ from the $$y$$ equation rather than memorizing these shortcuts.
+
 :::
 
 ---
@@ -149,6 +156,7 @@ The velocity of object $$A$$ relative to object $$B$$ is written $$\vec{v}_{A/B}
 $$
 \vec{v}_{A/C} = \vec{v}_{A/B} + \vec{v}_{B/C}.
 $$
+
 :::
 
 Add vectors component-wise. This idea appears again with rotating frames later; for now, restrict to inertial frames in uniform relative motion. You can find more on the [USAPhO section on mechanics]({{ '/notes/physics/advmech/' | relative_url }}).

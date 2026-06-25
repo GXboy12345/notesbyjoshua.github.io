@@ -17,6 +17,7 @@ This page is a high-yield AP Statistics reference for last-minute review. It pul
 :::key{name="Parameter vs statistic"}
 - **Parameter** (population): $$\mu$$, $$p$$, $$\sigma$$, $$\beta$$: fixed, usually unknown. Parameters are always GREEK letters!
 - **Statistic** (sample): $$\bar{x}$$, $$\hat{p}$$, $$s$$, $$b$$: computed from data. Parameters are always ROMAN (basically English) letters!
+
 :::
 
 ---
@@ -35,12 +36,14 @@ This page is a high-yield AP Statistics reference for last-minute review. It pul
 
 :::tip
 When comparing two distributions, alwasy use CUSS: **Center, Unusual features, Shape**, and **Spread** in context.
+
 :::
 
 ### Transforming Distributions
 
 - Mean: Suppose you have $$y=f(x)$$. Then $$\mu_y = \mu_f(x)$$. Do any operation to combine two variables, the mean will be the same operation done on the two respective means.
 - Standard Deviation: Suppose you have $$y=f(x) + a$$, where $$f(x) does not contain any addition of constants$$. Then, $$\sigma_y=\sigma_f(x)$$. Also, if you add/subtract two variables, the new standard deviation becomes: $$\sigma_a,b = \sqrt{\sigma_a^2 + \sigma_b^2}$$
+
 :::
 
 ---
@@ -57,6 +60,7 @@ When comparing two distributions, alwasy use CUSS: **Center, Unusual features, S
 
 :::warning
 **Correlation ≠ causation**; confounding in observational studies.
+
 :::
 
 ### Least-squares regression line
@@ -73,6 +77,7 @@ $$
 
 - **Outlier in $$y$$**: large residual.
 - **Influential point**: pulling the regression line; often extreme in $$x$$.
+
 :::
 
 ---
@@ -90,6 +95,7 @@ $$
 
 :::tip
 Tip: Always say "This study is an [experiment/observation] because the researchers [did/did not] impose treatments.
+
 :::
 
 ### Sampling designs
@@ -106,6 +112,7 @@ Tip: Always say "This study is an [experiment/observation] because the researche
 - **Replication**: Replication occurs if you can rerun the experiment again. It does NOT include cases where you run a treatment many times in one experiment.
 - **Random assignment**: To get the best results, always try to use some sort of random assignment to assign patients to treatments
 - **Blinding**: Blinding is when a party (either the patient or the deliverer of the treatment) does not know which treatment a patient is assigned to. **Single blinding** is when the patient does not know which treatment is given (usually done through placebos), and **double blinding** is when both parties don't know, usually done where the treatments are assigned and then given to the unknowing deliverer.
+
 :::
 
 ---
@@ -141,6 +148,7 @@ $$
 
 :::tip
 **Calculator Trick**: Use binompdf(n, p, x) for $$P(X=x)$$ and binomcdf(n, p, x) for $$P(X≤x)$$
+
 :::
 
 ### Geometric $$G(n,p)$$
@@ -155,12 +163,14 @@ $$
 
 :::tip
 **Calculator Trick**: Use geometpdf(n, p, x) for $$P(X=x)$$ and geometcdf(n, p, x) for $$P(X≤x)$$
+
 :::
 
 ### Normal distribution
 
 - Standardize: $$z = \dfrac{x-\mu}{\sigma}$$
 - Use **normalcdf / invNorm** with proper $$\mu$$, $$\sigma$$ and boundaries.
+
 :::
 
 ---
@@ -184,6 +194,7 @@ $$
 :::conditions
 - **$$np \ge 10$$** and **$$n(1-p) \ge 10$$** for Normal approximation to $$\hat{p}$$.
 - **$$n \ge 30$$** often cited for $$\bar{x}$$, but prefer context + shape of population when $$n$$ is small.
+
 :::
 :::
 
@@ -201,6 +212,7 @@ $$
 
 :::warning
 **Not**: “C% chance the parameter is in this interval” for **one** computed interval.
+
 :::
 
 ### Hypothesis test
@@ -217,6 +229,7 @@ $$
 **“Accept $$H_0$$”** language—say **fail to reject $$H_0$$**.
 
 **$$P$$-value definition**: mis-stating as $$P(H_0 \text{ true})$$.
+
 :::
 
 ### Errors
@@ -245,10 +258,12 @@ $$
 - **Random** assignment or random sampling (as appropriate).
 - **10%**: $$n \le 0.10\,N$$ when sampling without replacement (each group if two-sample).
 - **Large counts**: successes & failures $$\ge 10$$ **each** (for each group or for one-sample use $$np_0$$ and $$n(1-p_0)$$ when checking Normal approximation).
+
 :::
 
 :::warning
 **Wrong SE**: pooled vs unpooled proportions; forgetting $$\sqrt{n}$$ in denominator.
+
 :::
 :::
 
@@ -272,6 +287,7 @@ $$
 :::conditions
 - **Random** + **10%** if sampling without replacement.
 - **Normality / $$n$$**: if $$n$$ small, need roughly symmetric data without strong skew/outliers; CLT helps when $$n$$ is large.
+
 :::
 :::
 
@@ -299,10 +315,12 @@ $$
 :::conditions
 - **Random** counts / random assignment as appropriate.
 - **Large expected counts**: commonly **all expected $$\ge 5$$** (some contexts use a stricter rule).
+
 :::
 
 :::warning
 **Chi-square**: wrong $$\text{df}$$ or wrong “expected count” formula.
+
 :::
 :::
 
@@ -328,6 +346,7 @@ $$
 - **Independent** observations (random / 10%).
 - **Normal** residuals roughly (especially for small $$n$$).
 - **Equal spread** of residuals across $$x$$.
+
 :::
 :::
 
@@ -358,6 +377,7 @@ $$
 - **$$P$$-value definition**: mis-stating as $$P(H_0 \text{ true})$$.
 - **Conditions skipped** or checked as “met” without linking to the study’s randomness and sample size.
 - **Chi-square**: wrong $$\text{df}$$ or wrong “expected count” formula.
+
 :::
 
 ---
@@ -370,4 +390,5 @@ $$
 3. Show **conditions** with numbers where needed (not just “$$n$$ large”).
 4. Give **formula with numbers plugged** when asked to calculate.
 5. **Conclusion**: evidence sentence referencing $$P$$-value or interval **in context**, and whether it generalizes / suggests causality based on study design.
+
 :::

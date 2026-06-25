@@ -10,6 +10,7 @@ permalink: /notes/ap/stats/bivardata/
 
 :::summary{title="Unit overview"}
 Unit 1 focused on one variable at a time ([Exploring Univariate Data]({{ '/notes/ap/stats/univardata/' | relative_url }})). Here we study **bivariate data**: two variables measured on each case, and the patterns that link them.
+
 :::
 
 ---
@@ -20,6 +21,7 @@ Before fitting models, you will often place two or more distributions side by si
 
 :::tip
 When comparing, always address the center (typical values, e.g. mean/median), spread (how variable the groups are, e.g. range, IQR, standard deviation), and shape (symmetric, skewed, unimodal, and so on). Note clusters, gaps, and outliers in each group. Always tie differences back to the context of the problem: who was measured, what units mean, and what question the study is trying to answer.
+
 :::
 
 Use displays that make parallel structure obvious (same axis scales, same bin widths when reasonable, etc.) so the eye is comparing apples to apples.
@@ -30,12 +32,14 @@ Use displays that make parallel structure obvious (same axis scales, same bin wi
 
 :::key{name="Bivariate data"}
 Bivariate data records two variables for every individual or object in a study. Examples include (study hours, exam score) for each student, or (latitude, January temperature) for each city.
+
 :::
 
 If both variables are quantitative and the relationship looks roughly linear, we summarize direction and strength with the correlation coefficient and describe the overall trend with a least-squares regression line.
 
 :::note
 If one or both variables are categorical, we use two-way tables and talk about association rather than a single line through a scatterplot (since you obviously can't graph categorical variables!).
+
 :::
 
 ---
@@ -44,20 +48,24 @@ If one or both variables are categorical, we use two-way tables and talk about a
 
 :::key{name="Scatterplot"}
 A **scatterplot** plots each case as a point $$(x, y)$$ in the plane. Choose scales so that all observed $$x$$- and $$y$$-values fit comfortably, and label axes with variable names and units.
+
 :::
 
-:::figure{width=480}
-![Scatterplot patterns placeholder](/assets/APs/AP%20Stats/bivardata/scatterplot-patterns.png)
+:::placeholder
+Scatterplot patterns
+
 :::
 
 :::exam
 When you describe a scatterplot, organize your comments around three ideas: **shape**, **direction**, and **strength**.
+
 :::
 
 ### Shape
 
 :::key{name="Shape"}
 **Shape** answers whether the overall pattern is linear (points basically follow a straight line) or nonlinear (curved, piecewise, or scattered without a simple path). Nonlinear patterns are a signal that a straight-line model may be wrong unless you transform a variable first.
+
 :::
 
 ### Direction
@@ -66,6 +74,7 @@ When you describe a scatterplot, organize your comments around three ideas: **sh
 
 :::warning
 Clouds with no clear trend show weak or no linear association (correlation near zero is possible even when a strong nonlinear pattern exists, which is one reason you always look at the plot).
+
 :::
 
 ### Strength
@@ -78,12 +87,14 @@ Clouds with no clear trend show weak or no linear association (correlation near 
 
 :::key{name="Pearson correlation"}
 Pearson’s correlation coefficient (often called the correlation) is a number that measures the direction and strength of a linear relationship between two quantitative variables. It is denoted $$\rho$$ for a population and $$r$$ for a sample.
+
 :::
 
 :::theorem{name="Correlation coefficient bounds"}
 $$
 -1 \le r \le 1
 $$
+
 :::
 
 The sign of $$r$$ matches the direction of the linear trend: $$r > 0$$ for positive association, $$r < 0$$ for negative association. The magnitude $$|r|$$ relates to strength for linear association only.
@@ -96,6 +107,7 @@ For paired data $$(x_i, y_i)$$ with sample means \(\bar{x}\) and \(\bar{y}\):
 $$
 r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}
 $$
+
 :::
 
 Intuitively, \(r\) compares covariation (do \(x\) and \(y\) tend to be on the same side of their means together?) to how spread out \(x\) and \(y\) are individually.
@@ -106,14 +118,17 @@ Values with $$|r| = 1$$ mean all points fall exactly on a single straight line (
 
 :::note
 Textbooks sometimes give rough cutoffs such as $$|r| < 0.1$$ as very weak, 0.1 to 0.5 as weak-to-moderate, 0.5 to 0.85 as strong, and |r| > 0.85 as very strong. Treat these as rules of thumb, not laws: context, sample size, and outliers matter. Sometimes a $$|r|$$ value of 0.4 can be classified as strong, and sometimes a $$|r|$$ value of 0.8 may be classified as weak.
+
 :::
 
 :::warning
 Correlation is not causation; confounding and lurking variables can produce strong $$|r|$$ without a direct cause-and-effect link.
+
 :::
 
 :::note
 Correlation is unitless and unchanged by linear rescaling (multiplying either variable by a positive constant, or adding a constant), which makes it handy for comparing relationships measured in different units.
+
 :::
 
 ---
@@ -128,6 +143,7 @@ A linear regression model describes how a response variable \(Y\) depends on an 
 $$
 Y = \beta_0 + \beta_1 X + \epsilon
 $$
+
 :::
 
 Here $$beta_0$$ is the y-intercept, $$beta_1$$ is the slope, and $$\epsilon$$ captures everything the straight line misses: measurement noise, other variables, and genuine nonlinearity. The errors $$\epsilon$$ are what we hope stay small and behave reasonably once we estimate the line from data.
@@ -142,6 +158,7 @@ For a chosen $$x$$, the predicted value $$\hat{y}$$ is the height of the regress
 $$
 \hat{y} = b_0 + b_1 x
 $$
+
 :::
 
 using the least-squares estimates \(b_0\) and \(b_1\) from your data (notation varies).
@@ -152,6 +169,7 @@ The residual for that case is
 $$
 \epsilon = y - \hat{y}
 $$
+
 :::
 
 the observed response minus the predicted response. Residuals are the data’s way of telling you where the line was too high or too low. A positive residual means the point lies above the line, and a negative residual means it lies below.
@@ -171,22 +189,26 @@ b_1 = r \left( \frac{s_y}{s_x} \right)
 $$
 
 where \(s_x\) and \(s_y\) are the sample standard deviations of \(x\) and \(y\). So the sign of \(b_1\) matches the sign of \(r\), and the steepness scales with how spread out \(y\) is relative to \(x\).
+
 :::
 
 ### Coefficient of determination
 
 :::key{name="Coefficient of determination"}
 The coefficient of determination, $$R^2$$, reports the fraction of the variability in $$y$$ that is accounted for by the linear model using $$x$$. In simple linear regression with one $$x$$, $$R^2$$ equals $$r^2$$ and lies between 0 and 1. Values near 1 mean the points hug the line; values near 0 mean the line explains little of how $$y$$ moves. $$R^2$$ is typically used instead of $$r$$ because it does not depend on direction, so it only shows the correlation.
+
 :::
 
 :::warning
 High $$R^2$$ does not prove the model is appropriate (nonlinearity can still hide in residual plots), and it does not prove causation.
+
 :::
 
 ### Influential observations and outliers
 
 :::note
 An outlier in regression is often a point with an unusually large residual: the line misses it badly. An influential observation is one whose removal would substantially change the estimated slope or intercept—often a point that is extreme in \(x\) (high leverage) and also off the trend. Not every outlier is influential, and not every influential point looks like a vertical outlier; inspect the plot and, when possible, recompute the line without suspect cases (sensibly and transparently).
+
 :::
 
 ---
@@ -195,18 +217,22 @@ An outlier in regression is often a point with an unusually large residual: the 
 
 :::key{name="Residual plot"}
 A residual plot graphs residuals (usually on the vertical axis) against either the predicted values \(\hat{y}\) or the explanatory variable \(x\). The purpose is to diagnose the fit of a linear model.
+
 :::
 
-:::figure{width=480}
-![Residual plots placeholder](/assets/APs/AP%20Stats/bivardata/residual-plots.png)
+:::placeholder
+Residual plots
+
 :::
 
 :::tip
 What you hope to see is a formless cloud: points scattered randomly around the horizontal axis at $$\epsilon = 0$$, with roughly constant spread across values of \(x\) or \(\hat{y}\).
+
 :::
 
 :::warning
 Curved patterns mean the relationship is probably nonlinear; a linear model is a poor summary. Fan shapes (spread grows or shrinks as \(x\) changes) suggest nonconstant variance, which matters more when you move into formal inference, but is still worth mentioning when you describe real data.
+
 :::
 
 ---
@@ -217,6 +243,7 @@ When a scatterplot shows a nonlinear trend, one strategy is to transform one or 
 
 :::example{title="Exponential linearization"}
 If \(y\) grows exponentially with \(x\), plotting \(\ln(y)\) against \(x\) may straighten the cloud. Symbolically, if $$y = a e^{kx}$$ in an idealized world, then $$ln(y) = ln(a) + kx$$ is linear in $$x$$.
+
 :::
 
 ### Common transformations
@@ -227,6 +254,7 @@ If \(y\) grows exponentially with \(x\), plotting \(\ln(y)\) against \(x\) may s
 
 :::tip
 Always check a residual plot after transforming; the goal is a linear trend with well-behaved residuals, not a cosmetic change on the scatterplot alone.
+
 :::
 
 ---
@@ -235,6 +263,7 @@ Always check a residual plot after transforming; the goal is a linear trend with
 
 :::key{name="Two-way table"}
 When both variables are categorical, we organize counts in a two-way table (also called a contingency table): $$r$$ rows for one variable’s categories and $$c$$ columns for the other’s. Each cell count tells how many cases fall in that row category and column category together.
+
 :::
 
 ### Marginal distributions
@@ -255,10 +284,12 @@ Under an independence assumption, the expected count for a cell is
 $$
 \frac{(\text{row total})(\text{column total})}{\text{grand total}}
 $$
+
 :::
 
 Compare observed counts to expected counts. Cells with observed counts larger than expected point to combinations that occur more often than an independence story would predict; observed smaller than expected points to combinations that occur less often. Across the whole table, those comparisons build an overall picture of association (and later, in inference units, chi-square tests formalize the idea).
 
 :::warning
 Avoid calling this pattern “positive correlation” or “negative correlation”; correlation in AP Statistics is reserved for quantitative pairs. For tables, speak in terms of association, dependence, and conditional distributions.
+
 :::

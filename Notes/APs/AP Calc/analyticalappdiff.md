@@ -21,6 +21,7 @@ A critical point of $$f$$ occurs at $$x=c$$ where:
 - $$f'(c)$$ does not exist,
 
 provided $$c$$ is in the domain of $$f$$.
+
 :::
 
 ---
@@ -32,6 +33,7 @@ provided $$c$$ is in the domain of $$f$$.
 
 :::tip
 Sign charts are the cleanest way to justify interval behavior.
+
 :::
 
 ---
@@ -44,6 +46,7 @@ If $$f'$$ changes:
 - positive to negative at $$c$$: local maximum,
 - negative to positive at $$c$$: local minimum,
 - no sign change: neither.
+
 :::
 
 ---
@@ -55,10 +58,12 @@ If $$f'$$ changes:
 - $$f''(x) < 0$$ means $$f$$ is concave down.
 
 An inflection point is a point where concavity changes.
+
 :::
 
 :::placeholder
 [Image Placeholder: graph showing local extrema and inflection points with sign charts]
+
 :::
 
 ---
@@ -71,6 +76,7 @@ If $$f'(c)=0$$ and:
 - $$f''(c)>0$$, then $$f$$ has a local minimum at $$c$$,
 - $$f''(c)<0$$, then $$f$$ has a local maximum at $$c$$,
 - $$f''(c)=0$$, the test is inconclusive.
+
 :::
 
 ---
@@ -96,6 +102,7 @@ f'(c) = \frac{f(b)-f(a)}{b-a}.
 $$
 
 Rolle's Theorem is the special case where $$f(a)=f(b)$$.
+
 :::
 
 ---
@@ -138,6 +145,7 @@ $$
 $$
 
 provided the new limit exists in a usable way.
+
 :::
 
 ---
@@ -150,6 +158,7 @@ Linearization:
 $$
 L(x) = f(a)+f'(a)(x-a).
 $$
+
 :::
 
 Newton's method for approximating roots:
@@ -158,10 +167,12 @@ Newton's method for approximating roots:
 $$
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
 $$
+
 :::
 
 :::placeholder
 [Image Placeholder: Newton's method tangent-line iteration toward a root]
+
 :::
 
 ---
@@ -171,4 +182,5 @@ $$
 - Using the second derivative test when $$f'(c) \ne 0$$.
 - Forgetting endpoints in absolute-extrema problems.
 - Claiming an inflection point from $$f''=0$$ without checking concavity change.
+
 :::

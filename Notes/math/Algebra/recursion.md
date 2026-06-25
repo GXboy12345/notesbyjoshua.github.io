@@ -53,6 +53,7 @@ In contest math, we often do not need a closed form. Usually it is enough to:
 - find a recurrence,
 - compute initial values,
 - build a short table until we reach the term we want.
+
 :::
 
 ## Recursive Counting
@@ -100,6 +101,7 @@ a_{10}=89.
 $$
 
 This is the Fibonacci recurrence in disguise, which appears constantly in AMC and AIME counting problems.
+
 :::
 
 ### Spacy Subsets
@@ -151,6 +153,7 @@ So the answer is
 $$
 129.
 $$
+
 :::
 
 ### Tower of Cubes
@@ -189,10 +192,12 @@ Then
 $$
 a_8 = 3^6 \cdot a_2 = 3^6 \cdot 2 = 1458.
 $$
+
 :::
 
 :::tip
 This is a good reminder that some recurrences only become valid after the first few terms; here the relation is not meant to be applied at $$n=2$$ itself.
+
 :::
 
 ## Catalan Numbers
@@ -223,6 +228,7 @@ C_n = C_0C_{n-1}+C_1C_{n-2}+\cdots+C_{n-1}C_0
 $$
 
 For example, when $$n=3$$, there are $$5$$ such paths.
+
 :::
 
 :::theorem{name="Catalan Numbers"}
@@ -231,6 +237,7 @@ For example, when $$n=3$$, there are $$5$$ such paths.
 $$
 C_n=\frac{1}{n+1}\binom{2n}{n}.
 $$
+
 :::
 
 We will not prove the closed form here, but it is one of the most important counting sequences in olympiad combinatorics.
@@ -254,6 +261,7 @@ So the answer is simply
 $$
 C_n=\frac{1}{n+1}\binom{2n}{n}.
 $$
+
 :::
 
 ## Practice Problems
@@ -287,6 +295,7 @@ That lets us turn a whole sequence into one algebraic object. This is useful bec
 - The coefficients of $$A(x)$$ encode the entire sequence.
 - Recurrence relations often turn into algebraic equations in $$A(x)$$.
 - Once you get a rational expression for $$A(x)$$, partial fractions can recover a closed form.
+
 :::
 
 ### Toy Applications
@@ -305,6 +314,7 @@ A(x)=\sum_{n \ge 0} a_nx^n=\sum_{n \ge 0}\binom{1000}{n}x^n=(1+x)^{1000}.
 $$
 
 Plugging in $$x=1$$ gives the identity immediately.
+
 :::
 
 :::example{title="Weighted binomial sum"}
@@ -325,6 +335,7 @@ Now set $$x=1$$:
 $$
 \sum_{n \ge 0} n\binom{1000}{n}=1000\cdot 2^{999}.
 $$
+
 :::
 
 :::note
@@ -333,6 +344,7 @@ $$
 $$
 \sum_{n \ge 0} n^2\binom{1000}{n}.
 $$
+
 :::
 
 ### Linear Recurrences
@@ -363,6 +375,7 @@ Then
 $$
 L_n=\alpha^n+\beta^n.
 $$
+
 :::
 
 :::proof{of="Closed Form for Lucas Numbers"}
@@ -424,6 +437,7 @@ Matching coefficients yields
 $$
 L_n=\alpha^n+\beta^n.
 $$
+
 :::
 
 :::note
@@ -438,6 +452,7 @@ As an intermediate step, show that the Fibonacci generating function is
 $$
 \frac{x}{1-x-x^2}.
 $$
+
 :::
 
 ### Common Generating Functions
@@ -468,6 +483,7 @@ where
 $$
 \binom{r}{n} = \frac{r(r-1)\cdots(r-n+1)}{n!}.
 $$
+
 :::
 
 :::proof{of="Generalized Binomial Theorem"}
@@ -482,6 +498,7 @@ and differentiate enough times to isolate the coefficient you want. For example,
 $$
 a_3=\frac{r(r-1)(r-2)}{3!}.
 $$
+
 :::
 
 Important consequences:
@@ -556,6 +573,7 @@ So we need the coefficient of $$x^{14}$$ in $$\frac{1}{(1-x)^6}$$, which is
 $$
 \binom{19}{5}.
 $$
+
 :::
 
 ### Snake Oil Method
@@ -581,6 +599,7 @@ A(x)=\sum_k \sum_{n \ge 0} F(k,n)x^n.
 $$
 
 If the inner sums become recognizable generating functions, the problem becomes much easier.
+
 :::
 
 :::example{title="Snake Oil — binomial sum"}
@@ -639,6 +658,7 @@ so
 $$
 \sum_{k \ge 0}\binom{n+k}{2k}2^{n-k}=\frac13+\frac23\cdot 4^n.
 $$
+
 :::
 
 :::example{title="Snake Oil — Fibonacci identity"}
@@ -670,10 +690,12 @@ $$
 $$
 
 This is the Fibonacci generating function, so the sum equals $$F_{n+1}$$.
+
 :::
 
 :::tip
 If the free variable appears in many places at once, Snake Oil often works better after you first generalize the identity.
+
 :::
 
 ### Problems

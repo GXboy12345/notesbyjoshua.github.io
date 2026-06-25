@@ -20,6 +20,7 @@ An antiderivative of $$f$$ is any function $$F$$ such that
 $$
 F'(x) = f(x).
 $$
+
 :::
 
 Examples:
@@ -79,6 +80,7 @@ $$
 =
 \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*)\Delta x.
 $$
+
 :::
 
 Interpretations:
@@ -111,6 +113,7 @@ g'(x) = f(x)
 $$
 
 when $$f$$ is continuous.
+
 :::
 
 ---
@@ -129,6 +132,7 @@ then
 $$
 G'(x) = f(v(x))v'(x) - f(u(x))u'(x).
 $$
+
 :::
 
 ---
@@ -147,6 +151,7 @@ Then
 $$
 \int f(g(x))g'(x)\,dx = \int f(u)\,du.
 $$
+
 :::
 
 ---
@@ -159,6 +164,7 @@ On $$[a,b]$$:
 $$
 f_{\text{avg}} = \frac{1}{b-a}\int_a^b f(x)\,dx.
 $$
+
 :::
 
 ---
@@ -195,6 +201,7 @@ $$
 \int_a^b f(x)\,dx \approx \frac{\Delta x}{2}
 \left[y_0 + 2y_1 + 2y_2 + \cdots + 2y_{n-1} + y_n\right].
 $$
+
 :::
 
 ---
@@ -204,4 +211,5 @@ $$
 - Using area language when the integral is negative and really means net signed accumulation.
 - Dropping the chain-rule factor in reverse when using substitution.
 - Confusing $$\int_a^b f(x)\,dx$$ with ordinary multiplication.
+
 :::

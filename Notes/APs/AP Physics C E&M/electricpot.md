@@ -29,6 +29,7 @@ $$
 $$
 
 This mirrors gravitation: the interaction energy depends on $$1/r$$, and you must fix a reference (here, $$U \to 0$$ as $$r \to \infty$$) before speaking of “the” energy at a finite separation.
+
 :::
 
 ---
@@ -51,6 +52,7 @@ V = \frac{1}{4\pi \varepsilon_0} \frac{Q}{r} = \frac{kQ}{r}.
 $$
 
 Potential is a scalar: many-source problems add $$V$$ by ordinary addition (no vector triangles), unlike electric field.
+
 :::
 
 ---
@@ -81,10 +83,12 @@ If an external agent moves the charge slowly against the field with no change in
 $$
 W_{\text{ext}} = -W_{\text{field}} = q \Delta V.
 $$
+
 :::
 
 :::warning
 Signs matter: a positive charge moving toward lower potential loses potential energy; the field does positive work. Always state whether you mean work by the field or by an external agent.
+
 :::
 
 ---
@@ -111,6 +115,7 @@ $$
 $$
 
 If $$\vec{d}$$ points in the direction of $$\vec{E}$$, potential decreases along that direction—consistent with electric field lines pointing from higher to lower potential (for the conventional positive-test-charge picture).
+
 :::
 
 ---
@@ -119,6 +124,7 @@ If $$\vec{d}$$ points in the direction of $$\vec{E}$$, potential decreases along
 
 :::theorem{name="Equipotential surfaces"}
 An **equipotential** is a surface (or curve in 2D diagrams) on which $$V$$ is constant. No work is required to move a charge along an equipotential, because $$\Delta V = 0$$. For that reason, $$\vec{E}$$ is everywhere perpendicular to equipotentials (except where $$\vec{E} = 0$$): a component of $$\vec{E}$$ tangent to the surface would do nonzero work over a small step along the surface, contradicting constant $$V$$.
+
 :::
 
 ---
@@ -133,4 +139,5 @@ $$
 $$
 
 Atomic and nuclear scales use multiples such as keV, MeV, and GeV ($$10^3$$, $$10^6$$, and $$10^9$$ eV). The joule remains the SI energy unit; the eV is a convenience because $$e$$ is the natural charge quantum at microscopic scales.
+
 :::

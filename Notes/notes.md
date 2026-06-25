@@ -21,4 +21,5 @@ Here are my notes! Feel free to look through them to find what you like 😁!
 
 :::note
 These notes span through AP material and competition math and physics. If people ask for it, I will add a page for competition chemistry (USNCO)! In each subject page, there will be notes for each topic, along with the corresponding practice problems and resources. As of alpha-2 phase, these practice problems and resources have not been added yet.
+
 :::

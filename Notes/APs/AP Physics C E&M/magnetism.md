@@ -10,4 +10,5 @@ permalink: /notes/ap/ap-physics-c-em/magnetism/
 # Magnetic Fields and Electromagnetism
 
 :::under-construction
+
 :::

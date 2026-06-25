@@ -22,6 +22,7 @@ $$
 $$
 
 if we can make $$f(x)$$ as close to $$L$$ as we want by taking $$x$$ sufficiently close to $$a$$, with $$x \ne a$$.
+
 :::
 
 This is about nearby behavior, not direct substitution. It is possible for:
@@ -52,10 +53,12 @@ $$
 $$
 \lim_{x \to a} [f(x)]^n = L^n
 $$
+
 :::
 
 :::key
 For polynomials and rational functions, direct substitution works whenever the denominator is nonzero.
+
 :::
 
 ---
@@ -76,10 +79,12 @@ Common reasons a limit fails to exist:
 - jump discontinuity,
 - vertical asymptote with unbounded behavior,
 - oscillation, such as $$\sin(1/x)$$ near $$x = 0$$.
+
 :::
 
 :::placeholder
 [Image Placeholder: left-hand vs right-hand limit examples, including a jump discontinuity]
+
 :::
 
 ---
@@ -104,6 +109,7 @@ then
 $$
 \lim_{x \to a} f(x) = L.
 $$
+
 :::
 
 :::example{title="x sin(1/x)"}
@@ -124,6 +130,7 @@ implies
 $$
 \lim_{x \to 0} x\sin(1/x) = 0.
 $$
+
 :::
 
 ---
@@ -136,6 +143,7 @@ A function is continuous at $$x = a$$ if:
 1. $$f(a)$$ exists.
 2. $$\lim_{x \to a} f(x)$$ exists.
 3. $$\lim_{x \to a} f(x) = f(a)$$.
+
 :::
 
 Types of discontinuities:
@@ -163,6 +171,7 @@ This theorem does not tell you how many such points there are, only that at leas
 
 :::placeholder
 [Image Placeholder: continuous curve crossing a horizontal line to illustrate IVT]
+
 :::
 
 ---
@@ -251,6 +260,7 @@ $$
 \lim_{x \to 4} \frac{1}{\sqrt{x} + 2}
 = \frac14
 $$
+
 :::
 
 ---
@@ -268,4 +278,5 @@ $$
 - Claiming a limit does not exist just because the function is undefined at the point.
 - Forgetting that trig limit formulas require radians.
 - Treating vertical asymptotes as automatic DNE without checking one-sided behavior.
+
 :::

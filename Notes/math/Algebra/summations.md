@@ -36,6 +36,7 @@ $$
 =
 \sum_{k \ge 0} \sum_{\substack{a,b \ge 0 \\ a+b=k}} f(a,b).
 $$
+
 :::
 
 ## Algebraic Manipulation
@@ -49,6 +50,7 @@ Common moves:
 - Use **partial fractions** when denominators factor.
 - Try to **factor the whole sum**, especially when the summand separates into pieces.
 - Rewrite the expression as a **double sum**, then switch the order.
+
 :::
 
 ### Telescoping and Partial Fractions
@@ -87,6 +89,7 @@ $$
 = 12 + \frac92
 = \frac{33}{2}.
 $$
+
 :::
 
 ### Swapping the Order of Summation
@@ -105,6 +108,7 @@ Dividing by $$n!$$ gives the average:
 $$
 \frac{n(n-1)!}{n!} = 1.
 $$
+
 :::
 
 :::example{title="Linearity of Expectation"}
@@ -112,6 +116,7 @@ $$
 
 $$
 \mathbb E[X+Y] = \mathbb E[X] + \mathbb E[Y].
+
 :::
 
 :::proof{of="Linearity of Expectation"}
@@ -155,6 +160,7 @@ $$
 $$
 
 This is philosophically a double-summation argument.
+
 :::
 
 :::theorem{name="Lemma 2.4"}
@@ -163,10 +169,12 @@ This is philosophically a double-summation argument.
 $$
 \sum_{d \mid n} \varphi(d) = n.
 $$
+
 :::
 
 :::note
 Note that $$\varphi$$ is Euler's totient function, look more in the **number theory** section (replace).
+
 :::
 
 :::proof{of="Lemma 2.4"}
@@ -177,6 +185,7 @@ $$
 $$
 
 After reducing them, exactly $$\varphi(d)$$ of them have denominator $$d$$ for each divisor $$d \mid n$$. Since there are $$n$$ fractions total, the sum of those counts is $$n$$.
+
 :::
 
 :::example{title="AMSP 2011 NT3 Exam"}
@@ -212,6 +221,7 @@ By Lemma 2.4 the inner sum is just $$m$$, so
 $$
 \sum_{m=1}^n m = \frac{n(n+1)}{2}.
 $$
+
 :::
 
 ### Roots of Unity Filters
@@ -262,6 +272,7 @@ $$
 = \frac13 \left[2^{1000} + \omega + \omega^2\right]
 = \frac13 \left(2^{1000}-1\right).
 $$
+
 :::
 
 ### Problems
@@ -310,6 +321,7 @@ When working modulo a prime $$p$$, many ordinary summation tricks still work, bu
 $$
 a^{p-1} \equiv 1 \pmod p.
 $$
+
 :::
 
 :::proof{of="Fermat's Little Theorem"}
@@ -320,6 +332,7 @@ a^{p-1}(p-1)! \equiv (p-1)! \pmod p.
 $$
 
 Cancel $$ (p-1)! $$.
+
 :::
 
 :::theorem{name="Wilson's Theorem"}
@@ -328,10 +341,12 @@ Cancel $$ (p-1)! $$.
 $$
 (p-1)! \equiv -1 \pmod p.
 $$
+
 :::
 
 :::note
 **Exercise 3.3.** Prove Wilson's theorem if you have not already seen it.
+
 :::
 
 :::theorem{name="Sums of Powers Modulo p"}
@@ -344,6 +359,7 @@ $$
 -1 \pmod p & \text{if } p-1 \mid m.
 \end{cases}
 $$
+
 :::
 
 :::proof{of="Lemma 3.4"}
@@ -355,6 +371,7 @@ $$
 $$
 
 This is a geometric series. If $$p-1 \nmid m$$ then the denominator is nonzero modulo $$p$$ while the numerator vanishes.
+
 :::
 
 :::example{title="Wolstenholme's Theorem"}
@@ -396,6 +413,7 @@ $$
 $$
 
 which vanishes by Lemma 3.4.
+
 :::
 
 :::theorem{name="Harmonic Modulo p Trick"}
@@ -404,6 +422,7 @@ which vanishes by Lemma 3.4.
 $$
 \frac1k \equiv (-1)^{k-1}\frac{1}{p}\binom{p}{k} \pmod p.
 $$
+
 :::
 
 This converts harmonic-looking expressions into binomial expressions, which are often easier to manipulate.
@@ -447,6 +466,7 @@ This section puts that kind of divisor sum into a larger framework.
 
 - It is **multiplicative** if $$f(mn)=f(m)f(n)$$ whenever $$\gcd(m,n)=1$$.
 - It is **completely multiplicative** if $$f(mn)=f(m)f(n)$$ for all positive integers $$m,n$$.
+
 :::
 
 :::example{title="Completely multiplicative functions"}
@@ -462,6 +482,7 @@ This section puts that kind of divisor sum into a larger framework.
   \end{cases}
   $$
 - The constant function $$1(n)=1$$.
+
 :::
 
 :::example{title="Multiplicative functions"}
@@ -478,6 +499,7 @@ This section puts that kind of divisor sum into a larger framework.
   $$
 - The divisor sum function $$\sigma(n)$$.
 - The divisor counting function $$\tau(n)$$.
+
 :::
 
 For multiplicative functions, it is enough to know the values on prime powers.
@@ -512,10 +534,12 @@ Useful properties:
 - $$*$$ distributes over addition.
 - The identity element is $$\delta$$.
 - The convolution of multiplicative functions is multiplicative.
+
 :::
 
 :::note
 **Exercise 4.5.** Prove that the convolution of multiplicative functions is multiplicative.
+
 :::
 
 :::example{title="φ * 1 = id"}
@@ -536,6 +560,7 @@ Both sides are multiplicative, so it is enough to check prime powers:
 $$
 1 + (p-1) + (p^2-p) + \cdots + (p^e-p^{e-1}) = p^e.
 $$
+
 :::
 
 :::theorem{name="Lemma 4.7"}
@@ -544,10 +569,12 @@ $$
 $$
 \mu * 1 = \delta.
 $$
+
 :::
 
 :::note
 **Exercise 4.8.** Prove this by checking prime powers.
+
 :::
 
 ### Möbius Inversion
@@ -562,6 +589,7 @@ f(n) = \sum_{d \mid n} \mu(d)\,g(n/d).
 $$
 
 Equivalently, if $$g=f*1$$ then $$f=g*\mu$$.
+
 :::
 
 :::proof{of="Möbius Inversion Formula"}
@@ -570,6 +598,7 @@ Equivalently, if $$g=f*1$$ then $$f=g*\mu$$.
 $$
 g*\mu = (f*1)*\mu = f*(1*\mu) = f*\delta = f.
 $$
+
 :::
 
 :::example{title="IMO Shortlist 1989"}
@@ -588,6 +617,7 @@ a_n = \sum_{d \mid n} \mu(n/d)\,2^d.
 $$
 
 From there, factor $$n$$ into prime powers and finish with divisibility arguments.
+
 :::
 
 ### Problems
@@ -736,6 +766,7 @@ $$
 - **6.3** Partial fractions and Lemma 3.6.
 - **6.9** The answer is $$\frac{100}{9801}$$. Switch the order, telescope the inverted binomial coefficients, then telescope again.
 - **6.10** The answer is $$\frac{11}{7}$$. Use a two-variable generating function.
+
 :::
 
 ## References

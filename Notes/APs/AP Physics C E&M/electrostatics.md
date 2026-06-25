@@ -53,6 +53,7 @@ q = n e, \quad n \in \mathbb{Z}.
 $$
 
 There is no known stable macroscopic object with charge that is a fraction of an electrons since $$n$$ is an integer. (Quarks carry fractional charge, but they are confined (meaning they have to be in pairs/trios); net observable charge remains integer multiples of $$e$$.)
+
 :::
 
 ---
@@ -61,6 +62,7 @@ There is no known stable macroscopic object with charge that is a fraction of an
 
 :::theorem{name="Conservation of charge"}
 **Conservation of charge** states that the total charge in an isolated system stays constant over time. Charge is not created or destroyed; it is redistributed. Together with conservation of energy and momentum, this principle constrains what reactions and contact processes are possible and underlies much of circuit and field reasoning later in the course.
+
 :::
 
 ---
@@ -73,6 +75,7 @@ An **electroscope** uses thin metal leaves (or a similar mechanical indicator) t
 - **Grounding** connects a conductor to the Earth (or another large reservoir). The Earth supplies or accepts electrons until the conductor reaches a common potential with the ground; in practice, a grounded object is often treated as neutral after the process finishes.
 - **Charging by conduction** means direct contact. If a charged rod touches a neutral electroscope, charge shares between them; by conservation of charge, both end up with net charge of the same sign (not necessarily equal magnitude unless capacitances match, but the sign is shared in the simple picture).
 - **Charging by induction** needs no transfer of charge from the rod to the electroscope if the rod never touches the scope. A charged object is brought near, polarizing the conductor; while the influence is present, the electroscope is grounded so charge can leave or enter; the ground connection is broken first, then the inducing object is removed. The electroscope retains a net charge opposite in sign to the inducer, because electrons were driven by the external field and then trapped when the path to ground was removed.
+
 :::
 
 ---
@@ -81,6 +84,7 @@ An **electroscope** uses thin metal leaves (or a similar mechanical indicator) t
 
 :::note
 **Polarization** is the separation of positive and negative charge within a neutral object when a charged object is brought nearby. A charged object can polarize a neutral insulator or conductor: internal charge shifts so that one side of the material presents a net excess closer to the inducer. For example, a negative balloon near a wall pushes electrons in the wall slightly away, so the nearer surface acts more positive. The balloon and wall can attract even though the wall’s net charge is still zero—attraction without net charge on the neutral object is the usual signature of polarization.
+
 :::
 
 ---
@@ -93,6 +97,7 @@ The force between two point charges in vacuum (or air, approximately) is given b
 $$
 \vec{F} = k \frac{q_1 q_2}{r^2} \hat{r},
 $$
+
 :::
 
 where $$\hat{r}$$ points from the charge exerting the force to the charge experiencing it (or from source to test, depending on textbook convention—always check the direction rule your problems use). The Coulomb constant is
@@ -121,6 +126,7 @@ $$
 $$
 
 (equivalently farads per meter, $$\text{F/m}$$). It sets how electric fields in vacuum relate to source charge in SI form.
+
 :::
 
 ---
@@ -135,6 +141,7 @@ $$
 $$
 
 In practice: sketch each contribution, resolve into components if the geometry demands it, then add. The principle extends to fields once the field from each source is known.
+
 :::
 
 ---
@@ -155,6 +162,7 @@ For a single point charge $$Q$$,
 $$
 \vec{E} = \frac{1}{4\pi \varepsilon_0} \frac{Q}{r^2} \hat{r}.
 $$
+
 :::
 
 ---
@@ -175,6 +183,7 @@ $$
 $$
 \rho = \frac{dq}{dV} \quad \text{(charge per unit volume)}.
 $$
+
 :::
 
 The field obeys superposition in integral form:
@@ -191,6 +200,7 @@ dE = \frac{1}{4\pi \varepsilon_0} \frac{dq}{r^2}
 $$
 
 with $$dq$$ replaced by $$\lambda\, dL$$, $$\sigma\, dA$$, or $$\rho\, dV$$ according to the geometry. Set up coordinates, exploit symmetry, and integrate.
+
 :::
 
 ---
@@ -199,6 +209,7 @@ with $$dq$$ replaced by $$\lambda\, dL$$, $$\sigma\, dA$$, or $$\rho\, dV$$ acco
 
 :::note
 Field lines are a pictorial tool: they leave positive charge, terminate on negative charge, and their spacing indicates field strength (closer lines mean larger $$|\vec{E}|$$). Field lines never cross, because the field at a point has a single direction.
+
 :::
 
 ---
@@ -219,6 +230,7 @@ For a general surface,
 $$
 \Phi_E = \int \vec{E} \cdot d\vec{A}.
 $$
+
 :::
 
 **Gauss’s law** relates the flux through any closed surface to the charge enclosed:
@@ -229,6 +241,7 @@ $$
 $$
 
 The closed surface used in the integral is called a **Gaussian surface**; it is a mathematical construct, not a physical shell. The law is always true; it is computationally powerful when symmetry lets you pull $$|\vec{E}|$$ outside the integral because it is constant on the chosen surface.
+
 :::
 
 :::tip
@@ -239,4 +252,5 @@ Gauss’s law is especially efficient for:
 - infinite planar symmetry (use a pillbox).
 
 Choose a surface on which $$E$$ is constant and parallel or perpendicular to $$d\vec{A}$$ on each piece, so the flux reduces to $$E$$ times an area.
+
 :::

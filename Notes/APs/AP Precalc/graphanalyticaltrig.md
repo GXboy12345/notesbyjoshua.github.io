@@ -10,6 +10,7 @@ permalink: /notes/ap/precalc/graphanalyticaltrig/
 
 :::summary{title="Unit overview"}
 This unit covers graphing sinusoids, solving trigonometric equations, and the angle-addition, double-angle, and sum-to-product identities.
+
 :::
 
 ---
@@ -113,6 +114,7 @@ The constants control the shape of the graph:
 - $$C$$ is the **phase shift**.
 - $$D$$ is the **vertical shift**, so the midline is $$y=D$$.
 - The range is $$[D-\lvert A \rvert,D+ \lvert A \rvert]$$.
+
 :::
 
 If the function is written as
@@ -213,6 +215,7 @@ A graph with many key points is shown below:
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/triggraph6.png)
+
 :::
 
 :::
@@ -275,6 +278,7 @@ x=\frac{\pi}{6},\frac{5\pi}{6},\frac{13\pi}{6},\frac{17\pi}{6}.
 $$
 
 Graphically, the horizontal line $$y=\frac12$$ intersects one full sine cycle twice, and since there are two cycles there are four intersections.
+
 :::
 
 ---
@@ -362,6 +366,7 @@ A graph with many key points is shown below:
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/triggraph7.png)
+
 :::
 
 :::
@@ -526,6 +531,7 @@ $$
 $$
 
 The other addition and subtraction formulas follow from this identity, even/odd identities, and cofunction relationships. For example, a similar proof can be done for sine addition/subtraction, and the proof is left to the reader as an exercise.
+
 :::
 
 ### List of identities
@@ -580,6 +586,7 @@ $$
 $$
 
 The subtraction formula follows the same way using $$\sin(A-B)$$ and $$\cos(A-B)$$.
+
 :::
 
 These formulas are especially useful for finding exact trig values for angles that can be written as sums or differences of special angles, such as $$75^\circ=45^\circ+30^\circ$$.
@@ -609,6 +616,7 @@ $$
 +\frac{\sqrt2}{2}\cdot\frac12
 \frac{\sqrt6+\sqrt2}{4}.
 $$
+
 :::
 
 ---
@@ -685,6 +693,7 @@ $$
 $$
 \tan(2\theta)=\frac{2\tan A}{1 - \tan^2 A}.
 $$
+
 :::
 
 ---
@@ -735,6 +744,7 @@ Solving for $$\sin^2\theta$$ gives
 $$
 \sin^2\theta=\frac{1-\cos(2\theta)}{2}.
 $$
+
 :::
 
 ### Half-angle formulas
@@ -765,6 +775,7 @@ $$
 
 :::theorem{name="Extension"}
 **Extension.** Prove the tangent half angle identity. As a bonus, try to solve it geometrically!
+
 :::
 
 :::example{title="Find the exact value of $$\sin 105^\circ$$."}
@@ -803,6 +814,7 @@ $$
 =\sqrt{\frac{2+\sqrt3}{4}}
 =\frac{\sqrt{2+\sqrt3}}{2}.
 $$
+
 :::
 
 ---
@@ -887,6 +899,7 @@ $$
 $$
 
 The other product-to-sum formulas come from adding or subtracting the sine addition and subtraction formulas and is left as an exercise to the reader.
+
 :::
 
 :::example{title="Rewrite"}
@@ -916,6 +929,7 @@ So
 $$
 \cos(5x)+\cos(3x)=2\cos(4x)\cos x.
 $$
+
 :::
 
 ---
@@ -987,6 +1001,7 @@ Thus
 $$
 x=\frac{\pi}{6},\frac{5\pi}{6},\frac{3\pi}{2}.
 $$
+
 :::
 
 ### General solutions
@@ -1166,6 +1181,7 @@ So
 $$
 \sin\left(\cos^{-1}\frac35\right)=\frac45.
 $$
+
 :::
 
 ---
@@ -1258,6 +1274,7 @@ $$
 $$
 
 A graph with many key points is shown below:
+
 :::
 :::
 
@@ -1320,6 +1337,7 @@ $$
 $$
 
 A graph with many key points is shown below:
+
 :::
 :::
 
@@ -1420,51 +1438,63 @@ $$
 The branch should increase from the vertical asymptote $$x=-\frac{\pi}{4}$$ to the vertical asymptote $$x=\frac{\pi}{12}$$, passing through the center point $$\left(-\frac{\pi}{12},-1\right)$$ and the $$x$$-intercept above.
 
 A graph with many key points is shown below:
+
 :::
 :::
 
 :::frq{id=precalc-graphanalyticaltrig-4}
 4. For $$h(x)=-2\sec\left(\frac12(x-\pi)\right)+3$$, find the period, midline, vertical asymptotes in one period starting at $$x=\pi$$, and range. Then sketch one full period, including the guiding cosine curve.
+
 :::
 
 :::frq{id=precalc-graphanalyticaltrig-5}
 5. Solve exactly on $$[0,4\pi)$$. Then sketch $$y=2\sin^2x-\sin x-1$$ on $$[0,4\pi)$$ and label all $$x$$-intercepts: $$2\sin^2x-\sin x-1=0.$$
+
 :::
 
 :::frq{id=precalc-graphanalyticaltrig-6}
 6. Solve on $$[0, 4\pi)$$: $$4\sin(4x)\cos(6x)= 2\sin(10x)+1$$.
+
 :::
 
 :::frq{id=precalc-graphanalyticaltrig-7}
 7. Solve exactly on $$[0,2\pi)$$: $$\tan x+\cot x=4.$$
+
 :::
 
 :::frq{id=precalc-graphanalyticaltrig-8}
 8. Evaluate each of these exactly: $$\sin 75^\circ, \cos 15^\circ,\tan 105^\circ.$$ The sine and cosine values for $$15^\circ$$ and $$75^\circ$$ are also useful to memorize as well.
+
 :::
 
 :::frq{id=precalc-graphanalyticaltrig-9}
 9. Prove the identity: $$\frac{\sin(x+y)+\sin(x-y)}{\cos(x+y)+\cos(x-y)}=\tan x.$$
+
 :::
 
 :::frq{id=precalc-graphanalyticaltrig-10}
 10. Solve exactly on $$[0,2\pi)$$. Then use the product-to-sum form to sketch enough of the graph to explain why your number of solutions makes sense: $$\cos(5x)+\cos(3x)=0.$$
+
 :::
 
 :::frq{id=precalc-graphanalyticaltrig-11}
 11. Evaluate exactly: $$\sin\left(\cos^{-1}\frac35\right)+\cos\left(\sin^{-1}\left(-\frac5{13}\right)\right)+\tan\left(\cos^{-1}\left(-\frac45\right)\right).$$
+
 :::
 
 :::frq{id=precalc-graphanalyticaltrig-12}
 12. How many solutions does the equation $$\tan(2x)=\cos(\tfrac{x}{2})$$ have on the interval $$[0,2\pi]$$?
+
 :::
 
 :::frq{id=precalc-graphanalyticaltrig-13}
 13. Suppose $$\frac{\pi}{2}<\theta<\pi$$ and $$\cos\theta=-\frac35$$. Find exact values of $$\sin\left(\frac{\theta}{2}\right), \cos\left(\frac{\theta}{2}\right),$$ and $$\tan\left(\frac{\theta}{2}\right).$$
+
 :::
 
 :::frq{id=precalc-graphanalyticaltrig-14}
 14. Let $$x$$ and $$y$$ be real numbers such that $$\frac{\sin x}{\sin y} = 3$$ and $$\frac{\cos x}{\cos y} = \frac{1}{2}$$. The value of $$\frac{\sin 2x}{\sin 2y} + \frac{\cos 2x}{\cos 2y}$$ can be expressed in the form $$\frac{p}{q}$$, where $$p$$ and $$q$$ are relatively prime positive integers. Find $$p+q$$. (2014 AIME II)
+
 :::
 
 :::frq{id=precalc-graphanalyticaltrig-15}
@@ -1473,6 +1503,7 @@ A graph with many key points is shown below:
    $$(B)$$ Find the period and midline.
    $$(C)$$ Find the first time after $$t=2$$ when the tide height is $$9$$ feet.
    $$(D)$$ Sketch one full period of the tide model and label the high tide, low tide, midline, and the point where $$H(t)=9$$ first occurs after $$t=2$$.
+
 :::
 
 :::frq{id=precalc-graphanalyticaltrig-16}
@@ -1502,5 +1533,6 @@ are connected to repeated half-angle identities.
    \frac{\sqrt{2+\sqrt2}}{2}\cdot
    \frac{\sqrt{2+\sqrt{2+\sqrt2}}}{2}\cdots.
    $$
+
 :::
 :::

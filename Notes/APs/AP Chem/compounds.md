@@ -28,10 +28,12 @@ Oppositely charged ions ($$Q_1 Q_2 < 0$$) lower their energy as $$r$$ decreases,
 
 :::tip
 Larger ion charges and smaller ionic radii both increase lattice energy magnitude.
+
 :::
 
 :::note
 A standard example is sodium chloride: chlorine accepts an electron to form $$\text{Cl}^-$$, and sodium becomes $$\text{Na}^+$$. The compound is held together by attraction between those ions, not by shared pairs in the sense of a covalent bond. However, counterintuitively, the ionic bond is the strongest type of bond.
+
 :::
 
 ### Covalent bonding
@@ -40,6 +42,7 @@ A **covalent bond** forms between atoms that are both relatively electronegative
 
 :::tip
 Usually, the cutoff for a bond being polar is a absolute difference of electronegativity above 0.5, and for an ionic bond it is usually 2.0.
+
 :::
 
 Compared with ionic lattices, individual covalent bonds are often discussed in terms of **bond energy** (the energy required to break one mole of that bond in the gas phase, for a defined process). **Triple bonds** are generally stronger and shorter than **double bonds**, which are stronger and shorter than **single bonds** between the same elements.
@@ -78,6 +81,7 @@ Organic chemistry is the study of compounds built around carbon frameworks. Many
 
 :::theorem{name="Octet rule"}
 The **octet rule** says that in many compounds, atoms are most stable when they are surrounded by eight valence electrons (four pairs), matching the noble gas configuration of the noble gas in the same period. Hydrogen and helium are exceptions in the strict sense: hydrogen/helium aim for two electrons (a **duet**), not eight.
+
 :::
 
 Some **period 2** elements (notably *boron*, *beryllium*, and *aluminum* in compounds such as $$\text{BF}_3$$) may be **electron-deficient**, with fewer than eight valence electrons on the central atom in a Lewis structure that still matches experiment. Specifically, they aim to have twice the number of valence electrons they currently have in their shell.
@@ -96,6 +100,7 @@ $$
 $$
 
 Structures that minimize formal charge (and place negative formal charge on more electronegative atoms when a choice exists) are generally preferred as major contributors in a resonance hybrid.
+
 :::
 
 ### Resonance
@@ -116,6 +121,7 @@ A practical algorithm:
 5. If several arrangements remain, favor the one with **formal charges** closest to zero.
 6. Indicate **resonance** with double-headed arrows between structures.
 7. Put **brackets** around the compound if it has a charge.
+
 :::
 
 ---
@@ -126,12 +132,14 @@ A practical algorithm:
 
 :::note
 Lone pairs occupy more space than bonding pairs, so they compress bond angles below the ideal electron-domain geometry.
+
 :::
 
 Typical pairings of steric number and lone pairs give names such as **linear**, **trigonal planar**, **tetrahedral**, **trigonal bipyramidal**, and **octahedral** for the electron-domain geometry; lone pairs then influence the **molecular geometry** (for example, **bent** instead of **trigonal planar** when one lone pair sits on a central atom with three domains).
 
 :::figure{width=480}
 ![VSEPR Model](/assets/APs/AP%20Chem/compounds/VSEPR.png)
+
 :::
 
 ---
@@ -142,6 +150,7 @@ Atomic orbitals on a bonded atom can mix to form **hybrid orbitals** that are co
 
 :::figure{width=480}
 ![Hybridization](/assets/APs/AP%20Chem/compounds/Hybrids.jpeg)
+
 :::
 
 ---
@@ -154,6 +163,7 @@ A **sigma bond** ($$\sigma$$) has electron density concentrated along the *inter
 
 :::key{name="Bond order (Lewis)"}
 For a bond between two atoms, bond order is the average number of bonding pairs between them across valid resonance structures.
+
 :::
 
 ---
@@ -164,6 +174,7 @@ When two atoms approach, the **potential energy** of the system typically drops 
 
 :::figure{width=480}
 ![Potential Energy Curve](/assets/APs/AP%20Chem/compounds/potenergycurve.jpg)
+
 :::
 
 **Bond energy** is related to the depth of that well. Comparing curves for the same bond order (single vs double vs triple) illustrates why higher **bond order** correlates with shorter, stronger bonds.
@@ -215,6 +226,7 @@ Rearranging isolates the lattice term:
 $$
 U_{\text{lattice}} = \Delta H_{\text{sub}} + \text{IE} + \frac{1}{2}D_{\text{X–X}} + \Delta H_{\text{ea}} - \Delta H_f^\circ.
 $$
+
 :::
 
 For salts with other stoichiometries (e.g. $$\text{MgCl}_2$$, $$\text{Na}_2\text{O}$$), use the correct multiple of atomization, all required ionization steps, the appropriate nonmetal atomization (e.g. $$\tfrac{1}{2}\text{O}_2$$), and electron-gain steps that match the anion charge (second-electron addition to oxygen is very endothermic; the huge lattice energy of oxides is what makes the overall formation from elements favorable). The cycle is still closed: the sum of steps along one route equals the sum along any other route between the same two **thermodynamic states**.
@@ -223,6 +235,7 @@ Qualitatively, larger ion charges and smaller ions (shorter internuclear distanc
 
 :::figure{width=480}
 ![Born-Haber Cycle](/assets/APs/AP%20Chem/compounds/bornhaber.gif)
+
 :::
 
 ---
@@ -246,6 +259,7 @@ $$\text{NH}_3$$ has three N-H bonds and one lone pair on nitrogen, giving a trig
 $$
 \boxed{\text{D}}
 $$
+
 :::
 :::
 
@@ -263,6 +277,7 @@ Lattice energy increases when ion charges are larger and ion radii are smaller. 
 $$
 \boxed{\text{C}}
 $$
+
 :::
 :::
 
@@ -280,6 +295,7 @@ $$\text{CH}_4$$ has four bonding domains and no lone pairs on the central atom, 
 $$
 \boxed{\text{C}}
 $$
+
 :::
 :::
 
@@ -297,6 +313,7 @@ Resonance structures are different valid Lewis structures with the same atom con
 $$
 \boxed{\text{C}}
 $$
+
 :::
 :::
 
@@ -314,6 +331,7 @@ Water has two bonding domains and two lone pairs around oxygen, giving a bent mo
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -331,6 +349,7 @@ The H-F bond has the largest electronegativity difference among the choices, so 
 $$
 \boxed{\text{C}}
 $$
+
 :::
 :::
 
@@ -350,6 +369,7 @@ $$(A)$$ In $$\text{CH}_2\text{O}$$, carbon is bonded to two H atoms and double-b
 
 :::placeholder
 Lewis structures for $$\text{CH}_2\text{O}$$ and $$\text{CH}_3\text{OH}$$.
+
 :::
 
 :::
@@ -374,6 +394,7 @@ $$
 $$(B)$$ The double-bond character can be placed between chromium and different oxygen atoms while keeping the same atom connectivity and total number of valence electrons. These drawings differ only in electron placement, not in which atoms are bonded to which, so they are resonance structures rather than different compounds.
 
 $$(C)$$ The resonance hybrid averages the valid resonance structures. Since no single resonance structure fully describes the ion, the Cr-O bonds have the same average bond order and are equivalent. A good particle-level explanation is that the extra electron density is delocalized over the Cr-O bonding framework rather than locked into one permanent double bond.
+
 :::
 :::
 :::

@@ -9,4 +9,5 @@ permalink: /notes/physics/advmech/
 # Advanced Mechanics
 
 :::under-construction
+
 :::

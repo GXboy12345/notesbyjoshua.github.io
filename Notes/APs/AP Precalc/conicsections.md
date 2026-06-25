@@ -10,6 +10,7 @@ permalink: /notes/ap/precalc/conicsections/
 
 :::summary{title="Unit overview"}
 This unit covers parabolas, ellipses, hyperbolas, and the focus-directrix definition of conics in rectangular and polar form.
+
 :::
 
 ---
@@ -110,6 +111,7 @@ $$
 $$
 
 This gives the standard form for a vertical parabola.
+
 :::
 
 ### Latus rectum
@@ -154,6 +156,7 @@ $$
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/parabolastuff.jpg)
+
 :::
 
 :::example{title="For"}
@@ -176,6 +179,7 @@ Here $$h=0$$, $$k=0$$, and $$4p=16$$, so $$p=4$$. Therefore:
 - Directrix: $$y=-4$$.
 - Focal width: $$16$$.
 - Latus rectum endpoints: $$(-8,4)$$ and $$(8,4)$$.
+
 :::
 
 ### Applications of parabolas
@@ -184,6 +188,7 @@ For a parabola, any ray starting from the focus and reflecting off of the surfac
 
 :::theorem{name="Extension"}
 **Extension.** Prove the theorem stated above is true. One theorem you make find useful is the Law of Reflection: A ray reflecting off the surface will have the same angle of reflection as angle of incidence.
+
 :::
 
 In photography, lenses are made up of portions of parabolas. Suppose you have a chord (parallel to the directrix) with half-length $$d$$. Define the focal ratio as $$\frac{p}{d}$$. This is what the $$f$$-stops are defined as in photography.
@@ -196,6 +201,7 @@ An ellipse is defined as the set of points the sum of whose distances to two fix
 
 :::figure{width=480}
 ![Ellipse](/assets/APs/AP%20Precalc/ellipse.png)
+
 :::
 
 ### Basic definitions
@@ -274,6 +280,7 @@ $$
 Thus the two-focus definition yields the standard equation with $$c^{2} = a^{2} - b^{2}$$. Translating the center to $$(h,k)$$ replaces $$x$$ by $$x-h$$ and $$y$$ by $$y-k$$, giving $$\dfrac{(x-h)^{2}}{a^{2}} + \dfrac{(y-k)^{2}}{b^{2}} = 1$$.
 
 For a vertical major axis, the same algebra applies after swapping the roles of $$x$$ and $$y$$ (foci on the vertical line through the center), which produces $$\dfrac{(x-h)^{2}}{b^{2}} + \dfrac{(y-k)^{2}}{a^{2}} = 1$$ with $$a > b$$ and again $$c^{2} = a^{2} - b^{2}$$.
+
 :::
 
 ### Graphing an ellipse
@@ -364,6 +371,7 @@ $$
 
 :::figure{width=480}
 ![Ellipse](/assets/APs/AP%20Precalc/ellipsegraph1.png)
+
 :::
 
 :::
@@ -410,6 +418,7 @@ Each focus has its own directrix. The right focus pairs with the right directrix
 
 :::figure{width=480}
 ![Ellipse](/assets/APs/AP%20Precalc/ellipsedir.png)
+
 :::
 
 ### Applications of ellipses
@@ -463,6 +472,7 @@ The conjugate hyperbola swaps the roles of the terms (e.g. $$\frac{y^{2}}{a^{2}}
 
 :::figure{width=480}
 ![Ellipse](/assets/APs/AP%20Precalc/hyperbolapic.jpg)
+
 :::
 
 ### Graphing a hyperbola
@@ -559,6 +569,7 @@ $$
 
 :::figure{width=480}
 ![Ellipse](/assets/APs/AP%20Precalc/hyperbolagraph1.png)
+
 :::
 
 :::
@@ -609,10 +620,12 @@ $$
 
 :::figure{width=480}
 ![Ellipse](/assets/APs/AP%20Precalc/hyperboladir.jpg)
+
 :::
 
 :::theorem{name="Extension"}
 **Extension.** Prove the standard formula for a hyperbola. This procedure should be similar to the procedure for deriving the equation for an ellipse.
+
 :::
 
 ---
@@ -763,6 +776,7 @@ Therefore
 $$
 \boxed{y=-1\pm\frac{25}{\sqrt{34}}}.
 $$
+
 :::
 
 ### From focus-directrix data to an equation
@@ -847,6 +861,7 @@ $$
 $$
 
 Since $$0<e<1$$, it makes sense that the result is an ellipse.
+
 :::
 
 :::example{title="Find the foci, eccentricity, and directrices of"}
@@ -899,6 +914,7 @@ x=\pm\frac ae
 =\pm\frac{4}{\sqrt7/4}
 =\pm\frac{16}{\sqrt7}.
 $$
+
 :::
 
 :::theorem{name="Proof (Focus-directrix property)"}
@@ -961,6 +977,7 @@ which is the equation of a hyperbola (difference of squared terms with opposite 
 Thus the focus–directrix condition with fixed $$e > 0$$ produces exactly one nondegenerate conic type in each case $$e = 1$$, $$0 < e < 1$$, and $$e > 1$$. Other placements of the focus and directrix (rotations and translations) only change coordinates, not the classification.
 
 Much of the final algebra is not shown here and is left as practice.
+
 :::
 
 ---
@@ -1108,6 +1125,7 @@ In rectangular coordinates, these points are
 $$
 \boxed{(4,0)\text{ and }(-12,0)}.
 $$
+
 :::
 
 :::theorem{name="Proof (Polar conic formula)"}
@@ -1172,6 +1190,7 @@ r=\frac{ed}{1+e\cos\theta}.
 $$
 
 Depending on which side the directrix is on and whether it is horizontal or vertical, the sign and trig function change.
+
 :::
 
 ### Reading polar conic equations
@@ -1244,6 +1263,7 @@ the directrix is
 $$
 x=-d=-10.
 $$
+
 :::
 
 ### Converting polar conics to rectangular form
@@ -1320,6 +1340,7 @@ $$
 $$
 
 This is a parabola, which matches $$e=1$$ from the original polar equation.
+
 :::
 
 :::example{title="Identify the conic:"}
@@ -1377,6 +1398,7 @@ These angles give the asymptotic directions of the hyperbola.
 
 :::figure{width=480}
 ![Ellipse](/assets/APs/AP%20Precalc/hyperbolagraph2.png)
+
 :::
 
 :::
@@ -1443,6 +1465,7 @@ $$
 with center $$\boxed{(3,-2)}$$, vertices $$\boxed{(0,-2),(6,-2)}$$, co-vertices $$\boxed{(3,-4),(3,0)}$$, foci $$\boxed{(3-\sqrt{5},-2),(3+\sqrt{5},-2)}$$, eccentricity $$\boxed{\frac{\sqrt{5}}{3}}$$, major axis length $$\boxed{6}$$, and minor axis length $$\boxed{4}$$.
 
 The graph of the conic is displayed below:
+
 :::
 :::
 
@@ -1479,6 +1502,7 @@ The axis of symmetry is $$\boxed{y=-2}$$. The latus rectum is vertical through t
 $$
 \boxed{(5,4)\text{ and }(5,-8)}.
 $$
+
 :::
 :::
 
@@ -1537,55 +1561,68 @@ Therefore the tangent line is
 $$
 \boxed{y=-2x-9}.
 $$
+
 :::
 :::
 
 :::frq{id=precalc-conicsections-4}
 4. An ellipse has foci $$(1,4)$$ and $$(1,-2)$$ and passes through $$(5,1)$$. Find its standard-form equation and its eccentricity.
+
 :::
 
 :::frq{id=precalc-conicsections-5}
 5. The ellipse $$\dfrac{(x+2)^{2}}{36}+\dfrac{(y-1)^{2}}{20}=1$$ has foci $$F_1$$ and $$F_2$$. If $$P$$ is the point on the ellipse with $$x=1$$ and $$y>1$$, find $$PF_1$$ and $$PF_2$$ separately.
+
 :::
 
 :::frq{id=precalc-conicsections-6}
 6. Find all real numbers $$m$$ such that the line $$y=mx+3$$ is tangent to the ellipse $$\dfrac{x^{2}}{9}+\dfrac{y^{2}}{4}=1$$.
+
 :::
 
 :::frq{id=precalc-conicsections-7}
 7. Complete the square for $$9y^{2}-4x^{2}-54y-16x+29=0$$. Write the equation in standard form and give the center, vertices, foci, eccentricity, and asymptotes. Graph the conic.
+
 :::
 
 :::frq{id=precalc-conicsections-8}
 8. A hyperbola has center $$(2,-1)$$, asymptotes $$y+1=\pm\dfrac{3}{2}(x-2)$$, and one focus at $$(2+\sqrt{52},-1)$$. Assuming it opens left/right, find its standard-form equation.
+
 :::
 
 :::frq{id=precalc-conicsections-9}
 9. Find all intersection points in $$\mathbb{R}^{2}$$ of the ellipse $$\dfrac{x^{2}}{16}+\dfrac{y^{2}}{9}=1$$ and the hyperbola $$\dfrac{x^{2}}{4}-\dfrac{y^{2}}{9}=1$$.
+
 :::
 
 :::frq{id=precalc-conicsections-10}
 10. With focus at $$(0,0)$$, directrix $$x=-6$$, and eccentricity $$e=\dfrac{2}{3}$$, derive the Cartesian equation of the conic. Write it in standard form and identify the conic type.
+
 :::
 
 :::frq{id=precalc-conicsections-11}
 11. Convert $$r=\dfrac{10}{2-\cos\theta}$$ to a Cartesian equation. Identify the conic type, eccentricity, center, vertices, and foci.
+
 :::
 
 :::frq{id=precalc-conicsections-12}
 12. For $$r=\dfrac{12}{3+4\cos\theta}$$, identify the conic type and eccentricity, then find the values of $$\theta$$ where the denominator vanishes. Explain what those angles represent geometrically.
+
 :::
 
 :::frq{id=precalc-conicsections-13}
 13. A circle is tangent to both axes in Quadrant I and its center lies on the ellipse $$\dfrac{x^{2}}{25}+\dfrac{y^{2}}{9}=1$$. Find the circle's radius.
+
 :::
 
 :::frq{id=precalc-conicsections-14}
 14. Show that the conic $$Ax^{2}+Cy^{2}+Dx+Ey+F=0$$ has center $$(h,k)$$ when $$A\ne 0$$ and $$C\ne 0$$. Derive formulas for $$h$$ and $$k$$ in terms of $$A,C,D,E$$, then find the center of $$5x^{2}-3y^{2}+20x+18y-11=0$$.
+
 :::
 
 :::frq{id=precalc-conicsections-15}
 15. For the parabola $$y^{2}=4px$$ with $$p>0$$, let a line through the focus $$(p,0)$$ have slope $$m\ne 0$$ and meet the parabola at two distinct points $$A$$ and $$B$$. Prove that the product of the $$y$$-coordinates of $$A$$ and $$B$$ equals $$-4p^{2}$$.
+
 :::
 
 :::frq{id=precalc-conicsections-16}
@@ -1616,5 +1653,6 @@ You have a camera that takes three snapshots of a moving particle at equal time 
    As a particle passes near the scattering center, its direction changes due to Coulomb repulsion. Let $$\alpha$$ denote the total deflection angle of the trajectory, i.e. the angle between the incoming and outgoing asymptotic directions.
    $$(i)$$ Using the conic form of the trajectory, derive a formula for $$B(\alpha)$$.
    $$(ii)$$ Using the result of part $$(B)$$, express $$B(\alpha)$$ in terms of $$r_0$$.
+
 :::
 :::

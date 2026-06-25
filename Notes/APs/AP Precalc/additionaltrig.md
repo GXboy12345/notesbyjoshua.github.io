@@ -10,6 +10,7 @@ permalink: /notes/ap/precalc/additionaltrig/
 
 :::summary{title="Unit overview"}
 This unit covers the Law of Sines and Cosines, vectors, polar coordinates, complex numbers in polar form, and De Moivre's Theorem.
+
 :::
 
 ---
@@ -37,6 +38,7 @@ $$
 $$
 \frac{\sin A}{a}=\frac{\sin B}{b}=\frac{\sin C}{c}.
 $$
+
 :::
 
 :::theorem{name="Proof (Area formula)"}
@@ -71,6 +73,7 @@ By dropping different altitudes, the same reasoning gives
 $$
 K=\frac12ab\sin C=\frac12ac\sin B.
 $$
+
 :::
 
 :::theorem{name="Proof (Law of Sines)"}
@@ -87,18 +90,21 @@ $$
 $$
 
 This is the Law of Sines.
+
 :::
 
 The Law of Sines also has an extended version, which is not particularly important for AP Precalculus.
 
 :::theorem{name="Extension"}
 **Extension.** Prove the extended Law of Sines: $$\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}=2R.$$
+
 :::
 
 ### The SSA case
 
 :::warning
 The SSA case is called the **ambiguous case** because the given information may create no triangle, one triangle, or two triangles.
+
 :::
 
 Suppose angle $$A$$ is known, and sides $$a$$ and $$b$$ are known, where $$a$$ is opposite $$A$$. Let
@@ -169,6 +175,7 @@ $$
 $$
 
 Both angles create valid triangles because each leaves a positive value for angle $$C$$.
+
 :::
 
 ### Law of Cosines
@@ -246,6 +253,7 @@ we get
 $$
 a^2=b^2+c^2-2bc\cos A.
 $$
+
 :::
 
 :::example{title="If $$b=7$$, $$c=10$$, and $$A=60^\circ$$, find side $$a$$."}
@@ -268,6 +276,7 @@ Thus,
 $$
 a=\sqrt{79}.
 $$
+
 :::
 
 ---
@@ -334,6 +343,7 @@ and
 $$
 v_y=\lvert \mathbf v \rvert\sin\theta.
 $$
+
 :::
 
 For a vector
@@ -378,6 +388,7 @@ $$
 $$
 
 The negative $$x$$-component makes sense because $$175^\circ$$ points mostly left.
+
 :::
 
 ### Vector addition
@@ -569,6 +580,7 @@ Comparing the two equations,
 $$
 \mathbf A\cdot \mathbf B=|\mathbf A||\mathbf B|\cos\theta.
 $$
+
 :::
 
 Useful vector formulas that follow from the dot product include
@@ -637,6 +649,7 @@ Therefore,
 $$
 \theta=\cos^{-1}\left(\frac35\right)\approx 53.1^\circ.
 $$
+
 :::
 
 ---
@@ -706,6 +719,7 @@ This is a parabola. However, if the parameter is restricted, such as $$0\le t\le
 $$
 0\le x\le 6.
 $$
+
 :::
 
 ### Trig parametrizations
@@ -782,6 +796,7 @@ $$
 $$
 
 The graph is an ellipse centered at the origin.
+
 :::
 
 ### Graphing parametric equations
@@ -849,6 +864,7 @@ $$
 all represent the same point.
 
 The first two use the same radius and coterminal angles. The third uses a negative radius, so it points in the opposite direction from $$\frac{4\pi}{3}$$, which lands at angle $$\frac{\pi}{3}$$.
+
 :::
 
 ### Converting between polar and rectangular form
@@ -919,6 +935,7 @@ Similarly, since $$\tan\theta$$ represents the slope of the line connecting the 
 $$
 \tan\theta=\frac{y}{x}.
 $$
+
 :::
 
 :::example{title="Convert"}
@@ -953,6 +970,7 @@ So the rectangular point is
 $$
 (-\sqrt3,-1).
 $$
+
 :::
 
 ### Polar equations
@@ -1016,6 +1034,7 @@ Multiply by $$\sqrt2$$:
 $$
 x+y=6\sqrt2.
 $$
+
 :::
 
 ### Distance in polar coordinates
@@ -1060,6 +1079,7 @@ Taking the square root gives
 $$
 d=\sqrt{r_1^2+r_2^2-2r_1r_2\cos(\theta_2-\theta_1)}.
 $$
+
 :::
 
 ### Circles in polar coordinates
@@ -1086,6 +1106,7 @@ Squaring both sides gives
 $$
 a^2=r^2+r_0^2-2rr_0\cos(\theta-\theta_0).
 $$
+
 :::
 
 Alternatively, you can write the circle equation (centered at the origin) as $$r=a$$, which represents the set of all points $$a$$ away from origin (aka a circle).
@@ -1126,6 +1147,7 @@ Multiplying by $$r$$ gives
 $$
 d=r\cos(\theta-\alpha).
 $$
+
 :::
 
 :::example{title="A line is tangent to the circle"}
@@ -1152,6 +1174,7 @@ Using the polar line formula,
 $$
 6=r\cos\left(\theta-\frac{4\pi}{3}\right).
 $$
+
 :::
 
 ---
@@ -1202,6 +1225,7 @@ A graph (with the helper graph) of the function is shown below:
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/polargraph1.png)
+
 :::
 
 :::
@@ -1244,6 +1268,7 @@ A list of all the limacons are shown below (note that a circle is technically a 
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/limacon.png)
+
 :::
 
 :::example{title="Graph $$r=2+4\cos\theta.$$"}
@@ -1263,6 +1288,7 @@ A graph (with the helper graph) of the function is shown below:
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/polargraph2.png)
+
 :::
 
 :::
@@ -1310,6 +1336,7 @@ $$
 For odd $$n$$, the negative radius portions trace the same petals that the positive radius portions already traced, so there are $$n$$ petals total.
 
 For even $$n$$, the negative radius portions trace new petals, so there are $$2n$$ petals total.
+
 :::
 
 :::example{title="Draw the rose curve $$r=4\sin(3\theta)$$."}
@@ -1323,6 +1350,7 @@ A graph (with the helper graph) of the function is shown below:
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/polargraph3.png)
+
 :::
 
 :::
@@ -1356,6 +1384,7 @@ A graph (with the helper graph) of the function is shown below:
 
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/polargraph4.png)
+
 :::
 
 :::
@@ -1492,6 +1521,7 @@ So
 $$
 \frac{3+2i}{1-4i}=-\frac5{17}+\frac{14}{17}i.
 $$
+
 :::
 
 ### Polar form of complex numbers
@@ -1611,10 +1641,12 @@ we get
 $$
 z_1z_2=r_1r_2\left(\cos(\alpha+\beta)+i\sin(\alpha+\beta)\right).
 $$
+
 :::
 
 :::theorem{name="Extension — Derive the division formula for two complex numbers."}
 **Extension.** Derive the division formula for two complex numbers.
+
 :::
 
 :::example{title="Multiply"}
@@ -1635,6 +1667,7 @@ Multiply the moduli and add the angles:
 $$
 z_1z_2=6\left(\cos\frac{\pi}{2}+i\sin\frac{\pi}{2}\right)=6i.
 $$
+
 :::
 
 ### Exponential form of complex numbers
@@ -1713,6 +1746,7 @@ So
 $$
 z=2\sqrt2 e^{i3\pi/4}.
 $$
+
 :::
 
 :::example{title="Write"}
@@ -1741,6 +1775,7 @@ Thus,
 $$
 z=2\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right).
 $$
+
 :::
 
 ### De Moivre's Theorem
@@ -1787,6 +1822,7 @@ z^n=r^n(\cos(n\theta)+i\sin(n\theta)),
 $$
 
 which is De Moivre's Theorem. To reverse De Moivre's Theorem (e.g. solve for roots of a complex number), just swap $$n$$ for $$\frac{1}{n}$$.
+
 :::
 
 :::example{title="Find"}
@@ -1825,6 +1861,7 @@ we get
 $$
 (1+i)^6=8\left(\cos\frac{3\pi}{2}+i\sin\frac{3\pi}{2}\right)=-8i.
 $$
+
 :::
 
 ### Roots of complex numbers
@@ -1893,6 +1930,7 @@ and
 $$
 2\left(\cos\frac{4\pi}{3}+i\sin\frac{4\pi}{3}\right)=-1-\sqrt3i.
 $$
+
 :::
 
 ### Roots of unity
@@ -1999,9 +2037,11 @@ $$
 Geomertrically, the solutions look like this:
 :::figure{width=480}
 ![parent functions](/assets/APs/AP%20Precalc/complex1.png)
+
 :::
 
 Note that the rendering on the $$y$$-axis shows that it is real, but treat it like the imaginary axis.
+
 :::
 
 ### Sum and product of roots of unity
@@ -2034,6 +2074,7 @@ Additionally, the product of the $$n$$th roots of unity is $$(-1)^{n+1}$$.
 
 :::theorem{name="Extension"}
 **Extension.** Prove that the product of the $$n$$ roots of unity is $$(-1)^{n+1}$$. (Hint: Use dot product!)
+
 :::
 
 ### Roots of other complex numbers
@@ -2102,6 +2143,7 @@ C\approx 14.2^\circ,\qquad c\approx 2.55\text{ cm}.
 $$
 
 Therefore, there are **two possible triangles**.
+
 :::
 :::
 
@@ -2132,6 +2174,7 @@ Assuming the ship and submarine are on the same side of the plane, their distanc
 $$
 4896.28-3362.19\approx 1534.09\text{ ft}.
 $$
+
 :::
 :::
 
@@ -2152,11 +2195,13 @@ Therefore,
 $$
 AS\approx 1.13\text{ miles},\qquad BS\approx 1.43\text{ miles}.
 $$
+
 :::
 :::
 
 :::frq{id=precalc-additionaltrig-4}
 4. Prove that for any triangle with side lengths $$a,b,c$$ and semiperimeter $$s=\frac12(a+b+c)$$, $$\sin^2\left(\frac C2\right)=\frac{(s-a)(s-b)}{ab}.$$
+
 :::
 
 :::frq{id=precalc-additionaltrig-5}
@@ -2164,14 +2209,17 @@ $$
     $$(A)$$ Find $$2\mathbf u-3\mathbf v$$.
     $$(B)$$ Find the angle between $$\mathbf u$$ and $$\mathbf v$$ to the nearest degree.
     $$(C)$$ Find a unit vector in the direction of $$\mathbf u+\mathbf v$$.
+
 :::
 
 :::frq{id=precalc-additionaltrig-6}
 6. A plane is heading $$40^\circ$$ east of north at $$120$$ mph. A wind blows directly from the east at $$10$$ mph. Find the ground-speed vector, the ground speed, and the drift angle from the plane's intended heading.
+
 :::
 
 :::frq{id=precalc-additionaltrig-7}
 7. A force of $$18$$ Newtons acts in the direction $$235^\circ$$ from the positive $$x$$-axis. Resolve the force into horizontal and vertical components. Then find the magnitude and direction of the vector obtained by adding this force to $$\langle 12,-5\rangle$$.
+
 :::
 
 :::frq{id=precalc-additionaltrig-8}
@@ -2179,14 +2227,17 @@ $$
     $$(A)$$ Find all exact $$x$$-intercepts.
     $$(B)$$ Find the particle's position when $$t=\frac{\pi}{2}$$ and when $$t=\frac{7\pi}{6}$$.
     $$(C)$$ Write a formula for the particle's distance from the origin as a function of $$t$$.
+
 :::
 
 :::frq{id=precalc-additionaltrig-9}
 9. Eliminate the parameter and describe the curve, including any domain restrictions and orientation: $$x=e^t$$, $$y=e^{2t}-3$$, $$-\ln2\le t\le \ln3.$$
+
 :::
 
 :::frq{id=precalc-additionaltrig-10}
 10. The curve $$x=4\cos t$$, $$y=-2\sin t$$ is traced for $$0\le t\le 2\pi$$. Eliminate the parameter, state where the curve starts, and determine the direction (clockwise or counterclockwise) the curve is traced in.
+
 :::
 
 :::frq{id=precalc-additionaltrig-11}
@@ -2195,10 +2246,12 @@ $$
     $$(B)$$ Graph $$r=2+5\cos\theta$$
     $$(C)$$ Graph $$r=4\sin(3\theta)$$
     $$(D)$$ Graph $$r^2=25\sin(2\theta)$$
+
 :::
 
 :::frq{id=precalc-additionaltrig-12}
 12. Graph both $$r=2+2\cos\theta$$ and $$r=2-2\cos\theta$$. Then, find the number of intersection points.
+
 :::
 
 :::frq{id=precalc-additionaltrig-13}
@@ -2206,6 +2259,7 @@ $$
     $$(A)$$ Find a vertex in the third quadrant and a vertex in the fourth quadrant.
     $$(B)$$ Without finding all of the vertices calculate $$P_1+P_2+\cdots+P_8$$
     $$(C)$$ Without finding all of the vertices calculate $$P_1P_2\cdots P_8$$.
+
 :::
 
 :::frq{id=precalc-additionaltrig-14}
@@ -2213,10 +2267,12 @@ $$
     $$(A)$$ Write both numbers in polar form.
     $$(B)$$ Write both numbers in exponential form.
     $$(C)$$ Compute $$z_1z_2$$ in polar form and rectangular form.
+
 :::
 
 :::frq{id=precalc-additionaltrig-15}
 15. Use De Moivre's Theorem to find all fourth roots of $$16\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right).$$
+
 :::
 
 :::frq{id=precalc-additionaltrig-16}
@@ -2238,5 +2294,6 @@ $$(D)$$ Now suppose $$ABCD$$ is not necessarily cyclic. Keep the same notation, 
 $$(E)$$ Now prove **Bretschneider's formula**: $$K^2=(s-a)(s-b)(s-c)(s-d)-abcd\cos^2\left(\frac{B+D}{2}\right).$$
 $$(F)$$ Explain why Bretschneider's formula turns into Brahmagupta's formula when $$ABCD$$ is cyclic.
 </div>
+
 :::
 :::

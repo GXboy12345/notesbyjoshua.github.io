@@ -10,6 +10,7 @@ permalink: /notes/ap/precalc/polyratopt/
 
 :::summary{title="Unit overview"}
 This unit covers polynomial and rational function behavior, zero-finding, asymptotes, and optimization problems built from single-variable models.
+
 :::
 
 ---
@@ -66,6 +67,7 @@ so $$b=2$$. Therefore
 $$
 \boxed{f(x)=-\frac12x+2}.
 $$
+
 :::
 
 ### Quadratic functions
@@ -122,6 +124,7 @@ f(x)=a(x-h)^{2}+k,
 $$
 
 where the vertex is $$(h,k)$$.
+
 :::
 
 If a function is built from this quadratic in a way that preserves order, the same input may still be optimal. For example,
@@ -134,6 +137,7 @@ is minimized at $$x=\frac12$$ because the square-root function is increasing, so
 
 :::warning
 However, you have to be careful and always double-check your work for domain shifts or restrictions, since a function like $$\sqrt{(x-2.5)^2-5}$$ does not have a minimum at $$x=2.5$$ since it is not in the domain! In this case, the minimum are always the zeroes of the quadratic.
+
 :::
 
 ---
@@ -281,6 +285,7 @@ $$
 Since $$x=2$$ has multiplicity $$2$$, the graph touches/bounces at $$x=2$$. The end behavior of this function is up & up since the highest degree is even and the leading coefficient is positive. It goes through $$(-6,0)$$ and $$(-1/2,0)$$ while bouncing at $$(2,0)$$. A graph of the polynomial is shown below:
 
 **ADD IMAGE OF GRAPH**
+
 :::
 
 ---
@@ -315,6 +320,7 @@ x-m \text{ is a factor of } f(x)
 \quad\Longleftrightarrow\quad
 f(m)=0.
 $$
+
 :::
 
 So these statements all mean the same thing:
@@ -342,6 +348,7 @@ p\mid a_0
 \qquad\text{and}\qquad
 q\mid a_n.
 $$
+
 :::
 
 So possible rational zeros are
@@ -368,6 +375,7 @@ $$
 $$
 
 This theorem only gives candidates. You still need to test them.
+
 :::
 
 ---
@@ -500,6 +508,7 @@ $$
 $$
 
 Thus the hole is at $$(2,-3).$$
+
 :::
 
 ### Horizontal asymptotes
@@ -558,6 +567,7 @@ as $$x\to \pm\infty$$, the slant asymptote is
 $$
 y=x+2.
 $$
+
 :::
 
 ### Graphing checklist for rational functions
@@ -574,6 +584,7 @@ To graph a rational function:
 
 :::exam{topic="Rational function graphs"}
 When graphing, always list out these key features! They will make graphing the rational function much easier to do.
+
 :::
 
 ---
@@ -632,6 +643,7 @@ So the largest rectangle is a square, and its maximum area is
 $$
 \boxed{400\text{ cm}^2}.
 $$
+
 :::
 
 :::theorem{name="maximizing a rational model"}
@@ -701,6 +713,7 @@ $$
 $$
 
 This method is useful when the equation can be rewritten as a quadratic in the input and the discriminant tells which output values are possible.
+
 :::
 
 ---
@@ -759,6 +772,7 @@ so
 $$
 \boxed{y=-x+14}.
 $$
+
 :::
 :::
 
@@ -813,6 +827,7 @@ Since $$a<0$$, this is a maximum. The maximum value is $$18$$ and the range is
 $$
 \boxed{(-\infty,18]}.
 $$
+
 :::
 :::
 
@@ -873,55 +888,68 @@ At the endpoints, $$h(x)=0$$, so the range is
 $$
 \boxed{[0,3\sqrt2]}.
 $$
+
 :::
 :::
 
 :::frq{id=precalc-polyratopt-4}
 4. Find the lowest-degree polynomial $$p(x)$$ with real coefficients such that $$x=-3$$ is a zero of multiplicity $$2$$, $$x=1$$ is a zero of multiplicity $$3$$, and $$p(0)=-18$$. Give the end behavior.
+
 :::
 
 :::frq{id=precalc-polyratopt-5}
 5. For $$f(x)=-\dfrac12(x+4)(x-1)^2(x-3)^3$$, give the degree, leading coefficient, end behavior, zeros with multiplicities, crossing/bouncing behavior, $$y$$-intercept, and maximum possible number of turning points. Give a rough graph of the function.
+
 :::
 
 :::frq{id=precalc-polyratopt-6}
 6. Find the lowest-degree polynomial with real coefficients, leading coefficient positive, zeros $$2$$ with multiplicity $$2$$, $$-1$$, and $$3+i$$, and $$f(0)=100$$.
+
 :::
 
 :::frq{id=precalc-polyratopt-7}
 7. Factor $$P(x)=x^4-3x^3-11x^2+39x-18$$ completely over the real numbers, given that $$P(3)=0$$.
+
 :::
 
 :::frq{id=precalc-polyratopt-8}
 8. Use the Rational Root Theorem to list the possible rational zeros of $$f(x)=2x^4-x^3-20x^2+13x+30$$, then find all real zeros.
+
 :::
 
 :::frq{id=precalc-polyratopt-9}
 9. A polynomial $$f(x)$$ leaves remainder $$5$$ when divided by $$x-2$$ and remainder $$-4$$ when divided by $$x+1$$. Find the remainder when $$f(x)$$ is divided by $$(x-2)(x+1)$$.
+
 :::
 
 :::frq{id=precalc-polyratopt-10}
 10. Find the monic polynomial with rational coefficients whose zeros include $$1+i$$ and $$2-\sqrt3$$.
+
 :::
 
 :::frq{id=precalc-polyratopt-11}
 11. For $$R(x)=\dfrac{(x-2)(x+1)^2}{(x+1)(x-3)}$$, state the domain, hole, vertical asymptote, slant asymptote, and intercepts. Give a rough graph of this function.
+
 :::
 
 :::frq{id=precalc-polyratopt-12}
 12. Solve in $$\mathbb{R}$$: $$\dfrac{(x-4)(x+1)^2}{(x-2)(x+1)}\le 0$$.
+
 :::
 
 :::frq{id=precalc-polyratopt-13}
 13. A box with no top is made by cutting squares of side length $$x$$ from each corner of a $$24\text{ in}$$ by $$18\text{ in}$$ sheet and folding up the sides. Write the volume function, state the practical domain, and use a graph or calculator to approximate the value of $$x$$ that maximizes the volume.
+
 :::
 
 :::frq{id=precalc-polyratopt-14}
 14. A machine's output is modeled by $$M(x)=\dfrac{150x}{x^2+25}$$ for $$x\ge 0$$. Use an algebraic method to find the maximum possible output and the input where it occurs.
+
 :::
 
 :::frq{id=precalc-polyratopt-15}
 15. A farmer has $$240$$ feet of fencing to build three identical rectangular pens side-by-side, sharing interior fences. If the pens together form one large rectangle split by two parallel dividers, find the dimensions of the large rectangle that maximize the total area.
+
 :::
 
 :::frq{id=precalc-polyratopt-16}
@@ -935,5 +963,6 @@ $$
    $$(A)$$ Substitute $$\frac{p}{q}$$ into $$f(x)=0$$ and multiply by $$q^n$$ and rearrange your equation to show that $$p\mid a_0q^n$$. Also explain why $$\gcd(p,q)=1$$ implies $$p\mid a_0$$.
    $$(B)$$ Rearrange the equation from part $$(A)$$ in a different way to show that $$q\mid a_np^n$$ and explain why $$\gcd(p,q)=1$$ implies $$q\mid a_n$$.
    $$(C)$$ State the Rational Root Theorem in words.
+
 :::
 :::

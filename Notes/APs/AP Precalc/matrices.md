@@ -10,6 +10,7 @@ permalink: /notes/ap/precalc/matrices/
 
 :::summary{title="Unit overview"}
 This unit covers solving linear systems by substitution, elimination, and matrices—including row operations, inverses, determinants, and Cramer's Rule.
+
 :::
 
 ---
@@ -82,6 +83,7 @@ So the solution is
 $$
 \boxed{(2,3)}.
 $$
+
 :::
 
 ---
@@ -471,6 +473,7 @@ Thus
 $$
 \boxed{(x,y,z)=(1,2,3)}.
 $$
+
 :::
 
 ### Detecting special cases
@@ -701,6 +704,7 @@ A^{-1}
 \end{bmatrix}
 }.
 $$
+
 :::
 
 ### Solving systems with inverses
@@ -778,6 +782,7 @@ So
 $$
 \boxed{(x,y)=(3,1)}.
 $$
+
 :::
 
 For larger square matrices, one way to find the inverse is to row-reduce the augmented matrix
@@ -876,6 +881,7 @@ $$
 $$
 
 This is nonzero, so $$B$$ is invertible and a system with coefficient matrix $$B$$ has exactly one solution.
+
 :::
 
 For a $$3\times 3$$ matrix, one useful expansion is along the first row. Each entry in the first row gets multiplied by the determinant of the $$2\times 2$$ matrix left behind after deleting that entry's row and column:
@@ -926,6 +932,7 @@ If $$D\ne 0$$, then
 $$
 x=\frac{D_x}{D},\qquad y=\frac{D_y}{D},
 $$
+
 :::
 
 where
@@ -994,6 +1001,7 @@ x=\frac{-52}{-14}=\frac{26}{7},
 \qquad
 y=\frac{-34}{-14}=\frac{17}{7}.
 $$
+
 :::
 
 ---
@@ -1057,6 +1065,7 @@ Thus $$x=-4$$ or $$x=3$$. Since $$y=x+1$$, the solutions are
 $$
 \boxed{(-4,-3)\text{ and }(3,4)}.
 $$
+
 :::
 
 ---
@@ -1108,6 +1117,7 @@ so
 $$
 3x<6,\qquad x<2.
 $$
+
 :::
 ---
 
@@ -1226,6 +1236,7 @@ so $$x=1$$. The solution is
 $$
 \boxed{(1,2,3)}.
 $$
+
 :::
 :::
 
@@ -1298,6 +1309,7 @@ Thus the system has infinitely many solutions:
 $$
 \boxed{(x,y,z)=\left(\frac{6-t}{7},\frac{11+4t}{7},t\right),\quad t\in\mathbb R}.
 $$
+
 :::
 :::
 
@@ -1366,6 +1378,7 @@ Therefore:
 $$
 \boxed{k=4\text{ gives infinitely many solutions, and }k=-4\text{ gives no solution}.}
 $$
+
 :::
 :::
 
@@ -1377,6 +1390,7 @@ $$
     B=\begin{bmatrix}0&5\\-2&1\end{bmatrix}.
     $$
     Compute $$2A-3B$$, $$AB$$, and $$BA$$.
+
 :::
 
 :::frq{id=precalc-matrices-5}
@@ -1387,6 +1401,7 @@ $$
     B=\begin{bmatrix}a&b\\c&d\end{bmatrix}.
     $$
     Find all matrices $$B$$ such that $$AB=BA$$.
+
 :::
 
 :::frq{id=precalc-matrices-6}
@@ -1396,6 +1411,7 @@ $$
     \qquad
     B=\begin{bmatrix}1\\-3\end{bmatrix}.
     $$
+
 :::
 
 :::frq{id=precalc-matrices-7}
@@ -1407,6 +1423,7 @@ $$
     0&0&2
     \end{bmatrix}.
     $$
+
 :::
 
 :::frq{id=precalc-matrices-8}
@@ -1418,6 +1435,7 @@ $$
     0&3&t
     \end{bmatrix}.
     $$
+
 :::
 
 :::frq{id=precalc-matrices-9}
@@ -1428,10 +1446,12 @@ $$
     5x+4y=7
     \end{cases}
     $$
+
 :::
 
 :::frq{id=precalc-matrices-10}
 10. A quadratic function $$f(x)=ax^2+bx+c$$ passes through $$(-1,6)$$, $$(2,3)$$, and $$(4,15)$$. Use a system of equations to find $$a,b,c$$.
+
 :::
 
 :::frq{id=precalc-matrices-11}
@@ -1442,6 +1462,7 @@ $$
     x-y=1
     \end{cases}
     $$
+
 :::
 
 :::frq{id=precalc-matrices-12}
@@ -1452,6 +1473,7 @@ $$
     x+y=8
     \end{cases}
     $$
+
 :::
 
 :::frq{id=precalc-matrices-13}
@@ -1464,6 +1486,7 @@ $$
     3x+y\le 9
     \end{cases}
     $$
+
 :::
 
 :::frq{id=precalc-matrices-14}
@@ -1484,10 +1507,12 @@ $$
     \end{bmatrix}.
     $$
     Find the original point $$(x,y)$$ that maps to $$(7,5)$$. Then find the image of the line $$y=2x+1$$ under this transformation.
+
 :::
 
 :::frq{id=precalc-matrices-15}
 15. A small economy has two sectors: food and tools. Producing one unit of food requires $$0.20$$ units of food and $$0.10$$ units of tools. Producing one unit of tools requires $$0.30$$ units of food and $$0.20$$ units of tools. External demand is $$110$$ units of food and $$80$$ units of tools. Let $$F$$ and $$T$$ be the total production levels. Set up and solve the matrix equation for $$F$$ and $$T$$.
+
 :::
 
 :::frq{id=precalc-matrices-16}
@@ -1514,5 +1539,6 @@ $$
     M=\begin{bmatrix}2&1\\1&1\end{bmatrix}.
     $$
     Use part $$(C)$$ to compute $$M^6$$ without multiplying six matrices directly.
+
 :::
 :::

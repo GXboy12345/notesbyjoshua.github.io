@@ -10,6 +10,7 @@ permalink: /notes/ap/stats/univardata/
 
 :::summary{title="Unit overview"}
 This unit is about **univariate data**: one variable measured on many individuals or cases. Before we graph or summarize anything, we need to know what kind of variable we have, because the right tools depend on whether the variable is categorical or quantitative.
+
 :::
 
 ---
@@ -20,10 +21,12 @@ This unit is about **univariate data**: one variable measured on many individual
 
 :::key{name="Categorical variable"}
 A **categorical variable** sorts each case into a group or label. The values are usually words or codes (for example: blood type, favorite color, zip code used only as a label). With categorical data, we typically report counts or percents in each category.
+
 :::
 
 :::warning
 Averages usually do not make sense unless the categories are coded as numbers in a meaningful way—which is rare in AP settings.
+
 :::
 
 ### Quantitative variables
@@ -33,6 +36,7 @@ A **quantitative variable** takes numerical values where arithmetic is meaningfu
 
 - **Discrete** variables: countable “jumps” between values (number of siblings, number of text messages in a day). Usually this comes in the forms of integers, but is not limited to them.
 - **Continuous** variables: in principle could take any value in an interval (height, time, temperature), though what we record is usually still rounded or binned (partitioned based on value).
+
 :::
 
 ---
@@ -41,6 +45,7 @@ A **quantitative variable** takes numerical values where arithmetic is meaningfu
 
 :::note
 **Descriptive statistics** means organizing and summarizing data we actually have, without yet jumping to conclusions about a larger world. For univariate data, we use **tabular** summaries (tables), **graphical** summaries (plots), and **numerical** summaries (means, spreads, and positions).
+
 :::
 
 ---
@@ -49,6 +54,7 @@ A **quantitative variable** takes numerical values where arithmetic is meaningfu
 
 :::note
 Tables are the natural home for **frequency**: how often each value or category appears.
+
 :::
 
 :::theorem{name="Frequency and relative frequency"}
@@ -62,12 +68,14 @@ rf = \frac{f}{n}
 $$
 
 Relative frequencies are especially useful when two datasets have different sizes, since percents put them on a common scale.
+
 :::
 
 :::note
 The **cumulative frequency** gives the count of observations less than or equal to a chosen value (or upper endpoint of a class). It is a running total as you move through ordered categories or ordered bins.
 
 A **frequency distribution** lists possible values (or classes) of the variable together with their frequencies (and often relative or cumulative frequencies). Building that table is often the first step before drawing a histogram or cumulative relative frequency graph.
+
 :::
 
 :::example{title="Frequency distribution layout"}
@@ -76,10 +84,12 @@ A **frequency distribution** lists possible values (or classes) of the variable 
 | Category/bin 1 | $$f_1$$ | $$f_1/n$$ | $$f_1$$ |
 | Category/bin 2 | $$f_2$$ | $$f_2/n$$ | $$f_1+f_2$$ |
 | Category/bin 3 | $$f_3$$ | $$f_3/n$$ | $$f_1+f_2+f_3$$ |
+
 :::
 
-:::figure{width=480}
-![Frequency table and display placeholder](/assets/APs/AP%20Stats/univardata/frequency-displays.png)
+:::placeholder
+Frequency table and display
+
 :::
 
 ---
@@ -88,6 +98,7 @@ A **frequency distribution** lists possible values (or classes) of the variable 
 
 :::note
 For **categorical** data, we want displays that compare category sizes at a glance.
+
 :::
 
 ### Bar charts
@@ -96,12 +107,14 @@ For **categorical** data, we want displays that compare category sizes at a glan
 In a **bar chart**, each category gets a bar; the **length or height** of the bar shows **frequency** or **count** (sometimes relative frequency or percent). Categories on an axis are usually separated with a little space between bars, which signals that the order of categories is not necessarily numeric.
 
 You can use a horizontal bar chart by swapping the roles of the axes—helpful when category names are long.
+
 :::
 
 ### Pie charts
 
 :::tip
 A **pie chart** represents the whole as a circle and divides it into slices whose central angles (or areas) match relative frequencies. For example, a category with relative frequency 0.36 gets about 36% of the circle. Pie charts work best with a small number of categories and when you want to emphasize parts of a whole. They become hard to read when there are many thin slices or when differences are subtle.
+
 :::
 
 ---
@@ -110,44 +123,52 @@ A **pie chart** represents the whole as a circle and divides it into slices whos
 
 :::note
 For **quantitative** data, we care about **center**, **spread**, **shape**, and unusual values.
+
 :::
 
 ### Dotplots
 
 :::note
 A **dotplot** stacks a dot above a number line for each occurrence of a value (or stacks dots in equal-width bins if values are rounded). Dotplots shine with small-to-moderate datasets: you see every value, clusters, gaps, and outliers without losing detail.
+
 :::
 
 ### Stemplots (stem-and-leaf displays)
 
 :::note
 A **stemplot** splits each number into a **stem** (leading digit or digits) and a **leaf** (usually the last digit). Stems are listed in order; leaves are often ordered on each stem. The split between stem and leaf is a choice: you might split tens vs. ones, or group stems (e.g., 2\*, 2•) when a plot is too sparse or too crowded. Stemplots preserve the actual values (unlike a histogram, where raw values disappear into bins) and work well for small datasets.
+
 :::
 
 ### Histograms
 
 :::note
 A **histogram** groups quantitative data into intervals (bins), then draws bars whose heights show frequency or relative frequency (or density, in more advanced courses). Bars touch to show that the horizontal axis is a continuous scale (even though data are binned). The shape of a histogram (symmetric, skewed, unimodal, bimodal) can tell you a lot about the data (talked about later).
+
 :::
 
-:::figure{width=480}
-![Histogram shapes placeholder](/assets/APs/AP%20Stats/univardata/histogram-shapes.png)
+:::placeholder
+Histogram shapes
+
 :::
 
 ### Cumulative relative frequency graphs (ogives)
 
 :::note
 An **ogive** plots **cumulative relative frequency** (from 0 to 1, or 0% to 100%) against values or upper class boundaries. Place a point above each boundary at the cumulative percent up to that boundary, then connect points with line segments. The curve rises; its height at a value tells you what fraction of data falls at or below that point.
+
 :::
 
 ### Boxplots
 
 :::theorem{name="Boxplot"}
 A **boxplot** (box-and-whisker plot) summarizes a quantitative variable using quartiles and the median. Draw a box from the first quartile $$Q_1$$ to the **third quartile** $$Q_3$$; draw a line inside the box at the **median**. The **interquartile range** is $$IQR = Q_3 - Q_1$$. “Whiskers” typically extend to the most extreme values within **1.5 × IQR** of the quartiles; points beyond that range are plotted individually as outliers. Boxplots are ideal for comparing several groups on the same scale.
+
 :::
 
-:::figure{width=480}
-![Boxplot placeholder](/assets/APs/AP%20Stats/univardata/boxplot.png)
+:::placeholder
+Boxplot
+
 :::
 
 ---
@@ -156,18 +177,21 @@ A **boxplot** (box-and-whisker plot) summarizes a quantitative variable using qu
 
 :::exam
 Whenever you look at a univariate graph, train yourself to describe **center**, **spread**, and **shape**, as well as irregularities in the plot (like **clusters**, **gaps**, and **outliers**) When given a question to compare two plots, always start with these five observations and go from there.
+
 :::
 
 ### Center
 
 :::key{name="Center"}
 The **center** is a typical or middle value—where much of the data sits. For many distributions, the **mean** and **median** lie near the visual center; for **skewed** data they can separate, which is an important aspect of the plot.
+
 :::
 
 ### Spread
 
 :::key{name="Spread"}
 **Spread** describes how far values wander from center. Informally, look at whether points are tightly packed or widely scattered. Later we attach numbers to spread: **range**, **interquartile range**, **variance**, and **standard deviation**.
+
 :::
 
 ### Shape
@@ -179,12 +203,14 @@ The **center** is a typical or middle value—where much of the data sits. For m
 - **Skewed**: one tail stretches farther than the other. If the right tail is longer (extreme large values pull the tail), the distribution is **right-skewed** (positively skewed). If the left tail is longer, it is **left-skewed** (negatively skewed).
 
 Also note that **modality** (one clear peak (**unimodal**), two peaks (**bimodal**), and so on) sometimes suggests there are different subgroups mixed in one variable.
+
 :::
 
 ### Clusters and gaps
 
 :::note
 **Clusters** are groups of values separated from other groups; they can suggest subpopulations or different regimes (for example, two manufacturing lines). **Gaps** are intervals with no (or very few) observations where you might have expected some; they invite questions about sampling, measurement, or real structure.
+
 :::
 
 ### Outliers
@@ -195,10 +221,12 @@ An **outlier** is a value that stands apart from the overall pattern. On a boxpl
 $$
 \text{Outlier} > Q_3 + 1.5 \cdot IQR \quad \text{or} \quad \text{Outlier} < Q_1 - 1.5 \cdot IQR
 $$
+
 :::
 
 :::tip
 Always ask whether an outlier is a data entry error, a special case worth investigating, or simply natural variability in a heavy-tailed variable.
+
 :::
 
 ---
@@ -212,6 +240,7 @@ We distinguish **population** and **sample** because notation and formulas track
 - A **sample** is the part of the population we actually measure.
 
 We compute statistics from a sample to estimate unknown population quantities. Greek letters (for example $$\mu$$, $$\sigma$$) often denote **population** parameters; Roman letters with bars or hats (for example $$\bar{x}$$, $$s$$, $$\hat{p}$$) denote **sample** statistics.
+
 :::
 
 ---
@@ -220,6 +249,7 @@ We compute statistics from a sample to estimate unknown population quantities. G
 
 :::tip
 Numerical summaries compress a distribution into a few interpretable numbers. Always pair a measure of center with a measure of spread.
+
 :::
 
 ### Measures of Central Tendency
@@ -238,6 +268,7 @@ For a sample of size \(n\):
 $$
 \bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}
 $$
+
 :::
 
 :::theorem{name="Median"}
@@ -247,6 +278,7 @@ $$
 - If **\(n\)** is **even**, the median is the **average** of the values at positions \(\frac{n}{2}\) and \(\frac{n}{2}+1\).
 
 The median is **resistant** (robust) to outliers, meaning extreme values barely move it, which makes it a measure of central tendency for skewed data or data with outliers.
+
 :::
 
 ---
@@ -267,6 +299,7 @@ IQR = Q_3 - Q_1
 $$
 
 It is resistant to extremes and matches the width of the box in a boxplot.
+
 :::
 
 :::theorem{name="Standard deviation"}
@@ -281,10 +314,12 @@ For a sample, we divide by **$$n - 1$$** (Bessel’s correction) so that \(s^2\)
 $$
 s = \sqrt{\frac{\sum_{i=1}^{n} (X_i - \bar{x})^2}{n-1}}
 $$
+
 :::
 
 :::note
 Larger standard deviation means **more** spread and zero standard deviation means **no** spread (all values equal).
+
 :::
 
 ---
@@ -305,6 +340,7 @@ If \(l\) is not an integer, interpolate between adjacent ordered values. Calcula
 - \(Q_1\): **25**th percentile  
 - \(Q_2\): **50**th percentile (the median)  
 - \(Q_3\): **75**th percentile  
+
 :::
 
 :::theorem{name="z-score"}
@@ -315,6 +351,7 @@ z = \frac{x - \mu}{\sigma}
 $$
 
 With a **sample**, use \(\bar{x}\) and \(s\) in the same pattern. A z-score answers: “How many standard deviations above or below the mean is this value?” Values with a large $$z$$-score are unusual relative to that distribution. Note that for future chapters, z-score will likely apply to a [normal/Gaussian distribution]({{ '/notes/ap/stats/samplingdistr/' | relative_url }}))
+
 :::
 
 ---
@@ -343,8 +380,10 @@ Multiplying by a constant $$b$$ (for example, feet to inches): $$y_i = b \times 
 | Standard Deviation | unchanged | $$\times \lvert b \rvert$$ |
 | Quartiles | $$+a$$ | $$\times b$$ |
 | Interquartile Range | unchanged | $$\times \lvert b \rvert$$ |
+
 :::
 
 :::exam
 These rules are worth memorizing: they explain why z-scores are unchanged by shifts and rescaling when you use the matching mean and standard deviation of the transformed data, and they explain many standardization tricks in later units.
+
 :::

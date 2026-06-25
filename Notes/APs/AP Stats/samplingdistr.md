@@ -10,6 +10,7 @@ permalink: /notes/ap/stats/samplingdistr/
 
 :::summary{title="Unit overview"}
 This unit explains why statistics from random samples vary and how that variation becomes predictable. A **sampling distribution** is the distribution of a statistic over many possible random samples of the same size from the same population. It is the bridge between descriptive statistics and inference.
+
 :::
 
 ---
@@ -18,6 +19,7 @@ This unit explains why statistics from random samples vary and how that variatio
 
 :::key{name="Parameter vs statistic"}
 A **parameter** is a number that describes a population, such as $$p$$, $$\mu$$, or $$\sigma$$. A **statistic** is a number computed from a sample, such as $$\hat{p}$$, $$\bar{x}$$, or $$s$$.
+
 :::
 
 :::key{name="Sampling variability"}
@@ -25,14 +27,17 @@ Samples vary, so statistics vary. This is called **sampling variability**. A goo
 
 - **Unbiased**: its sampling distribution is centered at the true parameter.
 - **Low variability**: its values do not jump wildly from sample to sample.
+
 :::
 
 :::tip
 Larger random samples usually reduce variability, but they do not fix bias caused by bad sampling design.
+
 :::
 
-:::figure{width=480}
-![Sampling distribution placeholder](/assets/APs/AP%20Stats/samplingdistr/sampling-distribution.png)
+:::placeholder
+Sampling distribution
+
 :::
 
 ---
@@ -45,10 +50,12 @@ When describing a sampling distribution, use the same language as distributions 
 - **Shape**: normal, skewed, approximately symmetric, etc.
 - **Center**: mean of the statistic.
 - **Spread**: standard deviation of the statistic, often called the **standard error**.
+
 :::
 
 :::note
 For inference, normal or approximately normal sampling distributions are especially useful because they let us calculate probabilities, confidence intervals, and p-values.
+
 :::
 
 ---
@@ -61,6 +68,7 @@ For a categorical variable with true population proportion $$p$$, the sample pro
 $$
 \hat{p} = \frac{x}{n},
 $$
+
 :::
 
 where $$x$$ is the number of successes in a sample of size $$n$$.
@@ -77,6 +85,7 @@ and
 $$
 \sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}.
 $$
+
 :::
 
 :::warning
@@ -93,6 +102,7 @@ n \le 0.10N.
 $$
 
 This makes observations close enough to independent when sampling from a finite population.
+
 :::
 
 ---
@@ -101,6 +111,7 @@ This makes observations close enough to independent when sampling from a finite 
 
 :::key{name="Sample mean"}
 For a quantitative variable with population mean $$\mu$$ and standard deviation $$\sigma$$, the sample mean is $$\bar{x}$$.
+
 :::
 
 :::theorem{name="Mean and SD of x-bar"}
@@ -115,6 +126,7 @@ and
 $$
 \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}.
 $$
+
 :::
 
 :::note
@@ -123,6 +135,7 @@ The quantity $$\sigma_{\bar{x}}$$ is the **standard deviation of the sample mean
 $$
 SE_{\bar{x}} = \frac{s}{\sqrt{n}}.
 $$
+
 :::
 
 ---
@@ -131,6 +144,7 @@ $$
 
 :::theorem{name="Central Limit Theorem"}
 The **Central Limit Theorem** says that when $$n$$ is large, the sampling distribution of $$\bar{x}$$ is approximately normal, even if the population distribution is not normal, as long as observations are independent and the population is not extremely pathological.
+
 :::
 
 :::tip
@@ -141,14 +155,17 @@ n \ge 30
 $$
 
 is often enough for mild or moderate skew. If the population is strongly skewed or has extreme outliers, a larger sample may be needed.
+
 :::
 
 :::note
 If the population itself is normal, then the sampling distribution of $$\bar{x}$$ is normal for any sample size $$n$$.
+
 :::
 
-:::figure{width=480}
-![Central Limit Theorem placeholder](/assets/APs/AP%20Stats/samplingdistr/central-limit-theorem.png)
+:::placeholder
+Central Limit Theorem
+
 :::
 
 ---
@@ -179,6 +196,7 @@ For sample proportions,
 $$
 z = \frac{\hat{p} - p}{\sqrt{p(1-p)/n}}.
 $$
+
 :::
 
 ### Empirical Rule
@@ -189,10 +207,12 @@ For a normal distribution:
 - About $$68\%$$ of observations are within $$1$$ standard deviation of the mean.
 - About $$95\%$$ are within $$2$$ standard deviations.
 - About $$99.7\%$$ are within $$3$$ standard deviations.
+
 :::
 
-:::figure{width=480}
-![Normal curve placeholder](/assets/APs/AP%20Stats/samplingdistr/normal-curve.png)
+:::placeholder
+Normal curve
+
 :::
 
 ---
@@ -219,10 +239,12 @@ $$
 $$
 \sigma^2_{X-Y} = \sigma_X^2 + \sigma_Y^2.
 $$
+
 :::
 
 :::warning
 Standard deviations do not add directly. Add variances first, then take the square root.
+
 :::
 
 :::theorem{name="Linear transformations"}
@@ -237,6 +259,7 @@ and
 $$
 \sigma_{a+bX} = |b|\sigma_X.
 $$
+
 :::
 
 ---
@@ -245,6 +268,7 @@ $$
 
 :::note
 These probability models connect Unit 4 probability to sampling distributions and inference.
+
 :::
 
 ### Binomial Distribution
@@ -268,6 +292,7 @@ The mean and standard deviation are
 $$
 \mu_X = np, \qquad \sigma_X = \sqrt{np(1-p)}.
 $$
+
 :::
 
 ### Geometric Distribution
@@ -286,6 +311,7 @@ The mean is
 $$
 \mu_X = \frac{1}{p}.
 $$
+
 :::
 
 ---
@@ -297,6 +323,7 @@ $$
 4. Check normality conditions if using a normal approximation.
 5. Use the correct mean and standard deviation/standard error.
 6. Standardize with a z-score when needed.
+
 :::
 
 ---
@@ -312,4 +339,5 @@ $$
 | z-score | $$z = (x-\mu)/\sigma$$ |
 | Binomial probability | $$P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}$$ |
 | Geometric probability | $$P(X=k)=(1-p)^{k-1}p$$ |
+
 :::

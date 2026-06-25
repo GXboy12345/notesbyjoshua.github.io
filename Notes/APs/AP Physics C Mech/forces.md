@@ -56,6 +56,7 @@ In 1687, Newton formulated the three laws of motion. They work extremely well fo
    $$
    \vec{F}_{A\text{ on }B} = -\vec{F}_{B\text{ on }A}.
    $$
+
 :::
 
 Third-law forces act on different objects, so they never cancel on a free-body diagram for one object. They can cancel only when you treat both interacting objects as one system and the force pair becomes internal.
@@ -66,8 +67,9 @@ Third-law forces act on different objects, so they never cancel on a free-body d
 
 A **free-body diagram** is a force diagram for one object or one chosen system. It should show only external forces acting on that object/system, not forces the object applies to something else.
 
-:::figure{width=480}
-![Free body diagram placeholder](/assets/APs/AP%20Physics%20C%20Mech/forces/free-body-diagram.png)
+:::placeholder
+Free body diagram
+
 :::
 
 :::example{title="Free-body diagram procedure"}
@@ -79,6 +81,7 @@ Good procedure:
 4. Choose axes, usually one axis parallel to the expected acceleration or along a surface.
 5. Resolve angled forces into components.
 6. Write Newton's second law separately for each direction.
+
 :::
 
 For a particle in two dimensions,
@@ -149,6 +152,7 @@ $$
 $$
 
 where $$\vec{x}$$ is displacement from equilibrium. The negative sign means the spring force points opposite the displacement. This force appears again in [Unit 7: Oscillations]({{ '/notes/ap/ap-physics-c-mechanics/oscillations/' | relative_url }}).
+
 :::
 
 ### Drag and resistive forces
@@ -180,6 +184,7 @@ The most reliable method is:
 4. Connect objects with constraints, such as equal accelerations for an ideal string.
 5. Solve algebraically before substituting numbers.
 6. Check the sign and units of the result.
+
 :::
 
 For multiple-object systems, you can choose either:
@@ -219,8 +224,9 @@ $$
 a = g\sin\theta.
 $$
 
-:::figure{width=480}
-![Inclined plane force components placeholder](/assets/APs/AP%20Physics%20C%20Mech/forces/incline-forces.png)
+:::placeholder
+Inclined plane force components
+
 :::
 
 With friction, decide whether the block is moving or about to move. If it is moving, use kinetic friction. If it is at rest, static friction takes whatever value is needed up to $$\mu_sF_N$$.
@@ -255,8 +261,9 @@ This is the maximum angle before sliding for a simple block on a rough incline. 
 
 For ideal ropes and pulleys, connected objects share related accelerations. A common Atwood machine has two hanging masses connected by a massless string over a frictionless pulley.
 
-:::figure{width=480}
-![Pulley system placeholder](/assets/APs/AP%20Physics%20C%20Mech/forces/pulley-system.png)
+:::placeholder
+Pulley system
+
 :::
 
 If $$m_2 > m_1$$, the acceleration magnitude is
@@ -281,6 +288,7 @@ $$
 $$
 m_2g - T = m_2a.
 $$
+
 :::
 
 For pulley systems with movable pulleys, the acceleration constraints may involve factors of 2. Write the string-length constraint first, then differentiate with respect to time to relate velocities and accelerations.
@@ -321,6 +329,7 @@ This means its acceleration is zero, so the object is either at rest or moving w
 $$
 \sum F_x = 0, \qquad \sum F_y = 0.
 $$
+
 :::
 
 Do not assume equilibrium just because an object is momentarily at rest. If a ball is thrown upward, it has zero velocity at the top but still has downward acceleration.
@@ -345,6 +354,7 @@ The centripetal acceleration is
 $$
 a_c = \frac{v^2}{r} = \omega^2 r.
 $$
+
 :::
 
 Newton's second law in the radial direction is
@@ -355,8 +365,9 @@ $$
 
 There is no special "centripetal force." The phrase describes the net inward force required for circular motion. Gravity, tension, friction, the normal force, or a combination of forces can provide the centripetal force.
 
-:::figure{width=480}
-![Circular motion force diagram placeholder](/assets/APs/AP%20Physics%20C%20Mech/forces/circular-motion-forces.png)
+:::placeholder
+Circular motion force diagram
+
 :::
 
 :::example{title="Centripetal force sources"}
@@ -364,6 +375,7 @@ There is no special "centripetal force." The phrase describes the net inward for
 - A car on a flat curve: static friction provides the inward force.
 - A satellite in orbit: gravity provides the inward force.
 - A roller coaster at the bottom of a loop: normal force and gravity combine to give the net inward force.
+
 :::
 
 For a car on a flat curve with static friction,
@@ -508,6 +520,7 @@ This idea becomes central in [Unit 4: Linear Momentum and Impulse]({{ '/notes/ap
 5. Forgetting that tension can differ if the rope or pulley is not ideal.
 6. Assuming zero velocity means zero acceleration.
 7. Mixing up the direction of friction; friction opposes relative motion or impending relative motion, not always the direction of motion.
+
 :::
 
 ---
@@ -521,6 +534,7 @@ This idea becomes central in [Unit 4: Linear Momentum and Impulse]({{ '/notes/ap
 6. Add constraints for ropes, pulleys, or circular motion.
 7. Solve symbolically when possible.
 8. Check limiting cases: frictionless, very large mass, zero angle, or zero acceleration.
+
 :::
 
 ---
@@ -539,4 +553,5 @@ This idea becomes central in [Unit 4: Linear Momentum and Impulse]({{ '/notes/ap
 | Radial Newton's second law | $$\sum F_r = mv^2/r$$ |
 | Frictionless banked curve | $$v = \sqrt{rg\tan\theta}$$ |
 | Center of mass dynamics | $$\sum \vec{F}_{\text{ext}} = M\vec{a}_{\text{CM}}$$ |
+
 :::

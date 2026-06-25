@@ -20,6 +20,7 @@
     "codemod:precalc-practice": "node scripts/codemod-precalc-practice.mjs",
     "codemod:all": "node scripts/codemod-theorem-box.mjs --write && node scripts/codemod-figure.mjs --write && node scripts/codemod-chem-mcq.mjs --write",
     "fix:fences": "node scripts/fix-orphan-fences.mjs --write",
+    "fix:lazy-fences": "node scripts/fix-lazy-fence-closers.mjs --write",
     "fix:mcq-fences": "node scripts/fix-mcq-closing-fences.mjs --write",
     "fix:solutions": "node scripts/strip-duplicate-solutions.mjs --write",
     "search:diag": "npm run build && node --experimental-strip-types scripts/search-diagnostics.ts",

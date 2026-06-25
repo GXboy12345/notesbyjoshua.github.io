@@ -28,10 +28,12 @@ $$
 $$
 
 if the terms approach $$L$$.
+
 :::
 
 :::note
 If $$\sum a_n$$ converges, then necessarily $$a_n \to 0$$. The converse is false.
+
 :::
 
 ---
@@ -50,6 +52,7 @@ Its convergence is defined by the sequence of partial sums:
 $$
 S_N = \sum_{n=1}^{N} a_n.
 $$
+
 :::
 
 ---
@@ -66,6 +69,7 @@ converges when $$\lvert r \rvert < 1$$ and then
 $$
 \sum_{n=0}^{\infty} ar^n = \frac{a}{1-r}.
 $$
+
 :::
 
 ---
@@ -88,6 +92,7 @@ $$
 $$
 
 converges if and only if $$p>1$$.
+
 :::
 
 ---
@@ -108,6 +113,7 @@ $$
 $$
 
 either both converge or both diverge.
+
 :::
 
 ---
@@ -119,6 +125,7 @@ Direct comparison:
 
 - if $$0 \le a_n \le b_n$$ and $$\sum b_n$$ converges, then $$\sum a_n$$ converges,
 - if $$0 \le b_n \le a_n$$ and $$\sum b_n$$ diverges, then $$\sum a_n$$ diverges.
+
 :::
 
 :::theorem{name="Limit comparison"}
@@ -131,6 +138,7 @@ $$
 $$
 
 with $$0<c<\infty$$, then $$\sum a_n$$ and $$\sum b_n$$ behave the same.
+
 :::
 
 ---
@@ -156,6 +164,7 @@ The Alternating Series Test says the series converges if:
 
 - $$b_n$$ decreases eventually,
 - $$b_n \to 0$$.
+
 :::
 
 ---
@@ -170,10 +179,12 @@ $$
 $$
 
 converges, then $$\sum a_n$$ converges absolutely.
+
 :::
 
 :::theorem{name="Conditional convergence"}
 If $$\sum a_n$$ converges but $$\sum \lvert a_n \rvert$$ diverges, the convergence is conditional.
+
 :::
 
 ---
@@ -186,6 +197,7 @@ Ratio Test:
 $$
 L = \lim_{n \to \infty} \left\lvert\frac{a_{n+1}}{a_n}\right\rvert
 $$
+
 :::
 
 :::theorem{name="Root Test"}
@@ -194,6 +206,7 @@ Root Test:
 $$
 L = \lim_{n \to \infty} \sqrt[n]{\lvert a_n \rvert}
 $$
+
 :::
 
 In either test:
@@ -220,6 +233,7 @@ $$
 $$
 
 diverges.
+
 :::
 
 ---
@@ -238,10 +252,12 @@ There is a radius of convergence $$R$$:
 - converges for $$\lvert x-c \rvert<R$$,
 - diverges for $$\lvert x-c \rvert>R$$,
 - endpoints must be checked separately.
+
 :::
 
 :::placeholder
 [Image Placeholder: number line showing center, radius, and endpoint testing]
+
 :::
 
 ---
@@ -256,6 +272,7 @@ $$
 $$
 
 Maclaurin series is the special case $$c=0$$.
+
 :::
 
 Core series to memorize:
@@ -264,24 +281,28 @@ Core series to memorize:
 $$
 \frac{1}{1-x} = \sum_{n=0}^{\infty} x^n, \qquad \lvert x \rvert<1
 $$
+
 :::
 
 :::key{name="e^x"}
 $$
 e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!}
 $$
+
 :::
 
 :::key{name="sin x"}
 $$
 \sin x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}
 $$
+
 :::
 
 :::key{name="cos x"}
 $$
 \cos x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!}
 $$
+
 :::
 
 ---
@@ -294,10 +315,12 @@ The $$n$$th Taylor polynomial is the finite truncation:
 $$
 T_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(c)}{k!}(x-c)^k.
 $$
+
 :::
 
 :::note
 For alternating Maclaurin series with decreasing term magnitudes, the truncation error is at most the first omitted term in absolute value.
+
 :::
 
 ---
@@ -307,4 +330,5 @@ For alternating Maclaurin series with decreasing term magnitudes, the truncation
 - Using a convergence test whose hypotheses do not apply.
 - Stopping after finding the radius of convergence without testing endpoints.
 - Mixing up absolute and conditional convergence.
+
 :::

@@ -11,4 +11,5 @@ permalink: /notes/physics/relativity/
 E = mc^scared lol
 
 :::under-construction
+
 :::

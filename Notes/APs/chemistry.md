@@ -57,6 +57,7 @@ If $$Q<K$$, the mixture has too few products compared with the equilibrium ratio
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -74,6 +75,7 @@ Strong AP Chemistry explanations connect the particle-level model to the evidenc
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -94,6 +96,7 @@ $$(A)$$ Kinetics predicts how fast a reaction occurs and what factors affect rat
 $$(B)$$ One useful check is to inspect units, sign, and magnitude. For example, an equilibrium concentration should not be negative, and a thermodynamics calculation should have a sign that matches the stated spontaneity.
 
 $$(C)$$ Balanced equations give the mole ratios between reactants and products. Without those ratios, the stoichiometric conversion from one substance to another is not chemically meaningful.
+
 :::
 :::
 :::

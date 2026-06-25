@@ -10,6 +10,7 @@ permalink: /notes/ap/precalc/addtopics/
 
 :::summary{title="Unit overview"}
 This unit covers partial fractions, mathematical induction, sequences and series, and the binomial theorem.
+
 :::
 
 ---
@@ -93,6 +94,7 @@ or equivalently,
 $$
 x + 1 + \frac{2}{5x} - \frac{3}{x^2} + \frac{1}{x + 2} + \frac{7x - 4}{2(x^2 - 2x + 4)}.
 $$
+
 :::
 
 ---
@@ -210,6 +212,7 @@ which is exactly what we needed.
 $$
 \sum_{k=1}^{n} k(k!) = (n+1)! - 1 \quad \text{for all integers } n \ge 1.
 $$
+
 :::
 
 ### Induction With Inequalities
@@ -232,6 +235,7 @@ Then you still have to finish the job by showing the new expression is at least 
 
 :::warning
 The most common mistake is stopping too early. It is not enough to use the induction hypothesis; you must land on the exact inequality for $$k+1$$.
+
 :::
 
 :::theorem{name="Inequality induction"}
@@ -311,6 +315,7 @@ $$
 $$
 
 So the statement is true for $$k+1$$. By induction, $$2^{n}\ge n^{2}$$ for all integers $$n\ge 4$$.
+
 :::
 
 ---
@@ -343,6 +348,7 @@ $$
 $$
 
 The RHS is the sum of the values of the $$n$$th row of Pascal's Triangle, and the LHS can be simplified to $$2^{n}$$. Thus, the sum of the values in the $$n$$th row of Pascal's Triangle is equal to $$2^{n}$$.
+
 :::
 
 ---
@@ -401,6 +407,7 @@ $$
 $$
 
 Substitute $$a_n = a_1+(n-1)d$$ to get $$\displaystyle S_n = \frac{n}{2}\bigl(2a_1+(n-1)d\bigr)$$.
+
 :::
 
 ### Finite geometric series ($$r \ne 1$$)
@@ -437,6 +444,7 @@ S = a_1 \frac{1-r^n}{1-r}.
 $$
 
 If the series starts at index $$1$$ as $$\sum_{i=1}^{n} a_1 r^{i-1}$$, it is the same $$n$$ terms and the same sum.
+
 :::
 
 ### Infinite geometric series
@@ -487,6 +495,7 @@ Notice that all the terms in the middle will cancel out (e.g. $$-\frac{1}{2}$$ a
 $$
 S = 1 - \frac{1}{n+1} = \frac{n}{n+1}.
 $$
+
 :::
 
 ---
@@ -557,6 +566,7 @@ As $$x\to\infty$$, the parenthesized expression approaches $$2$$, while $$x^3\to
 $$
 \boxed{\lim_{x\to\infty}(2x^3+3x^2-5x+1)=\infty}.
 $$
+
 :::
 
 For rational functions, compare the degrees of the numerator and denominator:
@@ -588,6 +598,7 @@ $$
 \lim_{x\to\infty}\frac{4x^2-3x+7}{2x^2+5x-1}=2
 }.
 $$
+
 :::
 
 ### Horizontal and oblique asymptotes
@@ -646,6 +657,7 @@ the oblique asymptote is
 $$
 \boxed{y=x-1}.
 $$
+
 :::
 
 ### Exponential, logarithmic, and trig limits
@@ -717,6 +729,7 @@ $$
 $$
 
 Since the numerator and denominator have the same degree, this is also the ratio of leading coefficients.
+
 :::
 :::
 
@@ -745,6 +758,7 @@ Therefore the horizontal asymptote is
 $$
 \boxed{y=3}.
 $$
+
 :::
 :::
 
@@ -776,55 +790,68 @@ the graph approaches the line
 $$
 \boxed{y=x+2}.
 $$
+
 :::
 :::
 
 :::frq{id=precalc-addtopics-4}
 4. Prove by induction that $$\sum_{k=1}^{n} k^3 = \frac{n^2 (n+1)^2}{4}$$ for all integers $$n \ge 1$$. Extension: This looks like the square of $$1 + 2 + ... + n = \frac{n(n+1)}{2}$$! Prove that this is true (you should not use induction here).
+
 :::
 
 :::frq{id=precalc-addtopics-5}
 5. Prove by induction that $$8^{2n} - 3^{2n}$$ is divisible by $$55$$ for all integers $$n \ge 1$$.
+
 :::
 
 :::frq{id=precalc-addtopics-6}
 6. Prove by induction that $$2^{n}\ge n^{3}$$ for all integers $$n\ge 10$$.
+
 :::
 
 :::frq{id=precalc-addtopics-7}
 7. Expand $$(3x+2y)^{5}$$ using the binomial theorem.
+
 :::
 
 :::frq{id=precalc-addtopics-8}
 8. What is the coefficient of the term containing $$x^{22}$$ in $$\left(x^{3} - \dfrac{4}{\sqrt{x}}\right)^{12}$$?
+
 :::
 
 :::frq{id=precalc-addtopics-9}
 9. Use the binomial theorem to prove that $$9^{n}-1$$ is divisible by $$8$$ for every integer $$n\ge 1$$.
+
 :::
 
 :::frq{id=precalc-addtopics-10}
 10. A nonconstant arithmetic sequence has first term $$5$$ and common difference $$d$$. Its first, third, and seventh terms form a geometric sequence in that order. Find $$d$$ and the three geometric terms.
+
 :::
 
 :::frq{id=precalc-addtopics-11}
 11. The sequence $$1,x,y,z$$ is arithmetic. The sequence $$1,p,q,z$$ is geometric. Both sequences are strictly increasing and contain only integers, and $$z$$ is as small as possible. What is the value of $$x+y+z+p+q$$? (2025 AMC 10A)
+
 :::
 
 :::frq{id=precalc-addtopics-12}
 12. Find $$\sum_{i=5}^{100}(3i-2)$$.
+
 :::
 
 :::frq{id=precalc-addtopics-13}
 13. Evaluate $$\sum_{i=6}^{12} 3\cdot 2^i$$.
+
 :::
 
 :::frq{id=precalc-addtopics-14}
 14. The first three terms of a geometric series are the integers $$a$$, $$720$$, and $$b$$, where $$a < 720 < b$$. What is the sum of the digits of the least possible value of $$b$$? (2024 AMC 10A).
+
 :::
 
 :::frq{id=precalc-addtopics-15}
 15. Evaluate the finite sum $$\sum_{k=0}^{n}\binom{n}{k}3^{k}2^{n-k}(k+1)$$ in closed form. Hint: $$k\binom{n}{k} = n\binom{n-1}{k-1}$$
+
 :::
 
 :::frq{id=precalc-addtopics-16}
@@ -836,5 +863,6 @@ $$
    $$
    F_n=\frac{\alpha^n-\beta^n}{\sqrt5}.
    $$
+
 :::
 :::

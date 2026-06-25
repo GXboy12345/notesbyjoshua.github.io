@@ -34,6 +34,7 @@ If an element is a component of the reaction **ALONE**, they are written in thei
 2. Treat **unchanged polyatomic ions** (such as $$\text{NO}_3^-$$ or $$\text{SO}_4^{2-}$$) as a unit if they appear intact on both sides (Make sure to include them in brackets, otherwise they do not count as polyatomic ions).
 3. Balance **hydrogen** and **oxygen** last when they appear in several compounds (common in combustion and acid–base).
 4. If you temporarily need a **fractional** coefficient to balance an element (e.g. $$\frac{1}{2}\text{O}_2$$), **multiply the entire equation** by the denominator so all coefficients are integers.
+
 :::
 
 The balanced equation conserves **mass** (atom counts). For **ionic** reactions in solution, you may also write:
@@ -46,6 +47,7 @@ The balanced equation conserves **mass** (atom counts). For **ionic** reactions 
 
 :::note
 Spectator ions appear unchanged on both sides of the total ionic equation and are omitted from the net ionic equation.
+
 :::
 
 **Redox** reactions in acidic or basic solution often needs the *half-reaction method* (below) because oxidation numbers change and **electron** and **charge** balance are not handled by atom counting alone.
@@ -66,6 +68,7 @@ These rules are general AP-level shortcuts; a few exceptions exist, and exact so
 
 :::exam
 You predict precipitates with **solubility rules**, which are very important to memorize.
+
 :::
 
 | Usually soluble | Important exceptions |
@@ -96,6 +99,7 @@ $$
 $$
 \text{acid} + \text{base} \longrightarrow \text{salt} + \text{H}_2\text{O}.
 $$
+
 :::
 
 Such proton-transfer reactions are often rapid because water is a very stable product. This is a special form of a double-displacement reaction
@@ -140,10 +144,12 @@ In **single-displacement**, an element in its standard state replaces ions of an
 
 :::exam
 Memorize the metal activity series and halogen reactivity order for AP prediction questions.
+
 :::
 
 :::figure{width=480}
 ![Metal Activity Series](/assets/APs/AP%20Chem/chemrxns/metalAS.png)
+
 :::
 
 For halogens, a more reactive halogen displaces the halide ion of a less reactive halogen from solution. Reactivity decreases down the group ($$\text{F}_2 > \text{Cl}_2 > \text{Br}_2 > \text{I}_2$$).
@@ -156,6 +162,7 @@ For halogens, a more reactive halogen displaces the halide ion of a less reactiv
 
 :::tip
 **OIL RIG**: **O**xidation **I**s **L**osing, **R**eduction **I**s **G**aining.
+
 :::
 
 The **reducing agent** is the one being oxidized, and the **oxidizing agent** is the one being reduced. Assigning oxidation states to every atom in a formula is the standard bookkeeping method (refer to [Unit 1]({{ '/notes/ap/chem/atomicstrucprop/' | relative_url }})). Many combustion, single-displacement, and electrochemical processes are redox; they are often slower in the lab than simple precipitation or strong acid–strong base neutralization because covalent bonds must break and form in the elemental or molecular reactants.
@@ -178,6 +185,7 @@ A **half-reaction** shows only the oxidation or only the reduction part of an el
 5. Balance **charge** with $$e^-$$ on the correct side.
 
 6. Equalize electrons; add the halves; simplify.
+
 :::
 
 **Basic solution:** either balance as in acid and then add $$\text{OH}^-$$ to **both sides** in pairs that neutralize $$\text{H}^+$$ as water, or balance using $$\text{H}_2\text{O}$$ and $$\text{OH}^-$$ from the start. The final combined equation should contain **no free $$\text{H}^+$$** if the medium is strongly basic.
@@ -194,6 +202,7 @@ By convention, the solvent is the component present in greater amount and the so
 
 :::figure{width=480}
 ![Solubility Rules](/assets/APs/AP%20Chem/chemrxns/solubility.jpg)
+
 :::
 
 ---
@@ -216,6 +225,7 @@ Temperature: the effect on solid solubility depends on the sign of enthalpy of s
 $$
 m = \frac{\text{moles of solute}}{\text{kilograms of solvent}}.
 $$
+
 :::
 
 It is temperature-independent in the sense that it uses mass of solvent, not volume of solution.
@@ -235,6 +245,7 @@ $$
 
 :::warning
 Do not equate $$\text{ppm}$$ to “$$mass \% \times 10^6$$”; use the fraction definition above (for example, $$1\%$$ corresponds to $$10^4$$ ppm).
+
 :::
 
 **Normality** $$N$$ (still seen in some labs) is equivalents of reacting species per liter of solution: for acid–base, one equivalent of acid is one mole of $$\text{H}^+$$ donated per mole of formula (so $$\text{H}_2\text{SO}_4$$ can be $$2N$$ when both protons count in that context). On the AP exam, molarity and stoichiometry from the balanced equation are usually enough.
@@ -285,6 +296,7 @@ $$
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -308,6 +320,7 @@ So the answer is
 $$
 \boxed{\text{A}}.
 $$
+
 :::
 :::
 
@@ -325,6 +338,7 @@ Zinc goes from oxidation number $$0$$ in $$\text{Zn}(s)$$ to $$+2$$ in $$\text{Z
 $$
 \boxed{\text{A}}
 $$
+
 :::
 :::
 
@@ -342,6 +356,7 @@ A precipitate is an insoluble solid that forms from ions in solution.
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -365,6 +380,7 @@ So $$x=+6$$.
 $$
 \boxed{\text{C}}
 $$
+
 :::
 :::
 
@@ -382,6 +398,7 @@ $$\text{Ba}^{2+}$$ and $$\text{SO}_4^{2-}$$ form $$\text{BaSO}_4(s)$$, which is 
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -424,6 +441,7 @@ $$
 $$
 
 This means $$80.0\%$$ of the impure sample was reactive $$\text{CaCO}_3$$, and the remaining $$20.0\%$$ was impurity that did not produce $$\text{CO}_2$$.
+
 :::
 :::
 
@@ -454,6 +472,7 @@ $$
 The mole ratio comes from the balanced equation: $$3$$ moles of $$\text{Cl}_2$$ produce $$2$$ moles of $$\text{AlCl}_3$$.
 
 $$(C)$$ The balanced reaction requires fixed mole ratios. Once $$\text{Cl}_2$$ is used up, no more $$\text{AlCl}_3$$ can form, even though some Al remains. The excess reactant remains because there are no longer enough particles of the limiting reactant available to collide and react in the required stoichiometric ratio.
+
 :::
 :::
 :::

@@ -12,6 +12,7 @@ AP Statistics is about collecting data carefully, exploring patterns, and using 
 
 :::exam
 For AP free-response problems, the calculation is usually only part of the answer. You also need to identify the parameter, check conditions, show correct notation, and write conclusions in context.
+
 :::
 
 ---
@@ -40,14 +41,17 @@ For AP free-response problems, the calculation is usually only part of the answe
 
 :::tip
 Practice released AP Statistics free-response questions from College Board.
+
 :::
 
 :::tip
 For inference units, write every solution in the full structure: parameter, hypotheses or interval, conditions, calculation, conclusion.
+
 :::
 
 :::tip
 For calculator-heavy procedures, still show the name of the procedure and the inputs.
+
 :::
 
 ### MCQ
@@ -67,6 +71,7 @@ AP Statistics inference responses need the full reasoning chain: identify the pa
 $$
 \boxed{\text{C}}
 $$
+
 :::
 :::
 
@@ -84,6 +89,7 @@ Even when a calculator does the arithmetic, AP readers expect you to name the pr
 $$
 \boxed{\text{B}}
 $$
+
 :::
 :::
 
@@ -104,6 +110,7 @@ $$(A)$$ Released FRQs show the exact style of prompts, rubric expectations, and 
 $$(B)$$ Parameter, hypotheses or interval, conditions, calculation, conclusion.
 
 $$(C)$$ Naming the procedure shows you chose the correct method and entered the correct summary statistics; the calculator output alone does not demonstrate that reasoning to the reader.
+
 :::
 :::
 :::
