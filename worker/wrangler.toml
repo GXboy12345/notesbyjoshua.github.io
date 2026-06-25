@@ -1,6 +1,17 @@
 name = "notes-frq-grader"
 main = "src/index.ts"
 compatibility_date = "2024-11-01"
+workers_dev = true
+
+# ── Fork (GXboy12345) production values ─────────────────────────────────────
+# If deploying to Joshua's account (notesbyjoshua), replace [vars] with:
+#
+# [vars]
+# OPENROUTER_SITE_URL = "https://notesbyjoshua.github.io"
+# OPENROUTER_APP_TITLE = "Notes by Joshua FRQ Grader"
+# ALLOWED_ORIGINS = "https://notesbyjoshua.github.io,http://localhost:4321,http://localhost:5173"
+# MANIFEST_URL = "https://notesbyjoshua.github.io/generated/frq-manifest.json"
+# ────────────────────────────────────────────────────────────────────────────
 
 [vars]
 OPENROUTER_SITE_URL = "https://gxboy12345.github.io/notesbyjoshua.github.io/"

@@ -17,6 +17,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # Set via repo Actions variable: Settings → Secrets and variables → Actions → Variables → PUBLIC_FRQ_GRADER_URL
+      # The conditional below overrides this for the fork (GXboy12345) with the hardcoded worker URL.
+      PUBLIC_FRQ_GRADER_URL: ${{ vars.PUBLIC_FRQ_GRADER_URL }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -35,7 +39,7 @@ jobs:
           fi
       - run: npm ci
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
 
