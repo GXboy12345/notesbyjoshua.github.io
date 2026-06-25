@@ -35,14 +35,14 @@ This page is a high-yield AP Statistics reference for last-minute review. It pul
 - Spread: **Standard deviation** $$s$$: typical distance from mean (same units as data); **IQR** $$= Q_3 - Q_1$$: spread of middle half; resistant to outliers
 
 :::tip
-When comparing two distributions, alwasy use CUSS: **Center, Unusual features, Shape**, and **Spread** in context.
+When comparing two distributions, always use CUSS: **Center, Unusual features, Shape**, and **Spread** in context.
 
 :::
 
 ### Transforming Distributions
 
-- Mean: Suppose you have $$y=f(x)$$. Then $$\mu_y = \mu_f(x)$$. Do any operation to combine two variables, the mean will be the same operation done on the two respective means.
-- Standard Deviation: Suppose you have $$y=f(x) + a$$, where $$f(x) does not contain any addition of constants$$. Then, $$\sigma_y=\sigma_f(x)$$. Also, if you add/subtract two variables, the new standard deviation becomes: $$\sigma_a,b = \sqrt{\sigma_a^2 + \sigma_b^2}$$
+- **Mean:** Suppose you have $$y = f(x)$$. Then $$\mu_y = \mu_{f(x)}$$. Any operation on combined variables applies the same way to the respective means.
+- **Standard deviation:** Suppose you have $$y = f(x) + a$$, where $$f(x)$$ does not contain any addition of constants. Then $$\sigma_y = \sigma_{f(x)}$$. If you add or subtract two independent variables, the new standard deviation is $$\sigma_{a,b} = \sqrt{\sigma_a^2 + \sigma_b^2}$$.
 
 :::
 
